@@ -1,5 +1,6 @@
 package view;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.util.IconLoader;
 import de.unihamburg.masterprojekt2016.traceability.*;
 
@@ -12,13 +13,13 @@ public class IconProvider {
 
     public static Icon TRACEABILITY_ICON = IconLoader.getIcon("/icons/icon_traceability.png");
 
-    public static Icon LINK_CLASS = IconLoader.getIcon("/icons/linkicon_class.png");
-    public static Icon LINK_CONSTRUCTOR = IconLoader.getIcon("/icons/linkicon_constructor.png");
-    public static Icon LINK_ENUM = IconLoader.getIcon("/icons/linkicon_enum.png");
-    public static Icon LINK_FIELD = IconLoader.getIcon("/icons/linkicon_field.png");
-    public static Icon LINK_INTERFACE = IconLoader.getIcon("/icons/linkicon_interface.png");
-    public static Icon LINK_METHOD = IconLoader.getIcon("/icons/linkicon_method.png");
-    public static Icon LINK_PACKAGE = IconLoader.getIcon("/icons/linkicon_package.png");
+    public static Icon LINK_CLASS = AllIcons.Nodes.Class;
+    public static Icon LINK_CONSTRUCTOR = AllIcons.Nodes.ClassInitializer;
+    public static Icon LINK_ENUM = AllIcons.Nodes.Enum;
+    public static Icon LINK_FIELD = AllIcons.Nodes.Field;
+    public static Icon LINK_INTERFACE = AllIcons.Nodes.Interface;
+    public static Icon LINK_METHOD = AllIcons.Nodes.Method;
+    public static Icon LINK_PACKAGE = AllIcons.Nodes.Package;
 
     public static Icon getIconForTraceabilityLink(TraceabilityPointer pointer){
 

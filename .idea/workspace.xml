@@ -57,11 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Java8ListenerImplementation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Java8ListenerImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8ListenerImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
               <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IconProvider.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/view/IconProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -117,16 +127,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TPointerOpenerFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/TPointerOpenerFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -145,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlin/KotlinParserListener.java" />
         <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere/src/main/kotlin/org/mariotaku/twidere/activity/SignInActivity.kt" />
         <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere/src/main/kotlin/org/mariotaku/twidere/fragment/UserProfileEditorFragment.kt" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/KotlinParser.java" />
@@ -196,6 +195,7 @@
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/NamedTypeElementPointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java" />
         <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/view/resultPopup/ResultListCellRenderer.java" />
+        <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/view/IconProvider.java" />
       </list>
     </option>
   </component>
@@ -302,6 +302,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TraceabilityRecoveryPlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -904,7 +944,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/auth/AuthorizationConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/swift/Twidere/Services/MicroBlog/MicroBlogService.swift" />
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateTimelineResources.java" />
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateSearchResources.java" />
@@ -1134,6 +1173,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/view/IconProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
           <folding />
         </state>
       </provider>
