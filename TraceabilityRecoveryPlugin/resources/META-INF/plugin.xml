@@ -1,0 +1,63 @@
+<idea-plugin version="2">
+    <id>de.uhh.swk.traceabilityRecoveryPlugin</id>
+    <name>Traceability Recovery Plugin</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">UHH</vendor>
+
+    <description><![CDATA[
+      Analyse and find traceability links between the opened Java project and a Swift implementation.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <projectConfigurable instance="preferences.PluginConfigurable" id="traceabilityRecovery_settings"
+                             displayName="Traceability Recovery"></projectConfigurable>
+
+        <projectService serviceInterface="de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService"
+                        serviceImplementation="de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService"></projectService>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="TraceabilityGroup" text="Traceability" popup="false">
+            <add-to-group group-id="AnalyzeMenu" anchor="last"></add-to-group>
+
+            <separator></separator>
+
+            <action id="traceabilityrecovery.editorQueryAction" class="actions.EditorQueryAction"
+                    text="Show possible traceability links">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta T"/>
+            </action>
+
+            <action id="traceabilityrecovery.searchQueryAction" class="actions.SearchQueryAction"
+                    text="Search tracebility links"
+                    description="Search traceability links with a query">
+            </action>
+
+        </group>
+
+
+    </actions>
+
+    <project-components>
+        <component>
+            <implementation-class>components.TraceabilityRecoveryComponent</implementation-class>
+        </component>
+    </project-components>
+</idea-plugin>

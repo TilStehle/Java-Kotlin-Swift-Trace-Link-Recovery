@@ -1,0 +1,25 @@
+package actions.opener;
+
+/**
+ * Created by Gerrit Greiert on 04.01.17.
+ */
+public class TPointerOpenerFactory {
+
+    public static TPointerOpener createOpener(){
+
+        String osType = System.getProperty("os.name").toLowerCase();
+
+        if (osType.contains("mac")){
+            return new MacTPointerOpener(); //TODO: Differentiate between Mac OS with or without XCode
+        }
+        else if (osType.contains("win")){
+            return new TPointerOpener();
+        }
+        else if (osType.contains("nux")){
+            //TODO: Implement an Traceability Pointer Opener for Linux
+        }
+
+        System.out.println("No valid TPointerOpener found or OS unknown");
+        return null;
+    }
+}
