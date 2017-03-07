@@ -1,5 +1,7 @@
 package de.unihamburg.masterprojekt2016.traceability;
 
+import org.apache.commons.io.FilenameUtils;
+
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -15,11 +17,14 @@ import javax.xml.bind.annotation.XmlTransient;
 public abstract class TraceabilityPointer {
 
     private String sourceFilePath;
-    
+    protected String language;
+
+
     public TraceabilityPointer() { }
 
     public TraceabilityPointer(String sourceFilePath) {
-    	this.sourceFilePath = sourceFilePath;
+        setSourceFilePath(sourceFilePath);
+
     }
     
     public abstract String getDisplayName();
@@ -30,6 +35,7 @@ public abstract class TraceabilityPointer {
 
     public void setSourceFilePath(String path){
         this.sourceFilePath = path;
+        this.language=FilenameUtils.getExtension(sourceFilePath);
     }
 
 	@Override
@@ -38,4 +44,20 @@ public abstract class TraceabilityPointer {
 	}
 
     public abstract String getPointerType();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TraceabilityPointer that = (TraceabilityPointer) o;
+
+        return language.equals(that.language);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return language.hashCode();
+    }
 }

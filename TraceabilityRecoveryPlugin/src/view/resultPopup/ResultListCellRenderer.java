@@ -26,8 +26,7 @@ public class ResultListCellRenderer implements ListCellRenderer<TraceabilityLink
 
         TraceabilityPointer pointer = value.getTarget();
 
-        Double probability = value.getProbability() * 100;
-        JBLabel probabilityLabel = new JBLabel(decimalFormat.format(probability) + "%");
+        JBLabel probabilityLabel = new JBLabel("score: "+decimalFormat.format(value.getProbability()));
 
         JBLabel linkLabel = new JBLabel(pointer.getDisplayName());
         linkLabel.setIcon(IconProvider.getIconForTraceabilityLink(pointer));

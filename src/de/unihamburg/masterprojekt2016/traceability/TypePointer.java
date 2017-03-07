@@ -76,13 +76,13 @@ public class TypePointer extends TraceabilityPointer {
         boolean a = fullyQualifiedName != null ? fullyQualifiedName.equals(that.fullyQualifiedName) : that.fullyQualifiedName == null;
         boolean b = classification != null ? classification.equals(that.classification) : that.classification == null;
 
-        return a && b;
+        return a && b&&super.equals(o);
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
-        int result = 1;
+        int result = super.hashCode();
         result = prime * result + ((classification == null) ? 0 : classification.hashCode());
         result = prime * result + ((fullyQualifiedName == null) ? 0 : fullyQualifiedName.hashCode());
         return result;

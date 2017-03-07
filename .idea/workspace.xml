@@ -25,48 +25,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ITraceabilityRecoveryService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ITraceabilityRecoveryService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LuceneTraceabilityRecoveryService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+            <state relative-caret-position="223">
+              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#10510#10518#0" expanded="true" />
-                <element signature="e#11371#11387#0" expanded="true" />
-                <element signature="e#12510#12528#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TPointerOpener.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/TPointerOpener.java">
+      <file leaf-file-name="ResultListCellRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/view/resultPopup/ResultListCellRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="264">
+              <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MacTPointerOpener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/MacTPointerOpener.java">
+      <file leaf-file-name="TraceabilityPointer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state relative-caret-position="411">
+              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Java8ListenerImplementation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8ListenerImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DocumentBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/DocumentBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypePointer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodPointer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/MethodPointer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="92" column="79" selection-start-line="92" selection-start-column="79" selection-end-line="92" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NamedTypeElementPointer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/NamedTypeElementPointer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TPointerOpener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/TPointerOpener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,48 +123,6 @@
             <state relative-caret-position="272">
               <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditorQueryAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/EditorQueryAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MAPQEvaluator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
-              <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TraceabilityRecoveryComponent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/components/TraceabilityRecoveryComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TraceabilityRecoveryComponentConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/preferences/TraceabilityRecoveryComponentConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#387#388#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -142,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere/src/main/kotlin/org/mariotaku/twidere/activity/ComposeActivity.kt" />
-        <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere/src/main/kotlin/org/mariotaku/twidere/activity/MediaViewerActivity.kt" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlin/KotlinParserListener.java" />
         <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere/src/main/kotlin/org/mariotaku/twidere/activity/SignInActivity.kt" />
         <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere/src/main/kotlin/org/mariotaku/twidere/fragment/UserProfileEditorFragment.kt" />
@@ -152,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/de/andreasschoknecht/LS3/StatefulLS3.java" />
         <option value="$PROJECT_DIR$/testDocs/TwidereDomainModel/groundTruth/TraceabilityModel.xml" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlin/KotlinListenerImplementation.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ISearchableDocument.java" />
         <option value="$PROJECT_DIR$/src/de/andreasschoknecht/LS3/LS3Document.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/TestDocParser.java" />
@@ -162,16 +162,13 @@
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/ConceptTypeSimilarity.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/ConstructorPointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/FilePointer.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/MethodPointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/SubscriptPointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XmlElementDeclPointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/AttributePointer.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/ConceptTypeSimilarity.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/CustomSimilarity.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/ConceptComparer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/DocumentBuilder.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaParser.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/PackagePointer.java" />
         <option value="//rzfilesrv2.informatik.uni-hamburg.de/swk/projects/Lehre/Lehre/SE2/SoSe2017/VL/Beispiele/Preisberechnung.java" />
@@ -183,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/KotlinParserTest.java" />
         <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml" />
         <option value="$PROJECT_DIR$/../../../GithubTest/J2Swift_Plugin/Cross-Platform-Traceability/J2Swift_Plugin.iml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParserTest.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ITraceabilityRecoveryService.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaParserTest.java" />
@@ -193,6 +189,13 @@
         <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/DefaultTPointerOpener.java" />
         <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/TPointerOpener.java" />
         <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/TPointerOpenerFactory.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/DocumentBuilder.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/MethodPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/NamedTypeElementPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java" />
+        <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/view/resultPopup/ResultListCellRenderer.java" />
       </list>
     </option>
   </component>
@@ -201,6 +204,11 @@
       <MavenGeneralSettings>
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -265,32 +273,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -300,195 +307,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testDocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traceabilityModel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unihamburg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traceabilityrecovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unihamburg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traceabilityrecovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lucene" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unihamburg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Traceability Recovery" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -519,6 +342,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -952,32 +776,6 @@
     <configuration>C:\Users\Tilmann Stehle\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
   </component>
-  <component name="SvnFileUrlMappingImpl">
-    <option name="myMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery" />
-          <option name="myCopyRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery" />
-        </SvnCopyRootSimple>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery\.idea" />
-          <option name="myCopyRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery\.idea" />
-        </SvnCopyRootSimple>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery\TraceabilityRecoveryPlugin" />
-          <option name="myCopyRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery\TraceabilityRecoveryPlugin" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
-    <option name="myMoreRealMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery" />
-          <option name="myCopyRoot" value="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e40a4491-b325-4af6-85f3-cb02df95a4e6" name="Default" comment="" />
@@ -1021,7 +819,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1097,7 +895,7 @@
           <option name="timeStamp" value="118" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="128" />
+      <option name="time" value="139" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1106,14 +904,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/ListResources.java" />
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateAccountResources.java" />
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateActivityResources.java" />
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateFriendsFollowersResources.java" />
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateResources.java" />
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateTweetResources.java" />
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/TimelineResources.java" />
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/auth/BasicAuthorization.java" />
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/auth/AuthorizationConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/swift/Twidere/Services/MicroBlog/MicroBlogService.swift" />
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/microblog/library/twitter/api/PrivateTimelineResources.java" />
@@ -1133,38 +923,8 @@
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.library.extension/src/main/java/org/mariotaku/twidere/service/MediaUploaderService.java" />
     <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml" />
     <entry file="file://$PROJECT_DIR$/../../../GithubTest/J2Swift_Plugin/Cross-Platform-Traceability/J2Swift_Plugin.iml" />
-    <entry file="file://$PROJECT_DIR$/TraceabilityRecovery.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="82" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/andreasschoknecht/LS3/test/DummyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/SourceCodeDocumentCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/andreasschoknecht/LS3/test/DummyTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/SourceCodeDocumentCollection.java" />
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3BaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1181,30 +941,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testDocs/traceabilityModel/java/AttributePointer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#526#527#0" expanded="false" />
-            <element signature="e#570#571#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#866#867#0" expanded="false" />
-            <element signature="e#898#899#0" expanded="false" />
-            <element signature="e#1107#1108#0" expanded="false" />
-            <element signature="e#1139#1140#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/testDocs/traceabilityModel/java/AttributePointer.java" />
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1221,55 +964,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/LSI/TraceabilityRecoveryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/DummyRecoveryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaLuceneDocsParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/LS3DocumentFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/LSI/TraceabilityRecoveryService.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/DummyRecoveryService.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaLuceneDocsParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/LS3DocumentFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ITraceabilityRecoveryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="204">
           <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
+        <state relative-caret-position="2193">
           <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
           <folding />
         </state>
@@ -1280,53 +992,41 @@
         <state relative-caret-position="255">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/components/TraceabilityRecoveryComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="765">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java">
+    <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/EditorQueryAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10510#10518#0" expanded="true" />
-            <element signature="e#11371#11387#0" expanded="true" />
-            <element signature="e#12510#12528#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/EditorQueryAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/DefaultTPointerOpener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/DefaultTPointerOpener.java" />
     <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/MacTPointerOpener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2212#2213#0" expanded="false" />
+            <element signature="e#2251#2252#0" expanded="false" />
+            <element signature="e#2292#2293#0" expanded="false" />
+            <element signature="e#2331#2332#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1338,10 +1038,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TraceabilityRecovery.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="82" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="32" column="97" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/opener/TPointerOpener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/MethodPointer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="92" column="79" selection-start-line="92" selection-start-column="79" selection-end-line="92" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/DocumentBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/NamedTypeElementPointer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/view/resultPopup/ResultListCellRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8ListenerImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1398,7 +1190,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>TraceabilityRecoveryPlugin</last-edited>
+          <last-edited>TraceabilityRecovery</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
