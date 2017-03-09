@@ -1,5 +1,6 @@
 package actions;
 
+import actions.opener.TPointerOpenerFactory;
 import com.google.common.collect.ConcurrentHashMultiset;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
@@ -39,14 +40,15 @@ public class SearchQueryAction extends AnAction {
         if (queryDialog.getExitCode() == DialogWrapper.OK_EXIT_CODE) {
             System.out.println("Query: " + queryDialog.getQuery());
 
-            String[] separatedQueryTerms = queryDialog.getQuery().replaceAll("\\s+","").split(",");
+            String[] separatedQueryTerms = queryDialog.getQuery().replaceAll("\\s+", "").split(",");
 
             Multiset<String> queryTermsSet = HashMultiset.create(Arrays.asList(separatedQueryTerms));
 
             ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
             List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForQuery(queryTermsSet);
 
-            ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE));
+            ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
+                    TPointerOpenerFactory.createOpener().openTraceabilityPointer(clickedPointer));
             resultsPopup.show();
         }
 

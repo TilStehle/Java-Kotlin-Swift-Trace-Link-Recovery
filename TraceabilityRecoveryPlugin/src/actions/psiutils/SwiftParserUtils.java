@@ -112,4 +112,21 @@ public class SwiftParserUtils {
         Pattern attributeDeklarationPattern = Pattern.compile(".*(var|let)" + BLANKS_PATTERN + target.getName() +".*;.*");
         return getTokenPosition(target.getName(), attributeDeklarationStartPattern , attributeDeklarationPattern, target.getSourceFilePath());
     }
+
+    public static TokenPosition getPosition(TraceabilityPointer pointer) {
+        if(pointer instanceof AttributePointer)
+        {
+            return getAtributePosition((AttributePointer)pointer);
+        }
+        else if(pointer instanceof MethodPointer)
+        {
+            return getMethodPosition((MethodPointer)pointer);
+        }
+        else if(pointer instanceof ConstructorPointer)
+        {
+            return getConstructorPosition((ConstructorPointer)pointer);
+        }
+        else return new TokenPosition(0,0);
+    }
+
 }

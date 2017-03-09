@@ -42,12 +42,25 @@
 
             <action id="traceabilityrecovery.editorQueryAction" class="actions.EditorQueryAction"
                     text="Show possible traceability links">
-                <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta T"/>
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U"/>
             </action>
 
             <action id="traceabilityrecovery.searchQueryAction" class="actions.SearchQueryAction"
                     text="Search tracebility links"
                     description="Search traceability links with a query">
+            </action>
+
+        </group>
+
+        <group id="CommentsGroup" text="Generate Comment" popup="false">
+            <add-to-group group-id="GenerateGroup" anchor="last"></add-to-group>
+
+            <separator></separator>
+
+            <action id="traceabilityrecovery.GenerateTodoCommentAction" class="actions.GenerateTodoCommentAction"
+                    text="Generate Todo-Comment"
+                    description="Create a Todo-Comment in a linked implementation">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
             </action>
 
         </group>

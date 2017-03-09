@@ -16,11 +16,13 @@ import java.util.List;
  * Created by Gerrit Greiert on 23.02.17.
  */
 public class ResultsPopup {
-
+    public interface TraceabilityPointerClickedListener {
+        public void onLinkedClicked(TraceabilityPointer clickedPointer);
+    }
     private Editor editor;
     private JBPopup popup;
 
-    public ResultsPopup(List<TraceabilityLink> results, @Nullable Editor editor){
+    public ResultsPopup(List<TraceabilityLink> results, @Nullable Editor editor, TraceabilityPointerClickedListener pointerClickedListener){
 
         this.editor = editor;
         results.sort(new TraceabilityLinkProbabilityComparator());
@@ -37,7 +39,7 @@ public class ResultsPopup {
                 int selectedIndex = resultsList.getSelectedIndex();
                 if (event.isOk()) {
                     TraceabilityPointer target = results.get(selectedIndex).getTarget();
-                    TPointerOpenerFactory.createOpener().openTraceabilityPointer(target);
+                    pointerClickedListener.onLinkedClicked(target);
                 }
             }
         });
