@@ -24,7 +24,10 @@ Restart the plugin
 
 Notice: by now, the search index for java/kotlin/swift files is only filled once when starting the plugin.
 
-Now you can query for similarity scores by selecting a java element(class/method/field name), perform a right click and select  "Analyze"->"Show possible traceability links"
+Now you can query for similarity scores by selecting a java element(class/method/field name), perform a right click and select  "Analyze"->"Show possible traceability links". Alternatively, you can press crtl + alt + U
+
+If you want to add a Todo-comment to a linked swift element, place the cursor on a Java class name, field name or method name. press crtl + alt + D.
+Now, you can select the linked swift-element that you wish to comment on and write a comment.
 
 ##Acknowledgements
 The search engine and plugin is developed in cooperation with two students of the University of Hamburg:
