@@ -29,6 +29,11 @@ Now you can query for similarity scores by selecting a java element(class/method
 If you want to add a Todo-comment to a linked swift element, place the cursor on a Java class name, field name or method name. press crtl + alt + D.
 Now, you can select the linked swift-element that you wish to comment on and write a comment.
 
+## Further Reading
+German users and researchers are encouraged to take a look at the scientific document on the plugin's development and evaluation:
+
+https://github.com/TilStehle/Java-Kotlin-Swift-Trace-Link-Recovery/blob/master/Entwicklung%20eines%20Plugins%20in%20IntelliJIDEA%20zum%20Auffinden%20von%20Quellcode-Entsprechungen.pdf
+
 ##Acknowledgements
 The search engine and plugin is developed in cooperation with two students of the University of Hamburg:
 Jakob Andersen and Gerrit Greiert.
