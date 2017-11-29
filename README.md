@@ -4,7 +4,13 @@ This search engine is wrapped in a plugin for IntelliJ IDEA.
 Using this plugin, users can right-click a Java element (class/method/field name) and search for related code in a provided folder containing siwft documents.
 
 ##Build
-Open Project in IntelliJ IDEA (Tested with Community Edition 2016.2.5)  
+
+Open Project in IntelliJ IDEA (Tested with Community Edition 2017.1.4) 
+Set Project SDK to your IntelliJ IDEA-SDK for Plugin development
+Reimport maven dependencies from .pom-File
+add Ant-library (src\de\unihamburg\swk\parsing\antlr-4.7-complete.jar) as library (Right-Click-> Add as Library)
+build
+run/debug
 
 If you want to deploy the plugin in another instance of IntelliJ IDEA or Android Studio, follow the guidelines provided on   https://www.jetbrains.com/help/idea/2016.3/plugin-deployment-tab.html for the export and   
 https://www.jetbrains.com/help/idea/2016.3/installing-plugin-from-disk.html for installing the plugin  
