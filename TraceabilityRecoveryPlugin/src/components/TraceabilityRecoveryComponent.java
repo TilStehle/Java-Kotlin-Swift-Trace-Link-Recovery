@@ -20,6 +20,10 @@ import java.io.IOException;
 )
 public class TraceabilityRecoveryComponent implements ProjectComponent, PersistentStateComponent<TraceabilityRecoveryComponentConfiguration> {
 
+    public static final String NOTIFICATION_ID = "Traceability Recovery";
+    public static final String QUERY_TITLE = "Traceability Query";
+    public static final String QUERY_ERROR = "The selected element has not been parsed, therefore no traceability info is available. It might not have been parsed because of an error or the configured parser timeout.";
+
     private Project project;
     private TraceabilityRecoveryComponentConfiguration configuration;
     private ITraceabilityRecoveryService traceabilityRecoveryService;
@@ -53,15 +57,21 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
 
         //Reload lucene index if lucene service
         if (traceabilityRecoveryService instanceof LuceneTraceabilityRecoveryService){
+
+            if (configuration.isUseCustomConfigPath()){
+                traceabilityRecoveryService.setIndexPath(configuration.getCustomConfigPath() + configuration.INDEX_PATH_FOLDER);
+            } else {
+                traceabilityRecoveryService.setIndexPath(projectBasePath + configuration.INDEX_PATH_FOLDER);
+            }
+
             try {
-                ((LuceneTraceabilityRecoveryService) traceabilityRecoveryService).setIndexPath(projectBasePath);
-                ((LuceneTraceabilityRecoveryService) traceabilityRecoveryService).loadIndexFromDisk();
-            } catch (IOException e) {
-                e.printStackTrace();
+                traceabilityRecoveryService.loadIndexFromDisk();
+            } catch (IOException|RuntimeException e) {
+                System.out.println("Couldn't read index, building new index");
+                refreshRecoveryService();
             }
         }
 
-        //refreshRecoveryService();
     }
 
     @Override
@@ -69,19 +79,21 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
 
     }
 
-    @Nullable
-    @Override
+
     /**
      * Saves the current component configuration, gets called from framework
      */
+    @Nullable
+    @Override
     public TraceabilityRecoveryComponentConfiguration getState() {
         return configuration;
     }
 
-    @Override
+
     /**
      * Loads the current component configuration, gets called from framework
      */
+    @Override
     public void loadState(TraceabilityRecoveryComponentConfiguration state) {
         this.configuration = state;
     }
@@ -93,9 +105,12 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
         return configuration;
     }
 
+    /**
+     * Refreshes the recovery service. Calls readDocuments() on all given paths.
+     */
     public void refreshRecoveryService(){
 
-        RecoveryServiceRefreshTask task = new RecoveryServiceRefreshTask(project, project.getBasePath(), configuration.getLinkedImplementationPath());
+        RecoveryServiceRefreshTask task = new RecoveryServiceRefreshTask(project, configuration.getFileParserTimeout(), project.getBasePath(), configuration.getLinkedImplementationPath());
         ProgressManager.getInstance().run(task);
     }
 

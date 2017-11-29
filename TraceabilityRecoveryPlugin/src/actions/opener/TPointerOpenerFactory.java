@@ -13,7 +13,8 @@ public class TPointerOpenerFactory {
             return new MacTPointerOpener(); //TODO: Differentiate between Mac OS with or without XCode
         }
         else if (osType.contains("win")){
-            return new TPointerOpener();
+			return new TPointerOpener();
+            //TODO: Implement an Traceability Pointer Opener for Windows with or without Visual Studio
         }
         else if (osType.contains("nux")){
             //TODO: Implement an Traceability Pointer Opener for Linux

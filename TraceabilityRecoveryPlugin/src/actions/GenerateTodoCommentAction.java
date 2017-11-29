@@ -1,12 +1,7 @@
 package actions;
 
 import actions.filewriter.CommentWriter;
-import actions.opener.TPointerOpenerFactory;
-import actions.psiutils.SwiftParserUtils;
-import actions.psiutils.TokenPosition;
 import actions.psiutils.TraceabilityPointerCreator;
-import com.google.common.collect.HashMultiset;
-import com.google.common.collect.Multiset;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -15,7 +10,6 @@ import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.ui.MessageDialogBuilder;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -25,11 +19,9 @@ import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
-import view.SearchQueryDialog;
 import view.ToDoCommentsDialog;
 import view.resultPopup.ResultsPopup;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**

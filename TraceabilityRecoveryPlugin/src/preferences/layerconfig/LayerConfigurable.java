@@ -1,4 +1,4 @@
-package preferences;
+package preferences.layerconfig;
 
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
@@ -6,24 +6,32 @@ import com.intellij.openapi.project.Project;
 import components.TraceabilityRecoveryComponent;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
+import preferences.TraceabilityRecoveryComponentConfiguration;
 
 import javax.swing.*;
 
 /**
- * Created by Gerrit Greiert on 16.02.17.
+ * Created by Gerrit Greiert on 13.04.17.
  */
-public class PluginConfigurable implements Configurable {
+public class LayerConfigurable implements Configurable {
 
-    private static final String DISPLAY_NAME = "Traceability Recovery preferences";
+    private static final String DISPLAY_NAME = "Layer configuration";
     private Project project;
     private TraceabilityRecoveryComponentConfiguration componentSettings;
-    private PreferencesPanel panel;
+    private LayerConfigPanel panel;
 
-    public PluginConfigurable(Project project){
+    public LayerConfigurable(Project project) {
         this.project = project;
         componentSettings = project.getComponent(TraceabilityRecoveryComponent.class).getConfiguration();
-        panel = new PreferencesPanel(componentSettings);
 
+        String configPath;
+        if (componentSettings.isUseCustomConfigPath()){
+            configPath = componentSettings.getCustomConfigPath() + componentSettings.CONFIG_PATH_FOLDER;
+        } else {
+            configPath = project.getBasePath() + componentSettings.CONFIG_PATH_FOLDER;
+        }
+
+        panel = new LayerConfigPanel(configPath);
     }
 
     @Nls

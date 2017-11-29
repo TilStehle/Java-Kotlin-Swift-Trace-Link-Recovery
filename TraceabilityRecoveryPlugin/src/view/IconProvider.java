@@ -14,7 +14,7 @@ public class IconProvider {
     public static Icon TRACEABILITY_ICON = IconLoader.getIcon("/icons/icon_traceability.png");
 
     public static Icon LINK_CLASS = AllIcons.Nodes.Class;
-    public static Icon LINK_CONSTRUCTOR = AllIcons.Nodes.ClassInitializer;
+    public static Icon LINK_CONSTRUCTOR = AllIcons.Nodes.Method; //No constructor icon available
     public static Icon LINK_ENUM = AllIcons.Nodes.Enum;
     public static Icon LINK_FIELD = AllIcons.Nodes.Field;
     public static Icon LINK_INTERFACE = AllIcons.Nodes.Interface;
