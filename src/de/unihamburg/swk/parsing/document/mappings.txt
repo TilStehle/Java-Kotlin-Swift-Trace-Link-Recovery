@@ -1,0 +1,10 @@
+# Java (J)
+J -type Comparable Compare
+J -type T LOL
+J -type Integer int
+J -function ttt ==
+J -variable i ii
+
+# Swift (S) 
+S -type Int intx
+S -function == equals

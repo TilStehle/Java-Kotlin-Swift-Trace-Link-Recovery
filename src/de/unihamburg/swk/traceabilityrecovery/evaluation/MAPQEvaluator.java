@@ -1,9 +1,16 @@
 package de.unihamburg.swk.traceabilityrecovery.evaluation;
 
 import de.unihamburg.masterprojekt2016.traceability.*;
+import de.unihamburg.swk.parsing.ISourceCodeParser;
+import de.unihamburg.swk.parsing.ParserFactory;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
+import de.unihamburg.swk.traceabilityrecovery.Language;
+import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
+import org.apache.lucene.document.StoredField;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBContext;
@@ -11,10 +18,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -23,7 +27,21 @@ import java.util.stream.Collectors;
  * Created by Tilmann Stehle on 24.01.2017.
  */
 public class MAPQEvaluator {
+    private static boolean LOAD_INDEX_FROM_DISK=true;
 
+    @Test
+    public void addDocumentToIndex() throws IOException {
+        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereKomplett");
+        String path= "C:/Users/Tilmann Stehle/Documents/Masterprojekt/SVN/SE-Manager/TraceabilityRecovery/testDocs/LuceneNet/Net/Codecs/Compressing/CompressingTermVectorsWriter.cs";
+        ISourceCodeParser parser = ParserFactory.<LuceneDocument>createParser(new LuceneDocsFactory(), path);
+        Collection<LuceneDocument> documents = parser.parseDocuments();
+        Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
+        for (LuceneDocument document : documents) {
+            if (documentFilter == null || documentFilter.test(document)) {
+                ((LuceneTraceabilityRecoveryService)recoveryService).addDocument(document);
+            }
+        }
+    }
 
     @Test
     public void printSimilarities() throws IOException {
@@ -32,12 +50,22 @@ public class MAPQEvaluator {
 
     @Test
     public void computeMAPForTwidereDomainModel() throws IOException {
-        computeMap("./testDocs/TwidereDomainModel", "./testDocs/TwidereDomainModel/groundTruth/TraceabilityModel.xml");
+        computeMap("./testDocs/TwidereDomainModel", "./testDocs/TwidereDomainModel/groundTruth/TraceabilityModel.xml", Language.SWIFT);
+    }
+
+    @Test
+    public void computeMAPForLuceneNet() throws IOException {
+        computeMap("./testDocs/LuceneNet", "./testDocs/LuceneNet/groundTruth/TraceabilityModel.xml",Language.CSHARP);
     }
 
     @Test
     public void computeMAPForCompleteTwidereCode() throws IOException {
-        computeMap("./TestDocs/TwidereKomplett", "./testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml");
+        computeMap("./testDocs/TwidereKomplett", "./testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml", Language.SWIFT);
+    }
+
+    @Test
+    public void computeMAPForCamelCaseTest() throws IOException {
+        computeMap("./testDocs/CamelCaseTest", "./testDocs/CamelCaseTest/groundTruth/TraceabilityModel.xml", Language.CSHARP);
     }
 
     @Test
@@ -46,7 +74,8 @@ public class MAPQEvaluator {
         recoveryService.printDocuments();
     }
 
-    private void computeMap(String sourcePath, String linkModelXMLPath) {
+
+    private void computeMap(String sourcePath, String linkModelXMLPath, Language targetLanguage) {
         TraceabilityModel groundTruth = importGroundTruth(linkModelXMLPath);
         ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService(sourcePath);
         double outerSumOfMAPQ = 0;
@@ -55,7 +84,7 @@ public class MAPQEvaluator {
             Set<TraceabilityLink> correctLinksForPointer = pointerAndCorrectLinks.getValue().get();
             double precisionSumForCurrentQuery = 0;
             for (TraceabilityLink correctLink : correctLinksForPointer) {
-                List<TraceabilityLink> foundLinks = recoveryService.getSortedTraceabilityLinksForPointer(correctLink.getSource());
+                List<TraceabilityLink> foundLinks = recoveryService.getSortedTraceabilityLinksForPointer(correctLink.getSource(), targetLanguage);
                 List<TraceabilityLink> consideredResults = new ArrayList<>();
                 for (int linkRank = 0; linkRank < foundLinks.size(); linkRank++) {
                     TraceabilityLink foundLink = foundLinks.get(linkRank);
@@ -71,12 +100,19 @@ public class MAPQEvaluator {
                         if (isLinkCorrect) {
                             System.out.println("Korrekter Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         } else {
-                            System.out.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + ((TypePointer) foundLink.getTarget()).getFullyQualifiedName() + "   Ergebnisnummer:" + (linkRank + 1));
+                            System.out.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + foundLink.getTarget().getPointerType()+foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         }
                     }
                 }
                 double precision = computePrecisionForResults(consideredResults, correctLinksForPointer);
-                System.out.println("Precision: " + precision);
+                if(consideredResults.size()==0)
+                {
+                    System.out.println("KEINE ERGEBNISSE FUER " +correctLink.getSource().getDisplayName());
+                }
+                else
+                {
+                    System.out.println("Precision: " + precision);
+                }
                 precisionSumForCurrentQuery += precision;
 
             }
@@ -91,6 +127,7 @@ public class MAPQEvaluator {
         System.out.println("Swift-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("swift"));
         System.out.println("Java-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("java"));
         System.out.println("Kotlin-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("kt"));
+        System.out.println("C#-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("cs"));
         for (String nonParsedFile : ITraceabilityRecoveryService.NonParsedFiles) {
             System.out.println("Parsing Failed: " + nonParsedFile);
         }
@@ -120,33 +157,27 @@ public class MAPQEvaluator {
             e.printStackTrace();
         }
 
-
-        //We only include types, that are other than extensions
-        Predicate<LuceneDocument> documentFilter = new Predicate<LuceneDocument>() {
-            @Override
-            public boolean test(LuceneDocument document) {
-                TraceabilityPointer traceabilityPointer = document.getTraceabilityPointer();
-                if (traceabilityPointer instanceof TypePointer) {
-                    TypePointer typePointer = (TypePointer) traceabilityPointer;
-                    return typePointer.getClassification() != TypePointerClassification.EXTENSION;
-                }
-                return false;
+            Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
+            recoveryService.setDocumentFilter(documentFilter);
+        if(LOAD_INDEX_FROM_DISK)//wenn der bestehende index von der Platte geladen werden soll
+        {
+            try {
+                System.out.println("Reading lucene index...");
+                recoveryService.setIndexPath(testDocsPath+"/LuceneIndex");
+                recoveryService.loadIndexFromDisk();
+                System.out.println("Done");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        };
-        recoveryService.setDocumentFilter(documentFilter);
-        //Die folgenden Zeilen einkommentieren, wenn ein neuer Index aufgebaut und auf der Platte abgelegt werden soll
-//        try {
-//            recoveryService.readDocuments(testDocsPath);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-        //Die folgenden Zeilen einkommentieren, wenn der bestehende index von der Platte geladen werden soll
-        try {
-            System.out.println("Reading lucene index...");
-            recoveryService.loadIndexFromDisk(testDocsPath);
-            System.out.println("Done");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        }
+        else//wenn ein neuer Index aufgebaut und auf der Platte abgelegt werden soll
+        {
+            try {
+                recoveryService.setIndexPath(testDocsPath+"/LuceneIndex");
+                recoveryService.readDocuments(testDocsPath);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return recoveryService;
     }
@@ -161,11 +192,38 @@ public class MAPQEvaluator {
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             groundTruthModel = (TraceabilityModel) jaxbUnmarshaller.unmarshal(file);
+            for (TraceabilityLink link : groundTruthModel.getTraceabilityLinkList()) {
+                link.getTarget().setSourceFilePath(link.getTarget().getSourceFilePath());
+                link.getSource().setSourceFilePath(link.getSource().getSourceFilePath());
+            }
+
             return groundTruthModel;
 
 
         } catch (JAXBException e) {
             throw new RuntimeException("Make sure to provide an XML File \"TraceabilityModel.xml\" providing the correct traceability links that your search shall be evaluated against!", e);
         }
+    }
+
+    /**
+     * //We only include types, that are other than extensions
+     * @return
+     */
+    private Predicate<LuceneDocument> getTypelevelPredicate() {
+       return  new Predicate<LuceneDocument>() {
+            @Override
+            public boolean test(LuceneDocument document) {
+                TraceabilityPointer traceabilityPointer = document.getTraceabilityPointer();
+                if (traceabilityPointer instanceof TypePointer ) {
+                    TypePointer typePointer = (TypePointer) traceabilityPointer;
+                    return typePointer.getClassification() != TypePointerClassification.EXTENSION;
+                }
+//                else if(traceabilityPointer instanceof MethodPointer)
+//                {
+//                    return true;
+//                }
+                return false;
+            }
+        };
     }
 }

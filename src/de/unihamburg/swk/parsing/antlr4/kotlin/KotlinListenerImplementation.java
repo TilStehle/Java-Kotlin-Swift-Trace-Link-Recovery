@@ -1,15 +1,11 @@
 package de.unihamburg.swk.parsing.antlr4.kotlin;
 
 import de.unihamburg.masterprojekt2016.traceability.TypePointerClassification;
-import de.unihamburg.swk.parsing.DocumentBuilder;
-import de.unihamburg.swk.parsing.IDocumentFactory;
-import de.unihamburg.swk.parsing.antlr4.java8.Java8BaseListener;
-import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser;
-import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.VariableDeclaratorContext;
+import de.unihamburg.swk.parsing.document.DocumentBuilder;
+import de.unihamburg.swk.parsing.document.IDocumentFactory;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,19 +18,21 @@ import static de.unihamburg.masterprojekt2016.traceability.TypePointerClassifica
 
 public class KotlinListenerImplementation<TDocument extends ISearchableDocument> extends KotlinParserBaseListener {
 
-    private DocumentBuilder docBuilder;
+    private DocumentBuilder<TDocument> docBuilder;
 
-    private int anonymousClassCount;
+//    private int anonymousClassCount;
 
     public KotlinListenerImplementation(String filePath, IDocumentFactory<TDocument> documentFactory) {
-        this.docBuilder = new DocumentBuilder<TDocument>(filePath, documentFactory);
-        this.anonymousClassCount = 0;
+        this.docBuilder = new DocumentBuilder<>(filePath, documentFactory);
+//        this.anonymousClassCount = 0;
     }
 
     @Override
     public void enterClassModifier(@NotNull KotlinParser.ClassModifierContext ctx) {
         super.enterClassModifier(ctx);
     }
+
+
 
     @Override
     public void enterClassDeclaration(@NotNull KotlinParser.ClassDeclarationContext ctx) {
@@ -99,7 +97,7 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
 
     @Override
     public void enterPropertyDeclaration(@NotNull KotlinParser.PropertyDeclarationContext ctx) {
-        KotlinParser.MultipleVariableDeclarationsContext multipleVariableDeclarations = ctx.multipleVariableDeclarations();
+//        KotlinParser.MultipleVariableDeclarationsContext multipleVariableDeclarations = ctx.multipleVariableDeclarations();
         if (ctx.multipleVariableDeclarations() != null) {
             for (KotlinParser.VariableDeclarationEntryContext variableDeclarationEntryContext : ctx.multipleVariableDeclarations().variableDeclarationEntry()) {
                 createField(variableDeclarationEntryContext);
@@ -108,6 +106,11 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
         if (ctx.variableDeclarationEntry() != null) {
             createField(ctx.variableDeclarationEntry());
         }
+    }
+
+    @Override
+    public void exitPropertyDeclaration(KotlinParser.PropertyDeclarationContext ctx) {
+        docBuilder.closeElement();
     }
 
     @Override
@@ -154,8 +157,7 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
         docBuilder.enterParameter(ctx.keywordOrSimpleName().getText(), ctx.type().getText());
     }
 
-
-    //
+//
 //	@Override
 //	public void exitFormalParameter(Java8Parser.FormalParameterContext ctx) {
 //		String type = ctx.unannType().getText();
@@ -181,6 +183,16 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
 
     public List<TDocument> getDocuments() {
         return docBuilder.getDocuments();
+    }
+
+    public boolean errorOccurs() {
+        boolean errorHasOccured=docBuilder.openTypes() >  0;
+        if(errorHasOccured)
+        {
+            System.out.println("Elements not closed:");
+            docBuilder.printOpenElements();
+        }
+        return errorHasOccured;
     }
 
 }

@@ -1,7 +1,7 @@
 package de.unihamburg.swk.traceabilityrecovery.lucene;
 
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
-import de.unihamburg.swk.parsing.IDocumentFactory;
+import de.unihamburg.swk.parsing.document.IDocumentFactory;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 
 /**

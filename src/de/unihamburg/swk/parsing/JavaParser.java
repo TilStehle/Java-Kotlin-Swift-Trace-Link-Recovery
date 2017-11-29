@@ -16,6 +16,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Lexer;
 import de.unihamburg.swk.parsing.antlr4.java8.Java8ListenerImplementation;
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser;
+import de.unihamburg.swk.parsing.document.IDocumentFactory;
 
 /**
  * @author Jakob Andersen
@@ -33,14 +34,15 @@ public class JavaParser<TDocument extends ISearchableDocument> implements ISourc
 
 	@Override
 	public List<TDocument> parseDocuments() {
-		System.err.println("JavaParser parse: " + filePath);
 		return collectDocumentsWithANTLR();
 	}
 
+
 	private List<TDocument> collectDocumentsWithANTLR() {
+		System.err.println("JavaParser parse: " + filePath);
+		
 		ANTLRInputStream input;
-		try {
-			InputStream is = new FileInputStream(filePath);
+		try (InputStream is = new FileInputStream(filePath)) {
 			input = new ANTLRInputStream(is);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -49,20 +51,25 @@ public class JavaParser<TDocument extends ISearchableDocument> implements ISourc
 		Java8Lexer lexer = new Java8Lexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		Java8Parser parser = new Java8Parser(tokens);
+		parser.setErrorHandler(new InterruptableErrorHandler());
 		ParseTree tree = parser.compilationUnit();
 		ParseTreeWalker walker = new ParseTreeWalker();
-		Java8ListenerImplementation<TDocument> javaListener = new Java8ListenerImplementation<TDocument>(filePath, documentFactory);
-		try
-		{
-
+		Java8ListenerImplementation<TDocument> javaListener = new Java8ListenerImplementation<>(filePath,
+				documentFactory);
+		try {
 			walker.walk(javaListener, tree);
-			return javaListener.getDocuments();
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 			ITraceabilityRecoveryService.NonParsedFiles.add(filePath);
-			return new ArrayList<TDocument>();
+		}
+		finally {
+			if(javaListener.errorOccurs()) {
+				System.err.println("fail");
+			} else {
+				System.err.println("ok!");
+			}
+
+			return javaListener.getDocuments();
 		}
 	}
 

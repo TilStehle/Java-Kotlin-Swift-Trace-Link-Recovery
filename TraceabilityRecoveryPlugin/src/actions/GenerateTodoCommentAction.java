@@ -24,6 +24,7 @@ import com.intellij.ui.awt.RelativePoint;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
+import de.unihamburg.swk.traceabilityrecovery.Language;
 import view.SearchQueryDialog;
 import view.ToDoCommentsDialog;
 import view.resultPopup.ResultsPopup;
@@ -44,7 +45,7 @@ public class GenerateTodoCommentAction extends AnAction {
         TraceabilityPointer pointer = TraceabilityPointerCreator.getPointerForPsiElement(psiElement);
 
         ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
-        List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer);
+        List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer, Language.SWIFT);
 
         ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
                 createTodoCommentAtPointer(clickedPointer,event));

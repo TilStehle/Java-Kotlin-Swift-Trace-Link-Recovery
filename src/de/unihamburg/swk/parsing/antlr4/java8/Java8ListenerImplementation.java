@@ -2,52 +2,52 @@ package de.unihamburg.swk.parsing.antlr4.java8;
 
 import static de.unihamburg.masterprojekt2016.traceability.TypePointerClassification.*;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import de.unihamburg.swk.parsing.IDocumentFactory;
-import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.antlr.v4.runtime.tree.TerminalNode;
 
-import de.unihamburg.swk.parsing.DocumentBuilder;
+import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
+
+import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.EnumConstantContext;
+import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.LambdaParametersContext;
+import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.UnannTypeContext;
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.VariableDeclaratorContext;
+
+import de.unihamburg.swk.parsing.document.DocumentBuilder;
+import de.unihamburg.swk.parsing.document.IDocumentFactory;
+import de.unihamburg.swk.parsing.document.JavaParserUtils;
+import de.unihamburg.swk.parsing.document.SimlpleTypeSeparator;
+import de.unihamburg.swk.parsing.document.PointerTypeSeparator;
 
 /**
  * @author Jakob Andersen
  */
-
 public class Java8ListenerImplementation<TDocument extends ISearchableDocument> extends Java8BaseListener {
 
 	private DocumentBuilder<TDocument> docBuilder;
-
+	
 	private int anonymousClassCount;
 
 	public Java8ListenerImplementation(String filePath, IDocumentFactory<TDocument> documentFactory) {
-		this.docBuilder = new DocumentBuilder<TDocument>(filePath, documentFactory);
+		this.docBuilder = new DocumentBuilder<>(filePath, documentFactory);
 		this.anonymousClassCount = 0;
 	}
 
 	@Override
-	public void enterSuperclass(@NotNull Java8Parser.SuperclassContext ctx) {
-		String superClassName = ctx.classType().Identifier().getText();
-		if (superClassName.endsWith("Activity") || superClassName.contains("Fragment")) {
-			docBuilder.setLayer("viewController");
-		} else {
-			docBuilder.setLayer("nonUI");
-		}
-	}
-
-	@Override
 	public void enterPackageDeclaration(Java8Parser.PackageDeclarationContext ctx) {
-		String fullPackageName = ctx.Identifier().stream().map(TerminalNode::getText).collect(Collectors.joining("."));
+		String fullPackageName = ctx.Identifier().stream().map(e -> e.getText()).collect(Collectors.joining("."));
 		docBuilder.addPackagName(fullPackageName);
 	}
 
 	@Override
 	public void enterNormalInterfaceDeclaration(Java8Parser.NormalInterfaceDeclarationContext ctx) {
+		List<String> inheritance = new LinkedList<>();
 		String interfaceName = ctx.Identifier().getText();
-		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE);
+		JavaParserUtils.setInheritance(ctx.extendsInterfaces(), inheritance);
+		
+		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE, inheritance);
 	}
 
 	@Override
@@ -56,21 +56,25 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	}
 
 	@Override
-	public void enterAnnotationTypeDeclaration(@NotNull Java8Parser.AnnotationTypeDeclarationContext ctx) {
+	public void enterAnnotationTypeDeclaration(Java8Parser.AnnotationTypeDeclarationContext ctx) {
 		String interfaceName = ctx.Identifier().getText();
 		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE);
 	}
 
 	@Override
-	public void exitAnnotationTypeDeclaration(@NotNull Java8Parser.AnnotationTypeDeclarationContext ctx) {
+	public void exitAnnotationTypeDeclaration(Java8Parser.AnnotationTypeDeclarationContext ctx) {
 		docBuilder.exitTypeDeclaration();
 	}
 
 	@Override
 	public void enterNormalClassDeclaration(Java8Parser.NormalClassDeclarationContext ctx) {
 		String className = ctx.Identifier().getText();
-		docBuilder.enterTypeDeclaration(className, CLASS);
-		docBuilder.setLayer("nonUI");
+		List<String> inheritance = new LinkedList<>();
+		
+		JavaParserUtils.setInheritance(ctx.superclass(), inheritance);
+		JavaParserUtils.setInheritance(ctx.superinterfaces(), inheritance);
+		
+		docBuilder.enterTypeDeclaration(className, CLASS, inheritance);
 	}
 
 	@Override
@@ -81,8 +85,18 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	@Override
 	public void enterEnumDeclaration(Java8Parser.EnumDeclarationContext ctx) {
 		String enumName = ctx.Identifier().getText();
-		docBuilder.enterTypeDeclaration(enumName, ENUM);
-		docBuilder.setLayer("nonUI");
+		List<String> inheritance = new LinkedList<>();
+		JavaParserUtils.setInheritance(ctx.superinterfaces(), inheritance);
+		
+		docBuilder.enterTypeDeclaration(enumName, ENUM, inheritance);
+	}
+
+	@Override
+	public void enterEnumConstantList(Java8Parser.EnumConstantListContext ctx) {
+		for (EnumConstantContext enumConstant : ctx.enumConstant()) {
+			String constantName = enumConstant.Identifier().getText();
+			docBuilder.addEnumConstant(constantName);
+		}
 	}
 
 	@Override
@@ -94,9 +108,9 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	public void enterClassInstanceCreationExpression_lfno_primary(
 			Java8Parser.ClassInstanceCreationExpression_lfno_primaryContext ctx) {
 		if (ctx.classBody() != null) { // is anonymous class
-			String anonymousClassName = "AnonymousClass" + "$" + this.anonymousClassCount;
+			String pointerName = "AnonymousClass" + "$" + this.anonymousClassCount;
 			this.anonymousClassCount++;
-			docBuilder.enterTypeDeclaration(anonymousClassName, ANONYMOUS_CLASS);
+			docBuilder.enterAnonymousTypeDeclaration(pointerName, ANONYMOUS_CLASS);
 		}
 	}
 
@@ -111,20 +125,35 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 
 	@Override
 	public void enterFieldDeclaration(Java8Parser.FieldDeclarationContext ctx) {
-		String declerationLine = ctx.variableDeclaratorList().getText();
-		String name = declerationLine.contains("=") ? declerationLine.substring(0, declerationLine.indexOf("="))
-				: declerationLine;
-		String type = ctx.unannType().getText();
-		docBuilder.enterField(name, type);
-
+		UnannTypeContext unannType = ctx.unannType();
+		String name = ctx.variableDeclaratorList().variableDeclarator().stream()
+				.map(e -> e.variableDeclaratorId().Identifier().getText())
+				.collect(Collectors.joining(","));
+		enterClassVariableDeclaration(name, unannType);
 	}
 
 	@Override
-	public void enterConstantDeclaration(@NotNull Java8Parser.ConstantDeclarationContext ctx) {
-		String declerationLine = ctx.variableDeclaratorList().getText();
-		String name = declerationLine.contains("=") ? declerationLine.substring(0, declerationLine.indexOf("=")) : declerationLine;
-		String type = ctx.unannType().getText();
-		docBuilder.enterField(name, type);
+	public void exitFieldDeclaration(Java8Parser.FieldDeclarationContext ctx) {
+		docBuilder.closeElement();
+	}
+
+	@Override
+	public void enterConstantDeclaration(Java8Parser.ConstantDeclarationContext ctx) {
+		UnannTypeContext unannType = ctx.unannType();
+		for (VariableDeclaratorContext context : ctx.variableDeclaratorList().variableDeclarator()) {
+			enterClassVariableDeclaration(context.variableDeclaratorId().getText(), unannType);
+		}
+	}
+
+	@Override
+	public void exitConstantDeclaration(Java8Parser.ConstantDeclarationContext ctx) {
+		docBuilder.closeElement();
+	}
+	
+	private void enterClassVariableDeclaration(String pointerName, UnannTypeContext unannType) {
+		PointerTypeSeparator types = JavaParserUtils.setType(unannType);
+		String mappedName = JavaParserUtils.setMappedAttributeName(pointerName);
+		docBuilder.enterField(pointerName, mappedName, types);
 	}
 
 	@Override
@@ -140,24 +169,20 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 
 	@Override
 	public void enterMethodHeader(Java8Parser.MethodHeaderContext ctx) {
-		String name = ctx.methodDeclarator().getChild(0).toString();
-		String returnType = ctx.getChild(0).getText();
-		docBuilder.enterMethod(name, returnType);
+		String pointerName =  JavaParserUtils.getName(ctx.methodDeclarator().Identifier());
+		String mappedName = JavaParserUtils.setMappedMethodName(pointerName);
+		if(ctx.result().getText().equals("void")) {
+			docBuilder.enterMethod(pointerName, mappedName);
+		} else {
+			PointerTypeSeparator types = JavaParserUtils.setType(ctx.result().unannType());
+			docBuilder.enterMethod(pointerName, mappedName, types);
+		}
 	}
 
 	@Override
 	public void exitMethodDeclaration(Java8Parser.MethodDeclarationContext ctx) {
 		docBuilder.closeElement();
 	}
-
-	// @Override
-	// public void enterMethodDeclaration(Java8Parser.MethodDeclarationContext
-	// ctx) {
-	// String name =
-	// ctx.methodHeader().methodDeclarator().Identifier().getText();
-	// String returnType = ctx.methodHeader().result().getText();
-	// // ...
-	// }
 
 	@Override
 	public void exitInterfaceMethodDeclaration(Java8Parser.InterfaceMethodDeclarationContext ctx) {
@@ -166,29 +191,51 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 
 	@Override
 	public void exitFormalParameter(Java8Parser.FormalParameterContext ctx) {
-		String type = ctx.unannType().getText();
-		String name = ctx.variableDeclaratorId().getText();
-		docBuilder.enterParameter(name, type);
+		if(ctx.parent.parent.parent instanceof LambdaParametersContext) return;
+		String name = JavaParserUtils.getName(ctx.variableDeclaratorId().Identifier());
+		PointerTypeSeparator types = JavaParserUtils.setType(ctx.unannType());
+		docBuilder.enterParameter(name, types);
 	}
 
 	@Override
-	public void enterLocalVariableDeclaration(@NotNull Java8Parser.LocalVariableDeclarationContext ctx) {
+	public void enterLocalVariableDeclaration(Java8Parser.LocalVariableDeclarationContext ctx) {
+		PointerTypeSeparator types = JavaParserUtils.setType(ctx.unannType());
 		for (VariableDeclaratorContext v : ctx.variableDeclaratorList().variableDeclarator()) {
-			String line = v.getText();
-			String type = ctx.unannType().getText();
-			String name = line.contains("=") ? line.substring(0, line.indexOf("=")) : line;
-			docBuilder.enterLocalVariable(name, type);
+			String name = v.variableDeclaratorId().getText();
+			docBuilder.enterLocalVariable(name, types);
 		}
 	}
 
-	// @Override
-	// public void
-	// enterVariableDeclaratorId(Java8Parser.VariableDeclaratorIdContext ctx) {
-	// docBuilder.addIdentifierToAllDocsOnStack(ctx.getText());
-	// }
+	@Override
+	public void enterTypeParameter(Java8Parser.TypeParameterContext ctx) {
+		String typeParameterName = ctx.children.get(0).getText(); // TODO
+		docBuilder.enterTypeParameter(typeParameterName);
+	}
 
+	@Override 
+	public void enterLambdaExpression(@NotNull Java8Parser.LambdaExpressionContext ctx) {
+		docBuilder.enterLambdaExpression();
+	}
+	
+	@Override 
+	public void exitLambdaExpression(@NotNull Java8Parser.LambdaExpressionContext ctx) {
+		docBuilder.closeElement();
+	}
+	
+	@Override
+	public void enterLambdaParameters(LambdaParametersContext ctx) {
+		SimlpleTypeSeparator types = new SimlpleTypeSeparator(JavaParserUtils.MAPPER);
+		List<String> names = new LinkedList<>();
+		JavaParserUtils.setTypesAndNames(ctx, types, names);
+		docBuilder.enterLambda(names, types);
+	}
+
+	public boolean errorOccurs() {
+		return docBuilder.openTypes() >  0;
+	}
+	
 	public List<TDocument> getDocuments() {
 		return docBuilder.getDocuments();
 	}
-
+	
 }

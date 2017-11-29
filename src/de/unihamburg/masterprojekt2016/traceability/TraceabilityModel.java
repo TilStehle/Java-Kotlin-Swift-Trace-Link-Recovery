@@ -36,6 +36,17 @@ public class TraceabilityModel {
 		}
 		return traceList.toArray(new TraceabilityLink[traceList.size()]);
 	}
+	public List<TraceabilityLink> getTraceabilityLinkListRecursivelyIncludingSubmodelLinks() {
+		List<TraceabilityLink> traceList = new ArrayList<>();
+		for (TraceabilityLinkSetWrapper setWrapper : traceabilityLinksBySourcePointers.values()) {
+			traceList.addAll(setWrapper.get());
+		}
+		for (TraceabilityModel traceabilityModel : subModels.values()) {
+			traceList.addAll(traceabilityModel.getTraceabilityLinkListRecursivelyIncludingSubmodelLinks());
+		}
+
+		return traceList;
+	}
 	
 	@Deprecated
 	@XmlElementWrapper(name = "traceabilityLinks")

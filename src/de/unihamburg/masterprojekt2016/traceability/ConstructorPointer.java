@@ -1,6 +1,7 @@
 package de.unihamburg.masterprojekt2016.traceability;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -12,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ConstructorPointer extends NamedTypeElementPointer {
+public class ConstructorPointer extends NamedTypeElementPointer implements IHasParameter {
 
 	public static final String CONSTRUCTOR = "Constructor";
 	private List<Parameter> parameters;
@@ -27,13 +28,15 @@ public class ConstructorPointer extends NamedTypeElementPointer {
 
     public ConstructorPointer(String name, TypePointer typePointer, String sourceFilePath){
         super(name, typePointer, sourceFilePath);
-        this.parameters = new ArrayList<Parameter>();
+        this.parameters = new LinkedList<>();
     }
     
+    @Override
 	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
 
+    @Override
 	public void addParameter(Parameter parameter) {
 		parameters.add(parameter);
 	}

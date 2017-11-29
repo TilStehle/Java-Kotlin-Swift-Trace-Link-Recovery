@@ -18,6 +18,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
+import de.unihamburg.swk.traceabilityrecovery.Language;
 import view.SearchQueryDialog;
 import view.resultPopup.ResultsPopup;
 
@@ -45,7 +46,7 @@ public class SearchQueryAction extends AnAction {
             Multiset<String> queryTermsSet = HashMultiset.create(Arrays.asList(separatedQueryTerms));
 
             ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
-            List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForQuery(queryTermsSet);
+            List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForQuery(queryTermsSet, Language.SWIFT);
 
             ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
                     TPointerOpenerFactory.createOpener().openTraceabilityPointer(clickedPointer));

@@ -14,6 +14,7 @@ import com.intellij.psi.PsiMethod;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
+import de.unihamburg.swk.traceabilityrecovery.Language;
 import view.resultPopup.ResultsPopup;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class EditorQueryAction extends AnAction {
         System.out.println("Pointer: " + pointer.toString());
 
         ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
-        List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer);
+        List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer, Language.SWIFT);
         ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
                 TPointerOpenerFactory.createOpener().openTraceabilityPointer(clickedPointer));
         resultsPopup.show();

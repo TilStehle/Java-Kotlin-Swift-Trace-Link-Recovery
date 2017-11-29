@@ -1,6 +1,6 @@
-// Generated from Swift3.g4 by ANTLR 4.4
-
+// Generated from Swift3.g4 by ANTLR 4.7
 package de.unihamburg.swk.parsing.antlr4.swift3;
+
 
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -13,68 +13,38 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class Swift3Parser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__146=1, T__145=2, T__144=3, T__143=4, T__142=5, T__141=6, T__140=7, 
-		T__139=8, T__138=9, T__137=10, T__136=11, T__135=12, T__134=13, T__133=14, 
-		T__132=15, T__131=16, T__130=17, T__129=18, T__128=19, T__127=20, T__126=21, 
-		T__125=22, T__124=23, T__123=24, T__122=25, T__121=26, T__120=27, T__119=28, 
-		T__118=29, T__117=30, T__116=31, T__115=32, T__114=33, T__113=34, T__112=35, 
-		T__111=36, T__110=37, T__109=38, T__108=39, T__107=40, T__106=41, T__105=42, 
-		T__104=43, T__103=44, T__102=45, T__101=46, T__100=47, T__99=48, T__98=49, 
-		T__97=50, T__96=51, T__95=52, T__94=53, T__93=54, T__92=55, T__91=56, 
-		T__90=57, T__89=58, T__88=59, T__87=60, T__86=61, T__85=62, T__84=63, 
-		T__83=64, T__82=65, T__81=66, T__80=67, T__79=68, T__78=69, T__77=70, 
-		T__76=71, T__75=72, T__74=73, T__73=74, T__72=75, T__71=76, T__70=77, 
-		T__69=78, T__68=79, T__67=80, T__66=81, T__65=82, T__64=83, T__63=84, 
-		T__62=85, T__61=86, T__60=87, T__59=88, T__58=89, T__57=90, T__56=91, 
-		T__55=92, T__54=93, T__53=94, T__52=95, T__51=96, T__50=97, T__49=98, 
-		T__48=99, T__47=100, T__46=101, T__45=102, T__44=103, T__43=104, T__42=105, 
-		T__41=106, T__40=107, T__39=108, T__38=109, T__37=110, T__36=111, T__35=112, 
-		T__34=113, T__33=114, T__32=115, T__31=116, T__30=117, T__29=118, T__28=119, 
-		T__27=120, T__26=121, T__25=122, T__24=123, T__23=124, T__22=125, T__21=126, 
-		T__20=127, T__19=128, T__18=129, T__17=130, T__16=131, T__15=132, T__14=133, 
-		T__13=134, T__12=135, T__11=136, T__10=137, T__9=138, T__8=139, T__7=140, 
-		T__6=141, T__5=142, T__4=143, T__3=144, T__2=145, T__1=146, T__0=147, 
-		BooleanLiteral=148, NilLiteral=149, OperatorHead=150, OperatorCharacter=151, 
-		DotOperatorHead=152, Identifier=153, ImplicitParameterName=154, BinaryLiteral=155, 
-		OctalLiteral=156, DecimalLiteral=157, HexadecimalLiteral=158, FloatingPointLiteral=159, 
-		VersionLiteral=160, StringLiteral=161, EscapedCharacter=162, WS=163, BlockComment=164, 
-		LineComment=165;
-	public static final String[] tokenNames = {
-		"<INVALID>", "'setter:'", "'default'", "'associativity'", "'operator'", 
-		"'set'", "'precedence'", "'willSet'", "'while'", "'&&'", "'='", "'postfix'", 
-		"'internal'", "'override'", "'none'", "'required'", "'#column'", "','", 
-		"'right'", "'unowned(safe)'", "'throws'", "'var'", "'init'", "'#sourceLocation'", 
-		"'arch'", "'>='", "'dynamicType'", "'extension'", "'<'", "'#keyPath'", 
-		"']'", "'Any'", "'indirect'", "'then'", "'struct'", "'Protocol'", "'getter:'", 
-		"'subscript'", "'lazy'", "'deinit'", "'as'", "'#line'", "'class'", "';'", 
-		"'}'", "'#elseif'", "'optional'", "'\"'", "'defer'", "'inout'", "'''", 
-		"'is'", "'switch'", "'*'", "'arm'", "'weak'", "'OSXApplicationExtension'", 
-		"'associatedtype'", "'dynamic'", "'left'", "'#endif'", "'i386'", "':'", 
-		"'['", "'public'", "'fallthrough'", "'!'", "'open'", "'self'", "')'", 
-		"'unsafe'", "'typealias'", "'prefix'", "'func'", "'guard'", "'safe'", 
-		"'private'", "'#if'", "'tvOSApplicationExtension'", "'#function'", "'{'", 
-		"'for'", "'get'", "'('", "'do'", "'rethrows'", "'repeat'", "'always'", 
-		"'line'", "'watchOSApplicationExtension'", "'#selector'", "'swift'", "'#file'", 
-		"'imageLiteral'", "'watchOS'", "'@'", "'iOSApplicationExtension'", "'fileprivate'", 
-		"'unowned'", "'static'", "'let'", "'final'", "'infix'", "'#colorLiteral'", 
-		"'file'", "'/'", "'protocol'", "'continue'", "'#else'", "'catch'", "'Self'", 
-		"'iOS'", "'return'", "'x86_64'", "'||'", "'if'", "'os'", "'try'", "'?'", 
-		"'enum'", "'break'", "'&'", "'OSXApplicationExtension­'", "'arm64'", 
-		"'Type'", "'.'", "'fileLiteral'", "'#available'", "'->'", "'case'", "'tvOS'", 
-		"'throw'", "'...'", "'convenience'", "'unowned(unsafe)'", "'mutating'", 
-		"'=='", "'>'", "'OSX'", "'_'", "'didSet'", "'where'", "'else'", "'in'", 
-		"'super'", "'nonmutating'", "'-'", "'import'", "BooleanLiteral", "'nil'", 
-		"OperatorHead", "OperatorCharacter", "'..'", "Identifier", "ImplicitParameterName", 
-		"BinaryLiteral", "OctalLiteral", "DecimalLiteral", "HexadecimalLiteral", 
-		"FloatingPointLiteral", "VersionLiteral", "StringLiteral", "EscapedCharacter", 
-		"WS", "BlockComment", "LineComment"
-	};
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
+		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
+		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, T__30=31, 
+		T__31=32, T__32=33, T__33=34, T__34=35, T__35=36, T__36=37, T__37=38, 
+		T__38=39, T__39=40, T__40=41, T__41=42, T__42=43, T__43=44, T__44=45, 
+		T__45=46, T__46=47, T__47=48, T__48=49, T__49=50, T__50=51, T__51=52, 
+		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, T__58=59, 
+		T__59=60, T__60=61, T__61=62, T__62=63, T__63=64, T__64=65, T__65=66, 
+		T__66=67, T__67=68, T__68=69, T__69=70, T__70=71, T__71=72, T__72=73, 
+		T__73=74, T__74=75, T__75=76, T__76=77, T__77=78, T__78=79, T__79=80, 
+		T__80=81, T__81=82, T__82=83, T__83=84, T__84=85, T__85=86, T__86=87, 
+		T__87=88, T__88=89, T__89=90, T__90=91, T__91=92, T__92=93, T__93=94, 
+		T__94=95, T__95=96, T__96=97, T__97=98, T__98=99, T__99=100, T__100=101, 
+		T__101=102, T__102=103, T__103=104, T__104=105, T__105=106, T__106=107, 
+		T__107=108, T__108=109, T__109=110, T__110=111, T__111=112, T__112=113, 
+		T__113=114, T__114=115, T__115=116, T__116=117, T__117=118, T__118=119, 
+		T__119=120, T__120=121, T__121=122, T__122=123, T__123=124, T__124=125, 
+		T__125=126, T__126=127, T__127=128, T__128=129, T__129=130, T__130=131, 
+		T__131=132, T__132=133, T__133=134, T__134=135, T__135=136, T__136=137, 
+		T__137=138, T__138=139, T__139=140, T__140=141, T__141=142, T__142=143, 
+		T__143=144, T__144=145, T__145=146, T__146=147, BooleanLiteral=148, NilLiteral=149, 
+		OperatorHead=150, OperatorCharacter=151, DotOperatorHead=152, Identifier=153, 
+		ImplicitParameterName=154, BinaryLiteral=155, OctalLiteral=156, DecimalLiteral=157, 
+		HexadecimalLiteral=158, FloatingPointLiteral=159, VersionLiteral=160, 
+		StringLiteral=161, EscapedCharacter=162, WS=163, BlockComment=164, LineComment=165;
 	public static final int
 		RULE_topLevel = 0, RULE_statement = 1, RULE_promiseKitExpression = 2, 
 		RULE_promiseKitSuffix = 3, RULE_statements = 4, RULE_loopStatement = 5, 
@@ -234,11 +204,86 @@ public class Swift3Parser extends Parser {
 		"numericLiteral", "integerLiteral"
 	};
 
-	@Override
-	public String getGrammarFileName() { return "Swift3.g4"; }
+	private static final String[] _LITERAL_NAMES = {
+		null, "';'", "':'", "'.'", "'then'", "'always'", "'catch'", "'for'", "'case'", 
+		"'in'", "'while'", "'repeat'", "'if'", "'else'", "'guard'", "'switch'", 
+		"'{'", "'}'", "','", "'default'", "'break'", "'continue'", "'fallthrough'", 
+		"'return'", "'throw'", "'defer'", "'do'", "'let'", "'var'", "'where'", 
+		"'#available'", "'('", "')'", "'*'", "'iOS'", "'iOSApplicationExtension'", 
+		"'OSX'", "'OSXApplicationExtension'", "'watchOS'", "'watchOSApplicationExtension'", 
+		"'tvOS'", "'tvOSApplicationExtension'", "'<'", "'>'", "'=='", "'class'", 
+		"'convenience'", "'dynamic'", "'final'", "'infix'", "'lazy'", "'mutating'", 
+		"'nonmutating'", "'optional'", "'override'", "'postfix'", "'prefix'", 
+		"'required'", "'static'", "'unowned'", "'safe'", "'unsafe'", "'weak'", 
+		"'private'", "'set'", "'fileprivate'", "'internal'", "'public'", "'open'", 
+		"'import'", "'typealias'", "'struct'", "'enum'", "'protocol'", "'func'", 
+		"'='", "'get'", "'willSet'", "'didSet'", "'throws'", "'rethrows'", "'->'", 
+		"'...'", "'_'", "'indirect'", "'associatedtype'", "'init'", "'?'", "'!'", 
+		"'deinit'", "'extension'", "'subscript'", "'operator'", "'precedence'", 
+		"'associativity'", "'left'", "'right'", "'none'", "'is'", "'as'", "'@'", 
+		"'['", "']'", "'-'", "'''", "'/'", "'\"'", "'&'", "'try'", "'#file'", 
+		"'#line'", "'#column'", "'#function'", "'self'", "'super'", "'unowned(safe)'", 
+		"'unowned(unsafe)'", "'#selector'", "'getter:'", "'setter:'", "'#keyPath'", 
+		"'dynamicType'", "'&&'", "'||'", "'>='", "'Type'", "'Protocol'", "'Any'", 
+		"'Self'", "'inout'", "'#endif'", "'#if'", "'#elseif'", "'#else'", "'os'", 
+		"'arch'", "'swift'", "'i386'", "'x86_64'", "'arm'", "'arm64'", "'#sourceLocation'", 
+		"'file'", "'line'", "'#colorLiteral'", "'fileLiteral'", "'imageLiteral'", 
+		"'OSXApplicationExtension\u00C2\u00AD'", null, "'nil'", null, null, "'..'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, "BooleanLiteral", "NilLiteral", "OperatorHead", 
+		"OperatorCharacter", "DotOperatorHead", "Identifier", "ImplicitParameterName", 
+		"BinaryLiteral", "OctalLiteral", "DecimalLiteral", "HexadecimalLiteral", 
+		"FloatingPointLiteral", "VersionLiteral", "StringLiteral", "EscapedCharacter", 
+		"WS", "BlockComment", "LineComment"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
 
 	@Override
-	public String[] getTokenNames() { return tokenNames; }
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "Swift3.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -280,14 +325,17 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(519);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__101) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__52 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__99 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__104 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__140 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 				{
-				setState(518); statements();
+				setState(518);
+				statements();
 				}
 			}
 
-			setState(521); match(EOF);
+			setState(521);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -302,11 +350,20 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class StatementContext extends ParserRuleContext {
+		public DeclarationContext declaration() {
+			return getRuleContext(DeclarationContext.class,0);
+		}
 		public LoopStatementContext loopStatement() {
 			return getRuleContext(LoopStatementContext.class,0);
 		}
+		public BranchStatementContext branchStatement() {
+			return getRuleContext(BranchStatementContext.class,0);
+		}
 		public LabeledStatementContext labeledStatement() {
 			return getRuleContext(LabeledStatementContext.class,0);
+		}
+		public ControlTransferStatementContext controlTransferStatement() {
+			return getRuleContext(ControlTransferStatementContext.class,0);
 		}
 		public DeferStatementContext deferStatement() {
 			return getRuleContext(DeferStatementContext.class,0);
@@ -314,20 +371,11 @@ public class Swift3Parser extends Parser {
 		public DoStatementContext doStatement() {
 			return getRuleContext(DoStatementContext.class,0);
 		}
-		public ControlTransferStatementContext controlTransferStatement() {
-			return getRuleContext(ControlTransferStatementContext.class,0);
-		}
-		public DeclarationContext declaration() {
-			return getRuleContext(DeclarationContext.class,0);
-		}
 		public CompilerControlStatementContext compilerControlStatement() {
 			return getRuleContext(CompilerControlStatementContext.class,0);
 		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
-		}
-		public BranchStatementContext branchStatement() {
-			return getRuleContext(BranchStatementContext.class,0);
 		}
 		public PromiseKitExpressionContext promiseKitExpression() {
 			return getRuleContext(PromiseKitExpressionContext.class,0);
@@ -352,16 +400,20 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(560);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(523); declaration();
+				setState(523);
+				declaration();
 				setState(525);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(524); match(T__104);
+					setState(524);
+					match(T__0);
 					}
 				}
 
@@ -370,12 +422,15 @@ public class Swift3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(527); loopStatement();
+				setState(527);
+				loopStatement();
 				setState(529);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(528); match(T__104);
+					setState(528);
+					match(T__0);
 					}
 				}
 
@@ -384,12 +439,15 @@ public class Swift3Parser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(531); branchStatement();
+				setState(531);
+				branchStatement();
 				setState(533);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(532); match(T__104);
+					setState(532);
+					match(T__0);
 					}
 				}
 
@@ -398,18 +456,22 @@ public class Swift3Parser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(535); labeledStatement();
+				setState(535);
+				labeledStatement();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(536); controlTransferStatement();
+				setState(536);
+				controlTransferStatement();
 				setState(538);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(537); match(T__104);
+					setState(537);
+					match(T__0);
 					}
 				}
 
@@ -418,12 +480,15 @@ public class Swift3Parser extends Parser {
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(540); deferStatement();
+				setState(540);
+				deferStatement();
 				setState(542);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(541); match(T__104);
+					setState(541);
+					match(T__0);
 					}
 				}
 
@@ -432,12 +497,15 @@ public class Swift3Parser extends Parser {
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(544); doStatement();
+				setState(544);
+				doStatement();
 				setState(546);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__85) {
+				if (_la==T__1) {
 					{
-					setState(545); match(T__85);
+					setState(545);
+					match(T__1);
 					}
 				}
 
@@ -446,12 +514,15 @@ public class Swift3Parser extends Parser {
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(548); compilerControlStatement();
+				setState(548);
+				compilerControlStatement();
 				setState(550);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(549); match(T__104);
+					setState(549);
+					match(T__0);
 					}
 				}
 
@@ -460,12 +531,15 @@ public class Swift3Parser extends Parser {
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(552); expression();
+				setState(552);
+				expression();
 				setState(554);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(553); match(T__104);
+					setState(553);
+					match(T__0);
 					}
 				}
 
@@ -474,12 +548,15 @@ public class Swift3Parser extends Parser {
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(556); promiseKitExpression();
+				setState(556);
+				promiseKitExpression();
 				setState(558);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(557); match(T__104);
+					setState(557);
+					match(T__0);
 					}
 				}
 
@@ -529,7 +606,8 @@ public class Swift3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(562); postfixExpression(0);
+			setState(562);
+			postfixExpression(0);
 			setState(564); 
 			_errHandler.sync(this);
 			_alt = 1;
@@ -538,7 +616,8 @@ public class Swift3Parser extends Parser {
 				case 1:
 					{
 					{
-					setState(563); promiseKitSuffix();
+					setState(563);
+					promiseKitSuffix();
 					}
 					}
 					break;
@@ -548,7 +627,7 @@ public class Swift3Parser extends Parser {
 				setState(566); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,11,_ctx);
-			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
+			} while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -587,14 +666,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(568); match(T__22);
+			setState(568);
+			match(T__2);
 			setState(569);
 			_la = _input.LA(1);
-			if ( !(_la==T__114 || _la==T__60 || _la==T__38) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__5))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
-			setState(570); closureExpression();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			setState(570);
+			closureExpression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -609,11 +694,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class StatementsContext extends ParserRuleContext {
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
-		}
 		public List<StatementContext> statement() {
 			return getRuleContexts(StatementContext.class);
+		}
+		public StatementContext statement(int i) {
+			return getRuleContext(StatementContext.class,i);
 		}
 		public StatementsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -644,7 +729,8 @@ public class Swift3Parser extends Parser {
 				case 1:
 					{
 					{
-					setState(572); statement();
+					setState(572);
+					statement();
 					}
 					}
 					break;
@@ -654,7 +740,7 @@ public class Swift3Parser extends Parser {
 				setState(575); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,12,_ctx);
-			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
+			} while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -669,14 +755,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class LoopStatementContext extends ParserRuleContext {
+		public ForInStatementContext forInStatement() {
+			return getRuleContext(ForInStatementContext.class,0);
+		}
 		public WhileStatementContext whileStatement() {
 			return getRuleContext(WhileStatementContext.class,0);
 		}
 		public RepeatWhileStatementContext repeatWhileStatement() {
 			return getRuleContext(RepeatWhileStatementContext.class,0);
-		}
-		public ForInStatementContext forInStatement() {
-			return getRuleContext(ForInStatementContext.class,0);
 		}
 		public LoopStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -697,23 +783,27 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 10, RULE_loopStatement);
 		try {
 			setState(580);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__66:
+			case T__6:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(577); forInStatement();
+				setState(577);
+				forInStatement();
 				}
 				break;
-			case T__139:
+			case T__9:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(578); whileStatement();
+				setState(578);
+				whileStatement();
 				}
 				break;
-			case T__61:
+			case T__10:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(579); repeatWhileStatement();
+				setState(579);
+				repeatWhileStatement();
 				}
 				break;
 			default:
@@ -735,14 +825,14 @@ public class Swift3Parser extends Parser {
 		public PatternContext pattern() {
 			return getRuleContext(PatternContext.class,0);
 		}
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
 		public CodeBlockContext codeBlock() {
 			return getRuleContext(CodeBlockContext.class,0);
 		}
 		public WhereClauseContext whereClause() {
 			return getRuleContext(WhereClauseContext.class,0);
-		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
 		}
 		public ForInStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -765,27 +855,36 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(582); match(T__66);
+			setState(582);
+			match(T__6);
 			setState(584);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 			case 1:
 				{
-				setState(583); match(T__18);
+				setState(583);
+				match(T__7);
 				}
 				break;
 			}
-			setState(586); pattern(0);
-			setState(587); match(T__4);
-			setState(588); expression();
+			setState(586);
+			pattern(0);
+			setState(587);
+			match(T__8);
+			setState(588);
+			expression();
 			setState(590);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__6) {
+			if (_la==T__28) {
 				{
-				setState(589); whereClause();
+				setState(589);
+				whereClause();
 				}
 			}
 
-			setState(592); codeBlock();
+			setState(592);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -826,9 +925,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(594); match(T__139);
-			setState(595); conditionList();
-			setState(596); codeBlock();
+			setState(594);
+			match(T__9);
+			setState(595);
+			conditionList();
+			setState(596);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -869,10 +971,14 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(598); match(T__61);
-			setState(599); codeBlock();
-			setState(600); match(T__139);
-			setState(601); expression();
+			setState(598);
+			match(T__10);
+			setState(599);
+			codeBlock();
+			setState(600);
+			match(T__9);
+			setState(601);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -915,23 +1021,27 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 18, RULE_branchStatement);
 		try {
 			setState(606);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__32:
+			case T__11:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(603); ifStatement();
+				setState(603);
+				ifStatement();
 				}
 				break;
-			case T__73:
+			case T__13:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(604); guardStatement();
+				setState(604);
+				guardStatement();
 				}
 				break;
-			case T__95:
+			case T__14:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(605); switchStatement();
+				setState(605);
+				switchStatement();
 				}
 				break;
 			default:
@@ -953,11 +1063,11 @@ public class Swift3Parser extends Parser {
 		public ConditionListContext conditionList() {
 			return getRuleContext(ConditionListContext.class,0);
 		}
-		public ElseClauseContext elseClause() {
-			return getRuleContext(ElseClauseContext.class,0);
-		}
 		public CodeBlockContext codeBlock() {
 			return getRuleContext(CodeBlockContext.class,0);
+		}
+		public ElseClauseContext elseClause() {
+			return getRuleContext(ElseClauseContext.class,0);
 		}
 		public IfStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -979,14 +1089,19 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(608); match(T__32);
-			setState(609); conditionList();
-			setState(610); codeBlock();
+			setState(608);
+			match(T__11);
+			setState(609);
+			conditionList();
+			setState(610);
+			codeBlock();
 			setState(612);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
 			case 1:
 				{
-				setState(611); elseClause();
+				setState(611);
+				elseClause();
 				}
 				break;
 			}
@@ -1004,11 +1119,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ElseClauseContext extends ParserRuleContext {
-		public IfStatementContext ifStatement() {
-			return getRuleContext(IfStatementContext.class,0);
-		}
 		public CodeBlockContext codeBlock() {
 			return getRuleContext(CodeBlockContext.class,0);
+		}
+		public IfStatementContext ifStatement() {
+			return getRuleContext(IfStatementContext.class,0);
 		}
 		public ElseClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1029,19 +1144,24 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 22, RULE_elseClause);
 		try {
 			setState(618);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(614); match(T__5);
-				setState(615); codeBlock();
+				setState(614);
+				match(T__12);
+				setState(615);
+				codeBlock();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(616); match(T__5);
-				setState(617); ifStatement();
+				setState(616);
+				match(T__12);
+				setState(617);
+				ifStatement();
 				}
 				break;
 			}
@@ -1084,10 +1204,14 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(620); match(T__73);
-			setState(621); conditionList();
-			setState(622); match(T__5);
-			setState(623); codeBlock();
+			setState(620);
+			match(T__13);
+			setState(621);
+			conditionList();
+			setState(622);
+			match(T__12);
+			setState(623);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1102,11 +1226,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SwitchStatementContext extends ParserRuleContext {
-		public SwitchCasesContext switchCases() {
-			return getRuleContext(SwitchCasesContext.class,0);
-		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
+		}
+		public SwitchCasesContext switchCases() {
+			return getRuleContext(SwitchCasesContext.class,0);
 		}
 		public SwitchStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1129,18 +1253,24 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(625); match(T__95);
-			setState(626); expression();
-			setState(627); match(T__67);
+			setState(625);
+			match(T__14);
+			setState(626);
+			expression();
+			setState(627);
+			match(T__15);
 			setState(629);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__145 || _la==T__18) {
+			if (_la==T__7 || _la==T__18) {
 				{
-				setState(628); switchCases();
+				setState(628);
+				switchCases();
 				}
 			}
 
-			setState(631); match(T__103);
+			setState(631);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1188,13 +1318,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(633); switchCase();
+				setState(633);
+				switchCase();
 				}
 				}
 				setState(636); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T__145 || _la==T__18 );
+			} while ( _la==T__7 || _la==T__18 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -1209,11 +1340,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SwitchCaseContext extends ParserRuleContext {
-		public StatementsContext statements() {
-			return getRuleContext(StatementsContext.class,0);
-		}
 		public CaseLabelContext caseLabel() {
 			return getRuleContext(CaseLabelContext.class,0);
+		}
+		public StatementsContext statements() {
+			return getRuleContext(StatementsContext.class,0);
 		}
 		public DefaultLabelContext defaultLabel() {
 			return getRuleContext(DefaultLabelContext.class,0);
@@ -1237,33 +1368,42 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 30, RULE_switchCase);
 		try {
 			setState(650);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,21,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(638); caseLabel();
-				setState(639); statements();
+				setState(638);
+				caseLabel();
+				setState(639);
+				statements();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(641); defaultLabel();
-				setState(642); statements();
+				setState(641);
+				defaultLabel();
+				setState(642);
+				statements();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(644); caseLabel();
-				setState(645); match(T__104);
+				setState(644);
+				caseLabel();
+				setState(645);
+				match(T__0);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(647); defaultLabel();
-				setState(648); match(T__104);
+				setState(647);
+				defaultLabel();
+				setState(648);
+				match(T__0);
 				}
 				break;
 			}
@@ -1303,9 +1443,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(652); match(T__18);
-			setState(653); caseItemList();
-			setState(654); match(T__85);
+			setState(652);
+			match(T__7);
+			setState(653);
+			caseItemList();
+			setState(654);
+			match(T__1);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1320,11 +1463,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class CaseItemListContext extends ParserRuleContext {
-		public CaseItemContext caseItem(int i) {
-			return getRuleContext(CaseItemContext.class,i);
-		}
 		public List<CaseItemContext> caseItem() {
 			return getRuleContexts(CaseItemContext.class);
+		}
+		public CaseItemContext caseItem(int i) {
+			return getRuleContext(CaseItemContext.class,i);
 		}
 		public CaseItemListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1347,15 +1490,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(656); caseItem();
+			setState(656);
+			caseItem();
 			setState(661);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(657); match(T__130);
-				setState(658); caseItem();
+				setState(657);
+				match(T__17);
+				setState(658);
+				caseItem();
 				}
 				}
 				setState(663);
@@ -1403,12 +1549,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(664); pattern(0);
+			setState(664);
+			pattern(0);
 			setState(666);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__6) {
+			if (_la==T__28) {
 				{
-				setState(665); whereClause();
+				setState(665);
+				whereClause();
 				}
 			}
 
@@ -1446,8 +1595,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(668); match(T__145);
-			setState(669); match(T__85);
+			setState(668);
+			match(T__18);
+			setState(669);
+			match(T__1);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1490,19 +1641,24 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 40, RULE_labeledStatement);
 		try {
 			setState(677);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,24,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(671); statementLabel();
-				setState(672); loopStatement();
+				setState(671);
+				statementLabel();
+				setState(672);
+				loopStatement();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(674); statementLabel();
-				setState(675); switchStatement();
+				setState(674);
+				statementLabel();
+				setState(675);
+				switchStatement();
 				}
 				break;
 			}
@@ -1542,8 +1698,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(679); labelName();
-			setState(680); match(T__85);
+			setState(679);
+			labelName();
+			setState(680);
+			match(T__1);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1581,7 +1739,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(682); identifier();
+			setState(682);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1596,20 +1755,20 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ControlTransferStatementContext extends ParserRuleContext {
-		public ThrowStatementContext throwStatement() {
-			return getRuleContext(ThrowStatementContext.class,0);
+		public BreakStatementContext breakStatement() {
+			return getRuleContext(BreakStatementContext.class,0);
 		}
 		public ContinueStatementContext continueStatement() {
 			return getRuleContext(ContinueStatementContext.class,0);
 		}
+		public FallthroughStatementContext fallthroughStatement() {
+			return getRuleContext(FallthroughStatementContext.class,0);
+		}
 		public ReturnStatementContext returnStatement() {
 			return getRuleContext(ReturnStatementContext.class,0);
 		}
-		public BreakStatementContext breakStatement() {
-			return getRuleContext(BreakStatementContext.class,0);
-		}
-		public FallthroughStatementContext fallthroughStatement() {
-			return getRuleContext(FallthroughStatementContext.class,0);
+		public ThrowStatementContext throwStatement() {
+			return getRuleContext(ThrowStatementContext.class,0);
 		}
 		public ControlTransferStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1630,35 +1789,41 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 46, RULE_controlTransferStatement);
 		try {
 			setState(689);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__27:
+			case T__19:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(684); breakStatement();
+				setState(684);
+				breakStatement();
 				}
 				break;
-			case T__40:
+			case T__20:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(685); continueStatement();
+				setState(685);
+				continueStatement();
 				}
 				break;
-			case T__82:
+			case T__21:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(686); fallthroughStatement();
+				setState(686);
+				fallthroughStatement();
 				}
 				break;
-			case T__35:
+			case T__22:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(687); returnStatement();
+				setState(687);
+				returnStatement();
 				}
 				break;
-			case T__16:
+			case T__23:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(688); throwStatement();
+				setState(688);
+				throwStatement();
 				}
 				break;
 			default:
@@ -1700,12 +1865,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(691); match(T__27);
+			setState(691);
+			match(T__19);
 			setState(693);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,26,_ctx) ) {
 			case 1:
 				{
-				setState(692); labelName();
+				setState(692);
+				labelName();
 				}
 				break;
 			}
@@ -1746,12 +1914,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(695); match(T__40);
+			setState(695);
+			match(T__20);
 			setState(697);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
 			case 1:
 				{
-				setState(696); labelName();
+				setState(696);
+				labelName();
 				}
 				break;
 			}
@@ -1789,7 +1960,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(699); match(T__82);
+			setState(699);
+			match(T__21);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1827,12 +1999,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(701); match(T__35);
+			setState(701);
+			match(T__22);
 			setState(703);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,28,_ctx) ) {
 			case 1:
 				{
-				setState(702); expression();
+				setState(702);
+				expression();
 				}
 				break;
 			}
@@ -1873,8 +2048,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(705); match(T__16);
-			setState(706); expression();
+			setState(705);
+			match(T__23);
+			setState(706);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1912,8 +2089,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(708); match(T__99);
-			setState(709); codeBlock();
+			setState(708);
+			match(T__24);
+			setState(709);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1954,13 +2133,17 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(711); match(T__63);
-			setState(712); codeBlock();
+			setState(711);
+			match(T__25);
+			setState(712);
+			codeBlock();
 			setState(714);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,29,_ctx) ) {
 			case 1:
 				{
-				setState(713); catchClauses();
+				setState(713);
+				catchClauses();
 				}
 				break;
 			}
@@ -2004,12 +2187,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(716); catchClause();
+			setState(716);
+			catchClause();
 			setState(718);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,30,_ctx) ) {
 			case 1:
 				{
-				setState(717); catchClauses();
+				setState(717);
+				catchClauses();
 				}
 				break;
 			}
@@ -2027,11 +2213,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class CatchClauseContext extends ParserRuleContext {
-		public PatternContext pattern() {
-			return getRuleContext(PatternContext.class,0);
-		}
 		public CodeBlockContext codeBlock() {
 			return getRuleContext(CodeBlockContext.class,0);
+		}
+		public PatternContext pattern() {
+			return getRuleContext(PatternContext.class,0);
 		}
 		public WhereClauseContext whereClause() {
 			return getRuleContext(WhereClauseContext.class,0);
@@ -2057,24 +2243,30 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(720); match(T__38);
+			setState(720);
+			match(T__5);
 			setState(722);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,31,_ctx) ) {
 			case 1:
 				{
-				setState(721); pattern(0);
+				setState(721);
+				pattern(0);
 				}
 				break;
 			}
 			setState(725);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__6) {
+			if (_la==T__28) {
 				{
-				setState(724); whereClause();
+				setState(724);
+				whereClause();
 				}
 			}
 
-			setState(727); codeBlock();
+			setState(727);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2089,11 +2281,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ConditionListContext extends ParserRuleContext {
-		public ConditionContext condition(int i) {
-			return getRuleContext(ConditionContext.class,i);
-		}
 		public List<ConditionContext> condition() {
 			return getRuleContexts(ConditionContext.class);
+		}
+		public ConditionContext condition(int i) {
+			return getRuleContext(ConditionContext.class,i);
 		}
 		public ConditionListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2116,15 +2308,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(729); condition();
+			setState(729);
+			condition();
 			setState(734);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(730); match(T__130);
-				setState(731); condition();
+				setState(730);
+				match(T__17);
+				setState(731);
+				condition();
 				}
 				}
 				setState(736);
@@ -2145,11 +2340,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ConditionContext extends ParserRuleContext {
-		public CaseConditionContext caseCondition() {
-			return getRuleContext(CaseConditionContext.class,0);
-		}
 		public AvailabilityConditionContext availabilityCondition() {
 			return getRuleContext(AvailabilityConditionContext.class,0);
+		}
+		public CaseConditionContext caseCondition() {
+			return getRuleContext(CaseConditionContext.class,0);
 		}
 		public OptionalBindingConditionContext optionalBindingCondition() {
 			return getRuleContext(OptionalBindingConditionContext.class,0);
@@ -2176,29 +2371,34 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 68, RULE_condition);
 		try {
 			setState(741);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,34,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(737); availabilityCondition();
+				setState(737);
+				availabilityCondition();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(738); caseCondition();
+				setState(738);
+				caseCondition();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(739); optionalBindingCondition();
+				setState(739);
+				optionalBindingCondition();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(740); expression();
+				setState(740);
+				expression();
 				}
 				break;
 			}
@@ -2241,9 +2441,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(743); match(T__18);
-			setState(744); pattern(0);
-			setState(745); initializer();
+			setState(743);
+			match(T__7);
+			setState(744);
+			pattern(0);
+			setState(745);
+			initializer();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2287,12 +2490,18 @@ public class Swift3Parser extends Parser {
 			{
 			setState(747);
 			_la = _input.LA(1);
-			if ( !(_la==T__126 || _la==T__47) ) {
+			if ( !(_la==T__26 || _la==T__27) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
-			setState(748); pattern(0);
-			setState(749); initializer();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			setState(748);
+			pattern(0);
+			setState(749);
+			initializer();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2330,8 +2539,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(751); match(T__6);
-			setState(752); whereExpression();
+			setState(751);
+			match(T__28);
+			setState(752);
+			whereExpression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2369,7 +2580,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(754); expression();
+			setState(754);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2407,10 +2619,14 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(756); match(T__20);
-			setState(757); match(T__64);
-			setState(758); availabilityArguments();
-			setState(759); match(T__78);
+			setState(756);
+			match(T__29);
+			setState(757);
+			match(T__30);
+			setState(758);
+			availabilityArguments();
+			setState(759);
+			match(T__31);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2428,11 +2644,11 @@ public class Swift3Parser extends Parser {
 		public AvailabilityArgumentContext availabilityArgument() {
 			return getRuleContext(AvailabilityArgumentContext.class,0);
 		}
-		public AvailabilityArgumentsContext availabilityArguments(int i) {
-			return getRuleContext(AvailabilityArgumentsContext.class,i);
-		}
 		public List<AvailabilityArgumentsContext> availabilityArguments() {
 			return getRuleContexts(AvailabilityArgumentsContext.class);
+		}
+		public AvailabilityArgumentsContext availabilityArguments(int i) {
+			return getRuleContext(AvailabilityArgumentsContext.class,i);
 		}
 		public AvailabilityArgumentsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2455,16 +2671,19 @@ public class Swift3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(761); availabilityArgument();
+			setState(761);
+			availabilityArgument();
 			setState(766);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,35,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(762); match(T__130);
-					setState(763); availabilityArguments();
+					setState(762);
+					match(T__17);
+					setState(763);
+					availabilityArguments();
 					}
 					} 
 				}
@@ -2486,11 +2705,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class AvailabilityArgumentContext extends ParserRuleContext {
-		public PlatformVersionContext platformVersion() {
-			return getRuleContext(PlatformVersionContext.class,0);
-		}
 		public PlatformNameContext platformName() {
 			return getRuleContext(PlatformNameContext.class,0);
+		}
+		public PlatformVersionContext platformVersion() {
+			return getRuleContext(PlatformVersionContext.class,0);
 		}
 		public AvailabilityArgumentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2511,25 +2730,29 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 82, RULE_availabilityArgument);
 		try {
 			setState(773);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__91:
-			case T__69:
-			case T__58:
-			case T__53:
-			case T__51:
+			case T__33:
+			case T__34:
+			case T__35:
 			case T__36:
-			case T__17:
-			case T__9:
+			case T__37:
+			case T__38:
+			case T__39:
+			case T__40:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(769); platformName();
-				setState(770); platformVersion();
+				setState(769);
+				platformName();
+				setState(770);
+				platformVersion();
 				}
 				break;
-			case T__94:
+			case T__32:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(772); match(T__94);
+				setState(772);
+				match(T__32);
 				}
 				break;
 			default:
@@ -2571,10 +2794,14 @@ public class Swift3Parser extends Parser {
 			{
 			setState(775);
 			_la = _input.LA(1);
-			if ( !(_la==T__91 || ((((_la - 78)) & ~0x3f) == 0 && ((1L << (_la - 78)) & ((1L << (T__69 - 78)) | (1L << (T__58 - 78)) | (1L << (T__53 - 78)) | (1L << (T__51 - 78)) | (1L << (T__36 - 78)) | (1L << (T__17 - 78)) | (1L << (T__9 - 78)))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2589,8 +2816,8 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class PlatformVersionContext extends ParserRuleContext {
-		public TerminalNode DecimalLiteral() { return getToken(Swift3Parser.DecimalLiteral, 0); }
 		public TerminalNode VersionLiteral() { return getToken(Swift3Parser.VersionLiteral, 0); }
+		public TerminalNode DecimalLiteral() { return getToken(Swift3Parser.DecimalLiteral, 0); }
 		public TerminalNode FloatingPointLiteral() { return getToken(Swift3Parser.FloatingPointLiteral, 0); }
 		public PlatformVersionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2618,7 +2845,11 @@ public class Swift3Parser extends Parser {
 			if ( !(((((_la - 157)) & ~0x3f) == 0 && ((1L << (_la - 157)) & ((1L << (DecimalLiteral - 157)) | (1L << (FloatingPointLiteral - 157)) | (1L << (VersionLiteral - 157)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2660,17 +2891,22 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(779); match(T__119);
-			setState(780); genericParameterList();
+			setState(779);
+			match(T__41);
+			setState(780);
+			genericParameterList();
 			setState(782);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__6) {
+			if (_la==T__28) {
 				{
-				setState(781); requirementClause();
+				setState(781);
+				requirementClause();
 				}
 			}
 
-			setState(784); match(T__10);
+			setState(784);
+			match(T__42);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2712,15 +2948,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(786); genericParameter();
+			setState(786);
+			genericParameter();
 			setState(791);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(787); match(T__130);
-				setState(788); genericParameter();
+				setState(787);
+				match(T__17);
+				setState(788);
+				genericParameter();
 				}
 				}
 				setState(793);
@@ -2741,14 +2980,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class GenericParameterContext extends ParserRuleContext {
-		public ProtocolCompositionTypeContext protocolCompositionType() {
-			return getRuleContext(ProtocolCompositionTypeContext.class,0);
-		}
 		public TypeNameContext typeName() {
 			return getRuleContext(TypeNameContext.class,0);
 		}
 		public TypeIdentifierContext typeIdentifier() {
 			return getRuleContext(TypeIdentifierContext.class,0);
+		}
+		public ProtocolCompositionTypeContext protocolCompositionType() {
+			return getRuleContext(ProtocolCompositionTypeContext.class,0);
 		}
 		public GenericParameterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2769,27 +3008,35 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 92, RULE_genericParameter);
 		try {
 			setState(803);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,39,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(794); typeName();
+				setState(794);
+				typeName();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(795); typeName();
-				setState(796); match(T__85);
-				setState(797); typeIdentifier();
+				setState(795);
+				typeName();
+				setState(796);
+				match(T__1);
+				setState(797);
+				typeIdentifier();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(799); typeName();
-				setState(800); match(T__85);
-				setState(801); protocolCompositionType();
+				setState(799);
+				typeName();
+				setState(800);
+				match(T__1);
+				setState(801);
+				protocolCompositionType();
 				}
 				break;
 			}
@@ -2829,8 +3076,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(805); match(T__6);
-			setState(806); requirementList();
+			setState(805);
+			match(T__28);
+			setState(806);
+			requirementList();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2872,15 +3121,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(808); requirement();
+			setState(808);
+			requirement();
 			setState(813);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(809); match(T__130);
-				setState(810); requirement();
+				setState(809);
+				match(T__17);
+				setState(810);
+				requirement();
 				}
 				}
 				setState(815);
@@ -2926,17 +3178,20 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 98, RULE_requirement);
 		try {
 			setState(818);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,41,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(816); conformanceRequirement();
+				setState(816);
+				conformanceRequirement();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(817); sameTypeRequirement();
+				setState(817);
+				sameTypeRequirement();
 				}
 				break;
 			}
@@ -2953,14 +3208,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ConformanceRequirementContext extends ParserRuleContext {
-		public ProtocolCompositionTypeContext protocolCompositionType() {
-			return getRuleContext(ProtocolCompositionTypeContext.class,0);
-		}
 		public List<TypeIdentifierContext> typeIdentifier() {
 			return getRuleContexts(TypeIdentifierContext.class);
 		}
 		public TypeIdentifierContext typeIdentifier(int i) {
 			return getRuleContext(TypeIdentifierContext.class,i);
+		}
+		public ProtocolCompositionTypeContext protocolCompositionType() {
+			return getRuleContext(ProtocolCompositionTypeContext.class,0);
 		}
 		public ConformanceRequirementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2981,21 +3236,28 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 100, RULE_conformanceRequirement);
 		try {
 			setState(828);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,42,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(820); typeIdentifier();
-				setState(821); match(T__85);
-				setState(822); typeIdentifier();
+				setState(820);
+				typeIdentifier();
+				setState(821);
+				match(T__1);
+				setState(822);
+				typeIdentifier();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(824); typeIdentifier();
-				setState(825); match(T__85);
-				setState(826); protocolCompositionType();
+				setState(824);
+				typeIdentifier();
+				setState(825);
+				match(T__1);
+				setState(826);
+				protocolCompositionType();
 				}
 				break;
 			}
@@ -3038,9 +3300,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(830); typeIdentifier();
-			setState(831); match(T__11);
-			setState(832); sType(0);
+			setState(830);
+			typeIdentifier();
+			setState(831);
+			match(T__43);
+			setState(832);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3078,9 +3343,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(834); match(T__119);
-			setState(835); genericArgumentList();
-			setState(836); match(T__10);
+			setState(834);
+			match(T__41);
+			setState(835);
+			genericArgumentList();
+			setState(836);
+			match(T__42);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3095,11 +3363,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class GenericArgumentListContext extends ParserRuleContext {
-		public GenericArgumentContext genericArgument(int i) {
-			return getRuleContext(GenericArgumentContext.class,i);
-		}
 		public List<GenericArgumentContext> genericArgument() {
 			return getRuleContexts(GenericArgumentContext.class);
+		}
+		public GenericArgumentContext genericArgument(int i) {
+			return getRuleContext(GenericArgumentContext.class,i);
 		}
 		public GenericArgumentListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3122,15 +3390,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(838); genericArgument();
+			setState(838);
+			genericArgument();
 			setState(843);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(839); match(T__130);
-				setState(840); genericArgument();
+				setState(839);
+				match(T__17);
+				setState(840);
+				genericArgument();
 				}
 				}
 				setState(845);
@@ -3174,7 +3445,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(846); sType(0);
+			setState(846);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3189,50 +3461,50 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class DeclarationContext extends ParserRuleContext {
-		public VariableDeclarationContext variableDeclaration() {
-			return getRuleContext(VariableDeclarationContext.class,0);
-		}
-		public EnumDeclarationContext enumDeclaration() {
-			return getRuleContext(EnumDeclarationContext.class,0);
-		}
 		public ImportDeclarationContext importDeclaration() {
 			return getRuleContext(ImportDeclarationContext.class,0);
 		}
 		public ConstantDeclarationContext constantDeclaration() {
 			return getRuleContext(ConstantDeclarationContext.class,0);
 		}
-		public CompilerControlStatementContext compilerControlStatement() {
-			return getRuleContext(CompilerControlStatementContext.class,0);
+		public VariableDeclarationContext variableDeclaration() {
+			return getRuleContext(VariableDeclarationContext.class,0);
 		}
 		public TypealiasDeclarationContext typealiasDeclaration() {
 			return getRuleContext(TypealiasDeclarationContext.class,0);
 		}
-		public OperatorDeclarationContext operatorDeclaration() {
-			return getRuleContext(OperatorDeclarationContext.class,0);
-		}
 		public FunctionDeclarationContext functionDeclaration() {
 			return getRuleContext(FunctionDeclarationContext.class,0);
 		}
-		public ClassDeclarationContext classDeclaration() {
-			return getRuleContext(ClassDeclarationContext.class,0);
-		}
-		public DeinitializerDeclarationContext deinitializerDeclaration() {
-			return getRuleContext(DeinitializerDeclarationContext.class,0);
-		}
-		public ProtocolDeclarationContext protocolDeclaration() {
-			return getRuleContext(ProtocolDeclarationContext.class,0);
+		public EnumDeclarationContext enumDeclaration() {
+			return getRuleContext(EnumDeclarationContext.class,0);
 		}
 		public StructDeclarationContext structDeclaration() {
 			return getRuleContext(StructDeclarationContext.class,0);
 		}
+		public ClassDeclarationContext classDeclaration() {
+			return getRuleContext(ClassDeclarationContext.class,0);
+		}
+		public ProtocolDeclarationContext protocolDeclaration() {
+			return getRuleContext(ProtocolDeclarationContext.class,0);
+		}
 		public InitializerDeclarationContext initializerDeclaration() {
 			return getRuleContext(InitializerDeclarationContext.class,0);
+		}
+		public DeinitializerDeclarationContext deinitializerDeclaration() {
+			return getRuleContext(DeinitializerDeclarationContext.class,0);
+		}
+		public ExtensionDeclarationContext extensionDeclaration() {
+			return getRuleContext(ExtensionDeclarationContext.class,0);
 		}
 		public SubscriptDeclarationContext subscriptDeclaration() {
 			return getRuleContext(SubscriptDeclarationContext.class,0);
 		}
-		public ExtensionDeclarationContext extensionDeclaration() {
-			return getRuleContext(ExtensionDeclarationContext.class,0);
+		public OperatorDeclarationContext operatorDeclaration() {
+			return getRuleContext(OperatorDeclarationContext.class,0);
+		}
+		public CompilerControlStatementContext compilerControlStatement() {
+			return getRuleContext(CompilerControlStatementContext.class,0);
 		}
 		public DeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3253,16 +3525,20 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 110, RULE_declaration);
 		try {
 			setState(908);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,59,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(848); importDeclaration();
+				setState(848);
+				importDeclaration();
 				setState(850);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,44,_ctx) ) {
 				case 1:
 					{
-					setState(849); match(T__104);
+					setState(849);
+					match(T__0);
 					}
 					break;
 				}
@@ -3271,12 +3547,15 @@ public class Swift3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(852); constantDeclaration();
+				setState(852);
+				constantDeclaration();
 				setState(854);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,45,_ctx) ) {
 				case 1:
 					{
-					setState(853); match(T__104);
+					setState(853);
+					match(T__0);
 					}
 					break;
 				}
@@ -3285,12 +3564,15 @@ public class Swift3Parser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(856); variableDeclaration();
+				setState(856);
+				variableDeclaration();
 				setState(858);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,46,_ctx) ) {
 				case 1:
 					{
-					setState(857); match(T__104);
+					setState(857);
+					match(T__0);
 					}
 					break;
 				}
@@ -3299,12 +3581,15 @@ public class Swift3Parser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(860); typealiasDeclaration();
+				setState(860);
+				typealiasDeclaration();
 				setState(862);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,47,_ctx) ) {
 				case 1:
 					{
-					setState(861); match(T__104);
+					setState(861);
+					match(T__0);
 					}
 					break;
 				}
@@ -3313,12 +3598,15 @@ public class Swift3Parser extends Parser {
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(864); functionDeclaration();
+				setState(864);
+				functionDeclaration();
 				setState(866);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,48,_ctx) ) {
 				case 1:
 					{
-					setState(865); match(T__104);
+					setState(865);
+					match(T__0);
 					}
 					break;
 				}
@@ -3327,12 +3615,15 @@ public class Swift3Parser extends Parser {
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(868); enumDeclaration();
+				setState(868);
+				enumDeclaration();
 				setState(870);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,49,_ctx) ) {
 				case 1:
 					{
-					setState(869); match(T__104);
+					setState(869);
+					match(T__0);
 					}
 					break;
 				}
@@ -3341,12 +3632,15 @@ public class Swift3Parser extends Parser {
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(872); structDeclaration();
+				setState(872);
+				structDeclaration();
 				setState(874);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,50,_ctx) ) {
 				case 1:
 					{
-					setState(873); match(T__104);
+					setState(873);
+					match(T__0);
 					}
 					break;
 				}
@@ -3355,12 +3649,15 @@ public class Swift3Parser extends Parser {
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(876); classDeclaration();
+				setState(876);
+				classDeclaration();
 				setState(878);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,51,_ctx) ) {
 				case 1:
 					{
-					setState(877); match(T__104);
+					setState(877);
+					match(T__0);
 					}
 					break;
 				}
@@ -3369,12 +3666,15 @@ public class Swift3Parser extends Parser {
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(880); protocolDeclaration();
+				setState(880);
+				protocolDeclaration();
 				setState(882);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,52,_ctx) ) {
 				case 1:
 					{
-					setState(881); match(T__104);
+					setState(881);
+					match(T__0);
 					}
 					break;
 				}
@@ -3383,12 +3683,15 @@ public class Swift3Parser extends Parser {
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(884); initializerDeclaration();
+				setState(884);
+				initializerDeclaration();
 				setState(886);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,53,_ctx) ) {
 				case 1:
 					{
-					setState(885); match(T__104);
+					setState(885);
+					match(T__0);
 					}
 					break;
 				}
@@ -3397,12 +3700,15 @@ public class Swift3Parser extends Parser {
 			case 11:
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(888); deinitializerDeclaration();
+				setState(888);
+				deinitializerDeclaration();
 				setState(890);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,54,_ctx) ) {
 				case 1:
 					{
-					setState(889); match(T__104);
+					setState(889);
+					match(T__0);
 					}
 					break;
 				}
@@ -3411,12 +3717,15 @@ public class Swift3Parser extends Parser {
 			case 12:
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(892); extensionDeclaration();
+				setState(892);
+				extensionDeclaration();
 				setState(894);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,55,_ctx) ) {
 				case 1:
 					{
-					setState(893); match(T__104);
+					setState(893);
+					match(T__0);
 					}
 					break;
 				}
@@ -3425,12 +3734,15 @@ public class Swift3Parser extends Parser {
 			case 13:
 				enterOuterAlt(_localctx, 13);
 				{
-				setState(896); subscriptDeclaration();
+				setState(896);
+				subscriptDeclaration();
 				setState(898);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,56,_ctx) ) {
 				case 1:
 					{
-					setState(897); match(T__104);
+					setState(897);
+					match(T__0);
 					}
 					break;
 				}
@@ -3439,12 +3751,15 @@ public class Swift3Parser extends Parser {
 			case 14:
 				enterOuterAlt(_localctx, 14);
 				{
-				setState(900); operatorDeclaration();
+				setState(900);
+				operatorDeclaration();
 				setState(902);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,57,_ctx) ) {
 				case 1:
 					{
-					setState(901); match(T__104);
+					setState(901);
+					match(T__0);
 					}
 					break;
 				}
@@ -3453,12 +3768,15 @@ public class Swift3Parser extends Parser {
 			case 15:
 				enterOuterAlt(_localctx, 15);
 				{
-				setState(904); compilerControlStatement();
+				setState(904);
+				compilerControlStatement();
 				setState(906);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,58,_ctx) ) {
 				case 1:
 					{
-					setState(905); match(T__104);
+					setState(905);
+					match(T__0);
 					}
 					break;
 				}
@@ -3511,13 +3829,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(910); declaration();
+				setState(910);
+				declaration();
 				}
 				}
 				setState(913); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)) | (1L << (T__0 - 133)))) != 0) );
+			} while ( ((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (T__26 - 27)) | (1L << (T__27 - 27)) | (1L << (T__44 - 27)) | (1L << (T__45 - 27)) | (1L << (T__46 - 27)) | (1L << (T__47 - 27)) | (1L << (T__48 - 27)) | (1L << (T__49 - 27)) | (1L << (T__50 - 27)) | (1L << (T__51 - 27)) | (1L << (T__52 - 27)) | (1L << (T__53 - 27)) | (1L << (T__54 - 27)) | (1L << (T__55 - 27)) | (1L << (T__56 - 27)) | (1L << (T__57 - 27)) | (1L << (T__58 - 27)) | (1L << (T__61 - 27)) | (1L << (T__62 - 27)) | (1L << (T__64 - 27)) | (1L << (T__65 - 27)) | (1L << (T__66 - 27)) | (1L << (T__67 - 27)) | (1L << (T__68 - 27)) | (1L << (T__69 - 27)) | (1L << (T__70 - 27)) | (1L << (T__71 - 27)) | (1L << (T__72 - 27)) | (1L << (T__73 - 27)) | (1L << (T__83 - 27)) | (1L << (T__85 - 27)) | (1L << (T__88 - 27)) | (1L << (T__89 - 27)))) != 0) || ((((_la - 91)) & ~0x3f) == 0 && ((1L << (_la - 91)) & ((1L << (T__90 - 91)) | (1L << (T__99 - 91)) | (1L << (T__130 - 91)) | (1L << (T__140 - 91)))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -3565,13 +3884,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(915); declarationModifier();
+				setState(915);
+				declarationModifier();
 				}
 				}
 				setState(918); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0) );
+			} while ( ((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -3608,125 +3928,151 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 116, RULE_declarationModifier);
 		try {
 			setState(945);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,62,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(920); match(T__105);
+				setState(920);
+				match(T__44);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(921); match(T__14);
+				setState(921);
+				match(T__45);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(922); match(T__89);
+				setState(922);
+				match(T__46);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(923); match(T__46);
+				setState(923);
+				match(T__47);
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(924); match(T__45);
+				setState(924);
+				match(T__48);
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(925); match(T__109);
+				setState(925);
+				match(T__49);
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(926); match(T__12);
+				setState(926);
+				match(T__50);
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(927); match(T__2);
+				setState(927);
+				match(T__51);
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(928); match(T__101);
+				setState(928);
+				match(T__52);
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(929); match(T__134);
+				setState(929);
+				match(T__53);
 				}
 				break;
 			case 11:
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(930); match(T__136);
+				setState(930);
+				match(T__54);
 				}
 				break;
 			case 12:
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(931); match(T__75);
+				setState(931);
+				match(T__55);
 				}
 				break;
 			case 13:
 				enterOuterAlt(_localctx, 13);
 				{
-				setState(932); match(T__132);
+				setState(932);
+				match(T__56);
 				}
 				break;
 			case 14:
 				enterOuterAlt(_localctx, 14);
 				{
-				setState(933); match(T__48);
+				setState(933);
+				match(T__57);
 				}
 				break;
 			case 15:
 				enterOuterAlt(_localctx, 15);
 				{
-				setState(934); match(T__49);
+				setState(934);
+				match(T__58);
 				}
 				break;
 			case 16:
 				enterOuterAlt(_localctx, 16);
 				{
-				setState(935); match(T__49);
-				setState(936); match(T__64);
-				setState(937); match(T__72);
-				setState(938); match(T__78);
+				setState(935);
+				match(T__58);
+				setState(936);
+				match(T__30);
+				setState(937);
+				match(T__59);
+				setState(938);
+				match(T__31);
 				}
 				break;
 			case 17:
 				enterOuterAlt(_localctx, 17);
 				{
-				setState(939); match(T__49);
-				setState(940); match(T__64);
-				setState(941); match(T__77);
-				setState(942); match(T__78);
+				setState(939);
+				match(T__58);
+				setState(940);
+				match(T__30);
+				setState(941);
+				match(T__60);
+				setState(942);
+				match(T__31);
 				}
 				break;
 			case 18:
 				enterOuterAlt(_localctx, 18);
 				{
-				setState(943); match(T__92);
+				setState(943);
+				match(T__61);
 				}
 				break;
 			case 19:
 				enterOuterAlt(_localctx, 19);
 				{
-				setState(944); accessLevelModifier();
+				setState(944);
+				accessLevelModifier();
 				}
 				break;
 			}
@@ -3762,80 +4108,106 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 118, RULE_accessLevelModifier);
 		try {
 			setState(972);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,63,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(947); match(T__71);
+				setState(947);
+				match(T__62);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(948); match(T__71);
-				setState(949); match(T__64);
-				setState(950); match(T__142);
-				setState(951); match(T__78);
+				setState(948);
+				match(T__62);
+				setState(949);
+				match(T__30);
+				setState(950);
+				match(T__63);
+				setState(951);
+				match(T__31);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(952); match(T__50);
+				setState(952);
+				match(T__64);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(953); match(T__50);
-				setState(954); match(T__64);
-				setState(955); match(T__142);
-				setState(956); match(T__78);
+				setState(953);
+				match(T__64);
+				setState(954);
+				match(T__30);
+				setState(955);
+				match(T__63);
+				setState(956);
+				match(T__31);
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(957); match(T__135);
+				setState(957);
+				match(T__65);
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(958); match(T__135);
-				setState(959); match(T__64);
-				setState(960); match(T__142);
-				setState(961); match(T__78);
+				setState(958);
+				match(T__65);
+				setState(959);
+				match(T__30);
+				setState(960);
+				match(T__63);
+				setState(961);
+				match(T__31);
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(962); match(T__83);
+				setState(962);
+				match(T__66);
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(963); match(T__83);
-				setState(964); match(T__64);
-				setState(965); match(T__142);
-				setState(966); match(T__78);
+				setState(963);
+				match(T__66);
+				setState(964);
+				match(T__30);
+				setState(965);
+				match(T__63);
+				setState(966);
+				match(T__31);
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(967); match(T__80);
+				setState(967);
+				match(T__67);
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(968); match(T__80);
-				setState(969); match(T__64);
-				setState(970); match(T__142);
-				setState(971); match(T__78);
+				setState(968);
+				match(T__67);
+				setState(969);
+				match(T__30);
+				setState(970);
+				match(T__63);
+				setState(971);
+				match(T__31);
 				}
 				break;
 			}
@@ -3852,11 +4224,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class AccessLevelModifiersContext extends ParserRuleContext {
-		public AccessLevelModifierContext accessLevelModifier(int i) {
-			return getRuleContext(AccessLevelModifierContext.class,i);
-		}
 		public List<AccessLevelModifierContext> accessLevelModifier() {
 			return getRuleContexts(AccessLevelModifierContext.class);
+		}
+		public AccessLevelModifierContext accessLevelModifier(int i) {
+			return getRuleContext(AccessLevelModifierContext.class,i);
 		}
 		public AccessLevelModifiersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3885,13 +4257,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(974); accessLevelModifier();
+				setState(974);
+				accessLevelModifier();
 				}
 				}
 				setState(977); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0) );
+			} while ( ((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -3930,16 +4303,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(979); match(T__67);
+			setState(979);
+			match(T__15);
 			setState(981);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__101) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__52 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__99 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__104 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__140 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 				{
-				setState(980); statements();
+				setState(980);
+				statements();
 				}
 			}
 
-			setState(983); match(T__103);
+			setState(983);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3954,14 +4331,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ImportDeclarationContext extends ParserRuleContext {
+		public ImportPathContext importPath() {
+			return getRuleContext(ImportPathContext.class,0);
+		}
 		public AttributesContext attributes() {
 			return getRuleContext(AttributesContext.class,0);
 		}
 		public ImportKindContext importKind() {
 			return getRuleContext(ImportKindContext.class,0);
-		}
-		public ImportPathContext importPath() {
-			return getRuleContext(ImportPathContext.class,0);
 		}
 		public ImportDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3985,23 +4362,29 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(986);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(985); attributes();
+				setState(985);
+				attributes();
 				}
 			}
 
-			setState(988); match(T__0);
+			setState(988);
+			match(T__68);
 			setState(990);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,67,_ctx) ) {
 			case 1:
 				{
-				setState(989); importKind();
+				setState(989);
+				importKind();
 				}
 				break;
 			}
-			setState(992); importPath();
+			setState(992);
+			importPath();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4039,10 +4422,14 @@ public class Swift3Parser extends Parser {
 			{
 			setState(994);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__126) | (1L << T__113) | (1L << T__105))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (T__76 - 71)) | (1L << (T__74 - 71)) | (1L << (T__47 - 71)) | (1L << (T__41 - 71)) | (1L << (T__28 - 71)))) != 0)) ) {
+			if ( !(((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (T__26 - 27)) | (1L << (T__27 - 27)) | (1L << (T__44 - 27)) | (1L << (T__69 - 27)) | (1L << (T__70 - 27)) | (1L << (T__71 - 27)) | (1L << (T__72 - 27)) | (1L << (T__73 - 27)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -4082,19 +4469,24 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 128, RULE_importPath);
 		try {
 			setState(1001);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,68,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(996); importPathIdentifier();
+				setState(996);
+				importPathIdentifier();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(997); importPathIdentifier();
-				setState(998); match(T__22);
-				setState(999); importPath();
+				setState(997);
+				importPathIdentifier();
+				setState(998);
+				match(T__2);
+				setState(999);
+				importPath();
 				}
 				break;
 			}
@@ -4111,11 +4503,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ImportPathIdentifierContext extends ParserRuleContext {
-		public OperatorContext operator() {
-			return getRuleContext(OperatorContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
+		}
+		public OperatorContext operator() {
+			return getRuleContext(OperatorContext.class,0);
 		}
 		public ImportPathIdentifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4136,78 +4528,81 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 130, RULE_importPathIdentifier);
 		try {
 			setState(1005);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__145:
-			case T__144:
-			case T__143:
-			case T__142:
-			case T__141:
-			case T__140:
-			case T__136:
-			case T__134:
-			case T__133:
-			case T__132:
-			case T__129:
-			case T__126:
-			case T__123:
-			case T__115:
-			case T__112:
-			case T__109:
-			case T__101:
-			case T__93:
-			case T__92:
-			case T__89:
-			case T__88:
-			case T__86:
-			case T__75:
-			case T__72:
-			case T__65:
-			case T__59:
-			case T__53:
-			case T__51:
-			case T__49:
-			case T__46:
-			case T__45:
-			case T__43:
-			case T__37:
-			case T__36:
+			case T__18:
+			case T__27:
+			case T__33:
 			case T__34:
-			case T__31:
-			case T__25:
-			case T__24:
-			case T__23:
-			case T__17:
-			case T__14:
-			case T__12:
-			case T__9:
-			case T__7:
-			case T__2:
+			case T__35:
+			case T__37:
+			case T__39:
+			case T__45:
+			case T__46:
+			case T__47:
+			case T__48:
+			case T__49:
+			case T__50:
+			case T__51:
+			case T__52:
+			case T__53:
+			case T__54:
+			case T__55:
+			case T__56:
+			case T__58:
+			case T__59:
+			case T__61:
+			case T__63:
+			case T__75:
+			case T__76:
+			case T__77:
+			case T__83:
+			case T__91:
+			case T__92:
+			case T__93:
+			case T__94:
+			case T__95:
+			case T__96:
+			case T__124:
+			case T__125:
+			case T__127:
+			case T__133:
+			case T__134:
+			case T__136:
+			case T__137:
+			case T__138:
+			case T__139:
+			case T__141:
+			case T__142:
+			case T__146:
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1003); identifier();
+				setState(1003);
+				identifier();
 				}
 				break;
-			case T__138:
-			case T__137:
-			case T__122:
-			case T__119:
-			case T__94:
-			case T__81:
+			case T__32:
+			case T__41:
 			case T__42:
-			case T__33:
-			case T__29:
-			case T__26:
-			case T__19:
-			case T__15:
-			case T__11:
-			case T__10:
-			case T__1:
+			case T__43:
+			case T__74:
+			case T__80:
+			case T__81:
+			case T__86:
+			case T__87:
+			case T__102:
+			case T__104:
+			case T__106:
+			case T__121:
+			case T__122:
+			case T__123:
 			case OperatorHead:
 			case DotOperatorHead:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1004); operator();
+				setState(1004);
+				operator();
 				}
 				break;
 			default:
@@ -4226,11 +4621,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ConstantDeclarationContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public PatternInitializerListContext patternInitializerList() {
 			return getRuleContext(PatternInitializerListContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public DeclarationModifiersContext declarationModifiers() {
 			return getRuleContext(DeclarationModifiersContext.class,0);
@@ -4257,23 +4652,29 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1008);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1007); attributes();
+				setState(1007);
+				attributes();
 				}
 			}
 
 			setState(1011);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0)) {
 				{
-				setState(1010); declarationModifiers();
+				setState(1010);
+				declarationModifiers();
 				}
 			}
 
-			setState(1013); match(T__47);
-			setState(1014); patternInitializerList();
+			setState(1013);
+			match(T__26);
+			setState(1014);
+			patternInitializerList();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4288,11 +4689,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class PatternInitializerListContext extends ParserRuleContext {
-		public PatternInitializerContext patternInitializer(int i) {
-			return getRuleContext(PatternInitializerContext.class,i);
-		}
 		public List<PatternInitializerContext> patternInitializer() {
 			return getRuleContexts(PatternInitializerContext.class);
+		}
+		public PatternInitializerContext patternInitializer(int i) {
+			return getRuleContext(PatternInitializerContext.class,i);
 		}
 		public PatternInitializerListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4315,15 +4716,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1016); patternInitializer();
+			setState(1016);
+			patternInitializer();
 			setState(1021);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(1017); match(T__130);
-				setState(1018); patternInitializer();
+				setState(1017);
+				match(T__17);
+				setState(1018);
+				patternInitializer();
 				}
 				}
 				setState(1023);
@@ -4370,12 +4774,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1024); pattern(0);
+			setState(1024);
+			pattern(0);
 			setState(1026);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,73,_ctx) ) {
 			case 1:
 				{
-				setState(1025); initializer();
+				setState(1025);
+				initializer();
 				}
 				break;
 			}
@@ -4416,8 +4823,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1028); match(T__137);
-			setState(1029); expression();
+			setState(1028);
+			match(T__74);
+			setState(1029);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4432,32 +4841,32 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class VariableDeclarationContext extends ParserRuleContext {
-		public VariableNameContext variableName() {
-			return getRuleContext(VariableNameContext.class,0);
-		}
-		public GetterSetterBlockContext getterSetterBlock() {
-			return getRuleContext(GetterSetterBlockContext.class,0);
-		}
 		public VariableDeclarationHeadContext variableDeclarationHead() {
 			return getRuleContext(VariableDeclarationHeadContext.class,0);
+		}
+		public VariableNameContext variableName() {
+			return getRuleContext(VariableNameContext.class,0);
 		}
 		public TypeAnnotationContext typeAnnotation() {
 			return getRuleContext(TypeAnnotationContext.class,0);
 		}
-		public WillSetDidSetBlockContext willSetDidSetBlock() {
-			return getRuleContext(WillSetDidSetBlockContext.class,0);
-		}
-		public PatternInitializerListContext patternInitializerList() {
-			return getRuleContext(PatternInitializerListContext.class,0);
-		}
-		public CodeBlockContext codeBlock() {
-			return getRuleContext(CodeBlockContext.class,0);
+		public GetterSetterBlockContext getterSetterBlock() {
+			return getRuleContext(GetterSetterBlockContext.class,0);
 		}
 		public GetterSetterKeywordBlockContext getterSetterKeywordBlock() {
 			return getRuleContext(GetterSetterKeywordBlockContext.class,0);
 		}
 		public InitializerContext initializer() {
 			return getRuleContext(InitializerContext.class,0);
+		}
+		public WillSetDidSetBlockContext willSetDidSetBlock() {
+			return getRuleContext(WillSetDidSetBlockContext.class,0);
+		}
+		public CodeBlockContext codeBlock() {
+			return getRuleContext(CodeBlockContext.class,0);
+		}
+		public PatternInitializerListContext patternInitializerList() {
+			return getRuleContext(PatternInitializerListContext.class,0);
 		}
 		public VariableDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4479,65 +4888,90 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1062);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,75,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1031); variableDeclarationHead();
-				setState(1032); variableName();
-				setState(1033); typeAnnotation();
-				setState(1034); getterSetterBlock();
+				setState(1031);
+				variableDeclarationHead();
+				setState(1032);
+				variableName();
+				setState(1033);
+				typeAnnotation();
+				setState(1034);
+				getterSetterBlock();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1036); variableDeclarationHead();
-				setState(1037); variableName();
-				setState(1038); typeAnnotation();
-				setState(1039); getterSetterKeywordBlock();
+				setState(1036);
+				variableDeclarationHead();
+				setState(1037);
+				variableName();
+				setState(1038);
+				typeAnnotation();
+				setState(1039);
+				getterSetterKeywordBlock();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1041); variableDeclarationHead();
-				setState(1042); variableName();
-				setState(1043); initializer();
-				setState(1044); willSetDidSetBlock();
+				setState(1041);
+				variableDeclarationHead();
+				setState(1042);
+				variableName();
+				setState(1043);
+				initializer();
+				setState(1044);
+				willSetDidSetBlock();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1046); variableDeclarationHead();
-				setState(1047); variableName();
-				setState(1048); typeAnnotation();
+				setState(1046);
+				variableDeclarationHead();
+				setState(1047);
+				variableName();
+				setState(1048);
+				typeAnnotation();
 				setState(1050);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__137) {
+				if (_la==T__74) {
 					{
-					setState(1049); initializer();
+					setState(1049);
+					initializer();
 					}
 				}
 
-				setState(1052); willSetDidSetBlock();
+				setState(1052);
+				willSetDidSetBlock();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1054); variableDeclarationHead();
-				setState(1055); variableName();
-				setState(1056); typeAnnotation();
-				setState(1057); codeBlock();
+				setState(1054);
+				variableDeclarationHead();
+				setState(1055);
+				variableName();
+				setState(1056);
+				typeAnnotation();
+				setState(1057);
+				codeBlock();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1059); variableDeclarationHead();
-				setState(1060); patternInitializerList();
+				setState(1059);
+				variableDeclarationHead();
+				setState(1060);
+				patternInitializerList();
 				}
 				break;
 			}
@@ -4582,22 +5016,27 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1065);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1064); attributes();
+				setState(1064);
+				attributes();
 				}
 			}
 
 			setState(1068);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0)) {
 				{
-				setState(1067); declarationModifiers();
+				setState(1067);
+				declarationModifiers();
 				}
 			}
 
-			setState(1070); match(T__126);
+			setState(1070);
+			match(T__27);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4635,7 +5074,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1072); identifier();
+			setState(1072);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4650,11 +5090,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class GetterSetterBlockContext extends ParserRuleContext {
-		public SetterClauseContext setterClause() {
-			return getRuleContext(SetterClauseContext.class,0);
-		}
 		public GetterClauseContext getterClause() {
 			return getRuleContext(GetterClauseContext.class,0);
+		}
+		public SetterClauseContext setterClause() {
+			return getRuleContext(SetterClauseContext.class,0);
 		}
 		public GetterSetterBlockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4676,30 +5116,40 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1086);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,79,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1074); match(T__67);
-				setState(1075); getterClause();
+				setState(1074);
+				match(T__15);
+				setState(1075);
+				getterClause();
 				setState(1077);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__142) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+				if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__63 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)) | (1L << (T__99 - 45)))) != 0)) {
 					{
-					setState(1076); setterClause();
+					setState(1076);
+					setterClause();
 					}
 				}
 
-				setState(1079); match(T__103);
+				setState(1079);
+				match(T__16);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1081); match(T__67);
-				setState(1082); setterClause();
-				setState(1083); getterClause();
-				setState(1084); match(T__103);
+				setState(1081);
+				match(T__15);
+				setState(1082);
+				setterClause();
+				setState(1083);
+				getterClause();
+				setState(1084);
+				match(T__16);
 				}
 				break;
 			}
@@ -4716,11 +5166,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class GetterClauseContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public CodeBlockContext codeBlock() {
 			return getRuleContext(CodeBlockContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public DeclarationModifiersContext declarationModifiers() {
 			return getRuleContext(DeclarationModifiersContext.class,0);
@@ -4747,23 +5197,29 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1089);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1088); attributes();
+				setState(1088);
+				attributes();
 				}
 			}
 
 			setState(1092);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0)) {
 				{
-				setState(1091); declarationModifiers();
+				setState(1091);
+				declarationModifiers();
 				}
 			}
 
-			setState(1094); match(T__65);
-			setState(1095); codeBlock();
+			setState(1094);
+			match(T__75);
+			setState(1095);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4778,17 +5234,17 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SetterClauseContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
-		public SetterNameContext setterName() {
-			return getRuleContext(SetterNameContext.class,0);
-		}
 		public CodeBlockContext codeBlock() {
 			return getRuleContext(CodeBlockContext.class,0);
 		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
+		}
 		public DeclarationModifiersContext declarationModifiers() {
 			return getRuleContext(DeclarationModifiersContext.class,0);
+		}
+		public SetterNameContext setterName() {
+			return getRuleContext(SetterNameContext.class,0);
 		}
 		public SetterClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4812,31 +5268,39 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1098);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1097); attributes();
+				setState(1097);
+				attributes();
 				}
 			}
 
 			setState(1101);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0)) {
 				{
-				setState(1100); declarationModifiers();
+				setState(1100);
+				declarationModifiers();
 				}
 			}
 
-			setState(1103); match(T__142);
+			setState(1103);
+			match(T__63);
 			setState(1105);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__64) {
+			if (_la==T__30) {
 				{
-				setState(1104); setterName();
+				setState(1104);
+				setterName();
 				}
 			}
 
-			setState(1107); codeBlock();
+			setState(1107);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4874,9 +5338,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1109); match(T__64);
-			setState(1110); identifier();
-			setState(1111); match(T__78);
+			setState(1109);
+			match(T__30);
+			setState(1110);
+			identifier();
+			setState(1111);
+			match(T__31);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4917,30 +5384,40 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1125);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,86,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1113); match(T__67);
-				setState(1114); getterKeywordClause();
+				setState(1113);
+				match(T__15);
+				setState(1114);
+				getterKeywordClause();
 				setState(1116);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__142 || _la==T__52) {
+				if (_la==T__63 || _la==T__99) {
 					{
-					setState(1115); setterKeywordClause();
+					setState(1115);
+					setterKeywordClause();
 					}
 				}
 
-				setState(1118); match(T__103);
+				setState(1118);
+				match(T__16);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1120); match(T__67);
-				setState(1121); setterKeywordClause();
-				setState(1122); getterKeywordClause();
-				setState(1123); match(T__103);
+				setState(1120);
+				match(T__15);
+				setState(1121);
+				setterKeywordClause();
+				setState(1122);
+				getterKeywordClause();
+				setState(1123);
+				match(T__16);
 				}
 				break;
 			}
@@ -4982,14 +5459,17 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1128);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1127); attributes();
+				setState(1127);
+				attributes();
 				}
 			}
 
-			setState(1130); match(T__65);
+			setState(1130);
+			match(T__75);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5029,14 +5509,17 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1133);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1132); attributes();
+				setState(1132);
+				attributes();
 				}
 			}
 
-			setState(1135); match(T__142);
+			setState(1135);
+			match(T__63);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5051,11 +5534,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class WillSetDidSetBlockContext extends ParserRuleContext {
-		public DidSetClauseContext didSetClause() {
-			return getRuleContext(DidSetClauseContext.class,0);
-		}
 		public WillSetClauseContext willSetClause() {
 			return getRuleContext(WillSetClauseContext.class,0);
+		}
+		public DidSetClauseContext didSetClause() {
+			return getRuleContext(DidSetClauseContext.class,0);
 		}
 		public WillSetDidSetBlockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5077,37 +5560,48 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1151);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,91,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1137); match(T__67);
-				setState(1138); willSetClause();
+				setState(1137);
+				match(T__15);
+				setState(1138);
+				willSetClause();
 				setState(1140);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__52 || _la==T__7) {
+				if (_la==T__77 || _la==T__99) {
 					{
-					setState(1139); didSetClause();
+					setState(1139);
+					didSetClause();
 					}
 				}
 
-				setState(1142); match(T__103);
+				setState(1142);
+				match(T__16);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1144); match(T__67);
-				setState(1145); didSetClause();
+				setState(1144);
+				match(T__15);
+				setState(1145);
+				didSetClause();
 				setState(1147);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__140 || _la==T__52) {
+				if (_la==T__76 || _la==T__99) {
 					{
-					setState(1146); willSetClause();
+					setState(1146);
+					willSetClause();
 					}
 				}
 
-				setState(1149); match(T__103);
+				setState(1149);
+				match(T__16);
 				}
 				break;
 			}
@@ -5124,14 +5618,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class WillSetClauseContext extends ParserRuleContext {
+		public CodeBlockContext codeBlock() {
+			return getRuleContext(CodeBlockContext.class,0);
+		}
 		public AttributesContext attributes() {
 			return getRuleContext(AttributesContext.class,0);
 		}
 		public SetterNameContext setterName() {
 			return getRuleContext(SetterNameContext.class,0);
-		}
-		public CodeBlockContext codeBlock() {
-			return getRuleContext(CodeBlockContext.class,0);
 		}
 		public WillSetClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5155,23 +5649,29 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1154);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1153); attributes();
+				setState(1153);
+				attributes();
 				}
 			}
 
-			setState(1156); match(T__140);
+			setState(1156);
+			match(T__76);
 			setState(1158);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__64) {
+			if (_la==T__30) {
 				{
-				setState(1157); setterName();
+				setState(1157);
+				setterName();
 				}
 			}
 
-			setState(1160); codeBlock();
+			setState(1160);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5186,14 +5686,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class DidSetClauseContext extends ParserRuleContext {
+		public CodeBlockContext codeBlock() {
+			return getRuleContext(CodeBlockContext.class,0);
+		}
 		public AttributesContext attributes() {
 			return getRuleContext(AttributesContext.class,0);
 		}
 		public SetterNameContext setterName() {
 			return getRuleContext(SetterNameContext.class,0);
-		}
-		public CodeBlockContext codeBlock() {
-			return getRuleContext(CodeBlockContext.class,0);
 		}
 		public DidSetClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5217,23 +5717,29 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1163);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1162); attributes();
+				setState(1162);
+				attributes();
 				}
 			}
 
-			setState(1165); match(T__7);
+			setState(1165);
+			match(T__77);
 			setState(1167);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__64) {
+			if (_la==T__30) {
 				{
-				setState(1166); setterName();
+				setState(1166);
+				setterName();
 				}
 			}
 
-			setState(1169); codeBlock();
+			setState(1169);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5248,11 +5754,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class TypealiasDeclarationContext extends ParserRuleContext {
-		public TypealiasAssignmentContext typealiasAssignment() {
-			return getRuleContext(TypealiasAssignmentContext.class,0);
-		}
 		public TypealiasHeadContext typealiasHead() {
 			return getRuleContext(TypealiasHeadContext.class,0);
+		}
+		public TypealiasAssignmentContext typealiasAssignment() {
+			return getRuleContext(TypealiasAssignmentContext.class,0);
 		}
 		public TypealiasDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5274,8 +5780,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1171); typealiasHead();
-			setState(1172); typealiasAssignment();
+			setState(1171);
+			typealiasHead();
+			setState(1172);
+			typealiasAssignment();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5290,17 +5798,17 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class TypealiasHeadContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public TypealiasNameContext typealiasName() {
 			return getRuleContext(TypealiasNameContext.class,0);
 		}
-		public GenericParameterClauseContext genericParameterClause() {
-			return getRuleContext(GenericParameterClauseContext.class,0);
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public AccessLevelModifierContext accessLevelModifier() {
 			return getRuleContext(AccessLevelModifierContext.class,0);
+		}
+		public GenericParameterClauseContext genericParameterClause() {
+			return getRuleContext(GenericParameterClauseContext.class,0);
 		}
 		public TypealiasHeadContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5324,28 +5832,36 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1175);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1174); attributes();
+				setState(1174);
+				attributes();
 				}
 			}
 
 			setState(1178);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0)) {
+			if (((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0)) {
 				{
-				setState(1177); accessLevelModifier();
+				setState(1177);
+				accessLevelModifier();
 				}
 			}
 
-			setState(1180); match(T__76);
-			setState(1181); typealiasName();
+			setState(1180);
+			match(T__69);
+			setState(1181);
+			typealiasName();
 			setState(1183);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1182); genericParameterClause();
+				setState(1182);
+				genericParameterClause();
 				}
 			}
 
@@ -5386,7 +5902,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1185); identifier();
+			setState(1185);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5424,8 +5941,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1187); match(T__137);
-			setState(1188); sType(0);
+			setState(1187);
+			match(T__74);
+			setState(1188);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5440,17 +5959,17 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class FunctionDeclarationContext extends ParserRuleContext {
+		public FunctionHeadContext functionHead() {
+			return getRuleContext(FunctionHeadContext.class,0);
+		}
 		public FunctionNameContext functionName() {
 			return getRuleContext(FunctionNameContext.class,0);
-		}
-		public FunctionBodyContext functionBody() {
-			return getRuleContext(FunctionBodyContext.class,0);
 		}
 		public FunctionSignatureContext functionSignature() {
 			return getRuleContext(FunctionSignatureContext.class,0);
 		}
-		public FunctionHeadContext functionHead() {
-			return getRuleContext(FunctionHeadContext.class,0);
+		public FunctionBodyContext functionBody() {
+			return getRuleContext(FunctionBodyContext.class,0);
 		}
 		public GenericParameterClauseContext genericParameterClause() {
 			return getRuleContext(GenericParameterClauseContext.class,0);
@@ -5475,38 +5994,50 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1205);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,101,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1190); functionHead();
-				setState(1191); functionName();
+				setState(1190);
+				functionHead();
+				setState(1191);
+				functionName();
 				setState(1193);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__119) {
+				if (_la==T__41) {
 					{
-					setState(1192); genericParameterClause();
+					setState(1192);
+					genericParameterClause();
 					}
 				}
 
-				setState(1195); functionSignature();
-				setState(1196); functionBody();
+				setState(1195);
+				functionSignature();
+				setState(1196);
+				functionBody();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1198); functionHead();
-				setState(1199); functionName();
+				setState(1198);
+				functionHead();
+				setState(1199);
+				functionName();
 				setState(1201);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__119) {
+				if (_la==T__41) {
 					{
-					setState(1200); genericParameterClause();
+					setState(1200);
+					genericParameterClause();
 					}
 				}
 
-				setState(1203); functionSignature();
+				setState(1203);
+				functionSignature();
 				}
 				break;
 			}
@@ -5551,22 +6082,27 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1208);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1207); attributes();
+				setState(1207);
+				attributes();
 				}
 			}
 
 			setState(1211);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0)) {
 				{
-				setState(1210); declarationModifiers();
+				setState(1210);
+				declarationModifiers();
 				}
 			}
 
-			setState(1213); match(T__74);
+			setState(1213);
+			match(T__73);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5581,11 +6117,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class FunctionNameContext extends ParserRuleContext {
-		public OperatorContext operator() {
-			return getRuleContext(OperatorContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
+		}
+		public OperatorContext operator() {
+			return getRuleContext(OperatorContext.class,0);
 		}
 		public FunctionNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5606,78 +6142,81 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 178, RULE_functionName);
 		try {
 			setState(1217);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__145:
-			case T__144:
-			case T__143:
-			case T__142:
-			case T__141:
-			case T__140:
-			case T__136:
-			case T__134:
-			case T__133:
-			case T__132:
-			case T__129:
-			case T__126:
-			case T__123:
-			case T__115:
-			case T__112:
-			case T__109:
-			case T__101:
-			case T__93:
-			case T__92:
-			case T__89:
-			case T__88:
-			case T__86:
-			case T__75:
-			case T__72:
-			case T__65:
-			case T__59:
-			case T__53:
-			case T__51:
-			case T__49:
-			case T__46:
-			case T__45:
-			case T__43:
-			case T__37:
-			case T__36:
+			case T__18:
+			case T__27:
+			case T__33:
 			case T__34:
-			case T__31:
-			case T__25:
-			case T__24:
-			case T__23:
-			case T__17:
-			case T__14:
-			case T__12:
-			case T__9:
-			case T__7:
-			case T__2:
+			case T__35:
+			case T__37:
+			case T__39:
+			case T__45:
+			case T__46:
+			case T__47:
+			case T__48:
+			case T__49:
+			case T__50:
+			case T__51:
+			case T__52:
+			case T__53:
+			case T__54:
+			case T__55:
+			case T__56:
+			case T__58:
+			case T__59:
+			case T__61:
+			case T__63:
+			case T__75:
+			case T__76:
+			case T__77:
+			case T__83:
+			case T__91:
+			case T__92:
+			case T__93:
+			case T__94:
+			case T__95:
+			case T__96:
+			case T__124:
+			case T__125:
+			case T__127:
+			case T__133:
+			case T__134:
+			case T__136:
+			case T__137:
+			case T__138:
+			case T__139:
+			case T__141:
+			case T__142:
+			case T__146:
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1215); identifier();
+				setState(1215);
+				identifier();
 				}
 				break;
-			case T__138:
-			case T__137:
-			case T__122:
-			case T__119:
-			case T__94:
-			case T__81:
+			case T__32:
+			case T__41:
 			case T__42:
-			case T__33:
-			case T__29:
-			case T__26:
-			case T__19:
-			case T__15:
-			case T__11:
-			case T__10:
-			case T__1:
+			case T__43:
+			case T__74:
+			case T__80:
+			case T__81:
+			case T__86:
+			case T__87:
+			case T__102:
+			case T__104:
+			case T__106:
+			case T__121:
+			case T__122:
+			case T__123:
 			case OperatorHead:
 			case DotOperatorHead:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1216); operator();
+				setState(1216);
+				operator();
 				}
 				break;
 			default:
@@ -5723,25 +6262,33 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1219); parameterClause();
+			setState(1219);
+			parameterClause();
 			setState(1221);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,105,_ctx) ) {
 			case 1:
 				{
 				setState(1220);
 				_la = _input.LA(1);
-				if ( !(_la==T__127 || _la==T__62) ) {
+				if ( !(_la==T__78 || _la==T__79) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
 				}
 				break;
 			}
 			setState(1224);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,106,_ctx) ) {
 			case 1:
 				{
-				setState(1223); functionResult();
+				setState(1223);
+				functionResult();
 				}
 				break;
 			}
@@ -5759,11 +6306,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class FunctionResultContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public STypeContext sType() {
 			return getRuleContext(STypeContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public FunctionResultContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5786,16 +6333,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1226); match(T__19);
+			setState(1226);
+			match(T__80);
 			setState(1228);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1227); attributes();
+				setState(1227);
+				attributes();
 				}
 			}
 
-			setState(1230); sType(0);
+			setState(1230);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5833,7 +6384,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1232); codeBlock();
+			setState(1232);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5871,28 +6423,36 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1243);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,109,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1234); match(T__64);
-				setState(1235); match(T__78);
+				setState(1234);
+				match(T__30);
+				setState(1235);
+				match(T__31);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1236); match(T__64);
-				setState(1237); parameterList();
+				setState(1236);
+				match(T__30);
+				setState(1237);
+				parameterList();
 				setState(1239);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__15) {
+				if (_la==T__81) {
 					{
-					setState(1238); match(T__15);
+					setState(1238);
+					match(T__81);
 					}
 				}
 
-				setState(1241); match(T__78);
+				setState(1241);
+				match(T__31);
 				}
 				break;
 			}
@@ -5936,15 +6496,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1245); parameter();
+			setState(1245);
+			parameter();
 			setState(1250);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(1246); match(T__130);
-				setState(1247); parameter();
+				setState(1246);
+				match(T__17);
+				setState(1247);
+				parameter();
 				}
 				}
 				setState(1252);
@@ -5968,11 +6531,11 @@ public class Swift3Parser extends Parser {
 		public LocalParameterNameContext localParameterName() {
 			return getRuleContext(LocalParameterNameContext.class,0);
 		}
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public TypeAnnotationContext typeAnnotation() {
 			return getRuleContext(TypeAnnotationContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public ExternalParameterNameContext externalParameterName() {
 			return getRuleContext(ExternalParameterNameContext.class,0);
@@ -6000,33 +6563,42 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1274);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,116,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(1254);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__52) {
+				if (_la==T__99) {
 					{
-					setState(1253); attributes();
+					setState(1253);
+					attributes();
 					}
 				}
 
 				setState(1257);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,112,_ctx) ) {
 				case 1:
 					{
-					setState(1256); externalParameterName();
+					setState(1256);
+					externalParameterName();
 					}
 					break;
 				}
-				setState(1259); localParameterName();
-				setState(1260); typeAnnotation();
+				setState(1259);
+				localParameterName();
+				setState(1260);
+				typeAnnotation();
 				setState(1262);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__137) {
+				if (_la==T__74) {
 					{
-					setState(1261); defaultArgumentClause();
+					setState(1261);
+					defaultArgumentClause();
 					}
 				}
 
@@ -6036,24 +6608,31 @@ public class Swift3Parser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(1265);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__52) {
+				if (_la==T__99) {
 					{
-					setState(1264); attributes();
+					setState(1264);
+					attributes();
 					}
 				}
 
 				setState(1268);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,115,_ctx) ) {
 				case 1:
 					{
-					setState(1267); externalParameterName();
+					setState(1267);
+					externalParameterName();
 					}
 					break;
 				}
-				setState(1270); localParameterName();
-				setState(1271); typeAnnotation();
-				setState(1272); match(T__15);
+				setState(1270);
+				localParameterName();
+				setState(1271);
+				typeAnnotation();
+				setState(1272);
+				match(T__81);
 				}
 				break;
 			}
@@ -6070,11 +6649,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ExternalParameterNameContext extends ParserRuleContext {
-		public KeywordContext keyword() {
-			return getRuleContext(KeywordContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
+		}
+		public KeywordContext keyword() {
+			return getRuleContext(KeywordContext.class,0);
 		}
 		public ExternalParameterNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6095,23 +6674,27 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 192, RULE_externalParameterName);
 		try {
 			setState(1279);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,117,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1276); identifier();
+				setState(1276);
+				identifier();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1277); keyword();
+				setState(1277);
+				keyword();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1278); match(T__8);
+				setState(1278);
+				match(T__82);
 				}
 				break;
 			}
@@ -6150,62 +6733,65 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 194, RULE_localParameterName);
 		try {
 			setState(1283);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__145:
-			case T__144:
-			case T__143:
-			case T__142:
-			case T__141:
-			case T__140:
-			case T__136:
-			case T__134:
-			case T__133:
-			case T__132:
-			case T__129:
-			case T__126:
-			case T__123:
-			case T__115:
-			case T__112:
-			case T__109:
-			case T__101:
-			case T__93:
-			case T__92:
-			case T__89:
-			case T__88:
-			case T__86:
-			case T__75:
-			case T__72:
-			case T__65:
-			case T__59:
-			case T__53:
-			case T__51:
-			case T__49:
-			case T__46:
-			case T__45:
-			case T__43:
-			case T__37:
-			case T__36:
+			case T__18:
+			case T__27:
+			case T__33:
 			case T__34:
-			case T__31:
-			case T__25:
-			case T__24:
-			case T__23:
-			case T__17:
-			case T__14:
-			case T__12:
-			case T__9:
-			case T__7:
-			case T__2:
+			case T__35:
+			case T__37:
+			case T__39:
+			case T__45:
+			case T__46:
+			case T__47:
+			case T__48:
+			case T__49:
+			case T__50:
+			case T__51:
+			case T__52:
+			case T__53:
+			case T__54:
+			case T__55:
+			case T__56:
+			case T__58:
+			case T__59:
+			case T__61:
+			case T__63:
+			case T__75:
+			case T__76:
+			case T__77:
+			case T__83:
+			case T__91:
+			case T__92:
+			case T__93:
+			case T__94:
+			case T__95:
+			case T__96:
+			case T__124:
+			case T__125:
+			case T__127:
+			case T__133:
+			case T__134:
+			case T__136:
+			case T__137:
+			case T__138:
+			case T__139:
+			case T__141:
+			case T__142:
+			case T__146:
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1281); identifier();
+				setState(1281);
+				identifier();
 				}
 				break;
-			case T__8:
+			case T__82:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1282); match(T__8);
+				setState(1282);
+				match(T__82);
 				}
 				break;
 			default:
@@ -6247,8 +6833,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1285); match(T__137);
-			setState(1286); expression();
+			setState(1285);
+			match(T__74);
+			setState(1286);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -6263,11 +6851,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class EnumDeclarationContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public EnumDefContext enumDef() {
 			return getRuleContext(EnumDefContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public AccessLevelModifierContext accessLevelModifier() {
 			return getRuleContext(AccessLevelModifierContext.class,0);
@@ -6294,22 +6882,27 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1289);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1288); attributes();
+				setState(1288);
+				attributes();
 				}
 			}
 
 			setState(1292);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0)) {
+			if (((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0)) {
 				{
-				setState(1291); accessLevelModifier();
+				setState(1291);
+				accessLevelModifier();
 				}
 			}
 
-			setState(1294); enumDef();
+			setState(1294);
+			enumDef();
 			}
 		}
 		catch (RecognitionException re) {
@@ -6324,11 +6917,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class EnumDefContext extends ParserRuleContext {
-		public RawValueStyleEnumContext rawValueStyleEnum() {
-			return getRuleContext(RawValueStyleEnumContext.class,0);
-		}
 		public UnionStyleEnumContext unionStyleEnum() {
 			return getRuleContext(UnionStyleEnumContext.class,0);
+		}
+		public RawValueStyleEnumContext rawValueStyleEnum() {
+			return getRuleContext(RawValueStyleEnumContext.class,0);
 		}
 		public EnumDefContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6349,17 +6942,20 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 200, RULE_enumDef);
 		try {
 			setState(1298);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,121,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1296); unionStyleEnum();
+				setState(1296);
+				unionStyleEnum();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1297); rawValueStyleEnum();
+				setState(1297);
+				rawValueStyleEnum();
 				}
 				break;
 			}
@@ -6376,17 +6972,17 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class UnionStyleEnumContext extends ParserRuleContext {
-		public UnionStyleEnumMembersContext unionStyleEnumMembers() {
-			return getRuleContext(UnionStyleEnumMembersContext.class,0);
-		}
-		public TypeInheritanceClauseContext typeInheritanceClause() {
-			return getRuleContext(TypeInheritanceClauseContext.class,0);
-		}
 		public EnumNameContext enumName() {
 			return getRuleContext(EnumNameContext.class,0);
 		}
 		public GenericParameterClauseContext genericParameterClause() {
 			return getRuleContext(GenericParameterClauseContext.class,0);
+		}
+		public TypeInheritanceClauseContext typeInheritanceClause() {
+			return getRuleContext(TypeInheritanceClauseContext.class,0);
+		}
+		public UnionStyleEnumMembersContext unionStyleEnumMembers() {
+			return getRuleContext(UnionStyleEnumMembersContext.class,0);
 		}
 		public UnionStyleEnumContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6410,41 +7006,53 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1301);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__115) {
+			if (_la==T__83) {
 				{
-				setState(1300); match(T__115);
+				setState(1300);
+				match(T__83);
 				}
 			}
 
-			setState(1303); match(T__28);
-			setState(1304); enumName();
+			setState(1303);
+			match(T__71);
+			setState(1304);
+			enumName();
 			setState(1306);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1305); genericParameterClause();
+				setState(1305);
+				genericParameterClause();
 				}
 			}
 
 			setState(1309);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__85) {
+			if (_la==T__1) {
 				{
-				setState(1308); typeInheritanceClause();
+				setState(1308);
+				typeInheritanceClause();
 				}
 			}
 
-			setState(1311); match(T__67);
+			setState(1311);
+			match(T__15);
 			setState(1313);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 129)) & ~0x3f) == 0 && ((1L << (_la - 129)) & ((1L << (T__18 - 129)) | (1L << (T__14 - 129)) | (1L << (T__12 - 129)) | (1L << (T__2 - 129)) | (1L << (T__0 - 129)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__26) | (1L << T__27) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (T__64 - 65)) | (1L << (T__65 - 65)) | (1L << (T__66 - 65)) | (1L << (T__67 - 65)) | (1L << (T__68 - 65)) | (1L << (T__69 - 65)) | (1L << (T__70 - 65)) | (1L << (T__71 - 65)) | (1L << (T__72 - 65)) | (1L << (T__73 - 65)) | (1L << (T__83 - 65)) | (1L << (T__85 - 65)) | (1L << (T__88 - 65)) | (1L << (T__89 - 65)) | (1L << (T__90 - 65)) | (1L << (T__99 - 65)))) != 0) || _la==T__130 || _la==T__140) {
 				{
-				setState(1312); unionStyleEnumMembers();
+				setState(1312);
+				unionStyleEnumMembers();
 				}
 			}
 
-			setState(1315); match(T__103);
+			setState(1315);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -6492,13 +7100,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(1317); unionStyleEnumMember();
+				setState(1317);
+				unionStyleEnumMember();
 				}
 				}
 				setState(1320); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 129)) & ~0x3f) == 0 && ((1L << (_la - 129)) & ((1L << (T__18 - 129)) | (1L << (T__14 - 129)) | (1L << (T__12 - 129)) | (1L << (T__2 - 129)) | (1L << (T__0 - 129)))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__26) | (1L << T__27) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (T__64 - 65)) | (1L << (T__65 - 65)) | (1L << (T__66 - 65)) | (1L << (T__67 - 65)) | (1L << (T__68 - 65)) | (1L << (T__69 - 65)) | (1L << (T__70 - 65)) | (1L << (T__71 - 65)) | (1L << (T__72 - 65)) | (1L << (T__73 - 65)) | (1L << (T__83 - 65)) | (1L << (T__85 - 65)) | (1L << (T__88 - 65)) | (1L << (T__89 - 65)) | (1L << (T__90 - 65)) | (1L << (T__99 - 65)))) != 0) || _la==T__130 || _la==T__140 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -6539,22 +7148,27 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1327);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,128,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1322); declaration();
+				setState(1322);
+				declaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1323); unionStyleEnumCaseClause();
+				setState(1323);
+				unionStyleEnumCaseClause();
 				setState(1325);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(1324); match(T__104);
+					setState(1324);
+					match(T__0);
 					}
 				}
 
@@ -6574,11 +7188,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class UnionStyleEnumCaseClauseContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public UnionStyleEnumCaseListContext unionStyleEnumCaseList() {
 			return getRuleContext(UnionStyleEnumCaseListContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public UnionStyleEnumCaseClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6602,23 +7216,29 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1330);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1329); attributes();
+				setState(1329);
+				attributes();
 				}
 			}
 
 			setState(1333);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__115) {
+			if (_la==T__83) {
 				{
-				setState(1332); match(T__115);
+				setState(1332);
+				match(T__83);
 				}
 			}
 
-			setState(1335); match(T__18);
-			setState(1336); unionStyleEnumCaseList();
+			setState(1335);
+			match(T__7);
+			setState(1336);
+			unionStyleEnumCaseList();
 			}
 		}
 		catch (RecognitionException re) {
@@ -6660,15 +7280,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1338); unionStyleEnumCase();
+			setState(1338);
+			unionStyleEnumCase();
 			setState(1343);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(1339); match(T__130);
-				setState(1340); unionStyleEnumCase();
+				setState(1339);
+				match(T__17);
+				setState(1340);
+				unionStyleEnumCase();
 				}
 				}
 				setState(1345);
@@ -6689,11 +7312,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class UnionStyleEnumCaseContext extends ParserRuleContext {
-		public TupleTypeContext tupleType() {
-			return getRuleContext(TupleTypeContext.class,0);
-		}
 		public EnumCaseNameContext enumCaseName() {
 			return getRuleContext(EnumCaseNameContext.class,0);
+		}
+		public TupleTypeContext tupleType() {
+			return getRuleContext(TupleTypeContext.class,0);
 		}
 		public UnionStyleEnumCaseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6716,12 +7339,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1346); enumCaseName();
+			setState(1346);
+			enumCaseName();
 			setState(1348);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__64) {
+			if (_la==T__30) {
 				{
-				setState(1347); tupleType();
+				setState(1347);
+				tupleType();
 				}
 			}
 
@@ -6762,7 +7388,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1350); identifier();
+			setState(1350);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -6800,7 +7427,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1352); identifier();
+			setState(1352);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -6815,14 +7443,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class RawValueStyleEnumContext extends ParserRuleContext {
-		public TypeInheritanceClauseContext typeInheritanceClause() {
-			return getRuleContext(TypeInheritanceClauseContext.class,0);
-		}
 		public EnumNameContext enumName() {
 			return getRuleContext(EnumNameContext.class,0);
 		}
 		public GenericParameterClauseContext genericParameterClause() {
 			return getRuleContext(GenericParameterClauseContext.class,0);
+		}
+		public TypeInheritanceClauseContext typeInheritanceClause() {
+			return getRuleContext(TypeInheritanceClauseContext.class,0);
 		}
 		public RawValueStyleEnumMembersContext rawValueStyleEnumMembers() {
 			return getRuleContext(RawValueStyleEnumMembersContext.class,0);
@@ -6848,34 +7476,44 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1354); match(T__28);
-			setState(1355); enumName();
+			setState(1354);
+			match(T__71);
+			setState(1355);
+			enumName();
 			setState(1357);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1356); genericParameterClause();
+				setState(1356);
+				genericParameterClause();
 				}
 			}
 
 			setState(1360);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__85) {
+			if (_la==T__1) {
 				{
-				setState(1359); typeInheritanceClause();
+				setState(1359);
+				typeInheritanceClause();
 				}
 			}
 
-			setState(1362); match(T__67);
+			setState(1362);
+			match(T__15);
 			setState(1364);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 129)) & ~0x3f) == 0 && ((1L << (_la - 129)) & ((1L << (T__18 - 129)) | (1L << (T__14 - 129)) | (1L << (T__12 - 129)) | (1L << (T__2 - 129)) | (1L << (T__0 - 129)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__26) | (1L << T__27) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (T__64 - 65)) | (1L << (T__65 - 65)) | (1L << (T__66 - 65)) | (1L << (T__67 - 65)) | (1L << (T__68 - 65)) | (1L << (T__69 - 65)) | (1L << (T__70 - 65)) | (1L << (T__71 - 65)) | (1L << (T__72 - 65)) | (1L << (T__73 - 65)) | (1L << (T__83 - 65)) | (1L << (T__85 - 65)) | (1L << (T__88 - 65)) | (1L << (T__89 - 65)) | (1L << (T__90 - 65)) | (1L << (T__99 - 65)))) != 0) || _la==T__130 || _la==T__140) {
 				{
-				setState(1363); rawValueStyleEnumMembers();
+				setState(1363);
+				rawValueStyleEnumMembers();
 				}
 			}
 
-			setState(1366); match(T__103);
+			setState(1366);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -6890,11 +7528,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class RawValueStyleEnumMembersContext extends ParserRuleContext {
-		public RawValueStyleEnumMemberContext rawValueStyleEnumMember(int i) {
-			return getRuleContext(RawValueStyleEnumMemberContext.class,i);
-		}
 		public List<RawValueStyleEnumMemberContext> rawValueStyleEnumMember() {
 			return getRuleContexts(RawValueStyleEnumMemberContext.class);
+		}
+		public RawValueStyleEnumMemberContext rawValueStyleEnumMember(int i) {
+			return getRuleContext(RawValueStyleEnumMemberContext.class,i);
 		}
 		public RawValueStyleEnumMembersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6923,13 +7561,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(1368); rawValueStyleEnumMember();
+				setState(1368);
+				rawValueStyleEnumMember();
 				}
 				}
 				setState(1371); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 129)) & ~0x3f) == 0 && ((1L << (_la - 129)) & ((1L << (T__18 - 129)) | (1L << (T__14 - 129)) | (1L << (T__12 - 129)) | (1L << (T__2 - 129)) | (1L << (T__0 - 129)))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__26) | (1L << T__27) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (T__64 - 65)) | (1L << (T__65 - 65)) | (1L << (T__66 - 65)) | (1L << (T__67 - 65)) | (1L << (T__68 - 65)) | (1L << (T__69 - 65)) | (1L << (T__70 - 65)) | (1L << (T__71 - 65)) | (1L << (T__72 - 65)) | (1L << (T__73 - 65)) | (1L << (T__83 - 65)) | (1L << (T__85 - 65)) | (1L << (T__88 - 65)) | (1L << (T__89 - 65)) | (1L << (T__90 - 65)) | (1L << (T__99 - 65)))) != 0) || _la==T__130 || _la==T__140 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -6944,11 +7583,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class RawValueStyleEnumMemberContext extends ParserRuleContext {
-		public RawValueStyleEnumCaseClauseContext rawValueStyleEnumCaseClause() {
-			return getRuleContext(RawValueStyleEnumCaseClauseContext.class,0);
-		}
 		public DeclarationContext declaration() {
 			return getRuleContext(DeclarationContext.class,0);
+		}
+		public RawValueStyleEnumCaseClauseContext rawValueStyleEnumCaseClause() {
+			return getRuleContext(RawValueStyleEnumCaseClauseContext.class,0);
 		}
 		public RawValueStyleEnumMemberContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6969,17 +7608,20 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 222, RULE_rawValueStyleEnumMember);
 		try {
 			setState(1375);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,137,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1373); declaration();
+				setState(1373);
+				declaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1374); rawValueStyleEnumCaseClause();
+				setState(1374);
+				rawValueStyleEnumCaseClause();
 				}
 				break;
 			}
@@ -6996,11 +7638,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class RawValueStyleEnumCaseClauseContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public RawValueStyleEnumCaseListContext rawValueStyleEnumCaseList() {
 			return getRuleContext(RawValueStyleEnumCaseListContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public RawValueStyleEnumCaseClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7024,15 +7666,19 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1378);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1377); attributes();
+				setState(1377);
+				attributes();
 				}
 			}
 
-			setState(1380); match(T__18);
-			setState(1381); rawValueStyleEnumCaseList();
+			setState(1380);
+			match(T__7);
+			setState(1381);
+			rawValueStyleEnumCaseList();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7074,15 +7720,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1383); rawValueStyleEnumCase();
+			setState(1383);
+			rawValueStyleEnumCase();
 			setState(1388);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(1384); match(T__130);
-				setState(1385); rawValueStyleEnumCase();
+				setState(1384);
+				match(T__17);
+				setState(1385);
+				rawValueStyleEnumCase();
 				}
 				}
 				setState(1390);
@@ -7103,11 +7752,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class RawValueStyleEnumCaseContext extends ParserRuleContext {
-		public RawValueAssignmentContext rawValueAssignment() {
-			return getRuleContext(RawValueAssignmentContext.class,0);
-		}
 		public EnumCaseNameContext enumCaseName() {
 			return getRuleContext(EnumCaseNameContext.class,0);
+		}
+		public RawValueAssignmentContext rawValueAssignment() {
+			return getRuleContext(RawValueAssignmentContext.class,0);
 		}
 		public RawValueStyleEnumCaseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7130,12 +7779,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1391); enumCaseName();
+			setState(1391);
+			enumCaseName();
 			setState(1393);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__137) {
+			if (_la==T__74) {
 				{
-				setState(1392); rawValueAssignment();
+				setState(1392);
+				rawValueAssignment();
 				}
 			}
 
@@ -7176,8 +7828,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1395); match(T__137);
-			setState(1396); literal();
+			setState(1395);
+			match(T__74);
+			setState(1396);
+			literal();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7192,23 +7846,23 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class StructDeclarationContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
+		public StructNameContext structName() {
+			return getRuleContext(StructNameContext.class,0);
 		}
 		public StructBodyContext structBody() {
 			return getRuleContext(StructBodyContext.class,0);
 		}
-		public TypeInheritanceClauseContext typeInheritanceClause() {
-			return getRuleContext(TypeInheritanceClauseContext.class,0);
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
-		public StructNameContext structName() {
-			return getRuleContext(StructNameContext.class,0);
+		public AccessLevelModifierContext accessLevelModifier() {
+			return getRuleContext(AccessLevelModifierContext.class,0);
 		}
 		public GenericParameterClauseContext genericParameterClause() {
 			return getRuleContext(GenericParameterClauseContext.class,0);
 		}
-		public AccessLevelModifierContext accessLevelModifier() {
-			return getRuleContext(AccessLevelModifierContext.class,0);
+		public TypeInheritanceClauseContext typeInheritanceClause() {
+			return getRuleContext(TypeInheritanceClauseContext.class,0);
 		}
 		public StructDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7232,40 +7886,51 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1399);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1398); attributes();
+				setState(1398);
+				attributes();
 				}
 			}
 
 			setState(1402);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0)) {
+			if (((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0)) {
 				{
-				setState(1401); accessLevelModifier();
+				setState(1401);
+				accessLevelModifier();
 				}
 			}
 
-			setState(1404); match(T__113);
-			setState(1405); structName();
+			setState(1404);
+			match(T__70);
+			setState(1405);
+			structName();
 			setState(1407);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1406); genericParameterClause();
+				setState(1406);
+				genericParameterClause();
 				}
 			}
 
 			setState(1410);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__85) {
+			if (_la==T__1) {
 				{
-				setState(1409); typeInheritanceClause();
+				setState(1409);
+				typeInheritanceClause();
 				}
 			}
 
-			setState(1412); structBody();
+			setState(1412);
+			structBody();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7303,7 +7968,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1414); identifier();
+			setState(1414);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7342,16 +8008,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1416); match(T__67);
+			setState(1416);
+			match(T__15);
 			setState(1418);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)) | (1L << (T__0 - 133)))) != 0)) {
+			if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (T__26 - 27)) | (1L << (T__27 - 27)) | (1L << (T__44 - 27)) | (1L << (T__45 - 27)) | (1L << (T__46 - 27)) | (1L << (T__47 - 27)) | (1L << (T__48 - 27)) | (1L << (T__49 - 27)) | (1L << (T__50 - 27)) | (1L << (T__51 - 27)) | (1L << (T__52 - 27)) | (1L << (T__53 - 27)) | (1L << (T__54 - 27)) | (1L << (T__55 - 27)) | (1L << (T__56 - 27)) | (1L << (T__57 - 27)) | (1L << (T__58 - 27)) | (1L << (T__61 - 27)) | (1L << (T__62 - 27)) | (1L << (T__64 - 27)) | (1L << (T__65 - 27)) | (1L << (T__66 - 27)) | (1L << (T__67 - 27)) | (1L << (T__68 - 27)) | (1L << (T__69 - 27)) | (1L << (T__70 - 27)) | (1L << (T__71 - 27)) | (1L << (T__72 - 27)) | (1L << (T__73 - 27)) | (1L << (T__83 - 27)) | (1L << (T__85 - 27)) | (1L << (T__88 - 27)) | (1L << (T__89 - 27)))) != 0) || ((((_la - 91)) & ~0x3f) == 0 && ((1L << (_la - 91)) & ((1L << (T__90 - 91)) | (1L << (T__99 - 91)) | (1L << (T__130 - 91)) | (1L << (T__140 - 91)))) != 0)) {
 				{
-				setState(1417); declarations();
+				setState(1417);
+				declarations();
 				}
 			}
 
-			setState(1420); match(T__103);
+			setState(1420);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -7366,23 +8036,23 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ClassDeclarationContext extends ParserRuleContext {
-		public ClassDeclarationModifiersContext classDeclarationModifiers() {
-			return getRuleContext(ClassDeclarationModifiersContext.class,0);
-		}
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
+		public ClassNameContext className() {
+			return getRuleContext(ClassNameContext.class,0);
 		}
 		public ClassBodyContext classBody() {
 			return getRuleContext(ClassBodyContext.class,0);
 		}
-		public TypeInheritanceClauseContext typeInheritanceClause() {
-			return getRuleContext(TypeInheritanceClauseContext.class,0);
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
+		}
+		public ClassDeclarationModifiersContext classDeclarationModifiers() {
+			return getRuleContext(ClassDeclarationModifiersContext.class,0);
 		}
 		public GenericParameterClauseContext genericParameterClause() {
 			return getRuleContext(GenericParameterClauseContext.class,0);
 		}
-		public ClassNameContext className() {
-			return getRuleContext(ClassNameContext.class,0);
+		public TypeInheritanceClauseContext typeInheritanceClause() {
+			return getRuleContext(TypeInheritanceClauseContext.class,0);
 		}
 		public ClassDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7406,40 +8076,51 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1423);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1422); attributes();
+				setState(1422);
+				attributes();
 				}
 			}
 
 			setState(1426);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__46 - 64)))) != 0)) {
+			if (((((_la - 48)) & ~0x3f) == 0 && ((1L << (_la - 48)) & ((1L << (T__47 - 48)) | (1L << (T__62 - 48)) | (1L << (T__64 - 48)) | (1L << (T__65 - 48)) | (1L << (T__66 - 48)) | (1L << (T__67 - 48)))) != 0)) {
 				{
-				setState(1425); classDeclarationModifiers();
+				setState(1425);
+				classDeclarationModifiers();
 				}
 			}
 
-			setState(1428); match(T__105);
-			setState(1429); className();
+			setState(1428);
+			match(T__44);
+			setState(1429);
+			className();
 			setState(1431);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1430); genericParameterClause();
+				setState(1430);
+				genericParameterClause();
 				}
 			}
 
 			setState(1434);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__85) {
+			if (_la==T__1) {
 				{
-				setState(1433); typeInheritanceClause();
+				setState(1433);
+				typeInheritanceClause();
 				}
 			}
 
-			setState(1436); classBody();
+			setState(1436);
+			classBody();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7477,34 +8158,41 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1446);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__135:
-			case T__83:
-			case T__80:
-			case T__71:
-			case T__50:
+			case T__62:
+			case T__64:
+			case T__65:
+			case T__66:
+			case T__67:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1438); accessLevelModifier();
+				setState(1438);
+				accessLevelModifier();
 				setState(1440);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__46) {
+				if (_la==T__47) {
 					{
-					setState(1439); match(T__46);
+					setState(1439);
+					match(T__47);
 					}
 				}
 
 				}
 				break;
-			case T__46:
+			case T__47:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1442); match(T__46);
+				setState(1442);
+				match(T__47);
 				setState(1444);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0)) {
+				if (((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0)) {
 					{
-					setState(1443); accessLevelModifier();
+					setState(1443);
+					accessLevelModifier();
 					}
 				}
 
@@ -7549,7 +8237,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1448); identifier();
+			setState(1448);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7588,16 +8277,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1450); match(T__67);
+			setState(1450);
+			match(T__15);
 			setState(1452);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)) | (1L << (T__0 - 133)))) != 0)) {
+			if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (T__26 - 27)) | (1L << (T__27 - 27)) | (1L << (T__44 - 27)) | (1L << (T__45 - 27)) | (1L << (T__46 - 27)) | (1L << (T__47 - 27)) | (1L << (T__48 - 27)) | (1L << (T__49 - 27)) | (1L << (T__50 - 27)) | (1L << (T__51 - 27)) | (1L << (T__52 - 27)) | (1L << (T__53 - 27)) | (1L << (T__54 - 27)) | (1L << (T__55 - 27)) | (1L << (T__56 - 27)) | (1L << (T__57 - 27)) | (1L << (T__58 - 27)) | (1L << (T__61 - 27)) | (1L << (T__62 - 27)) | (1L << (T__64 - 27)) | (1L << (T__65 - 27)) | (1L << (T__66 - 27)) | (1L << (T__67 - 27)) | (1L << (T__68 - 27)) | (1L << (T__69 - 27)) | (1L << (T__70 - 27)) | (1L << (T__71 - 27)) | (1L << (T__72 - 27)) | (1L << (T__73 - 27)) | (1L << (T__83 - 27)) | (1L << (T__85 - 27)) | (1L << (T__88 - 27)) | (1L << (T__89 - 27)))) != 0) || ((((_la - 91)) & ~0x3f) == 0 && ((1L << (_la - 91)) & ((1L << (T__90 - 91)) | (1L << (T__99 - 91)) | (1L << (T__130 - 91)) | (1L << (T__140 - 91)))) != 0)) {
 				{
-				setState(1451); declarations();
+				setState(1451);
+				declarations();
 				}
 			}
 
-			setState(1454); match(T__103);
+			setState(1454);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -7615,17 +8308,17 @@ public class Swift3Parser extends Parser {
 		public ProtocolNameContext protocolName() {
 			return getRuleContext(ProtocolNameContext.class,0);
 		}
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
-		public TypeInheritanceClauseContext typeInheritanceClause() {
-			return getRuleContext(TypeInheritanceClauseContext.class,0);
-		}
 		public ProtocolBodyContext protocolBody() {
 			return getRuleContext(ProtocolBodyContext.class,0);
 		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
+		}
 		public AccessLevelModifierContext accessLevelModifier() {
 			return getRuleContext(AccessLevelModifierContext.class,0);
+		}
+		public TypeInheritanceClauseContext typeInheritanceClause() {
+			return getRuleContext(TypeInheritanceClauseContext.class,0);
 		}
 		public ProtocolDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7649,32 +8342,41 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1457);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1456); attributes();
+				setState(1456);
+				attributes();
 				}
 			}
 
 			setState(1460);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0)) {
+			if (((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0)) {
 				{
-				setState(1459); accessLevelModifier();
+				setState(1459);
+				accessLevelModifier();
 				}
 			}
 
-			setState(1462); match(T__41);
-			setState(1463); protocolName();
+			setState(1462);
+			match(T__72);
+			setState(1463);
+			protocolName();
 			setState(1465);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__85) {
+			if (_la==T__1) {
 				{
-				setState(1464); typeInheritanceClause();
+				setState(1464);
+				typeInheritanceClause();
 				}
 			}
 
-			setState(1467); protocolBody();
+			setState(1467);
+			protocolBody();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7712,7 +8414,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1469); identifier();
+			setState(1469);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7751,16 +8454,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1471); match(T__67);
+			setState(1471);
+			match(T__15);
 			setState(1473);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__110) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__90) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__27) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (T__64 - 65)) | (1L << (T__65 - 65)) | (1L << (T__66 - 65)) | (1L << (T__67 - 65)) | (1L << (T__73 - 65)) | (1L << (T__84 - 65)) | (1L << (T__85 - 65)) | (1L << (T__90 - 65)) | (1L << (T__99 - 65)))) != 0)) {
 				{
-				setState(1472); protocolMemberDeclarations();
+				setState(1472);
+				protocolMemberDeclarations();
 				}
 			}
 
-			setState(1475); match(T__103);
+			setState(1475);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -7775,6 +8482,12 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ProtocolMemberDeclarationContext extends ParserRuleContext {
+		public ProtocolPropertyDeclarationContext protocolPropertyDeclaration() {
+			return getRuleContext(ProtocolPropertyDeclarationContext.class,0);
+		}
+		public ProtocolMethodDeclarationContext protocolMethodDeclaration() {
+			return getRuleContext(ProtocolMethodDeclarationContext.class,0);
+		}
 		public ProtocolInitializerDeclarationContext protocolInitializerDeclaration() {
 			return getRuleContext(ProtocolInitializerDeclarationContext.class,0);
 		}
@@ -7783,12 +8496,6 @@ public class Swift3Parser extends Parser {
 		}
 		public ProtocolAssociatedTypeDeclarationContext protocolAssociatedTypeDeclaration() {
 			return getRuleContext(ProtocolAssociatedTypeDeclarationContext.class,0);
-		}
-		public ProtocolMethodDeclarationContext protocolMethodDeclaration() {
-			return getRuleContext(ProtocolMethodDeclarationContext.class,0);
-		}
-		public ProtocolPropertyDeclarationContext protocolPropertyDeclaration() {
-			return getRuleContext(ProtocolPropertyDeclarationContext.class,0);
 		}
 		public ProtocolMemberDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7810,16 +8517,20 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1497);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,163,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1477); protocolPropertyDeclaration();
+				setState(1477);
+				protocolPropertyDeclaration();
 				setState(1479);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(1478); match(T__104);
+					setState(1478);
+					match(T__0);
 					}
 				}
 
@@ -7828,12 +8539,15 @@ public class Swift3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1481); protocolMethodDeclaration();
+				setState(1481);
+				protocolMethodDeclaration();
 				setState(1483);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(1482); match(T__104);
+					setState(1482);
+					match(T__0);
 					}
 				}
 
@@ -7842,12 +8556,15 @@ public class Swift3Parser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1485); protocolInitializerDeclaration();
+				setState(1485);
+				protocolInitializerDeclaration();
 				setState(1487);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(1486); match(T__104);
+					setState(1486);
+					match(T__0);
 					}
 				}
 
@@ -7856,12 +8573,15 @@ public class Swift3Parser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1489); protocolSubscriptDeclaration();
+				setState(1489);
+				protocolSubscriptDeclaration();
 				setState(1491);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(1490); match(T__104);
+					setState(1490);
+					match(T__0);
 					}
 				}
 
@@ -7870,12 +8590,15 @@ public class Swift3Parser extends Parser {
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1493); protocolAssociatedTypeDeclaration();
+				setState(1493);
+				protocolAssociatedTypeDeclaration();
 				setState(1495);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__104) {
+				if (_la==T__0) {
 					{
-					setState(1494); match(T__104);
+					setState(1494);
+					match(T__0);
 					}
 				}
 
@@ -7928,13 +8651,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(1499); protocolMemberDeclaration();
+				setState(1499);
+				protocolMemberDeclaration();
 				}
 				}
 				setState(1502); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__110) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__90) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__27) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (T__64 - 65)) | (1L << (T__65 - 65)) | (1L << (T__66 - 65)) | (1L << (T__67 - 65)) | (1L << (T__73 - 65)) | (1L << (T__84 - 65)) | (1L << (T__85 - 65)) | (1L << (T__90 - 65)) | (1L << (T__99 - 65)))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -7949,11 +8673,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ProtocolPropertyDeclarationContext extends ParserRuleContext {
-		public VariableNameContext variableName() {
-			return getRuleContext(VariableNameContext.class,0);
-		}
 		public VariableDeclarationHeadContext variableDeclarationHead() {
 			return getRuleContext(VariableDeclarationHeadContext.class,0);
+		}
+		public VariableNameContext variableName() {
+			return getRuleContext(VariableNameContext.class,0);
 		}
 		public TypeAnnotationContext typeAnnotation() {
 			return getRuleContext(TypeAnnotationContext.class,0);
@@ -7981,10 +8705,14 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1504); variableDeclarationHead();
-			setState(1505); variableName();
-			setState(1506); typeAnnotation();
-			setState(1507); getterSetterKeywordBlock();
+			setState(1504);
+			variableDeclarationHead();
+			setState(1505);
+			variableName();
+			setState(1506);
+			typeAnnotation();
+			setState(1507);
+			getterSetterKeywordBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7999,14 +8727,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ProtocolMethodDeclarationContext extends ParserRuleContext {
+		public FunctionHeadContext functionHead() {
+			return getRuleContext(FunctionHeadContext.class,0);
+		}
 		public FunctionNameContext functionName() {
 			return getRuleContext(FunctionNameContext.class,0);
 		}
 		public FunctionSignatureContext functionSignature() {
 			return getRuleContext(FunctionSignatureContext.class,0);
-		}
-		public FunctionHeadContext functionHead() {
-			return getRuleContext(FunctionHeadContext.class,0);
 		}
 		public GenericParameterClauseContext genericParameterClause() {
 			return getRuleContext(GenericParameterClauseContext.class,0);
@@ -8032,17 +8760,22 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1509); functionHead();
-			setState(1510); functionName();
+			setState(1509);
+			functionHead();
+			setState(1510);
+			functionName();
 			setState(1512);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1511); genericParameterClause();
+				setState(1511);
+				genericParameterClause();
 				}
 			}
 
-			setState(1514); functionSignature();
+			setState(1514);
+			functionSignature();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8087,26 +8820,35 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1516); initializerHead();
+			setState(1516);
+			initializerHead();
 			setState(1518);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1517); genericParameterClause();
+				setState(1517);
+				genericParameterClause();
 				}
 			}
 
-			setState(1520); parameterClause();
+			setState(1520);
+			parameterClause();
 			setState(1522);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__127 || _la==T__62) {
+			if (_la==T__78 || _la==T__79) {
 				{
 				setState(1521);
 				_la = _input.LA(1);
-				if ( !(_la==T__127 || _la==T__62) ) {
+				if ( !(_la==T__78 || _la==T__79) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
 				}
 			}
 
@@ -8124,11 +8866,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ProtocolSubscriptDeclarationContext extends ParserRuleContext {
-		public SubscriptResultContext subscriptResult() {
-			return getRuleContext(SubscriptResultContext.class,0);
-		}
 		public SubscriptHeadContext subscriptHead() {
 			return getRuleContext(SubscriptHeadContext.class,0);
+		}
+		public SubscriptResultContext subscriptResult() {
+			return getRuleContext(SubscriptResultContext.class,0);
 		}
 		public GetterSetterKeywordBlockContext getterSetterKeywordBlock() {
 			return getRuleContext(GetterSetterKeywordBlockContext.class,0);
@@ -8153,9 +8895,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1524); subscriptHead();
-			setState(1525); subscriptResult();
-			setState(1526); getterSetterKeywordBlock();
+			setState(1524);
+			subscriptHead();
+			setState(1525);
+			subscriptResult();
+			setState(1526);
+			getterSetterKeywordBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8170,20 +8915,20 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ProtocolAssociatedTypeDeclarationContext extends ParserRuleContext {
-		public TypealiasAssignmentContext typealiasAssignment() {
-			return getRuleContext(TypealiasAssignmentContext.class,0);
+		public TypealiasNameContext typealiasName() {
+			return getRuleContext(TypealiasNameContext.class,0);
 		}
 		public AttributesContext attributes() {
 			return getRuleContext(AttributesContext.class,0);
 		}
+		public AccessLevelModifierContext accessLevelModifier() {
+			return getRuleContext(AccessLevelModifierContext.class,0);
+		}
 		public TypeInheritanceClauseContext typeInheritanceClause() {
 			return getRuleContext(TypeInheritanceClauseContext.class,0);
 		}
-		public TypealiasNameContext typealiasName() {
-			return getRuleContext(TypealiasNameContext.class,0);
-		}
-		public AccessLevelModifierContext accessLevelModifier() {
-			return getRuleContext(AccessLevelModifierContext.class,0);
+		public TypealiasAssignmentContext typealiasAssignment() {
+			return getRuleContext(TypealiasAssignmentContext.class,0);
 		}
 		public ProtocolAssociatedTypeDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8207,36 +8952,46 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1529);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1528); attributes();
+				setState(1528);
+				attributes();
 				}
 			}
 
 			setState(1532);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0)) {
+			if (((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0)) {
 				{
-				setState(1531); accessLevelModifier();
+				setState(1531);
+				accessLevelModifier();
 				}
 			}
 
-			setState(1534); match(T__90);
-			setState(1535); typealiasName();
+			setState(1534);
+			match(T__84);
+			setState(1535);
+			typealiasName();
 			setState(1537);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__85) {
+			if (_la==T__1) {
 				{
-				setState(1536); typeInheritanceClause();
+				setState(1536);
+				typeInheritanceClause();
 				}
 			}
 
 			setState(1540);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__137) {
+			if (_la==T__74) {
 				{
-				setState(1539); typealiasAssignment();
+				setState(1539);
+				typealiasAssignment();
 				}
 			}
 
@@ -8254,14 +9009,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class InitializerDeclarationContext extends ParserRuleContext {
-		public InitializerBodyContext initializerBody() {
-			return getRuleContext(InitializerBodyContext.class,0);
-		}
 		public InitializerHeadContext initializerHead() {
 			return getRuleContext(InitializerHeadContext.class,0);
 		}
 		public ParameterClauseContext parameterClause() {
 			return getRuleContext(ParameterClauseContext.class,0);
+		}
+		public InitializerBodyContext initializerBody() {
+			return getRuleContext(InitializerBodyContext.class,0);
 		}
 		public GenericParameterClauseContext genericParameterClause() {
 			return getRuleContext(GenericParameterClauseContext.class,0);
@@ -8287,30 +9042,40 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1542); initializerHead();
+			setState(1542);
+			initializerHead();
 			setState(1544);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__119) {
+			if (_la==T__41) {
 				{
-				setState(1543); genericParameterClause();
+				setState(1543);
+				genericParameterClause();
 				}
 			}
 
-			setState(1546); parameterClause();
+			setState(1546);
+			parameterClause();
 			setState(1548);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__127 || _la==T__62) {
+			if (_la==T__78 || _la==T__79) {
 				{
 				setState(1547);
 				_la = _input.LA(1);
-				if ( !(_la==T__127 || _la==T__62) ) {
+				if ( !(_la==T__78 || _la==T__79) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
 				}
 			}
 
-			setState(1550); initializerBody();
+			setState(1550);
+			initializerBody();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8353,32 +9118,42 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1553);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1552); attributes();
+				setState(1552);
+				attributes();
 				}
 			}
 
 			setState(1556);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0)) {
 				{
-				setState(1555); declarationModifiers();
+				setState(1555);
+				declarationModifiers();
 				}
 			}
 
-			setState(1558); match(T__125);
+			setState(1558);
+			match(T__85);
 			setState(1560);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__81 || _la==T__29) {
+			if (_la==T__86 || _la==T__87) {
 				{
 				setState(1559);
 				_la = _input.LA(1);
-				if ( !(_la==T__81 || _la==T__29) ) {
+				if ( !(_la==T__86 || _la==T__87) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
 				}
 			}
 
@@ -8419,7 +9194,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1562); codeBlock();
+			setState(1562);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8434,11 +9210,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class DeinitializerDeclarationContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public CodeBlockContext codeBlock() {
 			return getRuleContext(CodeBlockContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public DeinitializerDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8462,15 +9238,19 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1565);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1564); attributes();
+				setState(1564);
+				attributes();
 				}
 			}
 
-			setState(1567); match(T__108);
-			setState(1568); codeBlock();
+			setState(1567);
+			match(T__88);
+			setState(1568);
+			codeBlock();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8485,23 +9265,23 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ExtensionDeclarationContext extends ParserRuleContext {
-		public RequirementClauseContext requirementClause() {
-			return getRuleContext(RequirementClauseContext.class,0);
-		}
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
+		public TypeIdentifierContext typeIdentifier() {
+			return getRuleContext(TypeIdentifierContext.class,0);
 		}
 		public ExtensionBodyContext extensionBody() {
 			return getRuleContext(ExtensionBodyContext.class,0);
 		}
-		public TypeIdentifierContext typeIdentifier() {
-			return getRuleContext(TypeIdentifierContext.class,0);
-		}
-		public TypeInheritanceClauseContext typeInheritanceClause() {
-			return getRuleContext(TypeInheritanceClauseContext.class,0);
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public AccessLevelModifierContext accessLevelModifier() {
 			return getRuleContext(AccessLevelModifierContext.class,0);
+		}
+		public RequirementClauseContext requirementClause() {
+			return getRuleContext(RequirementClauseContext.class,0);
+		}
+		public TypeInheritanceClauseContext typeInheritanceClause() {
+			return getRuleContext(TypeInheritanceClauseContext.class,0);
 		}
 		public ExtensionDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8525,41 +9305,51 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1571);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1570); attributes();
+				setState(1570);
+				attributes();
 				}
 			}
 
 			setState(1574);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__135 || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)))) != 0)) {
+			if (((((_la - 63)) & ~0x3f) == 0 && ((1L << (_la - 63)) & ((1L << (T__62 - 63)) | (1L << (T__64 - 63)) | (1L << (T__65 - 63)) | (1L << (T__66 - 63)) | (1L << (T__67 - 63)))) != 0)) {
 				{
-				setState(1573); accessLevelModifier();
+				setState(1573);
+				accessLevelModifier();
 				}
 			}
 
-			setState(1576); match(T__120);
-			setState(1577); typeIdentifier();
+			setState(1576);
+			match(T__89);
+			setState(1577);
+			typeIdentifier();
 			setState(1580);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__6:
+			case T__28:
 				{
-				setState(1578); requirementClause();
+				setState(1578);
+				requirementClause();
 				}
 				break;
-			case T__85:
+			case T__1:
 				{
-				setState(1579); typeInheritanceClause();
+				setState(1579);
+				typeInheritanceClause();
 				}
 				break;
-			case T__67:
+			case T__15:
 				break;
 			default:
-				throw new NoViableAltException(this);
+				break;
 			}
-			setState(1582); extensionBody();
+			setState(1582);
+			extensionBody();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8598,16 +9388,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1584); match(T__67);
+			setState(1584);
+			match(T__15);
 			setState(1586);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__120) | (1L << T__115) | (1L << T__113) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__52 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__41 - 64)) | (1L << (T__28 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)) | (1L << (T__0 - 133)))) != 0)) {
+			if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (T__26 - 27)) | (1L << (T__27 - 27)) | (1L << (T__44 - 27)) | (1L << (T__45 - 27)) | (1L << (T__46 - 27)) | (1L << (T__47 - 27)) | (1L << (T__48 - 27)) | (1L << (T__49 - 27)) | (1L << (T__50 - 27)) | (1L << (T__51 - 27)) | (1L << (T__52 - 27)) | (1L << (T__53 - 27)) | (1L << (T__54 - 27)) | (1L << (T__55 - 27)) | (1L << (T__56 - 27)) | (1L << (T__57 - 27)) | (1L << (T__58 - 27)) | (1L << (T__61 - 27)) | (1L << (T__62 - 27)) | (1L << (T__64 - 27)) | (1L << (T__65 - 27)) | (1L << (T__66 - 27)) | (1L << (T__67 - 27)) | (1L << (T__68 - 27)) | (1L << (T__69 - 27)) | (1L << (T__70 - 27)) | (1L << (T__71 - 27)) | (1L << (T__72 - 27)) | (1L << (T__73 - 27)) | (1L << (T__83 - 27)) | (1L << (T__85 - 27)) | (1L << (T__88 - 27)) | (1L << (T__89 - 27)))) != 0) || ((((_la - 91)) & ~0x3f) == 0 && ((1L << (_la - 91)) & ((1L << (T__90 - 91)) | (1L << (T__99 - 91)) | (1L << (T__130 - 91)) | (1L << (T__140 - 91)))) != 0)) {
 				{
-				setState(1585); declarations();
+				setState(1585);
+				declarations();
 				}
 			}
 
-			setState(1588); match(T__103);
+			setState(1588);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -8622,20 +9416,20 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SubscriptDeclarationContext extends ParserRuleContext {
-		public GetterSetterBlockContext getterSetterBlock() {
-			return getRuleContext(GetterSetterBlockContext.class,0);
+		public SubscriptHeadContext subscriptHead() {
+			return getRuleContext(SubscriptHeadContext.class,0);
 		}
 		public SubscriptResultContext subscriptResult() {
 			return getRuleContext(SubscriptResultContext.class,0);
 		}
-		public CodeBlockContext codeBlock() {
-			return getRuleContext(CodeBlockContext.class,0);
-		}
-		public SubscriptHeadContext subscriptHead() {
-			return getRuleContext(SubscriptHeadContext.class,0);
+		public GetterSetterBlockContext getterSetterBlock() {
+			return getRuleContext(GetterSetterBlockContext.class,0);
 		}
 		public GetterSetterKeywordBlockContext getterSetterKeywordBlock() {
 			return getRuleContext(GetterSetterKeywordBlockContext.class,0);
+		}
+		public CodeBlockContext codeBlock() {
+			return getRuleContext(CodeBlockContext.class,0);
 		}
 		public SubscriptDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8656,29 +9450,39 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 278, RULE_subscriptDeclaration);
 		try {
 			setState(1602);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,182,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1590); subscriptHead();
-				setState(1591); subscriptResult();
-				setState(1592); getterSetterBlock();
+				setState(1590);
+				subscriptHead();
+				setState(1591);
+				subscriptResult();
+				setState(1592);
+				getterSetterBlock();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1594); subscriptHead();
-				setState(1595); subscriptResult();
-				setState(1596); getterSetterKeywordBlock();
+				setState(1594);
+				subscriptHead();
+				setState(1595);
+				subscriptResult();
+				setState(1596);
+				getterSetterKeywordBlock();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1598); subscriptHead();
-				setState(1599); subscriptResult();
-				setState(1600); codeBlock();
+				setState(1598);
+				subscriptHead();
+				setState(1599);
+				subscriptResult();
+				setState(1600);
+				codeBlock();
 				}
 				break;
 			}
@@ -8695,14 +9499,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SubscriptHeadContext extends ParserRuleContext {
+		public ParameterClauseContext parameterClause() {
+			return getRuleContext(ParameterClauseContext.class,0);
+		}
 		public AttributesContext attributes() {
 			return getRuleContext(AttributesContext.class,0);
 		}
 		public DeclarationModifiersContext declarationModifiers() {
 			return getRuleContext(DeclarationModifiersContext.class,0);
-		}
-		public ParameterClauseContext parameterClause() {
-			return getRuleContext(ParameterClauseContext.class,0);
 		}
 		public SubscriptHeadContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8726,23 +9530,29 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1605);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1604); attributes();
+				setState(1604);
+				attributes();
 				}
 			}
 
 			setState(1608);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__132) | (1L << T__109) | (1L << T__105) | (1L << T__101) | (1L << T__92) | (1L << T__89))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__80 - 64)) | (1L << (T__75 - 64)) | (1L << (T__71 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)))) != 0) || ((((_la - 133)) & ~0x3f) == 0 && ((1L << (_la - 133)) & ((1L << (T__14 - 133)) | (1L << (T__12 - 133)) | (1L << (T__2 - 133)))) != 0)) {
+			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (T__44 - 45)) | (1L << (T__45 - 45)) | (1L << (T__46 - 45)) | (1L << (T__47 - 45)) | (1L << (T__48 - 45)) | (1L << (T__49 - 45)) | (1L << (T__50 - 45)) | (1L << (T__51 - 45)) | (1L << (T__52 - 45)) | (1L << (T__53 - 45)) | (1L << (T__54 - 45)) | (1L << (T__55 - 45)) | (1L << (T__56 - 45)) | (1L << (T__57 - 45)) | (1L << (T__58 - 45)) | (1L << (T__61 - 45)) | (1L << (T__62 - 45)) | (1L << (T__64 - 45)) | (1L << (T__65 - 45)) | (1L << (T__66 - 45)) | (1L << (T__67 - 45)))) != 0)) {
 				{
-				setState(1607); declarationModifiers();
+				setState(1607);
+				declarationModifiers();
 				}
 			}
 
-			setState(1610); match(T__110);
-			setState(1611); parameterClause();
+			setState(1610);
+			match(T__90);
+			setState(1611);
+			parameterClause();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8757,11 +9567,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SubscriptResultContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public STypeContext sType() {
 			return getRuleContext(STypeContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public SubscriptResultContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8784,16 +9594,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1613); match(T__19);
+			setState(1613);
+			match(T__80);
 			setState(1615);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(1614); attributes();
+				setState(1614);
+				attributes();
 				}
 			}
 
-			setState(1617); sType(0);
+			setState(1617);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -8808,14 +9622,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class OperatorDeclarationContext extends ParserRuleContext {
-		public InfixOperatorDeclarationContext infixOperatorDeclaration() {
-			return getRuleContext(InfixOperatorDeclarationContext.class,0);
-		}
 		public PrefixOperatorDeclarationContext prefixOperatorDeclaration() {
 			return getRuleContext(PrefixOperatorDeclarationContext.class,0);
 		}
 		public PostfixOperatorDeclarationContext postfixOperatorDeclaration() {
 			return getRuleContext(PostfixOperatorDeclarationContext.class,0);
+		}
+		public InfixOperatorDeclarationContext infixOperatorDeclaration() {
+			return getRuleContext(InfixOperatorDeclarationContext.class,0);
 		}
 		public OperatorDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8836,23 +9650,27 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 284, RULE_operatorDeclaration);
 		try {
 			setState(1622);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__75:
+			case T__55:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1619); prefixOperatorDeclaration();
+				setState(1619);
+				prefixOperatorDeclaration();
 				}
 				break;
-			case T__136:
+			case T__54:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1620); postfixOperatorDeclaration();
+				setState(1620);
+				postfixOperatorDeclaration();
 				}
 				break;
-			case T__45:
+			case T__48:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1621); infixOperatorDeclaration();
+				setState(1621);
+				infixOperatorDeclaration();
 				}
 				break;
 			default:
@@ -8894,11 +9712,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1624); match(T__75);
-			setState(1625); match(T__143);
-			setState(1626); operator();
-			setState(1627); match(T__67);
-			setState(1628); match(T__103);
+			setState(1624);
+			match(T__55);
+			setState(1625);
+			match(T__91);
+			setState(1626);
+			operator();
+			setState(1627);
+			match(T__15);
+			setState(1628);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -8936,11 +9759,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1630); match(T__136);
-			setState(1631); match(T__143);
-			setState(1632); operator();
-			setState(1633); match(T__67);
-			setState(1634); match(T__103);
+			setState(1630);
+			match(T__54);
+			setState(1631);
+			match(T__91);
+			setState(1632);
+			operator();
+			setState(1633);
+			match(T__15);
+			setState(1634);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -8955,11 +9783,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class InfixOperatorDeclarationContext extends ParserRuleContext {
-		public InfixOperatorAttributesContext infixOperatorAttributes() {
-			return getRuleContext(InfixOperatorAttributesContext.class,0);
-		}
 		public OperatorContext operator() {
 			return getRuleContext(OperatorContext.class,0);
+		}
+		public InfixOperatorAttributesContext infixOperatorAttributes() {
+			return getRuleContext(InfixOperatorAttributesContext.class,0);
 		}
 		public InfixOperatorDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8982,19 +9810,26 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1636); match(T__45);
-			setState(1637); match(T__143);
-			setState(1638); operator();
-			setState(1639); match(T__67);
+			setState(1636);
+			match(T__48);
+			setState(1637);
+			match(T__91);
+			setState(1638);
+			operator();
+			setState(1639);
+			match(T__15);
 			setState(1641);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__144 || _la==T__141) {
+			if (_la==T__92 || _la==T__93) {
 				{
-				setState(1640); infixOperatorAttributes();
+				setState(1640);
+				infixOperatorAttributes();
 				}
 			}
 
-			setState(1643); match(T__103);
+			setState(1643);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -9035,30 +9870,37 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1653);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__141:
+			case T__92:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1645); precedenceClause();
+				setState(1645);
+				precedenceClause();
 				setState(1647);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__144) {
+				if (_la==T__93) {
 					{
-					setState(1646); associativityClause();
+					setState(1646);
+					associativityClause();
 					}
 				}
 
 				}
 				break;
-			case T__144:
+			case T__93:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1649); associativityClause();
+				setState(1649);
+				associativityClause();
 				setState(1651);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__141) {
+				if (_la==T__92) {
 					{
-					setState(1650); precedenceClause();
+					setState(1650);
+					precedenceClause();
 					}
 				}
 
@@ -9103,8 +9945,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1655); match(T__141);
-			setState(1656); precedenceLevel();
+			setState(1655);
+			match(T__92);
+			setState(1656);
+			precedenceLevel();
 			}
 		}
 		catch (RecognitionException re) {
@@ -9142,7 +9986,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1658); integerLiteral();
+			setState(1658);
+			integerLiteral();
 			}
 		}
 		catch (RecognitionException re) {
@@ -9180,8 +10025,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1660); match(T__144);
-			setState(1661); associativity();
+			setState(1660);
+			match(T__93);
+			setState(1661);
+			associativity();
 			}
 		}
 		catch (RecognitionException re) {
@@ -9219,10 +10066,14 @@ public class Swift3Parser extends Parser {
 			{
 			setState(1663);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__133) | (1L << T__129) | (1L << T__88))) != 0)) ) {
+			if ( !(((((_la - 95)) & ~0x3f) == 0 && ((1L << (_la - 95)) & ((1L << (T__94 - 95)) | (1L << (T__95 - 95)) | (1L << (T__96 - 95)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -9237,32 +10088,32 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class PatternContext extends ParserRuleContext {
-		public PatternContext pattern() {
-			return getRuleContext(PatternContext.class,0);
-		}
 		public WildcardPatternContext wildcardPattern() {
 			return getRuleContext(WildcardPatternContext.class,0);
 		}
 		public TypeAnnotationContext typeAnnotation() {
 			return getRuleContext(TypeAnnotationContext.class,0);
 		}
-		public TuplePatternContext tuplePattern() {
-			return getRuleContext(TuplePatternContext.class,0);
-		}
-		public STypeContext sType() {
-			return getRuleContext(STypeContext.class,0);
-		}
 		public IdentifierPatternContext identifierPattern() {
 			return getRuleContext(IdentifierPatternContext.class,0);
 		}
-		public ExpressionPatternContext expressionPattern() {
-			return getRuleContext(ExpressionPatternContext.class,0);
+		public ValueBindingPatternContext valueBindingPattern() {
+			return getRuleContext(ValueBindingPatternContext.class,0);
+		}
+		public TuplePatternContext tuplePattern() {
+			return getRuleContext(TuplePatternContext.class,0);
 		}
 		public EnumCasePatternContext enumCasePattern() {
 			return getRuleContext(EnumCasePatternContext.class,0);
 		}
-		public ValueBindingPatternContext valueBindingPattern() {
-			return getRuleContext(ValueBindingPatternContext.class,0);
+		public STypeContext sType() {
+			return getRuleContext(STypeContext.class,0);
+		}
+		public ExpressionPatternContext expressionPattern() {
+			return getRuleContext(ExpressionPatternContext.class,0);
+		}
+		public PatternContext pattern() {
+			return getRuleContext(PatternContext.class,0);
 		}
 		public PatternContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -9294,15 +10145,19 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1683);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,194,_ctx) ) {
 			case 1:
 				{
-				setState(1666); wildcardPattern();
+				setState(1666);
+				wildcardPattern();
 				setState(1668);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,191,_ctx) ) {
 				case 1:
 					{
-					setState(1667); typeAnnotation();
+					setState(1667);
+					typeAnnotation();
 					}
 					break;
 				}
@@ -9310,12 +10165,15 @@ public class Swift3Parser extends Parser {
 				break;
 			case 2:
 				{
-				setState(1670); identifierPattern();
+				setState(1670);
+				identifierPattern();
 				setState(1672);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,192,_ctx) ) {
 				case 1:
 					{
-					setState(1671); typeAnnotation();
+					setState(1671);
+					typeAnnotation();
 					}
 					break;
 				}
@@ -9323,17 +10181,21 @@ public class Swift3Parser extends Parser {
 				break;
 			case 3:
 				{
-				setState(1674); valueBindingPattern();
+				setState(1674);
+				valueBindingPattern();
 				}
 				break;
 			case 4:
 				{
-				setState(1675); tuplePattern();
+				setState(1675);
+				tuplePattern();
 				setState(1677);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,193,_ctx) ) {
 				case 1:
 					{
-					setState(1676); typeAnnotation();
+					setState(1676);
+					typeAnnotation();
 					}
 					break;
 				}
@@ -9341,18 +10203,22 @@ public class Swift3Parser extends Parser {
 				break;
 			case 5:
 				{
-				setState(1679); enumCasePattern();
+				setState(1679);
+				enumCasePattern();
 				}
 				break;
 			case 6:
 				{
-				setState(1680); match(T__96);
-				setState(1681); sType(0);
+				setState(1680);
+				match(T__97);
+				setState(1681);
+				sType(0);
 				}
 				break;
 			case 7:
 				{
-				setState(1682); expressionPattern();
+				setState(1682);
+				expressionPattern();
 				}
 				break;
 			}
@@ -9360,7 +10226,7 @@ public class Swift3Parser extends Parser {
 			setState(1690);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,195,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
@@ -9370,8 +10236,10 @@ public class Swift3Parser extends Parser {
 					pushNewRecursionContext(_localctx, _startState, RULE_pattern);
 					setState(1685);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(1686); match(T__107);
-					setState(1687); sType(0);
+					setState(1686);
+					match(T__98);
+					setState(1687);
+					sType(0);
 					}
 					} 
 				}
@@ -9413,7 +10281,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1693); match(T__8);
+			setState(1693);
+			match(T__82);
 			}
 		}
 		catch (RecognitionException re) {
@@ -9451,7 +10320,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1695); identifier();
+			setState(1695);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -9488,19 +10358,24 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 308, RULE_valueBindingPattern);
 		try {
 			setState(1701);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__126:
+			case T__27:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1697); match(T__126);
-				setState(1698); pattern(0);
+				setState(1697);
+				match(T__27);
+				setState(1698);
+				pattern(0);
 				}
 				break;
-			case T__47:
+			case T__26:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1699); match(T__47);
-				setState(1700); pattern(0);
+				setState(1699);
+				match(T__26);
+				setState(1700);
+				pattern(0);
 				}
 				break;
 			default:
@@ -9543,16 +10418,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1703); match(T__64);
+			setState(1703);
+			match(T__30);
 			setState(1705);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__101) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__104 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 				{
-				setState(1704); tuplePatternElementList();
+				setState(1704);
+				tuplePatternElementList();
 				}
 			}
 
-			setState(1707); match(T__78);
+			setState(1707);
+			match(T__31);
 			}
 		}
 		catch (RecognitionException re) {
@@ -9567,11 +10446,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class TuplePatternElementListContext extends ParserRuleContext {
-		public TuplePatternElementContext tuplePatternElement(int i) {
-			return getRuleContext(TuplePatternElementContext.class,i);
-		}
 		public List<TuplePatternElementContext> tuplePatternElement() {
 			return getRuleContexts(TuplePatternElementContext.class);
+		}
+		public TuplePatternElementContext tuplePatternElement(int i) {
+			return getRuleContext(TuplePatternElementContext.class,i);
 		}
 		public TuplePatternElementListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -9594,15 +10473,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1709); tuplePatternElement();
+			setState(1709);
+			tuplePatternElement();
 			setState(1714);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(1710); match(T__130);
-				setState(1711); tuplePatternElement();
+				setState(1710);
+				match(T__17);
+				setState(1711);
+				tuplePatternElement();
 				}
 				}
 				setState(1716);
@@ -9648,19 +10530,24 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 314, RULE_tuplePatternElement);
 		try {
 			setState(1722);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,199,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1717); pattern(0);
+				setState(1717);
+				pattern(0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1718); identifier();
-				setState(1719); match(T__85);
-				setState(1720); pattern(0);
+				setState(1718);
+				identifier();
+				setState(1719);
+				match(T__1);
+				setState(1720);
+				pattern(0);
 				}
 				break;
 			}
@@ -9680,11 +10567,11 @@ public class Swift3Parser extends Parser {
 		public EnumCaseNameContext enumCaseName() {
 			return getRuleContext(EnumCaseNameContext.class,0);
 		}
-		public TuplePatternContext tuplePattern() {
-			return getRuleContext(TuplePatternContext.class,0);
-		}
 		public TypeIdentifierContext typeIdentifier() {
 			return getRuleContext(TypeIdentifierContext.class,0);
+		}
+		public TuplePatternContext tuplePattern() {
+			return getRuleContext(TuplePatternContext.class,0);
 		}
 		public EnumCasePatternContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -9708,27 +10595,34 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1725);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,200,_ctx) ) {
 			case 1:
 				{
-				setState(1724); typeIdentifier();
+				setState(1724);
+				typeIdentifier();
 				}
 				break;
 			}
 			setState(1728);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__22) {
+			if (_la==T__2) {
 				{
-				setState(1727); match(T__22);
+				setState(1727);
+				match(T__2);
 				}
 			}
 
-			setState(1730); enumCaseName();
+			setState(1730);
+			enumCaseName();
 			setState(1732);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,202,_ctx) ) {
 			case 1:
 				{
-				setState(1731); tuplePattern();
+				setState(1731);
+				tuplePattern();
 				}
 				break;
 			}
@@ -9771,17 +10665,20 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 318, RULE_typeCastingPattern);
 		try {
 			setState(1736);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,203,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1734); isPattern();
+				setState(1734);
+				isPattern();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1735); asPattern();
+				setState(1735);
+				asPattern();
 				}
 				break;
 			}
@@ -9821,8 +10718,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1738); match(T__96);
-			setState(1739); sType(0);
+			setState(1738);
+			match(T__97);
+			setState(1739);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -9863,9 +10762,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1741); pattern(0);
-			setState(1742); match(T__107);
-			setState(1743); sType(0);
+			setState(1741);
+			pattern(0);
+			setState(1742);
+			match(T__98);
+			setState(1743);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -9903,7 +10805,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1745); expression();
+			setState(1745);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -9944,13 +10847,17 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1747); match(T__52);
-			setState(1748); attributeName();
+			setState(1747);
+			match(T__99);
+			setState(1748);
+			attributeName();
 			setState(1750);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,204,_ctx) ) {
 			case 1:
 				{
-				setState(1749); attributeArgumentClause();
+				setState(1749);
+				attributeArgumentClause();
 				}
 				break;
 			}
@@ -9991,7 +10898,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1752); identifier();
+			setState(1752);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -10030,16 +10938,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1754); match(T__64);
+			setState(1754);
+			match(T__30);
 			setState(1756);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__130) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__104) | (1L << T__102) | (1L << T__101) | (1L << T__100) | (1L << T__99) | (1L << T__98) | (1L << T__97) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__91) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__85) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__69 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__58 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__103 - 64)) | (1L << (T__104 - 64)) | (1L << (T__105 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 				{
-				setState(1755); balancedTokens();
+				setState(1755);
+				balancedTokens();
 				}
 			}
 
-			setState(1758); match(T__78);
+			setState(1758);
+			match(T__31);
 			}
 		}
 		catch (RecognitionException re) {
@@ -10087,13 +10999,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(1760); attribute();
+				setState(1760);
+				attribute();
 				}
 				}
 				setState(1763); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T__52 );
+			} while ( _la==T__99 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -10108,11 +11021,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class BalancedTokensContext extends ParserRuleContext {
-		public BalancedTokenContext balancedToken(int i) {
-			return getRuleContext(BalancedTokenContext.class,i);
-		}
 		public List<BalancedTokenContext> balancedToken() {
 			return getRuleContexts(BalancedTokenContext.class);
+		}
+		public BalancedTokenContext balancedToken(int i) {
+			return getRuleContext(BalancedTokenContext.class,i);
 		}
 		public BalancedTokensContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -10141,13 +11054,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(1765); balancedToken();
+				setState(1765);
+				balancedToken();
 				}
 				}
 				setState(1768); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__130) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__104) | (1L << T__102) | (1L << T__101) | (1L << T__100) | (1L << T__99) | (1L << T__98) | (1L << T__97) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__91) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__85) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__69 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__58 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__103 - 64)) | (1L << (T__104 - 64)) | (1L << (T__105 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -10162,19 +11076,9 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class BalancedTokenContext extends ParserRuleContext {
-		public AvailabilityArgumentContext availabilityArgument() {
-			return getRuleContext(AvailabilityArgumentContext.class,0);
-		}
-		public OperatorContext operator() {
-			return getRuleContext(OperatorContext.class,0);
-		}
 		public BalancedTokensContext balancedTokens() {
 			return getRuleContext(BalancedTokensContext.class,0);
 		}
-		public LiteralContext literal() {
-			return getRuleContext(LiteralContext.class,0);
-		}
-		public TerminalNode VersionLiteral() { return getToken(Swift3Parser.VersionLiteral, 0); }
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
 		}
@@ -10183,6 +11087,16 @@ public class Swift3Parser extends Parser {
 		}
 		public ContextSensitiveKeywordContext contextSensitiveKeyword() {
 			return getRuleContext(ContextSensitiveKeywordContext.class,0);
+		}
+		public LiteralContext literal() {
+			return getRuleContext(LiteralContext.class,0);
+		}
+		public OperatorContext operator() {
+			return getRuleContext(OperatorContext.class,0);
+		}
+		public TerminalNode VersionLiteral() { return getToken(Swift3Parser.VersionLiteral, 0); }
+		public AvailabilityArgumentContext availabilityArgument() {
+			return getRuleContext(AvailabilityArgumentContext.class,0);
 		}
 		public BalancedTokenContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -10204,158 +11118,189 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1803);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,211,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1770); match(T__64);
+				setState(1770);
+				match(T__30);
 				setState(1772);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__130) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__104) | (1L << T__102) | (1L << T__101) | (1L << T__100) | (1L << T__99) | (1L << T__98) | (1L << T__97) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__91) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__85) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__69 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__58 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__103 - 64)) | (1L << (T__104 - 64)) | (1L << (T__105 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 					{
-					setState(1771); balancedTokens();
+					setState(1771);
+					balancedTokens();
 					}
 				}
 
-				setState(1774); match(T__78);
+				setState(1774);
+				match(T__31);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1775); match(T__84);
+				setState(1775);
+				match(T__100);
 				setState(1777);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__130) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__104) | (1L << T__102) | (1L << T__101) | (1L << T__100) | (1L << T__99) | (1L << T__98) | (1L << T__97) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__91) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__85) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__69 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__58 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__103 - 64)) | (1L << (T__104 - 64)) | (1L << (T__105 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 					{
-					setState(1776); balancedTokens();
+					setState(1776);
+					balancedTokens();
 					}
 				}
 
-				setState(1779); match(T__117);
+				setState(1779);
+				match(T__101);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1780); match(T__67);
+				setState(1780);
+				match(T__15);
 				setState(1782);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__130) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__104) | (1L << T__102) | (1L << T__101) | (1L << T__100) | (1L << T__99) | (1L << T__98) | (1L << T__97) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__91) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__85) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__69 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__58 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__103 - 64)) | (1L << (T__104 - 64)) | (1L << (T__105 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (VersionLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 					{
-					setState(1781); balancedTokens();
+					setState(1781);
+					balancedTokens();
 					}
 				}
 
-				setState(1784); match(T__103);
+				setState(1784);
+				match(T__16);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1785); identifier();
+				setState(1785);
+				identifier();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1786); expression();
+				setState(1786);
+				expression();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1787); contextSensitiveKeyword();
+				setState(1787);
+				contextSensitiveKeyword();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(1788); literal();
+				setState(1788);
+				literal();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(1789); operator();
+				setState(1789);
+				operator();
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(1790); match(VersionLiteral);
+				setState(1790);
+				match(VersionLiteral);
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(1791); availabilityArgument();
+				setState(1791);
+				availabilityArgument();
 				}
 				break;
 			case 11:
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(1792); match(T__85);
+				setState(1792);
+				match(T__1);
 				}
 				break;
 			case 12:
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(1793); match(T__104);
+				setState(1793);
+				match(T__0);
 				}
 				break;
 			case 13:
 				enterOuterAlt(_localctx, 13);
 				{
-				setState(1794); match(T__130);
+				setState(1794);
+				match(T__17);
 				}
 				break;
 			case 14:
 				enterOuterAlt(_localctx, 14);
 				{
-				setState(1795); match(T__81);
+				setState(1795);
+				match(T__87);
 				}
 				break;
 			case 15:
 				enterOuterAlt(_localctx, 15);
 				{
-				setState(1796); match(T__119);
+				setState(1796);
+				match(T__41);
 				}
 				break;
 			case 16:
 				enterOuterAlt(_localctx, 16);
 				{
-				setState(1797); match(T__10);
+				setState(1797);
+				match(T__42);
 				}
 				break;
 			case 17:
 				enterOuterAlt(_localctx, 17);
 				{
-				setState(1798); match(T__1);
+				setState(1798);
+				match(T__102);
 				}
 				break;
 			case 18:
 				enterOuterAlt(_localctx, 18);
 				{
-				setState(1799); match(T__97);
+				setState(1799);
+				match(T__103);
 				}
 				break;
 			case 19:
 				enterOuterAlt(_localctx, 19);
 				{
-				setState(1800); match(T__42);
+				setState(1800);
+				match(T__104);
 				}
 				break;
 			case 20:
 				enterOuterAlt(_localctx, 20);
 				{
-				setState(1801); match(T__15);
+				setState(1801);
+				match(T__81);
 				}
 				break;
 			case 21:
 				enterOuterAlt(_localctx, 21);
 				{
-				setState(1802); match(T__100);
+				setState(1802);
+				match(T__105);
 				}
 				break;
 			}
@@ -10375,14 +11320,14 @@ public class Swift3Parser extends Parser {
 		public PrefixExpressionContext prefixExpression() {
 			return getRuleContext(PrefixExpressionContext.class,0);
 		}
+		public TryOperatorContext tryOperator() {
+			return getRuleContext(TryOperatorContext.class,0);
+		}
 		public List<BinaryExpressionContext> binaryExpression() {
 			return getRuleContexts(BinaryExpressionContext.class);
 		}
 		public BinaryExpressionContext binaryExpression(int i) {
 			return getRuleContext(BinaryExpressionContext.class,i);
-		}
-		public TryOperatorContext tryOperator() {
-			return getRuleContext(TryOperatorContext.class,0);
 		}
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -10406,22 +11351,26 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1806);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,212,_ctx) ) {
 			case 1:
 				{
-				setState(1805); tryOperator();
+				setState(1805);
+				tryOperator();
 				}
 				break;
 			}
-			setState(1808); prefixExpression();
+			setState(1808);
+			prefixExpression();
 			setState(1812);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,213,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1809); binaryExpression();
+					setState(1809);
+					binaryExpression();
 					}
 					} 
 				}
@@ -10446,11 +11395,11 @@ public class Swift3Parser extends Parser {
 		public PostfixExpressionContext postfixExpression() {
 			return getRuleContext(PostfixExpressionContext.class,0);
 		}
-		public InOutExpressionContext inOutExpression() {
-			return getRuleContext(InOutExpressionContext.class,0);
-		}
 		public PrefixOperatorContext prefixOperator() {
 			return getRuleContext(PrefixOperatorContext.class,0);
+		}
+		public InOutExpressionContext inOutExpression() {
+			return getRuleContext(InOutExpressionContext.class,0);
 		}
 		public PrefixExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -10471,24 +11420,30 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 340, RULE_prefixExpression);
 		try {
 			setState(1823);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,216,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(1816);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,214,_ctx) ) {
 				case 1:
 					{
-					setState(1815); prefixOperator();
+					setState(1815);
+					prefixOperator();
 					}
 					break;
 				}
-				setState(1818); postfixExpression(0);
+				setState(1818);
+				postfixExpression(0);
 				setState(1820);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,215,_ctx) ) {
 				case 1:
 					{
-					setState(1819); match(T__104);
+					setState(1819);
+					match(T__0);
 					}
 					break;
 				}
@@ -10497,7 +11452,8 @@ public class Swift3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1822); inOutExpression();
+				setState(1822);
+				inOutExpression();
 				}
 				break;
 			}
@@ -10537,8 +11493,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1825); match(T__26);
-			setState(1826); identifier();
+			setState(1825);
+			match(T__106);
+			setState(1826);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -10574,17 +11532,23 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1828); match(T__30);
+			setState(1828);
+			match(T__107);
 			setState(1830);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,217,_ctx) ) {
 			case 1:
 				{
 				setState(1829);
 				_la = _input.LA(1);
-				if ( !(_la==T__81 || _la==T__29) ) {
+				if ( !(_la==T__86 || _la==T__87) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
 				}
 				break;
 			}
@@ -10602,23 +11566,23 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class BinaryExpressionContext extends ParserRuleContext {
-		public PrefixExpressionContext prefixExpression() {
-			return getRuleContext(PrefixExpressionContext.class,0);
-		}
-		public TypeCastingOperatorContext typeCastingOperator() {
-			return getRuleContext(TypeCastingOperatorContext.class,0);
-		}
-		public TryOperatorContext tryOperator() {
-			return getRuleContext(TryOperatorContext.class,0);
-		}
 		public BinaryOperatorContext binaryOperator() {
 			return getRuleContext(BinaryOperatorContext.class,0);
+		}
+		public PrefixExpressionContext prefixExpression() {
+			return getRuleContext(PrefixExpressionContext.class,0);
 		}
 		public AssignmentOperatorContext assignmentOperator() {
 			return getRuleContext(AssignmentOperatorContext.class,0);
 		}
+		public TryOperatorContext tryOperator() {
+			return getRuleContext(TryOperatorContext.class,0);
+		}
 		public ConditionalOperatorContext conditionalOperator() {
 			return getRuleContext(ConditionalOperatorContext.class,0);
+		}
+		public TypeCastingOperatorContext typeCastingOperator() {
+			return getRuleContext(TypeCastingOperatorContext.class,0);
 		}
 		public BinaryExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -10639,48 +11603,60 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 346, RULE_binaryExpression);
 		try {
 			setState(1848);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,220,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1832); binaryOperator();
-				setState(1833); prefixExpression();
+				setState(1832);
+				binaryOperator();
+				setState(1833);
+				prefixExpression();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1835); assignmentOperator();
+				setState(1835);
+				assignmentOperator();
 				setState(1837);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,218,_ctx) ) {
 				case 1:
 					{
-					setState(1836); tryOperator();
+					setState(1836);
+					tryOperator();
 					}
 					break;
 				}
-				setState(1839); prefixExpression();
+				setState(1839);
+				prefixExpression();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1841); conditionalOperator();
+				setState(1841);
+				conditionalOperator();
 				setState(1843);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,219,_ctx) ) {
 				case 1:
 					{
-					setState(1842); tryOperator();
+					setState(1842);
+					tryOperator();
 					}
 					break;
 				}
-				setState(1845); prefixExpression();
+				setState(1845);
+				prefixExpression();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1847); typeCastingOperator();
+				setState(1847);
+				typeCastingOperator();
 				}
 				break;
 			}
@@ -10717,7 +11693,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1850); match(T__137);
+			setState(1850);
+			match(T__74);
 			}
 		}
 		catch (RecognitionException re) {
@@ -10732,11 +11709,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ConditionalOperatorContext extends ParserRuleContext {
-		public TryOperatorContext tryOperator() {
-			return getRuleContext(TryOperatorContext.class,0);
-		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TryOperatorContext tryOperator() {
+			return getRuleContext(TryOperatorContext.class,0);
 		}
 		public ConditionalOperatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -10758,17 +11735,22 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1852); match(T__29);
+			setState(1852);
+			match(T__86);
 			setState(1854);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,221,_ctx) ) {
 			case 1:
 				{
-				setState(1853); tryOperator();
+				setState(1853);
+				tryOperator();
 				}
 				break;
 			}
-			setState(1856); expression();
-			setState(1857); match(T__85);
+			setState(1856);
+			expression();
+			setState(1857);
+			match(T__1);
 			}
 		}
 		catch (RecognitionException re) {
@@ -10805,35 +11787,46 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 352, RULE_typeCastingOperator);
 		try {
 			setState(1869);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,222,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1859); match(T__96);
-				setState(1860); sType(0);
+				setState(1859);
+				match(T__97);
+				setState(1860);
+				sType(0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1861); match(T__107);
-				setState(1862); match(T__29);
-				setState(1863); sType(0);
+				setState(1861);
+				match(T__98);
+				setState(1862);
+				match(T__86);
+				setState(1863);
+				sType(0);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1864); match(T__107);
-				setState(1865); sType(0);
+				setState(1864);
+				match(T__98);
+				setState(1865);
+				sType(0);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1866); match(T__107);
-				setState(1867); match(T__81);
-				setState(1868); sType(0);
+				setState(1866);
+				match(T__98);
+				setState(1867);
+				match(T__87);
+				setState(1868);
+				sType(0);
 				}
 				break;
 			}
@@ -10850,17 +11843,26 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class PrimaryExpressionContext extends ParserRuleContext {
-		public GenericArgumentClauseContext genericArgumentClause() {
-			return getRuleContext(GenericArgumentClauseContext.class,0);
-		}
-		public ParenthesizedExpressionContext parenthesizedExpression() {
-			return getRuleContext(ParenthesizedExpressionContext.class,0);
+		public IdentifierContext identifier() {
+			return getRuleContext(IdentifierContext.class,0);
 		}
 		public OperatorContext operator() {
 			return getRuleContext(OperatorContext.class,0);
 		}
-		public IdentifierContext identifier() {
-			return getRuleContext(IdentifierContext.class,0);
+		public KeywordContext keyword() {
+			return getRuleContext(KeywordContext.class,0);
+		}
+		public ContextSensitiveKeywordContext contextSensitiveKeyword() {
+			return getRuleContext(ContextSensitiveKeywordContext.class,0);
+		}
+		public GenericArgumentClauseContext genericArgumentClause() {
+			return getRuleContext(GenericArgumentClauseContext.class,0);
+		}
+		public LiteralExpressionContext literalExpression() {
+			return getRuleContext(LiteralExpressionContext.class,0);
+		}
+		public SelfExpressionContext selfExpression() {
+			return getRuleContext(SelfExpressionContext.class,0);
 		}
 		public SuperclassExpressionContext superclassExpression() {
 			return getRuleContext(SuperclassExpressionContext.class,0);
@@ -10868,29 +11870,20 @@ public class Swift3Parser extends Parser {
 		public ClosureExpressionContext closureExpression() {
 			return getRuleContext(ClosureExpressionContext.class,0);
 		}
-		public WildcardExpressionContext wildcardExpression() {
-			return getRuleContext(WildcardExpressionContext.class,0);
-		}
-		public SelfExpressionContext selfExpression() {
-			return getRuleContext(SelfExpressionContext.class,0);
-		}
-		public KeywordContext keyword() {
-			return getRuleContext(KeywordContext.class,0);
+		public ParenthesizedExpressionContext parenthesizedExpression() {
+			return getRuleContext(ParenthesizedExpressionContext.class,0);
 		}
 		public ImplicitMemberExpressionContext implicitMemberExpression() {
 			return getRuleContext(ImplicitMemberExpressionContext.class,0);
+		}
+		public WildcardExpressionContext wildcardExpression() {
+			return getRuleContext(WildcardExpressionContext.class,0);
 		}
 		public SelectorExpressionContext selectorExpression() {
 			return getRuleContext(SelectorExpressionContext.class,0);
 		}
 		public KeyPathExpressionContext keyPathExpression() {
 			return getRuleContext(KeyPathExpressionContext.class,0);
-		}
-		public ContextSensitiveKeywordContext contextSensitiveKeyword() {
-			return getRuleContext(ContextSensitiveKeywordContext.class,0);
-		}
-		public LiteralExpressionContext literalExpression() {
-			return getRuleContext(LiteralExpressionContext.class,0);
 		}
 		public PrimaryExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -10911,38 +11904,46 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 354, RULE_primaryExpression);
 		try {
 			setState(1889);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,225,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(1875);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,223,_ctx) ) {
 				case 1:
 					{
-					setState(1871); identifier();
+					setState(1871);
+					identifier();
 					}
 					break;
 				case 2:
 					{
-					setState(1872); operator();
+					setState(1872);
+					operator();
 					}
 					break;
 				case 3:
 					{
-					setState(1873); keyword();
+					setState(1873);
+					keyword();
 					}
 					break;
 				case 4:
 					{
-					setState(1874); contextSensitiveKeyword();
+					setState(1874);
+					contextSensitiveKeyword();
 					}
 					break;
 				}
 				setState(1878);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,224,_ctx) ) {
 				case 1:
 					{
-					setState(1877); genericArgumentClause();
+					setState(1877);
+					genericArgumentClause();
 					}
 					break;
 				}
@@ -10951,55 +11952,64 @@ public class Swift3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1880); literalExpression();
+				setState(1880);
+				literalExpression();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1881); selfExpression();
+				setState(1881);
+				selfExpression();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1882); superclassExpression();
+				setState(1882);
+				superclassExpression();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1883); closureExpression();
+				setState(1883);
+				closureExpression();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1884); parenthesizedExpression();
+				setState(1884);
+				parenthesizedExpression();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(1885); implicitMemberExpression();
+				setState(1885);
+				implicitMemberExpression();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(1886); wildcardExpression();
+				setState(1886);
+				wildcardExpression();
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(1887); selectorExpression();
+				setState(1887);
+				selectorExpression();
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(1888); keyPathExpression();
+				setState(1888);
+				keyPathExpression();
 				}
 				break;
 			}
@@ -11016,11 +12026,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class LiteralExpressionContext extends ParserRuleContext {
-		public ArrayLiteralContext arrayLiteral() {
-			return getRuleContext(ArrayLiteralContext.class,0);
-		}
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
+		}
+		public ArrayLiteralContext arrayLiteral() {
+			return getRuleContext(ArrayLiteralContext.class,0);
 		}
 		public DictionaryLiteralContext dictionaryLiteral() {
 			return getRuleContext(DictionaryLiteralContext.class,0);
@@ -11044,47 +12054,55 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 356, RULE_literalExpression);
 		try {
 			setState(1898);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,226,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1891); literal();
+				setState(1891);
+				literal();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1892); arrayLiteral();
+				setState(1892);
+				arrayLiteral();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1893); dictionaryLiteral();
+				setState(1893);
+				dictionaryLiteral();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1894); match(T__55);
+				setState(1894);
+				match(T__108);
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1895); match(T__106);
+				setState(1895);
+				match(T__109);
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1896); match(T__131);
+				setState(1896);
+				match(T__110);
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(1897); match(T__68);
+				setState(1897);
+				match(T__111);
 				}
 				break;
 			}
@@ -11125,16 +12143,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1900); match(T__84);
+			setState(1900);
+			match(T__100);
 			setState(1902);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__101) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__104 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 				{
-				setState(1901); arrayLiteralItems();
+				setState(1901);
+				arrayLiteralItems();
 				}
 			}
 
-			setState(1904); match(T__117);
+			setState(1904);
+			match(T__101);
 			}
 		}
 		catch (RecognitionException re) {
@@ -11177,16 +12199,19 @@ public class Swift3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1906); arrayLiteralItem();
+			setState(1906);
+			arrayLiteralItem();
 			setState(1911);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,228,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1907); match(T__130);
-					setState(1908); arrayLiteralItem();
+					setState(1907);
+					match(T__17);
+					setState(1908);
+					arrayLiteralItem();
 					}
 					} 
 				}
@@ -11195,10 +12220,12 @@ public class Swift3Parser extends Parser {
 				_alt = getInterpreter().adaptivePredict(_input,228,_ctx);
 			}
 			setState(1915);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__130) {
+			if (_la==T__17) {
 				{
-				setState(1914); match(T__130);
+				setState(1914);
+				match(T__17);
 				}
 			}
 
@@ -11239,7 +12266,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1917); expression();
+			setState(1917);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -11276,21 +12304,28 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 364, RULE_dictionaryLiteral);
 		try {
 			setState(1926);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,230,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1919); match(T__84);
-				setState(1920); dictionaryLiteralItems();
-				setState(1921); match(T__117);
+				setState(1919);
+				match(T__100);
+				setState(1920);
+				dictionaryLiteralItems();
+				setState(1921);
+				match(T__101);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1923); match(T__84);
-				setState(1924); match(T__85);
-				setState(1925); match(T__117);
+				setState(1923);
+				match(T__100);
+				setState(1924);
+				match(T__1);
+				setState(1925);
+				match(T__101);
 				}
 				break;
 			}
@@ -11335,16 +12370,19 @@ public class Swift3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1928); dictionaryLiteralItem();
+			setState(1928);
+			dictionaryLiteralItem();
 			setState(1933);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,231,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1929); match(T__130);
-					setState(1930); dictionaryLiteralItem();
+					setState(1929);
+					match(T__17);
+					setState(1930);
+					dictionaryLiteralItem();
 					}
 					} 
 				}
@@ -11353,10 +12391,12 @@ public class Swift3Parser extends Parser {
 				_alt = getInterpreter().adaptivePredict(_input,231,_ctx);
 			}
 			setState(1937);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__130) {
+			if (_la==T__17) {
 				{
-				setState(1936); match(T__130);
+				setState(1936);
+				match(T__17);
 				}
 			}
 
@@ -11374,11 +12414,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class DictionaryLiteralItemContext extends ParserRuleContext {
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
 		public DictionaryLiteralItemContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -11400,9 +12440,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1939); expression();
-			setState(1940); match(T__85);
-			setState(1941); expression();
+			setState(1939);
+			expression();
+			setState(1940);
+			match(T__1);
+			setState(1941);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -11417,11 +12460,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SelfExpressionContext extends ParserRuleContext {
-		public ExpressionElementListContext expressionElementList() {
-			return getRuleContext(ExpressionElementListContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
+		}
+		public ExpressionElementListContext expressionElementList() {
+			return getRuleContext(ExpressionElementListContext.class,0);
 		}
 		public SelfExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -11442,36 +12485,48 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 370, RULE_selfExpression);
 		try {
 			setState(1955);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,233,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1943); match(T__79);
+				setState(1943);
+				match(T__112);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1944); match(T__79);
-				setState(1945); match(T__22);
-				setState(1946); identifier();
+				setState(1944);
+				match(T__112);
+				setState(1945);
+				match(T__2);
+				setState(1946);
+				identifier();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1947); match(T__79);
-				setState(1948); match(T__84);
-				setState(1949); expressionElementList();
-				setState(1950); match(T__117);
+				setState(1947);
+				match(T__112);
+				setState(1948);
+				match(T__100);
+				setState(1949);
+				expressionElementList();
+				setState(1950);
+				match(T__101);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1952); match(T__79);
-				setState(1953); match(T__22);
-				setState(1954); match(T__125);
+				setState(1952);
+				match(T__112);
+				setState(1953);
+				match(T__2);
+				setState(1954);
+				match(T__85);
 				}
 				break;
 			}
@@ -11488,11 +12543,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class SuperclassExpressionContext extends ParserRuleContext {
-		public SuperclassSubscriptExpressionContext superclassSubscriptExpression() {
-			return getRuleContext(SuperclassSubscriptExpressionContext.class,0);
-		}
 		public SuperclassMethodExpressionContext superclassMethodExpression() {
 			return getRuleContext(SuperclassMethodExpressionContext.class,0);
+		}
+		public SuperclassSubscriptExpressionContext superclassSubscriptExpression() {
+			return getRuleContext(SuperclassSubscriptExpressionContext.class,0);
 		}
 		public SuperclassInitializerExpressionContext superclassInitializerExpression() {
 			return getRuleContext(SuperclassInitializerExpressionContext.class,0);
@@ -11516,23 +12571,27 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 372, RULE_superclassExpression);
 		try {
 			setState(1960);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,234,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1957); superclassMethodExpression();
+				setState(1957);
+				superclassMethodExpression();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1958); superclassSubscriptExpression();
+				setState(1958);
+				superclassSubscriptExpression();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1959); superclassInitializerExpression();
+				setState(1959);
+				superclassInitializerExpression();
 				}
 				break;
 			}
@@ -11572,9 +12631,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1962); match(T__3);
-			setState(1963); match(T__22);
-			setState(1964); identifier();
+			setState(1962);
+			match(T__113);
+			setState(1963);
+			match(T__2);
+			setState(1964);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -11612,10 +12674,14 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1966); match(T__3);
-			setState(1967); match(T__84);
-			setState(1968); expressionElementList();
-			setState(1969); match(T__117);
+			setState(1966);
+			match(T__113);
+			setState(1967);
+			match(T__100);
+			setState(1968);
+			expressionElementList();
+			setState(1969);
+			match(T__101);
 			}
 		}
 		catch (RecognitionException re) {
@@ -11650,9 +12716,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1971); match(T__3);
-			setState(1972); match(T__22);
-			setState(1973); match(T__125);
+			setState(1971);
+			match(T__113);
+			setState(1972);
+			match(T__2);
+			setState(1973);
+			match(T__85);
 			}
 		}
 		catch (RecognitionException re) {
@@ -11667,11 +12736,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ClosureExpressionContext extends ParserRuleContext {
-		public StatementsContext statements() {
-			return getRuleContext(StatementsContext.class,0);
-		}
 		public ClosureSignatureContext closureSignature() {
 			return getRuleContext(ClosureSignatureContext.class,0);
+		}
+		public StatementsContext statements() {
+			return getRuleContext(StatementsContext.class,0);
 		}
 		public ClosureExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -11694,24 +12763,30 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1975); match(T__67);
+			setState(1975);
+			match(T__15);
 			setState(1977);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,235,_ctx) ) {
 			case 1:
 				{
-				setState(1976); closureSignature();
+				setState(1976);
+				closureSignature();
 				}
 				break;
 			}
 			setState(1980);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__124) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__101) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__52 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__99 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__104 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__140 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 				{
-				setState(1979); statements();
+				setState(1979);
+				statements();
 				}
 			}
 
-			setState(1982); match(T__103);
+			setState(1982);
+			match(T__16);
 			}
 		}
 		catch (RecognitionException re) {
@@ -11755,43 +12830,54 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(1999);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,240,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(1985);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__84) {
+				if (_la==T__100) {
 					{
-					setState(1984); captureList();
+					setState(1984);
+					captureList();
 					}
 				}
 
-				setState(1987); closureParameterClause();
+				setState(1987);
+				closureParameterClause();
 				setState(1989);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__127) {
+				if (_la==T__78) {
 					{
-					setState(1988); match(T__127);
+					setState(1988);
+					match(T__78);
 					}
 				}
 
 				setState(1992);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__19) {
+				if (_la==T__80) {
 					{
-					setState(1991); functionResult();
+					setState(1991);
+					functionResult();
 					}
 				}
 
-				setState(1994); match(T__4);
+				setState(1994);
+				match(T__8);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1996); captureList();
-				setState(1997); match(T__4);
+				setState(1996);
+				captureList();
+				setState(1997);
+				match(T__8);
 				}
 				break;
 			}
@@ -11808,11 +12894,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ClosureParameterClauseContext extends ParserRuleContext {
-		public IdentifierListContext identifierList() {
-			return getRuleContext(IdentifierListContext.class,0);
-		}
 		public ClosureParameterListContext closureParameterList() {
 			return getRuleContext(ClosureParameterListContext.class,0);
+		}
+		public IdentifierListContext identifierList() {
+			return getRuleContext(IdentifierListContext.class,0);
 		}
 		public ClosureParameterClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -11833,26 +12919,33 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 384, RULE_closureParameterClause);
 		try {
 			setState(2008);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,241,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2001); match(T__64);
-				setState(2002); match(T__78);
+				setState(2001);
+				match(T__30);
+				setState(2002);
+				match(T__31);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2003); match(T__64);
-				setState(2004); closureParameterList();
-				setState(2005); match(T__78);
+				setState(2003);
+				match(T__30);
+				setState(2004);
+				closureParameterList();
+				setState(2005);
+				match(T__31);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(2007); identifierList();
+				setState(2007);
+				identifierList();
 				}
 				break;
 			}
@@ -11869,14 +12962,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ClosureParameterListContext extends ParserRuleContext {
-		public ClosureParameterListContext closureParameterList(int i) {
-			return getRuleContext(ClosureParameterListContext.class,i);
-		}
 		public ClosureParameterContext closureParameter() {
 			return getRuleContext(ClosureParameterContext.class,0);
 		}
 		public List<ClosureParameterListContext> closureParameterList() {
 			return getRuleContexts(ClosureParameterListContext.class);
+		}
+		public ClosureParameterListContext closureParameterList(int i) {
+			return getRuleContext(ClosureParameterListContext.class,i);
 		}
 		public ClosureParameterListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -11899,16 +12992,19 @@ public class Swift3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2010); closureParameter();
+			setState(2010);
+			closureParameter();
 			setState(2015);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,242,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(2011); match(T__130);
-					setState(2012); closureParameterList();
+					setState(2011);
+					match(T__17);
+					setState(2012);
+					closureParameterList();
 					}
 					} 
 				}
@@ -11930,11 +13026,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ClosureParameterContext extends ParserRuleContext {
-		public TypeAnnotationContext typeAnnotation() {
-			return getRuleContext(TypeAnnotationContext.class,0);
-		}
 		public ClosureParameterNameContext closureParameterName() {
 			return getRuleContext(ClosureParameterNameContext.class,0);
+		}
+		public TypeAnnotationContext typeAnnotation() {
+			return getRuleContext(TypeAnnotationContext.class,0);
 		}
 		public ClosureParameterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -11956,16 +13052,20 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(2026);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,244,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2018); closureParameterName();
+				setState(2018);
+				closureParameterName();
 				setState(2020);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__85) {
+				if (_la==T__1) {
 					{
-					setState(2019); typeAnnotation();
+					setState(2019);
+					typeAnnotation();
 					}
 				}
 
@@ -11974,9 +13074,12 @@ public class Swift3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2022); closureParameterName();
-				setState(2023); typeAnnotation();
-				setState(2024); match(T__15);
+				setState(2022);
+				closureParameterName();
+				setState(2023);
+				typeAnnotation();
+				setState(2024);
+				match(T__81);
 				}
 				break;
 			}
@@ -12015,62 +13118,65 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 390, RULE_closureParameterName);
 		try {
 			setState(2030);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__145:
-			case T__144:
-			case T__143:
-			case T__142:
-			case T__141:
-			case T__140:
-			case T__136:
-			case T__134:
-			case T__133:
-			case T__132:
-			case T__129:
-			case T__126:
-			case T__123:
-			case T__115:
-			case T__112:
-			case T__109:
-			case T__101:
-			case T__93:
-			case T__92:
-			case T__89:
-			case T__88:
-			case T__86:
-			case T__75:
-			case T__72:
-			case T__65:
-			case T__59:
-			case T__53:
-			case T__51:
-			case T__49:
-			case T__46:
-			case T__45:
-			case T__43:
-			case T__37:
-			case T__36:
+			case T__18:
+			case T__27:
+			case T__33:
 			case T__34:
-			case T__31:
-			case T__25:
-			case T__24:
-			case T__23:
-			case T__17:
-			case T__14:
-			case T__12:
-			case T__9:
-			case T__7:
-			case T__2:
+			case T__35:
+			case T__37:
+			case T__39:
+			case T__45:
+			case T__46:
+			case T__47:
+			case T__48:
+			case T__49:
+			case T__50:
+			case T__51:
+			case T__52:
+			case T__53:
+			case T__54:
+			case T__55:
+			case T__56:
+			case T__58:
+			case T__59:
+			case T__61:
+			case T__63:
+			case T__75:
+			case T__76:
+			case T__77:
+			case T__83:
+			case T__91:
+			case T__92:
+			case T__93:
+			case T__94:
+			case T__95:
+			case T__96:
+			case T__124:
+			case T__125:
+			case T__127:
+			case T__133:
+			case T__134:
+			case T__136:
+			case T__137:
+			case T__138:
+			case T__139:
+			case T__141:
+			case T__142:
+			case T__146:
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2028); identifier();
+				setState(2028);
+				identifier();
 				}
 				break;
-			case T__8:
+			case T__82:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2029); match(T__8);
+				setState(2029);
+				match(T__82);
 				}
 				break;
 			default:
@@ -12112,9 +13218,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2032); match(T__84);
-			setState(2033); captureListItems();
-			setState(2034); match(T__117);
+			setState(2032);
+			match(T__100);
+			setState(2033);
+			captureListItems();
+			setState(2034);
+			match(T__101);
 			}
 		}
 		catch (RecognitionException re) {
@@ -12129,11 +13238,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class CaptureListItemsContext extends ParserRuleContext {
-		public CaptureListItemContext captureListItem(int i) {
-			return getRuleContext(CaptureListItemContext.class,i);
-		}
 		public List<CaptureListItemContext> captureListItem() {
 			return getRuleContexts(CaptureListItemContext.class);
+		}
+		public CaptureListItemContext captureListItem(int i) {
+			return getRuleContext(CaptureListItemContext.class,i);
 		}
 		public CaptureListItemsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -12156,15 +13265,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2036); captureListItem();
+			setState(2036);
+			captureListItem();
 			setState(2041);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(2037); match(T__130);
-				setState(2038); captureListItem();
+				setState(2037);
+				match(T__17);
+				setState(2038);
+				captureListItem();
 				}
 				}
 				setState(2043);
@@ -12185,11 +13297,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class CaptureListItemContext extends ParserRuleContext {
-		public CaptureSpecifierContext captureSpecifier() {
-			return getRuleContext(CaptureSpecifierContext.class,0);
-		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
+		}
+		public CaptureSpecifierContext captureSpecifier() {
+			return getRuleContext(CaptureSpecifierContext.class,0);
 		}
 		public CaptureListItemContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -12212,14 +13324,17 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(2045);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,247,_ctx) ) {
 			case 1:
 				{
-				setState(2044); captureSpecifier();
+				setState(2044);
+				captureSpecifier();
 				}
 				break;
 			}
-			setState(2047); expression();
+			setState(2047);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -12257,10 +13372,14 @@ public class Swift3Parser extends Parser {
 			{
 			setState(2049);
 			_la = _input.LA(1);
-			if ( !(_la==T__128 || _la==T__92 || _la==T__49 || _la==T__13) ) {
+			if ( !(((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (T__58 - 59)) | (1L << (T__61 - 59)) | (1L << (T__114 - 59)) | (1L << (T__115 - 59)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -12298,8 +13417,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2051); match(T__22);
-			setState(2052); identifier();
+			setState(2051);
+			match(T__2);
+			setState(2052);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -12338,16 +13459,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2054); match(T__64);
+			setState(2054);
+			match(T__30);
 			setState(2056);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__101) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__104 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 				{
-				setState(2055); expressionElementList();
+				setState(2055);
+				expressionElementList();
 				}
 			}
 
-			setState(2058); match(T__78);
+			setState(2058);
+			match(T__31);
 			}
 		}
 		catch (RecognitionException re) {
@@ -12362,11 +13487,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ExpressionElementListContext extends ParserRuleContext {
-		public ExpressionElementContext expressionElement(int i) {
-			return getRuleContext(ExpressionElementContext.class,i);
-		}
 		public List<ExpressionElementContext> expressionElement() {
 			return getRuleContexts(ExpressionElementContext.class);
+		}
+		public ExpressionElementContext expressionElement(int i) {
+			return getRuleContext(ExpressionElementContext.class,i);
 		}
 		public ExpressionElementListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -12389,15 +13514,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2060); expressionElement();
+			setState(2060);
+			expressionElement();
 			setState(2065);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(2061); match(T__130);
-				setState(2062); expressionElement();
+				setState(2061);
+				match(T__17);
+				setState(2062);
+				expressionElement();
 				}
 				}
 				setState(2067);
@@ -12418,11 +13546,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ExpressionElementContext extends ParserRuleContext {
-		public ExpressionElementIdentifierContext expressionElementIdentifier() {
-			return getRuleContext(ExpressionElementIdentifierContext.class,0);
-		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
+		}
+		public ExpressionElementIdentifierContext expressionElementIdentifier() {
+			return getRuleContext(ExpressionElementIdentifierContext.class,0);
 		}
 		public ExpressionElementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -12444,23 +13572,29 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(2074);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,251,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2068); expression();
+				setState(2068);
+				expression();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2069); expressionElementIdentifier();
-				setState(2070); match(T__85);
+				setState(2069);
+				expressionElementIdentifier();
+				setState(2070);
+				match(T__1);
 				setState(2072);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__139) | (1L << T__138) | (1L << T__137) | (1L << T__136) | (1L << T__135) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__131) | (1L << T__129) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__123) | (1L << T__122) | (1L << T__121) | (1L << T__120) | (1L << T__119) | (1L << T__118) | (1L << T__116) | (1L << T__115) | (1L << T__113) | (1L << T__112) | (1L << T__110) | (1L << T__109) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__101) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__94) | (1L << T__93) | (1L << T__92) | (1L << T__90) | (1L << T__89) | (1L << T__88) | (1L << T__87) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__81 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__75 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__72 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__67 - 64)) | (1L << (T__66 - 64)) | (1L << (T__65 - 64)) | (1L << (T__64 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__59 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__53 - 64)) | (1L << (T__51 - 64)) | (1L << (T__50 - 64)) | (1L << (T__49 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__46 - 64)) | (1L << (T__45 - 64)) | (1L << (T__44 - 64)) | (1L << (T__43 - 64)) | (1L << (T__42 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__36 - 64)) | (1L << (T__35 - 64)) | (1L << (T__34 - 64)) | (1L << (T__33 - 64)) | (1L << (T__32 - 64)) | (1L << (T__31 - 64)) | (1L << (T__30 - 64)) | (1L << (T__29 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__26 - 64)) | (1L << (T__25 - 64)) | (1L << (T__24 - 64)) | (1L << (T__23 - 64)) | (1L << (T__22 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__19 - 128)) | (1L << (T__18 - 128)) | (1L << (T__17 - 128)) | (1L << (T__16 - 128)) | (1L << (T__15 - 128)) | (1L << (T__14 - 128)) | (1L << (T__12 - 128)) | (1L << (T__11 - 128)) | (1L << (T__10 - 128)) | (1L << (T__9 - 128)) | (1L << (T__8 - 128)) | (1L << (T__7 - 128)) | (1L << (T__6 - 128)) | (1L << (T__5 - 128)) | (1L << (T__4 - 128)) | (1L << (T__3 - 128)) | (1L << (T__2 - 128)) | (1L << (T__1 - 128)) | (1L << (T__0 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__61) | (1L << T__62))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__64 - 64)) | (1L << (T__65 - 64)) | (1L << (T__66 - 64)) | (1L << (T__67 - 64)) | (1L << (T__68 - 64)) | (1L << (T__69 - 64)) | (1L << (T__70 - 64)) | (1L << (T__71 - 64)) | (1L << (T__72 - 64)) | (1L << (T__73 - 64)) | (1L << (T__74 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__78 - 64)) | (1L << (T__79 - 64)) | (1L << (T__80 - 64)) | (1L << (T__81 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__84 - 64)) | (1L << (T__85 - 64)) | (1L << (T__86 - 64)) | (1L << (T__87 - 64)) | (1L << (T__88 - 64)) | (1L << (T__89 - 64)) | (1L << (T__90 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__97 - 64)) | (1L << (T__98 - 64)) | (1L << (T__100 - 64)) | (1L << (T__102 - 64)) | (1L << (T__104 - 64)) | (1L << (T__106 - 64)) | (1L << (T__107 - 64)) | (1L << (T__108 - 64)) | (1L << (T__109 - 64)) | (1L << (T__110 - 64)) | (1L << (T__111 - 64)) | (1L << (T__112 - 64)) | (1L << (T__113 - 64)) | (1L << (T__116 - 64)) | (1L << (T__119 - 64)) | (1L << (T__120 - 64)) | (1L << (T__121 - 64)) | (1L << (T__122 - 64)) | (1L << (T__123 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__143 - 128)) | (1L << (T__144 - 128)) | (1L << (T__145 - 128)) | (1L << (T__146 - 128)) | (1L << (BooleanLiteral - 128)) | (1L << (NilLiteral - 128)) | (1L << (OperatorHead - 128)) | (1L << (DotOperatorHead - 128)) | (1L << (Identifier - 128)) | (1L << (BinaryLiteral - 128)) | (1L << (OctalLiteral - 128)) | (1L << (DecimalLiteral - 128)) | (1L << (HexadecimalLiteral - 128)) | (1L << (FloatingPointLiteral - 128)) | (1L << (StringLiteral - 128)))) != 0)) {
 					{
-					setState(2071); expression();
+					setState(2071);
+					expression();
 					}
 				}
 
@@ -12480,11 +13614,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ExpressionElementIdentifierContext extends ParserRuleContext {
-		public KeywordContext keyword() {
-			return getRuleContext(KeywordContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
+		}
+		public KeywordContext keyword() {
+			return getRuleContext(KeywordContext.class,0);
 		}
 		public ExpressionElementIdentifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -12505,17 +13639,20 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 408, RULE_expressionElementIdentifier);
 		try {
 			setState(2078);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,252,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2076); identifier();
+				setState(2076);
+				identifier();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2077); keyword();
+				setState(2077);
+				keyword();
 				}
 				break;
 			}
@@ -12552,7 +13689,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2080); match(T__8);
+			setState(2080);
+			match(T__82);
 			}
 		}
 		catch (RecognitionException re) {
@@ -12590,29 +13728,42 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(2093);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,253,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2082); match(T__57);
-				setState(2083); match(T__64);
-				setState(2084); expression();
-				setState(2085); match(T__78);
+				setState(2082);
+				match(T__116);
+				setState(2083);
+				match(T__30);
+				setState(2084);
+				expression();
+				setState(2085);
+				match(T__31);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2087); match(T__57);
-				setState(2088); match(T__64);
+				setState(2087);
+				match(T__116);
+				setState(2088);
+				match(T__30);
 				setState(2089);
 				_la = _input.LA(1);
-				if ( !(_la==T__146 || _la==T__111) ) {
+				if ( !(_la==T__117 || _la==T__118) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
-				setState(2090); expression();
-				setState(2091); match(T__78);
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(2090);
+				expression();
+				setState(2091);
+				match(T__31);
 				}
 				break;
 			}
@@ -12652,10 +13803,14 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2095); match(T__118);
-			setState(2096); match(T__64);
-			setState(2097); expression();
-			setState(2098); match(T__78);
+			setState(2095);
+			match(T__119);
+			setState(2096);
+			match(T__30);
+			setState(2097);
+			expression();
+			setState(2098);
+			match(T__31);
 			}
 		}
 		catch (RecognitionException re) {
@@ -12695,11 +13850,11 @@ public class Swift3Parser extends Parser {
 		}
 	}
 	public static class FunctionCallWithClosureExpressionContext extends PostfixExpressionContext {
-		public ClosureExpressionContext closureExpression() {
-			return getRuleContext(ClosureExpressionContext.class,0);
-		}
 		public PostfixExpressionContext postfixExpression() {
 			return getRuleContext(PostfixExpressionContext.class,0);
+		}
+		public ClosureExpressionContext closureExpression() {
+			return getRuleContext(ClosureExpressionContext.class,0);
 		}
 		public ParenthesizedExpressionContext parenthesizedExpression() {
 			return getRuleContext(ParenthesizedExpressionContext.class,0);
@@ -12823,11 +13978,11 @@ public class Swift3Parser extends Parser {
 		public PostfixExpressionContext postfixExpression() {
 			return getRuleContext(PostfixExpressionContext.class,0);
 		}
-		public ArgumentNamesContext argumentNames() {
-			return getRuleContext(ArgumentNamesContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
+		}
+		public ArgumentNamesContext argumentNames() {
+			return getRuleContext(ArgumentNamesContext.class,0);
 		}
 		public ExplicitMemberExpression3Context(PostfixExpressionContext ctx) { copyFrom(ctx); }
 		@Override
@@ -12843,11 +13998,11 @@ public class Swift3Parser extends Parser {
 		public PostfixExpressionContext postfixExpression() {
 			return getRuleContext(PostfixExpressionContext.class,0);
 		}
-		public GenericArgumentClauseContext genericArgumentClause() {
-			return getRuleContext(GenericArgumentClauseContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
+		}
+		public GenericArgumentClauseContext genericArgumentClause() {
+			return getRuleContext(GenericArgumentClauseContext.class,0);
 		}
 		public ExplicitMemberExpression2Context(PostfixExpressionContext ctx) { copyFrom(ctx); }
 		@Override
@@ -12929,18 +14084,20 @@ public class Swift3Parser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(2101); primaryExpression();
+			setState(2101);
+			primaryExpression();
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(2155);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,257,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
 					setState(2153);
+					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,256,_ctx) ) {
 					case 1:
 						{
@@ -12948,7 +14105,8 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2103);
 						if (!(precpred(_ctx, 13))) throw new FailedPredicateException(this, "precpred(_ctx, 13)");
-						setState(2104); postfixOperator();
+						setState(2104);
+						postfixOperator();
 						}
 						break;
 					case 2:
@@ -12958,14 +14116,17 @@ public class Swift3Parser extends Parser {
 						setState(2105);
 						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
 						setState(2107);
+						_errHandler.sync(this);
 						_la = _input.LA(1);
-						if (_la==T__64) {
+						if (_la==T__30) {
 							{
-							setState(2106); parenthesizedExpression();
+							setState(2106);
+							parenthesizedExpression();
 							}
 						}
 
-						setState(2109); closureExpression();
+						setState(2109);
+						closureExpression();
 						}
 						break;
 					case 3:
@@ -12974,7 +14135,8 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2110);
 						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
-						setState(2111); parenthesizedExpression();
+						setState(2111);
+						parenthesizedExpression();
 						}
 						break;
 					case 4:
@@ -12983,8 +14145,10 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2112);
 						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
-						setState(2113); match(T__22);
-						setState(2114); match(T__125);
+						setState(2113);
+						match(T__2);
+						setState(2114);
+						match(T__85);
 						}
 						break;
 					case 5:
@@ -12993,11 +14157,16 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2115);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(2116); match(T__22);
-						setState(2117); match(T__125);
-						setState(2118); match(T__64);
-						setState(2119); argumentNames();
-						setState(2120); match(T__78);
+						setState(2116);
+						match(T__2);
+						setState(2117);
+						match(T__85);
+						setState(2118);
+						match(T__30);
+						setState(2119);
+						argumentNames();
+						setState(2120);
+						match(T__31);
 						}
 						break;
 					case 6:
@@ -13006,8 +14175,10 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2122);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(2123); match(T__22);
-						setState(2124); match(DecimalLiteral);
+						setState(2123);
+						match(T__2);
+						setState(2124);
+						match(DecimalLiteral);
 						}
 						break;
 					case 7:
@@ -13016,13 +14187,17 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2125);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(2126); match(T__22);
-						setState(2127); identifier();
+						setState(2126);
+						match(T__2);
+						setState(2127);
+						identifier();
 						setState(2129);
+						_errHandler.sync(this);
 						switch ( getInterpreter().adaptivePredict(_input,255,_ctx) ) {
 						case 1:
 							{
-							setState(2128); genericArgumentClause();
+							setState(2128);
+							genericArgumentClause();
 							}
 							break;
 						}
@@ -13034,11 +14209,16 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2131);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(2132); match(T__22);
-						setState(2133); identifier();
-						setState(2134); match(T__64);
-						setState(2135); argumentNames();
-						setState(2136); match(T__78);
+						setState(2132);
+						match(T__2);
+						setState(2133);
+						identifier();
+						setState(2134);
+						match(T__30);
+						setState(2135);
+						argumentNames();
+						setState(2136);
+						match(T__31);
 						}
 						break;
 					case 9:
@@ -13047,8 +14227,10 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2138);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(2139); match(T__22);
-						setState(2140); match(T__79);
+						setState(2139);
+						match(T__2);
+						setState(2140);
+						match(T__112);
 						}
 						break;
 					case 10:
@@ -13057,8 +14239,10 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2141);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(2142); match(T__22);
-						setState(2143); match(T__121);
+						setState(2142);
+						match(T__2);
+						setState(2143);
+						match(T__120);
 						}
 						break;
 					case 11:
@@ -13067,9 +14251,12 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2144);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(2145); match(T__84);
-						setState(2146); expressionElementList();
-						setState(2147); match(T__117);
+						setState(2145);
+						match(T__100);
+						setState(2146);
+						expressionElementList();
+						setState(2147);
+						match(T__101);
 						}
 						break;
 					case 12:
@@ -13078,7 +14265,8 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2149);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(2150); match(T__81);
+						setState(2150);
+						match(T__87);
 						}
 						break;
 					case 13:
@@ -13087,7 +14275,8 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
 						setState(2151);
 						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-						setState(2152); match(T__29);
+						setState(2152);
+						match(T__86);
 						}
 						break;
 					}
@@ -13111,11 +14300,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ArgumentNamesContext extends ParserRuleContext {
-		public ArgumentNameContext argumentName(int i) {
-			return getRuleContext(ArgumentNameContext.class,i);
-		}
 		public List<ArgumentNameContext> argumentName() {
 			return getRuleContexts(ArgumentNameContext.class);
+		}
+		public ArgumentNameContext argumentName(int i) {
+			return getRuleContext(ArgumentNameContext.class,i);
 		}
 		public ArgumentNamesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -13144,13 +14333,14 @@ public class Swift3Parser extends Parser {
 			do {
 				{
 				{
-				setState(2158); argumentName();
+				setState(2158);
+				argumentName();
 				}
 				}
 				setState(2161); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__136) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__129) | (1L << T__126) | (1L << T__123) | (1L << T__115) | (1L << T__112) | (1L << T__109) | (1L << T__101) | (1L << T__93) | (1L << T__92) | (1L << T__89) | (1L << T__88) | (1L << T__86))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (T__75 - 72)) | (1L << (T__72 - 72)) | (1L << (T__65 - 72)) | (1L << (T__59 - 72)) | (1L << (T__53 - 72)) | (1L << (T__51 - 72)) | (1L << (T__49 - 72)) | (1L << (T__46 - 72)) | (1L << (T__45 - 72)) | (1L << (T__43 - 72)) | (1L << (T__37 - 72)) | (1L << (T__36 - 72)) | (1L << (T__34 - 72)) | (1L << (T__31 - 72)) | (1L << (T__25 - 72)) | (1L << (T__24 - 72)) | (1L << (T__23 - 72)) | (1L << (T__17 - 72)) | (1L << (T__14 - 72)) | (1L << (T__12 - 72)))) != 0) || ((((_la - 138)) & ~0x3f) == 0 && ((1L << (_la - 138)) & ((1L << (T__9 - 138)) | (1L << (T__8 - 138)) | (1L << (T__7 - 138)) | (1L << (T__2 - 138)) | (1L << (Identifier - 138)))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__18) | (1L << T__27) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__58) | (1L << T__59) | (1L << T__61))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__146 - 128)) | (1L << (Identifier - 128)))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -13189,66 +14379,70 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(2165);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__145:
-			case T__144:
-			case T__143:
-			case T__142:
-			case T__141:
-			case T__140:
-			case T__136:
-			case T__134:
-			case T__133:
-			case T__132:
-			case T__129:
-			case T__126:
-			case T__123:
-			case T__115:
-			case T__112:
-			case T__109:
-			case T__101:
-			case T__93:
-			case T__92:
-			case T__89:
-			case T__88:
-			case T__86:
-			case T__75:
-			case T__72:
-			case T__65:
-			case T__59:
-			case T__53:
-			case T__51:
-			case T__49:
-			case T__46:
-			case T__45:
-			case T__43:
-			case T__37:
-			case T__36:
+			case T__18:
+			case T__27:
+			case T__33:
 			case T__34:
-			case T__31:
-			case T__25:
-			case T__24:
-			case T__23:
-			case T__17:
-			case T__14:
-			case T__12:
-			case T__9:
-			case T__7:
-			case T__2:
+			case T__35:
+			case T__37:
+			case T__39:
+			case T__45:
+			case T__46:
+			case T__47:
+			case T__48:
+			case T__49:
+			case T__50:
+			case T__51:
+			case T__52:
+			case T__53:
+			case T__54:
+			case T__55:
+			case T__56:
+			case T__58:
+			case T__59:
+			case T__61:
+			case T__63:
+			case T__75:
+			case T__76:
+			case T__77:
+			case T__83:
+			case T__91:
+			case T__92:
+			case T__93:
+			case T__94:
+			case T__95:
+			case T__96:
+			case T__124:
+			case T__125:
+			case T__127:
+			case T__133:
+			case T__134:
+			case T__136:
+			case T__137:
+			case T__138:
+			case T__139:
+			case T__141:
+			case T__142:
+			case T__146:
 			case Identifier:
 				{
-				setState(2163); identifier();
+				setState(2163);
+				identifier();
 				}
 				break;
-			case T__8:
+			case T__82:
 				{
-				setState(2164); match(T__8);
+				setState(2164);
+				match(T__82);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(2167); match(T__85);
+			setState(2167);
+			match(T__1);
 			}
 		}
 		catch (RecognitionException re) {
@@ -13287,10 +14481,14 @@ public class Swift3Parser extends Parser {
 			{
 			setState(2169);
 			_la = _input.LA(1);
-			if ( !(((((_la - 9)) & ~0x3f) == 0 && ((1L << (_la - 9)) & ((1L << (T__138 - 9)) | (1L << (T__137 - 9)) | (1L << (T__122 - 9)) | (1L << (T__119 - 9)) | (1L << (T__94 - 9)) | (1L << (T__81 - 9)))) != 0) || ((((_la - 105)) & ~0x3f) == 0 && ((1L << (_la - 105)) & ((1L << (T__42 - 105)) | (1L << (T__33 - 105)) | (1L << (T__29 - 105)) | (1L << (T__26 - 105)) | (1L << (T__19 - 105)) | (1L << (T__11 - 105)) | (1L << (T__10 - 105)) | (1L << (T__1 - 105)) | (1L << (OperatorHead - 105)))) != 0)) ) {
+			if ( !(((((_la - 33)) & ~0x3f) == 0 && ((1L << (_la - 33)) & ((1L << (T__32 - 33)) | (1L << (T__41 - 33)) | (1L << (T__42 - 33)) | (1L << (T__43 - 33)) | (1L << (T__74 - 33)) | (1L << (T__80 - 33)) | (1L << (T__86 - 33)) | (1L << (T__87 - 33)))) != 0) || ((((_la - 103)) & ~0x3f) == 0 && ((1L << (_la - 103)) & ((1L << (T__102 - 103)) | (1L << (T__104 - 103)) | (1L << (T__106 - 103)) | (1L << (T__121 - 103)) | (1L << (T__122 - 103)) | (1L << (T__123 - 103)) | (1L << (OperatorHead - 103)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -13328,31 +14526,34 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 424, RULE_operatorCharacter);
 		try {
 			setState(2173);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__138:
-			case T__137:
-			case T__122:
-			case T__119:
-			case T__94:
-			case T__81:
+			case T__32:
+			case T__41:
 			case T__42:
-			case T__33:
-			case T__29:
-			case T__26:
-			case T__19:
-			case T__11:
-			case T__10:
-			case T__1:
+			case T__43:
+			case T__74:
+			case T__80:
+			case T__86:
+			case T__87:
+			case T__102:
+			case T__104:
+			case T__106:
+			case T__121:
+			case T__122:
+			case T__123:
 			case OperatorHead:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2171); operatorHead();
+				setState(2171);
+				operatorHead();
 				}
 				break;
 			case OperatorCharacter:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2172); match(OperatorCharacter);
+				setState(2172);
+				match(OperatorCharacter);
 				}
 				break;
 			default:
@@ -13374,11 +14575,11 @@ public class Swift3Parser extends Parser {
 		public OperatorHeadContext operatorHead() {
 			return getRuleContext(OperatorHeadContext.class,0);
 		}
-		public OperatorCharacterContext operatorCharacter(int i) {
-			return getRuleContext(OperatorCharacterContext.class,i);
-		}
 		public List<OperatorCharacterContext> operatorCharacter() {
 			return getRuleContexts(OperatorCharacterContext.class);
+		}
+		public OperatorCharacterContext operatorCharacter(int i) {
+			return getRuleContext(OperatorCharacterContext.class,i);
 		}
 		public OperatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -13400,33 +14601,36 @@ public class Swift3Parser extends Parser {
 		try {
 			int _alt;
 			setState(2190);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__138:
-			case T__137:
-			case T__122:
-			case T__119:
-			case T__94:
-			case T__81:
+			case T__32:
+			case T__41:
 			case T__42:
-			case T__33:
-			case T__29:
-			case T__26:
-			case T__19:
-			case T__11:
-			case T__10:
-			case T__1:
+			case T__43:
+			case T__74:
+			case T__80:
+			case T__86:
+			case T__87:
+			case T__102:
+			case T__104:
+			case T__106:
+			case T__121:
+			case T__122:
+			case T__123:
 			case OperatorHead:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2175); operatorHead();
+				setState(2175);
+				operatorHead();
 				setState(2179);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,261,_ctx);
-				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(2176); operatorCharacter();
+						setState(2176);
+						operatorCharacter();
 						}
 						} 
 					}
@@ -13439,15 +14643,17 @@ public class Swift3Parser extends Parser {
 			case DotOperatorHead:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2182); match(DotOperatorHead);
+				setState(2182);
+				match(DotOperatorHead);
 				setState(2186);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,262,_ctx);
-				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(2183); operatorCharacter();
+						setState(2183);
+						operatorCharacter();
 						}
 						} 
 					}
@@ -13457,10 +14663,11 @@ public class Swift3Parser extends Parser {
 				}
 				}
 				break;
-			case T__15:
+			case T__81:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(2189); match(T__15);
+				setState(2189);
+				match(T__81);
 				}
 				break;
 			default:
@@ -13502,7 +14709,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2192); operator();
+			setState(2192);
+			operator();
 			}
 		}
 		catch (RecognitionException re) {
@@ -13540,7 +14748,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2194); operator();
+			setState(2194);
+			operator();
 			}
 		}
 		catch (RecognitionException re) {
@@ -13578,7 +14787,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2196); operator();
+			setState(2196);
+			operator();
 			}
 		}
 		catch (RecognitionException re) {
@@ -13593,26 +14803,26 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class STypeContext extends ParserRuleContext {
-		public TupleTypeContext tupleType() {
-			return getRuleContext(TupleTypeContext.class,0);
-		}
 		public ArrayTypeContext arrayType() {
 			return getRuleContext(ArrayTypeContext.class,0);
 		}
-		public STypeContext sType(int i) {
-			return getRuleContext(STypeContext.class,i);
+		public DictionaryTypeContext dictionaryType() {
+			return getRuleContext(DictionaryTypeContext.class,0);
 		}
-		public ProtocolCompositionTypeContext protocolCompositionType() {
-			return getRuleContext(ProtocolCompositionTypeContext.class,0);
-		}
-		public TypeIdentifierContext typeIdentifier() {
-			return getRuleContext(TypeIdentifierContext.class,0);
+		public TupleTypeContext tupleType() {
+			return getRuleContext(TupleTypeContext.class,0);
 		}
 		public List<STypeContext> sType() {
 			return getRuleContexts(STypeContext.class);
 		}
-		public DictionaryTypeContext dictionaryType() {
-			return getRuleContext(DictionaryTypeContext.class,0);
+		public STypeContext sType(int i) {
+			return getRuleContext(STypeContext.class,i);
+		}
+		public TypeIdentifierContext typeIdentifier() {
+			return getRuleContext(TypeIdentifierContext.class,0);
+		}
+		public ProtocolCompositionTypeContext protocolCompositionType() {
+			return getRuleContext(ProtocolCompositionTypeContext.class,0);
 		}
 		public STypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -13645,90 +14855,120 @@ public class Swift3Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(2234);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,266,_ctx) ) {
 			case 1:
 				{
-				setState(2199); tupleType();
-				setState(2201);
-				_la = _input.LA(1);
-				if (_la==T__127) {
-					{
-					setState(2200); match(T__127);
-					}
-				}
-
-				setState(2203); match(T__19);
-				setState(2204); sType(13);
+				setState(2199);
+				arrayType();
 				}
 				break;
 			case 2:
 				{
-				setState(2206); tupleType();
-				setState(2207); match(T__62);
-				setState(2208); match(T__19);
-				setState(2209); sType(12);
+				setState(2200);
+				dictionaryType();
 				}
 				break;
 			case 3:
 				{
-				setState(2211); arrayType();
+				setState(2201);
+				tupleType();
+				setState(2203);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==T__78) {
+					{
+					setState(2202);
+					match(T__78);
+					}
+				}
+
+				setState(2205);
+				match(T__80);
+				setState(2206);
+				sType(13);
 				}
 				break;
 			case 4:
 				{
-				setState(2212); dictionaryType();
+				setState(2208);
+				tupleType();
+				setState(2209);
+				match(T__79);
+				setState(2210);
+				match(T__80);
+				setState(2211);
+				sType(12);
 				}
 				break;
 			case 5:
 				{
-				setState(2213); match(T__64);
-				setState(2214); sType(0);
-				setState(2215); match(T__78);
+				setState(2213);
+				match(T__30);
+				setState(2214);
+				sType(0);
+				setState(2215);
+				match(T__31);
 				setState(2217);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__127) {
+				if (_la==T__78) {
 					{
-					setState(2216); match(T__127);
+					setState(2216);
+					match(T__78);
 					}
 				}
 
-				setState(2219); match(T__19);
-				setState(2220); sType(0);
+				setState(2219);
+				match(T__80);
+				setState(2220);
+				sType(11);
 				}
 				break;
 			case 6:
 				{
-				setState(2222); match(T__64);
-				setState(2223); sType(0);
-				setState(2224); match(T__78);
-				setState(2225); match(T__62);
-				setState(2226); match(T__19);
-				setState(2227); sType(0);
+				setState(2222);
+				match(T__30);
+				setState(2223);
+				sType(0);
+				setState(2224);
+				match(T__31);
+				setState(2225);
+				match(T__79);
+				setState(2226);
+				match(T__80);
+				setState(2227);
+				sType(10);
 				}
 				break;
 			case 7:
 				{
-				setState(2229); typeIdentifier();
+				setState(2229);
+				typeIdentifier();
 				}
 				break;
 			case 8:
 				{
-				setState(2230); tupleType();
+				setState(2230);
+				tupleType();
 				}
 				break;
 			case 9:
 				{
-				setState(2231); protocolCompositionType();
+				setState(2231);
+				protocolCompositionType();
 				}
 				break;
 			case 10:
 				{
-				setState(2232); match(T__116);
+				setState(2232);
+				match(T__126);
 				}
 				break;
 			case 11:
 				{
-				setState(2233); match(T__37);
+				setState(2233);
+				match(T__127);
 				}
 				break;
 			}
@@ -13736,12 +14976,13 @@ public class Swift3Parser extends Parser {
 			setState(2248);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,268,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
 					setState(2246);
+					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,267,_ctx) ) {
 					case 1:
 						{
@@ -13749,7 +14990,8 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_sType);
 						setState(2236);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(2237); match(T__29);
+						setState(2237);
+						match(T__86);
 						}
 						break;
 					case 2:
@@ -13758,7 +15000,8 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_sType);
 						setState(2238);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(2239); match(T__81);
+						setState(2239);
+						match(T__87);
 						}
 						break;
 					case 3:
@@ -13767,8 +15010,10 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_sType);
 						setState(2240);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(2241); match(T__22);
-						setState(2242); match(T__23);
+						setState(2241);
+						match(T__2);
+						setState(2242);
+						match(T__124);
 						}
 						break;
 					case 4:
@@ -13777,8 +15022,10 @@ public class Swift3Parser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_sType);
 						setState(2243);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(2244); match(T__22);
-						setState(2245); match(T__112);
+						setState(2244);
+						match(T__2);
+						setState(2245);
+						match(T__125);
 						}
 						break;
 					}
@@ -13825,9 +15072,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2251); match(T__84);
-			setState(2252); sType(0);
-			setState(2253); match(T__117);
+			setState(2251);
+			match(T__100);
+			setState(2252);
+			sType(0);
+			setState(2253);
+			match(T__101);
 			}
 		}
 		catch (RecognitionException re) {
@@ -13842,11 +15092,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class DictionaryTypeContext extends ParserRuleContext {
-		public STypeContext sType(int i) {
-			return getRuleContext(STypeContext.class,i);
-		}
 		public List<STypeContext> sType() {
 			return getRuleContexts(STypeContext.class);
+		}
+		public STypeContext sType(int i) {
+			return getRuleContext(STypeContext.class,i);
 		}
 		public DictionaryTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -13868,11 +15118,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2255); match(T__84);
-			setState(2256); sType(0);
-			setState(2257); match(T__85);
-			setState(2258); sType(0);
-			setState(2259); match(T__117);
+			setState(2255);
+			match(T__100);
+			setState(2256);
+			sType(0);
+			setState(2257);
+			match(T__1);
+			setState(2258);
+			sType(0);
+			setState(2259);
+			match(T__101);
 			}
 		}
 		catch (RecognitionException re) {
@@ -13910,8 +15165,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2261); sType(0);
-			setState(2262); match(T__29);
+			setState(2261);
+			sType(0);
+			setState(2262);
+			match(T__86);
 			}
 		}
 		catch (RecognitionException re) {
@@ -13949,8 +15206,10 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2264); sType(0);
-			setState(2265); match(T__81);
+			setState(2264);
+			sType(0);
+			setState(2265);
+			match(T__87);
 			}
 		}
 		catch (RecognitionException re) {
@@ -13965,11 +15224,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class TypeAnnotationContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
 		public STypeContext sType() {
 			return getRuleContext(STypeContext.class,0);
+		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
 		}
 		public TypeAnnotationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -13992,24 +15251,30 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2267); match(T__85);
+			setState(2267);
+			match(T__1);
 			setState(2269);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__52) {
+			if (_la==T__99) {
 				{
-				setState(2268); attributes();
+				setState(2268);
+				attributes();
 				}
 			}
 
 			setState(2272);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__98) {
+			if (_la==T__128) {
 				{
-				setState(2271); match(T__98);
+				setState(2271);
+				match(T__128);
 				}
 			}
 
-			setState(2274); sType(0);
+			setState(2274);
+			sType(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -14024,11 +15289,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class TypeIdentifierContext extends ParserRuleContext {
-		public GenericArgumentClauseContext genericArgumentClause() {
-			return getRuleContext(GenericArgumentClauseContext.class,0);
-		}
 		public TypeNameContext typeName() {
 			return getRuleContext(TypeNameContext.class,0);
+		}
+		public GenericArgumentClauseContext genericArgumentClause() {
+			return getRuleContext(GenericArgumentClauseContext.class,0);
 		}
 		public TypeIdentifierContext typeIdentifier() {
 			return getRuleContext(TypeIdentifierContext.class,0);
@@ -14053,16 +15318,20 @@ public class Swift3Parser extends Parser {
 		int _la;
 		try {
 			setState(2287);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,273,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2276); typeName();
+				setState(2276);
+				typeName();
 				setState(2278);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,271,_ctx) ) {
 				case 1:
 					{
-					setState(2277); genericArgumentClause();
+					setState(2277);
+					genericArgumentClause();
 					}
 					break;
 				}
@@ -14071,17 +15340,22 @@ public class Swift3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2280); typeName();
+				setState(2280);
+				typeName();
 				setState(2282);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__119) {
+				if (_la==T__41) {
 					{
-					setState(2281); genericArgumentClause();
+					setState(2281);
+					genericArgumentClause();
 					}
 				}
 
-				setState(2284); match(T__22);
-				setState(2285); typeIdentifier();
+				setState(2284);
+				match(T__2);
+				setState(2285);
+				typeIdentifier();
 				}
 				break;
 			}
@@ -14121,7 +15395,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2289); identifier();
+			setState(2289);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -14160,16 +15435,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2291); match(T__64);
+			setState(2291);
+			match(T__30);
 			setState(2293);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__136) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__129) | (1L << T__126) | (1L << T__123) | (1L << T__116) | (1L << T__115) | (1L << T__112) | (1L << T__109) | (1L << T__101) | (1L << T__98) | (1L << T__93) | (1L << T__92) | (1L << T__89) | (1L << T__88) | (1L << T__86) | (1L << T__84))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (T__75 - 72)) | (1L << (T__72 - 72)) | (1L << (T__65 - 72)) | (1L << (T__64 - 72)) | (1L << (T__59 - 72)) | (1L << (T__53 - 72)) | (1L << (T__52 - 72)) | (1L << (T__51 - 72)) | (1L << (T__49 - 72)) | (1L << (T__46 - 72)) | (1L << (T__45 - 72)) | (1L << (T__43 - 72)) | (1L << (T__37 - 72)) | (1L << (T__36 - 72)) | (1L << (T__34 - 72)) | (1L << (T__31 - 72)) | (1L << (T__25 - 72)) | (1L << (T__24 - 72)) | (1L << (T__23 - 72)) | (1L << (T__17 - 72)) | (1L << (T__14 - 72)) | (1L << (T__12 - 72)))) != 0) || ((((_la - 138)) & ~0x3f) == 0 && ((1L << (_la - 138)) & ((1L << (T__9 - 138)) | (1L << (T__7 - 138)) | (1L << (T__2 - 138)) | (1L << (Identifier - 138)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__18) | (1L << T__27) | (1L << T__30) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__37) | (1L << T__39) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48) | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__58) | (1L << T__59) | (1L << T__61))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__63 - 64)) | (1L << (T__75 - 64)) | (1L << (T__76 - 64)) | (1L << (T__77 - 64)) | (1L << (T__82 - 64)) | (1L << (T__83 - 64)) | (1L << (T__91 - 64)) | (1L << (T__92 - 64)) | (1L << (T__93 - 64)) | (1L << (T__94 - 64)) | (1L << (T__95 - 64)) | (1L << (T__96 - 64)) | (1L << (T__99 - 64)) | (1L << (T__100 - 64)) | (1L << (T__124 - 64)) | (1L << (T__125 - 64)) | (1L << (T__126 - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)) | (1L << (T__136 - 128)) | (1L << (T__137 - 128)) | (1L << (T__138 - 128)) | (1L << (T__139 - 128)) | (1L << (T__141 - 128)) | (1L << (T__142 - 128)) | (1L << (T__146 - 128)) | (1L << (Identifier - 128)))) != 0)) {
 				{
-				setState(2292); tupleTypeBody();
+				setState(2292);
+				tupleTypeBody();
 				}
 			}
 
-			setState(2295); match(T__78);
+			setState(2295);
+			match(T__31);
 			}
 		}
 		catch (RecognitionException re) {
@@ -14208,12 +15487,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2297); tupleTypeElementList();
+			setState(2297);
+			tupleTypeElementList();
 			setState(2299);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__15) {
+			if (_la==T__81) {
 				{
-				setState(2298); match(T__15);
+				setState(2298);
+				match(T__81);
 				}
 			}
 
@@ -14258,15 +15540,18 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2301); tupleTypeElement();
+			setState(2301);
+			tupleTypeElement();
 			setState(2306);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(2302); match(T__130);
-				setState(2303); tupleTypeElement();
+				setState(2302);
+				match(T__17);
+				setState(2303);
+				tupleTypeElement();
 				}
 				}
 				setState(2308);
@@ -14287,17 +15572,17 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class TupleTypeElementContext extends ParserRuleContext {
-		public AttributesContext attributes() {
-			return getRuleContext(AttributesContext.class,0);
-		}
-		public TypeAnnotationContext typeAnnotation() {
-			return getRuleContext(TypeAnnotationContext.class,0);
-		}
 		public STypeContext sType() {
 			return getRuleContext(STypeContext.class,0);
 		}
+		public AttributesContext attributes() {
+			return getRuleContext(AttributesContext.class,0);
+		}
 		public ElementNameContext elementName() {
 			return getRuleContext(ElementNameContext.class,0);
+		}
+		public TypeAnnotationContext typeAnnotation() {
+			return getRuleContext(TypeAnnotationContext.class,0);
 		}
 		public TupleTypeElementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14318,35 +15603,54 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 456, RULE_tupleTypeElement);
 		int _la;
 		try {
-			setState(2319);
+			setState(2323);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,279,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(2310);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__52) {
+				if (_la==T__99) {
 					{
-					setState(2309); attributes();
+					setState(2309);
+					attributes();
 					}
 				}
 
 				setState(2313);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__98) {
+				if (_la==T__128) {
 					{
-					setState(2312); match(T__98);
+					setState(2312);
+					match(T__128);
 					}
 				}
 
-				setState(2315); sType(0);
+				setState(2315);
+				sType(0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2316); elementName();
-				setState(2317); typeAnnotation();
+				setState(2316);
+				elementName();
+				setState(2317);
+				typeAnnotation();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(2319);
+				match(T__82);
+				setState(2320);
+				elementName();
+				setState(2321);
+				typeAnnotation();
 				}
 				break;
 			}
@@ -14386,7 +15690,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2321); identifier();
+			setState(2325);
+			identifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -14401,11 +15706,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ProtocolCompositionTypeContext extends ParserRuleContext {
-		public ProtocolCompositionContinuationContext protocolCompositionContinuation() {
-			return getRuleContext(ProtocolCompositionContinuationContext.class,0);
-		}
 		public ProtocolIdentifierContext protocolIdentifier() {
 			return getRuleContext(ProtocolIdentifierContext.class,0);
+		}
+		public ProtocolCompositionContinuationContext protocolCompositionContinuation() {
+			return getRuleContext(ProtocolCompositionContinuationContext.class,0);
 		}
 		public ProtocolCompositionTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14427,9 +15732,12 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2323); protocolIdentifier();
-			setState(2324); match(T__26);
-			setState(2325); protocolCompositionContinuation();
+			setState(2327);
+			protocolIdentifier();
+			setState(2328);
+			match(T__106);
+			setState(2329);
+			protocolCompositionContinuation();
 			}
 		}
 		catch (RecognitionException re) {
@@ -14444,11 +15752,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ProtocolCompositionContinuationContext extends ParserRuleContext {
-		public ProtocolCompositionTypeContext protocolCompositionType() {
-			return getRuleContext(ProtocolCompositionTypeContext.class,0);
-		}
 		public ProtocolIdentifierContext protocolIdentifier() {
 			return getRuleContext(ProtocolIdentifierContext.class,0);
+		}
+		public ProtocolCompositionTypeContext protocolCompositionType() {
+			return getRuleContext(ProtocolCompositionTypeContext.class,0);
 		}
 		public ProtocolCompositionContinuationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14468,18 +15776,21 @@ public class Swift3Parser extends Parser {
 		ProtocolCompositionContinuationContext _localctx = new ProtocolCompositionContinuationContext(_ctx, getState());
 		enterRule(_localctx, 462, RULE_protocolCompositionContinuation);
 		try {
-			setState(2329);
+			setState(2333);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,280,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2327); protocolIdentifier();
+				setState(2331);
+				protocolIdentifier();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2328); protocolCompositionType();
+				setState(2332);
+				protocolCompositionType();
 				}
 				break;
 			}
@@ -14519,7 +15830,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2331); typeIdentifier();
+			setState(2335);
+			typeIdentifier();
 			}
 		}
 		catch (RecognitionException re) {
@@ -14555,22 +15867,29 @@ public class Swift3Parser extends Parser {
 		MetatypeTypeContext _localctx = new MetatypeTypeContext(_ctx, getState());
 		enterRule(_localctx, 466, RULE_metatypeType);
 		try {
-			setState(2341);
+			setState(2345);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,281,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2333); sType(0);
-				setState(2334); match(T__22);
-				setState(2335); match(T__23);
+				setState(2337);
+				sType(0);
+				setState(2338);
+				match(T__2);
+				setState(2339);
+				match(T__124);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2337); sType(0);
-				setState(2338); match(T__22);
-				setState(2339); match(T__112);
+				setState(2341);
+				sType(0);
+				setState(2342);
+				match(T__2);
+				setState(2343);
+				match(T__125);
 				}
 				break;
 			}
@@ -14587,11 +15906,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class TypeInheritanceClauseContext extends ParserRuleContext {
-		public TypeInheritanceListContext typeInheritanceList() {
-			return getRuleContext(TypeInheritanceListContext.class,0);
-		}
 		public ClassRequirementContext classRequirement() {
 			return getRuleContext(ClassRequirementContext.class,0);
+		}
+		public TypeInheritanceListContext typeInheritanceList() {
+			return getRuleContext(TypeInheritanceListContext.class,0);
 		}
 		public TypeInheritanceClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14611,29 +15930,38 @@ public class Swift3Parser extends Parser {
 		TypeInheritanceClauseContext _localctx = new TypeInheritanceClauseContext(_ctx, getState());
 		enterRule(_localctx, 468, RULE_typeInheritanceClause);
 		try {
-			setState(2352);
+			setState(2356);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,282,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2343); match(T__85);
-				setState(2344); classRequirement();
-				setState(2345); match(T__130);
-				setState(2346); typeInheritanceList();
+				setState(2347);
+				match(T__1);
+				setState(2348);
+				classRequirement();
+				setState(2349);
+				match(T__17);
+				setState(2350);
+				typeInheritanceList();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2348); match(T__85);
-				setState(2349); classRequirement();
+				setState(2352);
+				match(T__1);
+				setState(2353);
+				classRequirement();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(2350); match(T__85);
-				setState(2351); typeInheritanceList();
+				setState(2354);
+				match(T__1);
+				setState(2355);
+				typeInheritanceList();
 				}
 				break;
 			}
@@ -14677,18 +16005,21 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2354); typeIdentifier();
-			setState(2359);
+			setState(2358);
+			typeIdentifier();
+			setState(2363);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(2355); match(T__130);
-				setState(2356); typeIdentifier();
+				setState(2359);
+				match(T__17);
+				setState(2360);
+				typeIdentifier();
 				}
 				}
-				setState(2361);
+				setState(2365);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -14726,7 +16057,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2362); match(T__105);
+			setState(2366);
+			match(T__44);
 			}
 		}
 		catch (RecognitionException re) {
@@ -14741,11 +16073,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class CompilerControlStatementContext extends ParserRuleContext {
-		public LineControlStatementContext lineControlStatement() {
-			return getRuleContext(LineControlStatementContext.class,0);
-		}
 		public ConditionalCompilationBlockContext conditionalCompilationBlock() {
 			return getRuleContext(ConditionalCompilationBlockContext.class,0);
+		}
+		public LineControlStatementContext lineControlStatement() {
+			return getRuleContext(LineControlStatementContext.class,0);
 		}
 		public CompilerControlStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14765,18 +16097,21 @@ public class Swift3Parser extends Parser {
 		CompilerControlStatementContext _localctx = new CompilerControlStatementContext(_ctx, getState());
 		enterRule(_localctx, 474, RULE_compilerControlStatement);
 		try {
-			setState(2366);
+			setState(2370);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__70:
+			case T__130:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2364); conditionalCompilationBlock();
+				setState(2368);
+				conditionalCompilationBlock();
 				}
 				break;
-			case T__124:
+			case T__140:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2365); lineControlStatement();
+				setState(2369);
+				lineControlStatement();
 				}
 				break;
 			default:
@@ -14795,14 +16130,14 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ConditionalCompilationBlockContext extends ParserRuleContext {
+		public IfDirectiveClauseContext ifDirectiveClause() {
+			return getRuleContext(IfDirectiveClauseContext.class,0);
+		}
 		public ElseifDirectiveClausesContext elseifDirectiveClauses() {
 			return getRuleContext(ElseifDirectiveClausesContext.class,0);
 		}
 		public ElseDirectiveClauseContext elseDirectiveClause() {
 			return getRuleContext(ElseDirectiveClauseContext.class,0);
-		}
-		public IfDirectiveClauseContext ifDirectiveClause() {
-			return getRuleContext(IfDirectiveClauseContext.class,0);
 		}
 		public ConditionalCompilationBlockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14825,24 +16160,30 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2368); ifDirectiveClause();
-			setState(2370);
+			setState(2372);
+			ifDirectiveClause();
+			setState(2374);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__102) {
+			if (_la==T__131) {
 				{
-				setState(2369); elseifDirectiveClauses();
+				setState(2373);
+				elseifDirectiveClauses();
 				}
 			}
 
-			setState(2373);
+			setState(2377);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__39) {
+			if (_la==T__132) {
 				{
-				setState(2372); elseDirectiveClause();
+				setState(2376);
+				elseDirectiveClause();
 				}
 			}
 
-			setState(2375); match(T__87);
+			setState(2379);
+			match(T__129);
 			}
 		}
 		catch (RecognitionException re) {
@@ -14857,11 +16198,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class IfDirectiveClauseContext extends ParserRuleContext {
-		public StatementsContext statements() {
-			return getRuleContext(StatementsContext.class,0);
-		}
 		public CompilationConditionContext compilationCondition() {
 			return getRuleContext(CompilationConditionContext.class,0);
+		}
+		public StatementsContext statements() {
+			return getRuleContext(StatementsContext.class,0);
 		}
 		public IfDirectiveClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14883,13 +16224,17 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2377); match(T__70);
-			setState(2378); compilationCondition(0);
-			setState(2380);
+			setState(2381);
+			match(T__130);
+			setState(2382);
+			compilationCondition(0);
+			setState(2384);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,287,_ctx) ) {
 			case 1:
 				{
-				setState(2379); statements();
+				setState(2383);
+				statements();
 				}
 				break;
 			}
@@ -14907,11 +16252,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ElseifDirectiveClausesContext extends ParserRuleContext {
-		public ElseifDirectiveClauseContext elseifDirectiveClause(int i) {
-			return getRuleContext(ElseifDirectiveClauseContext.class,i);
-		}
 		public List<ElseifDirectiveClauseContext> elseifDirectiveClause() {
 			return getRuleContexts(ElseifDirectiveClauseContext.class);
+		}
+		public ElseifDirectiveClauseContext elseifDirectiveClause(int i) {
+			return getRuleContext(ElseifDirectiveClauseContext.class,i);
 		}
 		public ElseifDirectiveClausesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14934,19 +16279,20 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2383); 
+			setState(2387); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(2382); elseifDirectiveClause();
+				setState(2386);
+				elseifDirectiveClause();
 				}
 				}
-				setState(2385); 
+				setState(2389); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T__102 );
+			} while ( _la==T__131 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -14961,11 +16307,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class ElseifDirectiveClauseContext extends ParserRuleContext {
-		public StatementsContext statements() {
-			return getRuleContext(StatementsContext.class,0);
-		}
 		public CompilationConditionContext compilationCondition() {
 			return getRuleContext(CompilationConditionContext.class,0);
+		}
+		public StatementsContext statements() {
+			return getRuleContext(StatementsContext.class,0);
 		}
 		public ElseifDirectiveClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -14987,13 +16333,17 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2387); match(T__102);
-			setState(2388); compilationCondition(0);
-			setState(2390);
+			setState(2391);
+			match(T__131);
+			setState(2392);
+			compilationCondition(0);
+			setState(2394);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,289,_ctx) ) {
 			case 1:
 				{
-				setState(2389); statements();
+				setState(2393);
+				statements();
 				}
 				break;
 			}
@@ -15034,12 +16384,15 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2392); match(T__39);
-			setState(2394);
+			setState(2396);
+			match(T__132);
+			setState(2398);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,290,_ctx) ) {
 			case 1:
 				{
-				setState(2393); statements();
+				setState(2397);
+				statements();
 				}
 				break;
 			}
@@ -15057,20 +16410,20 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class CompilationConditionContext extends ParserRuleContext {
-		public CompilationConditionContext compilationCondition(int i) {
-			return getRuleContext(CompilationConditionContext.class,i);
-		}
 		public PlatformConditionContext platformCondition() {
 			return getRuleContext(PlatformConditionContext.class,0);
-		}
-		public List<CompilationConditionContext> compilationCondition() {
-			return getRuleContexts(CompilationConditionContext.class);
 		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
 		}
 		public BooleanLiteralContext booleanLiteral() {
 			return getRuleContext(BooleanLiteralContext.class,0);
+		}
+		public List<CompilationConditionContext> compilationCondition() {
+			return getRuleContexts(CompilationConditionContext.class);
+		}
+		public CompilationConditionContext compilationCondition(int i) {
+			return getRuleContext(CompilationConditionContext.class,i);
 		}
 		public CompilationConditionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -15102,42 +16455,51 @@ public class Swift3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2406);
+			setState(2410);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,291,_ctx) ) {
 			case 1:
 				{
-				setState(2397); match(T__81);
-				setState(2398); compilationCondition(2);
+				setState(2401);
+				platformCondition();
 				}
 				break;
 			case 2:
 				{
-				setState(2399); platformCondition();
+				setState(2402);
+				identifier();
 				}
 				break;
 			case 3:
 				{
-				setState(2400); identifier();
+				setState(2403);
+				booleanLiteral();
 				}
 				break;
 			case 4:
 				{
-				setState(2401); booleanLiteral();
+				setState(2404);
+				match(T__30);
+				setState(2405);
+				compilationCondition(0);
+				setState(2406);
+				match(T__31);
 				}
 				break;
 			case 5:
 				{
-				setState(2402); match(T__64);
-				setState(2403); compilationCondition(0);
-				setState(2404); match(T__78);
+				setState(2408);
+				match(T__87);
+				setState(2409);
+				compilationCondition(2);
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(2413);
+			setState(2417);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,292,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
@@ -15145,19 +16507,24 @@ public class Swift3Parser extends Parser {
 					{
 					_localctx = new CompilationConditionContext(_parentctx, _parentState);
 					pushNewRecursionContext(_localctx, _startState, RULE_compilationCondition);
-					setState(2408);
+					setState(2412);
 					if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-					setState(2409);
+					setState(2413);
 					_la = _input.LA(1);
-					if ( !(_la==T__138 || _la==T__33) ) {
+					if ( !(_la==T__121 || _la==T__122) ) {
 					_errHandler.recoverInline(this);
 					}
-					consume();
-					setState(2410); compilationCondition(2);
+					else {
+						if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+						_errHandler.reportMatch(this);
+						consume();
+					}
+					setState(2414);
+					compilationCondition(2);
 					}
 					} 
 				}
-				setState(2415);
+				setState(2419);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,292,_ctx);
 			}
@@ -15202,34 +16569,48 @@ public class Swift3Parser extends Parser {
 		PlatformConditionContext _localctx = new PlatformConditionContext(_ctx, getState());
 		enterRule(_localctx, 488, RULE_platformCondition);
 		try {
-			setState(2432);
+			setState(2436);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__31:
+			case T__133:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2416); match(T__31);
-				setState(2417); match(T__64);
-				setState(2418); operatingSystem();
-				setState(2419); match(T__78);
+				setState(2420);
+				match(T__133);
+				setState(2421);
+				match(T__30);
+				setState(2422);
+				operatingSystem();
+				setState(2423);
+				match(T__31);
 				}
 				break;
-			case T__123:
+			case T__134:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2421); match(T__123);
-				setState(2422); match(T__64);
-				setState(2423); architecture();
-				setState(2424); match(T__78);
+				setState(2425);
+				match(T__134);
+				setState(2426);
+				match(T__30);
+				setState(2427);
+				architecture();
+				setState(2428);
+				match(T__31);
 				}
 				break;
-			case T__56:
+			case T__135:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(2426); match(T__56);
-				setState(2427); match(T__64);
-				setState(2428); match(T__122);
-				setState(2429); swiftVersion();
-				setState(2430); match(T__78);
+				setState(2430);
+				match(T__135);
+				setState(2431);
+				match(T__30);
+				setState(2432);
+				match(T__123);
+				setState(2433);
+				swiftVersion();
+				setState(2434);
+				match(T__31);
 				}
 				break;
 			default:
@@ -15269,12 +16650,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2434);
+			setState(2438);
 			_la = _input.LA(1);
-			if ( !(((((_la - 94)) & ~0x3f) == 0 && ((1L << (_la - 94)) & ((1L << (T__53 - 94)) | (1L << (T__36 - 94)) | (1L << (T__17 - 94)) | (1L << (T__9 - 94)))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__33) | (1L << T__35) | (1L << T__37) | (1L << T__39))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -15310,12 +16695,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2436);
+			setState(2440);
 			_la = _input.LA(1);
-			if ( !(_la==T__93 || _la==T__86 || _la==T__34 || _la==T__24) ) {
+			if ( !(((((_la - 137)) & ~0x3f) == 0 && ((1L << (_la - 137)) & ((1L << (T__136 - 137)) | (1L << (T__137 - 137)) | (1L << (T__138 - 137)) | (1L << (T__139 - 137)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -15351,7 +16740,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2438); match(FloatingPointLiteral);
+			setState(2442);
+			match(FloatingPointLiteral);
 			}
 		}
 		catch (RecognitionException re) {
@@ -15366,11 +16756,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class LineControlStatementContext extends ParserRuleContext {
-		public LineNumberContext lineNumber() {
-			return getRuleContext(LineNumberContext.class,0);
-		}
 		public FileNameContext fileName() {
 			return getRuleContext(FileNameContext.class,0);
+		}
+		public LineNumberContext lineNumber() {
+			return getRuleContext(LineNumberContext.class,0);
 		}
 		public LineControlStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -15390,29 +16780,43 @@ public class Swift3Parser extends Parser {
 		LineControlStatementContext _localctx = new LineControlStatementContext(_ctx, getState());
 		enterRule(_localctx, 496, RULE_lineControlStatement);
 		try {
-			setState(2454);
+			setState(2458);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,294,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2440); match(T__124);
-				setState(2441); match(T__64);
-				setState(2442); match(T__43);
-				setState(2443); match(T__85);
-				setState(2444); fileName();
-				setState(2445); match(T__130);
-				setState(2446); match(T__59);
-				setState(2447); match(T__85);
-				setState(2448); lineNumber();
-				setState(2449); match(T__78);
+				setState(2444);
+				match(T__140);
+				setState(2445);
+				match(T__30);
+				setState(2446);
+				match(T__141);
+				setState(2447);
+				match(T__1);
+				setState(2448);
+				fileName();
+				setState(2449);
+				match(T__17);
+				setState(2450);
+				match(T__142);
+				setState(2451);
+				match(T__1);
+				setState(2452);
+				lineNumber();
+				setState(2453);
+				match(T__31);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2451); match(T__124);
-				setState(2452); match(T__64);
-				setState(2453); match(T__78);
+				setState(2455);
+				match(T__140);
+				setState(2456);
+				match(T__30);
+				setState(2457);
+				match(T__31);
 				}
 				break;
 			}
@@ -15452,7 +16856,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2456); integerLiteral();
+			setState(2460);
+			integerLiteral();
 			}
 		}
 		catch (RecognitionException re) {
@@ -15488,7 +16893,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2458); match(StringLiteral);
+			setState(2462);
+			match(StringLiteral);
 			}
 		}
 		catch (RecognitionException re) {
@@ -15525,62 +16931,65 @@ public class Swift3Parser extends Parser {
 		IdentifierContext _localctx = new IdentifierContext(_ctx, getState());
 		enterRule(_localctx, 502, RULE_identifier);
 		try {
-			setState(2462);
+			setState(2466);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2460); match(Identifier);
+				setState(2464);
+				match(Identifier);
 				}
 				break;
-			case T__145:
-			case T__144:
-			case T__143:
-			case T__142:
-			case T__141:
-			case T__140:
-			case T__136:
-			case T__134:
-			case T__133:
-			case T__132:
-			case T__129:
-			case T__126:
-			case T__123:
-			case T__115:
-			case T__112:
-			case T__109:
-			case T__101:
-			case T__93:
-			case T__92:
-			case T__89:
-			case T__88:
-			case T__86:
-			case T__75:
-			case T__72:
-			case T__65:
-			case T__59:
-			case T__53:
-			case T__51:
-			case T__49:
-			case T__46:
-			case T__45:
-			case T__43:
-			case T__37:
-			case T__36:
+			case T__18:
+			case T__27:
+			case T__33:
 			case T__34:
-			case T__31:
-			case T__25:
-			case T__24:
-			case T__23:
-			case T__17:
-			case T__14:
-			case T__12:
-			case T__9:
-			case T__7:
-			case T__2:
+			case T__35:
+			case T__37:
+			case T__39:
+			case T__45:
+			case T__46:
+			case T__47:
+			case T__48:
+			case T__49:
+			case T__50:
+			case T__51:
+			case T__52:
+			case T__53:
+			case T__54:
+			case T__55:
+			case T__56:
+			case T__58:
+			case T__59:
+			case T__61:
+			case T__63:
+			case T__75:
+			case T__76:
+			case T__77:
+			case T__83:
+			case T__91:
+			case T__92:
+			case T__93:
+			case T__94:
+			case T__95:
+			case T__96:
+			case T__124:
+			case T__125:
+			case T__127:
+			case T__133:
+			case T__134:
+			case T__136:
+			case T__137:
+			case T__138:
+			case T__139:
+			case T__141:
+			case T__142:
+			case T__146:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2461); contextSensitiveKeyword();
+				setState(2465);
+				contextSensitiveKeyword();
 				}
 				break;
 			default:
@@ -15621,12 +17030,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2464);
+			setState(2468);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__143) | (1L << T__139) | (1L << T__135) | (1L << T__131) | (1L << T__127) | (1L << T__126) | (1L << T__125) | (1L << T__121) | (1L << T__120) | (1L << T__116) | (1L << T__113) | (1L << T__110) | (1L << T__108) | (1L << T__107) | (1L << T__106) | (1L << T__105) | (1L << T__102) | (1L << T__99) | (1L << T__98) | (1L << T__96) | (1L << T__95) | (1L << T__90) | (1L << T__87))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (T__83 - 64)) | (1L << (T__82 - 64)) | (1L << (T__80 - 64)) | (1L << (T__79 - 64)) | (1L << (T__76 - 64)) | (1L << (T__74 - 64)) | (1L << (T__73 - 64)) | (1L << (T__71 - 64)) | (1L << (T__70 - 64)) | (1L << (T__68 - 64)) | (1L << (T__66 - 64)) | (1L << (T__63 - 64)) | (1L << (T__62 - 64)) | (1L << (T__61 - 64)) | (1L << (T__57 - 64)) | (1L << (T__55 - 64)) | (1L << (T__54 - 64)) | (1L << (T__50 - 64)) | (1L << (T__48 - 64)) | (1L << (T__47 - 64)) | (1L << (T__44 - 64)) | (1L << (T__41 - 64)) | (1L << (T__40 - 64)) | (1L << (T__39 - 64)) | (1L << (T__38 - 64)) | (1L << (T__37 - 64)) | (1L << (T__35 - 64)) | (1L << (T__32 - 64)) | (1L << (T__30 - 64)) | (1L << (T__28 - 64)) | (1L << (T__27 - 64)) | (1L << (T__21 - 64)) | (1L << (T__20 - 64)))) != 0) || ((((_la - 129)) & ~0x3f) == 0 && ((1L << (_la - 129)) & ((1L << (T__18 - 129)) | (1L << (T__16 - 129)) | (1L << (T__8 - 129)) | (1L << (T__6 - 129)) | (1L << (T__5 - 129)) | (1L << (T__4 - 129)) | (1L << (T__3 - 129)) | (1L << (T__0 - 129)) | (1L << (BooleanLiteral - 129)) | (1L << (NilLiteral - 129)))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__44) | (1L << T__57) | (1L << T__62))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (T__64 - 65)) | (1L << (T__65 - 65)) | (1L << (T__66 - 65)) | (1L << (T__67 - 65)) | (1L << (T__68 - 65)) | (1L << (T__69 - 65)) | (1L << (T__70 - 65)) | (1L << (T__71 - 65)) | (1L << (T__72 - 65)) | (1L << (T__73 - 65)) | (1L << (T__78 - 65)) | (1L << (T__79 - 65)) | (1L << (T__82 - 65)) | (1L << (T__84 - 65)) | (1L << (T__85 - 65)) | (1L << (T__88 - 65)) | (1L << (T__89 - 65)) | (1L << (T__90 - 65)) | (1L << (T__91 - 65)) | (1L << (T__97 - 65)) | (1L << (T__98 - 65)) | (1L << (T__107 - 65)) | (1L << (T__108 - 65)) | (1L << (T__109 - 65)) | (1L << (T__110 - 65)) | (1L << (T__111 - 65)) | (1L << (T__112 - 65)) | (1L << (T__113 - 65)) | (1L << (T__116 - 65)) | (1L << (T__120 - 65)) | (1L << (T__126 - 65)) | (1L << (T__127 - 65)))) != 0) || ((((_la - 129)) & ~0x3f) == 0 && ((1L << (_la - 129)) & ((1L << (T__128 - 129)) | (1L << (T__129 - 129)) | (1L << (T__130 - 129)) | (1L << (T__131 - 129)) | (1L << (T__132 - 129)) | (1L << (T__143 - 129)) | (1L << (T__144 - 129)) | (1L << (T__145 - 129)) | (1L << (BooleanLiteral - 129)) | (1L << (NilLiteral - 129)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -15662,12 +17075,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2466);
+			setState(2470);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__145) | (1L << T__144) | (1L << T__143) | (1L << T__142) | (1L << T__141) | (1L << T__140) | (1L << T__136) | (1L << T__134) | (1L << T__133) | (1L << T__132) | (1L << T__129) | (1L << T__126) | (1L << T__123) | (1L << T__115) | (1L << T__112) | (1L << T__109) | (1L << T__101) | (1L << T__93) | (1L << T__92) | (1L << T__89) | (1L << T__88) | (1L << T__86))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (T__75 - 72)) | (1L << (T__72 - 72)) | (1L << (T__65 - 72)) | (1L << (T__59 - 72)) | (1L << (T__53 - 72)) | (1L << (T__51 - 72)) | (1L << (T__49 - 72)) | (1L << (T__46 - 72)) | (1L << (T__45 - 72)) | (1L << (T__43 - 72)) | (1L << (T__37 - 72)) | (1L << (T__36 - 72)) | (1L << (T__34 - 72)) | (1L << (T__31 - 72)) | (1L << (T__25 - 72)) | (1L << (T__24 - 72)) | (1L << (T__23 - 72)) | (1L << (T__17 - 72)) | (1L << (T__14 - 72)) | (1L << (T__12 - 72)))) != 0) || ((((_la - 138)) & ~0x3f) == 0 && ((1L << (_la - 138)) & ((1L << (T__9 - 138)) | (1L << (T__7 - 138)) | (1L << (T__2 - 138)))) != 0)) ) {
+			if ( !(((((_la - 19)) & ~0x3f) == 0 && ((1L << (_la - 19)) & ((1L << (T__18 - 19)) | (1L << (T__27 - 19)) | (1L << (T__33 - 19)) | (1L << (T__34 - 19)) | (1L << (T__35 - 19)) | (1L << (T__37 - 19)) | (1L << (T__39 - 19)) | (1L << (T__45 - 19)) | (1L << (T__46 - 19)) | (1L << (T__47 - 19)) | (1L << (T__48 - 19)) | (1L << (T__49 - 19)) | (1L << (T__50 - 19)) | (1L << (T__51 - 19)) | (1L << (T__52 - 19)) | (1L << (T__53 - 19)) | (1L << (T__54 - 19)) | (1L << (T__55 - 19)) | (1L << (T__56 - 19)) | (1L << (T__58 - 19)) | (1L << (T__59 - 19)) | (1L << (T__61 - 19)) | (1L << (T__63 - 19)) | (1L << (T__75 - 19)) | (1L << (T__76 - 19)) | (1L << (T__77 - 19)))) != 0) || ((((_la - 84)) & ~0x3f) == 0 && ((1L << (_la - 84)) & ((1L << (T__83 - 84)) | (1L << (T__91 - 84)) | (1L << (T__92 - 84)) | (1L << (T__93 - 84)) | (1L << (T__94 - 84)) | (1L << (T__95 - 84)) | (1L << (T__96 - 84)) | (1L << (T__124 - 84)) | (1L << (T__125 - 84)) | (1L << (T__127 - 84)) | (1L << (T__133 - 84)) | (1L << (T__134 - 84)) | (1L << (T__136 - 84)) | (1L << (T__137 - 84)) | (1L << (T__138 - 84)) | (1L << (T__139 - 84)) | (1L << (T__141 - 84)) | (1L << (T__142 - 84)) | (1L << (T__146 - 84)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -15682,11 +17099,11 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class IdentifierListContext extends ParserRuleContext {
-		public IdentifierContext identifier(int i) {
-			return getRuleContext(IdentifierContext.class,i);
-		}
 		public List<IdentifierContext> identifier() {
 			return getRuleContexts(IdentifierContext.class);
+		}
+		public IdentifierContext identifier(int i) {
+			return getRuleContext(IdentifierContext.class,i);
 		}
 		public IdentifierListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -15709,128 +17126,135 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2470);
+			setState(2474);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__145:
-			case T__144:
-			case T__143:
-			case T__142:
-			case T__141:
-			case T__140:
-			case T__136:
-			case T__134:
-			case T__133:
-			case T__132:
-			case T__129:
-			case T__126:
-			case T__123:
-			case T__115:
-			case T__112:
-			case T__109:
-			case T__101:
-			case T__93:
-			case T__92:
-			case T__89:
-			case T__88:
-			case T__86:
-			case T__75:
-			case T__72:
-			case T__65:
-			case T__59:
-			case T__53:
-			case T__51:
-			case T__49:
-			case T__46:
-			case T__45:
-			case T__43:
-			case T__37:
-			case T__36:
+			case T__18:
+			case T__27:
+			case T__33:
 			case T__34:
-			case T__31:
-			case T__25:
-			case T__24:
-			case T__23:
-			case T__17:
-			case T__14:
-			case T__12:
-			case T__9:
-			case T__7:
-			case T__2:
+			case T__35:
+			case T__37:
+			case T__39:
+			case T__45:
+			case T__46:
+			case T__47:
+			case T__48:
+			case T__49:
+			case T__50:
+			case T__51:
+			case T__52:
+			case T__53:
+			case T__54:
+			case T__55:
+			case T__56:
+			case T__58:
+			case T__59:
+			case T__61:
+			case T__63:
+			case T__75:
+			case T__76:
+			case T__77:
+			case T__83:
+			case T__91:
+			case T__92:
+			case T__93:
+			case T__94:
+			case T__95:
+			case T__96:
+			case T__124:
+			case T__125:
+			case T__127:
+			case T__133:
+			case T__134:
+			case T__136:
+			case T__137:
+			case T__138:
+			case T__139:
+			case T__141:
+			case T__142:
+			case T__146:
 			case Identifier:
 				{
-				setState(2468); identifier();
+				setState(2472);
+				identifier();
 				}
 				break;
-			case T__8:
+			case T__82:
 				{
-				setState(2469); match(T__8);
+				setState(2473);
+				match(T__82);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(2479);
+			setState(2483);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__130) {
+			while (_la==T__17) {
 				{
 				{
-				setState(2472); match(T__130);
-				setState(2475);
+				setState(2476);
+				match(T__17);
+				setState(2479);
+				_errHandler.sync(this);
 				switch (_input.LA(1)) {
-				case T__145:
-				case T__144:
-				case T__143:
-				case T__142:
-				case T__141:
-				case T__140:
-				case T__136:
-				case T__134:
-				case T__133:
-				case T__132:
-				case T__129:
-				case T__126:
-				case T__123:
-				case T__115:
-				case T__112:
-				case T__109:
-				case T__101:
-				case T__93:
-				case T__92:
-				case T__89:
-				case T__88:
-				case T__86:
-				case T__75:
-				case T__72:
-				case T__65:
-				case T__59:
-				case T__53:
-				case T__51:
-				case T__49:
-				case T__46:
-				case T__45:
-				case T__43:
-				case T__37:
-				case T__36:
+				case T__18:
+				case T__27:
+				case T__33:
 				case T__34:
-				case T__31:
-				case T__25:
-				case T__24:
-				case T__23:
-				case T__17:
-				case T__14:
-				case T__12:
-				case T__9:
-				case T__7:
-				case T__2:
+				case T__35:
+				case T__37:
+				case T__39:
+				case T__45:
+				case T__46:
+				case T__47:
+				case T__48:
+				case T__49:
+				case T__50:
+				case T__51:
+				case T__52:
+				case T__53:
+				case T__54:
+				case T__55:
+				case T__56:
+				case T__58:
+				case T__59:
+				case T__61:
+				case T__63:
+				case T__75:
+				case T__76:
+				case T__77:
+				case T__83:
+				case T__91:
+				case T__92:
+				case T__93:
+				case T__94:
+				case T__95:
+				case T__96:
+				case T__124:
+				case T__125:
+				case T__127:
+				case T__133:
+				case T__134:
+				case T__136:
+				case T__137:
+				case T__138:
+				case T__139:
+				case T__141:
+				case T__142:
+				case T__146:
 				case Identifier:
 					{
-					setState(2473); identifier();
+					setState(2477);
+					identifier();
 					}
 					break;
-				case T__8:
+				case T__82:
 					{
-					setState(2474); match(T__8);
+					setState(2478);
+					match(T__82);
 					}
 					break;
 				default:
@@ -15838,7 +17262,7 @@ public class Swift3Parser extends Parser {
 				}
 				}
 				}
-				setState(2481);
+				setState(2485);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -15877,7 +17301,8 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2482); match(BooleanLiteral);
+			setState(2486);
+			match(BooleanLiteral);
 			}
 		}
 		catch (RecognitionException re) {
@@ -15896,8 +17321,8 @@ public class Swift3Parser extends Parser {
 			return getRuleContext(NumericLiteralContext.class,0);
 		}
 		public TerminalNode StringLiteral() { return getToken(Swift3Parser.StringLiteral, 0); }
-		public TerminalNode NilLiteral() { return getToken(Swift3Parser.NilLiteral, 0); }
 		public TerminalNode BooleanLiteral() { return getToken(Swift3Parser.BooleanLiteral, 0); }
+		public TerminalNode NilLiteral() { return getToken(Swift3Parser.NilLiteral, 0); }
 		public LiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -15916,9 +17341,10 @@ public class Swift3Parser extends Parser {
 		LiteralContext _localctx = new LiteralContext(_ctx, getState());
 		enterRule(_localctx, 512, RULE_literal);
 		try {
-			setState(2488);
+			setState(2492);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__1:
+			case T__102:
 			case BinaryLiteral:
 			case OctalLiteral:
 			case DecimalLiteral:
@@ -15926,25 +17352,29 @@ public class Swift3Parser extends Parser {
 			case FloatingPointLiteral:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2484); numericLiteral();
+				setState(2488);
+				numericLiteral();
 				}
 				break;
 			case StringLiteral:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2485); match(StringLiteral);
+				setState(2489);
+				match(StringLiteral);
 				}
 				break;
 			case BooleanLiteral:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(2486); match(BooleanLiteral);
+				setState(2490);
+				match(BooleanLiteral);
 				}
 				break;
 			case NilLiteral:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(2487); match(NilLiteral);
+				setState(2491);
+				match(NilLiteral);
 				}
 				break;
 			default:
@@ -15986,34 +17416,41 @@ public class Swift3Parser extends Parser {
 		enterRule(_localctx, 514, RULE_numericLiteral);
 		int _la;
 		try {
-			setState(2498);
+			setState(2502);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,302,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(2491);
+				setState(2495);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__1) {
+				if (_la==T__102) {
 					{
-					setState(2490); match(T__1);
+					setState(2494);
+					match(T__102);
 					}
 				}
 
-				setState(2493); integerLiteral();
+				setState(2497);
+				integerLiteral();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(2495);
+				setState(2499);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__1) {
+				if (_la==T__102) {
 					{
-					setState(2494); match(T__1);
+					setState(2498);
+					match(T__102);
 					}
 				}
 
-				setState(2497); match(FloatingPointLiteral);
+				setState(2501);
+				match(FloatingPointLiteral);
 				}
 				break;
 			}
@@ -16030,10 +17467,10 @@ public class Swift3Parser extends Parser {
 	}
 
 	public static class IntegerLiteralContext extends ParserRuleContext {
-		public TerminalNode DecimalLiteral() { return getToken(Swift3Parser.DecimalLiteral, 0); }
-		public TerminalNode HexadecimalLiteral() { return getToken(Swift3Parser.HexadecimalLiteral, 0); }
 		public TerminalNode BinaryLiteral() { return getToken(Swift3Parser.BinaryLiteral, 0); }
 		public TerminalNode OctalLiteral() { return getToken(Swift3Parser.OctalLiteral, 0); }
+		public TerminalNode DecimalLiteral() { return getToken(Swift3Parser.DecimalLiteral, 0); }
+		public TerminalNode HexadecimalLiteral() { return getToken(Swift3Parser.HexadecimalLiteral, 0); }
 		public IntegerLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -16055,12 +17492,16 @@ public class Swift3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2500);
+			setState(2504);
 			_la = _input.LA(1);
 			if ( !(((((_la - 155)) & ~0x3f) == 0 && ((1L << (_la - 155)) & ((1L << (BinaryLiteral - 155)) | (1L << (OctalLiteral - 155)) | (1L << (DecimalLiteral - 155)) | (1L << (HexadecimalLiteral - 155)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -16076,56 +17517,79 @@ public class Swift3Parser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 151: return pattern_sempred((PatternContext)_localctx, predIndex);
-		case 208: return postfixExpression_sempred((PostfixExpressionContext)_localctx, predIndex);
-		case 217: return sType_sempred((STypeContext)_localctx, predIndex);
-		case 243: return compilationCondition_sempred((CompilationConditionContext)_localctx, predIndex);
-		}
-		return true;
-	}
-	private boolean sType_sempred(STypeContext _localctx, int predIndex) {
-		switch (predIndex) {
-		case 16: return precpred(_ctx, 4);
-		case 17: return precpred(_ctx, 3);
-		case 14: return precpred(_ctx, 7);
-		case 15: return precpred(_ctx, 6);
+		case 151:
+			return pattern_sempred((PatternContext)_localctx, predIndex);
+		case 208:
+			return postfixExpression_sempred((PostfixExpressionContext)_localctx, predIndex);
+		case 217:
+			return sType_sempred((STypeContext)_localctx, predIndex);
+		case 243:
+			return compilationCondition_sempred((CompilationConditionContext)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean pattern_sempred(PatternContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 0: return precpred(_ctx, 2);
-		}
-		return true;
-	}
-	private boolean compilationCondition_sempred(CompilationConditionContext _localctx, int predIndex) {
-		switch (predIndex) {
-		case 18: return precpred(_ctx, 1);
+		case 0:
+			return precpred(_ctx, 2);
 		}
 		return true;
 	}
 	private boolean postfixExpression_sempred(PostfixExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 1: return precpred(_ctx, 13);
-		case 2: return precpred(_ctx, 12);
-		case 3: return precpred(_ctx, 11);
-		case 4: return precpred(_ctx, 10);
-		case 5: return precpred(_ctx, 9);
-		case 6: return precpred(_ctx, 8);
-		case 7: return precpred(_ctx, 7);
-		case 8: return precpred(_ctx, 6);
-		case 9: return precpred(_ctx, 5);
-		case 10: return precpred(_ctx, 4);
-		case 11: return precpred(_ctx, 3);
-		case 12: return precpred(_ctx, 2);
-		case 13: return precpred(_ctx, 1);
+		case 1:
+			return precpred(_ctx, 13);
+		case 2:
+			return precpred(_ctx, 12);
+		case 3:
+			return precpred(_ctx, 11);
+		case 4:
+			return precpred(_ctx, 10);
+		case 5:
+			return precpred(_ctx, 9);
+		case 6:
+			return precpred(_ctx, 8);
+		case 7:
+			return precpred(_ctx, 7);
+		case 8:
+			return precpred(_ctx, 6);
+		case 9:
+			return precpred(_ctx, 5);
+		case 10:
+			return precpred(_ctx, 4);
+		case 11:
+			return precpred(_ctx, 3);
+		case 12:
+			return precpred(_ctx, 2);
+		case 13:
+			return precpred(_ctx, 1);
+		}
+		return true;
+	}
+	private boolean sType_sempred(STypeContext _localctx, int predIndex) {
+		switch (predIndex) {
+		case 14:
+			return precpred(_ctx, 7);
+		case 15:
+			return precpred(_ctx, 6);
+		case 16:
+			return precpred(_ctx, 4);
+		case 17:
+			return precpred(_ctx, 3);
+		}
+		return true;
+	}
+	private boolean compilationCondition_sempred(CompilationConditionContext _localctx, int predIndex) {
+		switch (predIndex) {
+		case 18:
+			return precpred(_ctx, 1);
 		}
 		return true;
 	}
 
 	private static final int _serializedATNSegments = 2;
 	private static final String _serializedATNSegment0 =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\u00a7\u09c9\4\2\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\u00a7\u09cd\4\2\t"+
 		"\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -16323,7 +17787,7 @@ public class Swift3Parser extends Parser {
 		"\u00d6\3\u00d7\3\u00d7\7\u00d7\u0884\n\u00d7\f\u00d7\16\u00d7\u0887\13"+
 		"\u00d7\3\u00d7\3\u00d7\7\u00d7\u088b\n\u00d7\f\u00d7\16\u00d7\u088e\13"+
 		"\u00d7\3\u00d7\5\u00d7\u0891\n\u00d7\3\u00d8\3\u00d8\3\u00d9\3\u00d9\3"+
-		"\u00da\3\u00da\3\u00db\3\u00db\3\u00db\5\u00db\u089c\n\u00db\3\u00db\3"+
+		"\u00da\3\u00da\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\5\u00db\u089e\n"+
 		"\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db"+
 		"\3\u00db\3\u00db\3\u00db\3\u00db\5\u00db\u08ac\n\u00db\3\u00db\3\u00db"+
 		"\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db\3\u00db"+
@@ -16338,63 +17802,59 @@ public class Swift3Parser extends Parser {
 		"\n\u00e3\3\u00e3\3\u00e3\3\u00e4\3\u00e4\5\u00e4\u08fe\n\u00e4\3\u00e5"+
 		"\3\u00e5\3\u00e5\7\u00e5\u0903\n\u00e5\f\u00e5\16\u00e5\u0906\13\u00e5"+
 		"\3\u00e6\5\u00e6\u0909\n\u00e6\3\u00e6\5\u00e6\u090c\n\u00e6\3\u00e6\3"+
-		"\u00e6\3\u00e6\3\u00e6\5\u00e6\u0912\n\u00e6\3\u00e7\3\u00e7\3\u00e8\3"+
-		"\u00e8\3\u00e8\3\u00e8\3\u00e9\3\u00e9\5\u00e9\u091c\n\u00e9\3\u00ea\3"+
-		"\u00ea\3\u00eb\3\u00eb\3\u00eb\3\u00eb\3\u00eb\3\u00eb\3\u00eb\3\u00eb"+
-		"\5\u00eb\u0928\n\u00eb\3\u00ec\3\u00ec\3\u00ec\3\u00ec\3\u00ec\3\u00ec"+
-		"\3\u00ec\3\u00ec\3\u00ec\5\u00ec\u0933\n\u00ec\3\u00ed\3\u00ed\3\u00ed"+
-		"\7\u00ed\u0938\n\u00ed\f\u00ed\16\u00ed\u093b\13\u00ed\3\u00ee\3\u00ee"+
-		"\3\u00ef\3\u00ef\5\u00ef\u0941\n\u00ef\3\u00f0\3\u00f0\5\u00f0\u0945\n"+
-		"\u00f0\3\u00f0\5\u00f0\u0948\n\u00f0\3\u00f0\3\u00f0\3\u00f1\3\u00f1\3"+
-		"\u00f1\5\u00f1\u094f\n\u00f1\3\u00f2\6\u00f2\u0952\n\u00f2\r\u00f2\16"+
-		"\u00f2\u0953\3\u00f3\3\u00f3\3\u00f3\5\u00f3\u0959\n\u00f3\3\u00f4\3\u00f4"+
-		"\5\u00f4\u095d\n\u00f4\3\u00f5\3\u00f5\3\u00f5\3\u00f5\3\u00f5\3\u00f5"+
-		"\3\u00f5\3\u00f5\3\u00f5\3\u00f5\5\u00f5\u0969\n\u00f5\3\u00f5\3\u00f5"+
-		"\3\u00f5\7\u00f5\u096e\n\u00f5\f\u00f5\16\u00f5\u0971\13\u00f5\3\u00f6"+
+		"\u00e6\3\u00e6\3\u00e6\3\u00e6\3\u00e6\3\u00e6\3\u00e6\5\u00e6\u0916\n"+
+		"\u00e6\3\u00e7\3\u00e7\3\u00e8\3\u00e8\3\u00e8\3\u00e8\3\u00e9\3\u00e9"+
+		"\5\u00e9\u0920\n\u00e9\3\u00ea\3\u00ea\3\u00eb\3\u00eb\3\u00eb\3\u00eb"+
+		"\3\u00eb\3\u00eb\3\u00eb\3\u00eb\5\u00eb\u092c\n\u00eb\3\u00ec\3\u00ec"+
+		"\3\u00ec\3\u00ec\3\u00ec\3\u00ec\3\u00ec\3\u00ec\3\u00ec\5\u00ec\u0937"+
+		"\n\u00ec\3\u00ed\3\u00ed\3\u00ed\7\u00ed\u093c\n\u00ed\f\u00ed\16\u00ed"+
+		"\u093f\13\u00ed\3\u00ee\3\u00ee\3\u00ef\3\u00ef\5\u00ef\u0945\n\u00ef"+
+		"\3\u00f0\3\u00f0\5\u00f0\u0949\n\u00f0\3\u00f0\5\u00f0\u094c\n\u00f0\3"+
+		"\u00f0\3\u00f0\3\u00f1\3\u00f1\3\u00f1\5\u00f1\u0953\n\u00f1\3\u00f2\6"+
+		"\u00f2\u0956\n\u00f2\r\u00f2\16\u00f2\u0957\3\u00f3\3\u00f3\3\u00f3\5"+
+		"\u00f3\u095d\n\u00f3\3\u00f4\3\u00f4\5\u00f4\u0961\n\u00f4\3\u00f5\3\u00f5"+
+		"\3\u00f5\3\u00f5\3\u00f5\3\u00f5\3\u00f5\3\u00f5\3\u00f5\3\u00f5\5\u00f5"+
+		"\u096d\n\u00f5\3\u00f5\3\u00f5\3\u00f5\7\u00f5\u0972\n\u00f5\f\u00f5\16"+
+		"\u00f5\u0975\13\u00f5\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6"+
 		"\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6"+
-		"\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6\3\u00f6\5\u00f6\u0983\n\u00f6"+
-		"\3\u00f7\3\u00f7\3\u00f8\3\u00f8\3\u00f9\3\u00f9\3\u00fa\3\u00fa\3\u00fa"+
-		"\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa"+
-		"\3\u00fa\3\u00fa\5\u00fa\u0999\n\u00fa\3\u00fb\3\u00fb\3\u00fc\3\u00fc"+
-		"\3\u00fd\3\u00fd\5\u00fd\u09a1\n\u00fd\3\u00fe\3\u00fe\3\u00ff\3\u00ff"+
-		"\3\u0100\3\u0100\5\u0100\u09a9\n\u0100\3\u0100\3\u0100\3\u0100\5\u0100"+
-		"\u09ae\n\u0100\7\u0100\u09b0\n\u0100\f\u0100\16\u0100\u09b3\13\u0100\3"+
-		"\u0101\3\u0101\3\u0102\3\u0102\3\u0102\3\u0102\5\u0102\u09bb\n\u0102\3"+
-		"\u0103\5\u0103\u09be\n\u0103\3\u0103\3\u0103\5\u0103\u09c2\n\u0103\3\u0103"+
-		"\5\u0103\u09c5\n\u0103\3\u0104\3\u0104\3\u0104\2\6\u0130\u01a2\u01b4\u01e8"+
-		"\u0105\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<"+
-		">@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084\u0086\u0088\u008a"+
-		"\u008c\u008e\u0090\u0092\u0094\u0096\u0098\u009a\u009c\u009e\u00a0\u00a2"+
-		"\u00a4\u00a6\u00a8\u00aa\u00ac\u00ae\u00b0\u00b2\u00b4\u00b6\u00b8\u00ba"+
-		"\u00bc\u00be\u00c0\u00c2\u00c4\u00c6\u00c8\u00ca\u00cc\u00ce\u00d0\u00d2"+
-		"\u00d4\u00d6\u00d8\u00da\u00dc\u00de\u00e0\u00e2\u00e4\u00e6\u00e8\u00ea"+
-		"\u00ec\u00ee\u00f0\u00f2\u00f4\u00f6\u00f8\u00fa\u00fc\u00fe\u0100\u0102"+
-		"\u0104\u0106\u0108\u010a\u010c\u010e\u0110\u0112\u0114\u0116\u0118\u011a"+
-		"\u011c\u011e\u0120\u0122\u0124\u0126\u0128\u012a\u012c\u012e\u0130\u0132"+
-		"\u0134\u0136\u0138\u013a\u013c\u013e\u0140\u0142\u0144\u0146\u0148\u014a"+
-		"\u014c\u014e\u0150\u0152\u0154\u0156\u0158\u015a\u015c\u015e\u0160\u0162"+
-		"\u0164\u0166\u0168\u016a\u016c\u016e\u0170\u0172\u0174\u0176\u0178\u017a"+
-		"\u017c\u017e\u0180\u0182\u0184\u0186\u0188\u018a\u018c\u018e\u0190\u0192"+
-		"\u0194\u0196\u0198\u019a\u019c\u019e\u01a0\u01a2\u01a4\u01a6\u01a8\u01aa"+
-		"\u01ac\u01ae\u01b0\u01b2\u01b4\u01b6\u01b8\u01ba\u01bc\u01be\u01c0\u01c2"+
-		"\u01c4\u01c6\u01c8\u01ca\u01cc\u01ce\u01d0\u01d2\u01d4\u01d6\u01d8\u01da"+
-		"\u01dc\u01de\u01e0\u01e2\u01e4\u01e6\u01e8\u01ea\u01ec\u01ee\u01f0\u01f2"+
-		"\u01f4\u01f6\u01f8\u01fa\u01fc\u01fe\u0200\u0202\u0204\u0206\2\23\5\2"+
-		"##YYoo\4\2\27\27ff\n\2::PP[[``bbqq\u0084\u0084\u008c\u008c\4\2\u009f\u009f"+
-		"\u00a1\u00a2\n\2\27\27$$,,IIKKffllyy\4\2\26\26WW\4\2DDxx\5\2\20\20\24"+
-		"\24==\6\2\25\2599dd\u0088\u0088\4\2\3\3&&\17\2\13\f\33\33\36\36\67\67"+
-		"DDkkttxx{{\u0082\u0082\u008a\u008b\u0094\u0094\u0098\u0098\4\2\13\13t"+
-		"t\6\2``qq\u0084\u0084\u008c\u008c\6\288??ss}}*\2\4\4\6\6\n\n\16\16\22"+
-		"\22\26\30\34\35!!$$\'\'),//\62\63\65\66;;>>BCEFIIKLNOQQSSVX\\\\^_ccef"+
-		"iilprruuwwyz\u0080\u0081\u0083\u0083\u0085\u0085\u008d\u008d\u008f\u0092"+
-		"\u0095\u0097\"\2\4\t\r\r\17\21\24\24\27\27\32\32\"\"%%((\60\6089<=??J"+
-		"JMMTTZZ``bbddghjjpqssvv|~\u0084\u0084\u0087\u0087\u0089\u0089\u008c\u008c"+
-		"\u008e\u008e\u0093\u0093\3\2\u009d\u00a0\u0a84\2\u0209\3\2\2\2\4\u0232"+
-		"\3\2\2\2\6\u0234\3\2\2\2\b\u023a\3\2\2\2\n\u023f\3\2\2\2\f\u0246\3\2\2"+
-		"\2\16\u0248\3\2\2\2\20\u0254\3\2\2\2\22\u0258\3\2\2\2\24\u0260\3\2\2\2"+
-		"\26\u0262\3\2\2\2\30\u026c\3\2\2\2\32\u026e\3\2\2\2\34\u0273\3\2\2\2\36"+
-		"\u027c\3\2\2\2 \u028c\3\2\2\2\"\u028e\3\2\2\2$\u0292\3\2\2\2&\u029a\3"+
-		"\2\2\2(\u029e\3\2\2\2*\u02a7\3\2\2\2,\u02a9\3\2\2\2.\u02ac\3\2\2\2\60"+
+		"\3\u00f6\5\u00f6\u0987\n\u00f6\3\u00f7\3\u00f7\3\u00f8\3\u00f8\3\u00f9"+
+		"\3\u00f9\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa"+
+		"\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\3\u00fa\5\u00fa\u099d\n\u00fa"+
+		"\3\u00fb\3\u00fb\3\u00fc\3\u00fc\3\u00fd\3\u00fd\5\u00fd\u09a5\n\u00fd"+
+		"\3\u00fe\3\u00fe\3\u00ff\3\u00ff\3\u0100\3\u0100\5\u0100\u09ad\n\u0100"+
+		"\3\u0100\3\u0100\3\u0100\5\u0100\u09b2\n\u0100\7\u0100\u09b4\n\u0100\f"+
+		"\u0100\16\u0100\u09b7\13\u0100\3\u0101\3\u0101\3\u0102\3\u0102\3\u0102"+
+		"\3\u0102\5\u0102\u09bf\n\u0102\3\u0103\5\u0103\u09c2\n\u0103\3\u0103\3"+
+		"\u0103\5\u0103\u09c6\n\u0103\3\u0103\5\u0103\u09c9\n\u0103\3\u0104\3\u0104"+
+		"\3\u0104\2\6\u0130\u01a2\u01b4\u01e8\u0105\2\4\6\b\n\f\16\20\22\24\26"+
+		"\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|"+
+		"~\u0080\u0082\u0084\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094\u0096"+
+		"\u0098\u009a\u009c\u009e\u00a0\u00a2\u00a4\u00a6\u00a8\u00aa\u00ac\u00ae"+
+		"\u00b0\u00b2\u00b4\u00b6\u00b8\u00ba\u00bc\u00be\u00c0\u00c2\u00c4\u00c6"+
+		"\u00c8\u00ca\u00cc\u00ce\u00d0\u00d2\u00d4\u00d6\u00d8\u00da\u00dc\u00de"+
+		"\u00e0\u00e2\u00e4\u00e6\u00e8\u00ea\u00ec\u00ee\u00f0\u00f2\u00f4\u00f6"+
+		"\u00f8\u00fa\u00fc\u00fe\u0100\u0102\u0104\u0106\u0108\u010a\u010c\u010e"+
+		"\u0110\u0112\u0114\u0116\u0118\u011a\u011c\u011e\u0120\u0122\u0124\u0126"+
+		"\u0128\u012a\u012c\u012e\u0130\u0132\u0134\u0136\u0138\u013a\u013c\u013e"+
+		"\u0140\u0142\u0144\u0146\u0148\u014a\u014c\u014e\u0150\u0152\u0154\u0156"+
+		"\u0158\u015a\u015c\u015e\u0160\u0162\u0164\u0166\u0168\u016a\u016c\u016e"+
+		"\u0170\u0172\u0174\u0176\u0178\u017a\u017c\u017e\u0180\u0182\u0184\u0186"+
+		"\u0188\u018a\u018c\u018e\u0190\u0192\u0194\u0196\u0198\u019a\u019c\u019e"+
+		"\u01a0\u01a2\u01a4\u01a6\u01a8\u01aa\u01ac\u01ae\u01b0\u01b2\u01b4\u01b6"+
+		"\u01b8\u01ba\u01bc\u01be\u01c0\u01c2\u01c4\u01c6\u01c8\u01ca\u01cc\u01ce"+
+		"\u01d0\u01d2\u01d4\u01d6\u01d8\u01da\u01dc\u01de\u01e0\u01e2\u01e4\u01e6"+
+		"\u01e8\u01ea\u01ec\u01ee\u01f0\u01f2\u01f4\u01f6\u01f8\u01fa\u01fc\u01fe"+
+		"\u0200\u0202\u0204\u0206\2\23\3\2\6\b\3\2\35\36\3\2$+\4\2\u009f\u009f"+
+		"\u00a1\u00a2\5\2\35\36//HL\3\2QR\3\2YZ\3\2ac\5\2==@@uv\3\2xy\f\2##,.M"+
+		"MSSYZiikkmm|~\u0098\u0098\3\2|}\6\2$$&&((**\3\2\u008b\u008e\23\2\b\21"+
+		"\25 //<<AACLQRUUWX[^dentww{{\u0081\u0087\u0092\u0094\u0096\u0097\24\2"+
+		"\25\25\36\36$&((**\60;=>@@BBNPVV^c\177\u0080\u0082\u0082\u0088\u0089\u008b"+
+		"\u008e\u0090\u0091\u0095\u0095\3\2\u009d\u00a0\2\u0a89\2\u0209\3\2\2\2"+
+		"\4\u0232\3\2\2\2\6\u0234\3\2\2\2\b\u023a\3\2\2\2\n\u023f\3\2\2\2\f\u0246"+
+		"\3\2\2\2\16\u0248\3\2\2\2\20\u0254\3\2\2\2\22\u0258\3\2\2\2\24\u0260\3"+
+		"\2\2\2\26\u0262\3\2\2\2\30\u026c\3\2\2\2\32\u026e\3\2\2\2\34\u0273\3\2"+
+		"\2\2\36\u027c\3\2\2\2 \u028c\3\2\2\2\"\u028e\3\2\2\2$\u0292\3\2\2\2&\u029a"+
+		"\3\2\2\2(\u029e\3\2\2\2*\u02a7\3\2\2\2,\u02a9\3\2\2\2.\u02ac\3\2\2\2\60"+
 		"\u02b3\3\2\2\2\62\u02b5\3\2\2\2\64\u02b9\3\2\2\2\66\u02bd\3\2\2\28\u02bf"+
 		"\3\2\2\2:\u02c3\3\2\2\2<\u02c6\3\2\2\2>\u02c9\3\2\2\2@\u02ce\3\2\2\2B"+
 		"\u02d2\3\2\2\2D\u02db\3\2\2\2F\u02e7\3\2\2\2H\u02e9\3\2\2\2J\u02ed\3\2"+
@@ -16450,253 +17910,253 @@ public class Swift3Parser extends Parser {
 		"\2\2\u01b0\u0894\3\2\2\2\u01b2\u0896\3\2\2\2\u01b4\u08bc\3\2\2\2\u01b6"+
 		"\u08cd\3\2\2\2\u01b8\u08d1\3\2\2\2\u01ba\u08d7\3\2\2\2\u01bc\u08da\3\2"+
 		"\2\2\u01be\u08dd\3\2\2\2\u01c0\u08f1\3\2\2\2\u01c2\u08f3\3\2\2\2\u01c4"+
-		"\u08f5\3\2\2\2\u01c6\u08fb\3\2\2\2\u01c8\u08ff\3\2\2\2\u01ca\u0911\3\2"+
-		"\2\2\u01cc\u0913\3\2\2\2\u01ce\u0915\3\2\2\2\u01d0\u091b\3\2\2\2\u01d2"+
-		"\u091d\3\2\2\2\u01d4\u0927\3\2\2\2\u01d6\u0932\3\2\2\2\u01d8\u0934\3\2"+
-		"\2\2\u01da\u093c\3\2\2\2\u01dc\u0940\3\2\2\2\u01de\u0942\3\2\2\2\u01e0"+
-		"\u094b\3\2\2\2\u01e2\u0951\3\2\2\2\u01e4\u0955\3\2\2\2\u01e6\u095a\3\2"+
-		"\2\2\u01e8\u0968\3\2\2\2\u01ea\u0982\3\2\2\2\u01ec\u0984\3\2\2\2\u01ee"+
-		"\u0986\3\2\2\2\u01f0\u0988\3\2\2\2\u01f2\u0998\3\2\2\2\u01f4\u099a\3\2"+
-		"\2\2\u01f6\u099c\3\2\2\2\u01f8\u09a0\3\2\2\2\u01fa\u09a2\3\2\2\2\u01fc"+
-		"\u09a4\3\2\2\2\u01fe\u09a8\3\2\2\2\u0200\u09b4\3\2\2\2\u0202\u09ba\3\2"+
-		"\2\2\u0204\u09c4\3\2\2\2\u0206\u09c6\3\2\2\2\u0208\u020a\5\n\6\2\u0209"+
+		"\u08f5\3\2\2\2\u01c6\u08fb\3\2\2\2\u01c8\u08ff\3\2\2\2\u01ca\u0915\3\2"+
+		"\2\2\u01cc\u0917\3\2\2\2\u01ce\u0919\3\2\2\2\u01d0\u091f\3\2\2\2\u01d2"+
+		"\u0921\3\2\2\2\u01d4\u092b\3\2\2\2\u01d6\u0936\3\2\2\2\u01d8\u0938\3\2"+
+		"\2\2\u01da\u0940\3\2\2\2\u01dc\u0944\3\2\2\2\u01de\u0946\3\2\2\2\u01e0"+
+		"\u094f\3\2\2\2\u01e2\u0955\3\2\2\2\u01e4\u0959\3\2\2\2\u01e6\u095e\3\2"+
+		"\2\2\u01e8\u096c\3\2\2\2\u01ea\u0986\3\2\2\2\u01ec\u0988\3\2\2\2\u01ee"+
+		"\u098a\3\2\2\2\u01f0\u098c\3\2\2\2\u01f2\u099c\3\2\2\2\u01f4\u099e\3\2"+
+		"\2\2\u01f6\u09a0\3\2\2\2\u01f8\u09a4\3\2\2\2\u01fa\u09a6\3\2\2\2\u01fc"+
+		"\u09a8\3\2\2\2\u01fe\u09ac\3\2\2\2\u0200\u09b8\3\2\2\2\u0202\u09be\3\2"+
+		"\2\2\u0204\u09c8\3\2\2\2\u0206\u09ca\3\2\2\2\u0208\u020a\5\n\6\2\u0209"+
 		"\u0208\3\2\2\2\u0209\u020a\3\2\2\2\u020a\u020b\3\2\2\2\u020b\u020c\7\2"+
-		"\2\3\u020c\3\3\2\2\2\u020d\u020f\5p9\2\u020e\u0210\7-\2\2\u020f\u020e"+
+		"\2\3\u020c\3\3\2\2\2\u020d\u020f\5p9\2\u020e\u0210\7\3\2\2\u020f\u020e"+
 		"\3\2\2\2\u020f\u0210\3\2\2\2\u0210\u0233\3\2\2\2\u0211\u0213\5\f\7\2\u0212"+
-		"\u0214\7-\2\2\u0213\u0212\3\2\2\2\u0213\u0214\3\2\2\2\u0214\u0233\3\2"+
-		"\2\2\u0215\u0217\5\24\13\2\u0216\u0218\7-\2\2\u0217\u0216\3\2\2\2\u0217"+
+		"\u0214\7\3\2\2\u0213\u0212\3\2\2\2\u0213\u0214\3\2\2\2\u0214\u0233\3\2"+
+		"\2\2\u0215\u0217\5\24\13\2\u0216\u0218\7\3\2\2\u0217\u0216\3\2\2\2\u0217"+
 		"\u0218\3\2\2\2\u0218\u0233\3\2\2\2\u0219\u0233\5*\26\2\u021a\u021c\5\60"+
-		"\31\2\u021b\u021d\7-\2\2\u021c\u021b\3\2\2\2\u021c\u021d\3\2\2\2\u021d"+
-		"\u0233\3\2\2\2\u021e\u0220\5<\37\2\u021f\u0221\7-\2\2\u0220\u021f\3\2"+
+		"\31\2\u021b\u021d\7\3\2\2\u021c\u021b\3\2\2\2\u021c\u021d\3\2\2\2\u021d"+
+		"\u0233\3\2\2\2\u021e\u0220\5<\37\2\u021f\u0221\7\3\2\2\u0220\u021f\3\2"+
 		"\2\2\u0220\u0221\3\2\2\2\u0221\u0233\3\2\2\2\u0222\u0224\5> \2\u0223\u0225"+
-		"\7@\2\2\u0224\u0223\3\2\2\2\u0224\u0225\3\2\2\2\u0225\u0233\3\2\2\2\u0226"+
-		"\u0228\5\u01dc\u00ef\2\u0227\u0229\7-\2\2\u0228\u0227\3\2\2\2\u0228\u0229"+
+		"\7\4\2\2\u0224\u0223\3\2\2\2\u0224\u0225\3\2\2\2\u0225\u0233\3\2\2\2\u0226"+
+		"\u0228\5\u01dc\u00ef\2\u0227\u0229\7\3\2\2\u0228\u0227\3\2\2\2\u0228\u0229"+
 		"\3\2\2\2\u0229\u0233\3\2\2\2\u022a\u022c\5\u0154\u00ab\2\u022b\u022d\7"+
-		"-\2\2\u022c\u022b\3\2\2\2\u022c\u022d\3\2\2\2\u022d\u0233\3\2\2\2\u022e"+
-		"\u0230\5\6\4\2\u022f\u0231\7-\2\2\u0230\u022f\3\2\2\2\u0230\u0231\3\2"+
+		"\3\2\2\u022c\u022b\3\2\2\2\u022c\u022d\3\2\2\2\u022d\u0233\3\2\2\2\u022e"+
+		"\u0230\5\6\4\2\u022f\u0231\7\3\2\2\u0230\u022f\3\2\2\2\u0230\u0231\3\2"+
 		"\2\2\u0231\u0233\3\2\2\2\u0232\u020d\3\2\2\2\u0232\u0211\3\2\2\2\u0232"+
 		"\u0215\3\2\2\2\u0232\u0219\3\2\2\2\u0232\u021a\3\2\2\2\u0232\u021e\3\2"+
 		"\2\2\u0232\u0222\3\2\2\2\u0232\u0226\3\2\2\2\u0232\u022a\3\2\2\2\u0232"+
 		"\u022e\3\2\2\2\u0233\5\3\2\2\2\u0234\u0236\5\u01a2\u00d2\2\u0235\u0237"+
 		"\5\b\5\2\u0236\u0235\3\2\2\2\u0237\u0238\3\2\2\2\u0238\u0236\3\2\2\2\u0238"+
-		"\u0239\3\2\2\2\u0239\7\3\2\2\2\u023a\u023b\7\177\2\2\u023b\u023c\t\2\2"+
-		"\2\u023c\u023d\5\u017e\u00c0\2\u023d\t\3\2\2\2\u023e\u0240\5\4\3\2\u023f"+
+		"\u0239\3\2\2\2\u0239\7\3\2\2\2\u023a\u023b\7\5\2\2\u023b\u023c\t\2\2\2"+
+		"\u023c\u023d\5\u017e\u00c0\2\u023d\t\3\2\2\2\u023e\u0240\5\4\3\2\u023f"+
 		"\u023e\3\2\2\2\u0240\u0241\3\2\2\2\u0241\u023f\3\2\2\2\u0241\u0242\3\2"+
 		"\2\2\u0242\13\3\2\2\2\u0243\u0247\5\16\b\2\u0244\u0247\5\20\t\2\u0245"+
 		"\u0247\5\22\n\2\u0246\u0243\3\2\2\2\u0246\u0244\3\2\2\2\u0246\u0245\3"+
-		"\2\2\2\u0247\r\3\2\2\2\u0248\u024a\7S\2\2\u0249\u024b\7\u0083\2\2\u024a"+
-		"\u0249\3\2\2\2\u024a\u024b\3\2\2\2\u024b\u024c\3\2\2\2\u024c\u024d\5\u0130"+
-		"\u0099\2\u024d\u024e\7\u0091\2\2\u024e\u0250\5\u0154\u00ab\2\u024f\u0251"+
-		"\5L\'\2\u0250\u024f\3\2\2\2\u0250\u0251\3\2\2\2\u0251\u0252\3\2\2\2\u0252"+
-		"\u0253\5|?\2\u0253\17\3\2\2\2\u0254\u0255\7\n\2\2\u0255\u0256\5D#\2\u0256"+
-		"\u0257\5|?\2\u0257\21\3\2\2\2\u0258\u0259\7X\2\2\u0259\u025a\5|?\2\u025a"+
-		"\u025b\7\n\2\2\u025b\u025c\5\u0154\u00ab\2\u025c\23\3\2\2\2\u025d\u0261"+
-		"\5\26\f\2\u025e\u0261\5\32\16\2\u025f\u0261\5\34\17\2\u0260\u025d\3\2"+
-		"\2\2\u0260\u025e\3\2\2\2\u0260\u025f\3\2\2\2\u0261\25\3\2\2\2\u0262\u0263"+
-		"\7u\2\2\u0263\u0264\5D#\2\u0264\u0266\5|?\2\u0265\u0267\5\30\r\2\u0266"+
-		"\u0265\3\2\2\2\u0266\u0267\3\2\2\2\u0267\27\3\2\2\2\u0268\u0269\7\u0090"+
-		"\2\2\u0269\u026d\5|?\2\u026a\u026b\7\u0090\2\2\u026b\u026d\5\26\f\2\u026c"+
-		"\u0268\3\2\2\2\u026c\u026a\3\2\2\2\u026d\31\3\2\2\2\u026e\u026f\7L\2\2"+
-		"\u026f\u0270\5D#\2\u0270\u0271\7\u0090\2\2\u0271\u0272\5|?\2\u0272\33"+
-		"\3\2\2\2\u0273\u0274\7\66\2\2\u0274\u0275\5\u0154\u00ab\2\u0275\u0277"+
-		"\7R\2\2\u0276\u0278\5\36\20\2\u0277\u0276\3\2\2\2\u0277\u0278\3\2\2\2"+
-		"\u0278\u0279\3\2\2\2\u0279\u027a\7.\2\2\u027a\35\3\2\2\2\u027b\u027d\5"+
-		" \21\2\u027c\u027b\3\2\2\2\u027d\u027e\3\2\2\2\u027e\u027c\3\2\2\2\u027e"+
-		"\u027f\3\2\2\2\u027f\37\3\2\2\2\u0280\u0281\5\"\22\2\u0281\u0282\5\n\6"+
-		"\2\u0282\u028d\3\2\2\2\u0283\u0284\5(\25\2\u0284\u0285\5\n\6\2\u0285\u028d"+
-		"\3\2\2\2\u0286\u0287\5\"\22\2\u0287\u0288\7-\2\2\u0288\u028d\3\2\2\2\u0289"+
-		"\u028a\5(\25\2\u028a\u028b\7-\2\2\u028b\u028d\3\2\2\2\u028c\u0280\3\2"+
-		"\2\2\u028c\u0283\3\2\2\2\u028c\u0286\3\2\2\2\u028c\u0289\3\2\2\2\u028d"+
-		"!\3\2\2\2\u028e\u028f\7\u0083\2\2\u028f\u0290\5$\23\2\u0290\u0291\7@\2"+
-		"\2\u0291#\3\2\2\2\u0292\u0297\5&\24\2\u0293\u0294\7\23\2\2\u0294\u0296"+
-		"\5&\24\2\u0295\u0293\3\2\2\2\u0296\u0299\3\2\2\2\u0297\u0295\3\2\2\2\u0297"+
-		"\u0298\3\2\2\2\u0298%\3\2\2\2\u0299\u0297\3\2\2\2\u029a\u029c\5\u0130"+
-		"\u0099\2\u029b\u029d\5L\'\2\u029c\u029b\3\2\2\2\u029c\u029d\3\2\2\2\u029d"+
-		"\'\3\2\2\2\u029e\u029f\7\4\2\2\u029f\u02a0\7@\2\2\u02a0)\3\2\2\2\u02a1"+
-		"\u02a2\5,\27\2\u02a2\u02a3\5\f\7\2\u02a3\u02a8\3\2\2\2\u02a4\u02a5\5,"+
-		"\27\2\u02a5\u02a6\5\34\17\2\u02a6\u02a8\3\2\2\2\u02a7\u02a1\3\2\2\2\u02a7"+
-		"\u02a4\3\2\2\2\u02a8+\3\2\2\2\u02a9\u02aa\5.\30\2\u02aa\u02ab\7@\2\2\u02ab"+
-		"-\3\2\2\2\u02ac\u02ad\5\u01f8\u00fd\2\u02ad/\3\2\2\2\u02ae\u02b4\5\62"+
-		"\32\2\u02af\u02b4\5\64\33\2\u02b0\u02b4\5\66\34\2\u02b1\u02b4\58\35\2"+
-		"\u02b2\u02b4\5:\36\2\u02b3\u02ae\3\2\2\2\u02b3\u02af\3\2\2\2\u02b3\u02b0"+
-		"\3\2\2\2\u02b3\u02b1\3\2\2\2\u02b3\u02b2\3\2\2\2\u02b4\61\3\2\2\2\u02b5"+
-		"\u02b7\7z\2\2\u02b6\u02b8\5.\30\2\u02b7\u02b6\3\2\2\2\u02b7\u02b8\3\2"+
-		"\2\2\u02b8\63\3\2\2\2\u02b9\u02bb\7m\2\2\u02ba\u02bc\5.\30\2\u02bb\u02ba"+
-		"\3\2\2\2\u02bb\u02bc\3\2\2\2\u02bc\65\3\2\2\2\u02bd\u02be\7C\2\2\u02be"+
-		"\67\3\2\2\2\u02bf\u02c1\7r\2\2\u02c0\u02c2\5\u0154\u00ab\2\u02c1\u02c0"+
-		"\3\2\2\2\u02c1\u02c2\3\2\2\2\u02c29\3\2\2\2\u02c3\u02c4\7\u0085\2\2\u02c4"+
-		"\u02c5\5\u0154\u00ab\2\u02c5;\3\2\2\2\u02c6\u02c7\7\62\2\2\u02c7\u02c8"+
-		"\5|?\2\u02c8=\3\2\2\2\u02c9\u02ca\7V\2\2\u02ca\u02cc\5|?\2\u02cb\u02cd"+
-		"\5@!\2\u02cc\u02cb\3\2\2\2\u02cc\u02cd\3\2\2\2\u02cd?\3\2\2\2\u02ce\u02d0"+
+		"\2\2\2\u0247\r\3\2\2\2\u0248\u024a\7\t\2\2\u0249\u024b\7\n\2\2\u024a\u0249"+
+		"\3\2\2\2\u024a\u024b\3\2\2\2\u024b\u024c\3\2\2\2\u024c\u024d\5\u0130\u0099"+
+		"\2\u024d\u024e\7\13\2\2\u024e\u0250\5\u0154\u00ab\2\u024f\u0251\5L\'\2"+
+		"\u0250\u024f\3\2\2\2\u0250\u0251\3\2\2\2\u0251\u0252\3\2\2\2\u0252\u0253"+
+		"\5|?\2\u0253\17\3\2\2\2\u0254\u0255\7\f\2\2\u0255\u0256\5D#\2\u0256\u0257"+
+		"\5|?\2\u0257\21\3\2\2\2\u0258\u0259\7\r\2\2\u0259\u025a\5|?\2\u025a\u025b"+
+		"\7\f\2\2\u025b\u025c\5\u0154\u00ab\2\u025c\23\3\2\2\2\u025d\u0261\5\26"+
+		"\f\2\u025e\u0261\5\32\16\2\u025f\u0261\5\34\17\2\u0260\u025d\3\2\2\2\u0260"+
+		"\u025e\3\2\2\2\u0260\u025f\3\2\2\2\u0261\25\3\2\2\2\u0262\u0263\7\16\2"+
+		"\2\u0263\u0264\5D#\2\u0264\u0266\5|?\2\u0265\u0267\5\30\r\2\u0266\u0265"+
+		"\3\2\2\2\u0266\u0267\3\2\2\2\u0267\27\3\2\2\2\u0268\u0269\7\17\2\2\u0269"+
+		"\u026d\5|?\2\u026a\u026b\7\17\2\2\u026b\u026d\5\26\f\2\u026c\u0268\3\2"+
+		"\2\2\u026c\u026a\3\2\2\2\u026d\31\3\2\2\2\u026e\u026f\7\20\2\2\u026f\u0270"+
+		"\5D#\2\u0270\u0271\7\17\2\2\u0271\u0272\5|?\2\u0272\33\3\2\2\2\u0273\u0274"+
+		"\7\21\2\2\u0274\u0275\5\u0154\u00ab\2\u0275\u0277\7\22\2\2\u0276\u0278"+
+		"\5\36\20\2\u0277\u0276\3\2\2\2\u0277\u0278\3\2\2\2\u0278\u0279\3\2\2\2"+
+		"\u0279\u027a\7\23\2\2\u027a\35\3\2\2\2\u027b\u027d\5 \21\2\u027c\u027b"+
+		"\3\2\2\2\u027d\u027e\3\2\2\2\u027e\u027c\3\2\2\2\u027e\u027f\3\2\2\2\u027f"+
+		"\37\3\2\2\2\u0280\u0281\5\"\22\2\u0281\u0282\5\n\6\2\u0282\u028d\3\2\2"+
+		"\2\u0283\u0284\5(\25\2\u0284\u0285\5\n\6\2\u0285\u028d\3\2\2\2\u0286\u0287"+
+		"\5\"\22\2\u0287\u0288\7\3\2\2\u0288\u028d\3\2\2\2\u0289\u028a\5(\25\2"+
+		"\u028a\u028b\7\3\2\2\u028b\u028d\3\2\2\2\u028c\u0280\3\2\2\2\u028c\u0283"+
+		"\3\2\2\2\u028c\u0286\3\2\2\2\u028c\u0289\3\2\2\2\u028d!\3\2\2\2\u028e"+
+		"\u028f\7\n\2\2\u028f\u0290\5$\23\2\u0290\u0291\7\4\2\2\u0291#\3\2\2\2"+
+		"\u0292\u0297\5&\24\2\u0293\u0294\7\24\2\2\u0294\u0296\5&\24\2\u0295\u0293"+
+		"\3\2\2\2\u0296\u0299\3\2\2\2\u0297\u0295\3\2\2\2\u0297\u0298\3\2\2\2\u0298"+
+		"%\3\2\2\2\u0299\u0297\3\2\2\2\u029a\u029c\5\u0130\u0099\2\u029b\u029d"+
+		"\5L\'\2\u029c\u029b\3\2\2\2\u029c\u029d\3\2\2\2\u029d\'\3\2\2\2\u029e"+
+		"\u029f\7\25\2\2\u029f\u02a0\7\4\2\2\u02a0)\3\2\2\2\u02a1\u02a2\5,\27\2"+
+		"\u02a2\u02a3\5\f\7\2\u02a3\u02a8\3\2\2\2\u02a4\u02a5\5,\27\2\u02a5\u02a6"+
+		"\5\34\17\2\u02a6\u02a8\3\2\2\2\u02a7\u02a1\3\2\2\2\u02a7\u02a4\3\2\2\2"+
+		"\u02a8+\3\2\2\2\u02a9\u02aa\5.\30\2\u02aa\u02ab\7\4\2\2\u02ab-\3\2\2\2"+
+		"\u02ac\u02ad\5\u01f8\u00fd\2\u02ad/\3\2\2\2\u02ae\u02b4\5\62\32\2\u02af"+
+		"\u02b4\5\64\33\2\u02b0\u02b4\5\66\34\2\u02b1\u02b4\58\35\2\u02b2\u02b4"+
+		"\5:\36\2\u02b3\u02ae\3\2\2\2\u02b3\u02af\3\2\2\2\u02b3\u02b0\3\2\2\2\u02b3"+
+		"\u02b1\3\2\2\2\u02b3\u02b2\3\2\2\2\u02b4\61\3\2\2\2\u02b5\u02b7\7\26\2"+
+		"\2\u02b6\u02b8\5.\30\2\u02b7\u02b6\3\2\2\2\u02b7\u02b8\3\2\2\2\u02b8\63"+
+		"\3\2\2\2\u02b9\u02bb\7\27\2\2\u02ba\u02bc\5.\30\2\u02bb\u02ba\3\2\2\2"+
+		"\u02bb\u02bc\3\2\2\2\u02bc\65\3\2\2\2\u02bd\u02be\7\30\2\2\u02be\67\3"+
+		"\2\2\2\u02bf\u02c1\7\31\2\2\u02c0\u02c2\5\u0154\u00ab\2\u02c1\u02c0\3"+
+		"\2\2\2\u02c1\u02c2\3\2\2\2\u02c29\3\2\2\2\u02c3\u02c4\7\32\2\2\u02c4\u02c5"+
+		"\5\u0154\u00ab\2\u02c5;\3\2\2\2\u02c6\u02c7\7\33\2\2\u02c7\u02c8\5|?\2"+
+		"\u02c8=\3\2\2\2\u02c9\u02ca\7\34\2\2\u02ca\u02cc\5|?\2\u02cb\u02cd\5@"+
+		"!\2\u02cc\u02cb\3\2\2\2\u02cc\u02cd\3\2\2\2\u02cd?\3\2\2\2\u02ce\u02d0"+
 		"\5B\"\2\u02cf\u02d1\5@!\2\u02d0\u02cf\3\2\2\2\u02d0\u02d1\3\2\2\2\u02d1"+
-		"A\3\2\2\2\u02d2\u02d4\7o\2\2\u02d3\u02d5\5\u0130\u0099\2\u02d4\u02d3\3"+
-		"\2\2\2\u02d4\u02d5\3\2\2\2\u02d5\u02d7\3\2\2\2\u02d6\u02d8\5L\'\2\u02d7"+
+		"A\3\2\2\2\u02d2\u02d4\7\b\2\2\u02d3\u02d5\5\u0130\u0099\2\u02d4\u02d3"+
+		"\3\2\2\2\u02d4\u02d5\3\2\2\2\u02d5\u02d7\3\2\2\2\u02d6\u02d8\5L\'\2\u02d7"+
 		"\u02d6\3\2\2\2\u02d7\u02d8\3\2\2\2\u02d8\u02d9\3\2\2\2\u02d9\u02da\5|"+
-		"?\2\u02daC\3\2\2\2\u02db\u02e0\5F$\2\u02dc\u02dd\7\23\2\2\u02dd\u02df"+
+		"?\2\u02daC\3\2\2\2\u02db\u02e0\5F$\2\u02dc\u02dd\7\24\2\2\u02dd\u02df"+
 		"\5F$\2\u02de\u02dc\3\2\2\2\u02df\u02e2\3\2\2\2\u02e0\u02de\3\2\2\2\u02e0"+
 		"\u02e1\3\2\2\2\u02e1E\3\2\2\2\u02e2\u02e0\3\2\2\2\u02e3\u02e8\5P)\2\u02e4"+
 		"\u02e8\5H%\2\u02e5\u02e8\5J&\2\u02e6\u02e8\5\u0154\u00ab\2\u02e7\u02e3"+
 		"\3\2\2\2\u02e7\u02e4\3\2\2\2\u02e7\u02e5\3\2\2\2\u02e7\u02e6\3\2\2\2\u02e8"+
-		"G\3\2\2\2\u02e9\u02ea\7\u0083\2\2\u02ea\u02eb\5\u0130\u0099\2\u02eb\u02ec"+
+		"G\3\2\2\2\u02e9\u02ea\7\n\2\2\u02ea\u02eb\5\u0130\u0099\2\u02eb\u02ec"+
 		"\5\u008cG\2\u02ecI\3\2\2\2\u02ed\u02ee\t\3\2\2\u02ee\u02ef\5\u0130\u0099"+
-		"\2\u02ef\u02f0\5\u008cG\2\u02f0K\3\2\2\2\u02f1\u02f2\7\u008f\2\2\u02f2"+
-		"\u02f3\5N(\2\u02f3M\3\2\2\2\u02f4\u02f5\5\u0154\u00ab\2\u02f5O\3\2\2\2"+
-		"\u02f6\u02f7\7\u0081\2\2\u02f7\u02f8\7U\2\2\u02f8\u02f9\5R*\2\u02f9\u02fa"+
-		"\7G\2\2\u02faQ\3\2\2\2\u02fb\u0300\5T+\2\u02fc\u02fd\7\23\2\2\u02fd\u02ff"+
-		"\5R*\2\u02fe\u02fc\3\2\2\2\u02ff\u0302\3\2\2\2\u0300\u02fe\3\2\2\2\u0300"+
+		"\2\u02ef\u02f0\5\u008cG\2\u02f0K\3\2\2\2\u02f1\u02f2\7\37\2\2\u02f2\u02f3"+
+		"\5N(\2\u02f3M\3\2\2\2\u02f4\u02f5\5\u0154\u00ab\2\u02f5O\3\2\2\2\u02f6"+
+		"\u02f7\7 \2\2\u02f7\u02f8\7!\2\2\u02f8\u02f9\5R*\2\u02f9\u02fa\7\"\2\2"+
+		"\u02faQ\3\2\2\2\u02fb\u0300\5T+\2\u02fc\u02fd\7\24\2\2\u02fd\u02ff\5R"+
+		"*\2\u02fe\u02fc\3\2\2\2\u02ff\u0302\3\2\2\2\u0300\u02fe\3\2\2\2\u0300"+
 		"\u0301\3\2\2\2\u0301S\3\2\2\2\u0302\u0300\3\2\2\2\u0303\u0304\5V,\2\u0304"+
-		"\u0305\5X-\2\u0305\u0308\3\2\2\2\u0306\u0308\7\67\2\2\u0307\u0303\3\2"+
-		"\2\2\u0307\u0306\3\2\2\2\u0308U\3\2\2\2\u0309\u030a\t\4\2\2\u030aW\3\2"+
-		"\2\2\u030b\u030c\t\5\2\2\u030cY\3\2\2\2\u030d\u030e\7\36\2\2\u030e\u0310"+
-		"\5\\/\2\u030f\u0311\5`\61\2\u0310\u030f\3\2\2\2\u0310\u0311\3\2\2\2\u0311"+
-		"\u0312\3\2\2\2\u0312\u0313\7\u008b\2\2\u0313[\3\2\2\2\u0314\u0319\5^\60"+
-		"\2\u0315\u0316\7\23\2\2\u0316\u0318\5^\60\2\u0317\u0315\3\2\2\2\u0318"+
-		"\u031b\3\2\2\2\u0319\u0317\3\2\2\2\u0319\u031a\3\2\2\2\u031a]\3\2\2\2"+
-		"\u031b\u0319\3\2\2\2\u031c\u0326\5\u01c2\u00e2\2\u031d\u031e\5\u01c2\u00e2"+
-		"\2\u031e\u031f\7@\2\2\u031f\u0320\5\u01c0\u00e1\2\u0320\u0326\3\2\2\2"+
-		"\u0321\u0322\5\u01c2\u00e2\2\u0322\u0323\7@\2\2\u0323\u0324\5\u01ce\u00e8"+
-		"\2\u0324\u0326\3\2\2\2\u0325\u031c\3\2\2\2\u0325\u031d\3\2\2\2\u0325\u0321"+
-		"\3\2\2\2\u0326_\3\2\2\2\u0327\u0328\7\u008f\2\2\u0328\u0329\5b\62\2\u0329"+
-		"a\3\2\2\2\u032a\u032f\5d\63\2\u032b\u032c\7\23\2\2\u032c\u032e\5d\63\2"+
-		"\u032d\u032b\3\2\2\2\u032e\u0331\3\2\2\2\u032f\u032d\3\2\2\2\u032f\u0330"+
-		"\3\2\2\2\u0330c\3\2\2\2\u0331\u032f\3\2\2\2\u0332\u0335\5f\64\2\u0333"+
-		"\u0335\5h\65\2\u0334\u0332\3\2\2\2\u0334\u0333\3\2\2\2\u0335e\3\2\2\2"+
-		"\u0336\u0337\5\u01c0\u00e1\2\u0337\u0338\7@\2\2\u0338\u0339\5\u01c0\u00e1"+
-		"\2\u0339\u033f\3\2\2\2\u033a\u033b\5\u01c0\u00e1\2\u033b\u033c\7@\2\2"+
-		"\u033c\u033d\5\u01ce\u00e8\2\u033d\u033f\3\2\2\2\u033e\u0336\3\2\2\2\u033e"+
-		"\u033a\3\2\2\2\u033fg\3\2\2\2\u0340\u0341\5\u01c0\u00e1\2\u0341\u0342"+
-		"\7\u008a\2\2\u0342\u0343\5\u01b4\u00db\2\u0343i\3\2\2\2\u0344\u0345\7"+
-		"\36\2\2\u0345\u0346\5l\67\2\u0346\u0347\7\u008b\2\2\u0347k\3\2\2\2\u0348"+
-		"\u034d\5n8\2\u0349\u034a\7\23\2\2\u034a\u034c\5n8\2\u034b\u0349\3\2\2"+
-		"\2\u034c\u034f\3\2\2\2\u034d\u034b\3\2\2\2\u034d\u034e\3\2\2\2\u034em"+
-		"\3\2\2\2\u034f\u034d\3\2\2\2\u0350\u0351\5\u01b4\u00db\2\u0351o\3\2\2"+
-		"\2\u0352\u0354\5~@\2\u0353\u0355\7-\2\2\u0354\u0353\3\2\2\2\u0354\u0355"+
-		"\3\2\2\2\u0355\u038f\3\2\2\2\u0356\u0358\5\u0086D\2\u0357\u0359\7-\2\2"+
-		"\u0358\u0357\3\2\2\2\u0358\u0359\3\2\2\2\u0359\u038f\3\2\2\2\u035a\u035c"+
-		"\5\u008eH\2\u035b\u035d\7-\2\2\u035c\u035b\3\2\2\2\u035c\u035d\3\2\2\2"+
-		"\u035d\u038f\3\2\2\2\u035e\u0360\5\u00a8U\2\u035f\u0361\7-\2\2\u0360\u035f"+
-		"\3\2\2\2\u0360\u0361\3\2\2\2\u0361\u038f\3\2\2\2\u0362\u0364\5\u00b0Y"+
-		"\2\u0363\u0365\7-\2\2\u0364\u0363\3\2\2\2\u0364\u0365\3\2\2\2\u0365\u038f"+
-		"\3\2\2\2\u0366\u0368\5\u00c8e\2\u0367\u0369\7-\2\2\u0368\u0367\3\2\2\2"+
-		"\u0368\u0369\3\2\2\2\u0369\u038f\3\2\2\2\u036a\u036c\5\u00eav\2\u036b"+
-		"\u036d\7-\2\2\u036c\u036b\3\2\2\2\u036c\u036d\3\2\2\2\u036d\u038f\3\2"+
-		"\2\2\u036e\u0370\5\u00f0y\2\u036f\u0371\7-\2\2\u0370\u036f\3\2\2\2\u0370"+
-		"\u0371\3\2\2\2\u0371\u038f\3\2\2\2\u0372\u0374\5\u00f8}\2\u0373\u0375"+
-		"\7-\2\2\u0374\u0373\3\2\2\2\u0374\u0375\3\2\2\2\u0375\u038f\3\2\2\2\u0376"+
-		"\u0378\5\u010c\u0087\2\u0377\u0379\7-\2\2\u0378\u0377\3\2\2\2\u0378\u0379"+
-		"\3\2\2\2\u0379\u038f\3\2\2\2\u037a\u037c\5\u0112\u008a\2\u037b\u037d\7"+
-		"-\2\2\u037c\u037b\3\2\2\2\u037c\u037d\3\2\2\2\u037d\u038f\3\2\2\2\u037e"+
-		"\u0380\5\u0114\u008b\2\u037f\u0381\7-\2\2\u0380\u037f\3\2\2\2\u0380\u0381"+
-		"\3\2\2\2\u0381\u038f\3\2\2\2\u0382\u0384\5\u0118\u008d\2\u0383\u0385\7"+
-		"-\2\2\u0384\u0383\3\2\2\2\u0384\u0385\3\2\2\2\u0385\u038f\3\2\2\2\u0386"+
-		"\u0388\5\u011e\u0090\2\u0387\u0389\7-\2\2\u0388\u0387\3\2\2\2\u0388\u0389"+
-		"\3\2\2\2\u0389\u038f\3\2\2\2\u038a\u038c\5\u01dc\u00ef\2\u038b\u038d\7"+
-		"-\2\2\u038c\u038b\3\2\2\2\u038c\u038d\3\2\2\2\u038d\u038f\3\2\2\2\u038e"+
-		"\u0352\3\2\2\2\u038e\u0356\3\2\2\2\u038e\u035a\3\2\2\2\u038e\u035e\3\2"+
-		"\2\2\u038e\u0362\3\2\2\2\u038e\u0366\3\2\2\2\u038e\u036a\3\2\2\2\u038e"+
-		"\u036e\3\2\2\2\u038e\u0372\3\2\2\2\u038e\u0376\3\2\2\2\u038e\u037a\3\2"+
-		"\2\2\u038e\u037e\3\2\2\2\u038e\u0382\3\2\2\2\u038e\u0386\3\2\2\2\u038e"+
-		"\u038a\3\2\2\2\u038fq\3\2\2\2\u0390\u0392\5p9\2\u0391\u0390\3\2\2\2\u0392"+
-		"\u0393\3\2\2\2\u0393\u0391\3\2\2\2\u0393\u0394\3\2\2\2\u0394s\3\2\2\2"+
-		"\u0395\u0397\5v<\2\u0396\u0395\3\2\2\2\u0397\u0398\3\2\2\2\u0398\u0396"+
-		"\3\2\2\2\u0398\u0399\3\2\2\2\u0399u\3\2\2\2\u039a\u03b4\7,\2\2\u039b\u03b4"+
-		"\7\u0087\2\2\u039c\u03b4\7<\2\2\u039d\u03b4\7g\2\2\u039e\u03b4\7h\2\2"+
-		"\u039f\u03b4\7(\2\2\u03a0\u03b4\7\u0089\2\2\u03a1\u03b4\7\u0093\2\2\u03a2"+
-		"\u03b4\7\60\2\2\u03a3\u03b4\7\17\2\2\u03a4\u03b4\7\r\2\2\u03a5\u03b4\7"+
-		"J\2\2\u03a6\u03b4\7\21\2\2\u03a7\u03b4\7e\2\2\u03a8\u03b4\7d\2\2\u03a9"+
-		"\u03aa\7d\2\2\u03aa\u03ab\7U\2\2\u03ab\u03ac\7M\2\2\u03ac\u03b4\7G\2\2"+
-		"\u03ad\u03ae\7d\2\2\u03ae\u03af\7U\2\2\u03af\u03b0\7H\2\2\u03b0\u03b4"+
-		"\7G\2\2\u03b1\u03b4\79\2\2\u03b2\u03b4\5x=\2\u03b3\u039a\3\2\2\2\u03b3"+
-		"\u039b\3\2\2\2\u03b3\u039c\3\2\2\2\u03b3\u039d\3\2\2\2\u03b3\u039e\3\2"+
-		"\2\2\u03b3\u039f\3\2\2\2\u03b3\u03a0\3\2\2\2\u03b3\u03a1\3\2\2\2\u03b3"+
-		"\u03a2\3\2\2\2\u03b3\u03a3\3\2\2\2\u03b3\u03a4\3\2\2\2\u03b3\u03a5\3\2"+
-		"\2\2\u03b3\u03a6\3\2\2\2\u03b3\u03a7\3\2\2\2\u03b3\u03a8\3\2\2\2\u03b3"+
-		"\u03a9\3\2\2\2\u03b3\u03ad\3\2\2\2\u03b3\u03b1\3\2\2\2\u03b3\u03b2\3\2"+
-		"\2\2\u03b4w\3\2\2\2\u03b5\u03cf\7N\2\2\u03b6\u03b7\7N\2\2\u03b7\u03b8"+
-		"\7U\2\2\u03b8\u03b9\7\7\2\2\u03b9\u03cf\7G\2\2\u03ba\u03cf\7c\2\2\u03bb"+
-		"\u03bc\7c\2\2\u03bc\u03bd\7U\2\2\u03bd\u03be\7\7\2\2\u03be\u03cf\7G\2"+
-		"\2\u03bf\u03cf\7\16\2\2\u03c0\u03c1\7\16\2\2\u03c1\u03c2\7U\2\2\u03c2"+
-		"\u03c3\7\7\2\2\u03c3\u03cf\7G\2\2\u03c4\u03cf\7B\2\2\u03c5\u03c6\7B\2"+
-		"\2\u03c6\u03c7\7U\2\2\u03c7\u03c8\7\7\2\2\u03c8\u03cf\7G\2\2\u03c9\u03cf"+
-		"\7E\2\2\u03ca\u03cb\7E\2\2\u03cb\u03cc\7U\2\2\u03cc\u03cd\7\7\2\2\u03cd"+
-		"\u03cf\7G\2\2\u03ce\u03b5\3\2\2\2\u03ce\u03b6\3\2\2\2\u03ce\u03ba\3\2"+
-		"\2\2\u03ce\u03bb\3\2\2\2\u03ce\u03bf\3\2\2\2\u03ce\u03c0\3\2\2\2\u03ce"+
-		"\u03c4\3\2\2\2\u03ce\u03c5\3\2\2\2\u03ce\u03c9\3\2\2\2\u03ce\u03ca\3\2"+
-		"\2\2\u03cfy\3\2\2\2\u03d0\u03d2\5x=\2\u03d1\u03d0\3\2\2\2\u03d2\u03d3"+
-		"\3\2\2\2\u03d3\u03d1\3\2\2\2\u03d3\u03d4\3\2\2\2\u03d4{\3\2\2\2\u03d5"+
-		"\u03d7\7R\2\2\u03d6\u03d8\5\n\6\2\u03d7\u03d6\3\2\2\2\u03d7\u03d8\3\2"+
-		"\2\2\u03d8\u03d9\3\2\2\2\u03d9\u03da\7.\2\2\u03da}\3\2\2\2\u03db\u03dd"+
-		"\5\u014e\u00a8\2\u03dc\u03db\3\2\2\2\u03dc\u03dd\3\2\2\2\u03dd\u03de\3"+
-		"\2\2\2\u03de\u03e0\7\u0095\2\2\u03df\u03e1\5\u0080A\2\u03e0\u03df\3\2"+
-		"\2\2\u03e0\u03e1\3\2\2\2\u03e1\u03e2\3\2\2\2\u03e2\u03e3\5\u0082B\2\u03e3"+
-		"\177\3\2\2\2\u03e4\u03e5\t\6\2\2\u03e5\u0081\3\2\2\2\u03e6\u03ec\5\u0084"+
-		"C\2\u03e7\u03e8\5\u0084C\2\u03e8\u03e9\7\177\2\2\u03e9\u03ea\5\u0082B"+
-		"\2\u03ea\u03ec\3\2\2\2\u03eb\u03e6\3\2\2\2\u03eb\u03e7\3\2\2\2\u03ec\u0083"+
-		"\3\2\2\2\u03ed\u03f0\5\u01f8\u00fd\2\u03ee\u03f0\5\u01ac\u00d7\2\u03ef"+
-		"\u03ed\3\2\2\2\u03ef\u03ee\3\2\2\2\u03f0\u0085\3\2\2\2\u03f1\u03f3\5\u014e"+
-		"\u00a8\2\u03f2\u03f1\3\2\2\2\u03f2\u03f3\3\2\2\2\u03f3\u03f5\3\2\2\2\u03f4"+
-		"\u03f6\5t;\2\u03f5\u03f4\3\2\2\2\u03f5\u03f6\3\2\2\2\u03f6\u03f7\3\2\2"+
-		"\2\u03f7\u03f8\7f\2\2\u03f8\u03f9\5\u0088E\2\u03f9\u0087\3\2\2\2\u03fa"+
-		"\u03ff\5\u008aF\2\u03fb\u03fc\7\23\2\2\u03fc\u03fe\5\u008aF\2\u03fd\u03fb"+
-		"\3\2\2\2\u03fe\u0401\3\2\2\2\u03ff\u03fd\3\2\2\2\u03ff\u0400\3\2\2\2\u0400"+
-		"\u0089\3\2\2\2\u0401\u03ff\3\2\2\2\u0402\u0404\5\u0130\u0099\2\u0403\u0405"+
-		"\5\u008cG\2\u0404\u0403\3\2\2\2\u0404\u0405\3\2\2\2\u0405\u008b\3\2\2"+
-		"\2\u0406\u0407\7\f\2\2\u0407\u0408\5\u0154\u00ab\2\u0408\u008d\3\2\2\2"+
-		"\u0409\u040a\5\u0090I\2\u040a\u040b\5\u0092J\2\u040b\u040c\5\u01be\u00e0"+
-		"\2\u040c\u040d\5\u0094K\2\u040d\u0429\3\2\2\2\u040e\u040f\5\u0090I\2\u040f"+
-		"\u0410\5\u0092J\2\u0410\u0411\5\u01be\u00e0\2\u0411\u0412\5\u009cO\2\u0412"+
-		"\u0429\3\2\2\2\u0413\u0414\5\u0090I\2\u0414\u0415\5\u0092J\2\u0415\u0416"+
-		"\5\u008cG\2\u0416\u0417\5\u00a2R\2\u0417\u0429\3\2\2\2\u0418\u0419\5\u0090"+
-		"I\2\u0419\u041a\5\u0092J\2\u041a\u041c\5\u01be\u00e0\2\u041b\u041d\5\u008c"+
-		"G\2\u041c\u041b\3\2\2\2\u041c\u041d\3\2\2\2\u041d\u041e\3\2\2\2\u041e"+
-		"\u041f\5\u00a2R\2\u041f\u0429\3\2\2\2\u0420\u0421\5\u0090I\2\u0421\u0422"+
-		"\5\u0092J\2\u0422\u0423\5\u01be\u00e0\2\u0423\u0424\5|?\2\u0424\u0429"+
-		"\3\2\2\2\u0425\u0426\5\u0090I\2\u0426\u0427\5\u0088E\2\u0427\u0429\3\2"+
-		"\2\2\u0428\u0409\3\2\2\2\u0428\u040e\3\2\2\2\u0428\u0413\3\2\2\2\u0428"+
-		"\u0418\3\2\2\2\u0428\u0420\3\2\2\2\u0428\u0425\3\2\2\2\u0429\u008f\3\2"+
-		"\2\2\u042a\u042c\5\u014e\u00a8\2\u042b\u042a\3\2\2\2\u042b\u042c\3\2\2"+
-		"\2\u042c\u042e\3\2\2\2\u042d\u042f\5t;\2\u042e\u042d\3\2\2\2\u042e\u042f"+
-		"\3\2\2\2\u042f\u0430\3\2\2\2\u0430\u0431\7\27\2\2\u0431\u0091\3\2\2\2"+
-		"\u0432\u0433\5\u01f8\u00fd\2\u0433\u0093\3\2\2\2\u0434\u0435\7R\2\2\u0435"+
-		"\u0437\5\u0096L\2\u0436\u0438\5\u0098M\2\u0437\u0436\3\2\2\2\u0437\u0438"+
-		"\3\2\2\2\u0438\u0439\3\2\2\2\u0439\u043a\7.\2\2\u043a\u0441\3\2\2\2\u043b"+
-		"\u043c\7R\2\2\u043c\u043d\5\u0098M\2\u043d\u043e\5\u0096L\2\u043e\u043f"+
-		"\7.\2\2\u043f\u0441\3\2\2\2\u0440\u0434\3\2\2\2\u0440\u043b\3\2\2\2\u0441"+
-		"\u0095\3\2\2\2\u0442\u0444\5\u014e\u00a8\2\u0443\u0442\3\2\2\2\u0443\u0444"+
-		"\3\2\2\2\u0444\u0446\3\2\2\2\u0445\u0447\5t;\2\u0446\u0445\3\2\2\2\u0446"+
-		"\u0447\3\2\2\2\u0447\u0448\3\2\2\2\u0448\u0449\7T\2\2\u0449\u044a\5|?"+
-		"\2\u044a\u0097\3\2\2\2\u044b\u044d\5\u014e\u00a8\2\u044c\u044b\3\2\2\2"+
-		"\u044c\u044d\3\2\2\2\u044d\u044f\3\2\2\2\u044e\u0450\5t;\2\u044f\u044e"+
-		"\3\2\2\2\u044f\u0450\3\2\2\2\u0450\u0451\3\2\2\2\u0451\u0453\7\7\2\2\u0452"+
-		"\u0454\5\u009aN\2\u0453\u0452\3\2\2\2\u0453\u0454\3\2\2\2\u0454\u0455"+
-		"\3\2\2\2\u0455\u0456\5|?\2\u0456\u0099\3\2\2\2\u0457\u0458\7U\2\2\u0458"+
-		"\u0459\5\u01f8\u00fd\2\u0459\u045a\7G\2\2\u045a\u009b\3\2\2\2\u045b\u045c"+
-		"\7R\2\2\u045c\u045e\5\u009eP\2\u045d\u045f\5\u00a0Q\2\u045e\u045d\3\2"+
-		"\2\2\u045e\u045f\3\2\2\2\u045f\u0460\3\2\2\2\u0460\u0461\7.\2\2\u0461"+
-		"\u0468\3\2\2\2\u0462\u0463\7R\2\2\u0463\u0464\5\u00a0Q\2\u0464\u0465\5"+
-		"\u009eP\2\u0465\u0466\7.\2\2\u0466\u0468\3\2\2\2\u0467\u045b\3\2\2\2\u0467"+
-		"\u0462\3\2\2\2\u0468\u009d\3\2\2\2\u0469\u046b\5\u014e\u00a8\2\u046a\u0469"+
-		"\3\2\2\2\u046a\u046b\3\2\2\2\u046b\u046c\3\2\2\2\u046c\u046d\7T\2\2\u046d"+
+		"\u0305\5X-\2\u0305\u0308\3\2\2\2\u0306\u0308\7#\2\2\u0307\u0303\3\2\2"+
+		"\2\u0307\u0306\3\2\2\2\u0308U\3\2\2\2\u0309\u030a\t\4\2\2\u030aW\3\2\2"+
+		"\2\u030b\u030c\t\5\2\2\u030cY\3\2\2\2\u030d\u030e\7,\2\2\u030e\u0310\5"+
+		"\\/\2\u030f\u0311\5`\61\2\u0310\u030f\3\2\2\2\u0310\u0311\3\2\2\2\u0311"+
+		"\u0312\3\2\2\2\u0312\u0313\7-\2\2\u0313[\3\2\2\2\u0314\u0319\5^\60\2\u0315"+
+		"\u0316\7\24\2\2\u0316\u0318\5^\60\2\u0317\u0315\3\2\2\2\u0318\u031b\3"+
+		"\2\2\2\u0319\u0317\3\2\2\2\u0319\u031a\3\2\2\2\u031a]\3\2\2\2\u031b\u0319"+
+		"\3\2\2\2\u031c\u0326\5\u01c2\u00e2\2\u031d\u031e\5\u01c2\u00e2\2\u031e"+
+		"\u031f\7\4\2\2\u031f\u0320\5\u01c0\u00e1\2\u0320\u0326\3\2\2\2\u0321\u0322"+
+		"\5\u01c2\u00e2\2\u0322\u0323\7\4\2\2\u0323\u0324\5\u01ce\u00e8\2\u0324"+
+		"\u0326\3\2\2\2\u0325\u031c\3\2\2\2\u0325\u031d\3\2\2\2\u0325\u0321\3\2"+
+		"\2\2\u0326_\3\2\2\2\u0327\u0328\7\37\2\2\u0328\u0329\5b\62\2\u0329a\3"+
+		"\2\2\2\u032a\u032f\5d\63\2\u032b\u032c\7\24\2\2\u032c\u032e\5d\63\2\u032d"+
+		"\u032b\3\2\2\2\u032e\u0331\3\2\2\2\u032f\u032d\3\2\2\2\u032f\u0330\3\2"+
+		"\2\2\u0330c\3\2\2\2\u0331\u032f\3\2\2\2\u0332\u0335\5f\64\2\u0333\u0335"+
+		"\5h\65\2\u0334\u0332\3\2\2\2\u0334\u0333\3\2\2\2\u0335e\3\2\2\2\u0336"+
+		"\u0337\5\u01c0\u00e1\2\u0337\u0338\7\4\2\2\u0338\u0339\5\u01c0\u00e1\2"+
+		"\u0339\u033f\3\2\2\2\u033a\u033b\5\u01c0\u00e1\2\u033b\u033c\7\4\2\2\u033c"+
+		"\u033d\5\u01ce\u00e8\2\u033d\u033f\3\2\2\2\u033e\u0336\3\2\2\2\u033e\u033a"+
+		"\3\2\2\2\u033fg\3\2\2\2\u0340\u0341\5\u01c0\u00e1\2\u0341\u0342\7.\2\2"+
+		"\u0342\u0343\5\u01b4\u00db\2\u0343i\3\2\2\2\u0344\u0345\7,\2\2\u0345\u0346"+
+		"\5l\67\2\u0346\u0347\7-\2\2\u0347k\3\2\2\2\u0348\u034d\5n8\2\u0349\u034a"+
+		"\7\24\2\2\u034a\u034c\5n8\2\u034b\u0349\3\2\2\2\u034c\u034f\3\2\2\2\u034d"+
+		"\u034b\3\2\2\2\u034d\u034e\3\2\2\2\u034em\3\2\2\2\u034f\u034d\3\2\2\2"+
+		"\u0350\u0351\5\u01b4\u00db\2\u0351o\3\2\2\2\u0352\u0354\5~@\2\u0353\u0355"+
+		"\7\3\2\2\u0354\u0353\3\2\2\2\u0354\u0355\3\2\2\2\u0355\u038f\3\2\2\2\u0356"+
+		"\u0358\5\u0086D\2\u0357\u0359\7\3\2\2\u0358\u0357\3\2\2\2\u0358\u0359"+
+		"\3\2\2\2\u0359\u038f\3\2\2\2\u035a\u035c\5\u008eH\2\u035b\u035d\7\3\2"+
+		"\2\u035c\u035b\3\2\2\2\u035c\u035d\3\2\2\2\u035d\u038f\3\2\2\2\u035e\u0360"+
+		"\5\u00a8U\2\u035f\u0361\7\3\2\2\u0360\u035f\3\2\2\2\u0360\u0361\3\2\2"+
+		"\2\u0361\u038f\3\2\2\2\u0362\u0364\5\u00b0Y\2\u0363\u0365\7\3\2\2\u0364"+
+		"\u0363\3\2\2\2\u0364\u0365\3\2\2\2\u0365\u038f\3\2\2\2\u0366\u0368\5\u00c8"+
+		"e\2\u0367\u0369\7\3\2\2\u0368\u0367\3\2\2\2\u0368\u0369\3\2\2\2\u0369"+
+		"\u038f\3\2\2\2\u036a\u036c\5\u00eav\2\u036b\u036d\7\3\2\2\u036c\u036b"+
+		"\3\2\2\2\u036c\u036d\3\2\2\2\u036d\u038f\3\2\2\2\u036e\u0370\5\u00f0y"+
+		"\2\u036f\u0371\7\3\2\2\u0370\u036f\3\2\2\2\u0370\u0371\3\2\2\2\u0371\u038f"+
+		"\3\2\2\2\u0372\u0374\5\u00f8}\2\u0373\u0375\7\3\2\2\u0374\u0373\3\2\2"+
+		"\2\u0374\u0375\3\2\2\2\u0375\u038f\3\2\2\2\u0376\u0378\5\u010c\u0087\2"+
+		"\u0377\u0379\7\3\2\2\u0378\u0377\3\2\2\2\u0378\u0379\3\2\2\2\u0379\u038f"+
+		"\3\2\2\2\u037a\u037c\5\u0112\u008a\2\u037b\u037d\7\3\2\2\u037c\u037b\3"+
+		"\2\2\2\u037c\u037d\3\2\2\2\u037d\u038f\3\2\2\2\u037e\u0380\5\u0114\u008b"+
+		"\2\u037f\u0381\7\3\2\2\u0380\u037f\3\2\2\2\u0380\u0381\3\2\2\2\u0381\u038f"+
+		"\3\2\2\2\u0382\u0384\5\u0118\u008d\2\u0383\u0385\7\3\2\2\u0384\u0383\3"+
+		"\2\2\2\u0384\u0385\3\2\2\2\u0385\u038f\3\2\2\2\u0386\u0388\5\u011e\u0090"+
+		"\2\u0387\u0389\7\3\2\2\u0388\u0387\3\2\2\2\u0388\u0389\3\2\2\2\u0389\u038f"+
+		"\3\2\2\2\u038a\u038c\5\u01dc\u00ef\2\u038b\u038d\7\3\2\2\u038c\u038b\3"+
+		"\2\2\2\u038c\u038d\3\2\2\2\u038d\u038f\3\2\2\2\u038e\u0352\3\2\2\2\u038e"+
+		"\u0356\3\2\2\2\u038e\u035a\3\2\2\2\u038e\u035e\3\2\2\2\u038e\u0362\3\2"+
+		"\2\2\u038e\u0366\3\2\2\2\u038e\u036a\3\2\2\2\u038e\u036e\3\2\2\2\u038e"+
+		"\u0372\3\2\2\2\u038e\u0376\3\2\2\2\u038e\u037a\3\2\2\2\u038e\u037e\3\2"+
+		"\2\2\u038e\u0382\3\2\2\2\u038e\u0386\3\2\2\2\u038e\u038a\3\2\2\2\u038f"+
+		"q\3\2\2\2\u0390\u0392\5p9\2\u0391\u0390\3\2\2\2\u0392\u0393\3\2\2\2\u0393"+
+		"\u0391\3\2\2\2\u0393\u0394\3\2\2\2\u0394s\3\2\2\2\u0395\u0397\5v<\2\u0396"+
+		"\u0395\3\2\2\2\u0397\u0398\3\2\2\2\u0398\u0396\3\2\2\2\u0398\u0399\3\2"+
+		"\2\2\u0399u\3\2\2\2\u039a\u03b4\7/\2\2\u039b\u03b4\7\60\2\2\u039c\u03b4"+
+		"\7\61\2\2\u039d\u03b4\7\62\2\2\u039e\u03b4\7\63\2\2\u039f\u03b4\7\64\2"+
+		"\2\u03a0\u03b4\7\65\2\2\u03a1\u03b4\7\66\2\2\u03a2\u03b4\7\67\2\2\u03a3"+
+		"\u03b4\78\2\2\u03a4\u03b4\79\2\2\u03a5\u03b4\7:\2\2\u03a6\u03b4\7;\2\2"+
+		"\u03a7\u03b4\7<\2\2\u03a8\u03b4\7=\2\2\u03a9\u03aa\7=\2\2\u03aa\u03ab"+
+		"\7!\2\2\u03ab\u03ac\7>\2\2\u03ac\u03b4\7\"\2\2\u03ad\u03ae\7=\2\2\u03ae"+
+		"\u03af\7!\2\2\u03af\u03b0\7?\2\2\u03b0\u03b4\7\"\2\2\u03b1\u03b4\7@\2"+
+		"\2\u03b2\u03b4\5x=\2\u03b3\u039a\3\2\2\2\u03b3\u039b\3\2\2\2\u03b3\u039c"+
+		"\3\2\2\2\u03b3\u039d\3\2\2\2\u03b3\u039e\3\2\2\2\u03b3\u039f\3\2\2\2\u03b3"+
+		"\u03a0\3\2\2\2\u03b3\u03a1\3\2\2\2\u03b3\u03a2\3\2\2\2\u03b3\u03a3\3\2"+
+		"\2\2\u03b3\u03a4\3\2\2\2\u03b3\u03a5\3\2\2\2\u03b3\u03a6\3\2\2\2\u03b3"+
+		"\u03a7\3\2\2\2\u03b3\u03a8\3\2\2\2\u03b3\u03a9\3\2\2\2\u03b3\u03ad\3\2"+
+		"\2\2\u03b3\u03b1\3\2\2\2\u03b3\u03b2\3\2\2\2\u03b4w\3\2\2\2\u03b5\u03cf"+
+		"\7A\2\2\u03b6\u03b7\7A\2\2\u03b7\u03b8\7!\2\2\u03b8\u03b9\7B\2\2\u03b9"+
+		"\u03cf\7\"\2\2\u03ba\u03cf\7C\2\2\u03bb\u03bc\7C\2\2\u03bc\u03bd\7!\2"+
+		"\2\u03bd\u03be\7B\2\2\u03be\u03cf\7\"\2\2\u03bf\u03cf\7D\2\2\u03c0\u03c1"+
+		"\7D\2\2\u03c1\u03c2\7!\2\2\u03c2\u03c3\7B\2\2\u03c3\u03cf\7\"\2\2\u03c4"+
+		"\u03cf\7E\2\2\u03c5\u03c6\7E\2\2\u03c6\u03c7\7!\2\2\u03c7\u03c8\7B\2\2"+
+		"\u03c8\u03cf\7\"\2\2\u03c9\u03cf\7F\2\2\u03ca\u03cb\7F\2\2\u03cb\u03cc"+
+		"\7!\2\2\u03cc\u03cd\7B\2\2\u03cd\u03cf\7\"\2\2\u03ce\u03b5\3\2\2\2\u03ce"+
+		"\u03b6\3\2\2\2\u03ce\u03ba\3\2\2\2\u03ce\u03bb\3\2\2\2\u03ce\u03bf\3\2"+
+		"\2\2\u03ce\u03c0\3\2\2\2\u03ce\u03c4\3\2\2\2\u03ce\u03c5\3\2\2\2\u03ce"+
+		"\u03c9\3\2\2\2\u03ce\u03ca\3\2\2\2\u03cfy\3\2\2\2\u03d0\u03d2\5x=\2\u03d1"+
+		"\u03d0\3\2\2\2\u03d2\u03d3\3\2\2\2\u03d3\u03d1\3\2\2\2\u03d3\u03d4\3\2"+
+		"\2\2\u03d4{\3\2\2\2\u03d5\u03d7\7\22\2\2\u03d6\u03d8\5\n\6\2\u03d7\u03d6"+
+		"\3\2\2\2\u03d7\u03d8\3\2\2\2\u03d8\u03d9\3\2\2\2\u03d9\u03da\7\23\2\2"+
+		"\u03da}\3\2\2\2\u03db\u03dd\5\u014e\u00a8\2\u03dc\u03db\3\2\2\2\u03dc"+
+		"\u03dd\3\2\2\2\u03dd\u03de\3\2\2\2\u03de\u03e0\7G\2\2\u03df\u03e1\5\u0080"+
+		"A\2\u03e0\u03df\3\2\2\2\u03e0\u03e1\3\2\2\2\u03e1\u03e2\3\2\2\2\u03e2"+
+		"\u03e3\5\u0082B\2\u03e3\177\3\2\2\2\u03e4\u03e5\t\6\2\2\u03e5\u0081\3"+
+		"\2\2\2\u03e6\u03ec\5\u0084C\2\u03e7\u03e8\5\u0084C\2\u03e8\u03e9\7\5\2"+
+		"\2\u03e9\u03ea\5\u0082B\2\u03ea\u03ec\3\2\2\2\u03eb\u03e6\3\2\2\2\u03eb"+
+		"\u03e7\3\2\2\2\u03ec\u0083\3\2\2\2\u03ed\u03f0\5\u01f8\u00fd\2\u03ee\u03f0"+
+		"\5\u01ac\u00d7\2\u03ef\u03ed\3\2\2\2\u03ef\u03ee\3\2\2\2\u03f0\u0085\3"+
+		"\2\2\2\u03f1\u03f3\5\u014e\u00a8\2\u03f2\u03f1\3\2\2\2\u03f2\u03f3\3\2"+
+		"\2\2\u03f3\u03f5\3\2\2\2\u03f4\u03f6\5t;\2\u03f5\u03f4\3\2\2\2\u03f5\u03f6"+
+		"\3\2\2\2\u03f6\u03f7\3\2\2\2\u03f7\u03f8\7\35\2\2\u03f8\u03f9\5\u0088"+
+		"E\2\u03f9\u0087\3\2\2\2\u03fa\u03ff\5\u008aF\2\u03fb\u03fc\7\24\2\2\u03fc"+
+		"\u03fe\5\u008aF\2\u03fd\u03fb\3\2\2\2\u03fe\u0401\3\2\2\2\u03ff\u03fd"+
+		"\3\2\2\2\u03ff\u0400\3\2\2\2\u0400\u0089\3\2\2\2\u0401\u03ff\3\2\2\2\u0402"+
+		"\u0404\5\u0130\u0099\2\u0403\u0405\5\u008cG\2\u0404\u0403\3\2\2\2\u0404"+
+		"\u0405\3\2\2\2\u0405\u008b\3\2\2\2\u0406\u0407\7M\2\2\u0407\u0408\5\u0154"+
+		"\u00ab\2\u0408\u008d\3\2\2\2\u0409\u040a\5\u0090I\2\u040a\u040b\5\u0092"+
+		"J\2\u040b\u040c\5\u01be\u00e0\2\u040c\u040d\5\u0094K\2\u040d\u0429\3\2"+
+		"\2\2\u040e\u040f\5\u0090I\2\u040f\u0410\5\u0092J\2\u0410\u0411\5\u01be"+
+		"\u00e0\2\u0411\u0412\5\u009cO\2\u0412\u0429\3\2\2\2\u0413\u0414\5\u0090"+
+		"I\2\u0414\u0415\5\u0092J\2\u0415\u0416\5\u008cG\2\u0416\u0417\5\u00a2"+
+		"R\2\u0417\u0429\3\2\2\2\u0418\u0419\5\u0090I\2\u0419\u041a\5\u0092J\2"+
+		"\u041a\u041c\5\u01be\u00e0\2\u041b\u041d\5\u008cG\2\u041c\u041b\3\2\2"+
+		"\2\u041c\u041d\3\2\2\2\u041d\u041e\3\2\2\2\u041e\u041f\5\u00a2R\2\u041f"+
+		"\u0429\3\2\2\2\u0420\u0421\5\u0090I\2\u0421\u0422\5\u0092J\2\u0422\u0423"+
+		"\5\u01be\u00e0\2\u0423\u0424\5|?\2\u0424\u0429\3\2\2\2\u0425\u0426\5\u0090"+
+		"I\2\u0426\u0427\5\u0088E\2\u0427\u0429\3\2\2\2\u0428\u0409\3\2\2\2\u0428"+
+		"\u040e\3\2\2\2\u0428\u0413\3\2\2\2\u0428\u0418\3\2\2\2\u0428\u0420\3\2"+
+		"\2\2\u0428\u0425\3\2\2\2\u0429\u008f\3\2\2\2\u042a\u042c\5\u014e\u00a8"+
+		"\2\u042b\u042a\3\2\2\2\u042b\u042c\3\2\2\2\u042c\u042e\3\2\2\2\u042d\u042f"+
+		"\5t;\2\u042e\u042d\3\2\2\2\u042e\u042f\3\2\2\2\u042f\u0430\3\2\2\2\u0430"+
+		"\u0431\7\36\2\2\u0431\u0091\3\2\2\2\u0432\u0433\5\u01f8\u00fd\2\u0433"+
+		"\u0093\3\2\2\2\u0434\u0435\7\22\2\2\u0435\u0437\5\u0096L\2\u0436\u0438"+
+		"\5\u0098M\2\u0437\u0436\3\2\2\2\u0437\u0438\3\2\2\2\u0438\u0439\3\2\2"+
+		"\2\u0439\u043a\7\23\2\2\u043a\u0441\3\2\2\2\u043b\u043c\7\22\2\2\u043c"+
+		"\u043d\5\u0098M\2\u043d\u043e\5\u0096L\2\u043e\u043f\7\23\2\2\u043f\u0441"+
+		"\3\2\2\2\u0440\u0434\3\2\2\2\u0440\u043b\3\2\2\2\u0441\u0095\3\2\2\2\u0442"+
+		"\u0444\5\u014e\u00a8\2\u0443\u0442\3\2\2\2\u0443\u0444\3\2\2\2\u0444\u0446"+
+		"\3\2\2\2\u0445\u0447\5t;\2\u0446\u0445\3\2\2\2\u0446\u0447\3\2\2\2\u0447"+
+		"\u0448\3\2\2\2\u0448\u0449\7N\2\2\u0449\u044a\5|?\2\u044a\u0097\3\2\2"+
+		"\2\u044b\u044d\5\u014e\u00a8\2\u044c\u044b\3\2\2\2\u044c\u044d\3\2\2\2"+
+		"\u044d\u044f\3\2\2\2\u044e\u0450\5t;\2\u044f\u044e\3\2\2\2\u044f\u0450"+
+		"\3\2\2\2\u0450\u0451\3\2\2\2\u0451\u0453\7B\2\2\u0452\u0454\5\u009aN\2"+
+		"\u0453\u0452\3\2\2\2\u0453\u0454\3\2\2\2\u0454\u0455\3\2\2\2\u0455\u0456"+
+		"\5|?\2\u0456\u0099\3\2\2\2\u0457\u0458\7!\2\2\u0458\u0459\5\u01f8\u00fd"+
+		"\2\u0459\u045a\7\"\2\2\u045a\u009b\3\2\2\2\u045b\u045c\7\22\2\2\u045c"+
+		"\u045e\5\u009eP\2\u045d\u045f\5\u00a0Q\2\u045e\u045d\3\2\2\2\u045e\u045f"+
+		"\3\2\2\2\u045f\u0460\3\2\2\2\u0460\u0461\7\23\2\2\u0461\u0468\3\2\2\2"+
+		"\u0462\u0463\7\22\2\2\u0463\u0464\5\u00a0Q\2\u0464\u0465\5\u009eP\2\u0465"+
+		"\u0466\7\23\2\2\u0466\u0468\3\2\2\2\u0467\u045b\3\2\2\2\u0467\u0462\3"+
+		"\2\2\2\u0468\u009d\3\2\2\2\u0469\u046b\5\u014e\u00a8\2\u046a\u0469\3\2"+
+		"\2\2\u046a\u046b\3\2\2\2\u046b\u046c\3\2\2\2\u046c\u046d\7N\2\2\u046d"+
 		"\u009f\3\2\2\2\u046e\u0470\5\u014e\u00a8\2\u046f\u046e\3\2\2\2\u046f\u0470"+
-		"\3\2\2\2\u0470\u0471\3\2\2\2\u0471\u0472\7\7\2\2\u0472\u00a1\3\2\2\2\u0473"+
-		"\u0474\7R\2\2\u0474\u0476\5\u00a4S\2\u0475\u0477\5\u00a6T\2\u0476\u0475"+
-		"\3\2\2\2\u0476\u0477\3\2\2\2\u0477\u0478\3\2\2\2\u0478\u0479\7.\2\2\u0479"+
-		"\u0482\3\2\2\2\u047a\u047b\7R\2\2\u047b\u047d\5\u00a6T\2\u047c\u047e\5"+
-		"\u00a4S\2\u047d\u047c\3\2\2\2\u047d\u047e\3\2\2\2\u047e\u047f\3\2\2\2"+
-		"\u047f\u0480\7.\2\2\u0480\u0482\3\2\2\2\u0481\u0473\3\2\2\2\u0481\u047a"+
-		"\3\2\2\2\u0482\u00a3\3\2\2\2\u0483\u0485\5\u014e\u00a8\2\u0484\u0483\3"+
-		"\2\2\2\u0484\u0485\3\2\2\2\u0485\u0486\3\2\2\2\u0486\u0488\7\t\2\2\u0487"+
-		"\u0489\5\u009aN\2\u0488\u0487\3\2\2\2\u0488\u0489\3\2\2\2\u0489\u048a"+
-		"\3\2\2\2\u048a\u048b\5|?\2\u048b\u00a5\3\2\2\2\u048c\u048e\5\u014e\u00a8"+
-		"\2\u048d\u048c\3\2\2\2\u048d\u048e\3\2\2\2\u048e\u048f\3\2\2\2\u048f\u0491"+
-		"\7\u008e\2\2\u0490\u0492\5\u009aN\2\u0491\u0490\3\2\2\2\u0491\u0492\3"+
+		"\3\2\2\2\u0470\u0471\3\2\2\2\u0471\u0472\7B\2\2\u0472\u00a1\3\2\2\2\u0473"+
+		"\u0474\7\22\2\2\u0474\u0476\5\u00a4S\2\u0475\u0477\5\u00a6T\2\u0476\u0475"+
+		"\3\2\2\2\u0476\u0477\3\2\2\2\u0477\u0478\3\2\2\2\u0478\u0479\7\23\2\2"+
+		"\u0479\u0482\3\2\2\2\u047a\u047b\7\22\2\2\u047b\u047d\5\u00a6T\2\u047c"+
+		"\u047e\5\u00a4S\2\u047d\u047c\3\2\2\2\u047d\u047e\3\2\2\2\u047e\u047f"+
+		"\3\2\2\2\u047f\u0480\7\23\2\2\u0480\u0482\3\2\2\2\u0481\u0473\3\2\2\2"+
+		"\u0481\u047a\3\2\2\2\u0482\u00a3\3\2\2\2\u0483\u0485\5\u014e\u00a8\2\u0484"+
+		"\u0483\3\2\2\2\u0484\u0485\3\2\2\2\u0485\u0486\3\2\2\2\u0486\u0488\7O"+
+		"\2\2\u0487\u0489\5\u009aN\2\u0488\u0487\3\2\2\2\u0488\u0489\3\2\2\2\u0489"+
+		"\u048a\3\2\2\2\u048a\u048b\5|?\2\u048b\u00a5\3\2\2\2\u048c\u048e\5\u014e"+
+		"\u00a8\2\u048d\u048c\3\2\2\2\u048d\u048e\3\2\2\2\u048e\u048f\3\2\2\2\u048f"+
+		"\u0491\7P\2\2\u0490\u0492\5\u009aN\2\u0491\u0490\3\2\2\2\u0491\u0492\3"+
 		"\2\2\2\u0492\u0493\3\2\2\2\u0493\u0494\5|?\2\u0494\u00a7\3\2\2\2\u0495"+
 		"\u0496\5\u00aaV\2\u0496\u0497\5\u00aeX\2\u0497\u00a9\3\2\2\2\u0498\u049a"+
 		"\5\u014e\u00a8\2\u0499\u0498\3\2\2\2\u0499\u049a\3\2\2\2\u049a\u049c\3"+
 		"\2\2\2\u049b\u049d\5x=\2\u049c\u049b\3\2\2\2\u049c\u049d\3\2\2\2\u049d"+
-		"\u049e\3\2\2\2\u049e\u049f\7I\2\2\u049f\u04a1\5\u00acW\2\u04a0\u04a2\5"+
+		"\u049e\3\2\2\2\u049e\u049f\7H\2\2\u049f\u04a1\5\u00acW\2\u04a0\u04a2\5"+
 		"Z.\2\u04a1\u04a0\3\2\2\2\u04a1\u04a2\3\2\2\2\u04a2\u00ab\3\2\2\2\u04a3"+
-		"\u04a4\5\u01f8\u00fd\2\u04a4\u00ad\3\2\2\2\u04a5\u04a6\7\f\2\2\u04a6\u04a7"+
+		"\u04a4\5\u01f8\u00fd\2\u04a4\u00ad\3\2\2\2\u04a5\u04a6\7M\2\2\u04a6\u04a7"+
 		"\5\u01b4\u00db\2\u04a7\u00af\3\2\2\2\u04a8\u04a9\5\u00b2Z\2\u04a9\u04ab"+
 		"\5\u00b4[\2\u04aa\u04ac\5Z.\2\u04ab\u04aa\3\2\2\2\u04ab\u04ac\3\2\2\2"+
 		"\u04ac\u04ad\3\2\2\2\u04ad\u04ae\5\u00b6\\\2\u04ae\u04af\5\u00ba^\2\u04af"+
@@ -16705,363 +18165,361 @@ public class Swift3Parser extends Parser {
 		"\u04b6\5\u00b6\\\2\u04b6\u04b8\3\2\2\2\u04b7\u04a8\3\2\2\2\u04b7\u04b0"+
 		"\3\2\2\2\u04b8\u00b1\3\2\2\2\u04b9\u04bb\5\u014e\u00a8\2\u04ba\u04b9\3"+
 		"\2\2\2\u04ba\u04bb\3\2\2\2\u04bb\u04bd\3\2\2\2\u04bc\u04be\5t;\2\u04bd"+
-		"\u04bc\3\2\2\2\u04bd\u04be\3\2\2\2\u04be\u04bf\3\2\2\2\u04bf\u04c0\7K"+
+		"\u04bc\3\2\2\2\u04bd\u04be\3\2\2\2\u04be\u04bf\3\2\2\2\u04bf\u04c0\7L"+
 		"\2\2\u04c0\u00b3\3\2\2\2\u04c1\u04c4\5\u01f8\u00fd\2\u04c2\u04c4\5\u01ac"+
 		"\u00d7\2\u04c3\u04c1\3\2\2\2\u04c3\u04c2\3\2\2\2\u04c4\u00b5\3\2\2\2\u04c5"+
 		"\u04c7\5\u00bc_\2\u04c6\u04c8\t\7\2\2\u04c7\u04c6\3\2\2\2\u04c7\u04c8"+
 		"\3\2\2\2\u04c8\u04ca\3\2\2\2\u04c9\u04cb\5\u00b8]\2\u04ca\u04c9\3\2\2"+
-		"\2\u04ca\u04cb\3\2\2\2\u04cb\u00b7\3\2\2\2\u04cc\u04ce\7\u0082\2\2\u04cd"+
-		"\u04cf\5\u014e\u00a8\2\u04ce\u04cd\3\2\2\2\u04ce\u04cf\3\2\2\2\u04cf\u04d0"+
-		"\3\2\2\2\u04d0\u04d1\5\u01b4\u00db\2\u04d1\u00b9\3\2\2\2\u04d2\u04d3\5"+
-		"|?\2\u04d3\u00bb\3\2\2\2\u04d4\u04d5\7U\2\2\u04d5\u04de\7G\2\2\u04d6\u04d7"+
-		"\7U\2\2\u04d7\u04d9\5\u00be`\2\u04d8\u04da\7\u0086\2\2\u04d9\u04d8\3\2"+
-		"\2\2\u04d9\u04da\3\2\2\2\u04da\u04db\3\2\2\2\u04db\u04dc\7G\2\2\u04dc"+
-		"\u04de\3\2\2\2\u04dd\u04d4\3\2\2\2\u04dd\u04d6\3\2\2\2\u04de\u00bd\3\2"+
-		"\2\2\u04df\u04e4\5\u00c0a\2\u04e0\u04e1\7\23\2\2\u04e1\u04e3\5\u00c0a"+
-		"\2\u04e2\u04e0\3\2\2\2\u04e3\u04e6\3\2\2\2\u04e4\u04e2\3\2\2\2\u04e4\u04e5"+
-		"\3\2\2\2\u04e5\u00bf\3\2\2\2\u04e6\u04e4\3\2\2\2\u04e7\u04e9\5\u014e\u00a8"+
-		"\2\u04e8\u04e7\3\2\2\2\u04e8\u04e9\3\2\2\2\u04e9\u04eb\3\2\2\2\u04ea\u04ec"+
-		"\5\u00c2b\2\u04eb\u04ea\3\2\2\2\u04eb\u04ec\3\2\2\2\u04ec\u04ed\3\2\2"+
-		"\2\u04ed\u04ee\5\u00c4c\2\u04ee\u04f0\5\u01be\u00e0\2\u04ef\u04f1\5\u00c6"+
-		"d\2\u04f0\u04ef\3\2\2\2\u04f0\u04f1\3\2\2\2\u04f1\u04fd\3\2\2\2\u04f2"+
-		"\u04f4\5\u014e\u00a8\2\u04f3\u04f2\3\2\2\2\u04f3\u04f4\3\2\2\2\u04f4\u04f6"+
-		"\3\2\2\2\u04f5\u04f7\5\u00c2b\2\u04f6\u04f5\3\2\2\2\u04f6\u04f7\3\2\2"+
-		"\2\u04f7\u04f8\3\2\2\2\u04f8\u04f9\5\u00c4c\2\u04f9\u04fa\5\u01be\u00e0"+
-		"\2\u04fa\u04fb\7\u0086\2\2\u04fb\u04fd\3\2\2\2\u04fc\u04e8\3\2\2\2\u04fc"+
-		"\u04f3\3\2\2\2\u04fd\u00c1\3\2\2\2\u04fe\u0502\5\u01f8\u00fd\2\u04ff\u0502"+
-		"\5\u01fa\u00fe\2\u0500\u0502\7\u008d\2\2\u0501\u04fe\3\2\2\2\u0501\u04ff"+
-		"\3\2\2\2\u0501\u0500\3\2\2\2\u0502\u00c3\3\2\2\2\u0503\u0506\5\u01f8\u00fd"+
-		"\2\u0504\u0506\7\u008d\2\2\u0505\u0503\3\2\2\2\u0505\u0504\3\2\2\2\u0506"+
-		"\u00c5\3\2\2\2\u0507\u0508\7\f\2\2\u0508\u0509\5\u0154\u00ab\2\u0509\u00c7"+
-		"\3\2\2\2\u050a\u050c\5\u014e\u00a8\2\u050b\u050a\3\2\2\2\u050b\u050c\3"+
-		"\2\2\2\u050c\u050e\3\2\2\2\u050d\u050f\5x=\2\u050e\u050d\3\2\2\2\u050e"+
-		"\u050f\3\2\2\2\u050f\u0510\3\2\2\2\u0510\u0511\5\u00caf\2\u0511\u00c9"+
-		"\3\2\2\2\u0512\u0515\5\u00ccg\2\u0513\u0515\5\u00dco\2\u0514\u0512\3\2"+
-		"\2\2\u0514\u0513\3\2\2\2\u0515\u00cb\3\2\2\2\u0516\u0518\7\"\2\2\u0517"+
-		"\u0516\3\2\2\2\u0517\u0518\3\2\2\2\u0518\u0519\3\2\2\2\u0519\u051a\7y"+
-		"\2\2\u051a\u051c\5\u00d8m\2\u051b\u051d\5Z.\2\u051c\u051b\3\2\2\2\u051c"+
-		"\u051d\3\2\2\2\u051d\u051f\3\2\2\2\u051e\u0520\5\u01d6\u00ec\2\u051f\u051e"+
-		"\3\2\2\2\u051f\u0520\3\2\2\2\u0520\u0521\3\2\2\2\u0521\u0523\7R\2\2\u0522"+
-		"\u0524\5\u00ceh\2\u0523\u0522\3\2\2\2\u0523\u0524\3\2\2\2\u0524\u0525"+
-		"\3\2\2\2\u0525\u0526\7.\2\2\u0526\u00cd\3\2\2\2\u0527\u0529\5\u00d0i\2"+
-		"\u0528\u0527\3\2\2\2\u0529\u052a\3\2\2\2\u052a\u0528\3\2\2\2\u052a\u052b"+
-		"\3\2\2\2\u052b\u00cf\3\2\2\2\u052c\u0532\5p9\2\u052d\u052f\5\u00d2j\2"+
-		"\u052e\u0530\7-\2\2\u052f\u052e\3\2\2\2\u052f\u0530\3\2\2\2\u0530\u0532"+
-		"\3\2\2\2\u0531\u052c\3\2\2\2\u0531\u052d\3\2\2\2\u0532\u00d1\3\2\2\2\u0533"+
-		"\u0535\5\u014e\u00a8\2\u0534\u0533\3\2\2\2\u0534\u0535\3\2\2\2\u0535\u0537"+
-		"\3\2\2\2\u0536\u0538\7\"\2\2\u0537\u0536\3\2\2\2\u0537\u0538\3\2\2\2\u0538"+
-		"\u0539\3\2\2\2\u0539\u053a\7\u0083\2\2\u053a\u053b\5\u00d4k\2\u053b\u00d3"+
-		"\3\2\2\2\u053c\u0541\5\u00d6l\2\u053d\u053e\7\23\2\2\u053e\u0540\5\u00d6"+
-		"l\2\u053f\u053d\3\2\2\2\u0540\u0543\3\2\2\2\u0541\u053f\3\2\2\2\u0541"+
-		"\u0542\3\2\2\2\u0542\u00d5\3\2\2\2\u0543\u0541\3\2\2\2\u0544\u0546\5\u00da"+
-		"n\2\u0545\u0547\5\u01c4\u00e3\2\u0546\u0545\3\2\2\2\u0546\u0547\3\2\2"+
-		"\2\u0547\u00d7\3\2\2\2\u0548\u0549\5\u01f8\u00fd\2\u0549\u00d9\3\2\2\2"+
-		"\u054a\u054b\5\u01f8\u00fd\2\u054b\u00db\3\2\2\2\u054c\u054d\7y\2\2\u054d"+
-		"\u054f\5\u00d8m\2\u054e\u0550\5Z.\2\u054f\u054e\3\2\2\2\u054f\u0550\3"+
-		"\2\2\2\u0550\u0552\3\2\2\2\u0551\u0553\5\u01d6\u00ec\2\u0552\u0551\3\2"+
-		"\2\2\u0552\u0553\3\2\2\2\u0553\u0554\3\2\2\2\u0554\u0556\7R\2\2\u0555"+
-		"\u0557\5\u00dep\2\u0556\u0555\3\2\2\2\u0556\u0557\3\2\2\2\u0557\u0558"+
-		"\3\2\2\2\u0558\u0559\7.\2\2\u0559\u00dd\3\2\2\2\u055a\u055c\5\u00e0q\2"+
-		"\u055b\u055a\3\2\2\2\u055c\u055d\3\2\2\2\u055d\u055b\3\2\2\2\u055d\u055e"+
-		"\3\2\2\2\u055e\u00df\3\2\2\2\u055f\u0562\5p9\2\u0560\u0562\5\u00e2r\2"+
-		"\u0561\u055f\3\2\2\2\u0561\u0560\3\2\2\2\u0562\u00e1\3\2\2\2\u0563\u0565"+
-		"\5\u014e\u00a8\2\u0564\u0563\3\2\2\2\u0564\u0565\3\2\2\2\u0565\u0566\3"+
-		"\2\2\2\u0566\u0567\7\u0083\2\2\u0567\u0568\5\u00e4s\2\u0568\u00e3\3\2"+
-		"\2\2\u0569\u056e\5\u00e6t\2\u056a\u056b\7\23\2\2\u056b\u056d\5\u00e6t"+
-		"\2\u056c\u056a\3\2\2\2\u056d\u0570\3\2\2\2\u056e\u056c\3\2\2\2\u056e\u056f"+
-		"\3\2\2\2\u056f\u00e5\3\2\2\2\u0570\u056e\3\2\2\2\u0571\u0573\5\u00dan"+
-		"\2\u0572\u0574\5\u00e8u\2\u0573\u0572\3\2\2\2\u0573\u0574\3\2\2\2\u0574"+
-		"\u00e7\3\2\2\2\u0575\u0576\7\f\2\2\u0576\u0577\5\u0202\u0102\2\u0577\u00e9"+
-		"\3\2\2\2\u0578\u057a\5\u014e\u00a8\2\u0579\u0578\3\2\2\2\u0579\u057a\3"+
-		"\2\2\2\u057a\u057c\3\2\2\2\u057b\u057d\5x=\2\u057c\u057b\3\2\2\2\u057c"+
-		"\u057d\3\2\2\2\u057d\u057e\3\2\2\2\u057e\u057f\7$\2\2\u057f\u0581\5\u00ec"+
-		"w\2\u0580\u0582\5Z.\2\u0581\u0580\3\2\2\2\u0581\u0582\3\2\2\2\u0582\u0584"+
-		"\3\2\2\2\u0583\u0585\5\u01d6\u00ec\2\u0584\u0583\3\2\2\2\u0584\u0585\3"+
-		"\2\2\2\u0585\u0586\3\2\2\2\u0586\u0587\5\u00eex\2\u0587\u00eb\3\2\2\2"+
-		"\u0588\u0589\5\u01f8\u00fd\2\u0589\u00ed\3\2\2\2\u058a\u058c\7R\2\2\u058b"+
-		"\u058d\5r:\2\u058c\u058b\3\2\2\2\u058c\u058d\3\2\2\2\u058d\u058e\3\2\2"+
-		"\2\u058e\u058f\7.\2\2\u058f\u00ef\3\2\2\2\u0590\u0592\5\u014e\u00a8\2"+
-		"\u0591\u0590\3\2\2\2\u0591\u0592\3\2\2\2\u0592\u0594\3\2\2\2\u0593\u0595"+
-		"\5\u00f2z\2\u0594\u0593\3\2\2\2\u0594\u0595\3\2\2\2\u0595\u0596\3\2\2"+
-		"\2\u0596\u0597\7,\2\2\u0597\u0599\5\u00f4{\2\u0598\u059a\5Z.\2\u0599\u0598"+
-		"\3\2\2\2\u0599\u059a\3\2\2\2\u059a\u059c\3\2\2\2\u059b\u059d\5\u01d6\u00ec"+
-		"\2\u059c\u059b\3\2\2\2\u059c\u059d\3\2\2\2\u059d\u059e\3\2\2\2\u059e\u059f"+
-		"\5\u00f6|\2\u059f\u00f1\3\2\2\2\u05a0\u05a2\5x=\2\u05a1\u05a3\7g\2\2\u05a2"+
-		"\u05a1\3\2\2\2\u05a2\u05a3\3\2\2\2\u05a3\u05a9\3\2\2\2\u05a4\u05a6\7g"+
-		"\2\2\u05a5\u05a7\5x=\2\u05a6\u05a5\3\2\2\2\u05a6\u05a7\3\2\2\2\u05a7\u05a9"+
-		"\3\2\2\2\u05a8\u05a0\3\2\2\2\u05a8\u05a4\3\2\2\2\u05a9\u00f3\3\2\2\2\u05aa"+
-		"\u05ab\5\u01f8\u00fd\2\u05ab\u00f5\3\2\2\2\u05ac\u05ae\7R\2\2\u05ad\u05af"+
-		"\5r:\2\u05ae\u05ad\3\2\2\2\u05ae\u05af\3\2\2\2\u05af\u05b0\3\2\2\2\u05b0"+
-		"\u05b1\7.\2\2\u05b1\u00f7\3\2\2\2\u05b2\u05b4\5\u014e\u00a8\2\u05b3\u05b2"+
-		"\3\2\2\2\u05b3\u05b4\3\2\2\2\u05b4\u05b6\3\2\2\2\u05b5\u05b7\5x=\2\u05b6"+
-		"\u05b5\3\2\2\2\u05b6\u05b7\3\2\2\2\u05b7\u05b8\3\2\2\2\u05b8\u05b9\7l"+
-		"\2\2\u05b9\u05bb\5\u00fa~\2\u05ba\u05bc\5\u01d6\u00ec\2\u05bb\u05ba\3"+
-		"\2\2\2\u05bb\u05bc\3\2\2\2\u05bc\u05bd\3\2\2\2\u05bd\u05be\5\u00fc\177"+
-		"\2\u05be\u00f9\3\2\2\2\u05bf\u05c0\5\u01f8\u00fd\2\u05c0\u00fb\3\2\2\2"+
-		"\u05c1\u05c3\7R\2\2\u05c2\u05c4\5\u0100\u0081\2\u05c3\u05c2\3\2\2\2\u05c3"+
-		"\u05c4\3\2\2\2\u05c4\u05c5\3\2\2\2\u05c5\u05c6\7.\2\2\u05c6\u00fd\3\2"+
-		"\2\2\u05c7\u05c9\5\u0102\u0082\2\u05c8\u05ca\7-\2\2\u05c9\u05c8\3\2\2"+
-		"\2\u05c9\u05ca\3\2\2\2\u05ca\u05dc\3\2\2\2\u05cb\u05cd\5\u0104\u0083\2"+
-		"\u05cc\u05ce\7-\2\2\u05cd\u05cc\3\2\2\2\u05cd\u05ce\3\2\2\2\u05ce\u05dc"+
-		"\3\2\2\2\u05cf\u05d1\5\u0106\u0084\2\u05d0\u05d2\7-\2\2\u05d1\u05d0\3"+
-		"\2\2\2\u05d1\u05d2\3\2\2\2\u05d2\u05dc\3\2\2\2\u05d3\u05d5\5\u0108\u0085"+
-		"\2\u05d4\u05d6\7-\2\2\u05d5\u05d4\3\2\2\2\u05d5\u05d6\3\2\2\2\u05d6\u05dc"+
-		"\3\2\2\2\u05d7\u05d9\5\u010a\u0086\2\u05d8\u05da\7-\2\2\u05d9\u05d8\3"+
-		"\2\2\2\u05d9\u05da\3\2\2\2\u05da\u05dc\3\2\2\2\u05db\u05c7\3\2\2\2\u05db"+
-		"\u05cb\3\2\2\2\u05db\u05cf\3\2\2\2\u05db\u05d3\3\2\2\2\u05db\u05d7\3\2"+
-		"\2\2\u05dc\u00ff\3\2\2\2\u05dd\u05df\5\u00fe\u0080\2\u05de\u05dd\3\2\2"+
-		"\2\u05df\u05e0\3\2\2\2\u05e0\u05de\3\2\2\2\u05e0\u05e1\3\2\2\2\u05e1\u0101"+
-		"\3\2\2\2\u05e2\u05e3\5\u0090I\2\u05e3\u05e4\5\u0092J\2\u05e4\u05e5\5\u01be"+
-		"\u00e0\2\u05e5\u05e6\5\u009cO\2\u05e6\u0103\3\2\2\2\u05e7\u05e8\5\u00b2"+
-		"Z\2\u05e8\u05ea\5\u00b4[\2\u05e9\u05eb\5Z.\2\u05ea\u05e9\3\2\2\2\u05ea"+
-		"\u05eb\3\2\2\2\u05eb\u05ec\3\2\2\2\u05ec\u05ed\5\u00b6\\\2\u05ed\u0105"+
-		"\3\2\2\2\u05ee\u05f0\5\u010e\u0088\2\u05ef\u05f1\5Z.\2\u05f0\u05ef\3\2"+
-		"\2\2\u05f0\u05f1\3\2\2\2\u05f1\u05f2\3\2\2\2\u05f2\u05f4\5\u00bc_\2\u05f3"+
-		"\u05f5\t\7\2\2\u05f4\u05f3\3\2\2\2\u05f4\u05f5\3\2\2\2\u05f5\u0107\3\2"+
-		"\2\2\u05f6\u05f7\5\u011a\u008e\2\u05f7\u05f8\5\u011c\u008f\2\u05f8\u05f9"+
-		"\5\u009cO\2\u05f9\u0109\3\2\2\2\u05fa\u05fc\5\u014e\u00a8\2\u05fb\u05fa"+
-		"\3\2\2\2\u05fb\u05fc\3\2\2\2\u05fc\u05fe\3\2\2\2\u05fd\u05ff\5x=\2\u05fe"+
-		"\u05fd\3\2\2\2\u05fe\u05ff\3\2\2\2\u05ff\u0600\3\2\2\2\u0600\u0601\7;"+
-		"\2\2\u0601\u0603\5\u00acW\2\u0602\u0604\5\u01d6\u00ec\2\u0603\u0602\3"+
-		"\2\2\2\u0603\u0604\3\2\2\2\u0604\u0606\3\2\2\2\u0605\u0607\5\u00aeX\2"+
-		"\u0606\u0605\3\2\2\2\u0606\u0607\3\2\2\2\u0607\u010b\3\2\2\2\u0608\u060a"+
-		"\5\u010e\u0088\2\u0609\u060b\5Z.\2\u060a\u0609\3\2\2\2\u060a\u060b\3\2"+
-		"\2\2\u060b\u060c\3\2\2\2\u060c\u060e\5\u00bc_\2\u060d\u060f\t\7\2\2\u060e"+
-		"\u060d\3\2\2\2\u060e\u060f\3\2\2\2\u060f\u0610\3\2\2\2\u0610\u0611\5\u0110"+
-		"\u0089\2\u0611\u010d\3\2\2\2\u0612\u0614\5\u014e\u00a8\2\u0613\u0612\3"+
-		"\2\2\2\u0613\u0614\3\2\2\2\u0614\u0616\3\2\2\2\u0615\u0617\5t;\2\u0616"+
-		"\u0615\3\2\2\2\u0616\u0617\3\2\2\2\u0617\u0618\3\2\2\2\u0618\u061a\7\30"+
-		"\2\2\u0619\u061b\t\b\2\2\u061a\u0619\3\2\2\2\u061a\u061b\3\2\2\2\u061b"+
-		"\u010f\3\2\2\2\u061c\u061d\5|?\2\u061d\u0111\3\2\2\2\u061e\u0620\5\u014e"+
-		"\u00a8\2\u061f\u061e\3\2\2\2\u061f\u0620\3\2\2\2\u0620\u0621\3\2\2\2\u0621"+
-		"\u0622\7)\2\2\u0622\u0623\5|?\2\u0623\u0113\3\2\2\2\u0624\u0626\5\u014e"+
-		"\u00a8\2\u0625\u0624\3\2\2\2\u0625\u0626\3\2\2\2\u0626\u0628\3\2\2\2\u0627"+
-		"\u0629\5x=\2\u0628\u0627\3\2\2\2\u0628\u0629\3\2\2\2\u0629\u062a\3\2\2"+
-		"\2\u062a\u062b\7\35\2\2\u062b\u062e\5\u01c0\u00e1\2\u062c\u062f\5`\61"+
-		"\2\u062d\u062f\5\u01d6\u00ec\2\u062e\u062c\3\2\2\2\u062e\u062d\3\2\2\2"+
-		"\u062e\u062f\3\2\2\2\u062f\u0630\3\2\2\2\u0630\u0631\5\u0116\u008c\2\u0631"+
-		"\u0115\3\2\2\2\u0632\u0634\7R\2\2\u0633\u0635\5r:\2\u0634\u0633\3\2\2"+
-		"\2\u0634\u0635\3\2\2\2\u0635\u0636\3\2\2\2\u0636\u0637\7.\2\2\u0637\u0117"+
-		"\3\2\2\2\u0638\u0639\5\u011a\u008e\2\u0639\u063a\5\u011c\u008f\2\u063a"+
-		"\u063b\5\u0094K\2\u063b\u0645\3\2\2\2\u063c\u063d\5\u011a\u008e\2\u063d"+
-		"\u063e\5\u011c\u008f\2\u063e\u063f\5\u009cO\2\u063f\u0645\3\2\2\2\u0640"+
-		"\u0641\5\u011a\u008e\2\u0641\u0642\5\u011c\u008f\2\u0642\u0643\5|?\2\u0643"+
-		"\u0645\3\2\2\2\u0644\u0638\3\2\2\2\u0644\u063c\3\2\2\2\u0644\u0640\3\2"+
-		"\2\2\u0645\u0119\3\2\2\2\u0646\u0648\5\u014e\u00a8\2\u0647\u0646\3\2\2"+
-		"\2\u0647\u0648\3\2\2\2\u0648\u064a\3\2\2\2\u0649\u064b\5t;\2\u064a\u0649"+
-		"\3\2\2\2\u064a\u064b\3\2\2\2\u064b\u064c\3\2\2\2\u064c\u064d\7\'\2\2\u064d"+
-		"\u064e\5\u00bc_\2\u064e\u011b\3\2\2\2\u064f\u0651\7\u0082\2\2\u0650\u0652"+
-		"\5\u014e\u00a8\2\u0651\u0650\3\2\2\2\u0651\u0652\3\2\2\2\u0652\u0653\3"+
-		"\2\2\2\u0653\u0654\5\u01b4\u00db\2\u0654\u011d\3\2\2\2\u0655\u0659\5\u0120"+
-		"\u0091\2\u0656\u0659\5\u0122\u0092\2\u0657\u0659\5\u0124\u0093\2\u0658"+
-		"\u0655\3\2\2\2\u0658\u0656\3\2\2\2\u0658\u0657\3\2\2\2\u0659\u011f\3\2"+
-		"\2\2\u065a\u065b\7J\2\2\u065b\u065c\7\6\2\2\u065c\u065d\5\u01ac\u00d7"+
-		"\2\u065d\u065e\7R\2\2\u065e\u065f\7.\2\2\u065f\u0121\3\2\2\2\u0660\u0661"+
-		"\7\r\2\2\u0661\u0662\7\6\2\2\u0662\u0663\5\u01ac\u00d7\2\u0663\u0664\7"+
-		"R\2\2\u0664\u0665\7.\2\2\u0665\u0123\3\2\2\2\u0666\u0667\7h\2\2\u0667"+
-		"\u0668\7\6\2\2\u0668\u0669\5\u01ac\u00d7\2\u0669\u066b\7R\2\2\u066a\u066c"+
-		"\5\u0126\u0094\2\u066b\u066a\3\2\2\2\u066b\u066c\3\2\2\2\u066c\u066d\3"+
-		"\2\2\2\u066d\u066e\7.\2\2\u066e\u0125\3\2\2\2\u066f\u0671\5\u0128\u0095"+
-		"\2\u0670\u0672\5\u012c\u0097\2\u0671\u0670\3\2\2\2\u0671\u0672\3\2\2\2"+
-		"\u0672\u0678\3\2\2\2\u0673\u0675\5\u012c\u0097\2\u0674\u0676\5\u0128\u0095"+
-		"\2\u0675\u0674\3\2\2\2\u0675\u0676\3\2\2\2\u0676\u0678\3\2\2\2\u0677\u066f"+
-		"\3\2\2\2\u0677\u0673\3\2\2\2\u0678\u0127\3\2\2\2\u0679\u067a\7\b\2\2\u067a"+
-		"\u067b\5\u012a\u0096\2\u067b\u0129\3\2\2\2\u067c\u067d\5\u0206\u0104\2"+
-		"\u067d\u012b\3\2\2\2\u067e\u067f\7\5\2\2\u067f\u0680\5\u012e\u0098\2\u0680"+
-		"\u012d\3\2\2\2\u0681\u0682\t\t\2\2\u0682\u012f\3\2\2\2\u0683\u0684\b\u0099"+
-		"\1\2\u0684\u0686\5\u0132\u009a\2\u0685\u0687\5\u01be\u00e0\2\u0686\u0685"+
-		"\3\2\2\2\u0686\u0687\3\2\2\2\u0687\u0696\3\2\2\2\u0688\u068a\5\u0134\u009b"+
-		"\2\u0689\u068b\5\u01be\u00e0\2\u068a\u0689\3\2\2\2\u068a\u068b\3\2\2\2"+
-		"\u068b\u0696\3\2\2\2\u068c\u0696\5\u0136\u009c\2\u068d\u068f\5\u0138\u009d"+
-		"\2\u068e\u0690\5\u01be\u00e0\2\u068f\u068e\3\2\2\2\u068f\u0690\3\2\2\2"+
-		"\u0690\u0696\3\2\2\2\u0691\u0696\5\u013e\u00a0\2\u0692\u0693\7\65\2\2"+
-		"\u0693\u0696\5\u01b4\u00db\2\u0694\u0696\5\u0146\u00a4\2\u0695\u0683\3"+
-		"\2\2\2\u0695\u0688\3\2\2\2\u0695\u068c\3\2\2\2\u0695\u068d\3\2\2\2\u0695"+
-		"\u0691\3\2\2\2\u0695\u0692\3\2\2\2\u0695\u0694\3\2\2\2\u0696\u069c\3\2"+
-		"\2\2\u0697\u0698\f\4\2\2\u0698\u0699\7*\2\2\u0699\u069b\5\u01b4\u00db"+
-		"\2\u069a\u0697\3\2\2\2\u069b\u069e\3\2\2\2\u069c\u069a\3\2\2\2\u069c\u069d"+
-		"\3\2\2\2\u069d\u0131\3\2\2\2\u069e\u069c\3\2\2\2\u069f\u06a0\7\u008d\2"+
-		"\2\u06a0\u0133\3\2\2\2\u06a1\u06a2\5\u01f8\u00fd\2\u06a2\u0135\3\2\2\2"+
-		"\u06a3\u06a4\7\27\2\2\u06a4\u06a8\5\u0130\u0099\2\u06a5\u06a6\7f\2\2\u06a6"+
-		"\u06a8\5\u0130\u0099\2\u06a7\u06a3\3\2\2\2\u06a7\u06a5\3\2\2\2\u06a8\u0137"+
-		"\3\2\2\2\u06a9\u06ab\7U\2\2\u06aa\u06ac\5\u013a\u009e\2\u06ab\u06aa\3"+
-		"\2\2\2\u06ab\u06ac\3\2\2\2\u06ac\u06ad\3\2\2\2\u06ad\u06ae\7G\2\2\u06ae"+
-		"\u0139\3\2\2\2\u06af\u06b4\5\u013c\u009f\2\u06b0\u06b1\7\23\2\2\u06b1"+
-		"\u06b3\5\u013c\u009f\2\u06b2\u06b0\3\2\2\2\u06b3\u06b6\3\2\2\2\u06b4\u06b2"+
-		"\3\2\2\2\u06b4\u06b5\3\2\2\2\u06b5\u013b\3\2\2\2\u06b6\u06b4\3\2\2\2\u06b7"+
-		"\u06bd\5\u0130\u0099\2\u06b8\u06b9\5\u01f8\u00fd\2\u06b9\u06ba\7@\2\2"+
-		"\u06ba\u06bb\5\u0130\u0099\2\u06bb\u06bd\3\2\2\2\u06bc\u06b7\3\2\2\2\u06bc"+
-		"\u06b8\3\2\2\2\u06bd\u013d\3\2\2\2\u06be\u06c0\5\u01c0\u00e1\2\u06bf\u06be"+
-		"\3\2\2\2\u06bf\u06c0\3\2\2\2\u06c0\u06c2\3\2\2\2\u06c1\u06c3\7\177\2\2"+
-		"\u06c2\u06c1\3\2\2\2\u06c2\u06c3\3\2\2\2\u06c3\u06c4\3\2\2\2\u06c4\u06c6"+
-		"\5\u00dan\2\u06c5\u06c7\5\u0138\u009d\2\u06c6\u06c5\3\2\2\2\u06c6\u06c7"+
-		"\3\2\2\2\u06c7\u013f\3\2\2\2\u06c8\u06cb\5\u0142\u00a2\2\u06c9\u06cb\5"+
-		"\u0144\u00a3\2\u06ca\u06c8\3\2\2\2\u06ca\u06c9\3\2\2\2\u06cb\u0141\3\2"+
-		"\2\2\u06cc\u06cd\7\65\2\2\u06cd\u06ce\5\u01b4\u00db\2\u06ce\u0143\3\2"+
-		"\2\2\u06cf\u06d0\5\u0130\u0099\2\u06d0\u06d1\7*\2\2\u06d1\u06d2\5\u01b4"+
-		"\u00db\2\u06d2\u0145\3\2\2\2\u06d3\u06d4\5\u0154\u00ab\2\u06d4\u0147\3"+
-		"\2\2\2\u06d5\u06d6\7a\2\2\u06d6\u06d8\5\u014a\u00a6\2\u06d7\u06d9\5\u014c"+
-		"\u00a7\2\u06d8\u06d7\3\2\2\2\u06d8\u06d9\3\2\2\2\u06d9\u0149\3\2\2\2\u06da"+
-		"\u06db\5\u01f8\u00fd\2\u06db\u014b\3\2\2\2\u06dc\u06de\7U\2\2\u06dd\u06df"+
-		"\5\u0150\u00a9\2\u06de\u06dd\3\2\2\2\u06de\u06df\3\2\2\2\u06df\u06e0\3"+
-		"\2\2\2\u06e0\u06e1\7G\2\2\u06e1\u014d\3\2\2\2\u06e2\u06e4\5\u0148\u00a5"+
-		"\2\u06e3\u06e2\3\2\2\2\u06e4\u06e5\3\2\2\2\u06e5\u06e3\3\2\2\2\u06e5\u06e6"+
-		"\3\2\2\2\u06e6\u014f\3\2\2\2\u06e7\u06e9\5\u0152\u00aa\2\u06e8\u06e7\3"+
-		"\2\2\2\u06e9\u06ea\3\2\2\2\u06ea\u06e8\3\2\2\2\u06ea\u06eb\3\2\2\2\u06eb"+
-		"\u0151\3\2\2\2\u06ec\u06ee\7U\2\2\u06ed\u06ef\5\u0150\u00a9\2\u06ee\u06ed"+
-		"\3\2\2\2\u06ee\u06ef\3\2\2\2\u06ef\u06f0\3\2\2\2\u06f0\u070e\7G\2\2\u06f1"+
-		"\u06f3\7A\2\2\u06f2\u06f4\5\u0150\u00a9\2\u06f3\u06f2\3\2\2\2\u06f3\u06f4"+
-		"\3\2\2\2\u06f4\u06f5\3\2\2\2\u06f5\u070e\7 \2\2\u06f6\u06f8\7R\2\2\u06f7"+
-		"\u06f9\5\u0150\u00a9\2\u06f8\u06f7\3\2\2\2\u06f8\u06f9\3\2\2\2\u06f9\u06fa"+
-		"\3\2\2\2\u06fa\u070e\7.\2\2\u06fb\u070e\5\u01f8\u00fd\2\u06fc\u070e\5"+
-		"\u0154\u00ab\2\u06fd\u070e\5\u01fc\u00ff\2\u06fe\u070e\5\u0202\u0102\2"+
-		"\u06ff\u070e\5\u01ac\u00d7\2\u0700\u070e\7\u00a2\2\2\u0701\u070e\5T+\2"+
-		"\u0702\u070e\7@\2\2\u0703\u070e\7-\2\2\u0704\u070e\7\23\2\2\u0705\u070e"+
-		"\7D\2\2\u0706\u070e\7\36\2\2\u0707\u070e\7\u008b\2\2\u0708\u070e\7\u0094"+
-		"\2\2\u0709\u070e\7\64\2\2\u070a\u070e\7k\2\2\u070b\u070e\7\u0086\2\2\u070c"+
-		"\u070e\7\61\2\2\u070d\u06ec\3\2\2\2\u070d\u06f1\3\2\2\2\u070d\u06f6\3"+
-		"\2\2\2\u070d\u06fb\3\2\2\2\u070d\u06fc\3\2\2\2\u070d\u06fd\3\2\2\2\u070d"+
-		"\u06fe\3\2\2\2\u070d\u06ff\3\2\2\2\u070d\u0700\3\2\2\2\u070d\u0701\3\2"+
-		"\2\2\u070d\u0702\3\2\2\2\u070d\u0703\3\2\2\2\u070d\u0704\3\2\2\2\u070d"+
-		"\u0705\3\2\2\2\u070d\u0706\3\2\2\2\u070d\u0707\3\2\2\2\u070d\u0708\3\2"+
-		"\2\2\u070d\u0709\3\2\2\2\u070d\u070a\3\2\2\2\u070d\u070b\3\2\2\2\u070d"+
-		"\u070c\3\2\2\2\u070e\u0153\3\2\2\2\u070f\u0711\5\u015a\u00ae\2\u0710\u070f"+
-		"\3\2\2\2\u0710\u0711\3\2\2\2\u0711\u0712\3\2\2\2\u0712\u0716\5\u0156\u00ac"+
-		"\2\u0713\u0715\5\u015c\u00af\2\u0714\u0713\3\2\2\2\u0715\u0718\3\2\2\2"+
-		"\u0716\u0714\3\2\2\2\u0716\u0717\3\2\2\2\u0717\u0155\3\2\2\2\u0718\u0716"+
-		"\3\2\2\2\u0719\u071b\5\u01b0\u00d9\2\u071a\u0719\3\2\2\2\u071a\u071b\3"+
-		"\2\2\2\u071b\u071c\3\2\2\2\u071c\u071e\5\u01a2\u00d2\2\u071d\u071f\7-"+
-		"\2\2\u071e\u071d\3\2\2\2\u071e\u071f\3\2\2\2\u071f\u0722\3\2\2\2\u0720"+
-		"\u0722\5\u0158\u00ad\2\u0721\u071a\3\2\2\2\u0721\u0720\3\2\2\2\u0722\u0157"+
-		"\3\2\2\2\u0723\u0724\7{\2\2\u0724\u0725\5\u01f8\u00fd\2\u0725\u0159\3"+
-		"\2\2\2\u0726\u0728\7w\2\2\u0727\u0729\t\b\2\2\u0728\u0727\3\2\2\2\u0728"+
-		"\u0729\3\2\2\2\u0729\u015b\3\2\2\2\u072a\u072b\5\u01ae\u00d8\2\u072b\u072c"+
-		"\5\u0156\u00ac\2\u072c\u073b\3\2\2\2\u072d\u072f\5\u015e\u00b0\2\u072e"+
-		"\u0730\5\u015a\u00ae\2\u072f\u072e\3\2\2\2\u072f\u0730\3\2\2\2\u0730\u0731"+
-		"\3\2\2\2\u0731\u0732\5\u0156\u00ac\2\u0732\u073b\3\2\2\2\u0733\u0735\5"+
-		"\u0160\u00b1\2\u0734\u0736\5\u015a\u00ae\2\u0735\u0734\3\2\2\2\u0735\u0736"+
-		"\3\2\2\2\u0736\u0737\3\2\2\2\u0737\u0738\5\u0156\u00ac\2\u0738\u073b\3"+
-		"\2\2\2\u0739\u073b\5\u0162\u00b2\2\u073a\u072a\3\2\2\2\u073a\u072d\3\2"+
-		"\2\2\u073a\u0733\3\2\2\2\u073a\u0739\3\2\2\2\u073b\u015d\3\2\2\2\u073c"+
-		"\u073d\7\f\2\2\u073d\u015f\3\2\2\2\u073e\u0740\7x\2\2\u073f\u0741\5\u015a"+
-		"\u00ae\2\u0740\u073f\3\2\2\2\u0740\u0741\3\2\2\2\u0741\u0742\3\2\2\2\u0742"+
-		"\u0743\5\u0154\u00ab\2\u0743\u0744\7@\2\2\u0744\u0161\3\2\2\2\u0745\u0746"+
-		"\7\65\2\2\u0746\u0750\5\u01b4\u00db\2\u0747\u0748\7*\2\2\u0748\u0749\7"+
-		"x\2\2\u0749\u0750\5\u01b4\u00db\2\u074a\u074b\7*\2\2\u074b\u0750\5\u01b4"+
-		"\u00db\2\u074c\u074d\7*\2\2\u074d\u074e\7D\2\2\u074e\u0750\5\u01b4\u00db"+
-		"\2\u074f\u0745\3\2\2\2\u074f\u0747\3\2\2\2\u074f\u074a\3\2\2\2\u074f\u074c"+
-		"\3\2\2\2\u0750\u0163\3\2\2\2\u0751\u0756\5\u01f8\u00fd\2\u0752\u0756\5"+
-		"\u01ac\u00d7\2\u0753\u0756\5\u01fa\u00fe\2\u0754\u0756\5\u01fc\u00ff\2"+
-		"\u0755\u0751\3\2\2\2\u0755\u0752\3\2\2\2\u0755\u0753\3\2\2\2\u0755\u0754"+
-		"\3\2\2\2\u0756\u0758\3\2\2\2\u0757\u0759\5j\66\2\u0758\u0757\3\2\2\2\u0758"+
-		"\u0759\3\2\2\2\u0759\u0764\3\2\2\2\u075a\u0764\5\u0166\u00b4\2\u075b\u0764"+
-		"\5\u0174\u00bb\2\u075c\u0764\5\u0176\u00bc\2\u075d\u0764\5\u017e\u00c0"+
-		"\2\u075e\u0764\5\u0194\u00cb\2\u075f\u0764\5\u0192\u00ca\2\u0760\u0764"+
-		"\5\u019c\u00cf\2\u0761\u0764\5\u019e\u00d0\2\u0762\u0764\5\u01a0\u00d1"+
-		"\2\u0763\u0755\3\2\2\2\u0763\u075a\3\2\2\2\u0763\u075b\3\2\2\2\u0763\u075c"+
-		"\3\2\2\2\u0763\u075d\3\2\2\2\u0763\u075e\3\2\2\2\u0763\u075f\3\2\2\2\u0763"+
-		"\u0760\3\2\2\2\u0763\u0761\3\2\2\2\u0763\u0762\3\2\2\2\u0764\u0165\3\2"+
-		"\2\2\u0765\u076d\5\u0202\u0102\2\u0766\u076d\5\u0168\u00b5\2\u0767\u076d"+
-		"\5\u016e\u00b8\2\u0768\u076d\7^\2\2\u0769\u076d\7+\2\2\u076a\u076d\7\22"+
-		"\2\2\u076b\u076d\7Q\2\2\u076c\u0765\3\2\2\2\u076c\u0766\3\2\2\2\u076c"+
-		"\u0767\3\2\2\2\u076c\u0768\3\2\2\2\u076c\u0769\3\2\2\2\u076c\u076a\3\2"+
-		"\2\2\u076c\u076b\3\2\2\2\u076d\u0167\3\2\2\2\u076e\u0770\7A\2\2\u076f"+
-		"\u0771\5\u016a\u00b6\2\u0770\u076f\3\2\2\2\u0770\u0771\3\2\2\2\u0771\u0772"+
-		"\3\2\2\2\u0772\u0773\7 \2\2\u0773\u0169\3\2\2\2\u0774\u0779\5\u016c\u00b7"+
-		"\2\u0775\u0776\7\23\2\2\u0776\u0778\5\u016c\u00b7\2\u0777\u0775\3\2\2"+
-		"\2\u0778\u077b\3\2\2\2\u0779\u0777\3\2\2\2\u0779\u077a\3\2\2\2\u077a\u077d"+
-		"\3\2\2\2\u077b\u0779\3\2\2\2\u077c\u077e\7\23\2\2\u077d\u077c\3\2\2\2"+
-		"\u077d\u077e\3\2\2\2\u077e\u016b\3\2\2\2\u077f\u0780\5\u0154\u00ab\2\u0780"+
-		"\u016d\3\2\2\2\u0781\u0782\7A\2\2\u0782\u0783\5\u0170\u00b9\2\u0783\u0784"+
-		"\7 \2\2\u0784\u0789\3\2\2\2\u0785\u0786\7A\2\2\u0786\u0787\7@\2\2\u0787"+
-		"\u0789\7 \2\2\u0788\u0781\3\2\2\2\u0788\u0785\3\2\2\2\u0789\u016f\3\2"+
-		"\2\2\u078a\u078f\5\u0172\u00ba\2\u078b\u078c\7\23\2\2\u078c\u078e\5\u0172"+
-		"\u00ba\2\u078d\u078b\3\2\2\2\u078e\u0791\3\2\2\2\u078f\u078d\3\2\2\2\u078f"+
-		"\u0790\3\2\2\2\u0790\u0793\3\2\2\2\u0791\u078f\3\2\2\2\u0792\u0794\7\23"+
-		"\2\2\u0793\u0792\3\2\2\2\u0793\u0794\3\2\2\2\u0794\u0171\3\2\2\2\u0795"+
-		"\u0796\5\u0154\u00ab\2\u0796\u0797\7@\2\2\u0797\u0798\5\u0154\u00ab\2"+
-		"\u0798\u0173\3\2\2\2\u0799\u07a6\7F\2\2\u079a\u079b\7F\2\2\u079b\u079c"+
-		"\7\177\2\2\u079c\u07a6\5\u01f8\u00fd\2\u079d\u079e\7F\2\2\u079e\u079f"+
-		"\7A\2\2\u079f\u07a0\5\u0196\u00cc\2\u07a0\u07a1\7 \2\2\u07a1\u07a6\3\2"+
-		"\2\2\u07a2\u07a3\7F\2\2\u07a3\u07a4\7\177\2\2\u07a4\u07a6\7\30\2\2\u07a5"+
-		"\u0799\3\2\2\2\u07a5\u079a\3\2\2\2\u07a5\u079d\3\2\2\2\u07a5\u07a2\3\2"+
-		"\2\2\u07a6\u0175\3\2\2\2\u07a7\u07ab\5\u0178\u00bd\2\u07a8\u07ab\5\u017a"+
-		"\u00be\2\u07a9\u07ab\5\u017c\u00bf\2\u07aa\u07a7\3\2\2\2\u07aa\u07a8\3"+
-		"\2\2\2\u07aa\u07a9\3\2\2\2\u07ab\u0177\3\2\2\2\u07ac\u07ad\7\u0092\2\2"+
-		"\u07ad\u07ae\7\177\2\2\u07ae\u07af\5\u01f8\u00fd\2\u07af\u0179\3\2\2\2"+
-		"\u07b0\u07b1\7\u0092\2\2\u07b1\u07b2\7A\2\2\u07b2\u07b3\5\u0196\u00cc"+
-		"\2\u07b3\u07b4\7 \2\2\u07b4\u017b\3\2\2\2\u07b5\u07b6\7\u0092\2\2\u07b6"+
-		"\u07b7\7\177\2\2\u07b7\u07b8\7\30\2\2\u07b8\u017d\3\2\2\2\u07b9\u07bb"+
-		"\7R\2\2\u07ba\u07bc\5\u0180\u00c1\2\u07bb\u07ba\3\2\2\2\u07bb\u07bc\3"+
-		"\2\2\2\u07bc\u07be\3\2\2\2\u07bd\u07bf\5\n\6\2\u07be\u07bd\3\2\2\2\u07be"+
-		"\u07bf\3\2\2\2\u07bf\u07c0\3\2\2\2\u07c0\u07c1\7.\2\2\u07c1\u017f\3\2"+
-		"\2\2\u07c2\u07c4\5\u018a\u00c6\2\u07c3\u07c2\3\2\2\2\u07c3\u07c4\3\2\2"+
-		"\2\u07c4\u07c5\3\2\2\2\u07c5\u07c7\5\u0182\u00c2\2\u07c6\u07c8\7\26\2"+
-		"\2\u07c7\u07c6\3\2\2\2\u07c7\u07c8\3\2\2\2\u07c8\u07ca\3\2\2\2\u07c9\u07cb"+
-		"\5\u00b8]\2\u07ca\u07c9\3\2\2\2\u07ca\u07cb\3\2\2\2\u07cb\u07cc\3\2\2"+
-		"\2\u07cc\u07cd\7\u0091\2\2\u07cd\u07d2\3\2\2\2\u07ce\u07cf\5\u018a\u00c6"+
-		"\2\u07cf\u07d0\7\u0091\2\2\u07d0\u07d2\3\2\2\2\u07d1\u07c3\3\2\2\2\u07d1"+
-		"\u07ce\3\2\2\2\u07d2\u0181\3\2\2\2\u07d3\u07d4\7U\2\2\u07d4\u07db\7G\2"+
-		"\2\u07d5\u07d6\7U\2\2\u07d6\u07d7\5\u0184\u00c3\2\u07d7\u07d8\7G\2\2\u07d8"+
-		"\u07db\3\2\2\2\u07d9\u07db\5\u01fe\u0100\2\u07da\u07d3\3\2\2\2\u07da\u07d5"+
-		"\3\2\2\2\u07da\u07d9\3\2\2\2\u07db\u0183\3\2\2\2\u07dc\u07e1\5\u0186\u00c4"+
-		"\2\u07dd\u07de\7\23\2\2\u07de\u07e0\5\u0184\u00c3\2\u07df\u07dd\3\2\2"+
-		"\2\u07e0\u07e3\3\2\2\2\u07e1\u07df\3\2\2\2\u07e1\u07e2\3\2\2\2\u07e2\u0185"+
-		"\3\2\2\2\u07e3\u07e1\3\2\2\2\u07e4\u07e6\5\u0188\u00c5\2\u07e5\u07e7\5"+
-		"\u01be\u00e0\2\u07e6\u07e5\3\2\2\2\u07e6\u07e7\3\2\2\2\u07e7\u07ed\3\2"+
-		"\2\2\u07e8\u07e9\5\u0188\u00c5\2\u07e9\u07ea\5\u01be\u00e0\2\u07ea\u07eb"+
-		"\7\u0086\2\2\u07eb\u07ed\3\2\2\2\u07ec\u07e4\3\2\2\2\u07ec\u07e8\3\2\2"+
-		"\2\u07ed\u0187\3\2\2\2\u07ee\u07f1\5\u01f8\u00fd\2\u07ef\u07f1\7\u008d"+
-		"\2\2\u07f0\u07ee\3\2\2\2\u07f0\u07ef\3\2\2\2\u07f1\u0189\3\2\2\2\u07f2"+
-		"\u07f3\7A\2\2\u07f3\u07f4\5\u018c\u00c7\2\u07f4\u07f5\7 \2\2\u07f5\u018b"+
-		"\3\2\2\2\u07f6\u07fb\5\u018e\u00c8\2\u07f7\u07f8\7\23\2\2\u07f8\u07fa"+
-		"\5\u018e\u00c8\2\u07f9\u07f7\3\2\2\2\u07fa\u07fd\3\2\2\2\u07fb\u07f9\3"+
-		"\2\2\2\u07fb\u07fc\3\2\2\2\u07fc\u018d\3\2\2\2\u07fd\u07fb\3\2\2\2\u07fe"+
-		"\u0800\5\u0190\u00c9\2\u07ff\u07fe\3\2\2\2\u07ff\u0800\3\2\2\2\u0800\u0801"+
-		"\3\2\2\2\u0801\u0802\5\u0154\u00ab\2\u0802\u018f\3\2\2\2\u0803\u0804\t"+
-		"\n\2\2\u0804\u0191\3\2\2\2\u0805\u0806\7\177\2\2\u0806\u0807\5\u01f8\u00fd"+
-		"\2\u0807\u0193\3\2\2\2\u0808\u080a\7U\2\2\u0809\u080b\5\u0196\u00cc\2"+
-		"\u080a\u0809\3\2\2\2\u080a\u080b\3\2\2\2\u080b\u080c\3\2\2\2\u080c\u080d"+
-		"\7G\2\2\u080d\u0195\3\2\2\2\u080e\u0813\5\u0198\u00cd\2\u080f\u0810\7"+
-		"\23\2\2\u0810\u0812\5\u0198\u00cd\2\u0811\u080f\3\2\2\2\u0812\u0815\3"+
-		"\2\2\2\u0813\u0811\3\2\2\2\u0813\u0814\3\2\2\2\u0814\u0197\3\2\2\2\u0815"+
-		"\u0813\3\2\2\2\u0816\u081d\5\u0154\u00ab\2\u0817\u0818\5\u019a\u00ce\2"+
-		"\u0818\u081a\7@\2\2\u0819\u081b\5\u0154\u00ab\2\u081a\u0819\3\2\2\2\u081a"+
-		"\u081b\3\2\2\2\u081b\u081d\3\2\2\2\u081c\u0816\3\2\2\2\u081c\u0817\3\2"+
-		"\2\2\u081d\u0199\3\2\2\2\u081e\u0821\5\u01f8\u00fd\2\u081f\u0821\5\u01fa"+
-		"\u00fe\2\u0820\u081e\3\2\2\2\u0820\u081f\3\2\2\2\u0821\u019b\3\2\2\2\u0822"+
-		"\u0823\7\u008d\2\2\u0823\u019d\3\2\2\2\u0824\u0825\7\\\2\2\u0825\u0826"+
-		"\7U\2\2\u0826\u0827\5\u0154\u00ab\2\u0827\u0828\7G\2\2\u0828\u0830\3\2"+
-		"\2\2\u0829\u082a\7\\\2\2\u082a\u082b\7U\2\2\u082b\u082c\t\13\2\2\u082c"+
-		"\u082d\5\u0154\u00ab\2\u082d\u082e\7G\2\2\u082e\u0830\3\2\2\2\u082f\u0824"+
-		"\3\2\2\2\u082f\u0829\3\2\2\2\u0830\u019f\3\2\2\2\u0831\u0832\7\37\2\2"+
-		"\u0832\u0833\7U\2\2\u0833\u0834\5\u0154\u00ab\2\u0834\u0835\7G\2\2\u0835"+
-		"\u01a1\3\2\2\2\u0836\u0837\b\u00d2\1\2\u0837\u0838\5\u0164\u00b3\2\u0838"+
-		"\u086d\3\2\2\2\u0839\u083a\f\17\2\2\u083a\u086c\5\u01b2\u00da\2\u083b"+
-		"\u083d\f\16\2\2\u083c\u083e\5\u0194\u00cb\2\u083d\u083c\3\2\2\2\u083d"+
-		"\u083e\3\2\2\2\u083e\u083f\3\2\2\2\u083f\u086c\5\u017e\u00c0\2\u0840\u0841"+
-		"\f\r\2\2\u0841\u086c\5\u0194\u00cb\2\u0842\u0843\f\f\2\2\u0843\u0844\7"+
-		"\177\2\2\u0844\u086c\7\30\2\2\u0845\u0846\f\13\2\2\u0846\u0847\7\177\2"+
-		"\2\u0847\u0848\7\30\2\2\u0848\u0849\7U\2\2\u0849\u084a\5\u01a4\u00d3\2"+
-		"\u084a\u084b\7G\2\2\u084b\u086c\3\2\2\2\u084c\u084d\f\n\2\2\u084d\u084e"+
-		"\7\177\2\2\u084e\u086c\7\u009f\2\2\u084f\u0850\f\t\2\2\u0850\u0851\7\177"+
-		"\2\2\u0851\u0853\5\u01f8\u00fd\2\u0852\u0854\5j\66\2\u0853\u0852\3\2\2"+
-		"\2\u0853\u0854\3\2\2\2\u0854\u086c\3\2\2\2\u0855\u0856\f\b\2\2\u0856\u0857"+
-		"\7\177\2\2\u0857\u0858\5\u01f8\u00fd\2\u0858\u0859\7U\2\2\u0859\u085a"+
-		"\5\u01a4\u00d3\2\u085a\u085b\7G\2\2\u085b\u086c\3\2\2\2\u085c\u085d\f"+
-		"\7\2\2\u085d\u085e\7\177\2\2\u085e\u086c\7F\2\2\u085f\u0860\f\6\2\2\u0860"+
-		"\u0861\7\177\2\2\u0861\u086c\7\34\2\2\u0862\u0863\f\5\2\2\u0863\u0864"+
-		"\7A\2\2\u0864\u0865\5\u0196\u00cc\2\u0865\u0866\7 \2\2\u0866\u086c\3\2"+
-		"\2\2\u0867\u0868\f\4\2\2\u0868\u086c\7D\2\2\u0869\u086a\f\3\2\2\u086a"+
-		"\u086c\7x\2\2\u086b\u0839\3\2\2\2\u086b\u083b\3\2\2\2\u086b\u0840\3\2"+
-		"\2\2\u086b\u0842\3\2\2\2\u086b\u0845\3\2\2\2\u086b\u084c\3\2\2\2\u086b"+
-		"\u084f\3\2\2\2\u086b\u0855\3\2\2\2\u086b\u085c\3\2\2\2\u086b\u085f\3\2"+
-		"\2\2\u086b\u0862\3\2\2\2\u086b\u0867\3\2\2\2\u086b\u0869\3\2\2\2\u086c"+
-		"\u086f\3\2\2\2\u086d\u086b\3\2\2\2\u086d\u086e\3\2\2\2\u086e\u01a3\3\2"+
-		"\2\2\u086f\u086d\3\2\2\2\u0870\u0872\5\u01a6\u00d4\2\u0871\u0870\3\2\2"+
-		"\2\u0872\u0873\3\2\2\2\u0873\u0871\3\2\2\2\u0873\u0874\3\2\2\2\u0874\u01a5"+
-		"\3\2\2\2\u0875\u0878\5\u01f8\u00fd\2\u0876\u0878\7\u008d\2\2\u0877\u0875"+
-		"\3\2\2\2\u0877\u0876\3\2\2\2\u0878\u0879\3\2\2\2\u0879\u087a\7@\2\2\u087a"+
+		"\2\u04ca\u04cb\3\2\2\2\u04cb\u00b7\3\2\2\2\u04cc\u04ce\7S\2\2\u04cd\u04cf"+
+		"\5\u014e\u00a8\2\u04ce\u04cd\3\2\2\2\u04ce\u04cf\3\2\2\2\u04cf\u04d0\3"+
+		"\2\2\2\u04d0\u04d1\5\u01b4\u00db\2\u04d1\u00b9\3\2\2\2\u04d2\u04d3\5|"+
+		"?\2\u04d3\u00bb\3\2\2\2\u04d4\u04d5\7!\2\2\u04d5\u04de\7\"\2\2\u04d6\u04d7"+
+		"\7!\2\2\u04d7\u04d9\5\u00be`\2\u04d8\u04da\7T\2\2\u04d9\u04d8\3\2\2\2"+
+		"\u04d9\u04da\3\2\2\2\u04da\u04db\3\2\2\2\u04db\u04dc\7\"\2\2\u04dc\u04de"+
+		"\3\2\2\2\u04dd\u04d4\3\2\2\2\u04dd\u04d6\3\2\2\2\u04de\u00bd\3\2\2\2\u04df"+
+		"\u04e4\5\u00c0a\2\u04e0\u04e1\7\24\2\2\u04e1\u04e3\5\u00c0a\2\u04e2\u04e0"+
+		"\3\2\2\2\u04e3\u04e6\3\2\2\2\u04e4\u04e2\3\2\2\2\u04e4\u04e5\3\2\2\2\u04e5"+
+		"\u00bf\3\2\2\2\u04e6\u04e4\3\2\2\2\u04e7\u04e9\5\u014e\u00a8\2\u04e8\u04e7"+
+		"\3\2\2\2\u04e8\u04e9\3\2\2\2\u04e9\u04eb\3\2\2\2\u04ea\u04ec\5\u00c2b"+
+		"\2\u04eb\u04ea\3\2\2\2\u04eb\u04ec\3\2\2\2\u04ec\u04ed\3\2\2\2\u04ed\u04ee"+
+		"\5\u00c4c\2\u04ee\u04f0\5\u01be\u00e0\2\u04ef\u04f1\5\u00c6d\2\u04f0\u04ef"+
+		"\3\2\2\2\u04f0\u04f1\3\2\2\2\u04f1\u04fd\3\2\2\2\u04f2\u04f4\5\u014e\u00a8"+
+		"\2\u04f3\u04f2\3\2\2\2\u04f3\u04f4\3\2\2\2\u04f4\u04f6\3\2\2\2\u04f5\u04f7"+
+		"\5\u00c2b\2\u04f6\u04f5\3\2\2\2\u04f6\u04f7\3\2\2\2\u04f7\u04f8\3\2\2"+
+		"\2\u04f8\u04f9\5\u00c4c\2\u04f9\u04fa\5\u01be\u00e0\2\u04fa\u04fb\7T\2"+
+		"\2\u04fb\u04fd\3\2\2\2\u04fc\u04e8\3\2\2\2\u04fc\u04f3\3\2\2\2\u04fd\u00c1"+
+		"\3\2\2\2\u04fe\u0502\5\u01f8\u00fd\2\u04ff\u0502\5\u01fa\u00fe\2\u0500"+
+		"\u0502\7U\2\2\u0501\u04fe\3\2\2\2\u0501\u04ff\3\2\2\2\u0501\u0500\3\2"+
+		"\2\2\u0502\u00c3\3\2\2\2\u0503\u0506\5\u01f8\u00fd\2\u0504\u0506\7U\2"+
+		"\2\u0505\u0503\3\2\2\2\u0505\u0504\3\2\2\2\u0506\u00c5\3\2\2\2\u0507\u0508"+
+		"\7M\2\2\u0508\u0509\5\u0154\u00ab\2\u0509\u00c7\3\2\2\2\u050a\u050c\5"+
+		"\u014e\u00a8\2\u050b\u050a\3\2\2\2\u050b\u050c\3\2\2\2\u050c\u050e\3\2"+
+		"\2\2\u050d\u050f\5x=\2\u050e\u050d\3\2\2\2\u050e\u050f\3\2\2\2\u050f\u0510"+
+		"\3\2\2\2\u0510\u0511\5\u00caf\2\u0511\u00c9\3\2\2\2\u0512\u0515\5\u00cc"+
+		"g\2\u0513\u0515\5\u00dco\2\u0514\u0512\3\2\2\2\u0514\u0513\3\2\2\2\u0515"+
+		"\u00cb\3\2\2\2\u0516\u0518\7V\2\2\u0517\u0516\3\2\2\2\u0517\u0518\3\2"+
+		"\2\2\u0518\u0519\3\2\2\2\u0519\u051a\7J\2\2\u051a\u051c\5\u00d8m\2\u051b"+
+		"\u051d\5Z.\2\u051c\u051b\3\2\2\2\u051c\u051d\3\2\2\2\u051d\u051f\3\2\2"+
+		"\2\u051e\u0520\5\u01d6\u00ec\2\u051f\u051e\3\2\2\2\u051f\u0520\3\2\2\2"+
+		"\u0520\u0521\3\2\2\2\u0521\u0523\7\22\2\2\u0522\u0524\5\u00ceh\2\u0523"+
+		"\u0522\3\2\2\2\u0523\u0524\3\2\2\2\u0524\u0525\3\2\2\2\u0525\u0526\7\23"+
+		"\2\2\u0526\u00cd\3\2\2\2\u0527\u0529\5\u00d0i\2\u0528\u0527\3\2\2\2\u0529"+
+		"\u052a\3\2\2\2\u052a\u0528\3\2\2\2\u052a\u052b\3\2\2\2\u052b\u00cf\3\2"+
+		"\2\2\u052c\u0532\5p9\2\u052d\u052f\5\u00d2j\2\u052e\u0530\7\3\2\2\u052f"+
+		"\u052e\3\2\2\2\u052f\u0530\3\2\2\2\u0530\u0532\3\2\2\2\u0531\u052c\3\2"+
+		"\2\2\u0531\u052d\3\2\2\2\u0532\u00d1\3\2\2\2\u0533\u0535\5\u014e\u00a8"+
+		"\2\u0534\u0533\3\2\2\2\u0534\u0535\3\2\2\2\u0535\u0537\3\2\2\2\u0536\u0538"+
+		"\7V\2\2\u0537\u0536\3\2\2\2\u0537\u0538\3\2\2\2\u0538\u0539\3\2\2\2\u0539"+
+		"\u053a\7\n\2\2\u053a\u053b\5\u00d4k\2\u053b\u00d3\3\2\2\2\u053c\u0541"+
+		"\5\u00d6l\2\u053d\u053e\7\24\2\2\u053e\u0540\5\u00d6l\2\u053f\u053d\3"+
+		"\2\2\2\u0540\u0543\3\2\2\2\u0541\u053f\3\2\2\2\u0541\u0542\3\2\2\2\u0542"+
+		"\u00d5\3\2\2\2\u0543\u0541\3\2\2\2\u0544\u0546\5\u00dan\2\u0545\u0547"+
+		"\5\u01c4\u00e3\2\u0546\u0545\3\2\2\2\u0546\u0547\3\2\2\2\u0547\u00d7\3"+
+		"\2\2\2\u0548\u0549\5\u01f8\u00fd\2\u0549\u00d9\3\2\2\2\u054a\u054b\5\u01f8"+
+		"\u00fd\2\u054b\u00db\3\2\2\2\u054c\u054d\7J\2\2\u054d\u054f\5\u00d8m\2"+
+		"\u054e\u0550\5Z.\2\u054f\u054e\3\2\2\2\u054f\u0550\3\2\2\2\u0550\u0552"+
+		"\3\2\2\2\u0551\u0553\5\u01d6\u00ec\2\u0552\u0551\3\2\2\2\u0552\u0553\3"+
+		"\2\2\2\u0553\u0554\3\2\2\2\u0554\u0556\7\22\2\2\u0555\u0557\5\u00dep\2"+
+		"\u0556\u0555\3\2\2\2\u0556\u0557\3\2\2\2\u0557\u0558\3\2\2\2\u0558\u0559"+
+		"\7\23\2\2\u0559\u00dd\3\2\2\2\u055a\u055c\5\u00e0q\2\u055b\u055a\3\2\2"+
+		"\2\u055c\u055d\3\2\2\2\u055d\u055b\3\2\2\2\u055d\u055e\3\2\2\2\u055e\u00df"+
+		"\3\2\2\2\u055f\u0562\5p9\2\u0560\u0562\5\u00e2r\2\u0561\u055f\3\2\2\2"+
+		"\u0561\u0560\3\2\2\2\u0562\u00e1\3\2\2\2\u0563\u0565\5\u014e\u00a8\2\u0564"+
+		"\u0563\3\2\2\2\u0564\u0565\3\2\2\2\u0565\u0566\3\2\2\2\u0566\u0567\7\n"+
+		"\2\2\u0567\u0568\5\u00e4s\2\u0568\u00e3\3\2\2\2\u0569\u056e\5\u00e6t\2"+
+		"\u056a\u056b\7\24\2\2\u056b\u056d\5\u00e6t\2\u056c\u056a\3\2\2\2\u056d"+
+		"\u0570\3\2\2\2\u056e\u056c\3\2\2\2\u056e\u056f\3\2\2\2\u056f\u00e5\3\2"+
+		"\2\2\u0570\u056e\3\2\2\2\u0571\u0573\5\u00dan\2\u0572\u0574\5\u00e8u\2"+
+		"\u0573\u0572\3\2\2\2\u0573\u0574\3\2\2\2\u0574\u00e7\3\2\2\2\u0575\u0576"+
+		"\7M\2\2\u0576\u0577\5\u0202\u0102\2\u0577\u00e9\3\2\2\2\u0578\u057a\5"+
+		"\u014e\u00a8\2\u0579\u0578\3\2\2\2\u0579\u057a\3\2\2\2\u057a\u057c\3\2"+
+		"\2\2\u057b\u057d\5x=\2\u057c\u057b\3\2\2\2\u057c\u057d\3\2\2\2\u057d\u057e"+
+		"\3\2\2\2\u057e\u057f\7I\2\2\u057f\u0581\5\u00ecw\2\u0580\u0582\5Z.\2\u0581"+
+		"\u0580\3\2\2\2\u0581\u0582\3\2\2\2\u0582\u0584\3\2\2\2\u0583\u0585\5\u01d6"+
+		"\u00ec\2\u0584\u0583\3\2\2\2\u0584\u0585\3\2\2\2\u0585\u0586\3\2\2\2\u0586"+
+		"\u0587\5\u00eex\2\u0587\u00eb\3\2\2\2\u0588\u0589\5\u01f8\u00fd\2\u0589"+
+		"\u00ed\3\2\2\2\u058a\u058c\7\22\2\2\u058b\u058d\5r:\2\u058c\u058b\3\2"+
+		"\2\2\u058c\u058d\3\2\2\2\u058d\u058e\3\2\2\2\u058e\u058f\7\23\2\2\u058f"+
+		"\u00ef\3\2\2\2\u0590\u0592\5\u014e\u00a8\2\u0591\u0590\3\2\2\2\u0591\u0592"+
+		"\3\2\2\2\u0592\u0594\3\2\2\2\u0593\u0595\5\u00f2z\2\u0594\u0593\3\2\2"+
+		"\2\u0594\u0595\3\2\2\2\u0595\u0596\3\2\2\2\u0596\u0597\7/\2\2\u0597\u0599"+
+		"\5\u00f4{\2\u0598\u059a\5Z.\2\u0599\u0598\3\2\2\2\u0599\u059a\3\2\2\2"+
+		"\u059a\u059c\3\2\2\2\u059b\u059d\5\u01d6\u00ec\2\u059c\u059b\3\2\2\2\u059c"+
+		"\u059d\3\2\2\2\u059d\u059e\3\2\2\2\u059e\u059f\5\u00f6|\2\u059f\u00f1"+
+		"\3\2\2\2\u05a0\u05a2\5x=\2\u05a1\u05a3\7\62\2\2\u05a2\u05a1\3\2\2\2\u05a2"+
+		"\u05a3\3\2\2\2\u05a3\u05a9\3\2\2\2\u05a4\u05a6\7\62\2\2\u05a5\u05a7\5"+
+		"x=\2\u05a6\u05a5\3\2\2\2\u05a6\u05a7\3\2\2\2\u05a7\u05a9\3\2\2\2\u05a8"+
+		"\u05a0\3\2\2\2\u05a8\u05a4\3\2\2\2\u05a9\u00f3\3\2\2\2\u05aa\u05ab\5\u01f8"+
+		"\u00fd\2\u05ab\u00f5\3\2\2\2\u05ac\u05ae\7\22\2\2\u05ad\u05af\5r:\2\u05ae"+
+		"\u05ad\3\2\2\2\u05ae\u05af\3\2\2\2\u05af\u05b0\3\2\2\2\u05b0\u05b1\7\23"+
+		"\2\2\u05b1\u00f7\3\2\2\2\u05b2\u05b4\5\u014e\u00a8\2\u05b3\u05b2\3\2\2"+
+		"\2\u05b3\u05b4\3\2\2\2\u05b4\u05b6\3\2\2\2\u05b5\u05b7\5x=\2\u05b6\u05b5"+
+		"\3\2\2\2\u05b6\u05b7\3\2\2\2\u05b7\u05b8\3\2\2\2\u05b8\u05b9\7K\2\2\u05b9"+
+		"\u05bb\5\u00fa~\2\u05ba\u05bc\5\u01d6\u00ec\2\u05bb\u05ba\3\2\2\2\u05bb"+
+		"\u05bc\3\2\2\2\u05bc\u05bd\3\2\2\2\u05bd\u05be\5\u00fc\177\2\u05be\u00f9"+
+		"\3\2\2\2\u05bf\u05c0\5\u01f8\u00fd\2\u05c0\u00fb\3\2\2\2\u05c1\u05c3\7"+
+		"\22\2\2\u05c2\u05c4\5\u0100\u0081\2\u05c3\u05c2\3\2\2\2\u05c3\u05c4\3"+
+		"\2\2\2\u05c4\u05c5\3\2\2\2\u05c5\u05c6\7\23\2\2\u05c6\u00fd\3\2\2\2\u05c7"+
+		"\u05c9\5\u0102\u0082\2\u05c8\u05ca\7\3\2\2\u05c9\u05c8\3\2\2\2\u05c9\u05ca"+
+		"\3\2\2\2\u05ca\u05dc\3\2\2\2\u05cb\u05cd\5\u0104\u0083\2\u05cc\u05ce\7"+
+		"\3\2\2\u05cd\u05cc\3\2\2\2\u05cd\u05ce\3\2\2\2\u05ce\u05dc\3\2\2\2\u05cf"+
+		"\u05d1\5\u0106\u0084\2\u05d0\u05d2\7\3\2\2\u05d1\u05d0\3\2\2\2\u05d1\u05d2"+
+		"\3\2\2\2\u05d2\u05dc\3\2\2\2\u05d3\u05d5\5\u0108\u0085\2\u05d4\u05d6\7"+
+		"\3\2\2\u05d5\u05d4\3\2\2\2\u05d5\u05d6\3\2\2\2\u05d6\u05dc\3\2\2\2\u05d7"+
+		"\u05d9\5\u010a\u0086\2\u05d8\u05da\7\3\2\2\u05d9\u05d8\3\2\2\2\u05d9\u05da"+
+		"\3\2\2\2\u05da\u05dc\3\2\2\2\u05db\u05c7\3\2\2\2\u05db\u05cb\3\2\2\2\u05db"+
+		"\u05cf\3\2\2\2\u05db\u05d3\3\2\2\2\u05db\u05d7\3\2\2\2\u05dc\u00ff\3\2"+
+		"\2\2\u05dd\u05df\5\u00fe\u0080\2\u05de\u05dd\3\2\2\2\u05df\u05e0\3\2\2"+
+		"\2\u05e0\u05de\3\2\2\2\u05e0\u05e1\3\2\2\2\u05e1\u0101\3\2\2\2\u05e2\u05e3"+
+		"\5\u0090I\2\u05e3\u05e4\5\u0092J\2\u05e4\u05e5\5\u01be\u00e0\2\u05e5\u05e6"+
+		"\5\u009cO\2\u05e6\u0103\3\2\2\2\u05e7\u05e8\5\u00b2Z\2\u05e8\u05ea\5\u00b4"+
+		"[\2\u05e9\u05eb\5Z.\2\u05ea\u05e9\3\2\2\2\u05ea\u05eb\3\2\2\2\u05eb\u05ec"+
+		"\3\2\2\2\u05ec\u05ed\5\u00b6\\\2\u05ed\u0105\3\2\2\2\u05ee\u05f0\5\u010e"+
+		"\u0088\2\u05ef\u05f1\5Z.\2\u05f0\u05ef\3\2\2\2\u05f0\u05f1\3\2\2\2\u05f1"+
+		"\u05f2\3\2\2\2\u05f2\u05f4\5\u00bc_\2\u05f3\u05f5\t\7\2\2\u05f4\u05f3"+
+		"\3\2\2\2\u05f4\u05f5\3\2\2\2\u05f5\u0107\3\2\2\2\u05f6\u05f7\5\u011a\u008e"+
+		"\2\u05f7\u05f8\5\u011c\u008f\2\u05f8\u05f9\5\u009cO\2\u05f9\u0109\3\2"+
+		"\2\2\u05fa\u05fc\5\u014e\u00a8\2\u05fb\u05fa\3\2\2\2\u05fb\u05fc\3\2\2"+
+		"\2\u05fc\u05fe\3\2\2\2\u05fd\u05ff\5x=\2\u05fe\u05fd\3\2\2\2\u05fe\u05ff"+
+		"\3\2\2\2\u05ff\u0600\3\2\2\2\u0600\u0601\7W\2\2\u0601\u0603\5\u00acW\2"+
+		"\u0602\u0604\5\u01d6\u00ec\2\u0603\u0602\3\2\2\2\u0603\u0604\3\2\2\2\u0604"+
+		"\u0606\3\2\2\2\u0605\u0607\5\u00aeX\2\u0606\u0605\3\2\2\2\u0606\u0607"+
+		"\3\2\2\2\u0607\u010b\3\2\2\2\u0608\u060a\5\u010e\u0088\2\u0609\u060b\5"+
+		"Z.\2\u060a\u0609\3\2\2\2\u060a\u060b\3\2\2\2\u060b\u060c\3\2\2\2\u060c"+
+		"\u060e\5\u00bc_\2\u060d\u060f\t\7\2\2\u060e\u060d\3\2\2\2\u060e\u060f"+
+		"\3\2\2\2\u060f\u0610\3\2\2\2\u0610\u0611\5\u0110\u0089\2\u0611\u010d\3"+
+		"\2\2\2\u0612\u0614\5\u014e\u00a8\2\u0613\u0612\3\2\2\2\u0613\u0614\3\2"+
+		"\2\2\u0614\u0616\3\2\2\2\u0615\u0617\5t;\2\u0616\u0615\3\2\2\2\u0616\u0617"+
+		"\3\2\2\2\u0617\u0618\3\2\2\2\u0618\u061a\7X\2\2\u0619\u061b\t\b\2\2\u061a"+
+		"\u0619\3\2\2\2\u061a\u061b\3\2\2\2\u061b\u010f\3\2\2\2\u061c\u061d\5|"+
+		"?\2\u061d\u0111\3\2\2\2\u061e\u0620\5\u014e\u00a8\2\u061f\u061e\3\2\2"+
+		"\2\u061f\u0620\3\2\2\2\u0620\u0621\3\2\2\2\u0621\u0622\7[\2\2\u0622\u0623"+
+		"\5|?\2\u0623\u0113\3\2\2\2\u0624\u0626\5\u014e\u00a8\2\u0625\u0624\3\2"+
+		"\2\2\u0625\u0626\3\2\2\2\u0626\u0628\3\2\2\2\u0627\u0629\5x=\2\u0628\u0627"+
+		"\3\2\2\2\u0628\u0629\3\2\2\2\u0629\u062a\3\2\2\2\u062a\u062b\7\\\2\2\u062b"+
+		"\u062e\5\u01c0\u00e1\2\u062c\u062f\5`\61\2\u062d\u062f\5\u01d6\u00ec\2"+
+		"\u062e\u062c\3\2\2\2\u062e\u062d\3\2\2\2\u062e\u062f\3\2\2\2\u062f\u0630"+
+		"\3\2\2\2\u0630\u0631\5\u0116\u008c\2\u0631\u0115\3\2\2\2\u0632\u0634\7"+
+		"\22\2\2\u0633\u0635\5r:\2\u0634\u0633\3\2\2\2\u0634\u0635\3\2\2\2\u0635"+
+		"\u0636\3\2\2\2\u0636\u0637\7\23\2\2\u0637\u0117\3\2\2\2\u0638\u0639\5"+
+		"\u011a\u008e\2\u0639\u063a\5\u011c\u008f\2\u063a\u063b\5\u0094K\2\u063b"+
+		"\u0645\3\2\2\2\u063c\u063d\5\u011a\u008e\2\u063d\u063e\5\u011c\u008f\2"+
+		"\u063e\u063f\5\u009cO\2\u063f\u0645\3\2\2\2\u0640\u0641\5\u011a\u008e"+
+		"\2\u0641\u0642\5\u011c\u008f\2\u0642\u0643\5|?\2\u0643\u0645\3\2\2\2\u0644"+
+		"\u0638\3\2\2\2\u0644\u063c\3\2\2\2\u0644\u0640\3\2\2\2\u0645\u0119\3\2"+
+		"\2\2\u0646\u0648\5\u014e\u00a8\2\u0647\u0646\3\2\2\2\u0647\u0648\3\2\2"+
+		"\2\u0648\u064a\3\2\2\2\u0649\u064b\5t;\2\u064a\u0649\3\2\2\2\u064a\u064b"+
+		"\3\2\2\2\u064b\u064c\3\2\2\2\u064c\u064d\7]\2\2\u064d\u064e\5\u00bc_\2"+
+		"\u064e\u011b\3\2\2\2\u064f\u0651\7S\2\2\u0650\u0652\5\u014e\u00a8\2\u0651"+
+		"\u0650\3\2\2\2\u0651\u0652\3\2\2\2\u0652\u0653\3\2\2\2\u0653\u0654\5\u01b4"+
+		"\u00db\2\u0654\u011d\3\2\2\2\u0655\u0659\5\u0120\u0091\2\u0656\u0659\5"+
+		"\u0122\u0092\2\u0657\u0659\5\u0124\u0093\2\u0658\u0655\3\2\2\2\u0658\u0656"+
+		"\3\2\2\2\u0658\u0657\3\2\2\2\u0659\u011f\3\2\2\2\u065a\u065b\7:\2\2\u065b"+
+		"\u065c\7^\2\2\u065c\u065d\5\u01ac\u00d7\2\u065d\u065e\7\22\2\2\u065e\u065f"+
+		"\7\23\2\2\u065f\u0121\3\2\2\2\u0660\u0661\79\2\2\u0661\u0662\7^\2\2\u0662"+
+		"\u0663\5\u01ac\u00d7\2\u0663\u0664\7\22\2\2\u0664\u0665\7\23\2\2\u0665"+
+		"\u0123\3\2\2\2\u0666\u0667\7\63\2\2\u0667\u0668\7^\2\2\u0668\u0669\5\u01ac"+
+		"\u00d7\2\u0669\u066b\7\22\2\2\u066a\u066c\5\u0126\u0094\2\u066b\u066a"+
+		"\3\2\2\2\u066b\u066c\3\2\2\2\u066c\u066d\3\2\2\2\u066d\u066e\7\23\2\2"+
+		"\u066e\u0125\3\2\2\2\u066f\u0671\5\u0128\u0095\2\u0670\u0672\5\u012c\u0097"+
+		"\2\u0671\u0670\3\2\2\2\u0671\u0672\3\2\2\2\u0672\u0678\3\2\2\2\u0673\u0675"+
+		"\5\u012c\u0097\2\u0674\u0676\5\u0128\u0095\2\u0675\u0674\3\2\2\2\u0675"+
+		"\u0676\3\2\2\2\u0676\u0678\3\2\2\2\u0677\u066f\3\2\2\2\u0677\u0673\3\2"+
+		"\2\2\u0678\u0127\3\2\2\2\u0679\u067a\7_\2\2\u067a\u067b\5\u012a\u0096"+
+		"\2\u067b\u0129\3\2\2\2\u067c\u067d\5\u0206\u0104\2\u067d\u012b\3\2\2\2"+
+		"\u067e\u067f\7`\2\2\u067f\u0680\5\u012e\u0098\2\u0680\u012d\3\2\2\2\u0681"+
+		"\u0682\t\t\2\2\u0682\u012f\3\2\2\2\u0683\u0684\b\u0099\1\2\u0684\u0686"+
+		"\5\u0132\u009a\2\u0685\u0687\5\u01be\u00e0\2\u0686\u0685\3\2\2\2\u0686"+
+		"\u0687\3\2\2\2\u0687\u0696\3\2\2\2\u0688\u068a\5\u0134\u009b\2\u0689\u068b"+
+		"\5\u01be\u00e0\2\u068a\u0689\3\2\2\2\u068a\u068b\3\2\2\2\u068b\u0696\3"+
+		"\2\2\2\u068c\u0696\5\u0136\u009c\2\u068d\u068f\5\u0138\u009d\2\u068e\u0690"+
+		"\5\u01be\u00e0\2\u068f\u068e\3\2\2\2\u068f\u0690\3\2\2\2\u0690\u0696\3"+
+		"\2\2\2\u0691\u0696\5\u013e\u00a0\2\u0692\u0693\7d\2\2\u0693\u0696\5\u01b4"+
+		"\u00db\2\u0694\u0696\5\u0146\u00a4\2\u0695\u0683\3\2\2\2\u0695\u0688\3"+
+		"\2\2\2\u0695\u068c\3\2\2\2\u0695\u068d\3\2\2\2\u0695\u0691\3\2\2\2\u0695"+
+		"\u0692\3\2\2\2\u0695\u0694\3\2\2\2\u0696\u069c\3\2\2\2\u0697\u0698\f\4"+
+		"\2\2\u0698\u0699\7e\2\2\u0699\u069b\5\u01b4\u00db\2\u069a\u0697\3\2\2"+
+		"\2\u069b\u069e\3\2\2\2\u069c\u069a\3\2\2\2\u069c\u069d\3\2\2\2\u069d\u0131"+
+		"\3\2\2\2\u069e\u069c\3\2\2\2\u069f\u06a0\7U\2\2\u06a0\u0133\3\2\2\2\u06a1"+
+		"\u06a2\5\u01f8\u00fd\2\u06a2\u0135\3\2\2\2\u06a3\u06a4\7\36\2\2\u06a4"+
+		"\u06a8\5\u0130\u0099\2\u06a5\u06a6\7\35\2\2\u06a6\u06a8\5\u0130\u0099"+
+		"\2\u06a7\u06a3\3\2\2\2\u06a7\u06a5\3\2\2\2\u06a8\u0137\3\2\2\2\u06a9\u06ab"+
+		"\7!\2\2\u06aa\u06ac\5\u013a\u009e\2\u06ab\u06aa\3\2\2\2\u06ab\u06ac\3"+
+		"\2\2\2\u06ac\u06ad\3\2\2\2\u06ad\u06ae\7\"\2\2\u06ae\u0139\3\2\2\2\u06af"+
+		"\u06b4\5\u013c\u009f\2\u06b0\u06b1\7\24\2\2\u06b1\u06b3\5\u013c\u009f"+
+		"\2\u06b2\u06b0\3\2\2\2\u06b3\u06b6\3\2\2\2\u06b4\u06b2\3\2\2\2\u06b4\u06b5"+
+		"\3\2\2\2\u06b5\u013b\3\2\2\2\u06b6\u06b4\3\2\2\2\u06b7\u06bd\5\u0130\u0099"+
+		"\2\u06b8\u06b9\5\u01f8\u00fd\2\u06b9\u06ba\7\4\2\2\u06ba\u06bb\5\u0130"+
+		"\u0099\2\u06bb\u06bd\3\2\2\2\u06bc\u06b7\3\2\2\2\u06bc\u06b8\3\2\2\2\u06bd"+
+		"\u013d\3\2\2\2\u06be\u06c0\5\u01c0\u00e1\2\u06bf\u06be\3\2\2\2\u06bf\u06c0"+
+		"\3\2\2\2\u06c0\u06c2\3\2\2\2\u06c1\u06c3\7\5\2\2\u06c2\u06c1\3\2\2\2\u06c2"+
+		"\u06c3\3\2\2\2\u06c3\u06c4\3\2\2\2\u06c4\u06c6\5\u00dan\2\u06c5\u06c7"+
+		"\5\u0138\u009d\2\u06c6\u06c5\3\2\2\2\u06c6\u06c7\3\2\2\2\u06c7\u013f\3"+
+		"\2\2\2\u06c8\u06cb\5\u0142\u00a2\2\u06c9\u06cb\5\u0144\u00a3\2\u06ca\u06c8"+
+		"\3\2\2\2\u06ca\u06c9\3\2\2\2\u06cb\u0141\3\2\2\2\u06cc\u06cd\7d\2\2\u06cd"+
+		"\u06ce\5\u01b4\u00db\2\u06ce\u0143\3\2\2\2\u06cf\u06d0\5\u0130\u0099\2"+
+		"\u06d0\u06d1\7e\2\2\u06d1\u06d2\5\u01b4\u00db\2\u06d2\u0145\3\2\2\2\u06d3"+
+		"\u06d4\5\u0154\u00ab\2\u06d4\u0147\3\2\2\2\u06d5\u06d6\7f\2\2\u06d6\u06d8"+
+		"\5\u014a\u00a6\2\u06d7\u06d9\5\u014c\u00a7\2\u06d8\u06d7\3\2\2\2\u06d8"+
+		"\u06d9\3\2\2\2\u06d9\u0149\3\2\2\2\u06da\u06db\5\u01f8\u00fd\2\u06db\u014b"+
+		"\3\2\2\2\u06dc\u06de\7!\2\2\u06dd\u06df\5\u0150\u00a9\2\u06de\u06dd\3"+
+		"\2\2\2\u06de\u06df\3\2\2\2\u06df\u06e0\3\2\2\2\u06e0\u06e1\7\"\2\2\u06e1"+
+		"\u014d\3\2\2\2\u06e2\u06e4\5\u0148\u00a5\2\u06e3\u06e2\3\2\2\2\u06e4\u06e5"+
+		"\3\2\2\2\u06e5\u06e3\3\2\2\2\u06e5\u06e6\3\2\2\2\u06e6\u014f\3\2\2\2\u06e7"+
+		"\u06e9\5\u0152\u00aa\2\u06e8\u06e7\3\2\2\2\u06e9\u06ea\3\2\2\2\u06ea\u06e8"+
+		"\3\2\2\2\u06ea\u06eb\3\2\2\2\u06eb\u0151\3\2\2\2\u06ec\u06ee\7!\2\2\u06ed"+
+		"\u06ef\5\u0150\u00a9\2\u06ee\u06ed\3\2\2\2\u06ee\u06ef\3\2\2\2\u06ef\u06f0"+
+		"\3\2\2\2\u06f0\u070e\7\"\2\2\u06f1\u06f3\7g\2\2\u06f2\u06f4\5\u0150\u00a9"+
+		"\2\u06f3\u06f2\3\2\2\2\u06f3\u06f4\3\2\2\2\u06f4\u06f5\3\2\2\2\u06f5\u070e"+
+		"\7h\2\2\u06f6\u06f8\7\22\2\2\u06f7\u06f9\5\u0150\u00a9\2\u06f8\u06f7\3"+
+		"\2\2\2\u06f8\u06f9\3\2\2\2\u06f9\u06fa\3\2\2\2\u06fa\u070e\7\23\2\2\u06fb"+
+		"\u070e\5\u01f8\u00fd\2\u06fc\u070e\5\u0154\u00ab\2\u06fd\u070e\5\u01fc"+
+		"\u00ff\2\u06fe\u070e\5\u0202\u0102\2\u06ff\u070e\5\u01ac\u00d7\2\u0700"+
+		"\u070e\7\u00a2\2\2\u0701\u070e\5T+\2\u0702\u070e\7\4\2\2\u0703\u070e\7"+
+		"\3\2\2\u0704\u070e\7\24\2\2\u0705\u070e\7Z\2\2\u0706\u070e\7,\2\2\u0707"+
+		"\u070e\7-\2\2\u0708\u070e\7i\2\2\u0709\u070e\7j\2\2\u070a\u070e\7k\2\2"+
+		"\u070b\u070e\7T\2\2\u070c\u070e\7l\2\2\u070d\u06ec\3\2\2\2\u070d\u06f1"+
+		"\3\2\2\2\u070d\u06f6\3\2\2\2\u070d\u06fb\3\2\2\2\u070d\u06fc\3\2\2\2\u070d"+
+		"\u06fd\3\2\2\2\u070d\u06fe\3\2\2\2\u070d\u06ff\3\2\2\2\u070d\u0700\3\2"+
+		"\2\2\u070d\u0701\3\2\2\2\u070d\u0702\3\2\2\2\u070d\u0703\3\2\2\2\u070d"+
+		"\u0704\3\2\2\2\u070d\u0705\3\2\2\2\u070d\u0706\3\2\2\2\u070d\u0707\3\2"+
+		"\2\2\u070d\u0708\3\2\2\2\u070d\u0709\3\2\2\2\u070d\u070a\3\2\2\2\u070d"+
+		"\u070b\3\2\2\2\u070d\u070c\3\2\2\2\u070e\u0153\3\2\2\2\u070f\u0711\5\u015a"+
+		"\u00ae\2\u0710\u070f\3\2\2\2\u0710\u0711\3\2\2\2\u0711\u0712\3\2\2\2\u0712"+
+		"\u0716\5\u0156\u00ac\2\u0713\u0715\5\u015c\u00af\2\u0714\u0713\3\2\2\2"+
+		"\u0715\u0718\3\2\2\2\u0716\u0714\3\2\2\2\u0716\u0717\3\2\2\2\u0717\u0155"+
+		"\3\2\2\2\u0718\u0716\3\2\2\2\u0719\u071b\5\u01b0\u00d9\2\u071a\u0719\3"+
+		"\2\2\2\u071a\u071b\3\2\2\2\u071b\u071c\3\2\2\2\u071c\u071e\5\u01a2\u00d2"+
+		"\2\u071d\u071f\7\3\2\2\u071e\u071d\3\2\2\2\u071e\u071f\3\2\2\2\u071f\u0722"+
+		"\3\2\2\2\u0720\u0722\5\u0158\u00ad\2\u0721\u071a\3\2\2\2\u0721\u0720\3"+
+		"\2\2\2\u0722\u0157\3\2\2\2\u0723\u0724\7m\2\2\u0724\u0725\5\u01f8\u00fd"+
+		"\2\u0725\u0159\3\2\2\2\u0726\u0728\7n\2\2\u0727\u0729\t\b\2\2\u0728\u0727"+
+		"\3\2\2\2\u0728\u0729\3\2\2\2\u0729\u015b\3\2\2\2\u072a\u072b\5\u01ae\u00d8"+
+		"\2\u072b\u072c\5\u0156\u00ac\2\u072c\u073b\3\2\2\2\u072d\u072f\5\u015e"+
+		"\u00b0\2\u072e\u0730\5\u015a\u00ae\2\u072f\u072e\3\2\2\2\u072f\u0730\3"+
+		"\2\2\2\u0730\u0731\3\2\2\2\u0731\u0732\5\u0156\u00ac\2\u0732\u073b\3\2"+
+		"\2\2\u0733\u0735\5\u0160\u00b1\2\u0734\u0736\5\u015a\u00ae\2\u0735\u0734"+
+		"\3\2\2\2\u0735\u0736\3\2\2\2\u0736\u0737\3\2\2\2\u0737\u0738\5\u0156\u00ac"+
+		"\2\u0738\u073b\3\2\2\2\u0739\u073b\5\u0162\u00b2\2\u073a\u072a\3\2\2\2"+
+		"\u073a\u072d\3\2\2\2\u073a\u0733\3\2\2\2\u073a\u0739\3\2\2\2\u073b\u015d"+
+		"\3\2\2\2\u073c\u073d\7M\2\2\u073d\u015f\3\2\2\2\u073e\u0740\7Y\2\2\u073f"+
+		"\u0741\5\u015a\u00ae\2\u0740\u073f\3\2\2\2\u0740\u0741\3\2\2\2\u0741\u0742"+
+		"\3\2\2\2\u0742\u0743\5\u0154\u00ab\2\u0743\u0744\7\4\2\2\u0744\u0161\3"+
+		"\2\2\2\u0745\u0746\7d\2\2\u0746\u0750\5\u01b4\u00db\2\u0747\u0748\7e\2"+
+		"\2\u0748\u0749\7Y\2\2\u0749\u0750\5\u01b4\u00db\2\u074a\u074b\7e\2\2\u074b"+
+		"\u0750\5\u01b4\u00db\2\u074c\u074d\7e\2\2\u074d\u074e\7Z\2\2\u074e\u0750"+
+		"\5\u01b4\u00db\2\u074f\u0745\3\2\2\2\u074f\u0747\3\2\2\2\u074f\u074a\3"+
+		"\2\2\2\u074f\u074c\3\2\2\2\u0750\u0163\3\2\2\2\u0751\u0756\5\u01f8\u00fd"+
+		"\2\u0752\u0756\5\u01ac\u00d7\2\u0753\u0756\5\u01fa\u00fe\2\u0754\u0756"+
+		"\5\u01fc\u00ff\2\u0755\u0751\3\2\2\2\u0755\u0752\3\2\2\2\u0755\u0753\3"+
+		"\2\2\2\u0755\u0754\3\2\2\2\u0756\u0758\3\2\2\2\u0757\u0759\5j\66\2\u0758"+
+		"\u0757\3\2\2\2\u0758\u0759\3\2\2\2\u0759\u0764\3\2\2\2\u075a\u0764\5\u0166"+
+		"\u00b4\2\u075b\u0764\5\u0174\u00bb\2\u075c\u0764\5\u0176\u00bc\2\u075d"+
+		"\u0764\5\u017e\u00c0\2\u075e\u0764\5\u0194\u00cb\2\u075f\u0764\5\u0192"+
+		"\u00ca\2\u0760\u0764\5\u019c\u00cf\2\u0761\u0764\5\u019e\u00d0\2\u0762"+
+		"\u0764\5\u01a0\u00d1\2\u0763\u0755\3\2\2\2\u0763\u075a\3\2\2\2\u0763\u075b"+
+		"\3\2\2\2\u0763\u075c\3\2\2\2\u0763\u075d\3\2\2\2\u0763\u075e\3\2\2\2\u0763"+
+		"\u075f\3\2\2\2\u0763\u0760\3\2\2\2\u0763\u0761\3\2\2\2\u0763\u0762\3\2"+
+		"\2\2\u0764\u0165\3\2\2\2\u0765\u076d\5\u0202\u0102\2\u0766\u076d\5\u0168"+
+		"\u00b5\2\u0767\u076d\5\u016e\u00b8\2\u0768\u076d\7o\2\2\u0769\u076d\7"+
+		"p\2\2\u076a\u076d\7q\2\2\u076b\u076d\7r\2\2\u076c\u0765\3\2\2\2\u076c"+
+		"\u0766\3\2\2\2\u076c\u0767\3\2\2\2\u076c\u0768\3\2\2\2\u076c\u0769\3\2"+
+		"\2\2\u076c\u076a\3\2\2\2\u076c\u076b\3\2\2\2\u076d\u0167\3\2\2\2\u076e"+
+		"\u0770\7g\2\2\u076f\u0771\5\u016a\u00b6\2\u0770\u076f\3\2\2\2\u0770\u0771"+
+		"\3\2\2\2\u0771\u0772\3\2\2\2\u0772\u0773\7h\2\2\u0773\u0169\3\2\2\2\u0774"+
+		"\u0779\5\u016c\u00b7\2\u0775\u0776\7\24\2\2\u0776\u0778\5\u016c\u00b7"+
+		"\2\u0777\u0775\3\2\2\2\u0778\u077b\3\2\2\2\u0779\u0777\3\2\2\2\u0779\u077a"+
+		"\3\2\2\2\u077a\u077d\3\2\2\2\u077b\u0779\3\2\2\2\u077c\u077e\7\24\2\2"+
+		"\u077d\u077c\3\2\2\2\u077d\u077e\3\2\2\2\u077e\u016b\3\2\2\2\u077f\u0780"+
+		"\5\u0154\u00ab\2\u0780\u016d\3\2\2\2\u0781\u0782\7g\2\2\u0782\u0783\5"+
+		"\u0170\u00b9\2\u0783\u0784\7h\2\2\u0784\u0789\3\2\2\2\u0785\u0786\7g\2"+
+		"\2\u0786\u0787\7\4\2\2\u0787\u0789\7h\2\2\u0788\u0781\3\2\2\2\u0788\u0785"+
+		"\3\2\2\2\u0789\u016f\3\2\2\2\u078a\u078f\5\u0172\u00ba\2\u078b\u078c\7"+
+		"\24\2\2\u078c\u078e\5\u0172\u00ba\2\u078d\u078b\3\2\2\2\u078e\u0791\3"+
+		"\2\2\2\u078f\u078d\3\2\2\2\u078f\u0790\3\2\2\2\u0790\u0793\3\2\2\2\u0791"+
+		"\u078f\3\2\2\2\u0792\u0794\7\24\2\2\u0793\u0792\3\2\2\2\u0793\u0794\3"+
+		"\2\2\2\u0794\u0171\3\2\2\2\u0795\u0796\5\u0154\u00ab\2\u0796\u0797\7\4"+
+		"\2\2\u0797\u0798\5\u0154\u00ab\2\u0798\u0173\3\2\2\2\u0799\u07a6\7s\2"+
+		"\2\u079a\u079b\7s\2\2\u079b\u079c\7\5\2\2\u079c\u07a6\5\u01f8\u00fd\2"+
+		"\u079d\u079e\7s\2\2\u079e\u079f\7g\2\2\u079f\u07a0\5\u0196\u00cc\2\u07a0"+
+		"\u07a1\7h\2\2\u07a1\u07a6\3\2\2\2\u07a2\u07a3\7s\2\2\u07a3\u07a4\7\5\2"+
+		"\2\u07a4\u07a6\7X\2\2\u07a5\u0799\3\2\2\2\u07a5\u079a\3\2\2\2\u07a5\u079d"+
+		"\3\2\2\2\u07a5\u07a2\3\2\2\2\u07a6\u0175\3\2\2\2\u07a7\u07ab\5\u0178\u00bd"+
+		"\2\u07a8\u07ab\5\u017a\u00be\2\u07a9\u07ab\5\u017c\u00bf\2\u07aa\u07a7"+
+		"\3\2\2\2\u07aa\u07a8\3\2\2\2\u07aa\u07a9\3\2\2\2\u07ab\u0177\3\2\2\2\u07ac"+
+		"\u07ad\7t\2\2\u07ad\u07ae\7\5\2\2\u07ae\u07af\5\u01f8\u00fd\2\u07af\u0179"+
+		"\3\2\2\2\u07b0\u07b1\7t\2\2\u07b1\u07b2\7g\2\2\u07b2\u07b3\5\u0196\u00cc"+
+		"\2\u07b3\u07b4\7h\2\2\u07b4\u017b\3\2\2\2\u07b5\u07b6\7t\2\2\u07b6\u07b7"+
+		"\7\5\2\2\u07b7\u07b8\7X\2\2\u07b8\u017d\3\2\2\2\u07b9\u07bb\7\22\2\2\u07ba"+
+		"\u07bc\5\u0180\u00c1\2\u07bb\u07ba\3\2\2\2\u07bb\u07bc\3\2\2\2\u07bc\u07be"+
+		"\3\2\2\2\u07bd\u07bf\5\n\6\2\u07be\u07bd\3\2\2\2\u07be\u07bf\3\2\2\2\u07bf"+
+		"\u07c0\3\2\2\2\u07c0\u07c1\7\23\2\2\u07c1\u017f\3\2\2\2\u07c2\u07c4\5"+
+		"\u018a\u00c6\2\u07c3\u07c2\3\2\2\2\u07c3\u07c4\3\2\2\2\u07c4\u07c5\3\2"+
+		"\2\2\u07c5\u07c7\5\u0182\u00c2\2\u07c6\u07c8\7Q\2\2\u07c7\u07c6\3\2\2"+
+		"\2\u07c7\u07c8\3\2\2\2\u07c8\u07ca\3\2\2\2\u07c9\u07cb\5\u00b8]\2\u07ca"+
+		"\u07c9\3\2\2\2\u07ca\u07cb\3\2\2\2\u07cb\u07cc\3\2\2\2\u07cc\u07cd\7\13"+
+		"\2\2\u07cd\u07d2\3\2\2\2\u07ce\u07cf\5\u018a\u00c6\2\u07cf\u07d0\7\13"+
+		"\2\2\u07d0\u07d2\3\2\2\2\u07d1\u07c3\3\2\2\2\u07d1\u07ce\3\2\2\2\u07d2"+
+		"\u0181\3\2\2\2\u07d3\u07d4\7!\2\2\u07d4\u07db\7\"\2\2\u07d5\u07d6\7!\2"+
+		"\2\u07d6\u07d7\5\u0184\u00c3\2\u07d7\u07d8\7\"\2\2\u07d8\u07db\3\2\2\2"+
+		"\u07d9\u07db\5\u01fe\u0100\2\u07da\u07d3\3\2\2\2\u07da\u07d5\3\2\2\2\u07da"+
+		"\u07d9\3\2\2\2\u07db\u0183\3\2\2\2\u07dc\u07e1\5\u0186\u00c4\2\u07dd\u07de"+
+		"\7\24\2\2\u07de\u07e0\5\u0184\u00c3\2\u07df\u07dd\3\2\2\2\u07e0\u07e3"+
+		"\3\2\2\2\u07e1\u07df\3\2\2\2\u07e1\u07e2\3\2\2\2\u07e2\u0185\3\2\2\2\u07e3"+
+		"\u07e1\3\2\2\2\u07e4\u07e6\5\u0188\u00c5\2\u07e5\u07e7\5\u01be\u00e0\2"+
+		"\u07e6\u07e5\3\2\2\2\u07e6\u07e7\3\2\2\2\u07e7\u07ed\3\2\2\2\u07e8\u07e9"+
+		"\5\u0188\u00c5\2\u07e9\u07ea\5\u01be\u00e0\2\u07ea\u07eb\7T\2\2\u07eb"+
+		"\u07ed\3\2\2\2\u07ec\u07e4\3\2\2\2\u07ec\u07e8\3\2\2\2\u07ed\u0187\3\2"+
+		"\2\2\u07ee\u07f1\5\u01f8\u00fd\2\u07ef\u07f1\7U\2\2\u07f0\u07ee\3\2\2"+
+		"\2\u07f0\u07ef\3\2\2\2\u07f1\u0189\3\2\2\2\u07f2\u07f3\7g\2\2\u07f3\u07f4"+
+		"\5\u018c\u00c7\2\u07f4\u07f5\7h\2\2\u07f5\u018b\3\2\2\2\u07f6\u07fb\5"+
+		"\u018e\u00c8\2\u07f7\u07f8\7\24\2\2\u07f8\u07fa\5\u018e\u00c8\2\u07f9"+
+		"\u07f7\3\2\2\2\u07fa\u07fd\3\2\2\2\u07fb\u07f9\3\2\2\2\u07fb\u07fc\3\2"+
+		"\2\2\u07fc\u018d\3\2\2\2\u07fd\u07fb\3\2\2\2\u07fe\u0800\5\u0190\u00c9"+
+		"\2\u07ff\u07fe\3\2\2\2\u07ff\u0800\3\2\2\2\u0800\u0801\3\2\2\2\u0801\u0802"+
+		"\5\u0154\u00ab\2\u0802\u018f\3\2\2\2\u0803\u0804\t\n\2\2\u0804\u0191\3"+
+		"\2\2\2\u0805\u0806\7\5\2\2\u0806\u0807\5\u01f8\u00fd\2\u0807\u0193\3\2"+
+		"\2\2\u0808\u080a\7!\2\2\u0809\u080b\5\u0196\u00cc\2\u080a\u0809\3\2\2"+
+		"\2\u080a\u080b\3\2\2\2\u080b\u080c\3\2\2\2\u080c\u080d\7\"\2\2\u080d\u0195"+
+		"\3\2\2\2\u080e\u0813\5\u0198\u00cd\2\u080f\u0810\7\24\2\2\u0810\u0812"+
+		"\5\u0198\u00cd\2\u0811\u080f\3\2\2\2\u0812\u0815\3\2\2\2\u0813\u0811\3"+
+		"\2\2\2\u0813\u0814\3\2\2\2\u0814\u0197\3\2\2\2\u0815\u0813\3\2\2\2\u0816"+
+		"\u081d\5\u0154\u00ab\2\u0817\u0818\5\u019a\u00ce\2\u0818\u081a\7\4\2\2"+
+		"\u0819\u081b\5\u0154\u00ab\2\u081a\u0819\3\2\2\2\u081a\u081b\3\2\2\2\u081b"+
+		"\u081d\3\2\2\2\u081c\u0816\3\2\2\2\u081c\u0817\3\2\2\2\u081d\u0199\3\2"+
+		"\2\2\u081e\u0821\5\u01f8\u00fd\2\u081f\u0821\5\u01fa\u00fe\2\u0820\u081e"+
+		"\3\2\2\2\u0820\u081f\3\2\2\2\u0821\u019b\3\2\2\2\u0822\u0823\7U\2\2\u0823"+
+		"\u019d\3\2\2\2\u0824\u0825\7w\2\2\u0825\u0826\7!\2\2\u0826\u0827\5\u0154"+
+		"\u00ab\2\u0827\u0828\7\"\2\2\u0828\u0830\3\2\2\2\u0829\u082a\7w\2\2\u082a"+
+		"\u082b\7!\2\2\u082b\u082c\t\13\2\2\u082c\u082d\5\u0154\u00ab\2\u082d\u082e"+
+		"\7\"\2\2\u082e\u0830\3\2\2\2\u082f\u0824\3\2\2\2\u082f\u0829\3\2\2\2\u0830"+
+		"\u019f\3\2\2\2\u0831\u0832\7z\2\2\u0832\u0833\7!\2\2\u0833\u0834\5\u0154"+
+		"\u00ab\2\u0834\u0835\7\"\2\2\u0835\u01a1\3\2\2\2\u0836\u0837\b\u00d2\1"+
+		"\2\u0837\u0838\5\u0164\u00b3\2\u0838\u086d\3\2\2\2\u0839\u083a\f\17\2"+
+		"\2\u083a\u086c\5\u01b2\u00da\2\u083b\u083d\f\16\2\2\u083c\u083e\5\u0194"+
+		"\u00cb\2\u083d\u083c\3\2\2\2\u083d\u083e\3\2\2\2\u083e\u083f\3\2\2\2\u083f"+
+		"\u086c\5\u017e\u00c0\2\u0840\u0841\f\r\2\2\u0841\u086c\5\u0194\u00cb\2"+
+		"\u0842\u0843\f\f\2\2\u0843\u0844\7\5\2\2\u0844\u086c\7X\2\2\u0845\u0846"+
+		"\f\13\2\2\u0846\u0847\7\5\2\2\u0847\u0848\7X\2\2\u0848\u0849\7!\2\2\u0849"+
+		"\u084a\5\u01a4\u00d3\2\u084a\u084b\7\"\2\2\u084b\u086c\3\2\2\2\u084c\u084d"+
+		"\f\n\2\2\u084d\u084e\7\5\2\2\u084e\u086c\7\u009f\2\2\u084f\u0850\f\t\2"+
+		"\2\u0850\u0851\7\5\2\2\u0851\u0853\5\u01f8\u00fd\2\u0852\u0854\5j\66\2"+
+		"\u0853\u0852\3\2\2\2\u0853\u0854\3\2\2\2\u0854\u086c\3\2\2\2\u0855\u0856"+
+		"\f\b\2\2\u0856\u0857\7\5\2\2\u0857\u0858\5\u01f8\u00fd\2\u0858\u0859\7"+
+		"!\2\2\u0859\u085a\5\u01a4\u00d3\2\u085a\u085b\7\"\2\2\u085b\u086c\3\2"+
+		"\2\2\u085c\u085d\f\7\2\2\u085d\u085e\7\5\2\2\u085e\u086c\7s\2\2\u085f"+
+		"\u0860\f\6\2\2\u0860\u0861\7\5\2\2\u0861\u086c\7{\2\2\u0862\u0863\f\5"+
+		"\2\2\u0863\u0864\7g\2\2\u0864\u0865\5\u0196\u00cc\2\u0865\u0866\7h\2\2"+
+		"\u0866\u086c\3\2\2\2\u0867\u0868\f\4\2\2\u0868\u086c\7Z\2\2\u0869\u086a"+
+		"\f\3\2\2\u086a\u086c\7Y\2\2\u086b\u0839\3\2\2\2\u086b\u083b\3\2\2\2\u086b"+
+		"\u0840\3\2\2\2\u086b\u0842\3\2\2\2\u086b\u0845\3\2\2\2\u086b\u084c\3\2"+
+		"\2\2\u086b\u084f\3\2\2\2\u086b\u0855\3\2\2\2\u086b\u085c\3\2\2\2\u086b"+
+		"\u085f\3\2\2\2\u086b\u0862\3\2\2\2\u086b\u0867\3\2\2\2\u086b\u0869\3\2"+
+		"\2\2\u086c\u086f\3\2\2\2\u086d\u086b\3\2\2\2\u086d\u086e\3\2\2\2\u086e"+
+		"\u01a3\3\2\2\2\u086f\u086d\3\2\2\2\u0870\u0872\5\u01a6\u00d4\2\u0871\u0870"+
+		"\3\2\2\2\u0872\u0873\3\2\2\2\u0873\u0871\3\2\2\2\u0873\u0874\3\2\2\2\u0874"+
+		"\u01a5\3\2\2\2\u0875\u0878\5\u01f8\u00fd\2\u0876\u0878\7U\2\2\u0877\u0875"+
+		"\3\2\2\2\u0877\u0876\3\2\2\2\u0878\u0879\3\2\2\2\u0879\u087a\7\4\2\2\u087a"+
 		"\u01a7\3\2\2\2\u087b\u087c\t\f\2\2\u087c\u01a9\3\2\2\2\u087d\u0880\5\u01a8"+
 		"\u00d5\2\u087e\u0880\7\u0099\2\2\u087f\u087d\3\2\2\2\u087f\u087e\3\2\2"+
 		"\2\u0880\u01ab\3\2\2\2\u0881\u0885\5\u01a8\u00d5\2\u0882\u0884\5\u01aa"+
@@ -17069,147 +18527,149 @@ public class Swift3Parser extends Parser {
 		"\u0886\3\2\2\2\u0886\u0891\3\2\2\2\u0887\u0885\3\2\2\2\u0888\u088c\7\u009a"+
 		"\2\2\u0889\u088b\5\u01aa\u00d6\2\u088a\u0889\3\2\2\2\u088b\u088e\3\2\2"+
 		"\2\u088c\u088a\3\2\2\2\u088c\u088d\3\2\2\2\u088d\u0891\3\2\2\2\u088e\u088c"+
-		"\3\2\2\2\u088f\u0891\7\u0086\2\2\u0890\u0881\3\2\2\2\u0890\u0888\3\2\2"+
-		"\2\u0890\u088f\3\2\2\2\u0891\u01ad\3\2\2\2\u0892\u0893\5\u01ac\u00d7\2"+
-		"\u0893\u01af\3\2\2\2\u0894\u0895\5\u01ac\u00d7\2\u0895\u01b1\3\2\2\2\u0896"+
-		"\u0897\5\u01ac\u00d7\2\u0897\u01b3\3\2\2\2\u0898\u0899\b\u00db\1\2\u0899"+
-		"\u089b\5\u01c4\u00e3\2\u089a\u089c\7\26\2\2\u089b\u089a\3\2\2\2\u089b"+
-		"\u089c\3\2\2\2\u089c\u089d\3\2\2\2\u089d\u089e\7\u0082\2\2\u089e\u089f"+
-		"\5\u01b4\u00db\17\u089f\u08bd\3\2\2\2\u08a0\u08a1\5\u01c4\u00e3\2\u08a1"+
-		"\u08a2\7W\2\2\u08a2\u08a3\7\u0082\2\2\u08a3\u08a4\5\u01b4\u00db\16\u08a4"+
-		"\u08bd\3\2\2\2\u08a5\u08bd\5\u01b6\u00dc\2\u08a6\u08bd\5\u01b8\u00dd\2"+
-		"\u08a7\u08a8\7U\2\2\u08a8\u08a9\5\u01b4\u00db\2\u08a9\u08ab\7G\2\2\u08aa"+
-		"\u08ac\7\26\2\2\u08ab\u08aa\3\2\2\2\u08ab\u08ac\3\2\2\2\u08ac\u08ad\3"+
-		"\2\2\2\u08ad\u08ae\7\u0082\2\2\u08ae\u08af\5\u01b4\u00db\2\u08af\u08bd"+
-		"\3\2\2\2\u08b0\u08b1\7U\2\2\u08b1\u08b2\5\u01b4\u00db\2\u08b2\u08b3\7"+
-		"G\2\2\u08b3\u08b4\7W\2\2\u08b4\u08b5\7\u0082\2\2\u08b5\u08b6\5\u01b4\u00db"+
-		"\2\u08b6\u08bd\3\2\2\2\u08b7\u08bd\5\u01c0\u00e1\2\u08b8\u08bd\5\u01c4"+
-		"\u00e3\2\u08b9\u08bd\5\u01ce\u00e8\2\u08ba\u08bd\7!\2\2\u08bb\u08bd\7"+
-		"p\2\2\u08bc\u0898\3\2\2\2\u08bc\u08a0\3\2\2\2\u08bc\u08a5\3\2\2\2\u08bc"+
-		"\u08a6\3\2\2\2\u08bc\u08a7\3\2\2\2\u08bc\u08b0\3\2\2\2\u08bc\u08b7\3\2"+
-		"\2\2\u08bc\u08b8\3\2\2\2\u08bc\u08b9\3\2\2\2\u08bc\u08ba\3\2\2\2\u08bc"+
-		"\u08bb\3\2\2\2\u08bd\u08ca\3\2\2\2\u08be\u08bf\f\t\2\2\u08bf\u08c9\7x"+
-		"\2\2\u08c0\u08c1\f\b\2\2\u08c1\u08c9\7D\2\2\u08c2\u08c3\f\6\2\2\u08c3"+
-		"\u08c4\7\177\2\2\u08c4\u08c9\7~\2\2\u08c5\u08c6\f\5\2\2\u08c6\u08c7\7"+
-		"\177\2\2\u08c7\u08c9\7%\2\2\u08c8\u08be\3\2\2\2\u08c8\u08c0\3\2\2\2\u08c8"+
-		"\u08c2\3\2\2\2\u08c8\u08c5\3\2\2\2\u08c9\u08cc\3\2\2\2\u08ca\u08c8\3\2"+
-		"\2\2\u08ca\u08cb\3\2\2\2\u08cb\u01b5\3\2\2\2\u08cc\u08ca\3\2\2\2\u08cd"+
-		"\u08ce\7A\2\2\u08ce\u08cf\5\u01b4\u00db\2\u08cf\u08d0\7 \2\2\u08d0\u01b7"+
-		"\3\2\2\2\u08d1\u08d2\7A\2\2\u08d2\u08d3\5\u01b4\u00db\2\u08d3\u08d4\7"+
-		"@\2\2\u08d4\u08d5\5\u01b4\u00db\2\u08d5\u08d6\7 \2\2\u08d6\u01b9\3\2\2"+
-		"\2\u08d7\u08d8\5\u01b4\u00db\2\u08d8\u08d9\7x\2\2\u08d9\u01bb\3\2\2\2"+
-		"\u08da\u08db\5\u01b4\u00db\2\u08db\u08dc\7D\2\2\u08dc\u01bd\3\2\2\2\u08dd"+
-		"\u08df\7@\2\2\u08de\u08e0\5\u014e\u00a8\2\u08df\u08de\3\2\2\2\u08df\u08e0"+
-		"\3\2\2\2\u08e0\u08e2\3\2\2\2\u08e1\u08e3\7\63\2\2\u08e2\u08e1\3\2\2\2"+
-		"\u08e2\u08e3\3\2\2\2\u08e3\u08e4\3\2\2\2\u08e4\u08e5\5\u01b4\u00db\2\u08e5"+
-		"\u01bf\3\2\2\2\u08e6\u08e8\5\u01c2\u00e2\2\u08e7\u08e9\5j\66\2\u08e8\u08e7"+
-		"\3\2\2\2\u08e8\u08e9\3\2\2\2\u08e9\u08f2\3\2\2\2\u08ea\u08ec\5\u01c2\u00e2"+
-		"\2\u08eb\u08ed\5j\66\2\u08ec\u08eb\3\2\2\2\u08ec\u08ed\3\2\2\2\u08ed\u08ee"+
-		"\3\2\2\2\u08ee\u08ef\7\177\2\2\u08ef\u08f0\5\u01c0\u00e1\2\u08f0\u08f2"+
-		"\3\2\2\2\u08f1\u08e6\3\2\2\2\u08f1\u08ea\3\2\2\2\u08f2\u01c1\3\2\2\2\u08f3"+
-		"\u08f4\5\u01f8\u00fd\2\u08f4\u01c3\3\2\2\2\u08f5\u08f7\7U\2\2\u08f6\u08f8"+
-		"\5\u01c6\u00e4\2\u08f7\u08f6\3\2\2\2\u08f7\u08f8\3\2\2\2\u08f8\u08f9\3"+
-		"\2\2\2\u08f9\u08fa\7G\2\2\u08fa\u01c5\3\2\2\2\u08fb\u08fd\5\u01c8\u00e5"+
-		"\2\u08fc\u08fe\7\u0086\2\2\u08fd\u08fc\3\2\2\2\u08fd\u08fe\3\2\2\2\u08fe"+
-		"\u01c7\3\2\2\2\u08ff\u0904\5\u01ca\u00e6\2\u0900\u0901\7\23\2\2\u0901"+
-		"\u0903\5\u01ca\u00e6\2\u0902\u0900\3\2\2\2\u0903\u0906\3\2\2\2\u0904\u0902"+
-		"\3\2\2\2\u0904\u0905\3\2\2\2\u0905\u01c9\3\2\2\2\u0906\u0904\3\2\2\2\u0907"+
-		"\u0909\5\u014e\u00a8\2\u0908\u0907\3\2\2\2\u0908\u0909\3\2\2\2\u0909\u090b"+
-		"\3\2\2\2\u090a\u090c\7\63\2\2\u090b\u090a\3\2\2\2\u090b\u090c\3\2\2\2"+
-		"\u090c\u090d\3\2\2\2\u090d\u0912\5\u01b4\u00db\2\u090e\u090f\5\u01cc\u00e7"+
-		"\2\u090f\u0910\5\u01be\u00e0\2\u0910\u0912\3\2\2\2\u0911\u0908\3\2\2\2"+
-		"\u0911\u090e\3\2\2\2\u0912\u01cb\3\2\2\2\u0913\u0914\5\u01f8\u00fd\2\u0914"+
-		"\u01cd\3\2\2\2\u0915\u0916\5\u01d2\u00ea\2\u0916\u0917\7{\2\2\u0917\u0918"+
-		"\5\u01d0\u00e9\2\u0918\u01cf\3\2\2\2\u0919\u091c\5\u01d2\u00ea\2\u091a"+
-		"\u091c\5\u01ce\u00e8\2\u091b\u0919\3\2\2\2\u091b\u091a\3\2\2\2\u091c\u01d1"+
-		"\3\2\2\2\u091d\u091e\5\u01c0\u00e1\2\u091e\u01d3\3\2\2\2\u091f\u0920\5"+
-		"\u01b4\u00db\2\u0920\u0921\7\177\2\2\u0921\u0922\7~\2\2\u0922\u0928\3"+
-		"\2\2\2\u0923\u0924\5\u01b4\u00db\2\u0924\u0925\7\177\2\2\u0925\u0926\7"+
-		"%\2\2\u0926\u0928\3\2\2\2\u0927\u091f\3\2\2\2\u0927\u0923\3\2\2\2\u0928"+
-		"\u01d5\3\2\2\2\u0929\u092a\7@\2\2\u092a\u092b\5\u01da\u00ee\2\u092b\u092c"+
-		"\7\23\2\2\u092c\u092d\5\u01d8\u00ed\2\u092d\u0933\3\2\2\2\u092e\u092f"+
-		"\7@\2\2\u092f\u0933\5\u01da\u00ee\2\u0930\u0931\7@\2\2\u0931\u0933\5\u01d8"+
-		"\u00ed\2\u0932\u0929\3\2\2\2\u0932\u092e\3\2\2\2\u0932\u0930\3\2\2\2\u0933"+
-		"\u01d7\3\2\2\2\u0934\u0939\5\u01c0\u00e1\2\u0935\u0936\7\23\2\2\u0936"+
-		"\u0938\5\u01c0\u00e1\2\u0937\u0935\3\2\2\2\u0938\u093b\3\2\2\2\u0939\u0937"+
-		"\3\2\2\2\u0939\u093a\3\2\2\2\u093a\u01d9\3\2\2\2\u093b\u0939\3\2\2\2\u093c"+
-		"\u093d\7,\2\2\u093d\u01db\3\2\2\2\u093e\u0941\5\u01de\u00f0\2\u093f\u0941"+
-		"\5\u01f2\u00fa\2\u0940\u093e\3\2\2\2\u0940\u093f\3\2\2\2\u0941\u01dd\3"+
-		"\2\2\2\u0942\u0944\5\u01e0\u00f1\2\u0943\u0945\5\u01e2\u00f2\2\u0944\u0943"+
-		"\3\2\2\2\u0944\u0945\3\2\2\2\u0945\u0947\3\2\2\2\u0946\u0948\5\u01e6\u00f4"+
-		"\2\u0947\u0946\3\2\2\2\u0947\u0948\3\2\2\2\u0948\u0949\3\2\2\2\u0949\u094a"+
-		"\7>\2\2\u094a\u01df\3\2\2\2\u094b\u094c\7O\2\2\u094c\u094e\5\u01e8\u00f5"+
-		"\2\u094d\u094f\5\n\6\2\u094e\u094d\3\2\2\2\u094e\u094f\3\2\2\2\u094f\u01e1"+
-		"\3\2\2\2\u0950\u0952\5\u01e4\u00f3\2\u0951\u0950\3\2\2\2\u0952\u0953\3"+
-		"\2\2\2\u0953\u0951\3\2\2\2\u0953\u0954\3\2\2\2\u0954\u01e3\3\2\2\2\u0955"+
-		"\u0956\7/\2\2\u0956\u0958\5\u01e8\u00f5\2\u0957\u0959\5\n\6\2\u0958\u0957"+
-		"\3\2\2\2\u0958\u0959\3\2\2\2\u0959\u01e5\3\2\2\2\u095a\u095c\7n\2\2\u095b"+
-		"\u095d\5\n\6\2\u095c\u095b\3\2\2\2\u095c\u095d\3\2\2\2\u095d\u01e7\3\2"+
-		"\2\2\u095e\u095f\b\u00f5\1\2\u095f\u0960\7D\2\2\u0960\u0969\5\u01e8\u00f5"+
-		"\4\u0961\u0969\5\u01ea\u00f6\2\u0962\u0969\5\u01f8\u00fd\2\u0963\u0969"+
-		"\5\u0200\u0101\2\u0964\u0965\7U\2\2\u0965\u0966\5\u01e8\u00f5\2\u0966"+
-		"\u0967\7G\2\2\u0967\u0969\3\2\2\2\u0968\u095e\3\2\2\2\u0968\u0961\3\2"+
-		"\2\2\u0968\u0962\3\2\2\2\u0968\u0963\3\2\2\2\u0968\u0964\3\2\2\2\u0969"+
-		"\u096f\3\2\2\2\u096a\u096b\f\3\2\2\u096b\u096c\t\r\2\2\u096c\u096e\5\u01e8"+
-		"\u00f5\4\u096d\u096a\3\2\2\2\u096e\u0971\3\2\2\2\u096f\u096d\3\2\2\2\u096f"+
-		"\u0970\3\2\2\2\u0970\u01e9\3\2\2\2\u0971\u096f\3\2\2\2\u0972\u0973\7v"+
-		"\2\2\u0973\u0974\7U\2\2\u0974\u0975\5\u01ec\u00f7\2\u0975\u0976\7G\2\2"+
-		"\u0976\u0983\3\2\2\2\u0977\u0978\7\32\2\2\u0978\u0979\7U\2\2\u0979\u097a"+
-		"\5\u01ee\u00f8\2\u097a\u097b\7G\2\2\u097b\u0983\3\2\2\2\u097c\u097d\7"+
-		"]\2\2\u097d\u097e\7U\2\2\u097e\u097f\7\33\2\2\u097f\u0980\5\u01f0\u00f9"+
-		"\2\u0980\u0981\7G\2\2\u0981\u0983\3\2\2\2\u0982\u0972\3\2\2\2\u0982\u0977"+
-		"\3\2\2\2\u0982\u097c\3\2\2\2\u0983\u01eb\3\2\2\2\u0984\u0985\t\16\2\2"+
-		"\u0985\u01ed\3\2\2\2\u0986\u0987\t\17\2\2\u0987\u01ef\3\2\2\2\u0988\u0989"+
-		"\7\u00a1\2\2\u0989\u01f1\3\2\2\2\u098a\u098b\7\31\2\2\u098b\u098c\7U\2"+
-		"\2\u098c\u098d\7j\2\2\u098d\u098e\7@\2\2\u098e\u098f\5\u01f6\u00fc\2\u098f"+
-		"\u0990\7\23\2\2\u0990\u0991\7Z\2\2\u0991\u0992\7@\2\2\u0992\u0993\5\u01f4"+
-		"\u00fb\2\u0993\u0994\7G\2\2\u0994\u0999\3\2\2\2\u0995\u0996\7\31\2\2\u0996"+
-		"\u0997\7U\2\2\u0997\u0999\7G\2\2\u0998\u098a\3\2\2\2\u0998\u0995\3\2\2"+
-		"\2\u0999\u01f3\3\2\2\2\u099a\u099b\5\u0206\u0104\2\u099b\u01f5\3\2\2\2"+
-		"\u099c\u099d\7\u00a3\2\2\u099d\u01f7\3\2\2\2\u099e\u09a1\7\u009b\2\2\u099f"+
-		"\u09a1\5\u01fc\u00ff\2\u09a0\u099e\3\2\2\2\u09a0\u099f\3\2\2\2\u09a1\u01f9"+
-		"\3\2\2\2\u09a2\u09a3\t\20\2\2\u09a3\u01fb\3\2\2\2\u09a4\u09a5\t\21\2\2"+
-		"\u09a5\u01fd\3\2\2\2\u09a6\u09a9\5\u01f8\u00fd\2\u09a7\u09a9\7\u008d\2"+
-		"\2\u09a8\u09a6\3\2\2\2\u09a8\u09a7\3\2\2\2\u09a9\u09b1\3\2\2\2\u09aa\u09ad"+
-		"\7\23\2\2\u09ab\u09ae";
+		"\3\2\2\2\u088f\u0891\7T\2\2\u0890\u0881\3\2\2\2\u0890\u0888\3\2\2\2\u0890"+
+		"\u088f\3\2\2\2\u0891\u01ad\3\2\2\2\u0892\u0893\5\u01ac\u00d7\2\u0893\u01af"+
+		"\3\2\2\2\u0894\u0895\5\u01ac\u00d7\2\u0895\u01b1\3\2\2\2\u0896\u0897\5"+
+		"\u01ac\u00d7\2\u0897\u01b3\3\2\2\2\u0898\u0899\b\u00db\1\2\u0899\u08bd"+
+		"\5\u01b6\u00dc\2\u089a\u08bd\5\u01b8\u00dd\2\u089b\u089d\5\u01c4\u00e3"+
+		"\2\u089c\u089e\7Q\2\2\u089d\u089c\3\2\2\2\u089d\u089e\3\2\2\2\u089e\u089f"+
+		"\3\2\2\2\u089f\u08a0\7S\2\2\u08a0\u08a1\5\u01b4\u00db\17\u08a1\u08bd\3"+
+		"\2\2\2\u08a2\u08a3\5\u01c4\u00e3\2\u08a3\u08a4\7R\2\2\u08a4\u08a5\7S\2"+
+		"\2\u08a5\u08a6\5\u01b4\u00db\16\u08a6\u08bd\3\2\2\2\u08a7\u08a8\7!\2\2"+
+		"\u08a8\u08a9\5\u01b4\u00db\2\u08a9\u08ab\7\"\2\2\u08aa\u08ac\7Q\2\2\u08ab"+
+		"\u08aa\3\2\2\2\u08ab\u08ac\3\2\2\2\u08ac\u08ad\3\2\2\2\u08ad\u08ae\7S"+
+		"\2\2\u08ae\u08af\5\u01b4\u00db\r\u08af\u08bd\3\2\2\2\u08b0\u08b1\7!\2"+
+		"\2\u08b1\u08b2\5\u01b4\u00db\2\u08b2\u08b3\7\"\2\2\u08b3\u08b4\7R\2\2"+
+		"\u08b4\u08b5\7S\2\2\u08b5\u08b6\5\u01b4\u00db\f\u08b6\u08bd\3\2\2\2\u08b7"+
+		"\u08bd\5\u01c0\u00e1\2\u08b8\u08bd\5\u01c4\u00e3\2\u08b9\u08bd\5\u01ce"+
+		"\u00e8\2\u08ba\u08bd\7\u0081\2\2\u08bb\u08bd\7\u0082\2\2\u08bc\u0898\3"+
+		"\2\2\2\u08bc\u089a\3\2\2\2\u08bc\u089b\3\2\2\2\u08bc\u08a2\3\2\2\2\u08bc"+
+		"\u08a7\3\2\2\2\u08bc\u08b0\3\2\2\2\u08bc\u08b7\3\2\2\2\u08bc\u08b8\3\2"+
+		"\2\2\u08bc\u08b9\3\2\2\2\u08bc\u08ba\3\2\2\2\u08bc\u08bb\3\2\2\2\u08bd"+
+		"\u08ca\3\2\2\2\u08be\u08bf\f\t\2\2\u08bf\u08c9\7Y\2\2\u08c0\u08c1\f\b"+
+		"\2\2\u08c1\u08c9\7Z\2\2\u08c2\u08c3\f\6\2\2\u08c3\u08c4\7\5\2\2\u08c4"+
+		"\u08c9\7\177\2\2\u08c5\u08c6\f\5\2\2\u08c6\u08c7\7\5\2\2\u08c7\u08c9\7"+
+		"\u0080\2\2\u08c8\u08be\3\2\2\2\u08c8\u08c0\3\2\2\2\u08c8\u08c2\3\2\2\2"+
+		"\u08c8\u08c5\3\2\2\2\u08c9\u08cc\3\2\2\2\u08ca\u08c8\3\2\2\2\u08ca\u08cb"+
+		"\3\2\2\2\u08cb\u01b5\3\2\2\2\u08cc\u08ca\3\2\2\2\u08cd\u08ce\7g\2\2\u08ce"+
+		"\u08cf\5\u01b4\u00db\2\u08cf\u08d0\7h\2\2\u08d0\u01b7\3\2\2\2\u08d1\u08d2"+
+		"\7g\2\2\u08d2\u08d3\5\u01b4\u00db\2\u08d3\u08d4\7\4\2\2\u08d4\u08d5\5"+
+		"\u01b4\u00db\2\u08d5\u08d6\7h\2\2\u08d6\u01b9\3\2\2\2\u08d7\u08d8\5\u01b4"+
+		"\u00db\2\u08d8\u08d9\7Y\2\2\u08d9\u01bb\3\2\2\2\u08da\u08db\5\u01b4\u00db"+
+		"\2\u08db\u08dc\7Z\2\2\u08dc\u01bd\3\2\2\2\u08dd\u08df\7\4\2\2\u08de\u08e0"+
+		"\5\u014e\u00a8\2\u08df\u08de\3\2\2\2\u08df\u08e0\3\2\2\2\u08e0\u08e2\3"+
+		"\2\2\2\u08e1\u08e3\7\u0083\2\2\u08e2\u08e1\3\2\2\2\u08e2\u08e3\3\2\2\2"+
+		"\u08e3\u08e4\3\2\2\2\u08e4\u08e5\5\u01b4\u00db\2\u08e5\u01bf\3\2\2\2\u08e6"+
+		"\u08e8\5\u01c2\u00e2\2\u08e7\u08e9\5j\66\2\u08e8\u08e7\3\2\2\2\u08e8\u08e9"+
+		"\3\2\2\2\u08e9\u08f2\3\2\2\2\u08ea\u08ec\5\u01c2\u00e2\2\u08eb\u08ed\5"+
+		"j\66\2\u08ec\u08eb\3\2\2\2\u08ec\u08ed\3\2\2\2\u08ed\u08ee\3\2\2\2\u08ee"+
+		"\u08ef\7\5\2\2\u08ef\u08f0\5\u01c0\u00e1\2\u08f0\u08f2\3\2\2\2\u08f1\u08e6"+
+		"\3\2\2\2\u08f1\u08ea\3\2\2\2\u08f2\u01c1\3\2\2\2\u08f3\u08f4\5\u01f8\u00fd"+
+		"\2\u08f4\u01c3\3\2\2\2\u08f5\u08f7\7!\2\2\u08f6\u08f8\5\u01c6\u00e4\2"+
+		"\u08f7\u08f6\3\2\2\2\u08f7\u08f8\3\2\2\2\u08f8\u08f9\3\2\2\2\u08f9\u08fa"+
+		"\7\"\2\2\u08fa\u01c5\3\2\2\2\u08fb\u08fd\5\u01c8\u00e5\2\u08fc\u08fe\7"+
+		"T\2\2\u08fd\u08fc\3\2\2\2\u08fd\u08fe\3\2\2\2\u08fe\u01c7\3\2\2\2\u08ff"+
+		"\u0904\5\u01ca\u00e6\2\u0900\u0901\7\24\2\2\u0901\u0903\5\u01ca\u00e6"+
+		"\2\u0902\u0900\3\2\2\2\u0903\u0906\3\2\2\2\u0904\u0902\3\2\2\2\u0904\u0905"+
+		"\3\2\2\2\u0905\u01c9\3\2\2\2\u0906\u0904\3\2\2\2\u0907\u0909\5\u014e\u00a8"+
+		"\2\u0908\u0907\3\2\2\2\u0908\u0909\3\2\2\2\u0909\u090b\3\2\2\2\u090a\u090c"+
+		"\7\u0083\2\2\u090b\u090a\3\2\2\2\u090b\u090c\3\2\2\2\u090c\u090d\3\2\2"+
+		"\2\u090d\u0916\5\u01b4\u00db\2\u090e\u090f\5\u01cc\u00e7\2\u090f\u0910"+
+		"\5\u01be\u00e0\2\u0910\u0916\3\2\2\2\u0911\u0912\7U\2\2\u0912\u0913\5"+
+		"\u01cc\u00e7\2\u0913\u0914\5\u01be\u00e0\2\u0914\u0916\3\2\2\2\u0915\u0908"+
+		"\3\2\2\2\u0915\u090e\3\2\2\2\u0915\u0911\3\2\2\2\u0916\u01cb\3\2\2\2\u0917"+
+		"\u0918\5\u01f8\u00fd\2\u0918\u01cd\3\2\2\2\u0919\u091a\5\u01d2\u00ea\2"+
+		"\u091a\u091b\7m\2\2\u091b\u091c\5\u01d0\u00e9\2\u091c\u01cf\3\2\2\2\u091d"+
+		"\u0920\5\u01d2\u00ea\2\u091e\u0920\5\u01ce\u00e8\2\u091f\u091d\3\2\2\2"+
+		"\u091f\u091e\3\2\2\2\u0920\u01d1\3\2\2\2\u0921\u0922\5\u01c0\u00e1\2\u0922"+
+		"\u01d3\3\2\2\2\u0923\u0924\5\u01b4\u00db\2\u0924\u0925\7\5\2\2\u0925\u0926"+
+		"\7\177\2\2\u0926\u092c\3\2\2\2\u0927\u0928\5\u01b4\u00db\2\u0928\u0929"+
+		"\7\5\2\2\u0929\u092a\7\u0080\2\2\u092a\u092c\3\2\2\2\u092b\u0923\3\2\2"+
+		"\2\u092b\u0927\3\2\2\2\u092c\u01d5\3\2\2\2\u092d\u092e\7\4\2\2\u092e\u092f"+
+		"\5\u01da\u00ee\2\u092f\u0930\7\24\2\2\u0930\u0931\5\u01d8\u00ed\2\u0931"+
+		"\u0937\3\2\2\2\u0932\u0933\7\4\2\2\u0933\u0937\5\u01da\u00ee\2\u0934\u0935"+
+		"\7\4\2\2\u0935\u0937\5\u01d8\u00ed\2\u0936\u092d\3\2\2\2\u0936\u0932\3"+
+		"\2\2\2\u0936\u0934\3\2\2\2\u0937\u01d7\3\2\2\2\u0938\u093d\5\u01c0\u00e1"+
+		"\2\u0939\u093a\7\24\2\2\u093a\u093c\5\u01c0\u00e1\2\u093b\u0939\3\2\2"+
+		"\2\u093c\u093f\3\2\2\2\u093d\u093b\3\2\2\2\u093d\u093e\3\2\2\2\u093e\u01d9"+
+		"\3\2\2\2\u093f\u093d\3\2\2\2\u0940\u0941\7/\2\2\u0941\u01db\3\2\2\2\u0942"+
+		"\u0945\5\u01de\u00f0\2\u0943\u0945\5\u01f2\u00fa\2\u0944\u0942\3\2\2\2"+
+		"\u0944\u0943\3\2\2\2\u0945\u01dd\3\2\2\2\u0946\u0948\5\u01e0\u00f1\2\u0947"+
+		"\u0949\5\u01e2\u00f2\2\u0948\u0947\3\2\2\2\u0948\u0949\3\2\2\2\u0949\u094b"+
+		"\3\2\2\2\u094a\u094c\5\u01e6\u00f4\2\u094b\u094a\3\2\2\2\u094b\u094c\3"+
+		"\2\2\2\u094c\u094d\3\2\2\2\u094d\u094e\7\u0084\2\2\u094e\u01df\3\2\2\2"+
+		"\u094f\u0950\7\u0085\2\2\u0950\u0952\5\u01e8\u00f5\2\u0951\u0953\5\n\6"+
+		"\2\u0952\u0951\3\2\2\2\u0952\u0953\3\2\2\2\u0953\u01e1\3\2\2\2\u0954\u0956"+
+		"\5\u01e4\u00f3\2\u0955\u0954\3\2\2\2\u0956\u0957\3\2\2\2\u0957\u0955\3"+
+		"\2\2\2\u0957\u0958\3\2\2\2\u0958\u01e3\3\2\2\2\u0959\u095a\7\u0086\2\2"+
+		"\u095a\u095c\5\u01e8\u00f5\2\u095b\u095d\5\n\6\2\u095c\u095b\3\2\2\2\u095c"+
+		"\u095d\3\2\2\2\u095d\u01e5\3\2\2\2\u095e\u0960\7\u0087\2\2\u095f\u0961"+
+		"\5\n\6\2\u0960\u095f\3\2\2\2\u0960\u0961\3\2\2\2\u0961\u01e7\3\2\2\2\u0962"+
+		"\u0963\b\u00f5\1\2\u0963\u096d\5\u01ea\u00f6\2\u0964\u096d\5\u01f8\u00fd"+
+		"\2\u0965\u096d\5\u0200\u0101\2\u0966\u0967\7!\2\2\u0967\u0968\5\u01e8"+
+		"\u00f5\2\u0968\u0969\7\"\2\2\u0969\u096d\3\2\2\2\u096a\u096b\7Z\2\2\u096b"+
+		"\u096d\5\u01e8\u00f5\4\u096c\u0962\3\2\2\2\u096c\u0964\3\2\2\2\u096c\u0965"+
+		"\3\2\2\2\u096c\u0966\3\2\2\2\u096c\u096a\3\2\2\2\u096d\u0973\3\2\2\2\u096e"+
+		"\u096f\f\3\2\2\u096f\u0970\t\r\2\2\u0970\u0972\5\u01e8\u00f5\4\u0971\u096e"+
+		"\3\2\2\2\u0972\u0975\3\2\2\2\u0973\u0971\3\2\2\2\u0973\u0974\3\2\2\2\u0974"+
+		"\u01e9\3\2\2\2\u0975\u0973\3\2\2\2\u0976\u0977\7\u0088\2\2\u0977\u0978"+
+		"\7!\2\2\u0978\u0979\5\u01ec\u00f7\2\u0979\u097a\7\"\2\2\u097a\u0987\3"+
+		"\2\2\2\u097b\u097c\7\u0089\2\2\u097c\u097d\7!\2\2\u097d\u097e\5\u01ee"+
+		"\u00f8\2\u097e\u097f\7\"\2\2\u097f\u0987\3\2\2\2\u0980\u0981\7\u008a\2"+
+		"\2\u0981\u0982\7!\2\2\u0982\u0983\7~\2\2\u0983\u0984\5\u01f0\u00f9\2\u0984"+
+		"\u0985\7\"\2\2\u0985\u0987\3\2\2\2\u0986\u0976\3\2\2\2\u0986\u097b\3\2"+
+		"\2\2\u0986\u0980\3\2\2\2\u0987\u01eb\3\2\2\2\u0988\u0989\t\16\2\2\u0989"+
+		"\u01ed\3\2\2\2\u098a\u098b\t\17\2\2\u098b\u01ef\3\2\2\2\u098c\u098d\7"+
+		"\u00a1\2\2\u098d\u01f1\3\2\2\2\u098e\u098f\7\u008f\2\2\u098f\u0990\7!"+
+		"\2\2\u0990\u0991\7\u0090\2\2\u0991\u0992\7\4\2\2\u0992\u0993\5\u01f6\u00fc"+
+		"\2\u0993\u0994\7\24\2\2\u0994\u0995\7\u0091\2\2\u0995\u0996\7\4\2\2\u0996"+
+		"\u0997\5\u01f4\u00fb\2\u0997\u0998\7\"\2\2\u0998\u099d\3\2\2\2\u0999\u099a"+
+		"\7\u008f\2\2\u099a\u099b\7!\2\2\u099b\u099d\7\"\2\2\u099c\u098e\3\2\2"+
+		"\2\u099c\u0999\3\2\2\2\u099d\u01f3\3\2\2\2\u099e\u099f\5\u0206\u0104\2"+
+		"\u099f\u01f5\3\2\2\2\u09a0\u09a1\7\u00a3\2\2\u09a1\u01f7\3\2\2\2\u09a2"+
+		"\u09a5\7\u009b\2\2\u09a3\u09a5\5\u01fc\u00ff\2\u09a4\u09a2\3\2\2\2\u09a4"+
+		"\u09a3\3\2\2\2\u09a5\u01f9\3\2\2\2\u09a6\u09a7\t\20\2\2\u09a7\u01fb\3"+
+		"\2\2\2\u09a8\u09a9\t\21\2\2\u09a9\u01fd\3\2\2\2\u09aa\u09ad\5\u01f8\u00fd"+
+		"\2\u09ab\u09ad\7U\2\2\u09ac\u09aa\3\2\2\2\u09ac\u09ab\3\2\2\2\u09ad\u09b5"+
+		"\3\2\2\2\u09ae\u09b1\7\24\2\2\u09af\u09b2\5\u01f8\u00fd\2\u09b0\u09b2"+
+		"\7U\2\2\u09b1\u09af\3\2\2\2\u09b1\u09b0\3\2\2\2\u09b2\u09b4\3\2\2\2\u09b3"+
+		"\u09ae\3\2\2\2\u09b4\u09b7\3\2\2\2\u09b5\u09b3\3\2\2\2\u09b5\u09b6\3\2"+
+		"\2\2\u09b6\u01ff\3\2\2\2\u09b7\u09b5\3\2\2\2\u09b8\u09b9\7\u0096\2\2\u09b9"+
+		"\u0201\3\2\2\2\u09ba\u09bf\5\u0204\u0103\2\u09bb\u09bf\7\u00a3\2\2\u09bc"+
+		"\u09bf\7";
 	private static final String _serializedATNSegment1 =
-		"\5\u01f8\u00fd\2\u09ac\u09ae\7\u008d\2\2\u09ad\u09ab\3\2\2\2\u09ad\u09ac"+
-		"\3\2\2\2\u09ae\u09b0\3\2\2\2\u09af\u09aa\3\2\2\2\u09b0\u09b3\3\2\2\2\u09b1"+
-		"\u09af\3\2\2\2\u09b1\u09b2\3\2\2\2\u09b2\u01ff\3\2\2\2\u09b3\u09b1\3\2"+
-		"\2\2\u09b4\u09b5\7\u0096\2\2\u09b5\u0201\3\2\2\2\u09b6\u09bb\5\u0204\u0103"+
-		"\2\u09b7\u09bb\7\u00a3\2\2\u09b8\u09bb\7\u0096\2\2\u09b9\u09bb\7\u0097"+
-		"\2\2\u09ba\u09b6\3\2\2\2\u09ba\u09b7\3\2\2\2\u09ba\u09b8\3\2\2\2\u09ba"+
-		"\u09b9\3\2\2\2\u09bb\u0203\3\2\2\2\u09bc\u09be\7\u0094\2\2\u09bd\u09bc"+
-		"\3\2\2\2\u09bd\u09be\3\2\2\2\u09be\u09bf\3\2\2\2\u09bf\u09c5\5\u0206\u0104"+
-		"\2\u09c0\u09c2\7\u0094\2\2\u09c1\u09c0\3\2\2\2\u09c1\u09c2\3\2\2\2\u09c2"+
-		"\u09c3\3\2\2\2\u09c3\u09c5\7\u00a1\2\2\u09c4\u09bd\3\2\2\2\u09c4\u09c1"+
-		"\3\2\2\2\u09c5\u0205\3\2\2\2\u09c6\u09c7\t\22\2\2\u09c7\u0207\3\2\2\2"+
-		"\u0131\u0209\u020f\u0213\u0217\u021c\u0220\u0224\u0228\u022c\u0230\u0232"+
-		"\u0238\u0241\u0246\u024a\u0250\u0260\u0266\u026c\u0277\u027e\u028c\u0297"+
-		"\u029c\u02a7\u02b3\u02b7\u02bb\u02c1\u02cc\u02d0\u02d4\u02d7\u02e0\u02e7"+
-		"\u0300\u0307\u0310\u0319\u0325\u032f\u0334\u033e\u034d\u0354\u0358\u035c"+
-		"\u0360\u0364\u0368\u036c\u0370\u0374\u0378\u037c\u0380\u0384\u0388\u038c"+
-		"\u038e\u0393\u0398\u03b3\u03ce\u03d3\u03d7\u03dc\u03e0\u03eb\u03ef\u03f2"+
-		"\u03f5\u03ff\u0404\u041c\u0428\u042b\u042e\u0437\u0440\u0443\u0446\u044c"+
-		"\u044f\u0453\u045e\u0467\u046a\u046f\u0476\u047d\u0481\u0484\u0488\u048d"+
-		"\u0491\u0499\u049c\u04a1\u04ab\u04b3\u04b7\u04ba\u04bd\u04c3\u04c7\u04ca"+
-		"\u04ce\u04d9\u04dd\u04e4\u04e8\u04eb\u04f0\u04f3\u04f6\u04fc\u0501\u0505"+
-		"\u050b\u050e\u0514\u0517\u051c\u051f\u0523\u052a\u052f\u0531\u0534\u0537"+
-		"\u0541\u0546\u054f\u0552\u0556\u055d\u0561\u0564\u056e\u0573\u0579\u057c"+
-		"\u0581\u0584\u058c\u0591\u0594\u0599\u059c\u05a2\u05a6\u05a8\u05ae\u05b3"+
-		"\u05b6\u05bb\u05c3\u05c9\u05cd\u05d1\u05d5\u05d9\u05db\u05e0\u05ea\u05f0"+
-		"\u05f4\u05fb\u05fe\u0603\u0606\u060a\u060e\u0613\u0616\u061a\u061f\u0625"+
-		"\u0628\u062e\u0634\u0644\u0647\u064a\u0651\u0658\u066b\u0671\u0675\u0677"+
-		"\u0686\u068a\u068f\u0695\u069c\u06a7\u06ab\u06b4\u06bc\u06bf\u06c2\u06c6"+
-		"\u06ca\u06d8\u06de\u06e5\u06ea\u06ee\u06f3\u06f8\u070d\u0710\u0716\u071a"+
-		"\u071e\u0721\u0728\u072f\u0735\u073a\u0740\u074f\u0755\u0758\u0763\u076c"+
-		"\u0770\u0779\u077d\u0788\u078f\u0793\u07a5\u07aa\u07bb\u07be\u07c3\u07c7"+
-		"\u07ca\u07d1\u07da\u07e1\u07e6\u07ec\u07f0\u07fb\u07ff\u080a\u0813\u081a"+
-		"\u081c\u0820\u082f\u083d\u0853\u086b\u086d\u0873\u0877\u087f\u0885\u088c"+
-		"\u0890\u089b\u08ab\u08bc\u08c8\u08ca\u08df\u08e2\u08e8\u08ec\u08f1\u08f7"+
-		"\u08fd\u0904\u0908\u090b\u0911\u091b\u0927\u0932\u0939\u0940\u0944\u0947"+
-		"\u094e\u0953\u0958\u095c\u0968\u096f\u0982\u0998\u09a0\u09a8\u09ad\u09b1"+
-		"\u09ba\u09bd\u09c1\u09c4";
+		"\u0096\2\2\u09bd\u09bf\7\u0097\2\2\u09be\u09ba\3\2\2\2\u09be\u09bb\3\2"+
+		"\2\2\u09be\u09bc\3\2\2\2\u09be\u09bd\3\2\2\2\u09bf\u0203\3\2\2\2\u09c0"+
+		"\u09c2\7i\2\2\u09c1\u09c0\3\2\2\2\u09c1\u09c2\3\2\2\2\u09c2\u09c3\3\2"+
+		"\2\2\u09c3\u09c9\5\u0206\u0104\2\u09c4\u09c6\7i\2\2\u09c5\u09c4\3\2\2"+
+		"\2\u09c5\u09c6\3\2\2\2\u09c6\u09c7\3\2\2\2\u09c7\u09c9\7\u00a1\2\2\u09c8"+
+		"\u09c1\3\2\2\2\u09c8\u09c5\3\2\2\2\u09c9\u0205\3\2\2\2\u09ca\u09cb\t\22"+
+		"\2\2\u09cb\u0207\3\2\2\2\u0131\u0209\u020f\u0213\u0217\u021c\u0220\u0224"+
+		"\u0228\u022c\u0230\u0232\u0238\u0241\u0246\u024a\u0250\u0260\u0266\u026c"+
+		"\u0277\u027e\u028c\u0297\u029c\u02a7\u02b3\u02b7\u02bb\u02c1\u02cc\u02d0"+
+		"\u02d4\u02d7\u02e0\u02e7\u0300\u0307\u0310\u0319\u0325\u032f\u0334\u033e"+
+		"\u034d\u0354\u0358\u035c\u0360\u0364\u0368\u036c\u0370\u0374\u0378\u037c"+
+		"\u0380\u0384\u0388\u038c\u038e\u0393\u0398\u03b3\u03ce\u03d3\u03d7\u03dc"+
+		"\u03e0\u03eb\u03ef\u03f2\u03f5\u03ff\u0404\u041c\u0428\u042b\u042e\u0437"+
+		"\u0440\u0443\u0446\u044c\u044f\u0453\u045e\u0467\u046a\u046f\u0476\u047d"+
+		"\u0481\u0484\u0488\u048d\u0491\u0499\u049c\u04a1\u04ab\u04b3\u04b7\u04ba"+
+		"\u04bd\u04c3\u04c7\u04ca\u04ce\u04d9\u04dd\u04e4\u04e8\u04eb\u04f0\u04f3"+
+		"\u04f6\u04fc\u0501\u0505\u050b\u050e\u0514\u0517\u051c\u051f\u0523\u052a"+
+		"\u052f\u0531\u0534\u0537\u0541\u0546\u054f\u0552\u0556\u055d\u0561\u0564"+
+		"\u056e\u0573\u0579\u057c\u0581\u0584\u058c\u0591\u0594\u0599\u059c\u05a2"+
+		"\u05a6\u05a8\u05ae\u05b3\u05b6\u05bb\u05c3\u05c9\u05cd\u05d1\u05d5\u05d9"+
+		"\u05db\u05e0\u05ea\u05f0\u05f4\u05fb\u05fe\u0603\u0606\u060a\u060e\u0613"+
+		"\u0616\u061a\u061f\u0625\u0628\u062e\u0634\u0644\u0647\u064a\u0651\u0658"+
+		"\u066b\u0671\u0675\u0677\u0686\u068a\u068f\u0695\u069c\u06a7\u06ab\u06b4"+
+		"\u06bc\u06bf\u06c2\u06c6\u06ca\u06d8\u06de\u06e5\u06ea\u06ee\u06f3\u06f8"+
+		"\u070d\u0710\u0716\u071a\u071e\u0721\u0728\u072f\u0735\u073a\u0740\u074f"+
+		"\u0755\u0758\u0763\u076c\u0770\u0779\u077d\u0788\u078f\u0793\u07a5\u07aa"+
+		"\u07bb\u07be\u07c3\u07c7\u07ca\u07d1\u07da\u07e1\u07e6\u07ec\u07f0\u07fb"+
+		"\u07ff\u080a\u0813\u081a\u081c\u0820\u082f\u083d\u0853\u086b\u086d\u0873"+
+		"\u0877\u087f\u0885\u088c\u0890\u089d\u08ab\u08bc\u08c8\u08ca\u08df\u08e2"+
+		"\u08e8\u08ec\u08f1\u08f7\u08fd\u0904\u0908\u090b\u0915\u091f\u092b\u0936"+
+		"\u093d\u0944\u0948\u094b\u0952\u0957\u095c\u0960\u096c\u0973\u0986\u099c"+
+		"\u09a4\u09ac\u09b1\u09b5\u09be\u09c1\u09c5\u09c8";
 	public static final String _serializedATN = Utils.join(
 		new String[] {
 			_serializedATNSegment0,

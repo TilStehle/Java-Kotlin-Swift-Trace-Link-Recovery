@@ -1,7 +1,6 @@
-package de.unihamburg.swk.parsing.antlr4.kotlin;// Generated from KotlinParser.g4 by ANTLR 4.4
+package de.unihamburg.swk.parsing.antlr4.kotlin;// Generated from KotlinParser.g4 by ANTLR 4.7
 
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
@@ -16,1416 +15,1416 @@ public class KotlinParserBaseListener implements KotlinParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPreamble(@NotNull KotlinParser.PreambleContext ctx) { }
+	@Override public void enterKotlinFile(KotlinParser.KotlinFileContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPreamble(@NotNull KotlinParser.PreambleContext ctx) { }
+	@Override public void exitKotlinFile(KotlinParser.KotlinFileContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMemberDeclaration(@NotNull KotlinParser.MemberDeclarationContext ctx) { }
+	@Override public void enterPreamble(KotlinParser.PreambleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMemberDeclaration(@NotNull KotlinParser.MemberDeclarationContext ctx) { }
+	@Override public void exitPreamble(KotlinParser.PreambleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEnumEntries(@NotNull KotlinParser.EnumEntriesContext ctx) { }
+	@Override public void enterPackageHeader(KotlinParser.PackageHeaderContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEnumEntries(@NotNull KotlinParser.EnumEntriesContext ctx) { }
+	@Override public void exitPackageHeader(KotlinParser.PackageHeaderContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIsOperation(@NotNull KotlinParser.IsOperationContext ctx) { }
+	@Override public void enterImportHeader(KotlinParser.ImportHeaderContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIsOperation(@NotNull KotlinParser.IsOperationContext ctx) { }
+	@Override public void exitImportHeader(KotlinParser.ImportHeaderContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterToplevelObject(@NotNull KotlinParser.ToplevelObjectContext ctx) { }
+	@Override public void enterToplevelObject(KotlinParser.ToplevelObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitToplevelObject(@NotNull KotlinParser.ToplevelObjectContext ctx) { }
+	@Override public void exitToplevelObject(KotlinParser.ToplevelObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEnumEntry(@NotNull KotlinParser.EnumEntryContext ctx) { }
+	@Override public void enterMemberDeclaration(KotlinParser.MemberDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEnumEntry(@NotNull KotlinParser.EnumEntryContext ctx) { }
+	@Override public void exitMemberDeclaration(KotlinParser.MemberDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterType(@NotNull KotlinParser.TypeContext ctx) { }
+	@Override public void enterOptionalProjection(KotlinParser.OptionalProjectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitType(@NotNull KotlinParser.TypeContext ctx) { }
+	@Override public void exitOptionalProjection(KotlinParser.OptionalProjectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLabelReference(@NotNull KotlinParser.LabelReferenceContext ctx) { }
+	@Override public void enterTypeParameters(KotlinParser.TypeParametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLabelReference(@NotNull KotlinParser.LabelReferenceContext ctx) { }
+	@Override public void exitTypeParameters(KotlinParser.TypeParametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhen(@NotNull KotlinParser.WhenContext ctx) { }
+	@Override public void enterTypeParameter(KotlinParser.TypeParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhen(@NotNull KotlinParser.WhenContext ctx) { }
+	@Override public void exitTypeParameter(KotlinParser.TypeParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInfixFunctionCall(@NotNull KotlinParser.InfixFunctionCallContext ctx) { }
+	@Override public void enterTypeArguments(KotlinParser.TypeArgumentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInfixFunctionCall(@NotNull KotlinParser.InfixFunctionCallContext ctx) { }
+	@Override public void exitTypeArguments(KotlinParser.TypeArgumentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNamedInfix(@NotNull KotlinParser.NamedInfixContext ctx) { }
+	@Override public void enterTypeConstraints(KotlinParser.TypeConstraintsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNamedInfix(@NotNull KotlinParser.NamedInfixContext ctx) { }
+	@Override public void exitTypeConstraints(KotlinParser.TypeConstraintsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlock(@NotNull KotlinParser.BlockContext ctx) { }
+	@Override public void enterTypeConstraint(KotlinParser.TypeConstraintContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlock(@NotNull KotlinParser.BlockContext ctx) { }
+	@Override public void exitTypeConstraint(KotlinParser.TypeConstraintContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEqualityComparison(@NotNull KotlinParser.EqualityComparisonContext ctx) { }
+	@Override public void enterType(KotlinParser.TypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEqualityComparison(@NotNull KotlinParser.EqualityComparisonContext ctx) { }
+	@Override public void exitType(KotlinParser.TypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrefixUnaryExpression(@NotNull KotlinParser.PrefixUnaryExpressionContext ctx) { }
+	@Override public void enterTypeDescriptor(KotlinParser.TypeDescriptorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrefixUnaryExpression(@NotNull KotlinParser.PrefixUnaryExpressionContext ctx) { }
+	@Override public void exitTypeDescriptor(KotlinParser.TypeDescriptorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterJump(@NotNull KotlinParser.JumpContext ctx) { }
+	@Override public void enterUserType(KotlinParser.UserTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitJump(@NotNull KotlinParser.JumpContext ctx) { }
+	@Override public void exitUserType(KotlinParser.UserTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCatchBlock(@NotNull KotlinParser.CatchBlockContext ctx) { }
+	@Override public void enterSimpleUserType_typeParam(KotlinParser.SimpleUserType_typeParamContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCatchBlock(@NotNull KotlinParser.CatchBlockContext ctx) { }
+	@Override public void exitSimpleUserType_typeParam(KotlinParser.SimpleUserType_typeParamContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIdentifier(@NotNull KotlinParser.IdentifierContext ctx) { }
+	@Override public void enterSimpleUserType(KotlinParser.SimpleUserTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIdentifier(@NotNull KotlinParser.IdentifierContext ctx) { }
+	@Override public void exitSimpleUserType(KotlinParser.SimpleUserTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInOperation(@NotNull KotlinParser.InOperationContext ctx) { }
+	@Override public void enterKeywordOrSimpleName(KotlinParser.KeywordOrSimpleNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInOperation(@NotNull KotlinParser.InOperationContext ctx) { }
+	@Override public void exitKeywordOrSimpleName(KotlinParser.KeywordOrSimpleNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExplicitDelegation(@NotNull KotlinParser.ExplicitDelegationContext ctx) { }
+	@Override public void enterVariableDeclarationEntry(KotlinParser.VariableDeclarationEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExplicitDelegation(@NotNull KotlinParser.ExplicitDelegationContext ctx) { }
+	@Override public void exitVariableDeclarationEntry(KotlinParser.VariableDeclarationEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStringLiteral(@NotNull KotlinParser.StringLiteralContext ctx) { }
+	@Override public void enterFunctionType_paramOrType(KotlinParser.FunctionType_paramOrTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStringLiteral(@NotNull KotlinParser.StringLiteralContext ctx) { }
+	@Override public void exitFunctionType_paramOrType(KotlinParser.FunctionType_paramOrTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRangeExpression(@NotNull KotlinParser.RangeExpressionContext ctx) { }
+	@Override public void enterExtensionFunctionTypeNoReceiver(KotlinParser.ExtensionFunctionTypeNoReceiverContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRangeExpression(@NotNull KotlinParser.RangeExpressionContext ctx) { }
+	@Override public void exitExtensionFunctionTypeNoReceiver(KotlinParser.ExtensionFunctionTypeNoReceiverContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValueParameters(@NotNull KotlinParser.ValueParametersContext ctx) { }
+	@Override public void enterFunctionTypeNoReceiver(KotlinParser.FunctionTypeNoReceiverContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValueParameters(@NotNull KotlinParser.ValueParametersContext ctx) { }
+	@Override public void exitFunctionTypeNoReceiver(KotlinParser.FunctionTypeNoReceiverContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterKeywordOrSimpleName(@NotNull KotlinParser.KeywordOrSimpleNameContext ctx) { }
+	@Override public void enterMultipleVariableDeclarations(KotlinParser.MultipleVariableDeclarationsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitKeywordOrSimpleName(@NotNull KotlinParser.KeywordOrSimpleNameContext ctx) { }
+	@Override public void exitMultipleVariableDeclarations(KotlinParser.MultipleVariableDeclarationsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterObjectDeclaration(@NotNull KotlinParser.ObjectDeclarationContext ctx) { }
+	@Override public void enterPropertyDeclaration(KotlinParser.PropertyDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitObjectDeclaration(@NotNull KotlinParser.ObjectDeclarationContext ctx) { }
+	@Override public void exitPropertyDeclaration(KotlinParser.PropertyDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeArguments(@NotNull KotlinParser.TypeArgumentsContext ctx) { }
+	@Override public void enterModifiers(KotlinParser.ModifiersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeArguments(@NotNull KotlinParser.TypeArgumentsContext ctx) { }
+	@Override public void exitModifiers(KotlinParser.ModifiersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPropertyDeclaration(@NotNull KotlinParser.PropertyDeclarationContext ctx) { }
+	@Override public void enterModifier(KotlinParser.ModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPropertyDeclaration(@NotNull KotlinParser.PropertyDeclarationContext ctx) { }
+	@Override public void exitModifier(KotlinParser.ModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterClassModifier(@NotNull KotlinParser.ClassModifierContext ctx) { }
+	@Override public void enterModifierKeyword(KotlinParser.ModifierKeywordContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitClassModifier(@NotNull KotlinParser.ClassModifierContext ctx) { }
+	@Override public void exitModifierKeyword(KotlinParser.ModifierKeywordContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAdditiveExpression(@NotNull KotlinParser.AdditiveExpressionContext ctx) { }
+	@Override public void enterPropertyModifier(KotlinParser.PropertyModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAdditiveExpression(@NotNull KotlinParser.AdditiveExpressionContext ctx) { }
+	@Override public void exitPropertyModifier(KotlinParser.PropertyModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeRHS(@NotNull KotlinParser.TypeRHSContext ctx) { }
+	@Override public void enterFunctionModifier(KotlinParser.FunctionModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeRHS(@NotNull KotlinParser.TypeRHSContext ctx) { }
+	@Override public void exitFunctionModifier(KotlinParser.FunctionModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAnnotatedLambda(@NotNull KotlinParser.AnnotatedLambdaContext ctx) { }
+	@Override public void enterHierarchyModifier(KotlinParser.HierarchyModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAnnotatedLambda(@NotNull KotlinParser.AnnotatedLambdaContext ctx) { }
+	@Override public void exitHierarchyModifier(KotlinParser.HierarchyModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPostfixUnaryExpression(@NotNull KotlinParser.PostfixUnaryExpressionContext ctx) { }
+	@Override public void enterIdentifier(KotlinParser.IdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPostfixUnaryExpression(@NotNull KotlinParser.PostfixUnaryExpressionContext ctx) { }
+	@Override public void exitIdentifier(KotlinParser.IdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFinallyBlock(@NotNull KotlinParser.FinallyBlockContext ctx) { }
+	@Override public void enterClassModifier(KotlinParser.ClassModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFinallyBlock(@NotNull KotlinParser.FinallyBlockContext ctx) { }
+	@Override public void exitClassModifier(KotlinParser.ClassModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeParameters(@NotNull KotlinParser.TypeParametersContext ctx) { }
+	@Override public void enterAccessModifier(KotlinParser.AccessModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeParameters(@NotNull KotlinParser.TypeParametersContext ctx) { }
+	@Override public void exitAccessModifier(KotlinParser.AccessModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEqualityOperation(@NotNull KotlinParser.EqualityOperationContext ctx) { }
+	@Override public void enterVarianceAnnotation(KotlinParser.VarianceAnnotationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEqualityOperation(@NotNull KotlinParser.EqualityOperationContext ctx) { }
+	@Override public void exitVarianceAnnotation(KotlinParser.VarianceAnnotationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConjunction(@NotNull KotlinParser.ConjunctionContext ctx) { }
+	@Override public void enterAnnotations(KotlinParser.AnnotationsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConjunction(@NotNull KotlinParser.ConjunctionContext ctx) { }
+	@Override public void exitAnnotations(KotlinParser.AnnotationsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryConstructor(@NotNull KotlinParser.PrimaryConstructorContext ctx) { }
+	@Override public void enterAnnotation(KotlinParser.AnnotationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryConstructor(@NotNull KotlinParser.PrimaryConstructorContext ctx) { }
+	@Override public void exitAnnotation(KotlinParser.AnnotationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterClassBody(@NotNull KotlinParser.ClassBodyContext ctx) { }
+	@Override public void enterAnnotationUseSiteTarget(KotlinParser.AnnotationUseSiteTargetContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitClassBody(@NotNull KotlinParser.ClassBodyContext ctx) { }
+	@Override public void exitAnnotationUseSiteTarget(KotlinParser.AnnotationUseSiteTargetContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIfExpression(@NotNull KotlinParser.IfExpressionContext ctx) { }
+	@Override public void enterValueArgument(KotlinParser.ValueArgumentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIfExpression(@NotNull KotlinParser.IfExpressionContext ctx) { }
+	@Override public void exitValueArgument(KotlinParser.ValueArgumentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparisonOperation(@NotNull KotlinParser.ComparisonOperationContext ctx) { }
+	@Override public void enterValueArguments(KotlinParser.ValueArgumentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparisonOperation(@NotNull KotlinParser.ComparisonOperationContext ctx) { }
+	@Override public void exitValueArguments(KotlinParser.ValueArgumentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAnnotation(@NotNull KotlinParser.AnnotationContext ctx) { }
+	@Override public void enterUnescapedAnnotation(KotlinParser.UnescapedAnnotationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAnnotation(@NotNull KotlinParser.AnnotationContext ctx) { }
+	@Override public void exitUnescapedAnnotation(KotlinParser.UnescapedAnnotationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpression(@NotNull KotlinParser.ExpressionContext ctx) { }
+	@Override public void enterJump(KotlinParser.JumpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpression(@NotNull KotlinParser.ExpressionContext ctx) { }
+	@Override public void exitJump(KotlinParser.JumpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterObjectLiteral(@NotNull KotlinParser.ObjectLiteralContext ctx) { }
+	@Override public void enterLabelReference(KotlinParser.LabelReferenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitObjectLiteral(@NotNull KotlinParser.ObjectLiteralContext ctx) { }
+	@Override public void exitLabelReference(KotlinParser.LabelReferenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultiplicativeExpression(@NotNull KotlinParser.MultiplicativeExpressionContext ctx) { }
+	@Override public void enterLabelDefinition(KotlinParser.LabelDefinitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultiplicativeExpression(@NotNull KotlinParser.MultiplicativeExpressionContext ctx) { }
+	@Override public void exitLabelDefinition(KotlinParser.LabelDefinitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeclaration(@NotNull KotlinParser.DeclarationContext ctx) { }
+	@Override public void enterParameter(KotlinParser.ParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeclaration(@NotNull KotlinParser.DeclarationContext ctx) { }
+	@Override public void exitParameter(KotlinParser.ParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeConstraint(@NotNull KotlinParser.TypeConstraintContext ctx) { }
+	@Override public void enterFunctionParameter(KotlinParser.FunctionParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeConstraint(@NotNull KotlinParser.TypeConstraintContext ctx) { }
+	@Override public void exitFunctionParameter(KotlinParser.FunctionParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDelegationSpecifier(@NotNull KotlinParser.DelegationSpecifierContext ctx) { }
+	@Override public void enterPrimaryConstructor(KotlinParser.PrimaryConstructorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDelegationSpecifier(@NotNull KotlinParser.DelegationSpecifierContext ctx) { }
+	@Override public void exitPrimaryConstructor(KotlinParser.PrimaryConstructorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSimpleUserType(@NotNull KotlinParser.SimpleUserTypeContext ctx) { }
+	@Override public void enterSecondaryConstructor(KotlinParser.SecondaryConstructorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSimpleUserType(@NotNull KotlinParser.SimpleUserTypeContext ctx) { }
+	@Override public void exitSecondaryConstructor(KotlinParser.SecondaryConstructorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultipleVariableDeclarations(@NotNull KotlinParser.MultipleVariableDeclarationsContext ctx) { }
+	@Override public void enterConstructorDelegationCall(KotlinParser.ConstructorDelegationCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultipleVariableDeclarations(@NotNull KotlinParser.MultipleVariableDeclarationsContext ctx) { }
+	@Override public void exitConstructorDelegationCall(KotlinParser.ConstructorDelegationCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarianceAnnotation(@NotNull KotlinParser.VarianceAnnotationContext ctx) { }
+	@Override public void enterCallSuffix(KotlinParser.CallSuffixContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarianceAnnotation(@NotNull KotlinParser.VarianceAnnotationContext ctx) { }
+	@Override public void exitCallSuffix(KotlinParser.CallSuffixContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPropertyModifier(@NotNull KotlinParser.PropertyModifierContext ctx) { }
+	@Override public void enterConstructorInvocation(KotlinParser.ConstructorInvocationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPropertyModifier(@NotNull KotlinParser.PropertyModifierContext ctx) { }
+	@Override public void exitConstructorInvocation(KotlinParser.ConstructorInvocationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElvisExpression(@NotNull KotlinParser.ElvisExpressionContext ctx) { }
+	@Override public void enterExplicitDelegation(KotlinParser.ExplicitDelegationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElvisExpression(@NotNull KotlinParser.ElvisExpressionContext ctx) { }
+	@Override public void exitExplicitDelegation(KotlinParser.ExplicitDelegationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSetter(@NotNull KotlinParser.SetterContext ctx) { }
+	@Override public void enterDelegationSpecifier(KotlinParser.DelegationSpecifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSetter(@NotNull KotlinParser.SetterContext ctx) { }
+	@Override public void exitDelegationSpecifier(KotlinParser.DelegationSpecifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionDeclaration(@NotNull KotlinParser.FunctionDeclarationContext ctx) { }
+	@Override public void enterClassDeclaration(KotlinParser.ClassDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionDeclaration(@NotNull KotlinParser.FunctionDeclarationContext ctx) { }
+	@Override public void exitClassDeclaration(KotlinParser.ClassDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDoWhileLoop(@NotNull KotlinParser.DoWhileLoopContext ctx) { }
+	@Override public void enterClassOrInterface(KotlinParser.ClassOrInterfaceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDoWhileLoop(@NotNull KotlinParser.DoWhileLoopContext ctx) { }
+	@Override public void exitClassOrInterface(KotlinParser.ClassOrInterfaceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExtensionFunctionTypeNoReceiver(@NotNull KotlinParser.ExtensionFunctionTypeNoReceiverContext ctx) { }
+	@Override public void enterSupertypesSpecifiers(KotlinParser.SupertypesSpecifiersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExtensionFunctionTypeNoReceiver(@NotNull KotlinParser.ExtensionFunctionTypeNoReceiverContext ctx) { }
+	@Override public void exitSupertypesSpecifiers(KotlinParser.SupertypesSpecifiersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterGetter(@NotNull KotlinParser.GetterContext ctx) { }
+	@Override public void enterObjectDeclaration(KotlinParser.ObjectDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitGetter(@NotNull KotlinParser.GetterContext ctx) { }
+	@Override public void exitObjectDeclaration(KotlinParser.ObjectDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterModifier(@NotNull KotlinParser.ModifierContext ctx) { }
+	@Override public void enterCompanionObject(KotlinParser.CompanionObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitModifier(@NotNull KotlinParser.ModifierContext ctx) { }
+	@Override public void exitCompanionObject(KotlinParser.CompanionObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignmentOperator(@NotNull KotlinParser.AssignmentOperatorContext ctx) { }
+	@Override public void enterClassBody(KotlinParser.ClassBodyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssignmentOperator(@NotNull KotlinParser.AssignmentOperatorContext ctx) { }
+	@Override public void exitClassBody(KotlinParser.ClassBodyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAnnotations(@NotNull KotlinParser.AnnotationsContext ctx) { }
+	@Override public void enterMembers(KotlinParser.MembersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAnnotations(@NotNull KotlinParser.AnnotationsContext ctx) { }
+	@Override public void exitMembers(KotlinParser.MembersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhenEntry(@NotNull KotlinParser.WhenEntryContext ctx) { }
+	@Override public void enterValueParameters(KotlinParser.ValueParametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhenEntry(@NotNull KotlinParser.WhenEntryContext ctx) { }
+	@Override public void exitValueParameters(KotlinParser.ValueParametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSecondaryConstructor(@NotNull KotlinParser.SecondaryConstructorContext ctx) { }
+	@Override public void enterFunctionDeclaration(KotlinParser.FunctionDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSecondaryConstructor(@NotNull KotlinParser.SecondaryConstructorContext ctx) { }
+	@Override public void exitFunctionDeclaration(KotlinParser.FunctionDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariableDeclarationEntry(@NotNull KotlinParser.VariableDeclarationEntryContext ctx) { }
+	@Override public void enterStatements(KotlinParser.StatementsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVariableDeclarationEntry(@NotNull KotlinParser.VariableDeclarationEntryContext ctx) { }
+	@Override public void exitStatements(KotlinParser.StatementsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValueArgument(@NotNull KotlinParser.ValueArgumentContext ctx) { }
+	@Override public void enterFunctionBody(KotlinParser.FunctionBodyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValueArgument(@NotNull KotlinParser.ValueArgumentContext ctx) { }
+	@Override public void exitFunctionBody(KotlinParser.FunctionBodyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValueArguments(@NotNull KotlinParser.ValueArgumentsContext ctx) { }
+	@Override public void enterBlock(KotlinParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValueArguments(@NotNull KotlinParser.ValueArgumentsContext ctx) { }
+	@Override public void exitBlock(KotlinParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConstructorInvocation(@NotNull KotlinParser.ConstructorInvocationContext ctx) { }
+	@Override public void enterAnonymousInitializer(KotlinParser.AnonymousInitializerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConstructorInvocation(@NotNull KotlinParser.ConstructorInvocationContext ctx) { }
+	@Override public void exitAnonymousInitializer(KotlinParser.AnonymousInitializerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLoop(@NotNull KotlinParser.LoopContext ctx) { }
+	@Override public void enterEnumClassBody(KotlinParser.EnumClassBodyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLoop(@NotNull KotlinParser.LoopContext ctx) { }
+	@Override public void exitEnumClassBody(KotlinParser.EnumClassBodyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMembers(@NotNull KotlinParser.MembersContext ctx) { }
+	@Override public void enterEnumEntries(KotlinParser.EnumEntriesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMembers(@NotNull KotlinParser.MembersContext ctx) { }
+	@Override public void exitEnumEntries(KotlinParser.EnumEntriesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterHierarchyModifier(@NotNull KotlinParser.HierarchyModifierContext ctx) { }
+	@Override public void enterEnumEntry(KotlinParser.EnumEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitHierarchyModifier(@NotNull KotlinParser.HierarchyModifierContext ctx) { }
+	@Override public void exitEnumEntry(KotlinParser.EnumEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionType_paramOrType(@NotNull KotlinParser.FunctionType_paramOrTypeContext ctx) { }
+	@Override public void enterIfExpression(KotlinParser.IfExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionType_paramOrType(@NotNull KotlinParser.FunctionType_paramOrTypeContext ctx) { }
+	@Override public void exitIfExpression(KotlinParser.IfExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArrayAccess(@NotNull KotlinParser.ArrayAccessContext ctx) { }
+	@Override public void enterTryExpression(KotlinParser.TryExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArrayAccess(@NotNull KotlinParser.ArrayAccessContext ctx) { }
+	@Override public void exitTryExpression(KotlinParser.TryExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOptionalProjection(@NotNull KotlinParser.OptionalProjectionContext ctx) { }
+	@Override public void enterCatchBlock(KotlinParser.CatchBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOptionalProjection(@NotNull KotlinParser.OptionalProjectionContext ctx) { }
+	@Override public void exitCatchBlock(KotlinParser.CatchBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterForLoop(@NotNull KotlinParser.ForLoopContext ctx) { }
+	@Override public void enterFinallyBlock(KotlinParser.FinallyBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitForLoop(@NotNull KotlinParser.ForLoopContext ctx) { }
+	@Override public void exitFinallyBlock(KotlinParser.FinallyBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEnumClassBody(@NotNull KotlinParser.EnumClassBodyContext ctx) { }
+	@Override public void enterLoop(KotlinParser.LoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEnumClassBody(@NotNull KotlinParser.EnumClassBodyContext ctx) { }
+	@Override public void exitLoop(KotlinParser.LoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparison(@NotNull KotlinParser.ComparisonContext ctx) { }
+	@Override public void enterForLoop(KotlinParser.ForLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparison(@NotNull KotlinParser.ComparisonContext ctx) { }
+	@Override public void exitForLoop(KotlinParser.ForLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterClassOrInterface(@NotNull KotlinParser.ClassOrInterfaceContext ctx) { }
+	@Override public void enterWhileLoop(KotlinParser.WhileLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitClassOrInterface(@NotNull KotlinParser.ClassOrInterfaceContext ctx) { }
+	@Override public void exitWhileLoop(KotlinParser.WhileLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeOperation(@NotNull KotlinParser.TypeOperationContext ctx) { }
+	@Override public void enterDoWhileLoop(KotlinParser.DoWhileLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeOperation(@NotNull KotlinParser.TypeOperationContext ctx) { }
+	@Override public void exitDoWhileLoop(KotlinParser.DoWhileLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompanionObject(@NotNull KotlinParser.CompanionObjectContext ctx) { }
+	@Override public void enterExpression(KotlinParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompanionObject(@NotNull KotlinParser.CompanionObjectContext ctx) { }
+	@Override public void exitExpression(KotlinParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSupertypesSpecifiers(@NotNull KotlinParser.SupertypesSpecifiersContext ctx) { }
+	@Override public void enterDisjunction(KotlinParser.DisjunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSupertypesSpecifiers(@NotNull KotlinParser.SupertypesSpecifiersContext ctx) { }
+	@Override public void exitDisjunction(KotlinParser.DisjunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImportHeader(@NotNull KotlinParser.ImportHeaderContext ctx) { }
+	@Override public void enterConjunction(KotlinParser.ConjunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImportHeader(@NotNull KotlinParser.ImportHeaderContext ctx) { }
+	@Override public void exitConjunction(KotlinParser.ConjunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMemberAccessOperation(@NotNull KotlinParser.MemberAccessOperationContext ctx) { }
+	@Override public void enterEqualityComparison(KotlinParser.EqualityComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMemberAccessOperation(@NotNull KotlinParser.MemberAccessOperationContext ctx) { }
+	@Override public void exitEqualityComparison(KotlinParser.EqualityComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionLiteral(@NotNull KotlinParser.FunctionLiteralContext ctx) { }
+	@Override public void enterComparison(KotlinParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionLiteral(@NotNull KotlinParser.FunctionLiteralContext ctx) { }
+	@Override public void exitComparison(KotlinParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAnnotationUseSiteTarget(@NotNull KotlinParser.AnnotationUseSiteTargetContext ctx) { }
+	@Override public void enterNamedInfix(KotlinParser.NamedInfixContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAnnotationUseSiteTarget(@NotNull KotlinParser.AnnotationUseSiteTargetContext ctx) { }
+	@Override public void exitNamedInfix(KotlinParser.NamedInfixContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUserType(@NotNull KotlinParser.UserTypeContext ctx) { }
+	@Override public void enterElvisExpression(KotlinParser.ElvisExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUserType(@NotNull KotlinParser.UserTypeContext ctx) { }
+	@Override public void exitElvisExpression(KotlinParser.ElvisExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPostfixUnaryOperation(@NotNull KotlinParser.PostfixUnaryOperationContext ctx) { }
+	@Override public void enterInfixFunctionCall(KotlinParser.InfixFunctionCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPostfixUnaryOperation(@NotNull KotlinParser.PostfixUnaryOperationContext ctx) { }
+	@Override public void exitInfixFunctionCall(KotlinParser.InfixFunctionCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAnonymousInitializer(@NotNull KotlinParser.AnonymousInitializerContext ctx) { }
+	@Override public void enterRangeExpression(KotlinParser.RangeExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAnonymousInitializer(@NotNull KotlinParser.AnonymousInitializerContext ctx) { }
+	@Override public void exitRangeExpression(KotlinParser.RangeExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeParameter(@NotNull KotlinParser.TypeParameterContext ctx) { }
+	@Override public void enterAdditiveExpression(KotlinParser.AdditiveExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeParameter(@NotNull KotlinParser.TypeParameterContext ctx) { }
+	@Override public void exitAdditiveExpression(KotlinParser.AdditiveExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhileLoop(@NotNull KotlinParser.WhileLoopContext ctx) { }
+	@Override public void enterMultiplicativeExpression(KotlinParser.MultiplicativeExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhileLoop(@NotNull KotlinParser.WhileLoopContext ctx) { }
+	@Override public void exitMultiplicativeExpression(KotlinParser.MultiplicativeExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnescapedAnnotation(@NotNull KotlinParser.UnescapedAnnotationContext ctx) { }
+	@Override public void enterTypeRHS(KotlinParser.TypeRHSContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnescapedAnnotation(@NotNull KotlinParser.UnescapedAnnotationContext ctx) { }
+	@Override public void exitTypeRHS(KotlinParser.TypeRHSContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterModifierKeyword(@NotNull KotlinParser.ModifierKeywordContext ctx) { }
+	@Override public void enterPrefixUnaryExpression(KotlinParser.PrefixUnaryExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitModifierKeyword(@NotNull KotlinParser.ModifierKeywordContext ctx) { }
+	@Override public void exitPrefixUnaryExpression(KotlinParser.PrefixUnaryExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLabelDefinition(@NotNull KotlinParser.LabelDefinitionContext ctx) { }
+	@Override public void enterPostfixUnaryExpression(KotlinParser.PostfixUnaryExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLabelDefinition(@NotNull KotlinParser.LabelDefinitionContext ctx) { }
+	@Override public void exitPostfixUnaryExpression(KotlinParser.PostfixUnaryExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatements(@NotNull KotlinParser.StatementsContext ctx) { }
+	@Override public void enterCallableReference(KotlinParser.CallableReferenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatements(@NotNull KotlinParser.StatementsContext ctx) { }
+	@Override public void exitCallableReference(KotlinParser.CallableReferenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAdditiveOperation(@NotNull KotlinParser.AdditiveOperationContext ctx) { }
+	@Override public void enterGetter(KotlinParser.GetterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAdditiveOperation(@NotNull KotlinParser.AdditiveOperationContext ctx) { }
+	@Override public void exitGetter(KotlinParser.GetterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSimpleUserType_typeParam(@NotNull KotlinParser.SimpleUserType_typeParamContext ctx) { }
+	@Override public void enterSetter(KotlinParser.SetterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSimpleUserType_typeParam(@NotNull KotlinParser.SimpleUserType_typeParamContext ctx) { }
+	@Override public void exitSetter(KotlinParser.SetterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterModifiers(@NotNull KotlinParser.ModifiersContext ctx) { }
+	@Override public void enterStringLiteral(KotlinParser.StringLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitModifiers(@NotNull KotlinParser.ModifiersContext ctx) { }
+	@Override public void exitStringLiteral(KotlinParser.StringLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPackageHeader(@NotNull KotlinParser.PackageHeaderContext ctx) { }
+	@Override public void enterAtomicExpression(KotlinParser.AtomicExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPackageHeader(@NotNull KotlinParser.PackageHeaderContext ctx) { }
+	@Override public void exitAtomicExpression(KotlinParser.AtomicExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterClassDeclaration(@NotNull KotlinParser.ClassDeclarationContext ctx) { }
+	@Override public void enterLiteralConstant(KotlinParser.LiteralConstantContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitClassDeclaration(@NotNull KotlinParser.ClassDeclarationContext ctx) { }
+	@Override public void exitLiteralConstant(KotlinParser.LiteralConstantContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeConstraints(@NotNull KotlinParser.TypeConstraintsContext ctx) { }
+	@Override public void enterDeclaration(KotlinParser.DeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeConstraints(@NotNull KotlinParser.TypeConstraintsContext ctx) { }
+	@Override public void exitDeclaration(KotlinParser.DeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAccessModifier(@NotNull KotlinParser.AccessModifierContext ctx) { }
+	@Override public void enterStatement(KotlinParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAccessModifier(@NotNull KotlinParser.AccessModifierContext ctx) { }
+	@Override public void exitStatement(KotlinParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTryExpression(@NotNull KotlinParser.TryExpressionContext ctx) { }
+	@Override public void enterMultiplicativeOperation(KotlinParser.MultiplicativeOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTryExpression(@NotNull KotlinParser.TryExpressionContext ctx) { }
+	@Override public void exitMultiplicativeOperation(KotlinParser.MultiplicativeOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParameter(@NotNull KotlinParser.ParameterContext ctx) { }
+	@Override public void enterAdditiveOperation(KotlinParser.AdditiveOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParameter(@NotNull KotlinParser.ParameterContext ctx) { }
+	@Override public void exitAdditiveOperation(KotlinParser.AdditiveOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(@NotNull KotlinParser.StatementContext ctx) { }
+	@Override public void enterInOperation(KotlinParser.InOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatement(@NotNull KotlinParser.StatementContext ctx) { }
+	@Override public void exitInOperation(KotlinParser.InOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrefixUnaryOperation(@NotNull KotlinParser.PrefixUnaryOperationContext ctx) { }
+	@Override public void enterTypeOperation(KotlinParser.TypeOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrefixUnaryOperation(@NotNull KotlinParser.PrefixUnaryOperationContext ctx) { }
+	@Override public void exitTypeOperation(KotlinParser.TypeOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionModifier(@NotNull KotlinParser.FunctionModifierContext ctx) { }
+	@Override public void enterComparisonOperation(KotlinParser.ComparisonOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionModifier(@NotNull KotlinParser.FunctionModifierContext ctx) { }
+	@Override public void exitComparisonOperation(KotlinParser.ComparisonOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeDescriptor(@NotNull KotlinParser.TypeDescriptorContext ctx) { }
+	@Override public void enterEqualityOperation(KotlinParser.EqualityOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeDescriptor(@NotNull KotlinParser.TypeDescriptorContext ctx) { }
+	@Override public void exitEqualityOperation(KotlinParser.EqualityOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomicExpression(@NotNull KotlinParser.AtomicExpressionContext ctx) { }
+	@Override public void enterAssignmentOperator(KotlinParser.AssignmentOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomicExpression(@NotNull KotlinParser.AtomicExpressionContext ctx) { }
+	@Override public void exitAssignmentOperator(KotlinParser.AssignmentOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConstructorDelegationCall(@NotNull KotlinParser.ConstructorDelegationCallContext ctx) { }
+	@Override public void enterPostfixUnaryOperation(KotlinParser.PostfixUnaryOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConstructorDelegationCall(@NotNull KotlinParser.ConstructorDelegationCallContext ctx) { }
+	@Override public void exitPostfixUnaryOperation(KotlinParser.PostfixUnaryOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDisjunction(@NotNull KotlinParser.DisjunctionContext ctx) { }
+	@Override public void enterPrefixUnaryOperation(KotlinParser.PrefixUnaryOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDisjunction(@NotNull KotlinParser.DisjunctionContext ctx) { }
+	@Override public void exitPrefixUnaryOperation(KotlinParser.PrefixUnaryOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionTypeNoReceiver(@NotNull KotlinParser.FunctionTypeNoReceiverContext ctx) { }
+	@Override public void enterIsOperation(KotlinParser.IsOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionTypeNoReceiver(@NotNull KotlinParser.FunctionTypeNoReceiverContext ctx) { }
+	@Override public void exitIsOperation(KotlinParser.IsOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultiplicativeOperation(@NotNull KotlinParser.MultiplicativeOperationContext ctx) { }
+	@Override public void enterAnnotatedLambda(KotlinParser.AnnotatedLambdaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultiplicativeOperation(@NotNull KotlinParser.MultiplicativeOperationContext ctx) { }
+	@Override public void exitAnnotatedLambda(KotlinParser.AnnotatedLambdaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCallableReference(@NotNull KotlinParser.CallableReferenceContext ctx) { }
+	@Override public void enterMemberAccessOperation(KotlinParser.MemberAccessOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCallableReference(@NotNull KotlinParser.CallableReferenceContext ctx) { }
+	@Override public void exitMemberAccessOperation(KotlinParser.MemberAccessOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhenCondition(@NotNull KotlinParser.WhenConditionContext ctx) { }
+	@Override public void enterFunctionLiteral(KotlinParser.FunctionLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhenCondition(@NotNull KotlinParser.WhenConditionContext ctx) { }
+	@Override public void exitFunctionLiteral(KotlinParser.FunctionLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCallSuffix(@NotNull KotlinParser.CallSuffixContext ctx) { }
+	@Override public void enterArrayAccess(KotlinParser.ArrayAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCallSuffix(@NotNull KotlinParser.CallSuffixContext ctx) { }
+	@Override public void exitArrayAccess(KotlinParser.ArrayAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterKotlinFile(@NotNull KotlinParser.KotlinFileContext ctx) { }
+	@Override public void enterObjectLiteral(KotlinParser.ObjectLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitKotlinFile(@NotNull KotlinParser.KotlinFileContext ctx) { }
+	@Override public void exitObjectLiteral(KotlinParser.ObjectLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLiteralConstant(@NotNull KotlinParser.LiteralConstantContext ctx) { }
+	@Override public void enterWhen(KotlinParser.WhenContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLiteralConstant(@NotNull KotlinParser.LiteralConstantContext ctx) { }
+	@Override public void exitWhen(KotlinParser.WhenContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionParameter(@NotNull KotlinParser.FunctionParameterContext ctx) { }
+	@Override public void enterWhenEntry(KotlinParser.WhenEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionParameter(@NotNull KotlinParser.FunctionParameterContext ctx) { }
+	@Override public void exitWhenEntry(KotlinParser.WhenEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionBody(@NotNull KotlinParser.FunctionBodyContext ctx) { }
+	@Override public void enterWhenCondition(KotlinParser.WhenConditionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionBody(@NotNull KotlinParser.FunctionBodyContext ctx) { }
+	@Override public void exitWhenCondition(KotlinParser.WhenConditionContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void enterEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void exitEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitTerminal(@NotNull TerminalNode node) { }
+	@Override public void visitTerminal(TerminalNode node) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitErrorNode(@NotNull ErrorNode node) { }
+	@Override public void visitErrorNode(ErrorNode node) { }
 }

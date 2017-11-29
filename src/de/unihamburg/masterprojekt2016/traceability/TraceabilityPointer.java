@@ -13,17 +13,16 @@ import javax.xml.bind.annotation.XmlTransient;
  * @see NamedTypeElementPointer 
  */
 @XmlTransient //Prevents the mapping of a JavaBean property/type to XML representation
-@XmlSeeAlso({MethodPointer.class, AttributePointer.class, ConstructorPointer.class, TypePointer.class, PackagePointer.class, SubscriptPointer.class, FilePointer.class, XmlElementDeclPointer.class})
-public abstract class TraceabilityPointer {
+@XmlSeeAlso({MethodPointer.class, AttributePointer.class, ConstructorPointer.class, TypePointer.class, PackagePointer.class, SubscriptPointer.class, ClosurePointer.class, LambdaPointer.class, FilePointer.class, XmlElementDeclPointer.class})
+    public abstract class TraceabilityPointer {
 
+    protected String _fileNameExtension;
     private String sourceFilePath;
-    protected String language;
-
-
+    
     public TraceabilityPointer() { }
 
     public TraceabilityPointer(String sourceFilePath) {
-        setSourceFilePath(sourceFilePath);
+    	this.setSourceFilePath(sourceFilePath);
 
     }
     
@@ -35,7 +34,7 @@ public abstract class TraceabilityPointer {
 
     public void setSourceFilePath(String path){
         this.sourceFilePath = path;
-        this.language=FilenameUtils.getExtension(sourceFilePath);
+        _fileNameExtension = FilenameUtils.getExtension(sourceFilePath);
     }
 
 	@Override
@@ -45,19 +44,8 @@ public abstract class TraceabilityPointer {
 
     public abstract String getPointerType();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        TraceabilityPointer that = (TraceabilityPointer) o;
-
-        return language.equals(that.language);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return language.hashCode();
+    public boolean hasSameArtefactType(TraceabilityPointer other)
+    {
+        return getPointerType().equals(other.getPointerType());
     }
 }

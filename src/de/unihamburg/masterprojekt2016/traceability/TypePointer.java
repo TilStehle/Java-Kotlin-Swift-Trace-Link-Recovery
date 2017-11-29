@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class TypePointer extends TraceabilityPointer {
+public class TypePointer extends TraceabilityPointer implements FullyQuallyfying {
 
     private String fullyQualifiedName;
     private TypePointerClassification classification;
@@ -75,16 +75,20 @@ public class TypePointer extends TraceabilityPointer {
 
         boolean a = fullyQualifiedName != null ? fullyQualifiedName.equals(that.fullyQualifiedName) : that.fullyQualifiedName == null;
         boolean b = classification != null ? classification.equals(that.classification) : that.classification == null;
+        boolean c = _fileNameExtension != null ? _fileNameExtension.equals(that._fileNameExtension) : that._fileNameExtension == null;
 
-        return a && b&&super.equals(o);
+        return a && b;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
-        int result = super.hashCode();
+        int result = 1;
         result = prime * result + ((classification == null) ? 0 : classification.hashCode());
         result = prime * result + ((fullyQualifiedName == null) ? 0 : fullyQualifiedName.hashCode());
+        result = prime * result + ((_fileNameExtension == null) ? 0 : _fileNameExtension.hashCode());
         return result;
     }
+
+
 }

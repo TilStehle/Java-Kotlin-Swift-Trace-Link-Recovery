@@ -47,7 +47,7 @@ public class XMLExport {
         try {
 
             JAXBContext jaxbContext = JAXBContext.newInstance(TraceabilityPointer.class);
-            java.io.StringWriter sw = new StringWriter();
+            StringWriter sw = new StringWriter();
 
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");

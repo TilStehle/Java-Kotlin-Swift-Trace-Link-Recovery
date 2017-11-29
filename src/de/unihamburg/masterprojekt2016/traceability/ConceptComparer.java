@@ -12,7 +12,10 @@ public class ConceptComparer {
     public static final float LOWCONCEPTSIMILARITY = 0.3f;
     public static final float HIGHCONCEPTSIMILARITY = 0.8f;
     public static final float IDENTICALCONCEPTSIMILARITY = 1f;
-    public static final String LOCAL_VARIABLE="LocalVariable";
+    
+    public static final String LOCAL_VARIABLE = "LocalVariable";
+    public static final String PARAMETER = "Parameter";
+    
     private static Map<String, List<ConceptTypeSimilarity>> similarityMap = new HashMap<>();
     private static Map<String, Float> conceptWeightMap = new HashMap<>();
 

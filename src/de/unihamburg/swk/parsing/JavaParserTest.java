@@ -7,13 +7,23 @@ public class JavaParserTest {
 
 	public static void main(String[] args) {
 		
-		JavaParser<LuceneDocument> parser = new JavaParser<>("./testDocs/TestClass.java", new LuceneDocsFactory());
-//		JavaParser<LS3Document> parser = new JavaParser<>("./testDocs/TestClass.java", new LS3DocumentFactory());
+//		Map<String, String> layers =  new HashMap<>();
+//		layers.put("A", "A");
+//		layers.put("B", "B");
+//		layers.put("C", "C");
+//		LayerManager.INSTANCE.setData(layers);
 		
-		for (LuceneDocument document : parser.parseDocuments()) {
-			System.err.println(document);
-			System.err.println();
-		}
+		JavaParser<LuceneDocument> parser = new JavaParser<>("./testDocs/ParserTestDocs/TestClass.java", new LuceneDocsFactory());
+		
+		long time = System.currentTimeMillis();
+		
+//		for (LuceneDocument document : parser.parseDocuments()) {
+//			System.err.println(document);
+//			System.err.println();
+//		}
+		System.out.println(parser.parseDocuments().size());
+		
+		System.out.println((System.currentTimeMillis() - time) / 1000 + " sec");
 		
 	}
 }

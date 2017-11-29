@@ -12,6 +12,7 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 
 import de.unihamburg.masterprojekt2016.traceability.TypePointer;
+import de.unihamburg.swk.parsing.document.IDocumentFactory;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 
 public class TestDocParser<TDocument extends ISearchableDocument> implements ISourceCodeParser<TDocument> {
@@ -31,7 +32,7 @@ public class TestDocParser<TDocument extends ISearchableDocument> implements ISo
 		TypePointer pointer = new TypePointer(path.getFileName().toString());
 		TDocument document = documentFactory.createDocument(pointer);
 		documentsList.add(document);
-		Multiset<String> wordsbag = parseTerms(document);
+//		Multiset<String> wordsbag = parseTerms(document);
 		return documentsList;
 	}
 

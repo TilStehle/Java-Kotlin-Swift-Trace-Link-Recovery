@@ -16,6 +16,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import de.unihamburg.swk.parsing.antlr4.swift3.Swift3Lexer;
 import de.unihamburg.swk.parsing.antlr4.swift3.Swift3ListenerImplementation;
 import de.unihamburg.swk.parsing.antlr4.swift3.Swift3Parser;
+import de.unihamburg.swk.parsing.document.IDocumentFactory;
 
 public class SwiftParser<TDocument extends ISearchableDocument> implements ISourceCodeParser<TDocument> {
 
@@ -35,8 +36,7 @@ public class SwiftParser<TDocument extends ISearchableDocument> implements ISour
 
 	private List<TDocument> collectDocumentsWithANTLR() {
 		ANTLRInputStream input;
-		try {
-			InputStream is = new FileInputStream(filePath);
+		try (InputStream is = new FileInputStream(filePath)) {
 			input = new ANTLRInputStream(is);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -45,16 +45,27 @@ public class SwiftParser<TDocument extends ISearchableDocument> implements ISour
 		Swift3Lexer lexer = new Swift3Lexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		Swift3Parser parser = new Swift3Parser(tokens);
+        parser.setErrorHandler(new InterruptableErrorHandler());
 		ParseTree tree = parser.topLevel();
 		ParseTreeWalker walker = new ParseTreeWalker();
-		Swift3ListenerImplementation<TDocument> swiftListener = new Swift3ListenerImplementation<TDocument>(filePath,
+		Swift3ListenerImplementation<TDocument> swiftListener = new Swift3ListenerImplementation<>(filePath,
 				documentFactory);
 		try {
 			walker.walk(swiftListener, tree);
-			return swiftListener.getDocuments();
-		}	catch (Exception e) {
+
+		} catch (Exception e) {
+			e.printStackTrace();
 			ITraceabilityRecoveryService.NonParsedFiles.add(filePath);
-			return new ArrayList<TDocument>();
+		}
+		finally {
+
+			if(swiftListener.errorOccurs()) {
+				System.err.println(">> fail <<");
+			} else {
+				System.err.println("ok!");
+			}
+
+			return swiftListener.getDocuments();
 		}
 
 	}

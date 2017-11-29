@@ -1,6 +1,6 @@
 package de.unihamburg.masterprojekt2016.traceability;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class MethodPointer extends NamedTypeElementPointer {
+public class MethodPointer extends NamedTypeElementPointer implements IHasParameter, FullyQuallyfying {
 
     public static final String METHOD = "method";
     private List<Parameter> parameters;
@@ -33,10 +33,11 @@ public class MethodPointer extends NamedTypeElementPointer {
     public MethodPointer(String name, String returnType, TypePointer typePointer, String sourceFilePath) {
         super(name, typePointer, sourceFilePath);
         this.returnType = returnType;
-        this.parameters = new ArrayList<Parameter>();
+        this.parameters = new LinkedList<>();
     }
     
-    public List<Parameter> getParameters() {
+    @Override
+	public List<Parameter> getParameters() {
         return parameters;
     }
 
@@ -48,7 +49,8 @@ public class MethodPointer extends NamedTypeElementPointer {
         this.returnType = returnType;
     }
 
-    public void addParameter(Parameter parameter) {
+    @Override
+	public void addParameter(Parameter parameter) {
         parameters.add(parameter);
     }
 
@@ -115,5 +117,10 @@ public class MethodPointer extends NamedTypeElementPointer {
             }
         }
         return true;
+    }
+
+    @Override
+    public String getFullyQualifiedName() {
+        return getTypePointer().getFullyQualifiedName()+"."+getName();
     }
 }

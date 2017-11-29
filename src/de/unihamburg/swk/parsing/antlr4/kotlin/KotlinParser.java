@@ -1,4 +1,5 @@
-package de.unihamburg.swk.parsing.antlr4.kotlin;// Generated from KotlinParser.g4 by ANTLR 4.4
+package de.unihamburg.swk.parsing.antlr4.kotlin;
+// Generated from KotlinParser.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,65 +11,42 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class KotlinParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		ClassModifier_data=76, SimpleName=118, OP_AS_SAFE=48, ELVIS=33, FunctionModifier_tailrec=82, 
-		ConstructorDelegationCall_this=100, SINLE_QUOTE_ESCAPED_CHAR=123, KEYWORD_where=66, 
-		HierarchyModifier_lateinit=73, FunctionModifier_external=86, OP_DIV_ASSIGN=52, 
-		HierarchyModifier_abstract=69, WHITESPACE=3, OP_MUNUS=44, OP_ASTERISK=40, 
-		MULTILINE_COMMENT=1, SINGLE_TEXT=121, FunctionModifier_inline=85, Jump_break=98, 
-		OP_DECREMENT=54, DOG=89, OP_MINUS_ASSIGN=50, AnnotationUseSiteTarget_param=93, 
-		DOT=15, KEYWORD_constructor=99, OP_AS=47, FunctionModifier_operator=83, 
-		HierarchyModifier_open=70, MULTILINE_QUOTE_TEXT=126, FunctionModifier_infix=84, 
-		CF_do=113, CONJ=32, OP_IS=56, OP_NOT=58, GET=67, AccessModifier_public=80, 
-		HierarchyModifier_final=71, AnnotationUseSiteTarget_field=91, OP_IN=45, 
-		OP_NULL_ASSERT=57, AccessModifier_private=78, OP_MULT_ASSIGN=51, SET=68, 
-		ConstructorDelegationCall_super=101, SINLE_QUOTE_EXPRESSION_START=124, 
-		SEMI=6, AnnotationUseSiteTarget_property=92, VarianceAnnotation_out=88, 
-		Jump_continue=96, Jump_return=97, IMPORT=14, Q=30, MULTILINE_QUOTE_REF=130, 
-		EQ_EQ_EQ=24, SINLE_QUOTE_WHITESPACE=120, COMMA=17, KEYWORD_by=64, BRACE_CLOSE=29, 
-		ClassModifier_annotation=75, NEQ_EQ_EQ=25, ClassModifier_enum=74, SINGLE_QUOTE=12, 
-		OP_DIV=41, STAR=16, Declaration_class=102, NEQ=26, Declaration_init=107, 
-		SQ_CLOSE=60, MULTILINE_QUOTES=128, ClassModifier_inner=77, Jump_throw=95, 
-		CharacterLiteral=10, CF_catch=115, SINLE_QUOTE_CLOSE=122, CF_try=114, 
-		KEYWORD_vararg=63, LT=18, Declaration_interface=103, CF_else=109, MULTILINE_QUOTE_CLOSE=127, 
-		AccessModifier_protected=79, BRACE_OPEN=28, Declaration_companion=105, 
-		PACKAGE=13, AnnotationUseSiteTarget_sparam=94, PropertyModifier_const=87, 
-		IntegerLiteral=5, NULL=39, LongLiteral=4, CF_if=108, TRUE=37, KEYWORD_val=61, 
-		EQ=22, KEYWORD_var=62, CF_when=110, HierarchyModifier_override=72, OP_PLUS_ASSIGN=49, 
-		SQ_OPEN=59, CF_for=112, OP_INCREMENT=55, LONG_RANGE=34, AnnotationUseSiteTarget_file=90, 
-		TRIPLE_QUOTE=11, LTE=19, DISJ=31, KEYWORD_dynamic=65, RANGE=35, SINGLELINE_COMMENT=2, 
-		OP_PLUS=43, OP_NOT_IN=46, HexadecimalLiteral=9, AccessModifier_internal=81, 
-		Declaration_object=104, MULTILINE_QUOTE_EXPRESSION_START=129, Declaration_fun=106, 
-		OP_NOT_IS=119, REFERENCE=36, OP_MOD_ASSIGN=53, OP_MOD=42, CF_while=111, 
-		CF_FINALLY=116, COLON=27, GT=20, EQ_EQ=23, SINGLE_QUOTE_REF=125, GTE=21, 
-		BAX=117, FALSE=38, OPEN_BLOCK=7, CLOSE_BLOCK=8;
-	public static final String[] tokenNames = {
-		"<INVALID>", "MULTILINE_COMMENT", "SINGLELINE_COMMENT", "WHITESPACE", 
-		"LongLiteral", "IntegerLiteral", "';'", "'{'", "'}'", "HexadecimalLiteral", 
-		"CharacterLiteral", "TRIPLE_QUOTE", "SINGLE_QUOTE", "'package'", "'import'", 
-		"'.'", "'*'", "','", "'<'", "'<='", "'>'", "'>='", "'='", "'=='", "'==='", 
-		"'!=='", "'!='", "':'", "'('", "')'", "'?'", "'||'", "'&&'", "'?:'", "'...'", 
-		"'..'", "'::'", "'true'", "'false'", "'null'", "'->'", "'/'", "'%'", "'+'", 
-		"'-'", "'in'", "'!in'", "'as'", "'as?'", "'+='", "'-='", "'*='", "'/='", 
-		"'%='", "'--'", "'++'", "'is'", "'!!'", "'!'", "'['", "']'", "'val'", 
-		"'var'", "'vararg'", "'by'", "'dynamic'", "'where'", "'get'", "'set'", 
-		"'abstract'", "'open'", "'final'", "'override'", "'lateinit'", "'enum'", 
-		"'annotation'", "'data'", "'inner'", "'private'", "'protected'", "'public'", 
-		"'internal'", "'tailrec'", "'operator'", "'infix'", "'inline'", "'external'", 
-		"'const'", "'out'", "'@'", "'file'", "'field'", "'property'", "'param'", 
-		"'sparam'", "'throw'", "'continue'", "'return'", "'break'", "'constructor'", 
-		"'this'", "'super'", "'class'", "'interface'", "'object'", "'companion'", 
-		"'fun'", "'init'", "'if'", "'else'", "'when'", "'while'", "'for'", "'do'", 
-		"'try'", "'catch'", "'finally'", "'$'", "SimpleName", "'!is '", "SINLE_QUOTE_WHITESPACE", 
-		"SINGLE_TEXT", "SINLE_QUOTE_CLOSE", "SINLE_QUOTE_ESCAPED_CHAR", "SINLE_QUOTE_EXPRESSION_START", 
-		"SINGLE_QUOTE_REF", "MULTILINE_QUOTE_TEXT", "MULTILINE_QUOTE_CLOSE", "MULTILINE_QUOTES", 
-		"MULTILINE_QUOTE_EXPRESSION_START", "MULTILINE_QUOTE_REF"
-	};
+		MULTILINE_COMMENT=1, SINGLELINE_COMMENT=2, WHITESPACE=3, LongLiteral=4, 
+		IntegerLiteral=5, SEMI=6, OPEN_BLOCK=7, CLOSE_BLOCK=8, HexadecimalLiteral=9, 
+		CharacterLiteral=10, TRIPLE_QUOTE=11, SINGLE_QUOTE=12, PACKAGE=13, IMPORT=14, 
+		DOT=15, STAR=16, COMMA=17, LT=18, LTE=19, GT=20, GTE=21, EQ=22, EQ_EQ=23, 
+		EQ_EQ_EQ=24, NEQ_EQ_EQ=25, NEQ=26, COLON=27, BRACE_OPEN=28, BRACE_CLOSE=29, 
+		Q=30, DISJ=31, CONJ=32, ELVIS=33, LONG_RANGE=34, RANGE=35, REFERENCE=36, 
+		TRUE=37, FALSE=38, NULL=39, OP_ASTERISK=40, OP_DIV=41, OP_MOD=42, OP_PLUS=43, 
+		OP_MUNUS=44, OP_IN=45, OP_NOT_IN=46, OP_AS=47, OP_AS_SAFE=48, OP_PLUS_ASSIGN=49, 
+		OP_MINUS_ASSIGN=50, OP_MULT_ASSIGN=51, OP_DIV_ASSIGN=52, OP_MOD_ASSIGN=53, 
+		OP_DECREMENT=54, OP_INCREMENT=55, OP_IS=56, OP_NULL_ASSERT=57, OP_NOT=58, 
+		SQ_OPEN=59, SQ_CLOSE=60, KEYWORD_val=61, KEYWORD_var=62, KEYWORD_vararg=63, 
+		KEYWORD_by=64, KEYWORD_dynamic=65, KEYWORD_where=66, GET=67, SET=68, HierarchyModifier_abstract=69, 
+		HierarchyModifier_open=70, HierarchyModifier_final=71, HierarchyModifier_override=72, 
+		HierarchyModifier_lateinit=73, ClassModifier_enum=74, ClassModifier_annotation=75, 
+		ClassModifier_data=76, ClassModifier_inner=77, AccessModifier_private=78, 
+		AccessModifier_protected=79, AccessModifier_public=80, AccessModifier_internal=81, 
+		FunctionModifier_tailrec=82, FunctionModifier_operator=83, FunctionModifier_infix=84, 
+		FunctionModifier_inline=85, FunctionModifier_external=86, PropertyModifier_const=87, 
+		VarianceAnnotation_out=88, DOG=89, AnnotationUseSiteTarget_file=90, AnnotationUseSiteTarget_field=91, 
+		AnnotationUseSiteTarget_property=92, AnnotationUseSiteTarget_param=93, 
+		AnnotationUseSiteTarget_sparam=94, Jump_throw=95, Jump_continue=96, Jump_return=97, 
+		Jump_break=98, KEYWORD_constructor=99, ConstructorDelegationCall_this=100, 
+		ConstructorDelegationCall_super=101, Declaration_class=102, Declaration_interface=103, 
+		Declaration_object=104, Declaration_companion=105, Declaration_fun=106, 
+		Declaration_init=107, CF_if=108, CF_else=109, CF_when=110, CF_while=111, 
+		CF_for=112, CF_do=113, CF_try=114, CF_catch=115, CF_FINALLY=116, BAX=117, 
+		SimpleName=118, OP_NOT_IS=119, SINLE_QUOTE_WHITESPACE=120, SINGLE_TEXT=121, 
+		SINLE_QUOTE_CLOSE=122, SINLE_QUOTE_ESCAPED_CHAR=123, SINLE_QUOTE_EXPRESSION_START=124, 
+		SINGLE_QUOTE_REF=125, MULTILINE_QUOTE_TEXT=126, MULTILINE_QUOTE_CLOSE=127, 
+		MULTILINE_QUOTES=128, MULTILINE_QUOTE_EXPRESSION_START=129, MULTILINE_QUOTE_REF=130;
 	public static final int
 		RULE_kotlinFile = 0, RULE_preamble = 1, RULE_packageHeader = 2, RULE_importHeader = 3, 
 		RULE_toplevelObject = 4, RULE_memberDeclaration = 5, RULE_optionalProjection = 6, 
@@ -136,11 +114,90 @@ public class KotlinParser extends Parser {
 		"arrayAccess", "objectLiteral", "when", "whenEntry", "whenCondition"
 	};
 
-	@Override
-	public String getGrammarFileName() { return "KotlinParser.g4"; }
+	private static final String[] _LITERAL_NAMES = {
+		null, null, null, null, null, null, "';'", "'{'", "'}'", null, null, null, 
+		null, "'package'", "'import'", "'.'", "'*'", "','", "'<'", "'<='", "'>'", 
+		"'>='", "'='", "'=='", "'==='", "'!=='", "'!='", "':'", "'('", "')'", 
+		"'?'", "'||'", "'&&'", "'?:'", "'...'", "'..'", "'::'", "'true'", "'false'", 
+		"'null'", "'->'", "'/'", "'%'", "'+'", "'-'", "'in'", "'!in'", "'as'", 
+		"'as?'", "'+='", "'-='", "'*='", "'/='", "'%='", "'--'", "'++'", "'is'", 
+		"'!!'", "'!'", "'['", "']'", "'val'", "'var'", "'vararg'", "'by'", "'dynamic'", 
+		"'where'", "'get'", "'set'", "'abstract'", "'open'", "'final'", "'override'", 
+		"'lateinit'", "'enum'", "'annotation'", "'data'", "'inner'", "'private'", 
+		"'protected'", "'public'", "'internal'", "'tailrec'", "'operator'", "'infix'", 
+		"'inline'", "'external'", "'const'", "'out'", "'@'", "'file'", "'field'", 
+		"'property'", "'param'", "'sparam'", "'throw'", "'continue'", "'return'", 
+		"'break'", "'constructor'", "'this'", "'super'", "'class'", "'interface'", 
+		"'object'", "'companion'", "'fun'", "'init'", "'if'", "'else'", "'when'", 
+		"'while'", "'for'", "'do'", "'try'", "'catch'", "'finally'", "'$'", null, 
+		"'!is '"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, "MULTILINE_COMMENT", "SINGLELINE_COMMENT", "WHITESPACE", "LongLiteral", 
+		"IntegerLiteral", "SEMI", "OPEN_BLOCK", "CLOSE_BLOCK", "HexadecimalLiteral", 
+		"CharacterLiteral", "TRIPLE_QUOTE", "SINGLE_QUOTE", "PACKAGE", "IMPORT", 
+		"DOT", "STAR", "COMMA", "LT", "LTE", "GT", "GTE", "EQ", "EQ_EQ", "EQ_EQ_EQ", 
+		"NEQ_EQ_EQ", "NEQ", "COLON", "BRACE_OPEN", "BRACE_CLOSE", "Q", "DISJ", 
+		"CONJ", "ELVIS", "LONG_RANGE", "RANGE", "REFERENCE", "TRUE", "FALSE", 
+		"NULL", "OP_ASTERISK", "OP_DIV", "OP_MOD", "OP_PLUS", "OP_MUNUS", "OP_IN", 
+		"OP_NOT_IN", "OP_AS", "OP_AS_SAFE", "OP_PLUS_ASSIGN", "OP_MINUS_ASSIGN", 
+		"OP_MULT_ASSIGN", "OP_DIV_ASSIGN", "OP_MOD_ASSIGN", "OP_DECREMENT", "OP_INCREMENT", 
+		"OP_IS", "OP_NULL_ASSERT", "OP_NOT", "SQ_OPEN", "SQ_CLOSE", "KEYWORD_val", 
+		"KEYWORD_var", "KEYWORD_vararg", "KEYWORD_by", "KEYWORD_dynamic", "KEYWORD_where", 
+		"GET", "SET", "HierarchyModifier_abstract", "HierarchyModifier_open", 
+		"HierarchyModifier_final", "HierarchyModifier_override", "HierarchyModifier_lateinit", 
+		"ClassModifier_enum", "ClassModifier_annotation", "ClassModifier_data", 
+		"ClassModifier_inner", "AccessModifier_private", "AccessModifier_protected", 
+		"AccessModifier_public", "AccessModifier_internal", "FunctionModifier_tailrec", 
+		"FunctionModifier_operator", "FunctionModifier_infix", "FunctionModifier_inline", 
+		"FunctionModifier_external", "PropertyModifier_const", "VarianceAnnotation_out", 
+		"DOG", "AnnotationUseSiteTarget_file", "AnnotationUseSiteTarget_field", 
+		"AnnotationUseSiteTarget_property", "AnnotationUseSiteTarget_param", "AnnotationUseSiteTarget_sparam", 
+		"Jump_throw", "Jump_continue", "Jump_return", "Jump_break", "KEYWORD_constructor", 
+		"ConstructorDelegationCall_this", "ConstructorDelegationCall_super", "Declaration_class", 
+		"Declaration_interface", "Declaration_object", "Declaration_companion", 
+		"Declaration_fun", "Declaration_init", "CF_if", "CF_else", "CF_when", 
+		"CF_while", "CF_for", "CF_do", "CF_try", "CF_catch", "CF_FINALLY", "BAX", 
+		"SimpleName", "OP_NOT_IS", "SINLE_QUOTE_WHITESPACE", "SINGLE_TEXT", "SINLE_QUOTE_CLOSE", 
+		"SINLE_QUOTE_ESCAPED_CHAR", "SINLE_QUOTE_EXPRESSION_START", "SINGLE_QUOTE_REF", 
+		"MULTILINE_QUOTE_TEXT", "MULTILINE_QUOTE_CLOSE", "MULTILINE_QUOTES", "MULTILINE_QUOTE_EXPRESSION_START", 
+		"MULTILINE_QUOTE_REF"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
 
 	@Override
-	public String[] getTokenNames() { return tokenNames; }
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "KotlinParser.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -159,11 +216,11 @@ public class KotlinParser extends Parser {
 		public PreambleContext preamble() {
 			return getRuleContext(PreambleContext.class,0);
 		}
-		public ToplevelObjectContext toplevelObject(int i) {
-			return getRuleContext(ToplevelObjectContext.class,i);
-		}
 		public List<ToplevelObjectContext> toplevelObject() {
 			return getRuleContexts(ToplevelObjectContext.class);
+		}
+		public ToplevelObjectContext toplevelObject(int i) {
+			return getRuleContext(ToplevelObjectContext.class,i);
 		}
 		public KotlinFileContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -186,14 +243,16 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(232); preamble();
+			setState(232);
+			preamble();
 			setState(236);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (OP_IN - 45)) | (1L << (KEYWORD_val - 45)) | (1L << (KEYWORD_var - 45)) | (1L << (HierarchyModifier_abstract - 45)) | (1L << (HierarchyModifier_open - 45)) | (1L << (HierarchyModifier_final - 45)) | (1L << (HierarchyModifier_override - 45)) | (1L << (HierarchyModifier_lateinit - 45)) | (1L << (ClassModifier_enum - 45)) | (1L << (ClassModifier_annotation - 45)) | (1L << (ClassModifier_data - 45)) | (1L << (ClassModifier_inner - 45)) | (1L << (AccessModifier_private - 45)) | (1L << (AccessModifier_protected - 45)) | (1L << (AccessModifier_public - 45)) | (1L << (AccessModifier_internal - 45)) | (1L << (FunctionModifier_tailrec - 45)) | (1L << (FunctionModifier_operator - 45)) | (1L << (FunctionModifier_infix - 45)) | (1L << (FunctionModifier_inline - 45)) | (1L << (FunctionModifier_external - 45)) | (1L << (PropertyModifier_const - 45)) | (1L << (VarianceAnnotation_out - 45)) | (1L << (DOG - 45)) | (1L << (Declaration_class - 45)) | (1L << (Declaration_interface - 45)) | (1L << (Declaration_object - 45)) | (1L << (Declaration_fun - 45)))) != 0)) {
 				{
 				{
-				setState(233); toplevelObject();
+				setState(233);
+				toplevelObject();
 				}
 				}
 				setState(238);
@@ -214,11 +273,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class PreambleContext extends ParserRuleContext {
-		public List<ImportHeaderContext> importHeader() {
-			return getRuleContexts(ImportHeaderContext.class);
-		}
 		public PackageHeaderContext packageHeader() {
 			return getRuleContext(PackageHeaderContext.class,0);
+		}
+		public List<ImportHeaderContext> importHeader() {
+			return getRuleContexts(ImportHeaderContext.class);
 		}
 		public ImportHeaderContext importHeader(int i) {
 			return getRuleContext(ImportHeaderContext.class,i);
@@ -245,10 +304,12 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(240);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==PACKAGE) {
 				{
-				setState(239); packageHeader();
+				setState(239);
+				packageHeader();
 				}
 			}
 
@@ -258,7 +319,8 @@ public class KotlinParser extends Parser {
 			while (_la==IMPORT) {
 				{
 				{
-				setState(242); importHeader();
+				setState(242);
+				importHeader();
 				}
 				}
 				setState(247);
@@ -279,15 +341,15 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class PackageHeaderContext extends ParserRuleContext {
+		public List<IdentifierContext> identifier() {
+			return getRuleContexts(IdentifierContext.class);
+		}
 		public IdentifierContext identifier(int i) {
 			return getRuleContext(IdentifierContext.class,i);
 		}
 		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
 		public TerminalNode SEMI(int i) {
 			return getToken(KotlinParser.SEMI, i);
-		}
-		public List<IdentifierContext> identifier() {
-			return getRuleContexts(IdentifierContext.class);
 		}
 		public PackageHeaderContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -310,16 +372,20 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(248); match(PACKAGE);
-			setState(249); identifier();
+			setState(248);
+			match(PACKAGE);
+			setState(249);
+			identifier();
 			setState(254);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==DOT) {
 				{
 				{
-				setState(250); match(DOT);
-				setState(251); identifier();
+				setState(250);
+				match(DOT);
+				setState(251);
+				identifier();
 				}
 				}
 				setState(256);
@@ -332,7 +398,8 @@ public class KotlinParser extends Parser {
 			while (_la==SEMI) {
 				{
 				{
-				setState(257); match(SEMI);
+				setState(257);
+				match(SEMI);
 				}
 				}
 				setState(262);
@@ -353,18 +420,18 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ImportHeaderContext extends ParserRuleContext {
+		public List<IdentifierContext> identifier() {
+			return getRuleContexts(IdentifierContext.class);
+		}
 		public IdentifierContext identifier(int i) {
 			return getRuleContext(IdentifierContext.class,i);
-		}
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
 		}
 		public KeywordOrSimpleNameContext keywordOrSimpleName() {
 			return getRuleContext(KeywordOrSimpleNameContext.class,0);
 		}
-		public List<IdentifierContext> identifier() {
-			return getRuleContexts(IdentifierContext.class);
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
 		}
 		public ImportHeaderContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -388,8 +455,10 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(263); match(IMPORT);
-			setState(264); identifier();
+			setState(263);
+			match(IMPORT);
+			setState(264);
+			identifier();
 			setState(269);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
@@ -397,8 +466,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(265); match(DOT);
-					setState(266); identifier();
+					setState(265);
+					match(DOT);
+					setState(266);
+					identifier();
 					}
 					} 
 				}
@@ -407,17 +478,22 @@ public class KotlinParser extends Parser {
 				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			}
 			setState(276);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case DOT:
 				{
-				setState(272); match(DOT);
-				setState(273); match(STAR);
+				setState(272);
+				match(DOT);
+				setState(273);
+				match(STAR);
 				}
 				break;
 			case OP_AS:
 				{
-				setState(274); match(OP_AS);
-				setState(275); keywordOrSimpleName();
+				setState(274);
+				match(OP_AS);
+				setState(275);
+				keywordOrSimpleName();
 				}
 				break;
 			case EOF:
@@ -453,7 +529,7 @@ public class KotlinParser extends Parser {
 			case Declaration_fun:
 				break;
 			default:
-				throw new NoViableAltException(this);
+				break;
 			}
 			setState(281);
 			_errHandler.sync(this);
@@ -461,7 +537,8 @@ public class KotlinParser extends Parser {
 			while (_la==SEMI) {
 				{
 				{
-				setState(278); match(SEMI);
+				setState(278);
+				match(SEMI);
 				}
 				}
 				setState(283);
@@ -482,11 +559,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ToplevelObjectContext extends ParserRuleContext {
-		public FunctionDeclarationContext functionDeclaration() {
-			return getRuleContext(FunctionDeclarationContext.class,0);
-		}
 		public PropertyDeclarationContext propertyDeclaration() {
 			return getRuleContext(PropertyDeclarationContext.class,0);
+		}
+		public FunctionDeclarationContext functionDeclaration() {
+			return getRuleContext(FunctionDeclarationContext.class,0);
 		}
 		public ClassDeclarationContext classDeclaration() {
 			return getRuleContext(ClassDeclarationContext.class,0);
@@ -513,29 +590,34 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 8, RULE_toplevelObject);
 		try {
 			setState(288);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(284); propertyDeclaration();
+				setState(284);
+				propertyDeclaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(285); functionDeclaration();
+				setState(285);
+				functionDeclaration();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(286); classDeclaration();
+				setState(286);
+				classDeclaration();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(287); objectDeclaration();
+				setState(287);
+				objectDeclaration();
 				}
 				break;
 			}
@@ -555,8 +637,8 @@ public class KotlinParser extends Parser {
 		public CompanionObjectContext companionObject() {
 			return getRuleContext(CompanionObjectContext.class,0);
 		}
-		public AnonymousInitializerContext anonymousInitializer() {
-			return getRuleContext(AnonymousInitializerContext.class,0);
+		public ObjectDeclarationContext objectDeclaration() {
+			return getRuleContext(ObjectDeclarationContext.class,0);
 		}
 		public FunctionDeclarationContext functionDeclaration() {
 			return getRuleContext(FunctionDeclarationContext.class,0);
@@ -564,11 +646,11 @@ public class KotlinParser extends Parser {
 		public PropertyDeclarationContext propertyDeclaration() {
 			return getRuleContext(PropertyDeclarationContext.class,0);
 		}
-		public ObjectDeclarationContext objectDeclaration() {
-			return getRuleContext(ObjectDeclarationContext.class,0);
-		}
 		public ClassDeclarationContext classDeclaration() {
 			return getRuleContext(ClassDeclarationContext.class,0);
+		}
+		public AnonymousInitializerContext anonymousInitializer() {
+			return getRuleContext(AnonymousInitializerContext.class,0);
 		}
 		public SecondaryConstructorContext secondaryConstructor() {
 			return getRuleContext(SecondaryConstructorContext.class,0);
@@ -592,47 +674,55 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 10, RULE_memberDeclaration);
 		try {
 			setState(297);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(290); companionObject();
+				setState(290);
+				companionObject();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(291); objectDeclaration();
+				setState(291);
+				objectDeclaration();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(292); functionDeclaration();
+				setState(292);
+				functionDeclaration();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(293); propertyDeclaration();
+				setState(293);
+				propertyDeclaration();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(294); classDeclaration();
+				setState(294);
+				classDeclaration();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(295); anonymousInitializer();
+				setState(295);
+				anonymousInitializer();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(296); secondaryConstructor();
+				setState(296);
+				secondaryConstructor();
 				}
 				break;
 			}
@@ -674,10 +764,12 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(300);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==OP_IN || _la==VarianceAnnotation_out) {
 				{
-				setState(299); varianceAnnotation();
+				setState(299);
+				varianceAnnotation();
 				}
 			}
 
@@ -722,8 +814,10 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(302); match(LT);
+			setState(302);
+			match(LT);
 			setState(305);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case OP_IN:
 			case GET:
@@ -754,12 +848,14 @@ public class KotlinParser extends Parser {
 			case KEYWORD_constructor:
 			case SimpleName:
 				{
-				setState(303); typeParameter();
+				setState(303);
+				typeParameter();
 				}
 				break;
 			case STAR:
 				{
-				setState(304); match(STAR);
+				setState(304);
+				match(STAR);
 				}
 				break;
 			default:
@@ -771,8 +867,10 @@ public class KotlinParser extends Parser {
 			while (_la==COMMA) {
 				{
 				{
-				setState(307); match(COMMA);
+				setState(307);
+				match(COMMA);
 				setState(310);
+				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case OP_IN:
 				case GET:
@@ -803,12 +901,14 @@ public class KotlinParser extends Parser {
 				case KEYWORD_constructor:
 				case SimpleName:
 					{
-					setState(308); typeParameter();
+					setState(308);
+					typeParameter();
 					}
 					break;
 				case STAR:
 					{
-					setState(309); match(STAR);
+					setState(309);
+					match(STAR);
 					}
 					break;
 				default:
@@ -820,7 +920,8 @@ public class KotlinParser extends Parser {
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(317); match(GT);
+			setState(317);
+			match(GT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -835,14 +936,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class TypeParameterContext extends ParserRuleContext {
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
+		}
 		public KeywordOrSimpleNameContext keywordOrSimpleName() {
 			return getRuleContext(KeywordOrSimpleNameContext.class,0);
 		}
 		public UserTypeContext userType() {
 			return getRuleContext(UserTypeContext.class,0);
-		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
 		}
 		public TypeParameterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -865,14 +966,19 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(319); modifiers();
-			setState(320); keywordOrSimpleName();
+			setState(319);
+			modifiers();
+			setState(320);
+			keywordOrSimpleName();
 			setState(323);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(321); match(COLON);
-				setState(322); userType();
+				setState(321);
+				match(COLON);
+				setState(322);
+				userType();
 				}
 			}
 
@@ -890,11 +996,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class TypeArgumentsContext extends ParserRuleContext {
-		public TypeContext type(int i) {
-			return getRuleContext(TypeContext.class,i);
-		}
 		public List<TypeContext> type() {
 			return getRuleContexts(TypeContext.class);
+		}
+		public TypeContext type(int i) {
+			return getRuleContext(TypeContext.class,i);
 		}
 		public TypeArgumentsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -917,9 +1023,11 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(325); match(LT);
+			setState(325);
+			match(LT);
 			{
 			setState(328);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case PACKAGE:
 			case BRACE_OPEN:
@@ -934,19 +1042,21 @@ public class KotlinParser extends Parser {
 			case KEYWORD_constructor:
 			case SimpleName:
 				{
-				setState(326); type();
+				setState(326);
+				type();
 				}
 				break;
 			case STAR:
 				{
-				setState(327); match(STAR);
+				setState(327);
+				match(STAR);
 				}
 				break;
 			case COMMA:
 			case GT:
 				break;
 			default:
-				throw new NoViableAltException(this);
+				break;
 			}
 			setState(337);
 			_errHandler.sync(this);
@@ -954,8 +1064,10 @@ public class KotlinParser extends Parser {
 			while (_la==COMMA) {
 				{
 				{
-				setState(330); match(COMMA);
+				setState(330);
+				match(COMMA);
 				setState(333);
+				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case PACKAGE:
 				case BRACE_OPEN:
@@ -970,12 +1082,14 @@ public class KotlinParser extends Parser {
 				case KEYWORD_constructor:
 				case SimpleName:
 					{
-					setState(331); type();
+					setState(331);
+					type();
 					}
 					break;
 				case STAR:
 					{
-					setState(332); match(STAR);
+					setState(332);
+					match(STAR);
 					}
 					break;
 				default:
@@ -988,7 +1102,8 @@ public class KotlinParser extends Parser {
 				_la = _input.LA(1);
 			}
 			}
-			setState(340); match(GT);
+			setState(340);
+			match(GT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1031,19 +1146,24 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(351);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==KEYWORD_where) {
 				{
-				setState(342); match(KEYWORD_where);
-				setState(343); typeConstraint();
+				setState(342);
+				match(KEYWORD_where);
+				setState(343);
+				typeConstraint();
 				setState(348);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(344); match(COMMA);
-					setState(345); typeConstraint();
+					setState(344);
+					match(COMMA);
+					setState(345);
+					typeConstraint();
 					}
 					}
 					setState(350);
@@ -1098,16 +1218,21 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(354);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==DOG) {
 				{
-				setState(353); annotations();
+				setState(353);
+				annotations();
 				}
 			}
 
-			setState(356); keywordOrSimpleName();
-			setState(357); match(COLON);
-			setState(358); type();
+			setState(356);
+			keywordOrSimpleName();
+			setState(357);
+			match(COLON);
+			setState(358);
+			type();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1122,11 +1247,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class TypeContext extends ParserRuleContext {
-		public AnnotationsContext annotations() {
-			return getRuleContext(AnnotationsContext.class,0);
-		}
 		public TypeDescriptorContext typeDescriptor() {
 			return getRuleContext(TypeDescriptorContext.class,0);
+		}
+		public AnnotationsContext annotations() {
+			return getRuleContext(AnnotationsContext.class,0);
 		}
 		public TypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1150,14 +1275,17 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(361);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==DOG) {
 				{
-				setState(360); annotations();
+				setState(360);
+				annotations();
 				}
 			}
 
-			setState(363); typeDescriptor();
+			setState(363);
+			typeDescriptor();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1172,17 +1300,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class TypeDescriptorContext extends ParserRuleContext {
-		public FunctionTypeNoReceiverContext functionTypeNoReceiver() {
-			return getRuleContext(FunctionTypeNoReceiverContext.class,0);
+		public TypeDescriptorContext typeDescriptor() {
+			return getRuleContext(TypeDescriptorContext.class,0);
 		}
 		public ExtensionFunctionTypeNoReceiverContext extensionFunctionTypeNoReceiver() {
 			return getRuleContext(ExtensionFunctionTypeNoReceiverContext.class,0);
 		}
+		public FunctionTypeNoReceiverContext functionTypeNoReceiver() {
+			return getRuleContext(FunctionTypeNoReceiverContext.class,0);
+		}
 		public UserTypeContext userType() {
 			return getRuleContext(UserTypeContext.class,0);
-		}
-		public TypeDescriptorContext typeDescriptor() {
-			return getRuleContext(TypeDescriptorContext.class,0);
 		}
 		public TypeDescriptorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1203,26 +1331,34 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 26, RULE_typeDescriptor);
 		try {
 			setState(392);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,29,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(365); match(BRACE_OPEN);
-				setState(366); typeDescriptor();
-				setState(367); match(BRACE_CLOSE);
+				setState(365);
+				match(BRACE_OPEN);
+				setState(366);
+				typeDescriptor();
+				setState(367);
+				match(BRACE_CLOSE);
 				setState(369);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,22,_ctx) ) {
 				case 1:
 					{
-					setState(368); match(Q);
+					setState(368);
+					match(Q);
 					}
 					break;
 				}
 				setState(372);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
 				case 1:
 					{
-					setState(371); extensionFunctionTypeNoReceiver();
+					setState(371);
+					extensionFunctionTypeNoReceiver();
 					}
 					break;
 				}
@@ -1231,12 +1367,15 @@ public class KotlinParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(374); functionTypeNoReceiver();
+				setState(374);
+				functionTypeNoReceiver();
 				setState(376);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,24,_ctx) ) {
 				case 1:
 					{
-					setState(375); extensionFunctionTypeNoReceiver();
+					setState(375);
+					extensionFunctionTypeNoReceiver();
 					}
 					break;
 				}
@@ -1245,20 +1384,25 @@ public class KotlinParser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(378); userType();
+				setState(378);
+				userType();
 				setState(380);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,25,_ctx) ) {
 				case 1:
 					{
-					setState(379); match(Q);
+					setState(379);
+					match(Q);
 					}
 					break;
 				}
 				setState(383);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,26,_ctx) ) {
 				case 1:
 					{
-					setState(382); extensionFunctionTypeNoReceiver();
+					setState(382);
+					extensionFunctionTypeNoReceiver();
 					}
 					break;
 				}
@@ -1267,20 +1411,25 @@ public class KotlinParser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(385); match(KEYWORD_dynamic);
+				setState(385);
+				match(KEYWORD_dynamic);
 				setState(387);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
 				case 1:
 					{
-					setState(386); match(Q);
+					setState(386);
+					match(Q);
 					}
 					break;
 				}
 				setState(390);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,28,_ctx) ) {
 				case 1:
 					{
-					setState(389); extensionFunctionTypeNoReceiver();
+					setState(389);
+					extensionFunctionTypeNoReceiver();
 					}
 					break;
 				}
@@ -1300,11 +1449,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class UserTypeContext extends ParserRuleContext {
-		public SimpleUserTypeContext simpleUserType(int i) {
-			return getRuleContext(SimpleUserTypeContext.class,i);
-		}
 		public List<SimpleUserTypeContext> simpleUserType() {
 			return getRuleContexts(SimpleUserTypeContext.class);
+		}
+		public SimpleUserTypeContext simpleUserType(int i) {
+			return getRuleContext(SimpleUserTypeContext.class,i);
 		}
 		public UserTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1329,15 +1478,19 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(396);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==PACKAGE) {
 				{
-				setState(394); match(PACKAGE);
-				setState(395); match(DOT);
+				setState(394);
+				match(PACKAGE);
+				setState(395);
+				match(DOT);
 				}
 			}
 
-			setState(398); simpleUserType();
+			setState(398);
+			simpleUserType();
 			setState(403);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,31,_ctx);
@@ -1345,8 +1498,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(399); match(DOT);
-					setState(400); simpleUserType();
+					setState(399);
+					match(DOT);
+					setState(400);
+					simpleUserType();
 					}
 					} 
 				}
@@ -1393,11 +1548,13 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 30, RULE_simpleUserType_typeParam);
 		try {
 			setState(410);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case STAR:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(406); match(STAR);
+				setState(406);
+				match(STAR);
 				}
 				break;
 			case PACKAGE:
@@ -1417,8 +1574,10 @@ public class KotlinParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				{
-				setState(407); optionalProjection();
-				setState(408); type();
+				setState(407);
+				optionalProjection();
+				setState(408);
+				type();
 				}
 				}
 				break;
@@ -1468,28 +1627,35 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(412); keywordOrSimpleName();
+			setState(412);
+			keywordOrSimpleName();
 			setState(424);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,34,_ctx) ) {
 			case 1:
 				{
-				setState(413); match(LT);
-				setState(414); simpleUserType_typeParam();
+				setState(413);
+				match(LT);
+				setState(414);
+				simpleUserType_typeParam();
 				setState(419);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(415); match(COMMA);
-					setState(416); simpleUserType_typeParam();
+					setState(415);
+					match(COMMA);
+					setState(416);
+					simpleUserType_typeParam();
 					}
 					}
 					setState(421);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(422); match(GT);
+				setState(422);
+				match(GT);
 				}
 				break;
 			}
@@ -1534,7 +1700,11 @@ public class KotlinParser extends Parser {
 			if ( !(((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (SimpleName - 67)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -1576,13 +1746,17 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(428); keywordOrSimpleName();
+			setState(428);
+			keywordOrSimpleName();
 			setState(431);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(429); match(COLON);
-				setState(430); type();
+				setState(429);
+				match(COLON);
+				setState(430);
+				type();
 				}
 			}
 
@@ -1603,11 +1777,11 @@ public class KotlinParser extends Parser {
 		public ParameterContext parameter() {
 			return getRuleContext(ParameterContext.class,0);
 		}
-		public TypeContext type() {
-			return getRuleContext(TypeContext.class,0);
-		}
 		public ModifiersContext modifiers() {
 			return getRuleContext(ModifiersContext.class,0);
+		}
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
 		}
 		public FunctionType_paramOrTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1628,18 +1802,22 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 38, RULE_functionType_paramOrType);
 		try {
 			setState(437);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,36,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(433); parameter();
+				setState(433);
+				parameter();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(434); modifiers();
-				setState(435); type();
+				setState(434);
+				modifiers();
+				setState(435);
+				type();
 				}
 				break;
 			}
@@ -1679,8 +1857,10 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(439); match(DOT);
-			setState(440); functionTypeNoReceiver();
+			setState(439);
+			match(DOT);
+			setState(440);
+			functionTypeNoReceiver();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1695,11 +1875,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class FunctionTypeNoReceiverContext extends ParserRuleContext {
-		public List<FunctionType_paramOrTypeContext> functionType_paramOrType() {
-			return getRuleContexts(FunctionType_paramOrTypeContext.class);
-		}
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
+		}
+		public List<FunctionType_paramOrTypeContext> functionType_paramOrType() {
+			return getRuleContexts(FunctionType_paramOrTypeContext.class);
 		}
 		public FunctionType_paramOrTypeContext functionType_paramOrType(int i) {
 			return getRuleContext(FunctionType_paramOrTypeContext.class,i);
@@ -1725,20 +1905,25 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(442); match(BRACE_OPEN);
+			setState(442);
+			match(BRACE_OPEN);
 			setState(451);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PACKAGE) | (1L << BRACE_OPEN) | (1L << OP_IN))) != 0) || ((((_la - 65)) & ~0x3f) == 0 && ((1L << (_la - 65)) & ((1L << (KEYWORD_dynamic - 65)) | (1L << (GET - 65)) | (1L << (SET - 65)) | (1L << (HierarchyModifier_abstract - 65)) | (1L << (HierarchyModifier_open - 65)) | (1L << (HierarchyModifier_final - 65)) | (1L << (HierarchyModifier_override - 65)) | (1L << (HierarchyModifier_lateinit - 65)) | (1L << (ClassModifier_enum - 65)) | (1L << (ClassModifier_annotation - 65)) | (1L << (ClassModifier_data - 65)) | (1L << (ClassModifier_inner - 65)) | (1L << (AccessModifier_private - 65)) | (1L << (AccessModifier_protected - 65)) | (1L << (AccessModifier_public - 65)) | (1L << (AccessModifier_internal - 65)) | (1L << (FunctionModifier_tailrec - 65)) | (1L << (FunctionModifier_operator - 65)) | (1L << (FunctionModifier_infix - 65)) | (1L << (FunctionModifier_inline - 65)) | (1L << (FunctionModifier_external - 65)) | (1L << (PropertyModifier_const - 65)) | (1L << (VarianceAnnotation_out - 65)) | (1L << (DOG - 65)) | (1L << (AnnotationUseSiteTarget_file - 65)) | (1L << (AnnotationUseSiteTarget_field - 65)) | (1L << (KEYWORD_constructor - 65)) | (1L << (SimpleName - 65)))) != 0)) {
 				{
-				setState(443); functionType_paramOrType();
+				setState(443);
+				functionType_paramOrType();
 				setState(448);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(444); match(COMMA);
-					setState(445); functionType_paramOrType();
+					setState(444);
+					match(COMMA);
+					setState(445);
+					functionType_paramOrType();
 					}
 					}
 					setState(450);
@@ -1748,9 +1933,12 @@ public class KotlinParser extends Parser {
 				}
 			}
 
-			setState(453); match(BRACE_CLOSE);
-			setState(454); match(OP_ASTERISK);
-			setState(455); type();
+			setState(453);
+			match(BRACE_CLOSE);
+			setState(454);
+			match(OP_ASTERISK);
+			setState(455);
+			type();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1792,23 +1980,28 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(457); match(BRACE_OPEN);
-			setState(458); variableDeclarationEntry();
+			setState(457);
+			match(BRACE_OPEN);
+			setState(458);
+			variableDeclarationEntry();
 			setState(463);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(459); match(COMMA);
-				setState(460); variableDeclarationEntry();
+				setState(459);
+				match(COMMA);
+				setState(460);
+				variableDeclarationEntry();
 				}
 				}
 				setState(465);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(466); match(BRACE_CLOSE);
+			setState(466);
+			match(BRACE_CLOSE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1823,8 +2016,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class PropertyDeclarationContext extends ParserRuleContext {
-		public SetterContext setter() {
-			return getRuleContext(SetterContext.class,0);
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
+		}
+		public TypeConstraintsContext typeConstraints() {
+			return getRuleContext(TypeConstraintsContext.class,0);
 		}
 		public MultipleVariableDeclarationsContext multipleVariableDeclarations() {
 			return getRuleContext(MultipleVariableDeclarationsContext.class,0);
@@ -1832,12 +2028,8 @@ public class KotlinParser extends Parser {
 		public VariableDeclarationEntryContext variableDeclarationEntry() {
 			return getRuleContext(VariableDeclarationEntryContext.class,0);
 		}
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
 		public TypeParametersContext typeParameters() {
 			return getRuleContext(TypeParametersContext.class,0);
-		}
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
 		}
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
@@ -1845,14 +2037,15 @@ public class KotlinParser extends Parser {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
+		}
 		public GetterContext getter() {
 			return getRuleContext(GetterContext.class,0);
 		}
-		public TypeConstraintsContext typeConstraints() {
-			return getRuleContext(TypeConstraintsContext.class,0);
-		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
+		public SetterContext setter() {
+			return getRuleContext(SetterContext.class,0);
 		}
 		public PropertyDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1876,35 +2069,47 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(468); modifiers();
+			setState(468);
+			modifiers();
 			setState(469);
 			_la = _input.LA(1);
 			if ( !(_la==KEYWORD_val || _la==KEYWORD_var) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			setState(471);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LT) {
 				{
-				setState(470); typeParameters();
+				setState(470);
+				typeParameters();
 				}
 			}
 
 			setState(476);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,41,_ctx) ) {
 			case 1:
 				{
-				setState(473); type();
-				setState(474); match(DOT);
+				setState(473);
+				type();
+				setState(474);
+				match(DOT);
 				}
 				break;
 			}
 			setState(480);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BRACE_OPEN:
 				{
-				setState(478); multipleVariableDeclarations();
+				setState(478);
+				multipleVariableDeclarations();
 				}
 				break;
 			case GET:
@@ -1916,14 +2121,17 @@ public class KotlinParser extends Parser {
 			case KEYWORD_constructor:
 			case SimpleName:
 				{
-				setState(479); variableDeclarationEntry();
+				setState(479);
+				variableDeclarationEntry();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(482); typeConstraints();
+			setState(482);
+			typeConstraints();
 			setState(491);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==EQ || _la==KEYWORD_by) {
 				{
@@ -1932,8 +2140,13 @@ public class KotlinParser extends Parser {
 				if ( !(_la==EQ || _la==KEYWORD_by) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
-				setState(484); expression();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(484);
+				expression();
 				setState(488);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,43,_ctx);
@@ -1941,7 +2154,8 @@ public class KotlinParser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(485); match(SEMI);
+						setState(485);
+						match(SEMI);
 						}
 						} 
 					}
@@ -1953,23 +2167,28 @@ public class KotlinParser extends Parser {
 			}
 
 			setState(505);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,49,_ctx) ) {
 			case 1:
 				{
 				{
 				setState(494);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,45,_ctx) ) {
 				case 1:
 					{
-					setState(493); getter();
+					setState(493);
+					getter();
 					}
 					break;
 				}
 				setState(497);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,46,_ctx) ) {
 				case 1:
 					{
-					setState(496); setter();
+					setState(496);
+					setter();
 					}
 					break;
 				}
@@ -1980,18 +2199,22 @@ public class KotlinParser extends Parser {
 				{
 				{
 				setState(500);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,47,_ctx) ) {
 				case 1:
 					{
-					setState(499); setter();
+					setState(499);
+					setter();
 					}
 					break;
 				}
 				setState(503);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,48,_ctx) ) {
 				case 1:
 					{
-					setState(502); getter();
+					setState(502);
+					getter();
 					}
 					break;
 				}
@@ -2006,7 +2229,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(507); match(SEMI);
+					setState(507);
+					match(SEMI);
 					}
 					} 
 				}
@@ -2062,7 +2286,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(513); modifier();
+					setState(513);
+					modifier();
 					}
 					} 
 				}
@@ -2107,7 +2332,8 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(519); modifierKeyword();
+			setState(519);
+			modifierKeyword();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2122,18 +2348,6 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ModifierKeywordContext extends ParserRuleContext {
-		public PropertyModifierContext propertyModifier() {
-			return getRuleContext(PropertyModifierContext.class,0);
-		}
-		public ClassModifierContext classModifier() {
-			return getRuleContext(ClassModifierContext.class,0);
-		}
-		public FunctionModifierContext functionModifier() {
-			return getRuleContext(FunctionModifierContext.class,0);
-		}
-		public AnnotationsContext annotations() {
-			return getRuleContext(AnnotationsContext.class,0);
-		}
 		public HierarchyModifierContext hierarchyModifier() {
 			return getRuleContext(HierarchyModifierContext.class,0);
 		}
@@ -2142,6 +2356,18 @@ public class KotlinParser extends Parser {
 		}
 		public VarianceAnnotationContext varianceAnnotation() {
 			return getRuleContext(VarianceAnnotationContext.class,0);
+		}
+		public AnnotationsContext annotations() {
+			return getRuleContext(AnnotationsContext.class,0);
+		}
+		public ClassModifierContext classModifier() {
+			return getRuleContext(ClassModifierContext.class,0);
+		}
+		public FunctionModifierContext functionModifier() {
+			return getRuleContext(FunctionModifierContext.class,0);
+		}
+		public PropertyModifierContext propertyModifier() {
+			return getRuleContext(PropertyModifierContext.class,0);
 		}
 		public ModifierKeywordContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2162,6 +2388,7 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 52, RULE_modifierKeyword);
 		try {
 			setState(528);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case HierarchyModifier_abstract:
 			case HierarchyModifier_open:
@@ -2170,7 +2397,8 @@ public class KotlinParser extends Parser {
 			case HierarchyModifier_lateinit:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(521); hierarchyModifier();
+				setState(521);
+				hierarchyModifier();
 				}
 				break;
 			case AccessModifier_private:
@@ -2179,20 +2407,23 @@ public class KotlinParser extends Parser {
 			case AccessModifier_internal:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(522); accessModifier();
+				setState(522);
+				accessModifier();
 				}
 				break;
 			case OP_IN:
 			case VarianceAnnotation_out:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(523); varianceAnnotation();
+				setState(523);
+				varianceAnnotation();
 				}
 				break;
 			case DOG:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(524); annotations();
+				setState(524);
+				annotations();
 				}
 				break;
 			case ClassModifier_enum:
@@ -2201,7 +2432,8 @@ public class KotlinParser extends Parser {
 			case ClassModifier_inner:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(525); classModifier();
+				setState(525);
+				classModifier();
 				}
 				break;
 			case FunctionModifier_tailrec:
@@ -2211,13 +2443,15 @@ public class KotlinParser extends Parser {
 			case FunctionModifier_external:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(526); functionModifier();
+				setState(526);
+				functionModifier();
 				}
 				break;
 			case PropertyModifier_const:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(527); propertyModifier();
+				setState(527);
+				propertyModifier();
 				}
 				break;
 			default:
@@ -2256,7 +2490,8 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(530); match(PropertyModifier_const);
+			setState(530);
+			match(PropertyModifier_const);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2297,7 +2532,11 @@ public class KotlinParser extends Parser {
 			if ( !(((((_la - 82)) & ~0x3f) == 0 && ((1L << (_la - 82)) & ((1L << (FunctionModifier_tailrec - 82)) | (1L << (FunctionModifier_operator - 82)) | (1L << (FunctionModifier_infix - 82)) | (1L << (FunctionModifier_inline - 82)) | (1L << (FunctionModifier_external - 82)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2338,7 +2577,11 @@ public class KotlinParser extends Parser {
 			if ( !(((((_la - 69)) & ~0x3f) == 0 && ((1L << (_la - 69)) & ((1L << (HierarchyModifier_abstract - 69)) | (1L << (HierarchyModifier_open - 69)) | (1L << (HierarchyModifier_final - 69)) | (1L << (HierarchyModifier_override - 69)) | (1L << (HierarchyModifier_lateinit - 69)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2353,13 +2596,13 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class IdentifierContext extends ParserRuleContext {
-		public TerminalNode Declaration_companion() { return getToken(KotlinParser.Declaration_companion, 0); }
-		public TerminalNode ClassModifier_enum() { return getToken(KotlinParser.ClassModifier_enum, 0); }
-		public TerminalNode IMPORT() { return getToken(KotlinParser.IMPORT, 0); }
-		public TerminalNode Declaration_init() { return getToken(KotlinParser.Declaration_init, 0); }
 		public KeywordOrSimpleNameContext keywordOrSimpleName() {
 			return getRuleContext(KeywordOrSimpleNameContext.class,0);
 		}
+		public TerminalNode ClassModifier_enum() { return getToken(KotlinParser.ClassModifier_enum, 0); }
+		public TerminalNode IMPORT() { return getToken(KotlinParser.IMPORT, 0); }
+		public TerminalNode Declaration_companion() { return getToken(KotlinParser.Declaration_companion, 0); }
+		public TerminalNode Declaration_init() { return getToken(KotlinParser.Declaration_init, 0); }
 		public IdentifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2379,6 +2622,7 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 60, RULE_identifier);
 		try {
 			setState(541);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case GET:
 			case SET:
@@ -2390,31 +2634,36 @@ public class KotlinParser extends Parser {
 			case SimpleName:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(536); keywordOrSimpleName();
+				setState(536);
+				keywordOrSimpleName();
 				}
 				break;
 			case ClassModifier_enum:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(537); match(ClassModifier_enum);
+				setState(537);
+				match(ClassModifier_enum);
 				}
 				break;
 			case IMPORT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(538); match(IMPORT);
+				setState(538);
+				match(IMPORT);
 				}
 				break;
 			case Declaration_companion:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(539); match(Declaration_companion);
+				setState(539);
+				match(Declaration_companion);
 				}
 				break;
 			case Declaration_init:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(540); match(Declaration_init);
+				setState(540);
+				match(Declaration_init);
 				}
 				break;
 			default:
@@ -2459,7 +2708,11 @@ public class KotlinParser extends Parser {
 			if ( !(((((_la - 74)) & ~0x3f) == 0 && ((1L << (_la - 74)) & ((1L << (ClassModifier_enum - 74)) | (1L << (ClassModifier_annotation - 74)) | (1L << (ClassModifier_data - 74)) | (1L << (ClassModifier_inner - 74)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2500,7 +2753,11 @@ public class KotlinParser extends Parser {
 			if ( !(((((_la - 78)) & ~0x3f) == 0 && ((1L << (_la - 78)) & ((1L << (AccessModifier_private - 78)) | (1L << (AccessModifier_protected - 78)) | (1L << (AccessModifier_public - 78)) | (1L << (AccessModifier_internal - 78)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2541,7 +2798,11 @@ public class KotlinParser extends Parser {
 			if ( !(_la==OP_IN || _la==VarianceAnnotation_out) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2591,7 +2852,8 @@ public class KotlinParser extends Parser {
 				case 1:
 					{
 					{
-					setState(549); annotation();
+					setState(549);
+					annotation();
 					}
 					}
 					break;
@@ -2642,17 +2904,22 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(554); match(DOG);
+			setState(554);
+			match(DOG);
 			setState(558);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,55,_ctx) ) {
 			case 1:
 				{
-				setState(555); annotationUseSiteTarget();
-				setState(556); match(COLON);
+				setState(555);
+				annotationUseSiteTarget();
+				setState(556);
+				match(COLON);
 				}
 				break;
 			}
-			setState(560); unescapedAnnotation();
+			setState(560);
+			unescapedAnnotation();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2693,7 +2960,11 @@ public class KotlinParser extends Parser {
 			if ( !(((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (AnnotationUseSiteTarget_property - 67)) | (1L << (AnnotationUseSiteTarget_param - 67)) | (1L << (AnnotationUseSiteTarget_sparam - 67)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2708,11 +2979,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ValueArgumentContext extends ParserRuleContext {
-		public IdentifierContext identifier() {
-			return getRuleContext(IdentifierContext.class,0);
-		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
+		}
+		public IdentifierContext identifier() {
+			return getRuleContext(IdentifierContext.class,0);
 		}
 		public ValueArgumentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2736,23 +3007,29 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(567);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,56,_ctx) ) {
 			case 1:
 				{
-				setState(564); identifier();
-				setState(565); match(EQ);
+				setState(564);
+				identifier();
+				setState(565);
+				match(EQ);
 				}
 				break;
 			}
 			setState(570);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==STAR) {
 				{
-				setState(569); match(STAR);
+				setState(569);
+				match(STAR);
 				}
 			}
 
-			setState(572); expression();
+			setState(572);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2794,20 +3071,25 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(574); match(BRACE_OPEN);
+			setState(574);
+			match(BRACE_OPEN);
 			setState(583);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LongLiteral) | (1L << IntegerLiteral) | (1L << OPEN_BLOCK) | (1L << HexadecimalLiteral) | (1L << CharacterLiteral) | (1L << TRIPLE_QUOTE) | (1L << SINGLE_QUOTE) | (1L << PACKAGE) | (1L << IMPORT) | (1L << STAR) | (1L << BRACE_OPEN) | (1L << REFERENCE) | (1L << TRUE) | (1L << FALSE) | (1L << NULL) | (1L << OP_PLUS) | (1L << OP_MUNUS) | (1L << OP_DECREMENT) | (1L << OP_INCREMENT) | (1L << OP_NOT))) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (Jump_throw - 67)) | (1L << (Jump_continue - 67)) | (1L << (Jump_return - 67)) | (1L << (Jump_break - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (ConstructorDelegationCall_this - 67)) | (1L << (ConstructorDelegationCall_super - 67)) | (1L << (Declaration_object - 67)) | (1L << (Declaration_companion - 67)) | (1L << (Declaration_init - 67)) | (1L << (CF_if - 67)) | (1L << (CF_when - 67)) | (1L << (CF_while - 67)) | (1L << (CF_for - 67)) | (1L << (CF_do - 67)) | (1L << (CF_try - 67)) | (1L << (BAX - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
-				setState(575); valueArgument();
+				setState(575);
+				valueArgument();
 				setState(580);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(576); match(COMMA);
-					setState(577); valueArgument();
+					setState(576);
+					match(COMMA);
+					setState(577);
+					valueArgument();
 					}
 					}
 					setState(582);
@@ -2817,7 +3099,8 @@ public class KotlinParser extends Parser {
 				}
 			}
 
-			setState(585); match(BRACE_CLOSE);
+			setState(585);
+			match(BRACE_CLOSE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2832,17 +3115,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class UnescapedAnnotationContext extends ParserRuleContext {
+		public List<IdentifierContext> identifier() {
+			return getRuleContexts(IdentifierContext.class);
+		}
+		public IdentifierContext identifier(int i) {
+			return getRuleContext(IdentifierContext.class,i);
+		}
 		public TypeArgumentsContext typeArguments() {
 			return getRuleContext(TypeArgumentsContext.class,0);
 		}
 		public ValueArgumentsContext valueArguments() {
 			return getRuleContext(ValueArgumentsContext.class,0);
-		}
-		public IdentifierContext identifier(int i) {
-			return getRuleContext(IdentifierContext.class,i);
-		}
-		public List<IdentifierContext> identifier() {
-			return getRuleContexts(IdentifierContext.class);
 		}
 		public UnescapedAnnotationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2865,15 +3148,18 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(587); identifier();
+			setState(587);
+			identifier();
 			setState(592);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==DOT) {
 				{
 				{
-				setState(588); match(DOT);
-				setState(589); identifier();
+				setState(588);
+				match(DOT);
+				setState(589);
+				identifier();
 				}
 				}
 				setState(594);
@@ -2881,18 +3167,22 @@ public class KotlinParser extends Parser {
 				_la = _input.LA(1);
 			}
 			setState(596);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LT) {
 				{
-				setState(595); typeArguments();
+				setState(595);
+				typeArguments();
 				}
 			}
 
 			setState(599);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,62,_ctx) ) {
 			case 1:
 				{
-				setState(598); valueArguments();
+				setState(598);
+				valueArguments();
 				}
 				break;
 			}
@@ -2935,31 +3225,39 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 80, RULE_jump);
 		try {
 			setState(618);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Jump_throw:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(601); match(Jump_throw);
-				setState(602); expression();
+				setState(601);
+				match(Jump_throw);
+				setState(602);
+				expression();
 				}
 				break;
 			case Jump_return:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(603); match(Jump_return);
+				setState(603);
+				match(Jump_return);
 				setState(605);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,63,_ctx) ) {
 				case 1:
 					{
-					setState(604); labelReference();
+					setState(604);
+					labelReference();
 					}
 					break;
 				}
 				setState(608);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,64,_ctx) ) {
 				case 1:
 					{
-					setState(607); expression();
+					setState(607);
+					expression();
 					}
 					break;
 				}
@@ -2968,12 +3266,15 @@ public class KotlinParser extends Parser {
 			case Jump_continue:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(610); match(Jump_continue);
+				setState(610);
+				match(Jump_continue);
 				setState(612);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,65,_ctx) ) {
 				case 1:
 					{
-					setState(611); labelReference();
+					setState(611);
+					labelReference();
 					}
 					break;
 				}
@@ -2982,12 +3283,15 @@ public class KotlinParser extends Parser {
 			case Jump_break:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(614); match(Jump_break);
+				setState(614);
+				match(Jump_break);
 				setState(616);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,66,_ctx) ) {
 				case 1:
 					{
-					setState(615); labelReference();
+					setState(615);
+					labelReference();
 					}
 					break;
 				}
@@ -3032,8 +3336,10 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(620); match(DOG);
+			setState(620);
+			match(DOG);
 			setState(625);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case IMPORT:
 			case GET:
@@ -3048,22 +3354,26 @@ public class KotlinParser extends Parser {
 			case Declaration_init:
 			case SimpleName:
 				{
-				setState(621); identifier();
+				setState(621);
+				identifier();
 				}
 				break;
 			case CF_for:
 				{
-				setState(622); match(CF_for);
+				setState(622);
+				match(CF_for);
 				}
 				break;
 			case CF_while:
 				{
-				setState(623); match(CF_while);
+				setState(623);
+				match(CF_while);
 				}
 				break;
 			case CF_when:
 				{
-				setState(624); match(CF_when);
+				setState(624);
+				match(CF_when);
 				}
 				break;
 			default:
@@ -3106,8 +3416,10 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(627); identifier();
-			setState(628); match(DOG);
+			setState(627);
+			identifier();
+			setState(628);
+			match(DOG);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3148,9 +3460,12 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(630); keywordOrSimpleName();
-			setState(631); match(COLON);
-			setState(632); type();
+			setState(630);
+			keywordOrSimpleName();
+			setState(631);
+			match(COLON);
+			setState(632);
+			type();
 			}
 		}
 		catch (RecognitionException re) {
@@ -3165,14 +3480,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class FunctionParameterContext extends ParserRuleContext {
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
+		}
 		public ParameterContext parameter() {
 			return getRuleContext(ParameterContext.class,0);
 		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
-		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
 		}
 		public FunctionParameterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3195,16 +3510,20 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(634); modifiers();
+			setState(634);
+			modifiers();
 			setState(636);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==KEYWORD_vararg) {
 				{
-				setState(635); match(KEYWORD_vararg);
+				setState(635);
+				match(KEYWORD_vararg);
 				}
 			}
 
 			setState(639);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==KEYWORD_val || _la==KEYWORD_var) {
 				{
@@ -3213,17 +3532,25 @@ public class KotlinParser extends Parser {
 				if ( !(_la==KEYWORD_val || _la==KEYWORD_var) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
 				}
 			}
 
-			setState(641); parameter();
+			setState(641);
+			parameter();
 			setState(644);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==EQ) {
 				{
-				setState(642); match(EQ);
-				setState(643); expression();
+				setState(642);
+				match(EQ);
+				setState(643);
+				expression();
 				}
 			}
 
@@ -3241,14 +3568,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class PrimaryConstructorContext extends ParserRuleContext {
-		public FunctionParameterContext functionParameter(int i) {
-			return getRuleContext(FunctionParameterContext.class,i);
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
 		}
 		public List<FunctionParameterContext> functionParameter() {
 			return getRuleContexts(FunctionParameterContext.class);
 		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
+		public FunctionParameterContext functionParameter(int i) {
+			return getRuleContext(FunctionParameterContext.class,i);
 		}
 		public PrimaryConstructorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3272,29 +3599,37 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(649);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (OP_IN - 45)) | (1L << (HierarchyModifier_abstract - 45)) | (1L << (HierarchyModifier_open - 45)) | (1L << (HierarchyModifier_final - 45)) | (1L << (HierarchyModifier_override - 45)) | (1L << (HierarchyModifier_lateinit - 45)) | (1L << (ClassModifier_enum - 45)) | (1L << (ClassModifier_annotation - 45)) | (1L << (ClassModifier_data - 45)) | (1L << (ClassModifier_inner - 45)) | (1L << (AccessModifier_private - 45)) | (1L << (AccessModifier_protected - 45)) | (1L << (AccessModifier_public - 45)) | (1L << (AccessModifier_internal - 45)) | (1L << (FunctionModifier_tailrec - 45)) | (1L << (FunctionModifier_operator - 45)) | (1L << (FunctionModifier_infix - 45)) | (1L << (FunctionModifier_inline - 45)) | (1L << (FunctionModifier_external - 45)) | (1L << (PropertyModifier_const - 45)) | (1L << (VarianceAnnotation_out - 45)) | (1L << (DOG - 45)) | (1L << (KEYWORD_constructor - 45)))) != 0)) {
 				{
-				setState(646); modifiers();
-				setState(647); match(KEYWORD_constructor);
+				setState(646);
+				modifiers();
+				setState(647);
+				match(KEYWORD_constructor);
 				}
 			}
 
 			{
-			setState(651); match(BRACE_OPEN);
+			setState(651);
+			match(BRACE_OPEN);
 			setState(660);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OP_IN) | (1L << KEYWORD_val) | (1L << KEYWORD_var) | (1L << KEYWORD_vararg))) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (HierarchyModifier_abstract - 67)) | (1L << (HierarchyModifier_open - 67)) | (1L << (HierarchyModifier_final - 67)) | (1L << (HierarchyModifier_override - 67)) | (1L << (HierarchyModifier_lateinit - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (ClassModifier_inner - 67)) | (1L << (AccessModifier_private - 67)) | (1L << (AccessModifier_protected - 67)) | (1L << (AccessModifier_public - 67)) | (1L << (AccessModifier_internal - 67)) | (1L << (FunctionModifier_tailrec - 67)) | (1L << (FunctionModifier_operator - 67)) | (1L << (FunctionModifier_infix - 67)) | (1L << (FunctionModifier_inline - 67)) | (1L << (FunctionModifier_external - 67)) | (1L << (PropertyModifier_const - 67)) | (1L << (VarianceAnnotation_out - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
-				setState(652); functionParameter();
+				setState(652);
+				functionParameter();
 				setState(657);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(653); match(COMMA);
-					setState(654); functionParameter();
+					setState(653);
+					match(COMMA);
+					setState(654);
+					functionParameter();
 					}
 					}
 					setState(659);
@@ -3304,7 +3639,8 @@ public class KotlinParser extends Parser {
 				}
 			}
 
-			setState(662); match(BRACE_CLOSE);
+			setState(662);
+			match(BRACE_CLOSE);
 			}
 			}
 		}
@@ -3320,21 +3656,21 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class SecondaryConstructorContext extends ParserRuleContext {
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
+		}
 		public ValueParametersContext valueParameters() {
 			return getRuleContext(ValueParametersContext.class,0);
-		}
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
-		}
-		public ConstructorDelegationCallContext constructorDelegationCall() {
-			return getRuleContext(ConstructorDelegationCallContext.class,0);
 		}
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
+		public ConstructorDelegationCallContext constructorDelegationCall() {
+			return getRuleContext(ConstructorDelegationCallContext.class,0);
+		}
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
 		}
 		public SecondaryConstructorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3357,26 +3693,34 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(664); modifiers();
-			setState(665); match(KEYWORD_constructor);
-			setState(666); valueParameters();
+			setState(664);
+			modifiers();
+			setState(665);
+			match(KEYWORD_constructor);
+			setState(666);
+			valueParameters();
 			setState(669);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(667); match(COLON);
-				setState(668); constructorDelegationCall();
+				setState(667);
+				match(COLON);
+				setState(668);
+				constructorDelegationCall();
 				}
 			}
 
-			setState(671); block();
+			setState(671);
+			block();
 			setState(675);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==SEMI) {
 				{
 				{
-				setState(672); match(SEMI);
+				setState(672);
+				match(SEMI);
 				}
 				}
 				setState(677);
@@ -3419,19 +3763,24 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 94, RULE_constructorDelegationCall);
 		try {
 			setState(682);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ConstructorDelegationCall_this:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(678); match(ConstructorDelegationCall_this);
-				setState(679); valueArguments();
+				setState(678);
+				match(ConstructorDelegationCall_this);
+				setState(679);
+				valueArguments();
 				}
 				break;
 			case ConstructorDelegationCall_super:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(680); match(ConstructorDelegationCall_super);
-				setState(681); valueArguments();
+				setState(680);
+				match(ConstructorDelegationCall_super);
+				setState(681);
+				valueArguments();
 				}
 				break;
 			default:
@@ -3450,11 +3799,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class CallSuffixContext extends ParserRuleContext {
-		public TypeArgumentsContext typeArguments() {
-			return getRuleContext(TypeArgumentsContext.class,0);
-		}
 		public ValueArgumentsContext valueArguments() {
 			return getRuleContext(ValueArgumentsContext.class,0);
+		}
+		public TypeArgumentsContext typeArguments() {
+			return getRuleContext(TypeArgumentsContext.class,0);
 		}
 		public AnnotatedLambdaContext annotatedLambda() {
 			return getRuleContext(AnnotatedLambdaContext.class,0);
@@ -3479,24 +3828,30 @@ public class KotlinParser extends Parser {
 		int _la;
 		try {
 			setState(695);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,80,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(685);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LT) {
 					{
-					setState(684); typeArguments();
+					setState(684);
+					typeArguments();
 					}
 				}
 
-				setState(687); valueArguments();
+				setState(687);
+				valueArguments();
 				setState(689);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,79,_ctx) ) {
 				case 1:
 					{
-					setState(688); annotatedLambda();
+					setState(688);
+					annotatedLambda();
 					}
 					break;
 				}
@@ -3505,14 +3860,17 @@ public class KotlinParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(691); typeArguments();
-				setState(692); annotatedLambda();
+				setState(691);
+				typeArguments();
+				setState(692);
+				annotatedLambda();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(694); annotatedLambda();
+				setState(694);
+				annotatedLambda();
 				}
 				break;
 			}
@@ -3529,14 +3887,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ConstructorInvocationContext extends ParserRuleContext {
-		public TypeArgumentsContext typeArguments() {
-			return getRuleContext(TypeArgumentsContext.class,0);
+		public UserTypeContext userType() {
+			return getRuleContext(UserTypeContext.class,0);
 		}
 		public ValueArgumentsContext valueArguments() {
 			return getRuleContext(ValueArgumentsContext.class,0);
 		}
-		public UserTypeContext userType() {
-			return getRuleContext(UserTypeContext.class,0);
+		public TypeArgumentsContext typeArguments() {
+			return getRuleContext(TypeArgumentsContext.class,0);
 		}
 		public ConstructorInvocationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3559,16 +3917,20 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(697); userType();
+			setState(697);
+			userType();
 			setState(699);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LT) {
 				{
-				setState(698); typeArguments();
+				setState(698);
+				typeArguments();
 				}
 			}
 
-			setState(701); valueArguments();
+			setState(701);
+			valueArguments();
 			}
 		}
 		catch (RecognitionException re) {
@@ -3609,9 +3971,12 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(703); userType();
-			setState(704); match(KEYWORD_by);
-			setState(705); expression();
+			setState(703);
+			userType();
+			setState(704);
+			match(KEYWORD_by);
+			setState(705);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -3629,11 +3994,11 @@ public class KotlinParser extends Parser {
 		public ConstructorInvocationContext constructorInvocation() {
 			return getRuleContext(ConstructorInvocationContext.class,0);
 		}
-		public ExplicitDelegationContext explicitDelegation() {
-			return getRuleContext(ExplicitDelegationContext.class,0);
-		}
 		public UserTypeContext userType() {
 			return getRuleContext(UserTypeContext.class,0);
+		}
+		public ExplicitDelegationContext explicitDelegation() {
+			return getRuleContext(ExplicitDelegationContext.class,0);
 		}
 		public DelegationSpecifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3654,23 +4019,27 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 102, RULE_delegationSpecifier);
 		try {
 			setState(710);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,82,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(707); constructorInvocation();
+				setState(707);
+				constructorInvocation();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(708); userType();
+				setState(708);
+				userType();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(709); explicitDelegation();
+				setState(709);
+				explicitDelegation();
 				}
 				break;
 			}
@@ -3687,29 +4056,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ClassDeclarationContext extends ParserRuleContext {
-		public List<DelegationSpecifierContext> delegationSpecifier() {
-			return getRuleContexts(DelegationSpecifierContext.class);
-		}
-		public TypeParametersContext typeParameters() {
-			return getRuleContext(TypeParametersContext.class,0);
-		}
-		public PrimaryConstructorContext primaryConstructor() {
-			return getRuleContext(PrimaryConstructorContext.class,0);
-		}
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
-		}
-		public AnnotationsContext annotations() {
-			return getRuleContext(AnnotationsContext.class,0);
-		}
-		public TypeConstraintsContext typeConstraints() {
-			return getRuleContext(TypeConstraintsContext.class,0);
-		}
 		public ModifiersContext modifiers() {
 			return getRuleContext(ModifiersContext.class,0);
 		}
 		public ClassOrInterfaceContext classOrInterface() {
 			return getRuleContext(ClassOrInterfaceContext.class,0);
+		}
+		public KeywordOrSimpleNameContext keywordOrSimpleName() {
+			return getRuleContext(KeywordOrSimpleNameContext.class,0);
+		}
+		public TypeConstraintsContext typeConstraints() {
+			return getRuleContext(TypeConstraintsContext.class,0);
 		}
 		public ClassBodyContext classBody() {
 			return getRuleContext(ClassBodyContext.class,0);
@@ -3717,12 +4074,24 @@ public class KotlinParser extends Parser {
 		public EnumClassBodyContext enumClassBody() {
 			return getRuleContext(EnumClassBodyContext.class,0);
 		}
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
-		public KeywordOrSimpleNameContext keywordOrSimpleName() {
-			return getRuleContext(KeywordOrSimpleNameContext.class,0);
+		public TypeParametersContext typeParameters() {
+			return getRuleContext(TypeParametersContext.class,0);
+		}
+		public PrimaryConstructorContext primaryConstructor() {
+			return getRuleContext(PrimaryConstructorContext.class,0);
+		}
+		public List<DelegationSpecifierContext> delegationSpecifier() {
+			return getRuleContexts(DelegationSpecifierContext.class);
 		}
 		public DelegationSpecifierContext delegationSpecifier(int i) {
 			return getRuleContext(DelegationSpecifierContext.class,i);
+		}
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
+		}
+		public AnnotationsContext annotations() {
+			return getRuleContext(AnnotationsContext.class,0);
 		}
 		public ClassDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3746,47 +4115,61 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(712); modifiers();
-			setState(713); classOrInterface();
-			setState(714); keywordOrSimpleName();
+			setState(712);
+			modifiers();
+			setState(713);
+			classOrInterface();
+			setState(714);
+			keywordOrSimpleName();
 			setState(716);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LT) {
 				{
-				setState(715); typeParameters();
+				setState(715);
+				typeParameters();
 				}
 			}
 
 			setState(719);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,84,_ctx) ) {
 			case 1:
 				{
-				setState(718); primaryConstructor();
+				setState(718);
+				primaryConstructor();
 				}
 				break;
 			}
 			setState(733);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(721); match(COLON);
+				setState(721);
+				match(COLON);
 				setState(723);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==DOG) {
 					{
-					setState(722); annotations();
+					setState(722);
+					annotations();
 					}
 				}
 
-				setState(725); delegationSpecifier();
+				setState(725);
+				delegationSpecifier();
 				setState(730);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(726); match(COMMA);
-					setState(727); delegationSpecifier();
+					setState(726);
+					match(COMMA);
+					setState(727);
+					delegationSpecifier();
 					}
 					}
 					setState(732);
@@ -3796,17 +4179,21 @@ public class KotlinParser extends Parser {
 				}
 			}
 
-			setState(735); typeConstraints();
+			setState(735);
+			typeConstraints();
 			setState(738);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,88,_ctx) ) {
 			case 1:
 				{
-				setState(736); classBody();
+				setState(736);
+				classBody();
 				}
 				break;
 			case 2:
 				{
-				setState(737); enumClassBody();
+				setState(737);
+				enumClassBody();
 				}
 				break;
 			}
@@ -3817,7 +4204,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(740); match(SEMI);
+					setState(740);
+					match(SEMI);
 					}
 					} 
 				}
@@ -3865,7 +4253,11 @@ public class KotlinParser extends Parser {
 			if ( !(_la==Declaration_class || _la==Declaration_interface) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -3907,16 +4299,20 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(748); match(COLON);
-			setState(749); delegationSpecifier();
+			setState(748);
+			match(COLON);
+			setState(749);
+			delegationSpecifier();
 			setState(754);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(750); match(COMMA);
-				setState(751); delegationSpecifier();
+				setState(750);
+				match(COMMA);
+				setState(751);
+				delegationSpecifier();
 				}
 				}
 				setState(756);
@@ -3937,24 +4333,24 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ObjectDeclarationContext extends ParserRuleContext {
-		public ClassBodyContext classBody() {
-			return getRuleContext(ClassBodyContext.class,0);
-		}
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
-		public PrimaryConstructorContext primaryConstructor() {
-			return getRuleContext(PrimaryConstructorContext.class,0);
-		}
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
 		}
 		public KeywordOrSimpleNameContext keywordOrSimpleName() {
 			return getRuleContext(KeywordOrSimpleNameContext.class,0);
 		}
+		public ClassBodyContext classBody() {
+			return getRuleContext(ClassBodyContext.class,0);
+		}
+		public PrimaryConstructorContext primaryConstructor() {
+			return getRuleContext(PrimaryConstructorContext.class,0);
+		}
 		public SupertypesSpecifiersContext supertypesSpecifiers() {
 			return getRuleContext(SupertypesSpecifiersContext.class,0);
 		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
 		}
 		public ObjectDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3978,26 +4374,34 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(757); modifiers();
-			setState(758); match(Declaration_object);
-			setState(759); keywordOrSimpleName();
+			setState(757);
+			modifiers();
+			setState(758);
+			match(Declaration_object);
+			setState(759);
+			keywordOrSimpleName();
 			setState(761);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,91,_ctx) ) {
 			case 1:
 				{
-				setState(760); primaryConstructor();
+				setState(760);
+				primaryConstructor();
 				}
 				break;
 			}
 			setState(764);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(763); supertypesSpecifiers();
+				setState(763);
+				supertypesSpecifiers();
 				}
 			}
 
-			setState(766); classBody();
+			setState(766);
+			classBody();
 			setState(770);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,93,_ctx);
@@ -4005,7 +4409,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(767); match(SEMI);
+					setState(767);
+					match(SEMI);
 					}
 					} 
 				}
@@ -4027,18 +4432,18 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class CompanionObjectContext extends ParserRuleContext {
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
+		}
 		public ClassBodyContext classBody() {
 			return getRuleContext(ClassBodyContext.class,0);
-		}
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
 		}
 		public SupertypesSpecifiersContext supertypesSpecifiers() {
 			return getRuleContext(SupertypesSpecifiersContext.class,0);
 		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
 		}
 		public CompanionObjectContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4061,25 +4466,32 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(773); modifiers();
-			setState(774); match(Declaration_companion);
-			setState(775); match(Declaration_object);
+			setState(773);
+			modifiers();
+			setState(774);
+			match(Declaration_companion);
+			setState(775);
+			match(Declaration_object);
 			setState(777);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(776); supertypesSpecifiers();
+				setState(776);
+				supertypesSpecifiers();
 				}
 			}
 
-			setState(779); classBody();
+			setState(779);
+			classBody();
 			setState(783);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==SEMI) {
 				{
 				{
-				setState(780); match(SEMI);
+				setState(780);
+				match(SEMI);
 				}
 				}
 				setState(785);
@@ -4124,12 +4536,16 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(790);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,96,_ctx) ) {
 			case 1:
 				{
-				setState(786); match(OPEN_BLOCK);
-				setState(787); members();
-				setState(788); match(CLOSE_BLOCK);
+				setState(786);
+				match(OPEN_BLOCK);
+				setState(787);
+				members();
+				setState(788);
+				match(CLOSE_BLOCK);
 				}
 				break;
 			}
@@ -4180,7 +4596,8 @@ public class KotlinParser extends Parser {
 			while (((((_la - 45)) & ~0x3f) == 0 && ((1L << (_la - 45)) & ((1L << (OP_IN - 45)) | (1L << (KEYWORD_val - 45)) | (1L << (KEYWORD_var - 45)) | (1L << (HierarchyModifier_abstract - 45)) | (1L << (HierarchyModifier_open - 45)) | (1L << (HierarchyModifier_final - 45)) | (1L << (HierarchyModifier_override - 45)) | (1L << (HierarchyModifier_lateinit - 45)) | (1L << (ClassModifier_enum - 45)) | (1L << (ClassModifier_annotation - 45)) | (1L << (ClassModifier_data - 45)) | (1L << (ClassModifier_inner - 45)) | (1L << (AccessModifier_private - 45)) | (1L << (AccessModifier_protected - 45)) | (1L << (AccessModifier_public - 45)) | (1L << (AccessModifier_internal - 45)) | (1L << (FunctionModifier_tailrec - 45)) | (1L << (FunctionModifier_operator - 45)) | (1L << (FunctionModifier_infix - 45)) | (1L << (FunctionModifier_inline - 45)) | (1L << (FunctionModifier_external - 45)) | (1L << (PropertyModifier_const - 45)) | (1L << (VarianceAnnotation_out - 45)) | (1L << (DOG - 45)) | (1L << (KEYWORD_constructor - 45)) | (1L << (Declaration_class - 45)) | (1L << (Declaration_interface - 45)) | (1L << (Declaration_object - 45)) | (1L << (Declaration_companion - 45)) | (1L << (Declaration_fun - 45)) | (1L << (Declaration_init - 45)))) != 0)) {
 				{
 				{
-				setState(792); memberDeclaration();
+				setState(792);
+				memberDeclaration();
 				}
 				}
 				setState(797);
@@ -4201,11 +4618,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ValueParametersContext extends ParserRuleContext {
-		public FunctionParameterContext functionParameter(int i) {
-			return getRuleContext(FunctionParameterContext.class,i);
-		}
 		public List<FunctionParameterContext> functionParameter() {
 			return getRuleContexts(FunctionParameterContext.class);
+		}
+		public FunctionParameterContext functionParameter(int i) {
+			return getRuleContext(FunctionParameterContext.class,i);
 		}
 		public ValueParametersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4228,20 +4645,25 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(798); match(BRACE_OPEN);
+			setState(798);
+			match(BRACE_OPEN);
 			setState(807);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OP_IN) | (1L << KEYWORD_val) | (1L << KEYWORD_var) | (1L << KEYWORD_vararg))) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (HierarchyModifier_abstract - 67)) | (1L << (HierarchyModifier_open - 67)) | (1L << (HierarchyModifier_final - 67)) | (1L << (HierarchyModifier_override - 67)) | (1L << (HierarchyModifier_lateinit - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (ClassModifier_inner - 67)) | (1L << (AccessModifier_private - 67)) | (1L << (AccessModifier_protected - 67)) | (1L << (AccessModifier_public - 67)) | (1L << (AccessModifier_internal - 67)) | (1L << (FunctionModifier_tailrec - 67)) | (1L << (FunctionModifier_operator - 67)) | (1L << (FunctionModifier_infix - 67)) | (1L << (FunctionModifier_inline - 67)) | (1L << (FunctionModifier_external - 67)) | (1L << (PropertyModifier_const - 67)) | (1L << (VarianceAnnotation_out - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
-				setState(799); functionParameter();
+				setState(799);
+				functionParameter();
 				setState(804);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(800); match(COMMA);
-					setState(801); functionParameter();
+					setState(800);
+					match(COMMA);
+					setState(801);
+					functionParameter();
 					}
 					}
 					setState(806);
@@ -4251,7 +4673,8 @@ public class KotlinParser extends Parser {
 				}
 			}
 
-			setState(809); match(BRACE_CLOSE);
+			setState(809);
+			match(BRACE_CLOSE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4266,39 +4689,39 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class FunctionDeclarationContext extends ParserRuleContext {
-		public FunctionBodyContext functionBody() {
-			return getRuleContext(FunctionBodyContext.class,0);
-		}
-		public TypeContext type(int i) {
-			return getRuleContext(TypeContext.class,i);
-		}
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
-		public ValueParametersContext valueParameters() {
-			return getRuleContext(ValueParametersContext.class,0);
-		}
-		public List<TypeParametersContext> typeParameters() {
-			return getRuleContexts(TypeParametersContext.class);
-		}
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
 		}
 		public KeywordOrSimpleNameContext keywordOrSimpleName() {
 			return getRuleContext(KeywordOrSimpleNameContext.class,0);
 		}
-		public List<TypeContext> type() {
-			return getRuleContexts(TypeContext.class);
-		}
-		public AnnotationsContext annotations() {
-			return getRuleContext(AnnotationsContext.class,0);
+		public ValueParametersContext valueParameters() {
+			return getRuleContext(ValueParametersContext.class,0);
 		}
 		public TypeConstraintsContext typeConstraints() {
 			return getRuleContext(TypeConstraintsContext.class,0);
 		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
+		public List<TypeParametersContext> typeParameters() {
+			return getRuleContexts(TypeParametersContext.class);
 		}
 		public TypeParametersContext typeParameters(int i) {
 			return getRuleContext(TypeParametersContext.class,i);
+		}
+		public List<TypeContext> type() {
+			return getRuleContexts(TypeContext.class);
+		}
+		public TypeContext type(int i) {
+			return getRuleContext(TypeContext.class,i);
+		}
+		public AnnotationsContext annotations() {
+			return getRuleContext(AnnotationsContext.class,0);
+		}
+		public FunctionBodyContext functionBody() {
+			return getRuleContext(FunctionBodyContext.class,0);
+		}
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
 		}
 		public FunctionDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4322,55 +4745,73 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(811); modifiers();
-			setState(812); match(Declaration_fun);
+			setState(811);
+			modifiers();
+			setState(812);
+			match(Declaration_fun);
 			setState(814);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LT) {
 				{
-				setState(813); typeParameters();
+				setState(813);
+				typeParameters();
 				}
 			}
 
 			setState(820);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,101,_ctx) ) {
 			case 1:
 				{
-				setState(816); type();
-				setState(817); match(DOT);
+				setState(816);
+				type();
+				setState(817);
+				match(DOT);
 				}
 				break;
 			case 2:
 				{
-				setState(819); annotations();
+				setState(819);
+				annotations();
 				}
 				break;
 			}
-			setState(822); keywordOrSimpleName();
+			setState(822);
+			keywordOrSimpleName();
 			setState(824);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LT) {
 				{
-				setState(823); typeParameters();
+				setState(823);
+				typeParameters();
 				}
 			}
 
-			setState(826); valueParameters();
+			setState(826);
+			valueParameters();
 			setState(829);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(827); match(COLON);
-				setState(828); type();
+				setState(827);
+				match(COLON);
+				setState(828);
+				type();
 				}
 			}
 
-			setState(831); typeConstraints();
+			setState(831);
+			typeConstraints();
 			setState(833);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,104,_ctx) ) {
 			case 1:
 				{
-				setState(832); functionBody();
+				setState(832);
+				functionBody();
 				}
 				break;
 			}
@@ -4381,7 +4822,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(835); match(SEMI);
+					setState(835);
+					match(SEMI);
 					}
 					} 
 				}
@@ -4407,11 +4849,11 @@ public class KotlinParser extends Parser {
 		public TerminalNode SEMI(int i) {
 			return getToken(KotlinParser.SEMI, i);
 		}
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
-		}
 		public List<StatementContext> statement() {
 			return getRuleContexts(StatementContext.class);
+		}
+		public StatementContext statement(int i) {
+			return getRuleContext(StatementContext.class,i);
 		}
 		public StatementsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4442,7 +4884,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(841); match(SEMI);
+					setState(841);
+					match(SEMI);
 					}
 					} 
 				}
@@ -4451,10 +4894,12 @@ public class KotlinParser extends Parser {
 				_alt = getInterpreter().adaptivePredict(_input,106,_ctx);
 			}
 			setState(860);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LongLiteral) | (1L << IntegerLiteral) | (1L << OPEN_BLOCK) | (1L << HexadecimalLiteral) | (1L << CharacterLiteral) | (1L << TRIPLE_QUOTE) | (1L << SINGLE_QUOTE) | (1L << PACKAGE) | (1L << IMPORT) | (1L << BRACE_OPEN) | (1L << REFERENCE) | (1L << TRUE) | (1L << FALSE) | (1L << NULL) | (1L << OP_PLUS) | (1L << OP_MUNUS) | (1L << OP_IN) | (1L << OP_DECREMENT) | (1L << OP_INCREMENT) | (1L << OP_NOT) | (1L << KEYWORD_val) | (1L << KEYWORD_var))) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (HierarchyModifier_abstract - 67)) | (1L << (HierarchyModifier_open - 67)) | (1L << (HierarchyModifier_final - 67)) | (1L << (HierarchyModifier_override - 67)) | (1L << (HierarchyModifier_lateinit - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (ClassModifier_inner - 67)) | (1L << (AccessModifier_private - 67)) | (1L << (AccessModifier_protected - 67)) | (1L << (AccessModifier_public - 67)) | (1L << (AccessModifier_internal - 67)) | (1L << (FunctionModifier_tailrec - 67)) | (1L << (FunctionModifier_operator - 67)) | (1L << (FunctionModifier_infix - 67)) | (1L << (FunctionModifier_inline - 67)) | (1L << (FunctionModifier_external - 67)) | (1L << (PropertyModifier_const - 67)) | (1L << (VarianceAnnotation_out - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (Jump_throw - 67)) | (1L << (Jump_continue - 67)) | (1L << (Jump_return - 67)) | (1L << (Jump_break - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (ConstructorDelegationCall_this - 67)) | (1L << (ConstructorDelegationCall_super - 67)) | (1L << (Declaration_class - 67)) | (1L << (Declaration_interface - 67)) | (1L << (Declaration_object - 67)) | (1L << (Declaration_companion - 67)) | (1L << (Declaration_fun - 67)) | (1L << (Declaration_init - 67)) | (1L << (CF_if - 67)) | (1L << (CF_when - 67)) | (1L << (CF_while - 67)) | (1L << (CF_for - 67)) | (1L << (CF_do - 67)) | (1L << (CF_try - 67)) | (1L << (BAX - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
-				setState(847); statement();
+				setState(847);
+				statement();
 				setState(857);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,108,_ctx);
@@ -4468,14 +4913,16 @@ public class KotlinParser extends Parser {
 						while (_la==SEMI) {
 							{
 							{
-							setState(848); match(SEMI);
+							setState(848);
+							match(SEMI);
 							}
 							}
 							setState(853);
 							_errHandler.sync(this);
 							_la = _input.LA(1);
 						}
-						setState(854); statement();
+						setState(854);
+						statement();
 						}
 						} 
 					}
@@ -4492,7 +4939,8 @@ public class KotlinParser extends Parser {
 			while (_la==SEMI) {
 				{
 				{
-				setState(862); match(SEMI);
+				setState(862);
+				match(SEMI);
 				}
 				}
 				setState(867);
@@ -4538,18 +4986,22 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 124, RULE_functionBody);
 		try {
 			setState(871);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case OPEN_BLOCK:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(868); block();
+				setState(868);
+				block();
 				}
 				break;
 			case EQ:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(869); match(EQ);
-				setState(870); expression();
+				setState(869);
+				match(EQ);
+				setState(870);
+				expression();
 				}
 				break;
 			default:
@@ -4591,9 +5043,12 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(873); match(OPEN_BLOCK);
-			setState(874); statements();
-			setState(875); match(CLOSE_BLOCK);
+			setState(873);
+			match(OPEN_BLOCK);
+			setState(874);
+			statements();
+			setState(875);
+			match(CLOSE_BLOCK);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4608,12 +5063,12 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class AnonymousInitializerContext extends ParserRuleContext {
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
 		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
 		public TerminalNode SEMI(int i) {
 			return getToken(KotlinParser.SEMI, i);
-		}
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
 		}
 		public AnonymousInitializerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4636,15 +5091,18 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(877); match(Declaration_init);
-			setState(878); block();
+			setState(877);
+			match(Declaration_init);
+			setState(878);
+			block();
 			setState(882);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==SEMI) {
 				{
 				{
-				setState(879); match(SEMI);
+				setState(879);
+				match(SEMI);
 				}
 				}
 				setState(884);
@@ -4692,18 +5150,24 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(885); match(OPEN_BLOCK);
-			setState(886); enumEntries();
+			setState(885);
+			match(OPEN_BLOCK);
+			setState(886);
+			enumEntries();
 			setState(889);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==SEMI) {
 				{
-				setState(887); match(SEMI);
-				setState(888); members();
+				setState(887);
+				match(SEMI);
+				setState(888);
+				members();
 				}
 			}
 
-			setState(891); match(CLOSE_BLOCK);
+			setState(891);
+			match(CLOSE_BLOCK);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4718,11 +5182,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class EnumEntriesContext extends ParserRuleContext {
-		public EnumEntryContext enumEntry(int i) {
-			return getRuleContext(EnumEntryContext.class,i);
-		}
 		public List<EnumEntryContext> enumEntry() {
 			return getRuleContexts(EnumEntryContext.class);
+		}
+		public EnumEntryContext enumEntry(int i) {
+			return getRuleContext(EnumEntryContext.class,i);
 		}
 		public EnumEntriesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4751,12 +5215,15 @@ public class KotlinParser extends Parser {
 			while (_la==OP_IN || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (HierarchyModifier_abstract - 67)) | (1L << (HierarchyModifier_open - 67)) | (1L << (HierarchyModifier_final - 67)) | (1L << (HierarchyModifier_override - 67)) | (1L << (HierarchyModifier_lateinit - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (ClassModifier_inner - 67)) | (1L << (AccessModifier_private - 67)) | (1L << (AccessModifier_protected - 67)) | (1L << (AccessModifier_public - 67)) | (1L << (AccessModifier_internal - 67)) | (1L << (FunctionModifier_tailrec - 67)) | (1L << (FunctionModifier_operator - 67)) | (1L << (FunctionModifier_infix - 67)) | (1L << (FunctionModifier_inline - 67)) | (1L << (FunctionModifier_external - 67)) | (1L << (PropertyModifier_const - 67)) | (1L << (VarianceAnnotation_out - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
 				{
-				setState(893); enumEntry();
+				setState(893);
+				enumEntry();
 				setState(895);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(894); match(COMMA);
+					setState(894);
+					match(COMMA);
 					}
 				}
 
@@ -4780,23 +5247,23 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class EnumEntryContext extends ParserRuleContext {
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
+		}
+		public KeywordOrSimpleNameContext keywordOrSimpleName() {
+			return getRuleContext(KeywordOrSimpleNameContext.class,0);
+		}
+		public ClassBodyContext classBody() {
+			return getRuleContext(ClassBodyContext.class,0);
+		}
 		public ValueArgumentsContext valueArguments() {
 			return getRuleContext(ValueArgumentsContext.class,0);
 		}
 		public ConstructorInvocationContext constructorInvocation() {
 			return getRuleContext(ConstructorInvocationContext.class,0);
 		}
-		public ClassBodyContext classBody() {
-			return getRuleContext(ClassBodyContext.class,0);
-		}
-		public KeywordOrSimpleNameContext keywordOrSimpleName() {
-			return getRuleContext(KeywordOrSimpleNameContext.class,0);
-		}
 		public AnnotationsContext annotations() {
 			return getRuleContext(AnnotationsContext.class,0);
-		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
 		}
 		public EnumEntryContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4819,29 +5286,37 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(902); modifiers();
-			setState(903); keywordOrSimpleName();
+			setState(902);
+			modifiers();
+			setState(903);
+			keywordOrSimpleName();
 			setState(910);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case COLON:
 				{
 				{
-				setState(904); match(COLON);
+				setState(904);
+				match(COLON);
 				setState(906);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==DOG) {
 					{
-					setState(905); annotations();
+					setState(905);
+					annotations();
 					}
 				}
 
-				setState(908); constructorInvocation();
+				setState(908);
+				constructorInvocation();
 				}
 				}
 				break;
 			case BRACE_OPEN:
 				{
-				setState(909); valueArguments();
+				setState(909);
+				valueArguments();
 				}
 				break;
 			case SEMI:
@@ -4878,9 +5353,10 @@ public class KotlinParser extends Parser {
 			case SimpleName:
 				break;
 			default:
-				throw new NoViableAltException(this);
+				break;
 			}
-			setState(912); classBody();
+			setState(912);
+			classBody();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4895,15 +5371,15 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class IfExpressionContext extends ParserRuleContext {
-		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
-		public TerminalNode SEMI(int i) {
-			return getToken(KotlinParser.SEMI, i);
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
 		}
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
+		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
+		public TerminalNode SEMI(int i) {
+			return getToken(KotlinParser.SEMI, i);
 		}
 		public IfExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4926,11 +5402,16 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(914); match(CF_if);
-			setState(915); match(BRACE_OPEN);
-			setState(916); expression();
-			setState(917); match(BRACE_CLOSE);
-			setState(918); expression();
+			setState(914);
+			match(CF_if);
+			setState(915);
+			match(BRACE_OPEN);
+			setState(916);
+			expression();
+			setState(917);
+			match(BRACE_CLOSE);
+			setState(918);
+			expression();
 			setState(922);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,118,_ctx);
@@ -4938,7 +5419,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(919); match(SEMI);
+					setState(919);
+					match(SEMI);
 					}
 					} 
 				}
@@ -4947,11 +5429,14 @@ public class KotlinParser extends Parser {
 				_alt = getInterpreter().adaptivePredict(_input,118,_ctx);
 			}
 			setState(927);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,119,_ctx) ) {
 			case 1:
 				{
-				setState(925); match(CF_else);
-				setState(926); expression();
+				setState(925);
+				match(CF_else);
+				setState(926);
+				expression();
 				}
 				break;
 			}
@@ -4969,17 +5454,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class TryExpressionContext extends ParserRuleContext {
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public List<CatchBlockContext> catchBlock() {
+			return getRuleContexts(CatchBlockContext.class);
+		}
 		public CatchBlockContext catchBlock(int i) {
 			return getRuleContext(CatchBlockContext.class,i);
 		}
 		public FinallyBlockContext finallyBlock() {
 			return getRuleContext(FinallyBlockContext.class,0);
-		}
-		public List<CatchBlockContext> catchBlock() {
-			return getRuleContexts(CatchBlockContext.class);
-		}
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
 		}
 		public TryExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5002,15 +5487,18 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(929); match(CF_try);
-			setState(930); block();
+			setState(929);
+			match(CF_try);
+			setState(930);
+			block();
 			setState(934);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==CF_catch) {
 				{
 				{
-				setState(931); catchBlock();
+				setState(931);
+				catchBlock();
 				}
 				}
 				setState(936);
@@ -5018,10 +5506,12 @@ public class KotlinParser extends Parser {
 				_la = _input.LA(1);
 			}
 			setState(938);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CF_FINALLY) {
 				{
-				setState(937); finallyBlock();
+				setState(937);
+				finallyBlock();
 				}
 			}
 
@@ -5042,14 +5532,14 @@ public class KotlinParser extends Parser {
 		public KeywordOrSimpleNameContext keywordOrSimpleName() {
 			return getRuleContext(KeywordOrSimpleNameContext.class,0);
 		}
-		public AnnotationsContext annotations() {
-			return getRuleContext(AnnotationsContext.class,0);
-		}
 		public UserTypeContext userType() {
 			return getRuleContext(UserTypeContext.class,0);
 		}
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
+		}
+		public AnnotationsContext annotations() {
+			return getRuleContext(AnnotationsContext.class,0);
 		}
 		public CatchBlockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5072,21 +5562,30 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(940); match(CF_catch);
-			setState(941); match(BRACE_OPEN);
+			setState(940);
+			match(CF_catch);
+			setState(941);
+			match(BRACE_OPEN);
 			setState(943);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==DOG) {
 				{
-				setState(942); annotations();
+				setState(942);
+				annotations();
 				}
 			}
 
-			setState(945); keywordOrSimpleName();
-			setState(946); match(COLON);
-			setState(947); userType();
-			setState(948); match(BRACE_CLOSE);
-			setState(949); block();
+			setState(945);
+			keywordOrSimpleName();
+			setState(946);
+			match(COLON);
+			setState(947);
+			userType();
+			setState(948);
+			match(BRACE_CLOSE);
+			setState(949);
+			block();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5124,8 +5623,10 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(951); match(CF_FINALLY);
-			setState(952); block();
+			setState(951);
+			match(CF_FINALLY);
+			setState(952);
+			block();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5168,23 +5669,27 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 144, RULE_loop);
 		try {
 			setState(957);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case CF_for:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(954); forLoop();
+				setState(954);
+				forLoop();
 				}
 				break;
 			case CF_while:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(955); whileLoop();
+				setState(955);
+				whileLoop();
 				}
 				break;
 			case CF_do:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(956); doWhileLoop();
+				setState(956);
+				doWhileLoop();
 				}
 				break;
 			default:
@@ -5203,20 +5708,20 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ForLoopContext extends ParserRuleContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
 		public MultipleVariableDeclarationsContext multipleVariableDeclarations() {
 			return getRuleContext(MultipleVariableDeclarationsContext.class,0);
 		}
 		public VariableDeclarationEntryContext variableDeclarationEntry() {
 			return getRuleContext(VariableDeclarationEntryContext.class,0);
 		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
 		public AnnotationsContext annotations() {
 			return getRuleContext(AnnotationsContext.class,0);
-		}
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
 		}
 		public ForLoopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5239,21 +5744,27 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(959); match(CF_for);
-			setState(960); match(BRACE_OPEN);
+			setState(959);
+			match(CF_for);
+			setState(960);
+			match(BRACE_OPEN);
 			setState(962);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==DOG) {
 				{
-				setState(961); annotations();
+				setState(961);
+				annotations();
 				}
 			}
 
 			setState(966);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BRACE_OPEN:
 				{
-				setState(964); multipleVariableDeclarations();
+				setState(964);
+				multipleVariableDeclarations();
 				}
 				break;
 			case GET:
@@ -5265,16 +5776,21 @@ public class KotlinParser extends Parser {
 			case KEYWORD_constructor:
 			case SimpleName:
 				{
-				setState(965); variableDeclarationEntry();
+				setState(965);
+				variableDeclarationEntry();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(968); match(OP_IN);
-			setState(969); expression();
-			setState(970); match(BRACE_CLOSE);
-			setState(971); expression();
+			setState(968);
+			match(OP_IN);
+			setState(969);
+			expression();
+			setState(970);
+			match(BRACE_CLOSE);
+			setState(971);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5289,11 +5805,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class WhileLoopContext extends ParserRuleContext {
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
 		public WhileLoopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5315,11 +5831,16 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(973); match(CF_while);
-			setState(974); match(BRACE_OPEN);
-			setState(975); expression();
-			setState(976); match(BRACE_CLOSE);
-			setState(977); expression();
+			setState(973);
+			match(CF_while);
+			setState(974);
+			match(BRACE_OPEN);
+			setState(975);
+			expression();
+			setState(976);
+			match(BRACE_CLOSE);
+			setState(977);
+			expression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5334,11 +5855,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class DoWhileLoopContext extends ParserRuleContext {
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
 		public DoWhileLoopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5360,12 +5881,18 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(979); match(CF_do);
-			setState(980); expression();
-			setState(981); match(CF_while);
-			setState(982); match(BRACE_OPEN);
-			setState(983); expression();
-			setState(984); match(BRACE_CLOSE);
+			setState(979);
+			match(CF_do);
+			setState(980);
+			expression();
+			setState(981);
+			match(CF_while);
+			setState(982);
+			match(BRACE_OPEN);
+			setState(983);
+			expression();
+			setState(984);
+			match(BRACE_CLOSE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5380,17 +5907,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
+		public List<DisjunctionContext> disjunction() {
+			return getRuleContexts(DisjunctionContext.class);
+		}
 		public DisjunctionContext disjunction(int i) {
 			return getRuleContext(DisjunctionContext.class,i);
-		}
-		public AssignmentOperatorContext assignmentOperator(int i) {
-			return getRuleContext(AssignmentOperatorContext.class,i);
 		}
 		public List<AssignmentOperatorContext> assignmentOperator() {
 			return getRuleContexts(AssignmentOperatorContext.class);
 		}
-		public List<DisjunctionContext> disjunction() {
-			return getRuleContexts(DisjunctionContext.class);
+		public AssignmentOperatorContext assignmentOperator(int i) {
+			return getRuleContext(AssignmentOperatorContext.class,i);
 		}
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5413,7 +5940,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(986); disjunction();
+			setState(986);
+			disjunction();
 			setState(992);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,126,_ctx);
@@ -5421,8 +5949,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(987); assignmentOperator();
-					setState(988); disjunction();
+					setState(987);
+					assignmentOperator();
+					setState(988);
+					disjunction();
 					}
 					} 
 				}
@@ -5471,7 +6001,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(995); conjunction();
+			setState(995);
+			conjunction();
 			setState(1000);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,127,_ctx);
@@ -5479,8 +6010,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(996); match(DISJ);
-					setState(997); conjunction();
+					setState(996);
+					match(DISJ);
+					setState(997);
+					conjunction();
 					}
 					} 
 				}
@@ -5529,7 +6062,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1003); equalityComparison();
+			setState(1003);
+			equalityComparison();
 			setState(1008);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,128,_ctx);
@@ -5537,8 +6071,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1004); match(CONJ);
-					setState(1005); equalityComparison();
+					setState(1004);
+					match(CONJ);
+					setState(1005);
+					equalityComparison();
 					}
 					} 
 				}
@@ -5560,17 +6096,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class EqualityComparisonContext extends ParserRuleContext {
-		public List<EqualityOperationContext> equalityOperation() {
-			return getRuleContexts(EqualityOperationContext.class);
-		}
-		public EqualityOperationContext equalityOperation(int i) {
-			return getRuleContext(EqualityOperationContext.class,i);
-		}
 		public List<ComparisonContext> comparison() {
 			return getRuleContexts(ComparisonContext.class);
 		}
 		public ComparisonContext comparison(int i) {
 			return getRuleContext(ComparisonContext.class,i);
+		}
+		public List<EqualityOperationContext> equalityOperation() {
+			return getRuleContexts(EqualityOperationContext.class);
+		}
+		public EqualityOperationContext equalityOperation(int i) {
+			return getRuleContext(EqualityOperationContext.class,i);
 		}
 		public EqualityComparisonContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5593,7 +6129,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1011); comparison();
+			setState(1011);
+			comparison();
 			setState(1017);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,129,_ctx);
@@ -5601,8 +6138,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1012); equalityOperation();
-					setState(1013); comparison();
+					setState(1012);
+					equalityOperation();
+					setState(1013);
+					comparison();
 					}
 					} 
 				}
@@ -5630,11 +6169,11 @@ public class KotlinParser extends Parser {
 		public NamedInfixContext namedInfix(int i) {
 			return getRuleContext(NamedInfixContext.class,i);
 		}
-		public ComparisonOperationContext comparisonOperation(int i) {
-			return getRuleContext(ComparisonOperationContext.class,i);
-		}
 		public List<ComparisonOperationContext> comparisonOperation() {
 			return getRuleContexts(ComparisonOperationContext.class);
+		}
+		public ComparisonOperationContext comparisonOperation(int i) {
+			return getRuleContext(ComparisonOperationContext.class,i);
 		}
 		public ComparisonContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5657,7 +6196,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1020); namedInfix();
+			setState(1020);
+			namedInfix();
 			setState(1026);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,130,_ctx);
@@ -5665,8 +6205,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1021); comparisonOperation();
-					setState(1022); namedInfix();
+					setState(1021);
+					comparisonOperation();
+					setState(1022);
+					namedInfix();
 					}
 					} 
 				}
@@ -5688,14 +6230,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class NamedInfixContext extends ParserRuleContext {
-		public List<InOperationContext> inOperation() {
-			return getRuleContexts(InOperationContext.class);
-		}
-		public TypeContext type() {
-			return getRuleContext(TypeContext.class,0);
+		public List<ElvisExpressionContext> elvisExpression() {
+			return getRuleContexts(ElvisExpressionContext.class);
 		}
 		public ElvisExpressionContext elvisExpression(int i) {
 			return getRuleContext(ElvisExpressionContext.class,i);
+		}
+		public List<InOperationContext> inOperation() {
+			return getRuleContexts(InOperationContext.class);
 		}
 		public InOperationContext inOperation(int i) {
 			return getRuleContext(InOperationContext.class,i);
@@ -5703,11 +6245,11 @@ public class KotlinParser extends Parser {
 		public PrefixUnaryExpressionContext prefixUnaryExpression() {
 			return getRuleContext(PrefixUnaryExpressionContext.class,0);
 		}
-		public List<ElvisExpressionContext> elvisExpression() {
-			return getRuleContexts(ElvisExpressionContext.class);
-		}
 		public IsOperationContext isOperation() {
 			return getRuleContext(IsOperationContext.class,0);
+		}
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
 		}
 		public NamedInfixContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5729,11 +6271,13 @@ public class KotlinParser extends Parser {
 		try {
 			int _alt;
 			setState(1047);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,133,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1029); elvisExpression();
+				setState(1029);
+				elvisExpression();
 				setState(1035);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,131,_ctx);
@@ -5741,8 +6285,10 @@ public class KotlinParser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(1030); inOperation();
-						setState(1031); elvisExpression();
+						setState(1030);
+						inOperation();
+						setState(1031);
+						elvisExpression();
 						}
 						} 
 					}
@@ -5755,20 +6301,26 @@ public class KotlinParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1038); elvisExpression();
-				setState(1039); prefixUnaryExpression();
+				setState(1038);
+				elvisExpression();
+				setState(1039);
+				prefixUnaryExpression();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1041); elvisExpression();
+				setState(1041);
+				elvisExpression();
 				setState(1045);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,132,_ctx) ) {
 				case 1:
 					{
-					setState(1042); isOperation();
-					setState(1043); type();
+					setState(1042);
+					isOperation();
+					setState(1043);
+					type();
 					}
 					break;
 				}
@@ -5788,11 +6340,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ElvisExpressionContext extends ParserRuleContext {
-		public InfixFunctionCallContext infixFunctionCall(int i) {
-			return getRuleContext(InfixFunctionCallContext.class,i);
-		}
 		public List<InfixFunctionCallContext> infixFunctionCall() {
 			return getRuleContexts(InfixFunctionCallContext.class);
+		}
+		public InfixFunctionCallContext infixFunctionCall(int i) {
+			return getRuleContext(InfixFunctionCallContext.class,i);
 		}
 		public ElvisExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5815,7 +6367,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1049); infixFunctionCall();
+			setState(1049);
+			infixFunctionCall();
 			setState(1054);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,134,_ctx);
@@ -5823,8 +6376,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1050); match(ELVIS);
-					setState(1051); infixFunctionCall();
+					setState(1050);
+					match(ELVIS);
+					setState(1051);
+					infixFunctionCall();
 					}
 					} 
 				}
@@ -5846,17 +6401,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class InfixFunctionCallContext extends ParserRuleContext {
-		public RangeExpressionContext rangeExpression(int i) {
-			return getRuleContext(RangeExpressionContext.class,i);
-		}
-		public KeywordOrSimpleNameContext keywordOrSimpleName(int i) {
-			return getRuleContext(KeywordOrSimpleNameContext.class,i);
-		}
 		public List<RangeExpressionContext> rangeExpression() {
 			return getRuleContexts(RangeExpressionContext.class);
 		}
+		public RangeExpressionContext rangeExpression(int i) {
+			return getRuleContext(RangeExpressionContext.class,i);
+		}
 		public List<KeywordOrSimpleNameContext> keywordOrSimpleName() {
 			return getRuleContexts(KeywordOrSimpleNameContext.class);
+		}
+		public KeywordOrSimpleNameContext keywordOrSimpleName(int i) {
+			return getRuleContext(KeywordOrSimpleNameContext.class,i);
 		}
 		public InfixFunctionCallContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5879,7 +6434,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1057); rangeExpression();
+			setState(1057);
+			rangeExpression();
 			setState(1063);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,135,_ctx);
@@ -5887,8 +6443,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1058); keywordOrSimpleName();
-					setState(1059); rangeExpression();
+					setState(1058);
+					keywordOrSimpleName();
+					setState(1059);
+					rangeExpression();
 					}
 					} 
 				}
@@ -5910,11 +6468,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class RangeExpressionContext extends ParserRuleContext {
-		public AdditiveExpressionContext additiveExpression(int i) {
-			return getRuleContext(AdditiveExpressionContext.class,i);
-		}
 		public List<AdditiveExpressionContext> additiveExpression() {
 			return getRuleContexts(AdditiveExpressionContext.class);
+		}
+		public AdditiveExpressionContext additiveExpression(int i) {
+			return getRuleContext(AdditiveExpressionContext.class,i);
 		}
 		public RangeExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5937,7 +6495,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1066); additiveExpression();
+			setState(1066);
+			additiveExpression();
 			setState(1071);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,136,_ctx);
@@ -5945,8 +6504,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1067); match(RANGE);
-					setState(1068); additiveExpression();
+					setState(1067);
+					match(RANGE);
+					setState(1068);
+					additiveExpression();
 					}
 					} 
 				}
@@ -5968,17 +6529,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class AdditiveExpressionContext extends ParserRuleContext {
-		public AdditiveOperationContext additiveOperation(int i) {
-			return getRuleContext(AdditiveOperationContext.class,i);
-		}
-		public List<AdditiveOperationContext> additiveOperation() {
-			return getRuleContexts(AdditiveOperationContext.class);
-		}
 		public List<MultiplicativeExpressionContext> multiplicativeExpression() {
 			return getRuleContexts(MultiplicativeExpressionContext.class);
 		}
 		public MultiplicativeExpressionContext multiplicativeExpression(int i) {
 			return getRuleContext(MultiplicativeExpressionContext.class,i);
+		}
+		public List<AdditiveOperationContext> additiveOperation() {
+			return getRuleContexts(AdditiveOperationContext.class);
+		}
+		public AdditiveOperationContext additiveOperation(int i) {
+			return getRuleContext(AdditiveOperationContext.class,i);
 		}
 		public AdditiveExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6001,7 +6562,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1074); multiplicativeExpression();
+			setState(1074);
+			multiplicativeExpression();
 			setState(1080);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,137,_ctx);
@@ -6009,8 +6571,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1075); additiveOperation();
-					setState(1076); multiplicativeExpression();
+					setState(1075);
+					additiveOperation();
+					setState(1076);
+					multiplicativeExpression();
 					}
 					} 
 				}
@@ -6032,17 +6596,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class MultiplicativeExpressionContext extends ParserRuleContext {
-		public List<MultiplicativeOperationContext> multiplicativeOperation() {
-			return getRuleContexts(MultiplicativeOperationContext.class);
+		public List<TypeRHSContext> typeRHS() {
+			return getRuleContexts(TypeRHSContext.class);
 		}
 		public TypeRHSContext typeRHS(int i) {
 			return getRuleContext(TypeRHSContext.class,i);
 		}
+		public List<MultiplicativeOperationContext> multiplicativeOperation() {
+			return getRuleContexts(MultiplicativeOperationContext.class);
+		}
 		public MultiplicativeOperationContext multiplicativeOperation(int i) {
 			return getRuleContext(MultiplicativeOperationContext.class,i);
-		}
-		public List<TypeRHSContext> typeRHS() {
-			return getRuleContexts(TypeRHSContext.class);
 		}
 		public MultiplicativeExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6065,7 +6629,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1083); typeRHS();
+			setState(1083);
+			typeRHS();
 			setState(1089);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,138,_ctx);
@@ -6073,8 +6638,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1084); multiplicativeOperation();
-					setState(1085); typeRHS();
+					setState(1084);
+					multiplicativeOperation();
+					setState(1085);
+					typeRHS();
 					}
 					} 
 				}
@@ -6096,17 +6663,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class TypeRHSContext extends ParserRuleContext {
+		public List<PrefixUnaryExpressionContext> prefixUnaryExpression() {
+			return getRuleContexts(PrefixUnaryExpressionContext.class);
+		}
+		public PrefixUnaryExpressionContext prefixUnaryExpression(int i) {
+			return getRuleContext(PrefixUnaryExpressionContext.class,i);
+		}
 		public List<TypeOperationContext> typeOperation() {
 			return getRuleContexts(TypeOperationContext.class);
 		}
 		public TypeOperationContext typeOperation(int i) {
 			return getRuleContext(TypeOperationContext.class,i);
-		}
-		public PrefixUnaryExpressionContext prefixUnaryExpression(int i) {
-			return getRuleContext(PrefixUnaryExpressionContext.class,i);
-		}
-		public List<PrefixUnaryExpressionContext> prefixUnaryExpression() {
-			return getRuleContexts(PrefixUnaryExpressionContext.class);
 		}
 		public TypeRHSContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6129,7 +6696,8 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1092); prefixUnaryExpression();
+			setState(1092);
+			prefixUnaryExpression();
 			setState(1098);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,139,_ctx);
@@ -6137,8 +6705,10 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1093); typeOperation();
-					setState(1094); prefixUnaryExpression();
+					setState(1093);
+					typeOperation();
+					setState(1094);
+					prefixUnaryExpression();
 					}
 					} 
 				}
@@ -6160,14 +6730,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class PrefixUnaryExpressionContext extends ParserRuleContext {
-		public PrefixUnaryOperationContext prefixUnaryOperation(int i) {
-			return getRuleContext(PrefixUnaryOperationContext.class,i);
-		}
 		public PostfixUnaryExpressionContext postfixUnaryExpression() {
 			return getRuleContext(PostfixUnaryExpressionContext.class,0);
 		}
 		public List<PrefixUnaryOperationContext> prefixUnaryOperation() {
 			return getRuleContexts(PrefixUnaryOperationContext.class);
+		}
+		public PrefixUnaryOperationContext prefixUnaryOperation(int i) {
+			return getRuleContext(PrefixUnaryOperationContext.class,i);
 		}
 		public PrefixUnaryExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6197,7 +6767,8 @@ public class KotlinParser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(1101); prefixUnaryOperation();
+					setState(1101);
+					prefixUnaryOperation();
 					}
 					} 
 				}
@@ -6205,7 +6776,8 @@ public class KotlinParser extends Parser {
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,140,_ctx);
 			}
-			setState(1107); postfixUnaryExpression();
+			setState(1107);
+			postfixUnaryExpression();
 			}
 		}
 		catch (RecognitionException re) {
@@ -6220,9 +6792,6 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class PostfixUnaryExpressionContext extends ParserRuleContext {
-		public CallableReferenceContext callableReference() {
-			return getRuleContext(CallableReferenceContext.class,0);
-		}
 		public AtomicExpressionContext atomicExpression() {
 			return getRuleContext(AtomicExpressionContext.class,0);
 		}
@@ -6234,6 +6803,9 @@ public class KotlinParser extends Parser {
 		}
 		public PostfixUnaryOperationContext postfixUnaryOperation(int i) {
 			return getRuleContext(PostfixUnaryOperationContext.class,i);
+		}
+		public CallableReferenceContext callableReference() {
+			return getRuleContext(CallableReferenceContext.class,0);
 		}
 		public PostfixUnaryExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6255,18 +6827,22 @@ public class KotlinParser extends Parser {
 		try {
 			int _alt;
 			setState(1126);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,143,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1109); atomicExpression();
-				setState(1110); callSuffix();
+				setState(1109);
+				atomicExpression();
+				setState(1110);
+				callSuffix();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1112); atomicExpression();
+				setState(1112);
+				atomicExpression();
 				setState(1116);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,141,_ctx);
@@ -6274,7 +6850,8 @@ public class KotlinParser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(1113); postfixUnaryOperation();
+						setState(1113);
+						postfixUnaryOperation();
 						}
 						} 
 					}
@@ -6287,7 +6864,8 @@ public class KotlinParser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1119); callableReference();
+				setState(1119);
+				callableReference();
 				setState(1123);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,142,_ctx);
@@ -6295,7 +6873,8 @@ public class KotlinParser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(1120); postfixUnaryOperation();
+						setState(1120);
+						postfixUnaryOperation();
 						}
 						} 
 					}
@@ -6319,14 +6898,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class CallableReferenceContext extends ParserRuleContext {
-		public TypeArgumentsContext typeArguments() {
-			return getRuleContext(TypeArgumentsContext.class,0);
-		}
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
 		}
 		public UserTypeContext userType() {
 			return getRuleContext(UserTypeContext.class,0);
+		}
+		public TypeArgumentsContext typeArguments() {
+			return getRuleContext(TypeArgumentsContext.class,0);
 		}
 		public CallableReferenceContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6350,17 +6929,20 @@ public class KotlinParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1135);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==PACKAGE || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
-				setState(1128); userType();
+				setState(1128);
+				userType();
 				setState(1132);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==Q) {
 					{
 					{
-					setState(1129); match(Q);
+					setState(1129);
+					match(Q);
 					}
 					}
 					setState(1134);
@@ -6370,8 +6952,10 @@ public class KotlinParser extends Parser {
 				}
 			}
 
-			setState(1137); match(REFERENCE);
+			setState(1137);
+			match(REFERENCE);
 			setState(1140);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case IMPORT:
 			case GET:
@@ -6386,22 +6970,26 @@ public class KotlinParser extends Parser {
 			case Declaration_init:
 			case SimpleName:
 				{
-				setState(1138); identifier();
+				setState(1138);
+				identifier();
 				}
 				break;
 			case Declaration_class:
 				{
-				setState(1139); match(Declaration_class);
+				setState(1139);
+				match(Declaration_class);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
 			setState(1143);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,147,_ctx) ) {
 			case 1:
 				{
-				setState(1142); typeArguments();
+				setState(1142);
+				typeArguments();
 				}
 				break;
 			}
@@ -6419,14 +7007,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class GetterContext extends ParserRuleContext {
+		public ModifiersContext modifiers() {
+			return getRuleContext(ModifiersContext.class,0);
+		}
 		public FunctionBodyContext functionBody() {
 			return getRuleContext(FunctionBodyContext.class,0);
 		}
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
-		}
-		public ModifiersContext modifiers() {
-			return getRuleContext(ModifiersContext.class,0);
 		}
 		public GetterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6448,31 +7036,42 @@ public class KotlinParser extends Parser {
 		int _la;
 		try {
 			setState(1158);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,149,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1145); modifiers();
-				setState(1146); match(GET);
+				setState(1145);
+				modifiers();
+				setState(1146);
+				match(GET);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1148); modifiers();
-				setState(1149); match(GET);
-				setState(1150); match(BRACE_OPEN);
-				setState(1151); match(BRACE_CLOSE);
+				setState(1148);
+				modifiers();
+				setState(1149);
+				match(GET);
+				setState(1150);
+				match(BRACE_OPEN);
+				setState(1151);
+				match(BRACE_CLOSE);
 				setState(1154);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLON) {
 					{
-					setState(1152); match(COLON);
-					setState(1153); type();
+					setState(1152);
+					match(COLON);
+					setState(1153);
+					type();
 					}
 				}
 
-				setState(1156); functionBody();
+				setState(1156);
+				functionBody();
 				}
 				break;
 			}
@@ -6489,18 +7088,18 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class SetterContext extends ParserRuleContext {
+		public List<ModifiersContext> modifiers() {
+			return getRuleContexts(ModifiersContext.class);
+		}
 		public ModifiersContext modifiers(int i) {
 			return getRuleContext(ModifiersContext.class,i);
-		}
-		public ParameterContext parameter() {
-			return getRuleContext(ParameterContext.class,0);
 		}
 		public FunctionBodyContext functionBody() {
 			return getRuleContext(FunctionBodyContext.class,0);
 		}
 		public TerminalNode SimpleName() { return getToken(KotlinParser.SimpleName, 0); }
-		public List<ModifiersContext> modifiers() {
-			return getRuleContexts(ModifiersContext.class);
+		public ParameterContext parameter() {
+			return getRuleContext(ParameterContext.class,0);
 		}
 		public SetterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6521,36 +7120,48 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 184, RULE_setter);
 		try {
 			setState(1174);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,151,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1160); modifiers();
-				setState(1161); match(SET);
+				setState(1160);
+				modifiers();
+				setState(1161);
+				match(SET);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1163); modifiers();
-				setState(1164); match(SET);
-				setState(1165); match(BRACE_OPEN);
-				setState(1166); modifiers();
+				setState(1163);
+				modifiers();
+				setState(1164);
+				match(SET);
+				setState(1165);
+				match(BRACE_OPEN);
+				setState(1166);
+				modifiers();
 				setState(1169);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,150,_ctx) ) {
 				case 1:
 					{
-					setState(1167); match(SimpleName);
+					setState(1167);
+					match(SimpleName);
 					}
 					break;
 				case 2:
 					{
-					setState(1168); parameter();
+					setState(1168);
+					parameter();
 					}
 					break;
 				}
-				setState(1171); match(BRACE_CLOSE);
-				setState(1172); functionBody();
+				setState(1171);
+				match(BRACE_CLOSE);
+				setState(1172);
+				functionBody();
 				}
 				break;
 			}
@@ -6567,46 +7178,46 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class StringLiteralContext extends ParserRuleContext {
-		public List<TerminalNode> SINLE_QUOTE_EXPRESSION_START() { return getTokens(KotlinParser.SINLE_QUOTE_EXPRESSION_START); }
+		public TerminalNode SINGLE_QUOTE() { return getToken(KotlinParser.SINGLE_QUOTE, 0); }
+		public List<TerminalNode> SINLE_QUOTE_CLOSE() { return getTokens(KotlinParser.SINLE_QUOTE_CLOSE); }
+		public TerminalNode SINLE_QUOTE_CLOSE(int i) {
+			return getToken(KotlinParser.SINLE_QUOTE_CLOSE, i);
+		}
+		public List<TerminalNode> SINLE_QUOTE_ESCAPED_CHAR() { return getTokens(KotlinParser.SINLE_QUOTE_ESCAPED_CHAR); }
 		public TerminalNode SINLE_QUOTE_ESCAPED_CHAR(int i) {
 			return getToken(KotlinParser.SINLE_QUOTE_ESCAPED_CHAR, i);
 		}
-		public List<TerminalNode> CLOSE_BLOCK() { return getTokens(KotlinParser.CLOSE_BLOCK); }
-		public TerminalNode MULTILINE_QUOTE_CLOSE(int i) {
-			return getToken(KotlinParser.MULTILINE_QUOTE_CLOSE, i);
+		public List<TerminalNode> SINLE_QUOTE_EXPRESSION_START() { return getTokens(KotlinParser.SINLE_QUOTE_EXPRESSION_START); }
+		public TerminalNode SINLE_QUOTE_EXPRESSION_START(int i) {
+			return getToken(KotlinParser.SINLE_QUOTE_EXPRESSION_START, i);
+		}
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
 		}
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public List<TerminalNode> MULTILINE_QUOTE_REF() { return getTokens(KotlinParser.MULTILINE_QUOTE_REF); }
-		public TerminalNode TRIPLE_QUOTE() { return getToken(KotlinParser.TRIPLE_QUOTE, 0); }
-		public TerminalNode SINGLE_QUOTE_REF(int i) {
-			return getToken(KotlinParser.SINGLE_QUOTE_REF, i);
-		}
-		public List<TerminalNode> MULTILINE_QUOTE_CLOSE() { return getTokens(KotlinParser.MULTILINE_QUOTE_CLOSE); }
-		public TerminalNode SINLE_QUOTE_EXPRESSION_START(int i) {
-			return getToken(KotlinParser.SINLE_QUOTE_EXPRESSION_START, i);
-		}
-		public List<TerminalNode> MULTILINE_QUOTE_EXPRESSION_START() { return getTokens(KotlinParser.MULTILINE_QUOTE_EXPRESSION_START); }
-		public TerminalNode MULTILINE_QUOTE_REF(int i) {
-			return getToken(KotlinParser.MULTILINE_QUOTE_REF, i);
-		}
+		public List<TerminalNode> CLOSE_BLOCK() { return getTokens(KotlinParser.CLOSE_BLOCK); }
 		public TerminalNode CLOSE_BLOCK(int i) {
 			return getToken(KotlinParser.CLOSE_BLOCK, i);
 		}
+		public List<TerminalNode> SINGLE_QUOTE_REF() { return getTokens(KotlinParser.SINGLE_QUOTE_REF); }
+		public TerminalNode SINGLE_QUOTE_REF(int i) {
+			return getToken(KotlinParser.SINGLE_QUOTE_REF, i);
+		}
+		public TerminalNode TRIPLE_QUOTE() { return getToken(KotlinParser.TRIPLE_QUOTE, 0); }
+		public List<TerminalNode> MULTILINE_QUOTE_CLOSE() { return getTokens(KotlinParser.MULTILINE_QUOTE_CLOSE); }
+		public TerminalNode MULTILINE_QUOTE_CLOSE(int i) {
+			return getToken(KotlinParser.MULTILINE_QUOTE_CLOSE, i);
+		}
+		public List<TerminalNode> MULTILINE_QUOTE_EXPRESSION_START() { return getTokens(KotlinParser.MULTILINE_QUOTE_EXPRESSION_START); }
 		public TerminalNode MULTILINE_QUOTE_EXPRESSION_START(int i) {
 			return getToken(KotlinParser.MULTILINE_QUOTE_EXPRESSION_START, i);
 		}
-		public TerminalNode SINLE_QUOTE_CLOSE(int i) {
-			return getToken(KotlinParser.SINLE_QUOTE_CLOSE, i);
+		public List<TerminalNode> MULTILINE_QUOTE_REF() { return getTokens(KotlinParser.MULTILINE_QUOTE_REF); }
+		public TerminalNode MULTILINE_QUOTE_REF(int i) {
+			return getToken(KotlinParser.MULTILINE_QUOTE_REF, i);
 		}
-		public List<TerminalNode> SINLE_QUOTE_CLOSE() { return getTokens(KotlinParser.SINLE_QUOTE_CLOSE); }
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public List<TerminalNode> SINLE_QUOTE_ESCAPED_CHAR() { return getTokens(KotlinParser.SINLE_QUOTE_ESCAPED_CHAR); }
-		public List<TerminalNode> SINGLE_QUOTE_REF() { return getTokens(KotlinParser.SINGLE_QUOTE_REF); }
-		public TerminalNode SINGLE_QUOTE() { return getToken(KotlinParser.SINGLE_QUOTE, 0); }
 		public StringLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -6627,33 +7238,41 @@ public class KotlinParser extends Parser {
 		int _la;
 		try {
 			setState(1203);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case SINGLE_QUOTE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1176); match(SINGLE_QUOTE);
+				setState(1176);
+				match(SINGLE_QUOTE);
 				setState(1186);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MULTILINE_COMMENT) | (1L << SINGLELINE_COMMENT) | (1L << WHITESPACE) | (1L << LongLiteral) | (1L << IntegerLiteral) | (1L << SEMI) | (1L << OPEN_BLOCK) | (1L << CLOSE_BLOCK) | (1L << HexadecimalLiteral) | (1L << CharacterLiteral) | (1L << TRIPLE_QUOTE) | (1L << SINGLE_QUOTE) | (1L << PACKAGE) | (1L << IMPORT) | (1L << DOT) | (1L << STAR) | (1L << COMMA) | (1L << LT) | (1L << LTE) | (1L << GT) | (1L << GTE) | (1L << EQ) | (1L << EQ_EQ) | (1L << EQ_EQ_EQ) | (1L << NEQ_EQ_EQ) | (1L << NEQ) | (1L << COLON) | (1L << BRACE_OPEN) | (1L << BRACE_CLOSE) | (1L << Q) | (1L << DISJ) | (1L << CONJ) | (1L << ELVIS) | (1L << LONG_RANGE) | (1L << RANGE) | (1L << REFERENCE) | (1L << TRUE) | (1L << FALSE) | (1L << NULL) | (1L << OP_ASTERISK) | (1L << OP_DIV) | (1L << OP_MOD) | (1L << OP_PLUS) | (1L << OP_MUNUS) | (1L << OP_IN) | (1L << OP_NOT_IN) | (1L << OP_AS) | (1L << OP_AS_SAFE) | (1L << OP_PLUS_ASSIGN) | (1L << OP_MINUS_ASSIGN) | (1L << OP_MULT_ASSIGN) | (1L << OP_DIV_ASSIGN) | (1L << OP_MOD_ASSIGN) | (1L << OP_DECREMENT) | (1L << OP_INCREMENT) | (1L << OP_IS) | (1L << OP_NULL_ASSERT) | (1L << OP_NOT) | (1L << SQ_OPEN) | (1L << SQ_CLOSE) | (1L << KEYWORD_val) | (1L << KEYWORD_var) | (1L << KEYWORD_vararg))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (KEYWORD_by - 64)) | (1L << (KEYWORD_dynamic - 64)) | (1L << (KEYWORD_where - 64)) | (1L << (GET - 64)) | (1L << (SET - 64)) | (1L << (HierarchyModifier_abstract - 64)) | (1L << (HierarchyModifier_open - 64)) | (1L << (HierarchyModifier_final - 64)) | (1L << (HierarchyModifier_override - 64)) | (1L << (HierarchyModifier_lateinit - 64)) | (1L << (ClassModifier_enum - 64)) | (1L << (ClassModifier_annotation - 64)) | (1L << (ClassModifier_data - 64)) | (1L << (ClassModifier_inner - 64)) | (1L << (AccessModifier_private - 64)) | (1L << (AccessModifier_protected - 64)) | (1L << (AccessModifier_public - 64)) | (1L << (AccessModifier_internal - 64)) | (1L << (FunctionModifier_tailrec - 64)) | (1L << (FunctionModifier_operator - 64)) | (1L << (FunctionModifier_infix - 64)) | (1L << (FunctionModifier_inline - 64)) | (1L << (FunctionModifier_external - 64)) | (1L << (PropertyModifier_const - 64)) | (1L << (VarianceAnnotation_out - 64)) | (1L << (DOG - 64)) | (1L << (AnnotationUseSiteTarget_file - 64)) | (1L << (AnnotationUseSiteTarget_field - 64)) | (1L << (AnnotationUseSiteTarget_property - 64)) | (1L << (AnnotationUseSiteTarget_param - 64)) | (1L << (AnnotationUseSiteTarget_sparam - 64)) | (1L << (Jump_throw - 64)) | (1L << (Jump_continue - 64)) | (1L << (Jump_return - 64)) | (1L << (Jump_break - 64)) | (1L << (KEYWORD_constructor - 64)) | (1L << (ConstructorDelegationCall_this - 64)) | (1L << (ConstructorDelegationCall_super - 64)) | (1L << (Declaration_class - 64)) | (1L << (Declaration_interface - 64)) | (1L << (Declaration_object - 64)) | (1L << (Declaration_companion - 64)) | (1L << (Declaration_fun - 64)) | (1L << (Declaration_init - 64)) | (1L << (CF_if - 64)) | (1L << (CF_else - 64)) | (1L << (CF_when - 64)) | (1L << (CF_while - 64)) | (1L << (CF_for - 64)) | (1L << (CF_do - 64)) | (1L << (CF_try - 64)) | (1L << (CF_catch - 64)) | (1L << (CF_FINALLY - 64)) | (1L << (BAX - 64)) | (1L << (SimpleName - 64)) | (1L << (OP_NOT_IS - 64)) | (1L << (SINLE_QUOTE_WHITESPACE - 64)) | (1L << (SINGLE_TEXT - 64)) | (1L << (SINLE_QUOTE_ESCAPED_CHAR - 64)) | (1L << (SINLE_QUOTE_EXPRESSION_START - 64)) | (1L << (SINGLE_QUOTE_REF - 64)) | (1L << (MULTILINE_QUOTE_TEXT - 64)) | (1L << (MULTILINE_QUOTE_CLOSE - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (MULTILINE_QUOTES - 128)) | (1L << (MULTILINE_QUOTE_EXPRESSION_START - 128)) | (1L << (MULTILINE_QUOTE_REF - 128)))) != 0)) {
 					{
 					setState(1184);
+					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,152,_ctx) ) {
 					case 1:
 						{
-						setState(1177); match(SINLE_QUOTE_ESCAPED_CHAR);
+						setState(1177);
+						match(SINLE_QUOTE_ESCAPED_CHAR);
 						}
 						break;
 					case 2:
 						{
-						setState(1178); match(SINLE_QUOTE_EXPRESSION_START);
-						setState(1179); expression();
-						setState(1180); match(CLOSE_BLOCK);
+						setState(1178);
+						match(SINLE_QUOTE_EXPRESSION_START);
+						setState(1179);
+						expression();
+						setState(1180);
+						match(CLOSE_BLOCK);
 						}
 						break;
 					case 3:
 						{
-						setState(1182); match(SINGLE_QUOTE_REF);
+						setState(1182);
+						match(SINGLE_QUOTE_REF);
 						}
 						break;
 					case 4:
@@ -6663,7 +7282,11 @@ public class KotlinParser extends Parser {
 						if ( _la <= 0 || (_la==SINLE_QUOTE_CLOSE) ) {
 						_errHandler.recoverInline(this);
 						}
-						consume();
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
+							consume();
+						}
 						}
 						break;
 					}
@@ -6672,30 +7295,37 @@ public class KotlinParser extends Parser {
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(1189); match(SINLE_QUOTE_CLOSE);
+				setState(1189);
+				match(SINLE_QUOTE_CLOSE);
 				}
 				break;
 			case TRIPLE_QUOTE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1190); match(TRIPLE_QUOTE);
+				setState(1190);
+				match(TRIPLE_QUOTE);
 				setState(1199);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MULTILINE_COMMENT) | (1L << SINGLELINE_COMMENT) | (1L << WHITESPACE) | (1L << LongLiteral) | (1L << IntegerLiteral) | (1L << SEMI) | (1L << OPEN_BLOCK) | (1L << CLOSE_BLOCK) | (1L << HexadecimalLiteral) | (1L << CharacterLiteral) | (1L << TRIPLE_QUOTE) | (1L << SINGLE_QUOTE) | (1L << PACKAGE) | (1L << IMPORT) | (1L << DOT) | (1L << STAR) | (1L << COMMA) | (1L << LT) | (1L << LTE) | (1L << GT) | (1L << GTE) | (1L << EQ) | (1L << EQ_EQ) | (1L << EQ_EQ_EQ) | (1L << NEQ_EQ_EQ) | (1L << NEQ) | (1L << COLON) | (1L << BRACE_OPEN) | (1L << BRACE_CLOSE) | (1L << Q) | (1L << DISJ) | (1L << CONJ) | (1L << ELVIS) | (1L << LONG_RANGE) | (1L << RANGE) | (1L << REFERENCE) | (1L << TRUE) | (1L << FALSE) | (1L << NULL) | (1L << OP_ASTERISK) | (1L << OP_DIV) | (1L << OP_MOD) | (1L << OP_PLUS) | (1L << OP_MUNUS) | (1L << OP_IN) | (1L << OP_NOT_IN) | (1L << OP_AS) | (1L << OP_AS_SAFE) | (1L << OP_PLUS_ASSIGN) | (1L << OP_MINUS_ASSIGN) | (1L << OP_MULT_ASSIGN) | (1L << OP_DIV_ASSIGN) | (1L << OP_MOD_ASSIGN) | (1L << OP_DECREMENT) | (1L << OP_INCREMENT) | (1L << OP_IS) | (1L << OP_NULL_ASSERT) | (1L << OP_NOT) | (1L << SQ_OPEN) | (1L << SQ_CLOSE) | (1L << KEYWORD_val) | (1L << KEYWORD_var) | (1L << KEYWORD_vararg))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (KEYWORD_by - 64)) | (1L << (KEYWORD_dynamic - 64)) | (1L << (KEYWORD_where - 64)) | (1L << (GET - 64)) | (1L << (SET - 64)) | (1L << (HierarchyModifier_abstract - 64)) | (1L << (HierarchyModifier_open - 64)) | (1L << (HierarchyModifier_final - 64)) | (1L << (HierarchyModifier_override - 64)) | (1L << (HierarchyModifier_lateinit - 64)) | (1L << (ClassModifier_enum - 64)) | (1L << (ClassModifier_annotation - 64)) | (1L << (ClassModifier_data - 64)) | (1L << (ClassModifier_inner - 64)) | (1L << (AccessModifier_private - 64)) | (1L << (AccessModifier_protected - 64)) | (1L << (AccessModifier_public - 64)) | (1L << (AccessModifier_internal - 64)) | (1L << (FunctionModifier_tailrec - 64)) | (1L << (FunctionModifier_operator - 64)) | (1L << (FunctionModifier_infix - 64)) | (1L << (FunctionModifier_inline - 64)) | (1L << (FunctionModifier_external - 64)) | (1L << (PropertyModifier_const - 64)) | (1L << (VarianceAnnotation_out - 64)) | (1L << (DOG - 64)) | (1L << (AnnotationUseSiteTarget_file - 64)) | (1L << (AnnotationUseSiteTarget_field - 64)) | (1L << (AnnotationUseSiteTarget_property - 64)) | (1L << (AnnotationUseSiteTarget_param - 64)) | (1L << (AnnotationUseSiteTarget_sparam - 64)) | (1L << (Jump_throw - 64)) | (1L << (Jump_continue - 64)) | (1L << (Jump_return - 64)) | (1L << (Jump_break - 64)) | (1L << (KEYWORD_constructor - 64)) | (1L << (ConstructorDelegationCall_this - 64)) | (1L << (ConstructorDelegationCall_super - 64)) | (1L << (Declaration_class - 64)) | (1L << (Declaration_interface - 64)) | (1L << (Declaration_object - 64)) | (1L << (Declaration_companion - 64)) | (1L << (Declaration_fun - 64)) | (1L << (Declaration_init - 64)) | (1L << (CF_if - 64)) | (1L << (CF_else - 64)) | (1L << (CF_when - 64)) | (1L << (CF_while - 64)) | (1L << (CF_for - 64)) | (1L << (CF_do - 64)) | (1L << (CF_try - 64)) | (1L << (CF_catch - 64)) | (1L << (CF_FINALLY - 64)) | (1L << (BAX - 64)) | (1L << (SimpleName - 64)) | (1L << (OP_NOT_IS - 64)) | (1L << (SINLE_QUOTE_WHITESPACE - 64)) | (1L << (SINGLE_TEXT - 64)) | (1L << (SINLE_QUOTE_CLOSE - 64)) | (1L << (SINLE_QUOTE_ESCAPED_CHAR - 64)) | (1L << (SINLE_QUOTE_EXPRESSION_START - 64)) | (1L << (SINGLE_QUOTE_REF - 64)) | (1L << (MULTILINE_QUOTE_TEXT - 64)))) != 0) || ((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (MULTILINE_QUOTES - 128)) | (1L << (MULTILINE_QUOTE_EXPRESSION_START - 128)) | (1L << (MULTILINE_QUOTE_REF - 128)))) != 0)) {
 					{
 					setState(1197);
+					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,154,_ctx) ) {
 					case 1:
 						{
-						setState(1191); match(MULTILINE_QUOTE_EXPRESSION_START);
-						setState(1192); expression();
-						setState(1193); match(CLOSE_BLOCK);
+						setState(1191);
+						match(MULTILINE_QUOTE_EXPRESSION_START);
+						setState(1192);
+						expression();
+						setState(1193);
+						match(CLOSE_BLOCK);
 						}
 						break;
 					case 2:
 						{
-						setState(1195); match(MULTILINE_QUOTE_REF);
+						setState(1195);
+						match(MULTILINE_QUOTE_REF);
 						}
 						break;
 					case 3:
@@ -6705,7 +7335,11 @@ public class KotlinParser extends Parser {
 						if ( _la <= 0 || (_la==MULTILINE_QUOTE_CLOSE) ) {
 						_errHandler.recoverInline(this);
 						}
-						consume();
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
+							consume();
+						}
 						}
 						break;
 					}
@@ -6714,7 +7348,8 @@ public class KotlinParser extends Parser {
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(1202); match(MULTILINE_QUOTE_CLOSE);
+				setState(1202);
+				match(MULTILINE_QUOTE_CLOSE);
 				}
 				break;
 			default:
@@ -6733,8 +7368,8 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class AtomicExpressionContext extends ParserRuleContext {
-		public TypeArgumentsContext typeArguments() {
-			return getRuleContext(TypeArgumentsContext.class,0);
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public LiteralConstantContext literalConstant() {
 			return getRuleContext(LiteralConstantContext.class,0);
@@ -6742,17 +7377,20 @@ public class KotlinParser extends Parser {
 		public FunctionLiteralContext functionLiteral() {
 			return getRuleContext(FunctionLiteralContext.class,0);
 		}
+		public LabelReferenceContext labelReference() {
+			return getRuleContext(LabelReferenceContext.class,0);
+		}
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
+		}
+		public IfExpressionContext ifExpression() {
+			return getRuleContext(IfExpressionContext.class,0);
+		}
 		public WhenContext when() {
 			return getRuleContext(WhenContext.class,0);
 		}
 		public TryExpressionContext tryExpression() {
 			return getRuleContext(TryExpressionContext.class,0);
-		}
-		public IdentifierContext identifier() {
-			return getRuleContext(IdentifierContext.class,0);
-		}
-		public LoopContext loop() {
-			return getRuleContext(LoopContext.class,0);
 		}
 		public ObjectLiteralContext objectLiteral() {
 			return getRuleContext(ObjectLiteralContext.class,0);
@@ -6760,17 +7398,14 @@ public class KotlinParser extends Parser {
 		public JumpContext jump() {
 			return getRuleContext(JumpContext.class,0);
 		}
-		public IfExpressionContext ifExpression() {
-			return getRuleContext(IfExpressionContext.class,0);
+		public LoopContext loop() {
+			return getRuleContext(LoopContext.class,0);
 		}
-		public TypeContext type() {
-			return getRuleContext(TypeContext.class,0);
+		public IdentifierContext identifier() {
+			return getRuleContext(IdentifierContext.class,0);
 		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public LabelReferenceContext labelReference() {
-			return getRuleContext(LabelReferenceContext.class,0);
+		public TypeArgumentsContext typeArguments() {
+			return getRuleContext(TypeArgumentsContext.class,0);
 		}
 		public AtomicExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6791,36 +7426,45 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 188, RULE_atomicExpression);
 		try {
 			setState(1241);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,160,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1205); match(BRACE_OPEN);
-				setState(1206); expression();
-				setState(1207); match(BRACE_CLOSE);
+				setState(1205);
+				match(BRACE_OPEN);
+				setState(1206);
+				expression();
+				setState(1207);
+				match(BRACE_CLOSE);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1209); literalConstant();
+				setState(1209);
+				literalConstant();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1210); functionLiteral();
+				setState(1210);
+				functionLiteral();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1211); match(ConstructorDelegationCall_this);
+				setState(1211);
+				match(ConstructorDelegationCall_this);
 				setState(1213);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,157,_ctx) ) {
 				case 1:
 					{
-					setState(1212); labelReference();
+					setState(1212);
+					labelReference();
 					}
 					break;
 				}
@@ -6829,22 +7473,29 @@ public class KotlinParser extends Parser {
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1215); match(ConstructorDelegationCall_super);
+				setState(1215);
+				match(ConstructorDelegationCall_super);
 				setState(1220);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,158,_ctx) ) {
 				case 1:
 					{
-					setState(1216); match(LT);
-					setState(1217); type();
-					setState(1218); match(GT);
+					setState(1216);
+					match(LT);
+					setState(1217);
+					type();
+					setState(1218);
+					match(GT);
 					}
 					break;
 				}
 				setState(1223);
+				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,159,_ctx) ) {
 				case 1:
 					{
-					setState(1222); labelReference();
+					setState(1222);
+					labelReference();
 					}
 					break;
 				}
@@ -6853,70 +7504,84 @@ public class KotlinParser extends Parser {
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1225); ifExpression();
+				setState(1225);
+				ifExpression();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(1226); when();
+				setState(1226);
+				when();
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(1227); tryExpression();
+				setState(1227);
+				tryExpression();
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(1228); objectLiteral();
+				setState(1228);
+				objectLiteral();
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(1229); jump();
+				setState(1229);
+				jump();
 				}
 				break;
 			case 11:
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(1230); loop();
+				setState(1230);
+				loop();
 				}
 				break;
 			case 12:
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(1231); identifier();
+				setState(1231);
+				identifier();
 				}
 				break;
 			case 13:
 				enterOuterAlt(_localctx, 13);
 				{
-				setState(1232); identifier();
-				setState(1233); match(Q);
+				setState(1232);
+				identifier();
+				setState(1233);
+				match(Q);
 				}
 				break;
 			case 14:
 				enterOuterAlt(_localctx, 14);
 				{
-				setState(1235); identifier();
-				setState(1236); typeArguments();
+				setState(1235);
+				identifier();
+				setState(1236);
+				typeArguments();
 				}
 				break;
 			case 15:
 				enterOuterAlt(_localctx, 15);
 				{
-				setState(1238); match(BAX);
-				setState(1239); identifier();
+				setState(1238);
+				match(BAX);
+				setState(1239);
+				identifier();
 				}
 				break;
 			case 16:
 				enterOuterAlt(_localctx, 16);
 				{
-				setState(1240); match(PACKAGE);
+				setState(1240);
+				match(PACKAGE);
 				}
 				break;
 			}
@@ -6933,12 +7598,12 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class LiteralConstantContext extends ParserRuleContext {
-		public TerminalNode LongLiteral() { return getToken(KotlinParser.LongLiteral, 0); }
-		public TerminalNode HexadecimalLiteral() { return getToken(KotlinParser.HexadecimalLiteral, 0); }
-		public TerminalNode IntegerLiteral() { return getToken(KotlinParser.IntegerLiteral, 0); }
 		public StringLiteralContext stringLiteral() {
 			return getRuleContext(StringLiteralContext.class,0);
 		}
+		public TerminalNode IntegerLiteral() { return getToken(KotlinParser.IntegerLiteral, 0); }
+		public TerminalNode LongLiteral() { return getToken(KotlinParser.LongLiteral, 0); }
+		public TerminalNode HexadecimalLiteral() { return getToken(KotlinParser.HexadecimalLiteral, 0); }
 		public TerminalNode CharacterLiteral() { return getToken(KotlinParser.CharacterLiteral, 0); }
 		public LiteralConstantContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6959,54 +7624,63 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 190, RULE_literalConstant);
 		try {
 			setState(1251);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case TRUE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1243); match(TRUE);
+				setState(1243);
+				match(TRUE);
 				}
 				break;
 			case FALSE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1244); match(FALSE);
+				setState(1244);
+				match(FALSE);
 				}
 				break;
 			case TRIPLE_QUOTE:
 			case SINGLE_QUOTE:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1245); stringLiteral();
+				setState(1245);
+				stringLiteral();
 				}
 				break;
 			case IntegerLiteral:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1246); match(IntegerLiteral);
+				setState(1246);
+				match(IntegerLiteral);
 				}
 				break;
 			case LongLiteral:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1247); match(LongLiteral);
+				setState(1247);
+				match(LongLiteral);
 				}
 				break;
 			case HexadecimalLiteral:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1248); match(HexadecimalLiteral);
+				setState(1248);
+				match(HexadecimalLiteral);
 				}
 				break;
 			case CharacterLiteral:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(1249); match(CharacterLiteral);
+				setState(1249);
+				match(CharacterLiteral);
 				}
 				break;
 			case NULL:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(1250); match(NULL);
+				setState(1250);
+				match(NULL);
 				}
 				break;
 			default:
@@ -7056,29 +7730,34 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 192, RULE_declaration);
 		try {
 			setState(1257);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,162,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1253); functionDeclaration();
+				setState(1253);
+				functionDeclaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1254); propertyDeclaration();
+				setState(1254);
+				propertyDeclaration();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1255); classDeclaration();
+				setState(1255);
+				classDeclaration();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1256); objectDeclaration();
+				setState(1256);
+				objectDeclaration();
 				}
 				break;
 			}
@@ -7120,17 +7799,20 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 194, RULE_statement);
 		try {
 			setState(1261);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,163,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1259); declaration();
+				setState(1259);
+				declaration();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1260); expression();
+				setState(1260);
+				expression();
 				}
 				break;
 			}
@@ -7173,7 +7855,11 @@ public class KotlinParser extends Parser {
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STAR) | (1L << OP_DIV) | (1L << OP_MOD))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7214,7 +7900,11 @@ public class KotlinParser extends Parser {
 			if ( !(_la==OP_PLUS || _la==OP_MUNUS) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7256,7 +7946,11 @@ public class KotlinParser extends Parser {
 			if ( !(_la==OP_IN || _la==OP_NOT_IN) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7297,7 +7991,11 @@ public class KotlinParser extends Parser {
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << COLON) | (1L << OP_AS) | (1L << OP_AS_SAFE))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7338,7 +8036,11 @@ public class KotlinParser extends Parser {
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LT) | (1L << LTE) | (1L << GT) | (1L << GTE))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7379,7 +8081,11 @@ public class KotlinParser extends Parser {
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << EQ_EQ) | (1L << EQ_EQ_EQ) | (1L << NEQ_EQ_EQ) | (1L << NEQ))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7420,7 +8126,11 @@ public class KotlinParser extends Parser {
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << EQ) | (1L << OP_PLUS_ASSIGN) | (1L << OP_MINUS_ASSIGN) | (1L << OP_MULT_ASSIGN) | (1L << OP_DIV_ASSIGN) | (1L << OP_MOD_ASSIGN))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7438,11 +8148,11 @@ public class KotlinParser extends Parser {
 		public CallSuffixContext callSuffix() {
 			return getRuleContext(CallSuffixContext.class,0);
 		}
-		public MemberAccessOperationContext memberAccessOperation() {
-			return getRuleContext(MemberAccessOperationContext.class,0);
-		}
 		public ArrayAccessContext arrayAccess() {
 			return getRuleContext(ArrayAccessContext.class,0);
+		}
+		public MemberAccessOperationContext memberAccessOperation() {
+			return getRuleContext(MemberAccessOperationContext.class,0);
 		}
 		public PostfixUnaryExpressionContext postfixUnaryExpression() {
 			return getRuleContext(PostfixUnaryExpressionContext.class,0);
@@ -7466,23 +8176,27 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 210, RULE_postfixUnaryOperation);
 		try {
 			setState(1285);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case OP_INCREMENT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1277); match(OP_INCREMENT);
+				setState(1277);
+				match(OP_INCREMENT);
 				}
 				break;
 			case OP_DECREMENT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1278); match(OP_DECREMENT);
+				setState(1278);
+				match(OP_DECREMENT);
 				}
 				break;
 			case OP_NULL_ASSERT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1279); match(OP_NULL_ASSERT);
+				setState(1279);
+				match(OP_NULL_ASSERT);
 				}
 				break;
 			case OPEN_BLOCK:
@@ -7503,21 +8217,25 @@ public class KotlinParser extends Parser {
 			case SimpleName:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1280); callSuffix();
+				setState(1280);
+				callSuffix();
 				}
 				break;
 			case SQ_OPEN:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1281); arrayAccess();
+				setState(1281);
+				arrayAccess();
 				}
 				break;
 			case DOT:
 			case Q:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1282); memberAccessOperation();
-				setState(1283); postfixUnaryExpression();
+				setState(1282);
+				memberAccessOperation();
+				setState(1283);
+				postfixUnaryExpression();
 				}
 				break;
 			default:
@@ -7536,11 +8254,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class PrefixUnaryOperationContext extends ParserRuleContext {
-		public LabelDefinitionContext labelDefinition() {
-			return getRuleContext(LabelDefinitionContext.class,0);
-		}
 		public AnnotationsContext annotations() {
 			return getRuleContext(AnnotationsContext.class,0);
+		}
+		public LabelDefinitionContext labelDefinition() {
+			return getRuleContext(LabelDefinitionContext.class,0);
 		}
 		public PrefixUnaryOperationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7561,41 +8279,48 @@ public class KotlinParser extends Parser {
 		enterRule(_localctx, 212, RULE_prefixUnaryOperation);
 		try {
 			setState(1294);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case OP_MUNUS:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1287); match(OP_MUNUS);
+				setState(1287);
+				match(OP_MUNUS);
 				}
 				break;
 			case OP_PLUS:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1288); match(OP_PLUS);
+				setState(1288);
+				match(OP_PLUS);
 				}
 				break;
 			case OP_INCREMENT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1289); match(OP_INCREMENT);
+				setState(1289);
+				match(OP_INCREMENT);
 				}
 				break;
 			case OP_DECREMENT:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(1290); match(OP_DECREMENT);
+				setState(1290);
+				match(OP_DECREMENT);
 				}
 				break;
 			case OP_NOT:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(1291); match(OP_NOT);
+				setState(1291);
+				match(OP_NOT);
 				}
 				break;
 			case DOG:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(1292); annotations();
+				setState(1292);
+				annotations();
 				}
 				break;
 			case IMPORT:
@@ -7612,7 +8337,8 @@ public class KotlinParser extends Parser {
 			case SimpleName:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(1293); labelDefinition();
+				setState(1293);
+				labelDefinition();
 				}
 				break;
 			default:
@@ -7657,7 +8383,11 @@ public class KotlinParser extends Parser {
 			if ( !(_la==OP_IS || _la==OP_NOT_IS) ) {
 			_errHandler.recoverInline(this);
 			}
-			consume();
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -7672,17 +8402,17 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class AnnotatedLambdaContext extends ParserRuleContext {
-		public List<UnescapedAnnotationContext> unescapedAnnotation() {
-			return getRuleContexts(UnescapedAnnotationContext.class);
-		}
 		public FunctionLiteralContext functionLiteral() {
 			return getRuleContext(FunctionLiteralContext.class,0);
 		}
-		public LabelDefinitionContext labelDefinition() {
-			return getRuleContext(LabelDefinitionContext.class,0);
+		public List<UnescapedAnnotationContext> unescapedAnnotation() {
+			return getRuleContexts(UnescapedAnnotationContext.class);
 		}
 		public UnescapedAnnotationContext unescapedAnnotation(int i) {
 			return getRuleContext(UnescapedAnnotationContext.class,i);
+		}
+		public LabelDefinitionContext labelDefinition() {
+			return getRuleContext(LabelDefinitionContext.class,0);
 		}
 		public AnnotatedLambdaContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7711,8 +8441,10 @@ public class KotlinParser extends Parser {
 			while (_la==DOG) {
 				{
 				{
-				setState(1298); match(DOG);
-				setState(1299); unescapedAnnotation();
+				setState(1298);
+				match(DOG);
+				setState(1299);
+				unescapedAnnotation();
 				}
 				}
 				setState(1304);
@@ -7720,14 +8452,17 @@ public class KotlinParser extends Parser {
 				_la = _input.LA(1);
 			}
 			setState(1306);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==IMPORT || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (Declaration_companion - 67)) | (1L << (Declaration_init - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
-				setState(1305); labelDefinition();
+				setState(1305);
+				labelDefinition();
 				}
 			}
 
-			setState(1308); functionLiteral();
+			setState(1308);
+			functionLiteral();
 			}
 		}
 		catch (RecognitionException re) {
@@ -7762,22 +8497,27 @@ public class KotlinParser extends Parser {
 		int _la;
 		try {
 			setState(1315);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case DOT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1310); match(DOT);
+				setState(1310);
+				match(DOT);
 				}
 				break;
 			case Q:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1311); match(Q);
+				setState(1311);
+				match(Q);
 				setState(1313);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==DOT) {
 					{
-					setState(1312); match(DOT);
+					setState(1312);
+					match(DOT);
 					}
 				}
 
@@ -7799,20 +8539,20 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class FunctionLiteralContext extends ParserRuleContext {
-		public ModifiersContext modifiers(int i) {
-			return getRuleContext(ModifiersContext.class,i);
-		}
-		public KeywordOrSimpleNameContext keywordOrSimpleName(int i) {
-			return getRuleContext(KeywordOrSimpleNameContext.class,i);
-		}
 		public StatementsContext statements() {
 			return getRuleContext(StatementsContext.class,0);
+		}
+		public List<ModifiersContext> modifiers() {
+			return getRuleContexts(ModifiersContext.class);
+		}
+		public ModifiersContext modifiers(int i) {
+			return getRuleContext(ModifiersContext.class,i);
 		}
 		public List<KeywordOrSimpleNameContext> keywordOrSimpleName() {
 			return getRuleContexts(KeywordOrSimpleNameContext.class);
 		}
-		public List<ModifiersContext> modifiers() {
-			return getRuleContexts(ModifiersContext.class);
+		public KeywordOrSimpleNameContext keywordOrSimpleName(int i) {
+			return getRuleContext(KeywordOrSimpleNameContext.class,i);
 		}
 		public FunctionLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7834,26 +8574,34 @@ public class KotlinParser extends Parser {
 		int _la;
 		try {
 			setState(1340);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,172,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1317); match(OPEN_BLOCK);
-				setState(1318); statements();
-				setState(1319); match(CLOSE_BLOCK);
+				setState(1317);
+				match(OPEN_BLOCK);
+				setState(1318);
+				statements();
+				setState(1319);
+				match(CLOSE_BLOCK);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1321); match(OPEN_BLOCK);
+				setState(1321);
+				match(OPEN_BLOCK);
 				setState(1334);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==OP_IN || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (HierarchyModifier_abstract - 67)) | (1L << (HierarchyModifier_open - 67)) | (1L << (HierarchyModifier_final - 67)) | (1L << (HierarchyModifier_override - 67)) | (1L << (HierarchyModifier_lateinit - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (ClassModifier_inner - 67)) | (1L << (AccessModifier_private - 67)) | (1L << (AccessModifier_protected - 67)) | (1L << (AccessModifier_public - 67)) | (1L << (AccessModifier_internal - 67)) | (1L << (FunctionModifier_tailrec - 67)) | (1L << (FunctionModifier_operator - 67)) | (1L << (FunctionModifier_infix - 67)) | (1L << (FunctionModifier_inline - 67)) | (1L << (FunctionModifier_external - 67)) | (1L << (PropertyModifier_const - 67)) | (1L << (VarianceAnnotation_out - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 					{
 					{
-					setState(1322); modifiers();
-					setState(1323); keywordOrSimpleName();
+					setState(1322);
+					modifiers();
+					setState(1323);
+					keywordOrSimpleName();
 					}
 					setState(1331);
 					_errHandler.sync(this);
@@ -7861,9 +8609,12 @@ public class KotlinParser extends Parser {
 					while (_la==COMMA) {
 						{
 						{
-						setState(1325); match(COMMA);
-						setState(1326); modifiers();
-						setState(1327); keywordOrSimpleName();
+						setState(1325);
+						match(COMMA);
+						setState(1326);
+						modifiers();
+						setState(1327);
+						keywordOrSimpleName();
 						}
 						}
 						setState(1333);
@@ -7873,9 +8624,12 @@ public class KotlinParser extends Parser {
 					}
 				}
 
-				setState(1336); match(OP_ASTERISK);
-				setState(1337); statements();
-				setState(1338); match(CLOSE_BLOCK);
+				setState(1336);
+				match(OP_ASTERISK);
+				setState(1337);
+				statements();
+				setState(1338);
+				match(CLOSE_BLOCK);
 				}
 				break;
 			}
@@ -7892,11 +8646,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class ArrayAccessContext extends ParserRuleContext {
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
 		public ArrayAccessContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -7919,20 +8673,25 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1342); match(SQ_OPEN);
+			setState(1342);
+			match(SQ_OPEN);
 			setState(1351);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LongLiteral) | (1L << IntegerLiteral) | (1L << OPEN_BLOCK) | (1L << HexadecimalLiteral) | (1L << CharacterLiteral) | (1L << TRIPLE_QUOTE) | (1L << SINGLE_QUOTE) | (1L << PACKAGE) | (1L << IMPORT) | (1L << BRACE_OPEN) | (1L << REFERENCE) | (1L << TRUE) | (1L << FALSE) | (1L << NULL) | (1L << OP_PLUS) | (1L << OP_MUNUS) | (1L << OP_DECREMENT) | (1L << OP_INCREMENT) | (1L << OP_NOT))) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (Jump_throw - 67)) | (1L << (Jump_continue - 67)) | (1L << (Jump_return - 67)) | (1L << (Jump_break - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (ConstructorDelegationCall_this - 67)) | (1L << (ConstructorDelegationCall_super - 67)) | (1L << (Declaration_object - 67)) | (1L << (Declaration_companion - 67)) | (1L << (Declaration_init - 67)) | (1L << (CF_if - 67)) | (1L << (CF_when - 67)) | (1L << (CF_while - 67)) | (1L << (CF_for - 67)) | (1L << (CF_do - 67)) | (1L << (CF_try - 67)) | (1L << (BAX - 67)) | (1L << (SimpleName - 67)))) != 0)) {
 				{
-				setState(1343); expression();
+				setState(1343);
+				expression();
 				setState(1348);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(1344); match(COMMA);
-					setState(1345); expression();
+					setState(1344);
+					match(COMMA);
+					setState(1345);
+					expression();
 					}
 					}
 					setState(1350);
@@ -7942,7 +8701,8 @@ public class KotlinParser extends Parser {
 				}
 			}
 
-			setState(1353); match(SQ_CLOSE);
+			setState(1353);
+			match(SQ_CLOSE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -7987,13 +8747,17 @@ public class KotlinParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1355); match(Declaration_object);
+			setState(1355);
+			match(Declaration_object);
 			setState(1365);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,176,_ctx) ) {
 			case 1:
 				{
-				setState(1356); match(COLON);
-				setState(1357); delegationSpecifier();
+				setState(1356);
+				match(COLON);
+				setState(1357);
+				delegationSpecifier();
 				setState(1362);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,175,_ctx);
@@ -8001,8 +8765,10 @@ public class KotlinParser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(1358); match(COMMA);
-						setState(1359); delegationSpecifier();
+						setState(1358);
+						match(COMMA);
+						setState(1359);
+						delegationSpecifier();
 						}
 						} 
 					}
@@ -8013,7 +8779,8 @@ public class KotlinParser extends Parser {
 				}
 				break;
 			}
-			setState(1367); classBody();
+			setState(1367);
+			classBody();
 			}
 		}
 		catch (RecognitionException re) {
@@ -8028,14 +8795,14 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class WhenContext extends ParserRuleContext {
-		public WhenEntryContext whenEntry(int i) {
-			return getRuleContext(WhenEntryContext.class,i);
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public List<WhenEntryContext> whenEntry() {
 			return getRuleContexts(WhenEntryContext.class);
 		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+		public WhenEntryContext whenEntry(int i) {
+			return getRuleContext(WhenEntryContext.class,i);
 		}
 		public WhenContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8058,32 +8825,40 @@ public class KotlinParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1369); match(CF_when);
+			setState(1369);
+			match(CF_when);
 			setState(1374);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==BRACE_OPEN) {
 				{
-				setState(1370); match(BRACE_OPEN);
-				setState(1371); expression();
-				setState(1372); match(BRACE_CLOSE);
+				setState(1370);
+				match(BRACE_OPEN);
+				setState(1371);
+				expression();
+				setState(1372);
+				match(BRACE_CLOSE);
 				}
 			}
 
-			setState(1376); match(OPEN_BLOCK);
+			setState(1376);
+			match(OPEN_BLOCK);
 			setState(1380);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LongLiteral) | (1L << IntegerLiteral) | (1L << OPEN_BLOCK) | (1L << HexadecimalLiteral) | (1L << CharacterLiteral) | (1L << TRIPLE_QUOTE) | (1L << SINGLE_QUOTE) | (1L << PACKAGE) | (1L << IMPORT) | (1L << BRACE_OPEN) | (1L << REFERENCE) | (1L << TRUE) | (1L << FALSE) | (1L << NULL) | (1L << OP_PLUS) | (1L << OP_MUNUS) | (1L << OP_IN) | (1L << OP_NOT_IN) | (1L << OP_DECREMENT) | (1L << OP_INCREMENT) | (1L << OP_IS) | (1L << OP_NOT))) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (GET - 67)) | (1L << (SET - 67)) | (1L << (ClassModifier_enum - 67)) | (1L << (ClassModifier_annotation - 67)) | (1L << (ClassModifier_data - 67)) | (1L << (DOG - 67)) | (1L << (AnnotationUseSiteTarget_file - 67)) | (1L << (AnnotationUseSiteTarget_field - 67)) | (1L << (Jump_throw - 67)) | (1L << (Jump_continue - 67)) | (1L << (Jump_return - 67)) | (1L << (Jump_break - 67)) | (1L << (KEYWORD_constructor - 67)) | (1L << (ConstructorDelegationCall_this - 67)) | (1L << (ConstructorDelegationCall_super - 67)) | (1L << (Declaration_object - 67)) | (1L << (Declaration_companion - 67)) | (1L << (Declaration_init - 67)) | (1L << (CF_if - 67)) | (1L << (CF_else - 67)) | (1L << (CF_when - 67)) | (1L << (CF_while - 67)) | (1L << (CF_for - 67)) | (1L << (CF_do - 67)) | (1L << (CF_try - 67)) | (1L << (BAX - 67)) | (1L << (SimpleName - 67)) | (1L << (OP_NOT_IS - 67)))) != 0)) {
 				{
 				{
-				setState(1377); whenEntry();
+				setState(1377);
+				whenEntry();
 				}
 				}
 				setState(1382);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(1383); match(CLOSE_BLOCK);
+			setState(1383);
+			match(CLOSE_BLOCK);
 			}
 		}
 		catch (RecognitionException re) {
@@ -8104,12 +8879,12 @@ public class KotlinParser extends Parser {
 		public WhenConditionContext whenCondition(int i) {
 			return getRuleContext(WhenConditionContext.class,i);
 		}
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
 		public List<TerminalNode> SEMI() { return getTokens(KotlinParser.SEMI); }
 		public TerminalNode SEMI(int i) {
 			return getToken(KotlinParser.SEMI, i);
-		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
 		}
 		public WhenEntryContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8131,6 +8906,7 @@ public class KotlinParser extends Parser {
 		int _la;
 		try {
 			setState(1410);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LongLiteral:
 			case IntegerLiteral:
@@ -8183,30 +8959,36 @@ public class KotlinParser extends Parser {
 			case OP_NOT_IS:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1385); whenCondition();
+				setState(1385);
+				whenCondition();
 				setState(1390);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(1386); match(COMMA);
-					setState(1387); whenCondition();
+					setState(1386);
+					match(COMMA);
+					setState(1387);
+					whenCondition();
 					}
 					}
 					setState(1392);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(1393); match(OP_ASTERISK);
-				setState(1394); expression();
+				setState(1393);
+				match(OP_ASTERISK);
+				setState(1394);
+				expression();
 				setState(1398);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==SEMI) {
 					{
 					{
-					setState(1395); match(SEMI);
+					setState(1395);
+					match(SEMI);
 					}
 					}
 					setState(1400);
@@ -8218,16 +9000,20 @@ public class KotlinParser extends Parser {
 			case CF_else:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1401); match(CF_else);
-				setState(1402); match(OP_ASTERISK);
-				setState(1403); expression();
+				setState(1401);
+				match(CF_else);
+				setState(1402);
+				match(OP_ASTERISK);
+				setState(1403);
+				expression();
 				setState(1407);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==SEMI) {
 					{
 					{
-					setState(1404); match(SEMI);
+					setState(1404);
+					match(SEMI);
 					}
 					}
 					setState(1409);
@@ -8252,11 +9038,11 @@ public class KotlinParser extends Parser {
 	}
 
 	public static class WhenConditionContext extends ParserRuleContext {
-		public TypeContext type() {
-			return getRuleContext(TypeContext.class,0);
-		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
 		}
 		public WhenConditionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -8278,6 +9064,7 @@ public class KotlinParser extends Parser {
 		int _la;
 		try {
 			setState(1417);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LongLiteral:
 			case IntegerLiteral:
@@ -8326,7 +9113,8 @@ public class KotlinParser extends Parser {
 			case SimpleName:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1412); expression();
+				setState(1412);
+				expression();
 				}
 				break;
 			case OP_IN:
@@ -8338,8 +9126,13 @@ public class KotlinParser extends Parser {
 				if ( !(_la==OP_IN || _la==OP_NOT_IN) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
-				setState(1414); expression();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(1414);
+				expression();
 				}
 				break;
 			case OP_IS:
@@ -8351,8 +9144,13 @@ public class KotlinParser extends Parser {
 				if ( !(_la==OP_IS || _la==OP_NOT_IS) ) {
 				_errHandler.recoverInline(this);
 				}
-				consume();
-				setState(1416); type();
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(1416);
+				type();
 				}
 				break;
 			default:
@@ -8371,7 +9169,7 @@ public class KotlinParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\u0084\u058e\4\2\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\u0084\u058e\4\2\t"+
 		"\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -8476,21 +9274,21 @@ public class KotlinParser extends Parser {
 		"\u00e2\u00e4\u00e6\u00e8\2\26\7\2EFMN\\]eexx\3\2?@\4\2\30\30BB\3\2TX\3"+
 		"\2GK\3\2LO\3\2PS\4\2//ZZ\4\2EF\\`\3\2hi\3\2||\3\2\u0081\u0081\4\2\22\22"+
 		"+,\3\2-.\3\2/\60\4\2\35\35\61\62\3\2\24\27\3\2\31\34\4\2\30\30\63\67\4"+
-		"\2::yy\u0612\2\u00ea\3\2\2\2\4\u00f2\3\2\2\2\6\u00fa\3\2\2\2\b\u0109\3"+
-		"\2\2\2\n\u0122\3\2\2\2\f\u012b\3\2\2\2\16\u012e\3\2\2\2\20\u0130\3\2\2"+
-		"\2\22\u0141\3\2\2\2\24\u0147\3\2\2\2\26\u0161\3\2\2\2\30\u0164\3\2\2\2"+
-		"\32\u016b\3\2\2\2\34\u018a\3\2\2\2\36\u018e\3\2\2\2 \u019c\3\2\2\2\"\u019e"+
-		"\3\2\2\2$\u01ac\3\2\2\2&\u01ae\3\2\2\2(\u01b7\3\2\2\2*\u01b9\3\2\2\2,"+
-		"\u01bc\3\2\2\2.\u01cb\3\2\2\2\60\u01d6\3\2\2\2\62\u0206\3\2\2\2\64\u0209"+
-		"\3\2\2\2\66\u0212\3\2\2\28\u0214\3\2\2\2:\u0216\3\2\2\2<\u0218\3\2\2\2"+
-		">\u021f\3\2\2\2@\u0221\3\2\2\2B\u0223\3\2\2\2D\u0225\3\2\2\2F\u0228\3"+
-		"\2\2\2H\u022c\3\2\2\2J\u0234\3\2\2\2L\u0239\3\2\2\2N\u0240\3\2\2\2P\u024d"+
-		"\3\2\2\2R\u026c\3\2\2\2T\u026e\3\2\2\2V\u0275\3\2\2\2X\u0278\3\2\2\2Z"+
-		"\u027c\3\2\2\2\\\u028b\3\2\2\2^\u029a\3\2\2\2`\u02ac\3\2\2\2b\u02b9\3"+
-		"\2\2\2d\u02bb\3\2\2\2f\u02c1\3\2\2\2h\u02c8\3\2\2\2j\u02ca\3\2\2\2l\u02ec"+
-		"\3\2\2\2n\u02ee\3\2\2\2p\u02f7\3\2\2\2r\u0307\3\2\2\2t\u0318\3\2\2\2v"+
-		"\u031d\3\2\2\2x\u0320\3\2\2\2z\u032d\3\2\2\2|\u034e\3\2\2\2~\u0369\3\2"+
-		"\2\2\u0080\u036b\3\2\2\2\u0082\u036f\3\2\2\2\u0084\u0377\3\2\2\2\u0086"+
+		"\2::yy\2\u0612\2\u00ea\3\2\2\2\4\u00f2\3\2\2\2\6\u00fa\3\2\2\2\b\u0109"+
+		"\3\2\2\2\n\u0122\3\2\2\2\f\u012b\3\2\2\2\16\u012e\3\2\2\2\20\u0130\3\2"+
+		"\2\2\22\u0141\3\2\2\2\24\u0147\3\2\2\2\26\u0161\3\2\2\2\30\u0164\3\2\2"+
+		"\2\32\u016b\3\2\2\2\34\u018a\3\2\2\2\36\u018e\3\2\2\2 \u019c\3\2\2\2\""+
+		"\u019e\3\2\2\2$\u01ac\3\2\2\2&\u01ae\3\2\2\2(\u01b7\3\2\2\2*\u01b9\3\2"+
+		"\2\2,\u01bc\3\2\2\2.\u01cb\3\2\2\2\60\u01d6\3\2\2\2\62\u0206\3\2\2\2\64"+
+		"\u0209\3\2\2\2\66\u0212\3\2\2\28\u0214\3\2\2\2:\u0216\3\2\2\2<\u0218\3"+
+		"\2\2\2>\u021f\3\2\2\2@\u0221\3\2\2\2B\u0223\3\2\2\2D\u0225\3\2\2\2F\u0228"+
+		"\3\2\2\2H\u022c\3\2\2\2J\u0234\3\2\2\2L\u0239\3\2\2\2N\u0240\3\2\2\2P"+
+		"\u024d\3\2\2\2R\u026c\3\2\2\2T\u026e\3\2\2\2V\u0275\3\2\2\2X\u0278\3\2"+
+		"\2\2Z\u027c\3\2\2\2\\\u028b\3\2\2\2^\u029a\3\2\2\2`\u02ac\3\2\2\2b\u02b9"+
+		"\3\2\2\2d\u02bb\3\2\2\2f\u02c1\3\2\2\2h\u02c8\3\2\2\2j\u02ca\3\2\2\2l"+
+		"\u02ec\3\2\2\2n\u02ee\3\2\2\2p\u02f7\3\2\2\2r\u0307\3\2\2\2t\u0318\3\2"+
+		"\2\2v\u031d\3\2\2\2x\u0320\3\2\2\2z\u032d\3\2\2\2|\u034e\3\2\2\2~\u0369"+
+		"\3\2\2\2\u0080\u036b\3\2\2\2\u0082\u036f\3\2\2\2\u0084\u0377\3\2\2\2\u0086"+
 		"\u0385\3\2\2\2\u0088\u0388\3\2\2\2\u008a\u0394\3\2\2\2\u008c\u03a3\3\2"+
 		"\2\2\u008e\u03ae\3\2\2\2\u0090\u03b9\3\2\2\2\u0092\u03bf\3\2\2\2\u0094"+
 		"\u03c1\3\2\2\2\u0096\u03cf\3\2\2\2\u0098\u03d5\3\2\2\2\u009a\u03dc\3\2"+

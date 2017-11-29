@@ -1,5 +1,6 @@
 package de.unihamburg.swk.parsing;
 
+import de.unihamburg.swk.parsing.document.IDocumentFactory;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 
 /**
@@ -10,6 +11,7 @@ import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
  */
 public class ParserFactory {
 
+	private static final String CSHARP_FILE = ".cs";
 	private static final String JAVA_FILE = ".java";
 	private static final String KOTLIN_FILE = ".kt";
 	private static final String SWIFT_FILE = ".swift";
@@ -18,13 +20,15 @@ public class ParserFactory {
 	public static <TDocument extends ISearchableDocument> ISourceCodeParser<TDocument> createParser(
 			IDocumentFactory<TDocument> documentFactory, String filePath) {
 		if (filePath.endsWith(JAVA_FILE)) {
-			return new JavaParser<TDocument>(filePath, documentFactory);
+			return new JavaParser<>(filePath, documentFactory);
 		} else if (filePath.endsWith(KOTLIN_FILE)) {
-			return new KotlinParser<TDocument>(filePath, documentFactory);
+			return new KotlinParser<>(filePath, documentFactory);
 		} else if (filePath.endsWith(SWIFT_FILE)) {
-			return new SwiftParser<TDocument>(filePath, documentFactory);
+			return new SwiftParser<>(filePath, documentFactory);
+		}else if (filePath.endsWith(CSHARP_FILE)) {
+			return new CSharpParser<>(filePath, documentFactory);
 		} else if (filePath.endsWith(TESTDOC_FILE)) {
-			return new TestDocParser<TDocument>(filePath, documentFactory);
+			return new TestDocParser<>(filePath, documentFactory);
 		} else
 			throw new IllegalArgumentException(
 					"there is no Parser Class available to process the given File: " + filePath);

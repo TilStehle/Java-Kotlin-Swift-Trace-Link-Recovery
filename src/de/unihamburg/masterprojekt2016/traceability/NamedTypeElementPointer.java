@@ -1,5 +1,7 @@
 package de.unihamburg.masterprojekt2016.traceability;
 
+import de.unihamburg.swk.parsing.document.IHasTypePointer;
+
 /**
  * @author Jakob Andersen
  * 
@@ -8,7 +10,7 @@ package de.unihamburg.masterprojekt2016.traceability;
  * @see ConstructorPointer
  */
 
-public abstract class NamedTypeElementPointer extends TraceabilityPointer {
+public abstract class NamedTypeElementPointer extends TraceabilityPointer implements IHasTypePointer {
 
 	private String name;
 	private TypePointer typePointer;
@@ -26,11 +28,13 @@ public abstract class NamedTypeElementPointer extends TraceabilityPointer {
     	return this.getName();
     }
 	
+	@Override
 	public TypePointer getTypePointer() {
         return typePointer;
     }
 
-    public void setTypePointer(TypePointer typePointer) {
+    @Override
+	public void setTypePointer(TypePointer typePointer) {
         this.typePointer = typePointer;
     }
     public void setName(String name){
@@ -44,7 +48,7 @@ public abstract class NamedTypeElementPointer extends TraceabilityPointer {
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = super.hashCode();
+		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((typePointer == null) ? 0 : typePointer.hashCode());
 		return result;

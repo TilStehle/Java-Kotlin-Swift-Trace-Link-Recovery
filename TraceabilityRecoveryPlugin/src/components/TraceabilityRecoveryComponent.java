@@ -54,7 +54,8 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
         //Reload lucene index if lucene service
         if (traceabilityRecoveryService instanceof LuceneTraceabilityRecoveryService){
             try {
-                ((LuceneTraceabilityRecoveryService) traceabilityRecoveryService).loadIndexFromDisk(projectBasePath);
+                ((LuceneTraceabilityRecoveryService) traceabilityRecoveryService).setIndexPath(projectBasePath);
+                ((LuceneTraceabilityRecoveryService) traceabilityRecoveryService).loadIndexFromDisk();
             } catch (IOException e) {
                 e.printStackTrace();
             }

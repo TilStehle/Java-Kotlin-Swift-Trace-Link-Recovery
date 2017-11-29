@@ -820,7 +820,11 @@ typeName : identifier ;
 tupleType : '('  tupleTypeBody? ')'  ;
 tupleTypeBody : tupleTypeElementList '...'? ;
 tupleTypeElementList : tupleTypeElement (',' tupleTypeElement)*  ;
-tupleTypeElement : attributes? 'inout'? sType | elementName typeAnnotation ;
+tupleTypeElement 
+	: attributes? 'inout'? sType 
+	| elementName typeAnnotation 
+	| '_' elementName typeAnnotation 
+	;
 elementName : identifier  ;
 
 // GRAMMAR OF A PROTOCOL COMPOSITION TYPE

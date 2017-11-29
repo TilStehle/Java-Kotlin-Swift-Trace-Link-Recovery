@@ -20,7 +20,6 @@ public class XMLImport {
         JAXBContext jaxbContext = null;
         try {
             jaxbContext = JAXBContext.newInstance(TraceabilityModel.class);
-
             StringReader stringReader = new StringReader(pointerAsXML);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             TraceabilityPointer pointer = (TraceabilityPointer) jaxbUnmarshaller.unmarshal(stringReader);
