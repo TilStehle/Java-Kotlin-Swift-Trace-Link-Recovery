@@ -8,7 +8,6 @@ Using this plugin, users can right-click a Java element (class/method/field name
 Open Project in IntelliJ IDEA (Tested with Community Edition 2017.1.4) 
 Set Project SDK to your IntelliJ IDEA-SDK for Plugin development
 Reimport maven dependencies from .pom-File
-add Ant-library (src\de\unihamburg\swk\parsing\antlr-4.7-complete.jar) as library (Right-Click-> Add as Library)
 build
 run/debug
 
