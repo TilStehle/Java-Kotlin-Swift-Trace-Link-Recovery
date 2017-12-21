@@ -31,16 +31,14 @@ import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.UnannReferenceTypeCont
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.UnannTypeContext;
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.UnannTypeVariableContext;
 
-public final class JavaParserUtils {
+public final class JavaListenerExtension extends AbstractListenerExtension {
 
-	public static final TermMapperManager MAPPER = TermMapperManager.JAVA;
-	
-	private JavaParserUtils() { 
-		throw new IllegalAccessError();
+	public JavaListenerExtension() {
+		super(TermMapperManager.JAVA);
 	}
-	
-	public static PointerTypeSeparator setType(UnannTypeContext unannType) {
-		PointerTypeSeparator result = new PointerTypeSeparator(MAPPER);
+
+	public PointerTypeSeparator setType(UnannTypeContext unannType) {
+		PointerTypeSeparator result = new PointerTypeSeparator(super.mapper);
 		try {
 			result.setPointerType(unannType.getText());
 			if (unannType.unannPrimitiveType() != null) {
@@ -53,13 +51,14 @@ public final class JavaParserUtils {
 		} catch (Exception e) {
 			System.err.println("Typeerror: " + unannType.getText());
 			e.printStackTrace();
-		} 
-//		System.out.println(result);
+		}
+		// System.out.println(result);
 		return result;
 	}
 
-	private static void setType(UnannReferenceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannReferenceTypeContext" + typeContext.getText());
+	private void setType(UnannReferenceTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("UnannReferenceTypeContext" +
+		// typeContext.getText());
 		if (typeContext.unannClassOrInterfaceType() != null) {
 			setType(typeContext.unannClassOrInterfaceType(), result);
 		} else if (typeContext.unannTypeVariable() != null) {
@@ -70,125 +69,136 @@ public final class JavaParserUtils {
 			throw new IllegalAccessError();
 		}
 	}
-	
-	private static void setType(UnannArrayTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannArrayTypeContext" + typeContext.getText());
-		if(typeContext.unannClassOrInterfaceType() != null) {
+
+	private void setType(UnannArrayTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("UnannArrayTypeContext" + typeContext.getText());
+		if (typeContext.unannClassOrInterfaceType() != null) {
 			setType(typeContext.unannClassOrInterfaceType(), result);
-		} else if(typeContext.unannPrimitiveType() != null) {
+		} else if (typeContext.unannPrimitiveType() != null) {
 			setType(typeContext.unannPrimitiveType(), result);
-		} else if(typeContext.unannTypeVariable() != null) {
+		} else if (typeContext.unannTypeVariable() != null) {
 			setType(typeContext.unannTypeVariable(), result);
 		} else {
 			throw new IllegalAccessError();
 		}
 	}
-	
-	private static void setType(UnannClassOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannClassOrInterfaceTypeContext: " + typeContext.getText());
+
+	private void setType(UnannClassOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("UnannClassOrInterfaceTypeContext: " +
+		// typeContext.getText());
 
 		if (typeContext.unannClassType_lfno_unannClassOrInterfaceType() != null) {
 			setType(typeContext.unannClassType_lfno_unannClassOrInterfaceType(), result);
 		} else {
 			setType(typeContext.unannInterfaceType_lfno_unannClassOrInterfaceType(), result);
 		}
-		
-		for (UnannClassType_lf_unannClassOrInterfaceTypeContext a : typeContext.unannClassType_lf_unannClassOrInterfaceType()) {
+
+		for (UnannClassType_lf_unannClassOrInterfaceTypeContext a : typeContext
+				.unannClassType_lf_unannClassOrInterfaceType()) {
 			setType(a, result);
 		}
-		for (UnannInterfaceType_lf_unannClassOrInterfaceTypeContext b : typeContext.unannInterfaceType_lf_unannClassOrInterfaceType()) {
+		for (UnannInterfaceType_lf_unannClassOrInterfaceTypeContext b : typeContext
+				.unannInterfaceType_lf_unannClassOrInterfaceType()) {
 			setType(b, result);
 		}
 	}
 
-	private static void setType(UnannInterfaceType_lfno_unannClassOrInterfaceTypeContext typeContext, @SuppressWarnings("unused") PointerTypeSeparator result) {
+	private void setType(UnannInterfaceType_lfno_unannClassOrInterfaceTypeContext typeContext,
+			@SuppressWarnings("unused") PointerTypeSeparator result) {
 		System.out.println("UnannInterfaceType_lfno_unannClassOrInterfaceTypeContext");
-		System.err.println("Not supported type: "  + typeContext.getText());
+		System.err.println("Not supported type: " + typeContext.getText());
 	}
 
-	private static void setType(UnannInterfaceType_lf_unannClassOrInterfaceTypeContext typeContext, @SuppressWarnings("unused") PointerTypeSeparator result) {
+	private void setType(UnannInterfaceType_lf_unannClassOrInterfaceTypeContext typeContext,
+			@SuppressWarnings("unused") PointerTypeSeparator result) {
 		System.out.println("UnannInterfaceType_lf_unannClassOrInterfaceTypeContext");
-		System.err.println("Not supported type: "  + typeContext.getText());
+		System.err.println("Not supported type: " + typeContext.getText());
 	}
 
-	private static void setType(UnannPrimitiveTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannPrimitiveTypeContext "+ typeContext.getText());
+	private void setType(UnannPrimitiveTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("UnannPrimitiveTypeContext "+
+		// typeContext.getText());
 		result.addType(typeContext.getText());
 	}
-	
-	private static void setType(UnannTypeVariableContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannTypeVariableContext "+ typeContext.getText());
+
+	private void setType(UnannTypeVariableContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("UnannTypeVariableContext "+
+		// typeContext.getText());
 		result.addType(typeContext.Identifier().getText());
 	}
-	
-	private static void setType(UnannClassType_lfno_unannClassOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannClassType_lfno_unannClassOrInterfaceTypeContext " + typeContext.getText());
-		result.addType(typeContext.Identifier().getText());
-		
-		if(typeContext.typeArguments() != null) {
-			setTypes(typeContext.typeArguments(), result);
-		}
-	}
-	
-	private static void setType(UnannClassType_lf_unannClassOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannClassType_lf_unannClassOrInterfaceTypeContext " + typeContext.getText());
+
+	private void setType(UnannClassType_lfno_unannClassOrInterfaceTypeContext typeContext,
+			PointerTypeSeparator result) {
+		// System.out.println("UnannClassType_lfno_unannClassOrInterfaceTypeContext
+		// " + typeContext.getText());
 		result.addType(typeContext.Identifier().getText());
 
-		if(typeContext.typeArguments() != null) {
+		if (typeContext.typeArguments() != null) {
 			setTypes(typeContext.typeArguments(), result);
 		}
 	}
 
-	private static void setTypes(TypeArgumentsContext typeArguments, PointerTypeSeparator result) {
-//		System.out.println("TypeArgumentsContext");
+	private void setType(UnannClassType_lf_unannClassOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("UnannClassType_lf_unannClassOrInterfaceTypeContext
+		// " + typeContext.getText());
+		result.addType(typeContext.Identifier().getText());
+
+		if (typeContext.typeArguments() != null) {
+			setTypes(typeContext.typeArguments(), result);
+		}
+	}
+
+	private void setTypes(TypeArgumentsContext typeArguments, PointerTypeSeparator result) {
+		// System.out.println("TypeArgumentsContext");
 		for (TypeArgumentContext tac : typeArguments.typeArgumentList().typeArgument()) {
-			if(tac.referenceType() != null) {
+			if (tac.referenceType() != null) {
 				setType(tac.referenceType(), result);
 			}
 		}
 	}
-	
-	private static void setType(ReferenceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("ReferenceTypeContext: " + typeContext.getText());
-		if(typeContext.classOrInterfaceType() != null) {
+
+	private void setType(ReferenceTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("ReferenceTypeContext: " + typeContext.getText());
+		if (typeContext.classOrInterfaceType() != null) {
 			setType(typeContext.classOrInterfaceType(), result);
-		} else if(typeContext.typeVariable() != null) {
+		} else if (typeContext.typeVariable() != null) {
 			setType(typeContext.typeVariable(), result);
-		} else if(typeContext.arrayType() != null) {
+		} else if (typeContext.arrayType() != null) {
 			setType(typeContext.arrayType(), result);
 		} else {
 			throw new UnknownError();
 		}
 	}
 
-	private static void setType(ArrayTypeContext typeContext, PointerTypeSeparator result) { // TODO
-		if(typeContext.classOrInterfaceType() != null) {
+	private void setType(ArrayTypeContext typeContext, PointerTypeSeparator result) { // TODO
+		if (typeContext.classOrInterfaceType() != null) {
 			setType(typeContext.classOrInterfaceType(), result);
-		} else if(typeContext.primitiveType() != null) {
+		} else if (typeContext.primitiveType() != null) {
 			setType(typeContext.primitiveType(), result);
-		} else if(typeContext.typeVariable() != null) {
+		} else if (typeContext.typeVariable() != null) {
 			setType(typeContext.typeVariable(), result);
 		} else {
 			throw new IllegalAccessError();
 		}
 	}
 
-	private static void setType(PrimitiveTypeContext typeContext, PointerTypeSeparator result) {
-		result.addType(typeContext.getText());		
+	private void setType(PrimitiveTypeContext typeContext, PointerTypeSeparator result) {
+		result.addType(typeContext.getText());
 	}
 
-	private static void setType(TypeVariableContext typeContext, PointerTypeSeparator result) {
+	private void setType(TypeVariableContext typeContext, PointerTypeSeparator result) {
 		result.addType(typeContext.Identifier().getText());
 	}
 
-	private static void setType(ClassOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("UnannClassOrInterfaceTypeContext: " + typeContext.getText());
+	private void setType(ClassOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("UnannClassOrInterfaceTypeContext: " +
+		// typeContext.getText());
 		if (typeContext.classType_lfno_classOrInterfaceType() != null) {
 			setType(typeContext.classType_lfno_classOrInterfaceType(), result);
 		} else {
 			setType(typeContext.interfaceType_lfno_classOrInterfaceType(), result);
 		}
-		
+
 		for (ClassType_lf_classOrInterfaceTypeContext a : typeContext.classType_lf_classOrInterfaceType()) {
 			setType(a, result);
 		}
@@ -196,90 +206,89 @@ public final class JavaParserUtils {
 			setType(b, result);
 		}
 	}
-	
-	private static void setType(ClassType_lf_classOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("ClassType_lf_classOrInterfaceTypeContext " + typeContext.getText());
+
+	private void setType(ClassType_lf_classOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("ClassType_lf_classOrInterfaceTypeContext " +
+		// typeContext.getText());
 		result.addType(typeContext.Identifier().getText());
 
-		if(typeContext.typeArguments() != null) {
+		if (typeContext.typeArguments() != null) {
 			setTypes(typeContext.typeArguments(), result);
 		}
 	}
-	
-	private static void setType(ClassType_lfno_classOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
-//		System.out.println("ClassType_lfno_classOrInterfaceTypeContext " + typeContext.getText());
+
+	private void setType(ClassType_lfno_classOrInterfaceTypeContext typeContext, PointerTypeSeparator result) {
+		// System.out.println("ClassType_lfno_classOrInterfaceTypeContext " +
+		// typeContext.getText());
 		result.addType(typeContext.Identifier().getText());
-		
-		if(typeContext.typeArguments() != null) {
+
+		if (typeContext.typeArguments() != null) {
 			setTypes(typeContext.typeArguments(), result);
 		}
 	}
-	
-	private static void setType(InterfaceType_lfno_classOrInterfaceTypeContext typeContext, @SuppressWarnings("unused") PointerTypeSeparator result) {
+
+	private void setType(InterfaceType_lfno_classOrInterfaceTypeContext typeContext,
+			@SuppressWarnings("unused") PointerTypeSeparator result) {
 		System.out.println("InterfaceType_lfno_classOrInterfaceTypeContext");
-		System.err.println("Not supported type: "  + typeContext.getText());
+		System.err.println("Not supported type: " + typeContext.getText());
 	}
 
-	private static void setType(InterfaceType_lf_classOrInterfaceTypeContext typeContext, @SuppressWarnings("unused") PointerTypeSeparator result) {
+	private void setType(InterfaceType_lf_classOrInterfaceTypeContext typeContext,
+			@SuppressWarnings("unused") PointerTypeSeparator result) {
 		System.out.println("InterfaceType_lf_classOrInterfaceTypeContext");
-		System.err.println("Not supported type: "  + typeContext.getText());
+		System.err.println("Not supported type: " + typeContext.getText());
 	}
-	
-	public static void setTypesAndNames(FormalParameterContext formalParameter, SimpleTypeSeparator types, List<String> names) {
+
+	public void setTypesAndNames(FormalParameterContext formalParameter, SimpleTypeSeparator types,
+			List<String> names) {
 		names.add(formalParameter.variableDeclaratorId().Identifier().getText());
-		types.addAll(JavaParserUtils.setType(formalParameter.unannType()));
+		types.addAll(setType(formalParameter.unannType()));
 	}
-	
-	public static void setTypesAndNames(Java8Parser.LambdaParametersContext ctx, SimpleTypeSeparator types, List<String> names) {
+
+	public void setTypesAndNames(Java8Parser.LambdaParametersContext ctx, SimpleTypeSeparator types,
+			List<String> names) {
 		// (a , b) -> { ... }
 		if (ctx.inferredFormalParameterList() != null) {
 			ctx.inferredFormalParameterList().Identifier().forEach(e -> names.add(e.getText()));
-		// a -> { ... }
+			// a -> { ... }
 		} else if (ctx.Identifier() != null) {
 			names.add(ctx.Identifier().getText());
-		// (A a, ...) -> { ... }
+			// (A a, ...) -> { ... }
 		} else if (ctx.formalParameterList() != null) {
 			if (ctx.formalParameterList().formalParameters() != null) {
 				for (FormalParameterContext fpc : ctx.formalParameterList().formalParameters().formalParameter()) {
-					JavaParserUtils.setTypesAndNames(fpc, types, names);
+					setTypesAndNames(fpc, types, names);
 				}
 			} else {
-				JavaParserUtils.setTypesAndNames(ctx.formalParameterList().lastFormalParameter().formalParameter(), types, names);
+				setTypesAndNames(ctx.formalParameterList().lastFormalParameter().formalParameter(), types, names);
 			}
 		} else {
 			// () -> { ... }
 		}
 	}
-	
-	public static void setInheritance(SuperinterfacesContext superinterfaces, List<String> inheritance) {
-		if(superinterfaces != null) {
+
+	public void setInheritance(SuperinterfacesContext superinterfaces, List<String> inheritance) {
+		if (superinterfaces != null) {
 			superinterfaces.interfaceTypeList().interfaceType()
-			.forEach(e -> inheritance.add(MAPPER.types(e.classType().Identifier().getText())));
+					.forEach(e -> inheritance.add(super.mapper.types(e.classType().Identifier().getText())));
 		}
 	}
 
-	public static void setInheritance(SuperclassContext superclass, List<String> inheritance) {
-		if(superclass != null) {
-			inheritance.add(MAPPER.types(superclass.classType().Identifier().getText()));
+	public void setInheritance(SuperclassContext superclass, List<String> inheritance) {
+		if (superclass != null) {
+			inheritance.add(super.mapper.types(superclass.classType().Identifier().getText()));
 		}
 	}
 
-	public static void setInheritance(ExtendsInterfacesContext extendsInterfaces, List<String> interfaces) {
+	public void setInheritance(ExtendsInterfacesContext extendsInterfaces, List<String> interfaces) {
 		if (extendsInterfaces != null) {
 			extendsInterfaces.interfaceTypeList().interfaceType()
-					.forEach(e -> interfaces.add(MAPPER.types(e.classType().Identifier().getText())));
+					.forEach(e -> interfaces.add(super.mapper.types(e.classType().Identifier().getText())));
 		}
 	}
 
-	public static String getName(TerminalNode identifier) {
+	public String getName(TerminalNode identifier) {
 		return identifier.getText();
 	}
-	
-	public static String setMappedMethodName(String identifier) {
-		return MAPPER.functions(identifier);
-	}
-	
-	public static String setMappedAttributeName(String identifier) {
-		return MAPPER.variables(identifier);
-	}
+
 }

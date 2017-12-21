@@ -4,7 +4,7 @@ package de.unihamburg.swk.parsing.document;
  * @author Jakob Andersen
  */
 
-public class PointerTypeSeparator extends SimlpleTypeSeparator {
+public class PointerTypeSeparator extends SimpleTypeSeparator {
 
 	private String pointerType;
 	
