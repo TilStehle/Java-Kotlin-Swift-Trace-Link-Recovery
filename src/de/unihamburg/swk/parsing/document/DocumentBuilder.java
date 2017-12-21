@@ -164,7 +164,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack.addTerms(type.getGenTypes(), LOCAL_VARIABLE, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
 	}
 	
-	public void enterLambda(List<String> lambdavariableNames, SimlpleTypeSeparator type) {
+	public void enterLambda(List<String> lambdavariableNames, SimpleTypeSeparator type) {
 		Objects.requireNonNull(type);
 		
 		documentStack.addTerms(lambdavariableNames, PARAMETER, TermFactors.OWN_PARAMETER_FACTOR, TermFactors.OTHER_PARAMETER_FACTOR);

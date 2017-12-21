@@ -4,29 +4,29 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author Jakob Andersen simple
+ * @author Jakob Andersen
  */
 
-public class SimlpleTypeSeparator {
+public class SimpleTypeSeparator {
 
 	private TermMapperManager mapper;
 	
 	private List<String> types;
 	private List<String> genTypes;
 
-	public SimlpleTypeSeparator(TermMapperManager mapper) {
+	public SimpleTypeSeparator(TermMapperManager mapper) {
 		this.mapper = mapper;
 		this.types = new LinkedList<>();
 		this.genTypes = new LinkedList<>();
 	}
 	
-	public SimlpleTypeSeparator union(SimlpleTypeSeparator other) {
+	public SimpleTypeSeparator union(SimpleTypeSeparator other) {
 		this.types.addAll(other.types);
 		this.genTypes.addAll(other.genTypes);
 		return this;
 	}
 	
-	public void addAll(SimlpleTypeSeparator type) {
+	public void addAll(SimpleTypeSeparator type) {
 		type.types.forEach(this::addType);
 		type.genTypes.forEach(this::addGenericType);
 	}
