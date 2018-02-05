@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public enum TermMapperManager {
 
-	JAVA, SWIFT, CSHARP;
+	JAVA, SWIFT, CSHARP, JAVASCRIPT;
 	
 	private static final String A = "-type";
 	private static final String B = "-function";
@@ -81,6 +81,9 @@ public enum TermMapperManager {
 		CSHARP.types = new HashMap<>();
 		CSHARP.variables = new HashMap<>();
 		CSHARP.functions = new HashMap<>();
+		JAVASCRIPT.types = new HashMap<>();
+		JAVASCRIPT.variables = new HashMap<>();
+		JAVASCRIPT.functions = new HashMap<>();
 	}
 	
 	private static void putMappings(String[] line, TermMapperManager mapperType) {
@@ -115,6 +118,9 @@ public enum TermMapperManager {
 					case "CSHARP":
 						putMappings(line, TermMapperManager.CSHARP);
 						break;
+					case "JAVASCRIPT":
+						putMappings(line, TermMapperManager.JAVASCRIPT);
+						break;
 				default:
 					break;
 				}
@@ -129,6 +135,7 @@ public enum TermMapperManager {
 			JAVA.persist(bw);
 			SWIFT.persist(bw);
 			CSHARP.persist(bw);
+			JAVASCRIPT.persist(bw);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

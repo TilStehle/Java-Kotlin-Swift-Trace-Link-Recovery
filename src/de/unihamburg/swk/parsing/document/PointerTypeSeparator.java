@@ -19,7 +19,7 @@ public class PointerTypeSeparator extends SimpleTypeSeparator {
 	}
 	
 	public void setPointerType(String pointerType) {
-		this.pointerType = pointerType;
+		this.pointerType = mapper.types(pointerType);
 	}
 	
 	public String getPointerType() {

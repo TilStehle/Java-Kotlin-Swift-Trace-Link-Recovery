@@ -9,7 +9,7 @@ import java.util.List;
 
 public class SimpleTypeSeparator {
 
-	private TermMapperManager mapper;
+	protected TermMapperManager mapper;
 	
 	private List<String> types;
 	private List<String> genTypes;

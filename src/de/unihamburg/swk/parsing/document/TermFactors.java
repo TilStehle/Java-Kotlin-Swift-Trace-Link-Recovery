@@ -23,12 +23,12 @@ public class TermFactors {
 	public static final int OWN_CONSTRUCTOR_FACTOR = 4;
 	public static final int OTHER_CONSTRUCTOR_FACTOR = 2;
 
-	public static final int OWN_LOCAL_VARIABLE_FACTOR = 4;
+	public static final int OWN_LOCAL_VARIABLE_FACTOR = 2;
 	public static final int OTHER_LOCAL_VARIABLE_FACTOR = 1;
 	public static final int OWN_LOCAL_VARIABLE_TYPE_FACTOR = 1;
 	public static final int OTHER_LOCAL_VARIABLE_TYPE_FACTOR = 1;
 
-	public static final int OWN_PARAMETER_FACTOR = 4;
+	public static final int OWN_PARAMETER_FACTOR = 2;
 	public static final int OTHER_PARAMETER_FACTOR = 1;
 	public static final int OWN_PARAMETER_TYPE_FACTOR = 1;
 	public static final int OTHER_PARAMETER_TYPE_FACTOR = 1;

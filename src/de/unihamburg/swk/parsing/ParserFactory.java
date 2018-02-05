@@ -1,7 +1,9 @@
 package de.unihamburg.swk.parsing;
 
 import de.unihamburg.swk.parsing.document.IDocumentFactory;
+import de.unihamburg.swk.parsing.javaparser.GithubJavaParser;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
+import de.unihamburg.swk.traceabilityrecovery.Language;
 
 /**
  * 
@@ -11,25 +13,22 @@ import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
  */
 public class ParserFactory {
 
-	private static final String CSHARP_FILE = ".cs";
-	private static final String JAVA_FILE = ".java";
-	private static final String KOTLIN_FILE = ".kt";
-	private static final String SWIFT_FILE = ".swift";
-	private static final String TESTDOC_FILE = ".testdoc";
 
 	public static <TDocument extends ISearchableDocument> ISourceCodeParser<TDocument> createParser(
 			IDocumentFactory<TDocument> documentFactory, String filePath) {
-		if (filePath.endsWith(JAVA_FILE)) {
-			return new JavaParser<>(filePath, documentFactory);
-		} else if (filePath.endsWith(KOTLIN_FILE)) {
+		if (filePath.endsWith(Language.JAVA.getFileExtension())) {
+			return new GithubJavaParser<>(filePath, documentFactory);
+		} else if (filePath.endsWith(Language.KOTLIN.getFileExtension())) {
 			return new KotlinParser<>(filePath, documentFactory);
-		} else if (filePath.endsWith(SWIFT_FILE)) {
+		} else if (filePath.endsWith(Language.SWIFT.getFileExtension())) {
 			return new SwiftParser<>(filePath, documentFactory);
-		}else if (filePath.endsWith(CSHARP_FILE)) {
+		}else if (filePath.endsWith(Language.CSHARP.getFileExtension())) {
 			return new CSharpParser<>(filePath, documentFactory);
-		} else if (filePath.endsWith(TESTDOC_FILE)) {
+		}else if (filePath.endsWith(Language.JAVASCRIPT.getFileExtension())) {
+			return new JavaScriptParser<>(filePath, documentFactory);
+		} else if (filePath.endsWith(".testdoc")) {
 			return new TestDocParser<>(filePath, documentFactory);
-		} else
+		}else
 			throw new IllegalArgumentException(
 					"there is no Parser Class available to process the given File: " + filePath);
 	}

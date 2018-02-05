@@ -22,7 +22,7 @@ public class RuntimeTest {
 		List<File> files = searchFile("./testDocs/TwidereDomainModel", ".swift");
 		Collections.shuffle(files);
 		
-//		System.out.println(new JavaParser<>("./testDocs/Init.java", new LuceneDocsFactory()).parseDocuments().size());
+//		System.out.println(new GithubJavaParser<>("./testDocs/Init.java", new LuceneDocsFactory()).parseDocuments().size());
 
 		TermMapperManager.setData("./mappings");
 		

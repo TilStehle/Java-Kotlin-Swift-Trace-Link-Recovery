@@ -229,7 +229,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		SimpleTypeSeparator types = listenderExtension.createSimpleTypeSeperator();
 		List<String> names = new LinkedList<>();
 		listenderExtension.setTypesAndNames(ctx, types, names);
-		docBuilder.enterLambda(names, types);
+		docBuilder.enterLambdaParameter(names, types);
 	}
 
 	public boolean errorOccurs() {

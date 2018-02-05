@@ -1,10 +1,10 @@
 package de.unihamburg.swk.parsing.document;
 
-public abstract class AbstractListenerExtension {
+public class GeneralListenerExtension {
 
 	protected TermMapperManager mapper;
 	
-	public AbstractListenerExtension(TermMapperManager mapper) {
+	public GeneralListenerExtension(TermMapperManager mapper) {
 		this.mapper = mapper;
 	}
 	

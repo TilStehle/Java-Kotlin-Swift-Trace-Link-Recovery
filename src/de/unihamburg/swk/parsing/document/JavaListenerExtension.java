@@ -31,7 +31,7 @@ import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.UnannReferenceTypeCont
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.UnannTypeContext;
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser.UnannTypeVariableContext;
 
-public final class JavaListenerExtension extends AbstractListenerExtension {
+public final class JavaListenerExtension extends GeneralListenerExtension {
 
 	public JavaListenerExtension() {
 		super(TermMapperManager.JAVA);

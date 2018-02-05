@@ -185,4 +185,8 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 
 
 	}
+	public String getTopmostTypeName()
+	{
+		return typeStack.peek().getDisplayName();
+	}
 }

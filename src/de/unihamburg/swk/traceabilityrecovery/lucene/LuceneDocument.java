@@ -34,6 +34,7 @@ public class LuceneDocument implements ISearchableDocument {
         document.add(new StringField("language", languageFileNameExtension, Field.Store.YES));
         document.add(new StoredField("id", id));
         document.add(new StringField("pointer", XMLExport.createXMLStringFromPointer(pointer), Field.Store.YES));
+        document.add(new StringField("path", pointer.getSourceFilePath(), Field.Store.YES));
     }
 
     public String getLanguage() {

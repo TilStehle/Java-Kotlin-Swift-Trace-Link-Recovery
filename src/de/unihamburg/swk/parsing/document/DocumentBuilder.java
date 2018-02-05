@@ -74,7 +74,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	public void enterMethod(String pointerName, String mappedName) {
 		MethodPointer methodPointer = new MethodPointer(pointerName, NO_RETURN_TYPE);
 		documentStack.enterElementDeclaration(methodPointer);
-		
+
 		documentStack.addTerm(mappedName, METHOD, TermFactors.OWN_METHOD_FACTOR, TermFactors.OTHER_METHOD_FACTOR);
 		documentStack.addTerm(NO_RETURN_TYPE, METHOD, TermFactors.OWN_METHOD_TYPE_FACTOR, TermFactors.OTHER_METHOD_TYPE_FACTOR);
 	}
@@ -164,7 +164,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack.addTerms(type.getGenTypes(), LOCAL_VARIABLE, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
 	}
 	
-	public void enterLambda(List<String> lambdavariableNames, SimpleTypeSeparator type) {
+	public void enterLambdaParameter(List<String> lambdavariableNames, SimpleTypeSeparator type) {
 		Objects.requireNonNull(type);
 		
 		documentStack.addTerms(lambdavariableNames, PARAMETER, TermFactors.OWN_PARAMETER_FACTOR, TermFactors.OTHER_PARAMETER_FACTOR);
@@ -248,5 +248,9 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 
 	public void printOpenElements() {
 		this.documentStack.printOpenElements();
+	}
+
+	public String getCurrentTypeName() {
+		return documentStack.getTopmostTypeName();
 	}
 }

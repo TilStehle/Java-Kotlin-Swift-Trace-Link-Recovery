@@ -6,7 +6,7 @@ import de.unihamburg.swk.parsing.antlr4.swift3.Swift3Parser.STypeContext;
 import de.unihamburg.swk.parsing.antlr4.swift3.Swift3Parser.TupleTypeContext;
 import de.unihamburg.swk.parsing.antlr4.swift3.Swift3Parser.TypeInheritanceClauseContext;
 
-public final class SwiftListenerExtension extends AbstractListenerExtension {
+public final class SwiftListenerExtension extends GeneralListenerExtension {
 
 	public SwiftListenerExtension() {
 		super(TermMapperManager.SWIFT);

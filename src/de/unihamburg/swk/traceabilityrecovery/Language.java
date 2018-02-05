@@ -4,7 +4,7 @@ package de.unihamburg.swk.traceabilityrecovery;
  * Created by Tilmann Stehle on 28.11.2017.
  */
 public enum Language {
-        SWIFT("swift"),CSHARP("cs"), JAVA("java");
+        SWIFT("swift"),CSHARP("cs"), JAVA("java"), JAVASCRIPT("js"), KOTLIN(".kt");
 
     private String fileExtension;
 

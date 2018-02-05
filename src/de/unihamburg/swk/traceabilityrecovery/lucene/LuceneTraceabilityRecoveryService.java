@@ -28,6 +28,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Created by Tilmann Stehle on 20.01.2017.
@@ -125,6 +126,14 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     }
 
+    @Override
+    public List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String path) {
+        LuceneDocument queryDocument = documentsByPointers.get(pointer);
+        Query combinedQuery = createQueryFromDocument(queryDocument, path);
+        return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer);
+
+    }
+
 
 
     private List<TraceabilityLink> getSortedTraceabilityLinksForLuceneQuery(Query query, TraceabilityPointer pointer) {
@@ -158,29 +167,25 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             return new ArrayList<>();
         }
     }
+    private Query createQueryFromDocument(LuceneDocument queryDocument, String pathPrefix) {
+        try {
+            Query filterQuery = new QueryParser("path", analyzer).parse(pathPrefix+'*');
 
-    private Query createQueryFromDocument(LuceneDocument queryDocument, Language language) {
+            return createQueryWithFilterCriteria(queryDocument, filterQuery);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private Query createQueryWithFilterCriteria(LuceneDocument queryDocument, Query filterQuery )
+    {
         String contents = queryDocument.getContents();
         String layer = queryDocument.getLayer();
-        Query languageQuery = null;
         BooleanQuery.Builder booleanQueryBuilder = new BooleanQuery.Builder();
+        booleanQueryBuilder.add(filterQuery, BooleanClause.Occur.FILTER);
         try {
-            languageQuery = new QueryParser("language", analyzer).parse(language.getFileExtension());
             Query contentQuery = createBoostedQueryFromQueryString(contents, "content", 1f);
             booleanQueryBuilder.add(contentQuery, BooleanClause.Occur.MUST);
-//            for (IndexableField field : queryDocument.getDocument().getFields()) {
-//                addBoostedQueryTerms(booleanQueryBuilder,field);
-//            }
-
-            booleanQueryBuilder.add(languageQuery, BooleanClause.Occur.FILTER);
-            String docTitle = queryDocument.getTitle();
-            if (docTitle != null) {
-                Query titleQuery = null;
-
-                titleQuery = new QueryParser("title", analyzer).parse(docTitle);
-
-                // booleanQueryBuilder.add(titleQuery, BooleanClause.Occur.SHOULD);
-            }
             if (layer != null) {
                 Query layerQuery = new QueryParser("layer", analyzer).parse(layer);
                 layerQuery = new BoostQuery(layerQuery, 100);
@@ -190,6 +195,16 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             throw new RuntimeException(e);
         }
         return booleanQueryBuilder.build();
+    }
+
+    private Query createQueryFromDocument(LuceneDocument queryDocument, Language language) {
+        try {
+            Query filterQuery = new QueryParser("language", analyzer).parse(language.getFileExtension());
+
+            return createQueryWithFilterCriteria(queryDocument, filterQuery);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private Map<String, Integer> computeWordCounts(String queryString) throws ParseException {
@@ -232,7 +247,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Collection<String> acceptedFileEndings = Arrays.asList(new String[]{"swift", "java", "kt", "cs"});
+        Collection<String> acceptedFileEndings = Arrays.stream(Language.values()).map(lang -> lang.getFileExtension()).collect(Collectors.toList());
         List<String> sourceFiles = new ArrayList<String>();
         for (String dirPath : projectPaths) {
             File dir = new File(dirPath);
@@ -274,6 +289,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                 } catch (Exception ex) {
                     future.cancel(true);
                     parserProgress.fileParseFailed(filePath);
+ex.printStackTrace();
                 }
             } else {
                 parserProgress.fileParseFailed(filePath);

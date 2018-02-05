@@ -30,7 +30,7 @@ package de.unihamburg.swk.parsing;
 //
 //	@Override
 //	public List<LuceneDocument> parseDocuments() {
-//		System.err.println("JavaParser parse: " + filePath);
+//		System.err.println("GithubJavaParser parse: " + filePath);
 //		return collectDocumentsWithANTLR();
 //	}
 //

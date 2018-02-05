@@ -17,7 +17,9 @@ public interface ITraceabilityRecoveryService
 
 	List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, Language language);
 
-	void readDocuments(String... projectPaths) throws IOException, IndexPathNotSetException;
+    List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String path);
+
+    void readDocuments(String... projectPaths) throws IOException, IndexPathNotSetException;
     int getNumberOfDocs();
 	void loadIndexFromDisk() throws IOException, IndexPathNotSetException;
 
