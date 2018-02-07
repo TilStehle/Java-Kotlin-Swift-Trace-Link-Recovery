@@ -11,4 +11,6 @@ public interface ISearchableDocument {
     String getDescription();
     TraceabilityPointer getTraceabilityPointer();
     void setLayer(String value);
+
+    void traceabilityPointerHasChanged();
 }

@@ -91,6 +91,14 @@ public class LuceneDocument implements ISearchableDocument {
         document.add(new StringField("layer", value, Field.Store.YES));
     }
 
+    @Override
+    public void traceabilityPointerHasChanged() {
+        if (document.get("pointer") != null) {
+            document.removeField("pointer");
+        }
+        document.add(new StringField("pointer", XMLExport.createXMLStringFromPointer(this.describedArtifactPointer), Field.Store.YES));
+    }
+
     public String getContents() {
         return document.get("content");
     }
@@ -119,6 +127,6 @@ public class LuceneDocument implements ISearchableDocument {
 
     @Override
     public String toString() {
-        return "\n"+describedArtifactPointer.getDisplayName()+"\t"+ describedArtifactPointer.getSourceFilePath() +"\nlayer: " + getLayer() + "     contents:" + getContents();
+        return "\n"+describedArtifactPointer.toString()+"\t"+ describedArtifactPointer.getSourceFilePath() +"\nlayer: " + getLayer() + "     contents:" + getContents();
     }
 }

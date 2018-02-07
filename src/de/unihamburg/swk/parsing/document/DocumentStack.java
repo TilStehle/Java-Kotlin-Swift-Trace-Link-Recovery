@@ -189,4 +189,11 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	{
 		return typeStack.peek().getDisplayName();
 	}
+
+	public TDocument currentDocument() {
+		if(documentStack.isEmpty())
+			return null;
+
+		return documentStack.peek();
+	}
 }

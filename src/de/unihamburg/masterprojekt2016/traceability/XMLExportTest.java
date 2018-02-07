@@ -20,9 +20,9 @@ public class XMLExportTest {
 
 		// SWIFT (Senke)
 		TypePointer swiftClassPointer = new TypePointer("swiftClass");
-		MethodPointer swiftMethodPointer = new MethodPointer("SwiftMethod");
+		ConstructorPointer swiftMethodPointer = new ConstructorPointer("SwiftMethod");
 		swiftMethodPointer.setTypePointer(swiftClassPointer);
-		swiftMethodPointer.setReturnType("Int");
+		//swiftMethodPointer.setReturnType("Int");
 		swiftMethodPointer.addParameter(new Parameter("age", "Int"));
 
 		TraceabilityModel javaClassModel = new TraceabilityModel(javaClassPointer);

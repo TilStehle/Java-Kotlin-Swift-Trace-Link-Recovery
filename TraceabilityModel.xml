@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<traceabilityModel>
+    <subModels>
+        <subModelArray>
+            <describedArtefactPointer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="typePointer">
+                <fullyQualifiedName>javaClass</fullyQualifiedName>
+                <classification>NO_CLASSIFICATION</classification>
+            </describedArtefactPointer>
+            <subModels/>
+            <traceabilityLinks>
+                <traceabilityLinkList>
+                    <source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="methodPointer">
+                        <name>JavaMethod</name>
+                        <typePointer>
+                            <fullyQualifiedName>javaClass</fullyQualifiedName>
+                            <classification>NO_CLASSIFICATION</classification>
+                        </typePointer>
+                        <parameters>
+                            <type>int</type>
+                            <name>age</name>
+                        </parameters>
+                        <returnType>int</returnType>
+                    </source>
+                    <target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="constructorPointer">
+                        <name>SwiftMethod</name>
+                        <typePointer>
+                            <fullyQualifiedName>swiftClass</fullyQualifiedName>
+                            <classification>NO_CLASSIFICATION</classification>
+                        </typePointer>
+                        <parameters>
+                            <type>Int</type>
+                            <name>age</name>
+                        </parameters>
+                    </target>
+                    <probability>1.0</probability>
+                </traceabilityLinkList>
+            </traceabilityLinks>
+        </subModelArray>
+    </subModels>
+    <traceabilityLinks>
+        <traceabilityLinkList>
+            <source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="typePointer">
+                <fullyQualifiedName>javaClass</fullyQualifiedName>
+                <classification>NO_CLASSIFICATION</classification>
+            </source>
+            <target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="typePointer">
+                <fullyQualifiedName>swiftClass</fullyQualifiedName>
+                <classification>NO_CLASSIFICATION</classification>
+            </target>
+            <probability>1.0</probability>
+        </traceabilityLinkList>
+    </traceabilityLinks>
+</traceabilityModel>

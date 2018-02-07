@@ -25,7 +25,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	private DocumentStack<TDocument> documentStack;
 
 	public DocumentBuilder(String filePath, IDocumentFactory<TDocument> documentFactory) {
-		documentStack = new DocumentStack<>(filePath, documentFactory);
+		documentStack = new DocumentStack<>(filePath.replace('\\', '/'), documentFactory);
 	}
 
 	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification, List<String> inheritance) {
@@ -184,6 +184,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		TraceabilityPointer traceabilityPointer = documentStack.currentTraceabilityPointer();
 		if (traceabilityPointer instanceof IHasParameter) {
 			((IHasParameter) traceabilityPointer).addParameter(new Parameter(name, type));
+			documentStack.currentDocument().traceabilityPointerHasChanged();
 		} else {
 			throw new IllegalStateException(name + " " + type);
 		}

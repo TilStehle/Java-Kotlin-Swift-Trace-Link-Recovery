@@ -6,7 +6,10 @@ import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public interface ITraceabilityRecoveryService
 {
@@ -17,9 +20,14 @@ public interface ITraceabilityRecoveryService
 
 	List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, Language language);
 
-    List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String path);
+    List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String... pathPrefixes);
 
-    void readDocuments(String... projectPaths) throws IOException, IndexPathNotSetException;
+    void readDocuments(Predicate<String> pathFilter , String... projectPaths) throws IndexPathNotSetException, IOException ;
+
+    default void readDocuments(String... projectPaths) throws IOException, IndexPathNotSetException
+    {
+        readDocuments(p -> true, projectPaths);
+    }
     int getNumberOfDocs();
 	void loadIndexFromDisk() throws IOException, IndexPathNotSetException;
 

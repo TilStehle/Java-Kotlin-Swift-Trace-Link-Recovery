@@ -151,11 +151,7 @@ public class MAPQEvaluator {
 
     private ITraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
         LuceneTraceabilityRecoveryService recoveryService = null;
-        try {
             recoveryService = new LuceneTraceabilityRecoveryService();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
             Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
             recoveryService.setDocumentFilter(documentFilter);

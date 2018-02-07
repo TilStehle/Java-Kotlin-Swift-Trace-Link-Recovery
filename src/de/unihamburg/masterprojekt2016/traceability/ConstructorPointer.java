@@ -67,15 +67,39 @@ public class ConstructorPointer extends NamedTypeElementPointer implements IHasP
 		if (o == null || getClass() != o.getClass()) return false;
 
 		ConstructorPointer that = (ConstructorPointer) o;
-
+		if (!hasSameParametersAs(that))
+			return false;
 		if (getTypePointer() != null ? !getTypePointer().equals(that.getTypePointer()) : that.getTypePointer() != null) return false;
-		return parameters != null ? parameters.equals(that.parameters) : that.parameters == null;
+		return true;
+	}
+
+	private boolean hasSameParametersAs(ConstructorPointer other) {
+		List<Parameter> otherMethodsParameters = other.parameters;
+		if (otherMethodsParameters.size() != this.parameters.size()) {
+			return false;
+		}
+		for (int i = 0; i < otherMethodsParameters.size(); i++) {
+			Parameter otherParam = otherMethodsParameters.get(i);
+			if (!otherParam.equals(parameters.get(i))) {
+				return false;
+
+			}
+		}
+		return true;
+	}
+
+	private int computeParameterHashCode() {
+		int hashCode=0;
+		for (Parameter parameter : parameters) {
+			hashCode=31*hashCode+parameter.hashCode();
+		}
+		return hashCode;
 	}
 
 	@Override
 	public int hashCode() {
 		int result = getTypePointer() != null ? getTypePointer().hashCode() : 0;
-		result = 31 * result + (parameters != null ? parameters.hashCode() : 0);
+		result = 31 * result + computeParameterHashCode();
 		return result;
 	}
 }

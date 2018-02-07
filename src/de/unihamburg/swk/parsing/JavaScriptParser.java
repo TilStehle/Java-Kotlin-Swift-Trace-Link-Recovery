@@ -35,7 +35,7 @@ public class JavaScriptParser<TDocument extends ISearchableDocument> implements 
 
 
 	private List<TDocument> collectDocumentsWithANTLR() {
-		System.err.println("GithubJavaParser parse: " + filePath);
+		System.err.println("Javascriptparser parse: " + filePath);
 		
 		ANTLRInputStream input;
 		try (InputStream is = new FileInputStream(filePath)) {

@@ -7,6 +7,7 @@ import de.unihamburg.swk.parsing.ParserFactory;
 import de.unihamburg.swk.traceabilityrecovery.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang.ArrayUtils;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.StoredField;
@@ -30,6 +31,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import static java.io.File.separator;
+
 /**
  * Created by Tilmann Stehle on 20.01.2017.
  */
@@ -43,9 +46,10 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     private Directory index;
     private Path indexPath;
     private ParserProgress parserProgress;
+    private String[] projectPaths;
 
 
-    public LuceneTraceabilityRecoveryService() throws IOException {
+    public LuceneTraceabilityRecoveryService() {
         analyzer = new SourceCodeAnalyzer(SourceCodeAnalyzer.ENGLISH_STOP_WORDS_SET);
         documentsById = new HashMap<>();
         documentsByPointers = new HashMap<>();
@@ -57,21 +61,19 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         if (indexPath == null) {
             throw new IndexPathNotSetException();
         }
+
         index = FSDirectory.open(indexPath);
         IndexReader reader = null;
-        try {
-            reader = DirectoryReader.open(index);
+        reader = DirectoryReader.open(index);
 
-            for (int i = 0; i < reader.maxDoc(); i++) {
+        for (int i = 0; i < reader.maxDoc(); i++) {
 
-                Document document = reader.document(i);
-                LuceneDocument loadedLuceneDocument = LuceneDocument.fromDocument(document);
-                this.documentsById.put(loadedLuceneDocument.getId(), loadedLuceneDocument);
-                documentsByPointers.put(loadedLuceneDocument.getTraceabilityPointer(), loadedLuceneDocument);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            Document document = reader.document(i);
+            LuceneDocument loadedLuceneDocument = LuceneDocument.fromDocument(document);
+            this.documentsById.put(loadedLuceneDocument.getId(), loadedLuceneDocument);
+            documentsByPointers.put(loadedLuceneDocument.getTraceabilityPointer(), loadedLuceneDocument);
         }
+
     }
 
 
@@ -127,13 +129,12 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     }
 
     @Override
-    public List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String path) {
+    public List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String... pathPrefixes) {
         LuceneDocument queryDocument = documentsByPointers.get(pointer);
-        Query combinedQuery = createQueryFromDocument(queryDocument, path);
+        Query combinedQuery = createQueryFromDocument(queryDocument, pathPrefixes);
         return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer);
 
     }
-
 
 
     private List<TraceabilityLink> getSortedTraceabilityLinksForLuceneQuery(Query query, TraceabilityPointer pointer) {
@@ -152,9 +153,9 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                     TraceabilityPointer targetPointer = luceneDocument.getTraceabilityPointer();
 //                    if( targetPointer instanceof  TypePointer && pointer instanceof TypePointer || targetPointer instanceof MethodPointer && pointer instanceof MethodPointer )//only add links between equal Artefact Types (method->method/class->class)
 //                    {
-                        TraceabilityLink traceabilityLink = new TraceabilityLink(pointer, targetPointer);
-                        traceabilityLink.setProbability(scoreDoc.score);
-                        hitLinks.add(traceabilityLink);
+                    TraceabilityLink traceabilityLink = new TraceabilityLink(pointer, targetPointer);
+                    traceabilityLink.setProbability(scoreDoc.score);
+                    hitLinks.add(traceabilityLink);
 //                    }
                 }
             }
@@ -167,18 +168,20 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             return new ArrayList<>();
         }
     }
-    private Query createQueryFromDocument(LuceneDocument queryDocument, String pathPrefix) {
-        try {
-            Query filterQuery = new QueryParser("path", analyzer).parse(pathPrefix+'*');
 
-            return createQueryWithFilterCriteria(queryDocument, filterQuery);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
+    private Query createQueryFromDocument(LuceneDocument queryDocument, String... pathPrefixes) {
+        BooleanQuery.Builder booleanQueryBuilder = new BooleanQuery.Builder();
+        for (int i = 0; i < pathPrefixes.length; i++) {
+
+            Query prefixQuery = new PrefixQuery(new Term("path", pathPrefixes[i]));
+            booleanQueryBuilder.add(prefixQuery, BooleanClause.Occur.SHOULD);
         }
+
+        return createQueryWithFilterCriteria(queryDocument, booleanQueryBuilder.build());
+
     }
 
-    private Query createQueryWithFilterCriteria(LuceneDocument queryDocument, Query filterQuery )
-    {
+    private Query createQueryWithFilterCriteria(LuceneDocument queryDocument, Query filterQuery) {
         String contents = queryDocument.getContents();
         String layer = queryDocument.getLayer();
         BooleanQuery.Builder booleanQueryBuilder = new BooleanQuery.Builder();
@@ -236,8 +239,10 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         return new BoostQuery(query, boost);
     }
 
+
     @Override
-    public void readDocuments(String... projectPaths) throws IndexPathNotSetException, IOException {
+    public void readDocuments(Predicate<String> filter, String... projectPaths) throws IndexPathNotSetException, IOException {
+        this.projectPaths = projectPaths;
         if (indexPath == null) {
             throw new IndexPathNotSetException();
         }
@@ -251,7 +256,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         List<String> sourceFiles = new ArrayList<String>();
         for (String dirPath : projectPaths) {
             File dir = new File(dirPath);
-            sourceFiles.addAll(filterSourceFiles(dir, acceptedFileEndings));
+            sourceFiles.addAll(filterSourceFiles(dir, acceptedFileEndings).stream().filter(filter).collect(Collectors.toList()));
         }
         createDocuments(sourceFiles);
     }
@@ -289,7 +294,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                 } catch (Exception ex) {
                     future.cancel(true);
                     parserProgress.fileParseFailed(filePath);
-ex.printStackTrace();
+                    ex.printStackTrace();
                 }
             } else {
                 parserProgress.fileParseFailed(filePath);
@@ -337,7 +342,6 @@ ex.printStackTrace();
 
         return this.parserProgress;
     }
-
 
 
     @Override
