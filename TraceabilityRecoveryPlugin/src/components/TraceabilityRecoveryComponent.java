@@ -106,7 +106,7 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
     }
 
     /**
-     * Refreshes the recovery service. Calls readDocuments() on all given paths.
+     * Refreshes the recovery service. Calls discardIndexAndReadDocuments() on all given paths.
      */
     public void refreshRecoveryService(){
 

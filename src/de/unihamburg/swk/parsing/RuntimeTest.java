@@ -132,9 +132,9 @@ public class RuntimeTest {
 //		
 //		LuceneTraceabilityRecoveryService recoveryService = new LuceneTraceabilityRecoveryService();
 //		recoveryService.setIndexPath("/Users/macbook/Desktop/Index");
-//		recoveryService.readDocuments("./testDocs/Source", "./testDocs/Source");
+//		recoveryService.discardIndexAndReadDocuments("./testDocs/Source", "./testDocs/Source");
 //		
-////		recoveryService.readDocuments("./testDocs/android-prototype", "./testDocs/mellow-ios");
+////		recoveryService.discardIndexAndReadDocuments("./testDocs/android-prototype", "./testDocs/mellow-ios");
 //
 //		System.out.println("--------NumberOfDocs--------");
 //		System.out.println(recoveryService.getNumberOfDocs());

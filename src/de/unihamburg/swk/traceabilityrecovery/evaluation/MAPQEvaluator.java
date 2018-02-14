@@ -8,9 +8,6 @@ import de.unihamburg.swk.traceabilityrecovery.Language;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
-import org.apache.lucene.document.StoredField;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBContext;
@@ -170,7 +167,7 @@ public class MAPQEvaluator {
         {
             try {
                 recoveryService.setIndexPath(testDocsPath+"/LuceneIndex");
-                recoveryService.readDocuments(testDocsPath);
+                recoveryService.discardIndexAndReadDocuments(testDocsPath);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -11,7 +11,7 @@ public class LuceneRecoverytest {
         try {
             LuceneTraceabilityRecoveryService luceneTraceabilityRecoveryService = new LuceneTraceabilityRecoveryService();
             luceneTraceabilityRecoveryService.setIndexPath("C:\\Users\\Tilmann Stehle\\Documents\\Tests\\index");
-            luceneTraceabilityRecoveryService.readDocuments("C:\\Users\\Tilmann Stehle\\Documents\\Tests");
+            luceneTraceabilityRecoveryService.discardIndexAndReadDocuments("C:\\Users\\Tilmann Stehle\\Documents\\Tests");
             luceneTraceabilityRecoveryService.printDocuments();
 
         } catch (IOException e) {

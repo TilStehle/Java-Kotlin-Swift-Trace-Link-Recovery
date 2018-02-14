@@ -51,7 +51,7 @@ public class RecoveryServiceRefreshTask extends Task.Backgroundable implements O
         this.progressIndicator = progressIndicator;
 
         try {
-            recoveryService.readDocuments(pathsToRead);
+            recoveryService.discardIndexAndReadDocuments(pathsToRead);
 
             if (cancelled)
                 throw new IOException();

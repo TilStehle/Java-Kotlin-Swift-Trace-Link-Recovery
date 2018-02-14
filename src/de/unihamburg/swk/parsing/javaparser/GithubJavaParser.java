@@ -34,6 +34,7 @@ public class GithubJavaParser<TDocument extends ISearchableDocument>  implements
         @Override
         public List<TDocument> parseDocuments() {
             try (InputStream is = new FileInputStream(filePath)) {
+                System.out.println("JavaParser parse: " + filePath);
                 CompilationUnit compilationUnit = com.github.javaparser.JavaParser.parse(is);
                 JavaVisitor<TDocument> visitor = new JavaVisitor( );
                 compilationUnit.accept(visitor, docBuilder);
