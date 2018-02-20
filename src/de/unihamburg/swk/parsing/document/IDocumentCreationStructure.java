@@ -17,8 +17,10 @@ public interface IDocumentCreationStructure<TDocument extends ISearchableDocumen
 	void closedRecentTypeDeclaration();
 
 	String recentSimpleTypeName();
-	
+
 	void enterElementDeclaration(TraceabilityPointer traceabilityPointer);
+
+	void enterElementDeclarationWithoutParentType(TraceabilityPointer traceabilityPointer);
 
 	void closedRecentElementDeclaration();
 

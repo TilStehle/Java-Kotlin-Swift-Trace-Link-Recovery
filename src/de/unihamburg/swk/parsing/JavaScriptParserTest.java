@@ -11,7 +11,7 @@ public class JavaScriptParserTest {
     public static void main(String[] args) {
 
 
-        JavaScriptParser<LuceneDocument> parser = new JavaScriptParser<>("C:\\Users\\Tilmann Stehle\\Documents\\Diss\\runtime-EclipseApplication\\DESMOSCRIPT\\src\\Event.js", new LuceneDocsFactory());
+        JavaScriptParser<LuceneDocument> parser = new JavaScriptParser<>("C:\\Users\\Tilmann Stehle\\Documents\\Diss\\runtime-EclipseApplication\\desmoj_js\\target\\javascript\\test\\person\\Person.js", new LuceneDocsFactory());
 
         long time = System.currentTimeMillis();
 

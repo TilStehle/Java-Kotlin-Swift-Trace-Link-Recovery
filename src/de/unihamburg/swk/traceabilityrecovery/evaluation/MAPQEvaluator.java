@@ -26,19 +26,6 @@ import java.util.stream.Collectors;
 public class MAPQEvaluator {
     private static boolean LOAD_INDEX_FROM_DISK=true;
 
-    @Test
-    public void addDocumentToIndex() throws IOException {
-        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereKomplett");
-        String path= "C:/Users/Tilmann Stehle/Documents/Masterprojekt/SVN/SE-Manager/TraceabilityRecovery/testDocs/LuceneNet/Net/Codecs/Compressing/CompressingTermVectorsWriter.cs";
-        ISourceCodeParser parser = ParserFactory.<LuceneDocument>createParser(new LuceneDocsFactory(), path);
-        Collection<LuceneDocument> documents = parser.parseDocuments();
-        Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
-        for (LuceneDocument document : documents) {
-            if (documentFilter == null || documentFilter.test(document)) {
-                ((LuceneTraceabilityRecoveryService)recoveryService).addDocument(document);
-            }
-        }
-    }
 
     @Test
     public void printSimilarities() throws IOException {

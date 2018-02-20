@@ -77,7 +77,7 @@ public class TypePointer extends TraceabilityPointer implements FullyQuallyfying
         boolean b = classification != null ? classification.equals(that.classification) : that.classification == null;
         boolean c = _fileNameExtension != null ? _fileNameExtension.equals(that._fileNameExtension) : that._fileNameExtension == null;
 
-        return a && b;
+        return a && b && c;
     }
 
     @Override

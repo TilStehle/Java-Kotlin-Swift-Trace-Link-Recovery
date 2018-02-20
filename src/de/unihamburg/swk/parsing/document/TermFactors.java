@@ -35,5 +35,7 @@ public class TermFactors {
 
 	public static final int OWN_TYPE_PARAMETER_FACTOR = 1;
 	public static final int OTHER_TYPE_PARAMETER_FACTOR = 1;
-	
+
+    public static final int OWN_FUNCTION_DECLARATION_FACTOR = 2 ;
+	public static final int OTHER_FUNCTION_DECLARATION_FACTOR =1 ;
 }

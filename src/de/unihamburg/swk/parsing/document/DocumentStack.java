@@ -37,6 +37,7 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 		typeNameStack = new Stack<>();
 	}
 
+
 	@Override
 	public void enterTypeDeclaration(TypePointerClassification classification, String simpleName) {
 		TypePointer typePointer;
@@ -67,6 +68,12 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 		addEnclosingTypeTerm2();
 	}
 
+	@Override
+	public void enterElementDeclarationWithoutParentType(TraceabilityPointer traceabilityPointer) {
+		initializePointer(traceabilityPointer);
+		createEmptyDocumentFor(traceabilityPointer);
+	}
+
 	private void addEnclosingTypeTerm2() {
 		if(typeNameStack.size() > 1 && ENCLOSE_TYPE_FACTOR > 0) {
 			documentStack.peek().addTerm(ENCLOSE_TYPE_FACTOR, typeNameStack.peek(), ENCLOSE_TYPE);
@@ -91,12 +98,14 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	
 	@Override
 	public void addTerm(String term, String termType, int ownFactor, int otherFactor) {
-		if (ownFactor > 0) {
-			documentStack.peek().addTerm(ownFactor, term, termType);
-		}
-		if (otherFactor > 0) {
-			for (TDocument tDocument : documentStack.subList(0, documentStack.size() - 1)) {
-				tDocument.addTerm(otherFactor, term, termType);
+		if(!documentStack.isEmpty()) {
+			if (ownFactor > 0) {
+				documentStack.peek().addTerm(ownFactor, term, termType);
+			}
+			if (otherFactor > 0) {
+				for (TDocument tDocument : documentStack.subList(0, documentStack.size() - 1)) {
+					tDocument.addTerm(otherFactor, term, termType);
+				}
 			}
 		}
 	}
@@ -139,10 +148,8 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 			if (!typeStack.isEmpty()) {
 				((IHasTypePointer) pointer).setTypePointer(typeStack.peek());
 			}
-			pointer.setSourceFilePath(filePath);
-		} else {
-			System.err.println("unknown enterElementDeclaration");
 		}
+		pointer.setSourceFilePath(filePath);
 	}
 	
 	

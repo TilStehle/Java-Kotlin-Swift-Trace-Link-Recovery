@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @see NamedTypeElementPointer 
  */
 @XmlTransient //Prevents the mapping of a JavaBean property/type to XML representation
-@XmlSeeAlso({MethodPointer.class, AttributePointer.class, ConstructorPointer.class, TypePointer.class, PackagePointer.class, SubscriptPointer.class, ClosurePointer.class, LambdaPointer.class, FilePointer.class, XmlElementDeclPointer.class})
+@XmlSeeAlso({FunctionPointer.class, MethodPointer.class, AttributePointer.class, ConstructorPointer.class, TypePointer.class, PackagePointer.class, SubscriptPointer.class, ClosurePointer.class, LambdaPointer.class, FilePointer.class, XmlElementDeclPointer.class})
     public abstract class TraceabilityPointer {
 
     protected String _fileNameExtension;

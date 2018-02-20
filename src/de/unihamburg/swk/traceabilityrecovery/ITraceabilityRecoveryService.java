@@ -19,10 +19,13 @@ public interface ITraceabilityRecoveryService
     void enqueueCommand(ITraceabilityRecoveryCommand command) throws IOException;
 
     List<TraceabilityLink> getSortedTraceabilityLinksForQuery(Multiset<String> queryTerms, Language language);
+    List<TraceabilityLink> getSortedTraceabilityLinksToOtherLanguagesForPointer(TraceabilityPointer pointer);
 
 	List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, Language language);
 
     List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String... pathPrefixes);
+
+    void addFolderToIndex(Predicate<String> pathFilter , String fodlerPaths) throws IndexPathNotSetException, IOException ;
 
     void discardIndexAndReadDocuments(Predicate<String> pathFilter , String... projectPaths) throws IndexPathNotSetException, IOException ;
 
@@ -35,7 +38,7 @@ public interface ITraceabilityRecoveryService
 
     void addDocumentsForFilePath(String path) throws IOException;
 
-    void removeDocumentsForFilePath(String path) throws IOException;
+    void removeDocumentsForFilesWithPathPrefix(String path) throws IOException;
     int getNumberOfDocs();
 	void loadIndexFromDisk() throws IOException, IndexPathNotSetException;
 

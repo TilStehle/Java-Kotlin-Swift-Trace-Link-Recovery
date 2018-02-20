@@ -21,7 +21,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	private static final String ATTRIBUTE = AttributePointer.ATTRIBUTE;
 	private static final String PARAMETER = "PARAMETER";
 	private static final String LOCAL_VARIABLE = "LOCAL VARIABLE";
-	
+	private static final String FUNCTIONDECLARATION = "FUNCTIONDECLARATION";
+
 	private DocumentStack<TDocument> documentStack;
 
 	public DocumentBuilder(String filePath, IDocumentFactory<TDocument> documentFactory) {
@@ -35,10 +36,15 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 			documentStack.addTerm(name, INHERITANCE, TermFactors.OWN_INHERITANCE_FACTOR, TermFactors.OTHER_INHERITANCE_FACTOR);
 		}
 	}
-	
+
 	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification) {
 		enterAnonymousTypeDeclaration(pointerName, classification);
 		documentStack.addTerm(pointerName, TYPE_DECLARATION, TermFactors.OWN_TYPE_DECLARATION_FACTOR, TermFactors.OTHER_TYPE_DECLARATION_FACTOR);
+	}
+
+	public void enterFunctionDeclaration(String functionName,  int startLine) {
+		documentStack.enterElementDeclarationWithoutParentType(new FunctionPointer(functionName,startLine));
+		documentStack.addTerm(functionName, FUNCTIONDECLARATION, TermFactors.OWN_FUNCTION_DECLARATION_FACTOR, TermFactors.OTHER_FUNCTION_DECLARATION_FACTOR);
 	}
 	
 	public void enterAnonymousTypeDeclaration(String pointerName, TypePointerClassification classification) {

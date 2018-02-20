@@ -16,14 +16,22 @@ public class LuceneDocument implements ISearchableDocument {
         TraceabilityPointer pointer = XMLImport.unmarshalPointer(original.get("pointer"));
         StoredField idField = (StoredField) original.getField("id");
         long id = new Long(idField.numericValue().longValue());
-        LuceneDocument luceneDocument = new LuceneDocument(pointer, id);
+        LuceneDocument luceneDocument = new LuceneDocument();
         luceneDocument.document = original;
+        luceneDocument.id = id;
+        luceneDocument.describedArtifactPointer = pointer;
+
         return luceneDocument;
     }
 
     private long id;
     private TraceabilityPointer describedArtifactPointer;
     private Document document;
+
+    private LuceneDocument()
+    {
+
+    }
 
     public LuceneDocument(TraceabilityPointer pointer, long id) {
 

@@ -3,6 +3,7 @@ package de.unihamburg.swk.parsing.antlr4.javascript;
 import de.unihamburg.swk.parsing.antlr4.java8.Java8Parser;
 import de.unihamburg.swk.parsing.document.*;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -22,21 +23,32 @@ public class JavaScriptListenerImplementation<TDocument extends ISearchableDocum
         listenerExtension = new GeneralListenerExtension(TermMapperManager.JAVASCRIPT);
     }
 
+
     @Override
     public void enterFunctionDeclaration(JavaScriptParser.FunctionDeclarationContext ctx) {
         String pointerName = ctx.Identifier().toString();
         String mappedName = listenerExtension.getMappedMethodName(pointerName);
-        docBuilder.enterMethod(pointerName, mappedName);
+        mappedName=mappedName != null? mappedName : "anonymous function";
+        docBuilder.enterFunctionDeclaration(mappedName , ctx.getStart().getLine());
     }
 
     @Override
     public void exitFunctionDeclaration(JavaScriptParser.FunctionDeclarationContext ctx) {
+
         docBuilder.closeElement();
     }
 
     @Override
     public void enterFunctionExpression(JavaScriptParser.FunctionExpressionContext ctx) {
-        docBuilder.enterMethod("", "", getUndefinedType());
+        String mappedName = null;
+        if(ctx.Identifier() !=null)
+        {
+            String pointerName = ctx.Identifier().toString();
+            mappedName = listenerExtension.getMappedMethodName(pointerName);
+        }
+
+        mappedName=mappedName != null? mappedName : "";
+        docBuilder.enterFunctionDeclaration(mappedName,ctx.getStart().getLine());
     }
 
 
@@ -49,7 +61,7 @@ public class JavaScriptListenerImplementation<TDocument extends ISearchableDocum
     public void enterClassExpression(JavaScriptParser.ClassExpressionContext ctx) {
         String className = ctx.Identifier().getText();
         List<String> inheritance = new LinkedList<>();
-        docBuilder.enterTypeDeclaration(className, CLASS, inheritance);
+       docBuilder.enterTypeDeclaration(className, CLASS, inheritance);
     }
     @Override
     public void exitClassExpression(JavaScriptParser.ClassExpressionContext ctx) {
@@ -97,6 +109,7 @@ public class JavaScriptListenerImplementation<TDocument extends ISearchableDocum
     public void enterVariableDeclaration(JavaScriptParser.VariableDeclarationContext ctx) {
         docBuilder.enterLocalVariable(ctx.Identifier().getText(), getUndefinedType());
     }
+
 
     private PointerTypeSeparator getUndefinedType() {
         return new PointerTypeSeparator("", TermMapperManager.JAVASCRIPT);

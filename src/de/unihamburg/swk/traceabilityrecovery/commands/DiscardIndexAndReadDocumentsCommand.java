@@ -11,18 +11,30 @@ import java.util.function.Predicate;
 public class DiscardIndexAndReadDocumentsCommand implements ITraceabilityRecoveryCommand {
 
     private final ITraceabilityRecoveryService traceabilityRecoveryService;
-    private Predicate<String> projectPathFilter;
-    private String[] projectPaths;
+    private final Predicate<String> pathFilter;
+    private final String[] projectPaths;
+    private String filePath;
 
-    public DiscardIndexAndReadDocumentsCommand (ITraceabilityRecoveryService traceabilityRecoveryService, Predicate<String> projectPathFilter, String... projectPaths)
+    public DiscardIndexAndReadDocumentsCommand(ITraceabilityRecoveryService traceabilityRecoveryService, String... projectPaths)
+    {
+        this(traceabilityRecoveryService,null, projectPaths);
+    }
+    public DiscardIndexAndReadDocumentsCommand(ITraceabilityRecoveryService traceabilityRecoveryService, Predicate<String> pathFilter , String... projectPaths)
     {
         this.traceabilityRecoveryService = traceabilityRecoveryService;
-        this.projectPathFilter = projectPathFilter;
 
+        this.pathFilter = pathFilter;
         this.projectPaths = projectPaths;
     }
     @Override
     public void execute() throws IOException {
-        traceabilityRecoveryService.discardIndexAndReadDocuments(projectPathFilter,projectPaths);
+        if(pathFilter == null)
+        {
+            traceabilityRecoveryService.discardIndexAndReadDocuments( projectPaths);
+        }
+        else
+        {
+            traceabilityRecoveryService.discardIndexAndReadDocuments(pathFilter, projectPaths);
+        }
     }
 }

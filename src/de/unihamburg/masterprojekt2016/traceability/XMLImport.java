@@ -7,21 +7,33 @@ import javax.xml.bind.Unmarshaller;
 import java.io.StringReader;
 import java.io.StringWriter;
 
+import static javax.xml.bind.JAXBContext.*;
+
 /**
  * Created by Tilmann Stehle on 07.02.2017.
  */
 public class XMLImport {
+    private static JAXBContext jaxbContext;
+    private static Unmarshaller jaxbUnmarshaller;
+    static
+    {
+        try {
+            jaxbContext = newInstance(TraceabilityModel.class);
+            jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Creates a String containing the  XML representation of  a given Traceability Pointer
      */
 
     public static TraceabilityPointer unmarshalPointer(String pointerAsXML) {
 
-        JAXBContext jaxbContext = null;
+
         try {
-            jaxbContext = JAXBContext.newInstance(TraceabilityModel.class);
             StringReader stringReader = new StringReader(pointerAsXML);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             TraceabilityPointer pointer = (TraceabilityPointer) jaxbUnmarshaller.unmarshal(stringReader);
             return pointer;
         } catch (JAXBException e) {
