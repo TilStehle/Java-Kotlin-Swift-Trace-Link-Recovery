@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.unihamburg.swk.parsing.antlr4.swift4.Swift4Lexer;
+import de.unihamburg.swk.parsing.antlr4.swift4.Swift4ListenerImplementation;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import org.antlr.v4.runtime.ANTLRInputStream;
@@ -22,6 +24,7 @@ public class SwiftParser<TDocument extends ISearchableDocument> implements ISour
 
 	private String filePath;
 	private IDocumentFactory<TDocument> documentFactory;
+	public static List<Long> timesNeeded = new ArrayList<Long>();
 
 	public SwiftParser(String filePath, IDocumentFactory<TDocument> documentFactory) {
 		this.filePath = filePath;
@@ -35,6 +38,7 @@ public class SwiftParser<TDocument extends ISearchableDocument> implements ISour
 	}
 
 	private List<TDocument> collectDocumentsWithANTLR() {
+		long start = System.currentTimeMillis();
 		ANTLRInputStream input;
 		try (InputStream is = new FileInputStream(filePath)) {
 			input = new ANTLRInputStream(is);
@@ -42,13 +46,13 @@ public class SwiftParser<TDocument extends ISearchableDocument> implements ISour
 			e.printStackTrace();
 			return null;
 		}
-		Swift3Lexer lexer = new Swift3Lexer(input);
+		Swift4Lexer lexer = new Swift4Lexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		Swift3Parser parser = new Swift3Parser(tokens);
-        parser.setErrorHandler(new InterruptableErrorHandler());
-		ParseTree tree = parser.topLevel();
+		de.unihamburg.swk.parsing.antlr4.swift4.Swift4Parser parser = new de.unihamburg.swk.parsing.antlr4.swift4.Swift4Parser(tokens);
+		parser.setErrorHandler(new InterruptableErrorHandler());
+		ParseTree tree = parser.program();
 		ParseTreeWalker walker = new ParseTreeWalker();
-		Swift3ListenerImplementation<TDocument> swiftListener = new Swift3ListenerImplementation<>(filePath,
+		Swift4ListenerImplementation<TDocument> swiftListener = new Swift4ListenerImplementation<>(filePath,
 				documentFactory);
 		try {
 			walker.walk(swiftListener, tree);
@@ -59,6 +63,9 @@ public class SwiftParser<TDocument extends ISearchableDocument> implements ISour
 		}
 		finally {
 
+			long stop = System.currentTimeMillis();
+			long timeElapsed= stop -start;
+			timesNeeded.add(timeElapsed);
 			if(swiftListener.errorOccurs()) {
 				System.err.println(">> fail <<");
 			} else {

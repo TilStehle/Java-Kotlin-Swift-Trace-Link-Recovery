@@ -5,6 +5,9 @@
       <artifact name="TraceabilityRecovery:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java" line="4" mnemonic="7" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="e40a4491-b325-4af6-85f3-cb02df95a4e6" name="Default" comment="" />
     <ignored path="TraceabilityRecovery.iws" />
@@ -27,114 +30,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LuceneTraceabilityRecoveryService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java">
+      <file leaf-file-name="MAPQEvaluator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="175" column="49" lean-forward="false" selection-start-line="175" selection-start-column="36" selection-end-line="175" selection-end-column="49" />
-              <folding>
-                <element signature="docComment;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-                <element signature="method#createQueryWithFilterCriteria#0;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-                <element signature="method#createQueryFromDocument#1;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-                <element signature="method#computeWordCounts#0;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-                <element signature="e#12574#12582#0" expanded="true" />
-                <element signature="e#18257#18273#0" expanded="true" />
-                <element signature="e#20219#20237#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TraceabilityPointer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            <state relative-caret-position="799">
+              <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MethodPointer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/MethodPointer.java">
+      <file leaf-file-name="Swift4Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="59" column="82" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="82" />
+            <state relative-caret-position="104">
+              <caret line="1610" column="46" lean-forward="false" selection-start-line="1610" selection-start-column="46" selection-end-line="1611" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypePointer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TypePointer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="73" column="39" lean-forward="true" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+            <state relative-caret-position="510">
+              <caret line="77" column="7" lean-forward="true" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LuceneDocument.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java">
+      <file leaf-file-name="SwiftParserTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="68">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLImport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLImport.java">
+      <file leaf-file-name="Swift4ListenerImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ListenerImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1418#1419#0" expanded="true" />
+                <element signature="e#1464#1465#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadIndexFromDiskCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/LoadIndexFromDiskCommand.java">
+      <file leaf-file-name="Swift4ParserTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/Swift4ParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DiscardIndexAndReadDocumentsCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/DiscardIndexAndReadDocumentsCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddFolderToIndexCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/AddFolderToIndexCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            <state relative-caret-position="119">
+              <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RemoveDocumentsForFilePathPrefixCommand.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/RemoveDocumentsForFilePathPrefixCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -152,36 +109,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>path</find>
-      <find>pathpr</find>
-      <find>close</find>
-      <find>query</find>
-      <find>Parsing Fil</find>
-      <find>reader</find>
-      <find>Methodde</find>
-      <find>eos</find>
-      <find>assign</find>
-      <find>assignmentOperator</find>
-      <find>=</find>
-      <find>functionexpress</find>
-      <find>e</find>
-      <find>enter</find>
-      <find>enterE</find>
-      <find>enterEl</find>
-      <find>enterEleme</find>
-      <find>enterElemen</find>
-      <find>variableS</find>
-      <find>variableDeclarationList</find>
-      <find>variabled</find>
-      <find>sup</find>
-      <find>repla</find>
-      <find>purpo</find>
-      <find>deSerializeHashes</find>
-      <find>createIndexWriter</find>
-      <find>readD</find>
-      <find>read</find>
-      <find>try(IndexWrite</find>
-      <find>ownla</find>
+      <find>intecredentials</find>
+      <find>intercredentials</find>
+      <find>interfcredentials</find>
+      <find>interfacredentials</find>
+      <find>interfaccredentials</find>
+      <find>interface credentials</find>
+      <find>interface t</find>
+      <find>p</find>
+      <find>ClassDe</find>
+      <find>interface ty</find>
+      <find>Parsing File</find>
+      <find>C</find>
+      <find>CS</find>
+      <find>CSh</find>
+      <find>CSha</find>
+      <find>CSharp</find>
+      <find>CSharpP</find>
+      <find>CSharpPa</find>
+      <find>CSharpPar</find>
+      <find>CSharpParser</find>
+      <find>CSharpParser p</find>
+      <find>CSharpParser pa</find>
+      <find>Identifier</find>
+      <find>Ident</find>
+      <find>identi</find>
+      <find>Identifier</find>
+      <find>JavaLetter</find>
+      <find>ski</find>
+      <find>classdec</find>
+      <find>VAR</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -191,8 +148,10 @@
       <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\TraceabilityRecoveryPlugin</dir>
       <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg\swk\parsing\antlr4\javascript</dir>
       <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg\swk\parsing</dir>
-      <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg\swk</dir>
       <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg</dir>
+      <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\testDocs</dir>
+      <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\testDocs\TwidereKomplett\java</dir>
+      <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg\swk</dir>
     </dirStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -203,57 +162,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/PointerTypeSeparator.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/JavaVisitor.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/DepthFirstTraversor.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/ParserFactory.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaParserTest.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptParser.g4" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLExportTest.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/ConstructorPointer.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ISearchableDocument.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParser.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/DocumentBuilder.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/IHasParameter.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/ITraceabilityRecoveryCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ITraceabilityRecoveryCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/DiscardIndexAndReadDocumentsCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/removeDocumentsForPathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/RemoveDocumentsForPathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/AddDocumentsForPathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ReplaceDocumentsForPathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/ITraceabilityRecoveryCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/GithubJavaParser.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/AddDocumentsForPathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/AddDocumentsForFilePathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/RemoveDocumentsForPathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/ReplaceDocumentsForPathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/ReplaceDocumentsForFilePathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParserTest.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/IDocumentCreationStructure.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/NamedTypeElementPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/SubscriptPointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentStack.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/IDocumentCreationStructure.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/MethodPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/ConstructorPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/AttributePointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLExportTest.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLImportTest.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/TestDocParser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/csharp/CSharpListenerImplementation.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8ListenerImplementation.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlin/KotlinListenerImplementation.java" />
+        <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/psiutils/TraceabilityPointerCreator.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/SourceCodeAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/CamelCaseFilter.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/DottedNamesFilter.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/TokenizerTest.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptListenerImplementation.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/FunctionPointer.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/FileContentsHashComputer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinLexer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParserBaseListener.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/GithubJavaParserTest.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/JavaVisitor.java" />
+        <option value="$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/twidere/model/account/cred/Credentials.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinListenerImplementation.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParserTest.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParserForDocuments.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/KotlinParser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/CSharpParser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaParser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/GithubJavaParser.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/javaxbasedparser/JavaParser.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/addFolderToIndexCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/AddFolderToIndexCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ITraceabilityRecoveryService.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/DiscardIndexAndReadDocumentCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/DiscardIndexAndReadDocumentsCommand.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ParserParser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/LocalScopeTracker.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3ListenerImplementation.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/Swift4Parser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/CSharpParserTest.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParserTest.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParser.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/Language.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/LoadIndexFromDiskCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLImport.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/RemoveDocumentsForFilePathCommand.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/RemoveDocumentsForFilePathPrefixCommand.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4BaseListener.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Lexer.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/Swift4ParserTest.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ListenerImplementation.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Parser.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java" />
       </list>
     </option>
   </component>
@@ -316,22 +275,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TraceabilityRecovery">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -372,6 +315,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraceabilityRecoveryPlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -386,23 +369,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="testDocs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
+              <option name="myItemId" value="TwidereKomplett" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="unihamburg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traceabilityrecovery" />
+              <option name="myItemId" value="testDocs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -435,8 +420,38 @@
               <option name="myItemId" value="traceabilityrecovery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="de" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unihamburg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="traceabilityrecovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evaluation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,6 +480,10 @@
               <option name="myItemId" value="swk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -485,6 +504,82 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="unihamburg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antlr4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swift4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="de" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unihamburg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antlr4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java-Kotlin-Swift-Trace-Link-Recovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="de" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unihamburg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="traceability" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -508,6 +603,22 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TraceabilityRecovery">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,18 +640,18 @@
       <recent name="de.unihamburg.masterprojekt2016.traceability" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg\swk\parsing\antlr4\swift4" />
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg\swk\parsing\antlr4\kotlinNew" />
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\testDocs" />
       <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src\de\unihamburg\swk\parsing\antlr4\javascript" />
       <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\TraceabilityRecoveryPlugin\src" />
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\src" />
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\GithubTest\Traceability Recovery\testDocs\traceabilityModel" />
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery\testDocs\ParserTestDocs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="de.unihamburg.swk.traceabilityrecovery.commands" />
-      <recent name="de.unihamburg.swk.parsing.javaparser.javaxbasedparser" />
-      <recent name="de.unihamburg.masterprojekt2016.traceability" />
-      <recent name="de.unihamburg.swk.traceabilityrecovery" />
       <recent name="de.unihamburg.swk.parsing" />
+      <recent name="de.unihamburg.swk.parsing.antlr4.swift4" />
+      <recent name="de.unihamburg.swk.parsing.antlr4.kotlinNew" />
+      <recent name="de.unihamburg.swk.traceabilityrecovery.lucene" />
+      <recent name="de.unihamburg.swk.traceabilityrecovery.commands" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\GithubTest\Traceability Recovery\TraceabilityRecoveryPlugin\src\actions\opener" />
@@ -562,7 +673,47 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MAPQEvaluator.computeMAPForTwidereDomainModel">
+  <component name="RunManager" selected="JUnit.MAPQEvaluator.BuildIndex">
+    <configuration default="false" name="Swift4ParserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="de.unihamburg.swk.parsing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="de.unihamburg.swk.parsing.Swift4ParserTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TraceabilityRecovery" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="CSharpParserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="de.unihamburg.swk.parsing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="de.unihamburg.swk.parsing.CSharpParserTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TraceabilityRecovery" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="JavaScriptParserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -583,47 +734,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="XMLExportTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="de.unihamburg.masterprojekt2016.traceability.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="de.unihamburg.masterprojekt2016.traceability.XMLExportTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TraceabilityRecovery" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="XMLImportTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="de.unihamburg.masterprojekt2016.traceability.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="de.unihamburg.masterprojekt2016.traceability.XMLImportTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TraceabilityRecovery" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="MAPQEvaluator.computeMAPForCamelCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MAPQEvaluator.BuildIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="de.unihamburg.swk.traceabilityrecovery.evaluation.*" />
@@ -635,7 +746,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="de.unihamburg.swk.traceabilityrecovery.evaluation" />
       <option name="MAIN_CLASS_NAME" value="de.unihamburg.swk.traceabilityrecovery.evaluation.MAPQEvaluator" />
-      <option name="METHOD_NAME" value="computeMAPForCamelCaseTest" />
+      <option name="METHOD_NAME" value="BuildIndex" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -649,30 +760,24 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MAPQEvaluator.computeMAPForTwidereDomainModel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SwiftParserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="de.unihamburg.swk.traceabilityrecovery.evaluation.*" />
+          <option name="PATTERN" value="de.unihamburg.swk.parsing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="TraceabilityRecovery" />
+      <option name="MAIN_CLASS_NAME" value="de.unihamburg.swk.parsing.SwiftParserTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="de.unihamburg.swk.traceabilityrecovery.evaluation" />
-      <option name="MAIN_CLASS_NAME" value="de.unihamburg.swk.traceabilityrecovery.evaluation.MAPQEvaluator" />
-      <option name="METHOD_NAME" value="computeMAPForTwidereDomainModel" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="TraceabilityRecovery" />
       <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -886,21 +991,42 @@
       <log_file path="$USER_HOME$/.IdeaIC2016.2/system/plugins-sandbox/system/log/idea.log" checked="false" skipped="true" show_all="false" alias="IDEA LOG" />
       <method />
     </configuration>
-    <list size="6">
+    <configuration default="false" name="GithubJavaParserTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="de.unihamburg.swk.parsing.javaparser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="de.unihamburg.swk.parsing.javaparser.GithubJavaParserTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TraceabilityRecovery" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Plugin.Plugin" />
-      <item index="1" class="java.lang.String" itemvalue="Application.JavaScriptParserTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.XMLExportTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.XMLImportTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MAPQEvaluator.computeMAPForCamelCaseTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.MAPQEvaluator.computeMAPForTwidereDomainModel" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GithubJavaParserTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Swift4ParserTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.CSharpParserTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.JavaScriptParserTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.MAPQEvaluator.BuildIndex" />
+      <item index="6" class="java.lang.String" itemvalue="Application.SwiftParserTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MAPQEvaluator.computeMAPForTwidereDomainModel" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MAPQEvaluator.computeMAPForCamelCaseTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.JavaScriptParserTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.XMLImportTest" />
-        <item index="4" class="java.lang.String" itemvalue="Application.XMLExportTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MAPQEvaluator.BuildIndex" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Swift4ParserTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.SwiftParserTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.JavaScriptParserTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.CSharpParserTest" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -949,71 +1075,71 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MAPQEvaluator_computeMAPForCamelCaseTest - 2018.02.19 at 15h 16m 36s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCamelCaseTest" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 17h 51m 02s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 20m 08s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 07m 53s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 20m 46s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 25m 01s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 24m 09s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 25m 43s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 25m 06s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 26m 51s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 29m 56s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 33m 39s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 30m 21s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 35m 00s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 31m 08s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 37m 34s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForCompleteTwidereCode - 2017.03.06 at 18h 33m 14s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForCompleteTwidereCode" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 39m 34s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForTwidereDomainModel - 2018.02.19 at 15h 16m 47s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForTwidereDomainModel" configurationId="JUnit" />
+    <history-entry file="MAPQEvaluator_BuildIndex - 2018.03.08 at 18h 39m 58s.xml">
+      <configuration name="MAPQEvaluator.BuildIndex" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32241014" sideWeight="0.47916666" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3065539" sideWeight="0.43125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66246057" sideWeight="0.32869694" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39534885" sideWeight="0.65" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42071882" sideWeight="0.6464129" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IntelliGuard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3046875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3065539" sideWeight="0.56875" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2453125" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25572917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24524158" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47674417" sideWeight="0.675" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.397463" sideWeight="0.6713031" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23125" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32135308" sideWeight="0.475" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3065539" sideWeight="0.56875" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1054,8 +1180,27 @@
           <properties />
           <option name="timeStamp" value="166" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="queryDocument == null" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="247" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaParser.java</url>
+          <line>68</line>
+          <properties />
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaParser.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="189" />
+      <option name="time" value="270" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1064,415 +1209,358 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/NamedTypeElementPointer.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParser.g4" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlin/KotlinParser.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="12" column="64" lean-forward="true" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
+        <state relative-caret-position="129">
+          <caret line="298" column="20" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/ClosurePointer.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/SwiftTestParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        <state relative-caret-position="204">
+          <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/IDocumentCreationStructure.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar!/org/antlr/v4/runtime/ANTLRInputStream.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        <state relative-caret-position="119">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ISearchableDocument.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="39" column="66" lean-forward="true" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar!/org/antlr/v4/runtime/ParserRuleContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="228" column="0" lean-forward="false" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar!/org/antlr/v4/runtime/CommonToken.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="238">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParser.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/GithubJavaParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="12" column="318" lean-forward="false" selection-start-line="12" selection-start-column="318" selection-end-line="12" selection-end-column="318" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/java/twidere.component.common/src/main/java/org/mariotaku/twidere/model/account/cred/Credentials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/IHasTypePointer.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/JavaVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        <state relative-caret-position="188">
+          <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptParserBaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="77" column="26" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptLexer.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptParser.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="27" lean-forward="false" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41582">
-          <caret line="2707" column="42" lean-forward="false" selection-start-line="2707" selection-start-column="42" selection-end-line="2707" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar!/org/antlr/v4/runtime/tree/TerminalNodeImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/FileContentsHashComputer.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinListenerImplementation.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParserTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/kotlinNew/KotlinParserForDocuments.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/KotlinParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/IDocumentFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocsFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1769">
-          <caret line="124" column="51" lean-forward="false" selection-start-line="124" selection-start-column="51" selection-end-line="124" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/FunctionPointer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/PointerTypeSeparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptListenerImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../SVN/SE-Manager/TraceabilityRecovery/TraceabilityRecovery.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/6.3.0/lucene-core-6.3.0-sources.jar!/org/apache/lucene/index/Term.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/6.3.0/lucene-core-6.3.0-sources.jar!/org/apache/lucene/document/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="228" column="22" lean-forward="false" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/ObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="411" column="24" lean-forward="false" selection-start-line="411" selection-start-column="24" selection-end-line="411" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ParserProgress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <caret line="25" column="56" lean-forward="false" selection-start-line="25" selection-start-column="56" selection-end-line="26" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1084#1085#0" expanded="false" />
-            <element signature="e#1114#1115#0" expanded="false" />
-            <element signature="e#1149#1150#0" expanded="false" />
-            <element signature="e#1180#1181#0" expanded="false" />
-            <element signature="e#1227#1228#0" expanded="false" />
-            <element signature="e#1264#1265#0" expanded="false" />
-            <element signature="e#1306#1307#0" expanded="false" />
-            <element signature="e#1346#1347#0" expanded="false" />
-            <element signature="e#1410#1411#0" expanded="false" />
-            <element signature="e#1468#1469#0" expanded="false" />
+            <element signature="e#980#986#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.5.9/javaparser-core-3.5.9-sources.jar!/com/github/javaparser/GeneratedJavaParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97410">
+          <caret line="5776" column="0" lean-forward="false" selection-start-line="5776" selection-start-column="0" selection-end-line="5776" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.5.9/javaparser-core-3.5.9-sources.jar!/com/github/javaparser/JavaParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="49" column="9" lean-forward="false" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="28" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/GithubJavaParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        <state relative-caret-position="663">
+          <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/CSharpParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="38" column="47" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="38" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/KotlinParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="365">
+          <caret line="80" column="52" lean-forward="true" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/javaxbasedparser/JavaParser.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/csharp/CSharpLexer.tokens">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="33" column="66" lean-forward="true" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/AddDocumentsForFilePathCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/csharp/CSharpParser.tokens">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="23" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/ITraceabilityRecoveryService.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/csharp/CSharpPreprocessorParser.tokens">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="29" column="91" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="91" />
-          <folding />
+        <state relative-caret-position="408">
+          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/DiscardIndexAndReadDocumentsCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptParser.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="354" column="10" lean-forward="false" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8Lexer.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="101" column="6" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2186">
+          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="906">
+          <caret line="1773" column="29" lean-forward="true" selection-start-line="1773" selection-start-column="29" selection-end-line="1773" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ParserParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptBaseParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="16" column="106" lean-forward="true" selection-start-line="16" selection-start-column="106" selection-end-line="16" selection-end-column="141" />
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/Java8Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/LocalScopeTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/LocalScopeTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3ListenerImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="457" column="4" lean-forward="true" selection-start-line="449" selection-start-column="4" selection-end-line="457" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/CSharpParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="66" lean-forward="false" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/FunctionPointer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding>
+            <element signature="e#3334#3335#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptListenerImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/javascript/JavaScriptLexer.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="43" column="62" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/Swift4Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="46" column="60" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4BaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Lexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="55" column="35" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/Swift4ParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ListenerImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1464#1465#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="799">
+          <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/File.java">
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="274" column="11" lean-forward="false" selection-start-line="274" selection-start-column="11" selection-end-line="274" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/6.3.0/lucene-core-6.3.0-sources.jar!/org/apache/lucene/index/IndexWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="1305" column="14" lean-forward="false" selection-start-line="1305" selection-start-column="14" selection-end-line="1305" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/Language.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/LoadIndexFromDiskCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/xml/bind/Unmarshaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="633" column="18" lean-forward="false" selection-start-line="633" selection-start-column="18" selection-end-line="633" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/xml/bind/JAXBContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="37" column="74" lean-forward="true" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLImport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/MethodPointer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="59" column="82" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="82" />
+        <state relative-caret-position="104">
+          <caret line="1610" column="46" lean-forward="false" selection-start-line="1610" selection-start-column="46" selection-end-line="1611" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="73" column="39" lean-forward="true" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="175" column="49" lean-forward="false" selection-start-line="175" selection-start-column="36" selection-end-line="175" selection-end-column="49" />
-          <folding>
-            <element signature="docComment;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-            <element signature="method#createQueryWithFilterCriteria#0;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-            <element signature="method#createQueryFromDocument#1;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-            <element signature="method#computeWordCounts#0;class#LuceneTraceabilityRecoveryService#0" expanded="false" />
-            <element signature="e#12574#12582#0" expanded="true" />
-            <element signature="e#18257#18273#0" expanded="true" />
-            <element signature="e#20219#20237#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/AddFolderToIndexCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/DiscardIndexAndReadDocumentsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/commands/RemoveDocumentsForFilePathPrefixCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="510">
+          <caret line="77" column="7" lean-forward="true" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
           <folding />
         </state>
       </provider>

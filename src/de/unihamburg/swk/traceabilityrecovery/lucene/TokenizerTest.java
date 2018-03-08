@@ -25,7 +25,19 @@ public class TokenizerTest {
     @Test
     public void testCamelCaseTokenizer() throws IOException {
         Analyzer sourceCodeAnalyzer = new SourceCodeAnalyzer(SourceCodeAnalyzer.ENGLISH_STOP_WORDS_SET);
-        TokenStream tokenStream = sourceCodeAnalyzer.tokenStream("my_keyword_field", new StringReader("DEFAULT_TWITTER_API_URL_FORMAT"));
+        TokenStream tokenStream = sourceCodeAnalyzer.tokenStream("my_keyword_field", new StringReader("BooleanAdapter.toString.TesttTs"));
+        CharTermAttribute attr = tokenStream.addAttribute(CharTermAttribute.class);
+        tokenStream.reset();
+        while (tokenStream.incrementToken()) {
+            System.out.println(attr.toString());
+        }
+        tokenStream.close();
+    }
+
+    @Test
+    public void testDottedNamesTokenizer() throws IOException {
+        Analyzer sourceCodeAnalyzer = new SourceCodeAnalyzer(SourceCodeAnalyzer.ENGLISH_STOP_WORDS_SET);
+        TokenStream tokenStream = sourceCodeAnalyzer.tokenStream("my_keyword_field", new StringReader("LKN.ad.abaDEFAULTDocument_TWITTER_API_URL_FORMAT"));
         CharTermAttribute attr = tokenStream.addAttribute(CharTermAttribute.class);
         tokenStream.reset();
         while (tokenStream.incrementToken()) {

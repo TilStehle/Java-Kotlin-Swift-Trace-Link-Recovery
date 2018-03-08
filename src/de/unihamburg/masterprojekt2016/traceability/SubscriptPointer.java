@@ -23,15 +23,15 @@ public class SubscriptPointer extends TraceabilityPointer implements IHasParamet
 	private String returnType;
 	
 	public SubscriptPointer() {
-		this(null);
+		this(null, 0);
 	}
 	
-	public SubscriptPointer(TypePointer typePointer) {
-		this(typePointer, null);
+	public SubscriptPointer(TypePointer typePointer, int startLine) {
+		this(typePointer, null, startLine);
 	}
 
-	public SubscriptPointer(TypePointer typePointer, String sourceFilePath) {
-		super(sourceFilePath);
+	public SubscriptPointer(TypePointer typePointer, String sourceFilePath, int startLine) {
+		super(sourceFilePath, startLine);
 		this.typePointer = typePointer;
 		this.parameters = new LinkedList<>();
 	}

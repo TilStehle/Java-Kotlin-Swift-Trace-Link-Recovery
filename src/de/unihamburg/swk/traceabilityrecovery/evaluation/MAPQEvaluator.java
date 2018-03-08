@@ -1,8 +1,8 @@
 package de.unihamburg.swk.traceabilityrecovery.evaluation;
 
 import de.unihamburg.masterprojekt2016.traceability.*;
-import de.unihamburg.swk.parsing.ISourceCodeParser;
-import de.unihamburg.swk.parsing.ParserFactory;
+import de.unihamburg.swk.parsing.*;
+import de.unihamburg.swk.parsing.javaparser.GithubJavaParser;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
@@ -24,12 +24,12 @@ import java.util.stream.Collectors;
  * Created by Tilmann Stehle on 24.01.2017.
  */
 public class MAPQEvaluator {
-    private static boolean LOAD_INDEX_FROM_DISK=true;
+    private static boolean LOAD_INDEX_FROM_DISK = false;
 
 
     @Test
     public void printSimilarities() throws IOException {
-       ConceptComparer.printAllSimilarities();
+        ConceptComparer.printAllSimilarities();
     }
 
     @Test
@@ -39,7 +39,7 @@ public class MAPQEvaluator {
 
     @Test
     public void computeMAPForLuceneNet() throws IOException {
-        computeMap("./testDocs/LuceneNet", "./testDocs/LuceneNet/groundTruth/TraceabilityModel.xml",Language.CSHARP);
+        computeMap("./testDocs/LuceneNet", "./testDocs/LuceneNet/groundTruth/TraceabilityModel.xml", Language.CSHARP);
     }
 
     @Test
@@ -55,6 +55,12 @@ public class MAPQEvaluator {
     @Test
     public void buildIndexAndPrintDocs() {
         ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("./TestDocs/TwidereKomplett/swift/Twidere/UI/ViewControllers/Home");
+        recoveryService.printDocuments();
+    }
+
+    @Test
+    public void BuildIndex() {
+        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("C:\\Users\\Tilmann Stehle\\Documents\\VanSteWski\\DennisiOS\\Dennis");
         recoveryService.printDocuments();
     }
 
@@ -84,17 +90,14 @@ public class MAPQEvaluator {
                         if (isLinkCorrect) {
                             System.out.println("Korrekter Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         } else {
-                            System.out.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + foundLink.getTarget().getPointerType()+foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
+                            System.out.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + foundLink.getTarget().getPointerType() + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         }
                     }
                 }
                 double precision = computePrecisionForResults(consideredResults, correctLinksForPointer);
-                if(consideredResults.size()==0)
-                {
-                    System.out.println("KEINE ERGEBNISSE FUER " +correctLink.getSource().getDisplayName());
-                }
-                else
-                {
+                if (consideredResults.size() == 0) {
+                    System.out.println("KEINE ERGEBNISSE FUER " + correctLink.getSource().getDisplayName());
+                } else {
                     System.out.println("Precision: " + precision);
                 }
                 precisionSumForCurrentQuery += precision;
@@ -108,14 +111,27 @@ public class MAPQEvaluator {
         System.out.println("MAP(Q): " + mAPQ);
         System.out.println("|Q|: " + traceabilityLinksBySourcePointers.size());
         System.out.println("Anzahl Dokumente: " + recoveryService.getNumberOfDocs());
-        System.out.println("Swift-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("swift"));
-        System.out.println("Java-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("java"));
-        System.out.println("Kotlin-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("kt"));
-        System.out.println("C#-Dokumente:   "+recoveryService.getNumberOfDocumentsForLanguage("cs"));
+        System.out.println("Swift-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("swift"));
+        System.out.println("Java-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("java"));
+        System.out.println("Kotlin-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("kt"));
+        System.out.println("C#-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("cs"));
         for (String nonParsedFile : ITraceabilityRecoveryService.NonParsedFiles) {
             System.out.println("Parsing Failed: " + nonParsedFile);
         }
 
+
+    }
+
+    private long comuteAverageOfLongs(List<Long> longs) {
+        long sum = 0;
+        for (Long item : longs) {
+            sum += item;
+        }
+        if(longs.isEmpty())
+        {
+            return 0;
+        }
+        return sum / longs.size();
 
     }
 
@@ -134,27 +150,35 @@ public class MAPQEvaluator {
     }
 
     private ITraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
+        long start = System.currentTimeMillis();
         LuceneTraceabilityRecoveryService recoveryService = null;
-            recoveryService = new LuceneTraceabilityRecoveryService();
+        recoveryService = new LuceneTraceabilityRecoveryService();
 
-            Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
-            recoveryService.setDocumentFilter(documentFilter);
-        if(LOAD_INDEX_FROM_DISK)//wenn der bestehende index von der Platte geladen werden soll
+        Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
+        recoveryService.setDocumentFilter(documentFilter);
+        if (LOAD_INDEX_FROM_DISK)//wenn der bestehende index von der Platte geladen werden soll
         {
             try {
                 System.out.println("Reading lucene index...");
-                recoveryService.setIndexPath(testDocsPath+"/LuceneIndex");
+                recoveryService.setIndexPath(testDocsPath + "/LuceneIndex");
                 recoveryService.loadIndexFromDisk();
                 System.out.println("Done");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
-        else//wenn ein neuer Index aufgebaut und auf der Platte abgelegt werden soll
+        } else//wenn ein neuer Index aufgebaut und auf der Platte abgelegt werden soll
         {
             try {
-                recoveryService.setIndexPath(testDocsPath+"/LuceneIndex");
+                recoveryService.setIndexPath(testDocsPath + "/LuceneIndex");
                 recoveryService.discardIndexAndReadDocuments(testDocsPath);
+
+
+                System.out.println("Durchschnittliche Laufzeit JavaParser:   " + comuteAverageOfLongs(GithubJavaParser.timesNeeded)+"ms");
+                System.out.println("Durchschnittliche Laufzeit C#-Parser:   " + comuteAverageOfLongs(CSharpParser.timesNeeded)+"ms");
+                System.out.println("Durchschnittliche Laufzeit KotlinParser:   " + comuteAverageOfLongs(KotlinParser.timesNeeded)+"ms");
+                System.out.println("Durchschnittliche Laufzeit SwiftParser:   " + comuteAverageOfLongs(SwiftParser.timesNeeded)+"ms");
+                long timeElapsed = System.currentTimeMillis()-start;
+                System.out.println("Time Elapsed During indexing: "+timeElapsed+"ms");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -187,14 +211,15 @@ public class MAPQEvaluator {
 
     /**
      * //We only include types, that are other than extensions
+     *
      * @return
      */
     private Predicate<LuceneDocument> getTypelevelPredicate() {
-       return  new Predicate<LuceneDocument>() {
+        return new Predicate<LuceneDocument>() {
             @Override
             public boolean test(LuceneDocument document) {
                 TraceabilityPointer traceabilityPointer = document.getTraceabilityPointer();
-                if (traceabilityPointer instanceof TypePointer ) {
+                if (traceabilityPointer instanceof TypePointer) {
                     TypePointer typePointer = (TypePointer) traceabilityPointer;
                     return typePointer.getClassification() != TypePointerClassification.EXTENSION;
                 }

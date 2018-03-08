@@ -22,15 +22,15 @@ public class LambdaPointer extends TraceabilityPointer implements IHasParameter,
 	public static final String LAMBDA = "lambda";
 	
 	public LambdaPointer() {
-		this(null);
+		this(null, 0);
 	}
 
-	public LambdaPointer(String sourceFilePath) {
-		this(null, sourceFilePath);
+	public LambdaPointer(String sourceFilePath, int startLine) {
+		this(null, sourceFilePath, startLine);
 	}
 
-	public LambdaPointer(TypePointer typePointer, String sourceFilePath) {
-		super(sourceFilePath);
+	public LambdaPointer(TypePointer typePointer, String sourceFilePath, int startLine) {
+		super(sourceFilePath, startLine);
 		this.typePointer = typePointer;
 		this.parameters = new ArrayList<>();
 	}

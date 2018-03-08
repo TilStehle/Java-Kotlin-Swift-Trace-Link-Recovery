@@ -39,10 +39,10 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 
 
 	@Override
-	public void enterTypeDeclaration(TypePointerClassification classification, String simpleName) {
+	public void enterTypeDeclaration(TypePointerClassification classification, String simpleName, int startLine) {
 		TypePointer typePointer;
 		pushTypeName(simpleName);
-		typePointer = new TypePointer(currentFullyQualifiedname(), classification, filePath);
+		typePointer = new TypePointer(currentFullyQualifiedname(), classification, filePath, startLine);
 		typeStack.push(typePointer);
 		createEmptyDocumentFor(typePointer);
 		addEnclosingTypeTerm1();

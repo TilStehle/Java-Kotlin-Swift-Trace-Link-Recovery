@@ -24,6 +24,8 @@ public class KotlinParser<TDocument extends ISearchableDocument> implements ISou
 
 	private String filePath;
 	private IDocumentFactory<TDocument> documentFactory;
+	public static List<Long> timesNeeded = new ArrayList<Long>();
+
 
 	public KotlinParser(String filePath, IDocumentFactory<TDocument> documentFactory) {
 		this.filePath = filePath;
@@ -37,6 +39,7 @@ public class KotlinParser<TDocument extends ISearchableDocument> implements ISou
 	}
 
 	private List<TDocument> collectDocumentsWithANTLR() {
+		long start = System.currentTimeMillis();
 		ANTLRInputStream input;
 		try (InputStream is = new FileInputStream(filePath)) {
 			input = new ANTLRInputStream(is);
@@ -66,11 +69,14 @@ public class KotlinParser<TDocument extends ISearchableDocument> implements ISou
 
 		finally
 		{
+
+			long timeElapsed = System.currentTimeMillis()- start;
+			timesNeeded.add(timeElapsed);
 			if(kotlinListener.errorOccurs())
 			{
-				System.err.println("fail");
+				System.err.println("fail, time Elapsed: "+timeElapsed);
 			} else {
-				System.err.println("ok!");
+				System.err.println("ok!, time Elapsed: "+timeElapsed);
 			}
 			return kotlinListener.getDocuments();
 		}

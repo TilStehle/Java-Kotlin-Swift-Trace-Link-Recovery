@@ -18,8 +18,8 @@ public class XMLImportTest {
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 			TraceabilityModel rootModel = (TraceabilityModel) jaxbUnmarshaller.unmarshal(file);
 			
-			TypePointer javaClassPointer = new TypePointer("javaClass");
-			MethodPointer javaMethodPointer = new MethodPointer("JavaMethod");
+			TypePointer javaClassPointer = new TypePointer("javaClass", 0);
+			MethodPointer javaMethodPointer = new MethodPointer("JavaMethod", 23);
 			javaMethodPointer.setTypePointer(javaClassPointer);
 			javaMethodPointer.setReturnType("int");
 			javaMethodPointer.addParameter(new Parameter("age", "int"));

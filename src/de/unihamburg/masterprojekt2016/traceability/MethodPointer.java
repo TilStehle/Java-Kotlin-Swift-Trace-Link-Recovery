@@ -19,19 +19,19 @@ public class MethodPointer extends NamedTypeElementPointer implements IHasParame
     private String returnType;
 
     public MethodPointer() {
-        this(null);
+        this(null, 0);
     }
 
-    public MethodPointer(String name) {
-        this(name, null);
+    public MethodPointer(String name, int startLine) {
+        this(name, null,  startLine);
     }
 
-    public MethodPointer(String name, String returnType) {
-        this(name, returnType, null, null);
+    public MethodPointer(String name, String returnType, int startLine) {
+        this(name, returnType, null, null, startLine);
     }
 
-    public MethodPointer(String name, String returnType, TypePointer typePointer, String sourceFilePath) {
-        super(name, typePointer, sourceFilePath);
+    public MethodPointer(String name, String returnType, TypePointer typePointer, String sourceFilePath, int startLine) {
+        super(name, typePointer, sourceFilePath,startLine);
         this.returnType = returnType;
         this.parameters = new LinkedList<>();
     }

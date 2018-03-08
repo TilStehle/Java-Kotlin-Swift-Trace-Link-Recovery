@@ -17,12 +17,12 @@ public class AttributePointer extends NamedTypeElementPointer {
 
     public AttributePointer(){ }
 
-    public AttributePointer(String name, String type){
-        this(name, null, null, type);
+    public AttributePointer(String name, String type, int startLine){
+        this(name, null, null, type, startLine);
     }
     
-    public AttributePointer(String name, TypePointer typePointer, String sourceFilePath, String type){
-        super(name, typePointer, sourceFilePath);
+    public AttributePointer(String name, TypePointer typePointer, String sourceFilePath, String type, int startLine){
+        super(name, typePointer, sourceFilePath, startLine);
         this.type = type;
     }
     

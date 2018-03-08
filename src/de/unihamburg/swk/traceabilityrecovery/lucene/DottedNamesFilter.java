@@ -6,18 +6,17 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import org.apache.lucene.analysis.TokenFilter;
-import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.apache.lucene.analysis.tokenattributes.CharTermAttributeImpl;
 import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
 
-public final class CamelCaseFilter extends TokenFilter {
+public final class DottedNamesFilter extends TokenFilter {
+
 
     private final CharTermAttribute _termAtt;
     private final LinkedList<String> extraTokens = new LinkedList<String>();
     private State savedState;
 
-    protected CamelCaseFilter(TokenStream input) {
+    protected DottedNamesFilter(TokenStream input) {
         super(input);
         this._termAtt = addAttribute(CharTermAttribute.class);
     }
@@ -31,13 +30,16 @@ public final class CamelCaseFilter extends TokenFilter {
             return true;
         }
         if (input.incrementToken()) {
-            String[] splittedString = splitCamelCase(termAtt.toString());
+            String[] splittedString = splitAtDots(termAtt.toString());
             if(splittedString.length>1) {
                 savedState = captureState();
-                for (String camelCaseToken : splittedString) {
-                    if(!camelCaseToken.isEmpty())
-                    extraTokens.add(camelCaseToken);
+                for (String dotSeparatedToken : splittedString) {
+                    if(!dotSeparatedToken.isEmpty())
+                        extraTokens.add(dotSeparatedToken);
                 }
+
+                restoreState(savedState);
+                termAtt.setEmpty().append(extraTokens.remove());
             }
             return true;
         }
@@ -48,14 +50,9 @@ public final class CamelCaseFilter extends TokenFilter {
     }
 
 
-    static String[] splitCamelCase(String s) {
-        return s.replaceAll(
-                String.format("%s|%s|%s",
-                        "(?<=[A-Z])(?=[A-Z][a-z])",
-                        "(?<=[^A-Z])(?=[A-Z])",
-                        "(?<=[A-Za-z])(?=[^A-Za-z])"
-                ),
-                " "
-        ).replace("_", "").split(" ");
+
+
+    static String[] splitAtDots(String s) {
+        return s.split("\\.");
     }
 }

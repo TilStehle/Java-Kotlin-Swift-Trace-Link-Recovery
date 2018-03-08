@@ -5,10 +5,13 @@ import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.en.EnglishPossessiveFilter;
 import org.apache.lucene.analysis.en.PorterStemFilter;
 import org.apache.lucene.analysis.miscellaneous.SetKeywordMarkerFilter;
+import org.apache.lucene.analysis.pattern.PatternReplaceCharFilter;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.standard.StandardFilter;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
+import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +49,8 @@ public class SourceCodeAnalyzer extends StopwordAnalyzerBase {
     protected TokenStreamComponents createComponents(String fieldName) {
         StandardTokenizer source = new StandardTokenizer();
         StandardFilter standardFilter = new StandardFilter(source);
-        CamelCaseFilter camelCaseFilter= new CamelCaseFilter(standardFilter);
+        DottedNamesFilter dottedNamesFilter = new DottedNamesFilter(standardFilter);
+        CamelCaseFilter camelCaseFilter= new CamelCaseFilter(dottedNamesFilter);
         EnglishPossessiveFilter englishPossessiveFilter = new EnglishPossessiveFilter(camelCaseFilter);
         LowerCaseFilter lowerCaseFilter = new LowerCaseFilter(englishPossessiveFilter);
         Object stopFilter = new StopFilter(lowerCaseFilter, this.stopwords);
@@ -64,6 +68,8 @@ public class SourceCodeAnalyzer extends StopwordAnalyzerBase {
         return result1;
     }
 
-
-
+    @Override
+    protected Reader initReader(String fieldName, Reader reader) {
+        return super.initReader(fieldName, reader);
+    }
 }

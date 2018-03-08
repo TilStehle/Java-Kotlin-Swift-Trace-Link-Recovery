@@ -29,16 +29,16 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack = new DocumentStack<>(filePath.replace('\\', '/'), documentFactory);
 	}
 
-	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification, List<String> inheritance) {
+	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification, List<String> inheritance, int startLine) {
 		documentStack.layerOf(inheritance);
-		enterTypeDeclaration(pointerName, classification);
+		enterTypeDeclaration(pointerName, classification, startLine);
 		for (String name : inheritance) {
 			documentStack.addTerm(name, INHERITANCE, TermFactors.OWN_INHERITANCE_FACTOR, TermFactors.OTHER_INHERITANCE_FACTOR);
 		}
 	}
 
-	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification) {
-		enterAnonymousTypeDeclaration(pointerName, classification);
+	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification, int startLine) {
+		enterAnonymousTypeDeclaration(pointerName, classification, startLine);
 		documentStack.addTerm(pointerName, TYPE_DECLARATION, TermFactors.OWN_TYPE_DECLARATION_FACTOR, TermFactors.OTHER_TYPE_DECLARATION_FACTOR);
 	}
 
@@ -47,8 +47,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack.addTerm(functionName, FUNCTIONDECLARATION, TermFactors.OWN_FUNCTION_DECLARATION_FACTOR, TermFactors.OTHER_FUNCTION_DECLARATION_FACTOR);
 	}
 	
-	public void enterAnonymousTypeDeclaration(String pointerName, TypePointerClassification classification) {
-		documentStack.enterTypeDeclaration(classification, pointerName);
+	public void enterAnonymousTypeDeclaration(String pointerName, TypePointerClassification classification, int startLine) {
+		documentStack.enterTypeDeclaration(classification, pointerName, startLine);
 	}
 
 	public void exitTypeDeclaration() {
@@ -59,17 +59,17 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack.closedRecentElementDeclaration();
 	}
 
-	public void enterConstructor(String name) {
-		ConstructorPointer constructorPointer = new ConstructorPointer(name);
+	public void enterConstructor(String name, int startLine) {
+		ConstructorPointer constructorPointer = new ConstructorPointer(name, startLine);
 		documentStack.enterElementDeclaration(constructorPointer);
 		
 		documentStack.addTerm(name, CONSTRUCTOR, TermFactors.OWN_CONSTRUCTOR_FACTOR, TermFactors.OTHER_CONSTRUCTOR_FACTOR);
 	}
 
-	public void enterMethod(String pointerName, String mappedName, PointerTypeSeparator type) {
+	public void enterMethod(String pointerName, String mappedName, PointerTypeSeparator type, int startLine) {
 		Objects.requireNonNull(type);
 
-		MethodPointer methodPointer = new MethodPointer(pointerName, type.getPointerType());
+		MethodPointer methodPointer = new MethodPointer(pointerName, type.getPointerType(), startLine);
 		documentStack.enterElementDeclaration(methodPointer);
 
 		documentStack.addTerm(mappedName, METHOD, TermFactors.OWN_METHOD_FACTOR, TermFactors.OTHER_METHOD_FACTOR);
@@ -77,35 +77,35 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
 	}
 
-	public void enterMethod(String pointerName, String mappedName) {
-		MethodPointer methodPointer = new MethodPointer(pointerName, NO_RETURN_TYPE);
+	public void enterMethod(String pointerName, String mappedName, int startLine) {
+		MethodPointer methodPointer = new MethodPointer(pointerName, NO_RETURN_TYPE,startLine);
 		documentStack.enterElementDeclaration(methodPointer);
 
 		documentStack.addTerm(mappedName, METHOD, TermFactors.OWN_METHOD_FACTOR, TermFactors.OTHER_METHOD_FACTOR);
 		documentStack.addTerm(NO_RETURN_TYPE, METHOD, TermFactors.OWN_METHOD_TYPE_FACTOR, TermFactors.OTHER_METHOD_TYPE_FACTOR);
 	}
 	
-	public void enterClosure(PointerTypeSeparator type) {
+	public void enterClosure(PointerTypeSeparator type, int line) {
 		Objects.requireNonNull(type);
 
-		ClosurePointer closurePointer = new ClosurePointer(type.getPointerType());
+		ClosurePointer closurePointer = new ClosurePointer(type.getPointerType(), line);
 		documentStack.enterElementDeclaration(closurePointer);
 
 		documentStack.addTerms(type.getTypes(), CLOSURE, TermFactors.OWN_CLOSURE_TYPE_FACTOR, TermFactors.OTHER_CLOSURE_TYPE_FACTOR);
 		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
 	}
 
-	public void enterClosure() {
-		ClosurePointer closurePointer = new ClosurePointer(NO_RETURN_TYPE);
+	public void enterClosure(int line) {
+		ClosurePointer closurePointer = new ClosurePointer(NO_RETURN_TYPE, line);
 		documentStack.enterElementDeclaration(closurePointer);
 		
 		documentStack.addTerm(NO_RETURN_TYPE, CLOSURE, TermFactors.OWN_CLOSURE_TYPE_FACTOR, TermFactors.OTHER_CLOSURE_TYPE_FACTOR);
 	}
 	
-	public void enterField(String pointerName, String mappedName, PointerTypeSeparator type) {
+	public void enterField(String pointerName, String mappedName, PointerTypeSeparator type, int startLine) {
 		Objects.requireNonNull(type);
 		
-		AttributePointer attributePointer = new AttributePointer(pointerName, type.getPointerType());
+		AttributePointer attributePointer = new AttributePointer(pointerName, type.getPointerType(),  startLine);
 		documentStack.enterElementDeclaration(attributePointer);
 		
 		if(mappedName.contains(",")) {
@@ -222,8 +222,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	}
 
 	@Deprecated
-	public void enterField(String name, String type) {
-		AttributePointer attributePointer = new AttributePointer(name, type);
+	public void enterField(String name, String type, int startLine) {
+		AttributePointer attributePointer = new AttributePointer(name, type,startLine);
 		documentStack.enterElementDeclaration(attributePointer);
 		
 		documentStack.addTerm(name, ATTRIBUTE, TermFactors.OWN_ATTRIBUTE_FACTOR, TermFactors.OTHER_ATTRIBUTE_FACTOR);

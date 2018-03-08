@@ -29,7 +29,7 @@ public class TestDocParser<TDocument extends ISearchableDocument> implements ISo
 	public List<TDocument> parseDocuments() {
 		ArrayList<TDocument> documentsList = new ArrayList<>();
 		Path path = Paths.get(filePath);
-		TypePointer pointer = new TypePointer(path.getFileName().toString());
+		TypePointer pointer = new TypePointer(path.getFileName().toString(), 0);
 		TDocument document = documentFactory.createDocument(pointer);
 		documentsList.add(document);
 //		Multiset<String> wordsbag = parseTerms(document);

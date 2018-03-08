@@ -12,6 +12,7 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,6 +24,8 @@ public class GithubJavaParser<TDocument extends ISearchableDocument>  implements
     private final DocumentBuilder docBuilder;
     private String filePath;
     private IDocumentFactory<TDocument> documentFactory;
+    public static List<Long> timesNeeded = new ArrayList<Long>();
+
 
     public GithubJavaParser(String filePath, IDocumentFactory<TDocument> documentFactory) {
         this.filePath = filePath;
@@ -33,6 +36,8 @@ public class GithubJavaParser<TDocument extends ISearchableDocument>  implements
 
         @Override
         public List<TDocument> parseDocuments() {
+
+            long start= System.currentTimeMillis();
             try (InputStream is = new FileInputStream(filePath)) {
                 System.out.println("JavaParser parse: " + filePath);
                 CompilationUnit compilationUnit = com.github.javaparser.JavaParser.parse(is);
@@ -42,6 +47,12 @@ public class GithubJavaParser<TDocument extends ISearchableDocument>  implements
                 e.printStackTrace();
                 return null;
             }
+            finally {
+                long stop= System.currentTimeMillis();
+                long timeElapsed= stop - start;
+                timesNeeded.add(timeElapsed);
+
+            }
             return docBuilder.getDocuments();
-    }
+        }
 }

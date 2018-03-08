@@ -17,7 +17,6 @@ public class FunctionPointer extends TraceabilityPointer implements IHasParamete
     private static final String FUNCTION = "Function";
     private String name;
     private List<Parameter> parameters;
-    private int startLine = 0;
 
     public FunctionPointer() {
         this("", 0, null);
@@ -28,9 +27,8 @@ public class FunctionPointer extends TraceabilityPointer implements IHasParamete
     }
 
     public FunctionPointer(String name, int startLine, String sourceFilePath) {
-        super(sourceFilePath);
+        super(sourceFilePath, startLine);
         this.name = name == null || name.isEmpty() ? "Anonymous Function" : name;
-        this.startLine = startLine;
         this.parameters = new LinkedList<>();
     }
 
@@ -66,9 +64,11 @@ public class FunctionPointer extends TraceabilityPointer implements IHasParamete
         FunctionPointer that = (FunctionPointer) o;
 
         boolean a = name != null ? name.equals(that.name) : that.name == null;
+        boolean b = startLine  == that.startLine;
         boolean c = _fileNameExtension != null ? _fileNameExtension.equals(that._fileNameExtension) : that._fileNameExtension == null;
+        boolean d = sourceFilePath != null ? sourceFilePath.equals(that.sourceFilePath) : that.sourceFilePath == null;
 
-        return a && c && this.hasSameParametersAs(that);
+        return d && b && a && c && this.hasSameParametersAs(that);
     }
 
     @Override
@@ -77,6 +77,8 @@ public class FunctionPointer extends TraceabilityPointer implements IHasParamete
         int result = 1;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((_fileNameExtension == null) ? 0 : _fileNameExtension.hashCode());
+        result = prime * result + ((sourceFilePath == null) ? 0 : sourceFilePath.hashCode());
+        result = prime * result + (startLine);
         return result;
     }
 

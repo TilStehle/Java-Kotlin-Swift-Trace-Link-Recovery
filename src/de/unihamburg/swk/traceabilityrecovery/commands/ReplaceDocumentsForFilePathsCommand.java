@@ -7,19 +7,19 @@ import java.io.IOException;
 /**
  * Created by Tilmann Stehle on 14.02.2018.
  */
-public class ReplaceDocumentsForFilePathCommand implements ITraceabilityRecoveryCommand {
+public class ReplaceDocumentsForFilePathsCommand implements ITraceabilityRecoveryCommand {
 
     private final ITraceabilityRecoveryService traceabilityRecoveryService;
-    private String filePath;
+    private String[] filePaths;
 
-    public ReplaceDocumentsForFilePathCommand(ITraceabilityRecoveryService traceabilityRecoveryService, String filePath)
+    public ReplaceDocumentsForFilePathsCommand(ITraceabilityRecoveryService traceabilityRecoveryService, String... filePaths)
     {
         this.traceabilityRecoveryService = traceabilityRecoveryService;
 
-        this.filePath = filePath;
+        this.filePaths = filePaths;
     }
     @Override
     public void execute() throws IOException {
-        traceabilityRecoveryService.replaceDocumentsForFilePath(filePath);
+        traceabilityRecoveryService.replaceDocumentsForFilePaths(filePaths);
     }
 }

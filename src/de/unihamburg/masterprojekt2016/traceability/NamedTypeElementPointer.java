@@ -17,8 +17,8 @@ public abstract class NamedTypeElementPointer extends TraceabilityPointer implem
 	
 	public NamedTypeElementPointer() { }
 	
-	public NamedTypeElementPointer(String name, TypePointer typePointer, String sourceFilePath) {
-		super(sourceFilePath);
+	public NamedTypeElementPointer(String name, TypePointer typePointer, String sourceFilePath, int startLine) {
+		super(sourceFilePath, startLine);
 		this.name = name;
 		this.typePointer = typePointer;
 	}

@@ -12,15 +12,15 @@ public class XMLExportTest {
 	public static void main(String[] args) {
 
 		// JAVA (Quelle)
-		TypePointer javaClassPointer = new TypePointer("javaClass");
-		MethodPointer javaMethodPointer = new MethodPointer("JavaMethod");
+		TypePointer javaClassPointer = new TypePointer("javaClass", 0);
+		MethodPointer javaMethodPointer = new MethodPointer("JavaMethod", 23);
 		javaMethodPointer.setTypePointer(javaClassPointer);
 		javaMethodPointer.setReturnType("int");
 		javaMethodPointer.addParameter(new Parameter("age", "int"));
 
 		// SWIFT (Senke)
-		TypePointer swiftClassPointer = new TypePointer("swiftClass");
-		ConstructorPointer swiftMethodPointer = new ConstructorPointer("SwiftMethod");
+		TypePointer swiftClassPointer = new TypePointer("swiftClass", 0);
+		ConstructorPointer swiftMethodPointer = new ConstructorPointer("SwiftMethod", 23);
 		swiftMethodPointer.setTypePointer(swiftClassPointer);
 		//swiftMethodPointer.setReturnType("Int");
 		swiftMethodPointer.addParameter(new Parameter("age", "Int"));

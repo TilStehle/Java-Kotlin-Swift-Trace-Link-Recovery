@@ -11,7 +11,7 @@ public class JavaScriptParserTest {
     public static void main(String[] args) {
 
 
-        JavaScriptParser<LuceneDocument> parser = new JavaScriptParser<>("C:\\Users\\Tilmann Stehle\\Documents\\Diss\\runtime-EclipseApplication\\desmoj_js\\target\\javascript\\test\\person\\Person.js", new LuceneDocsFactory());
+        JavaScriptParser<LuceneDocument> parser = new JavaScriptParser<>("C:\\Users\\Tilmann Stehle\\Documents\\Diss\\DESMO-JS\\desmoj_js\\target\\javascript\\desmoj\\core\\simulator\\EventAbstract.js", new LuceneDocsFactory());
 
         long time = System.currentTimeMillis();
 
@@ -19,7 +19,7 @@ public class JavaScriptParserTest {
 			System.err.println(document);
 			System.err.println();
 		}
-        System.out.println((System.currentTimeMillis() - time) / 1000 + " sec");
+        System.out.println(JavaScriptParser.timesNeeded.get(0)+"ms");
 
     }
 

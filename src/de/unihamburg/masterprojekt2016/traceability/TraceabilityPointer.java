@@ -17,13 +17,23 @@ import javax.xml.bind.annotation.XmlTransient;
     public abstract class TraceabilityPointer {
 
     protected String _fileNameExtension;
-    private String sourceFilePath;
+    protected String sourceFilePath;
+
+    public int getStartLine() {
+        return startLine;
+    }
+
+    public void setStartLine(int startLine) {
+        this.startLine = startLine;
+    }
+
+    protected int startLine;
     
     public TraceabilityPointer() { }
 
-    public TraceabilityPointer(String sourceFilePath) {
-    	this.setSourceFilePath(sourceFilePath);
-
+    public TraceabilityPointer(String sourceFilePath, int startLine) {
+        this.startLine = startLine;
+        this.setSourceFilePath(sourceFilePath);
     }
     
     public abstract String getDisplayName();

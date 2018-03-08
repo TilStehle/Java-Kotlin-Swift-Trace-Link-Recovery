@@ -49,7 +49,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		String interfaceName = ctx.Identifier().getText();
 		listenderExtension.setInheritance(ctx.extendsInterfaces(), inheritance);
 		
-		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE, inheritance);
+		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE, inheritance, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	@Override
 	public void enterAnnotationTypeDeclaration(Java8Parser.AnnotationTypeDeclarationContext ctx) {
 		String interfaceName = ctx.Identifier().getText();
-		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE);
+		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		listenderExtension.setInheritance(ctx.superclass(), inheritance);
 		listenderExtension.setInheritance(ctx.superinterfaces(), inheritance);
 		
-		docBuilder.enterTypeDeclaration(className, CLASS, inheritance);
+		docBuilder.enterTypeDeclaration(className, CLASS, inheritance, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -90,7 +90,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		List<String> inheritance = new LinkedList<>();
 		listenderExtension.setInheritance(ctx.superinterfaces(), inheritance);
 		
-		docBuilder.enterTypeDeclaration(enumName, ENUM, inheritance);
+		docBuilder.enterTypeDeclaration(enumName, ENUM, inheritance, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -112,7 +112,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		if (ctx.classBody() != null) { // is anonymous class
 			String pointerName = "AnonymousClass" + "$" + this.anonymousClassCount;
 			this.anonymousClassCount++;
-			docBuilder.enterAnonymousTypeDeclaration(pointerName, ANONYMOUS_CLASS);
+			docBuilder.enterAnonymousTypeDeclaration(pointerName, ANONYMOUS_CLASS, ctx.getStart().getLine());
 		}
 	}
 
@@ -131,7 +131,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		String name = ctx.variableDeclaratorList().variableDeclarator().stream()
 				.map(e -> e.variableDeclaratorId().Identifier().getText())
 				.collect(Collectors.joining(","));
-		enterClassVariableDeclaration(name, unannType);
+		enterClassVariableDeclaration(name, unannType, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -143,7 +143,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	public void enterConstantDeclaration(Java8Parser.ConstantDeclarationContext ctx) {
 		UnannTypeContext unannType = ctx.unannType();
 		for (VariableDeclaratorContext context : ctx.variableDeclaratorList().variableDeclarator()) {
-			enterClassVariableDeclaration(context.variableDeclaratorId().getText(), unannType);
+			enterClassVariableDeclaration(context.variableDeclaratorId().getText(), unannType, ctx.getStart().getLine());
 		}
 	}
 
@@ -152,16 +152,16 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		docBuilder.closeElement();
 	}
 	
-	private void enterClassVariableDeclaration(String pointerName, UnannTypeContext unannType) {
+	private void enterClassVariableDeclaration(String pointerName, UnannTypeContext unannType, int startLine) {
 		PointerTypeSeparator types = listenderExtension.setType(unannType);
 		String mappedName = listenderExtension.getMappedAttributeName(pointerName);
-		docBuilder.enterField(pointerName, mappedName, types);
+		docBuilder.enterField(pointerName, mappedName, types, startLine);
 	}
 
 	@Override
 	public void enterConstructorDeclarator(Java8Parser.ConstructorDeclaratorContext ctx) {
 		String name = ctx.simpleTypeName().getText();
-		docBuilder.enterConstructor(name);
+		docBuilder.enterConstructor(name, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -174,10 +174,10 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		String pointerName =  listenderExtension.getName(ctx.methodDeclarator().Identifier());
 		String mappedName = listenderExtension.getMappedMethodName(pointerName);
 		if(ctx.result().getText().equals("void")) {
-			docBuilder.enterMethod(pointerName, mappedName);
+			docBuilder.enterMethod(pointerName, mappedName, ctx.getStart().getLine());
 		} else {
 			PointerTypeSeparator types = listenderExtension.setType(ctx.result().unannType());
-			docBuilder.enterMethod(pointerName, mappedName, types);
+			docBuilder.enterMethod(pointerName, mappedName, types, ctx.getStart().getLine());
 		}
 	}
 

@@ -34,9 +34,9 @@ public interface ITraceabilityRecoveryService
         discardIndexAndReadDocuments(p -> true, projectPaths);
     }
 
-    void replaceDocumentsForFilePath(String path) throws IOException;
+    void replaceDocumentsForFilePaths(String... paths) throws IOException;
 
-    void addDocumentsForFilePath(String path) throws IOException;
+    void addDocumentsForFilePaths(String... filePaths) throws IOException;
 
     void removeDocumentsForFilesWithPathPrefix(String path) throws IOException;
     int getNumberOfDocs();

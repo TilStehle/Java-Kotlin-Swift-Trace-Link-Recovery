@@ -13,6 +13,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +22,7 @@ import java.util.List;
 public class CSharpParser<TDocument extends ISearchableDocument> implements ISourceCodeParser<TDocument>  {
     private String filePath;
     private IDocumentFactory<TDocument> documentFactory;
+    public static List<Long> timesNeeded = new ArrayList<Long>();
 
     public CSharpParser(String filePath, IDocumentFactory<TDocument> documentFactory) {
         this.filePath = filePath;
@@ -34,6 +36,7 @@ public class CSharpParser<TDocument extends ISearchableDocument> implements ISou
 
 
     private List<TDocument> collectDocumentsWithANTLR() {
+        long start= System.currentTimeMillis();
         System.err.println("CSharpParser parse: " + filePath);
 
         ANTLRInputStream  input;
@@ -58,6 +61,8 @@ public class CSharpParser<TDocument extends ISearchableDocument> implements ISou
             ITraceabilityRecoveryService.NonParsedFiles.add(filePath);
         }
         finally {
+            long timeElapsed= System.currentTimeMillis()- start;
+            timesNeeded.add(timeElapsed);
             if(csharpListener.errorOccurs()) {
                 System.err.println("fail");
             } else {

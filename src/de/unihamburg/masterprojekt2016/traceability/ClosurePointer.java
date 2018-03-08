@@ -22,15 +22,15 @@ public class ClosurePointer extends TraceabilityPointer implements IHasParameter
 	private TypePointer typePointer;
 
 	public ClosurePointer() {
-		this(null);
+		this(null, 0);
 	}
 
-	public ClosurePointer(String sourceFilePath) {
-		this(null, sourceFilePath);
+	public ClosurePointer(String sourceFilePath, int startLine) {
+		this(null, sourceFilePath, startLine);
 	}
 
-	public ClosurePointer(TypePointer typePointer, String sourceFilePath) {
-		super(sourceFilePath);
+	public ClosurePointer(TypePointer typePointer, String sourceFilePath, int startLine) {
+		super(sourceFilePath, startLine);
 		this.typePointer = typePointer;
 		this.parameters = new ArrayList<>();
 	}

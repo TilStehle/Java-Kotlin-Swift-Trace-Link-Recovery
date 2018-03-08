@@ -33,7 +33,7 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
 
     @Override
     public void enterInterface_definition(CSharpParser.Interface_definitionContext ctx) {
-                docBuilder.enterTypeDeclaration(ctx.identifier().getText(), INTERFACE);
+                docBuilder.enterTypeDeclaration(ctx.identifier().getText(), INTERFACE, ctx.getStart().getLine());
     }
 
     @Override
@@ -43,7 +43,7 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
 
     @Override
     public void enterClass_definition(CSharpParser.Class_definitionContext ctx) {
-        docBuilder.enterTypeDeclaration(ctx.identifier().getText(), CLASS);
+        docBuilder.enterTypeDeclaration(ctx.identifier().getText(), CLASS, ctx.getStart().getLine());
     }
 
     @Override
@@ -55,7 +55,7 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
     public void enterEnum_definition(CSharpParser.Enum_definitionContext ctx) {
         String enumName = ctx.identifier().getText();
 
-        docBuilder.enterTypeDeclaration(enumName, ENUM);
+        docBuilder.enterTypeDeclaration(enumName, ENUM, ctx.getStart().getLine());
     }
 
     @Override
@@ -75,7 +75,7 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
         for (CSharpParser.Variable_declaratorContext variable_declaratorContext : ctx.variable_declarators().variable_declarator()) {
             String fieldName = variable_declaratorContext.identifier().getText();
             CSharpParser.Typed_member_declarationContext parent = (CSharpParser.Typed_member_declarationContext) ctx.parent;
-            docBuilder.enterField(fieldName,parent.type().getText());
+            docBuilder.enterField(fieldName,parent.type().getText(), ctx.getStart().getLine());
 
         }
 
@@ -90,7 +90,7 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
     @Override
     public void enterProperty_declaration(CSharpParser.Property_declarationContext ctx) {
         CSharpParser.Typed_member_declarationContext parent = (CSharpParser.Typed_member_declarationContext) ctx.parent;
-        docBuilder.enterField(ctx.member_name().getText(), parent.type().getText());
+        docBuilder.enterField(ctx.member_name().getText(), parent.type().getText(), ctx.getStart().getLine());
     }
 
     @Override
@@ -100,7 +100,7 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
 
     @Override
     public void enterConstructor_declaration(CSharpParser.Constructor_declarationContext ctx) {
-        docBuilder.enterConstructor(ctx.identifier().getText());
+        docBuilder.enterConstructor(ctx.identifier().getText(), ctx.getStart().getLine());
     }
 
     @Override
@@ -113,12 +113,12 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
         String methodName= ctx.method_member_name().getText();
         if(ctx.parent instanceof CSharpParser.Common_member_declarationContext)//void method
         {
-            docBuilder.enterMethod(methodName, methodName);
+            docBuilder.enterMethod(methodName, methodName, ctx.getStart().getLine());
         }
         else//non-void method
         {
             CSharpParser.Typed_member_declarationContext methodParent = (CSharpParser.Typed_member_declarationContext)ctx.parent;
-            docBuilder.enterMethod(methodName,methodName,new PointerTypeSeparator(methodParent.type().getText(), TermMapperManager.CSHARP));
+            docBuilder.enterMethod(methodName,methodName,new PointerTypeSeparator(methodParent.type().getText(), TermMapperManager.CSHARP), ctx.getStart().getLine());
         }
     }
 
@@ -169,7 +169,7 @@ public class CSharpListenerImplementation<TDocument extends ISearchableDocument>
         String type= ctx.type()!=null? ctx.type().getText():"void";
         if(ctx.identifier()!=null)
         {
-            docBuilder.enterMethod(ctx.identifier().getText(), type);
+            docBuilder.enterMethod(ctx.identifier().getText(), type, ctx.getStart().getLine());
         }
 
     }

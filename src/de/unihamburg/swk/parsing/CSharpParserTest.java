@@ -24,7 +24,7 @@ public class CSharpParserTest {
 		}
         System.out.println(parser.parseDocuments().size());
 
-        System.out.println((System.currentTimeMillis() - time) / 1000 + " sec");
+        System.out.println((System.currentTimeMillis() - time) + " ms");
 
     }
 }

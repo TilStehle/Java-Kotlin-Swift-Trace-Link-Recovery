@@ -46,16 +46,12 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     private ParserProgress parserProgress;
     private String[] projectPaths;
     private Queue<ITraceabilityRecoveryCommand> commandQueue;
-    private Map<String, byte[]> fileContentsHashes;
-    private FileContentsHashComputer hashComputer;
 
     public LuceneTraceabilityRecoveryService() {
         analyzer = new SourceCodeAnalyzer(SourceCodeAnalyzer.ENGLISH_STOP_WORDS_SET);
         documentsByPointers = new HashMap<>();
         parserProgress = new ParserProgress();
         commandQueue = new LinkedList<>();
-        fileContentsHashes = new HashMap<>();
-        hashComputer = new FileContentsHashComputer();
     }
 
 
@@ -75,7 +71,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
         }
         reader.close();
-        deSerializeHashes();
 
     }
 
@@ -123,15 +118,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         return filePaths;
     }
 
-    private List<String> removeHashedFiles(List<String> filePaths) throws IOException {
-        List<String> filteredFilePaths= new ArrayList<>();
-        for (String filePath : filePaths) {
-                if (checkFileChangeAndUpdateHash(filePath)) {
-                    filteredFilePaths.add(filePath);
-                }
-        }
-        return filteredFilePaths;
-    }
 
 
     @Override
@@ -281,8 +267,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     private void tryDiscardIndex() {
         try {
             FileUtils.deleteDirectory(new File(indexPath.toString()));
-            if(fileContentsHashes !=null)
-            this.fileContentsHashes.clear();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -302,82 +286,38 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             File dir = new File(dirPath);
             sourceFiles.addAll(filterSourceFiles(dir, acceptedFileEndings).stream().filter(filter).collect(Collectors.toList()));
         }
-        return removeHashedFiles(sourceFiles);
+         return sourceFiles;
     }
 
-    public boolean checkFileChangeAndUpdateHash(String filePath) {
-        try {
-            byte[] oldHash = this.fileContentsHashes.get(filePath);
-            byte[] newHash = hashComputer.gethashForFileContents(filePath);
-            boolean hashChanged = !Arrays.equals(newHash, oldHash);
-            if (hashChanged) {
-                this.fileContentsHashes.put(filePath, newHash);
+
+
+    @Override
+    public void replaceDocumentsForFilePaths(String... filePaths) throws IOException {
+        List<String> filePathsToUpdate= new ArrayList<>();
+        for (String filePath : filePaths) {
+            if (isParseableSourceFilePath(filePath)) {
+                removeDocumentsForFilesWithPathPrefix(filePath);
+                filePathsToUpdate.add(filePath);
             }
-            return hashChanged;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return true;
         }
-    }
 
-    private void serializeHashes() {
-        try
-        {
-            FileOutputStream fos =
-                    new FileOutputStream(this.indexPath+"/fileHashes.ser");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(this.fileContentsHashes);
-            oos.close();
-            fos.close();
-            System.out.printf("Serialized HashMap data is saved in hashmap.ser");
-        }catch(IOException ioe)
-        {
-            ioe.printStackTrace();
-        }
-    }
-    private void deSerializeHashes() {
-
-        try
-        {
-            FileInputStream fis = new FileInputStream(this.indexPath+"/fileHashes.ser");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            this.fileContentsHashes = (HashMap<String, byte[]>) ois.readObject();
-            ois.close();
-            fis.close();
-        }catch(IOException ioe)
-        {
-            ioe.printStackTrace();
-            return;
-        }catch(ClassNotFoundException c)
-        {
-            System.out.println("Class not found");
-            c.printStackTrace();
-            return;
-        }
-    }
-
-
-
-    @Override
-    public void replaceDocumentsForFilePath(String filePath) throws IOException {
-
-        if (isParseableSourceFilePath(filePath) && checkFileChangeAndUpdateHash(filePath)) {
-            removeDocumentsForFilesWithPathPrefix(filePath);
-            this.createDocuments(Arrays.asList(filePath));
-        }
+        this.createDocuments(filePathsToUpdate);
     }
 
     @Override
-    public void addDocumentsForFilePath(String filePath) throws IOException {
-        if (isParseableSourceFilePath(filePath) && checkFileChangeAndUpdateHash(filePath)) {
-            removeDocumentsForFilesWithPathPrefix(filePath);
-            this.createDocuments(Arrays.asList(filePath));
+    public void addDocumentsForFilePaths(String... filePaths) throws IOException {
+        for (String filePath : filePaths) {
+            if (isParseableSourceFilePath(filePath) ) {
+                removeDocumentsForFilesWithPathPrefix(filePath);
+            }
         }
+        this.createDocuments(Arrays.asList(filePaths));
+
+
     }
 
     @Override
     public void removeDocumentsForFilesWithPathPrefix(String path) throws IOException {
-        if (!isParseableSourceFilePath(path)) return;
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         try (IndexWriter indexWriter = new IndexWriter(index, config)) {
             indexWriter.deleteDocuments(createPrefixQueryForPaths(path));
@@ -386,8 +326,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        this.fileContentsHashes.entrySet().removeIf(pair -> pair.getKey().startsWith(path));
-        serializeHashes();
+
         this.documentsByPointers.entrySet().removeIf(pair -> pair.getKey().getSourceFilePath().startsWith(path));
 
 
@@ -410,7 +349,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     @Override
     public boolean isParseableSourceFilePath(String filePath) {
         for (Language language : Language.values()) {
-            if (filePath.endsWith(language.getFileExtension())) return true;
+            if (filePath.endsWith('.'+language.getFileExtension())) return true;
         }
         return false;
     }
@@ -426,7 +365,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         for (String filePath : sourceFiles) {
             filePath = filePath.replace("\\", "/");
             currentFileIndex++;
-            checkFileChangeAndUpdateHash(filePath);
             ExecutorService executor = Executors.newSingleThreadExecutor();
             if (parserProgress.isParsing() == true) {
 
@@ -452,10 +390,9 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        serializeHashes();
 
     }
-
+    private static LuceneDocsFactory luceneDocsFactory= new LuceneDocsFactory();
     class ParsingRunnable implements Runnable {
 
         private String filePath;
@@ -468,7 +405,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
         @Override
         public void run() {
-            ISourceCodeParser parser = ParserFactory.<LuceneDocument>createParser(new LuceneDocsFactory(), filePath);
+            ISourceCodeParser parser = ParserFactory.<LuceneDocument>createParser(luceneDocsFactory, filePath);
             Collection<LuceneDocument> documents = parser.parseDocuments();
             for (LuceneDocument document : documents) {
                 try {
@@ -494,7 +431,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     private void addDocument(LuceneDocument document, IndexWriter indexWriter ) throws IOException {
         if (documentFilter == null || documentFilter.test(document)) {
             documentsByPointers.put(document.getTraceabilityPointer(), document);
-            StoredField id = (StoredField) document.getDocument().getField("id");
             synchronized (indexWriter) {
                 indexWriter.addDocument(document.getDocument());
             }

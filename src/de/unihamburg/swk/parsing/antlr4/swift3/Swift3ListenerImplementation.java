@@ -38,7 +38,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), interfaces);
 		String interfaceName = ctx.protocolName().getText();
 		
-		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE,interfaces);
+		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE,interfaces, ctx.getStart().getLine());
 	}
 	@Override
 	public void exitProtocolDeclaration(Swift3Parser.ProtocolDeclarationContext ctx) {
@@ -54,7 +54,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), inheritance);
 		
-		docBuilder.enterTypeDeclaration(className, CLASS, inheritance);
+		docBuilder.enterTypeDeclaration(className, CLASS, inheritance,ctx.getStart().getLine());
 //		docBuilder.setLayer("nonUI");
 	}
 
@@ -72,7 +72,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		String structName = ctx.structName().getText();
 		List<String> inherintance = new LinkedList<>();
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), inherintance);
-		docBuilder.enterTypeDeclaration(structName, STRUCT, inherintance);
+		docBuilder.enterTypeDeclaration(structName, STRUCT, inherintance,ctx.getStart().getLine());
 //		docBuilder.setLayer("nonUI");
 	}
 
@@ -96,7 +96,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 			enumName = ctx.enumDef().rawValueStyleEnum().enumName().getText();
 			SwiftParserUtils.setInharitance(ctx.enumDef().rawValueStyleEnum().typeInheritanceClause(), interfaces);
 		}
-		docBuilder.enterTypeDeclaration(enumName, ENUM, interfaces);
+		docBuilder.enterTypeDeclaration(enumName, ENUM, interfaces, ctx.getStart().getLine());
 	}
 
 	@Override 
@@ -123,7 +123,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		String className = ctx.typeIdentifier().getText();
 		List<String> inherintance = new LinkedList<>();
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), inherintance);
-		docBuilder.enterTypeDeclaration(className, EXTENSION, inherintance);
+		docBuilder.enterTypeDeclaration(className, EXTENSION, inherintance, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -136,7 +136,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void enterTypealiasDeclaration(@NotNull Swift3Parser.TypealiasDeclarationContext ctx) {
 		String className = ctx.typealiasHead().typealiasName().getText();
-		docBuilder.enterTypeDeclaration(className, NO_CLASSIFICATION);
+		docBuilder.enterTypeDeclaration(className, NO_CLASSIFICATION,ctx.getStart().getLine());
 	}
 
 	@Override
@@ -149,7 +149,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		lst.enterLocalScope(true);
 		
 		String name = "init";
-		docBuilder.enterConstructor(name);
+		docBuilder.enterConstructor(name,ctx.getStart().getLine());
 	}
 
 	@Override
@@ -165,7 +165,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		
 		if(ctx.functionName() == null) {  // TODO fix gramma
 			System.err.println("Method Error: " + ctx.getText());
-			docBuilder.enterMethod("noname", "noname");
+			docBuilder.enterMethod("noname", "noname", ctx.getStart().getLine());
 			return;
 		}
 		
@@ -173,9 +173,9 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		String mappedName = SwiftParserUtils.getMappedMethodName(name);
 		if (ctx.functionSignature().functionResult() != null) {
 			PointerTypeSeparator returnType = SwiftParserUtils.getType(ctx.functionSignature().functionResult().sType());
-			docBuilder.enterMethod(name, mappedName, returnType);
+			docBuilder.enterMethod(name, mappedName, returnType, ctx.getStart().getLine());
 		} else {
-			docBuilder.enterMethod(name, mappedName);
+			docBuilder.enterMethod(name, mappedName, ctx.getStart().getLine());
 		}
 
 	}
@@ -193,9 +193,9 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		String mappedName = SwiftParserUtils.getMappedMethodName(pointerName);
 		if(ctx.functionSignature().functionResult() != null) {
 			PointerTypeSeparator returnType = SwiftParserUtils.getType(ctx.functionSignature().functionResult().sType());
-			docBuilder.enterMethod(pointerName, mappedName, returnType);
+			docBuilder.enterMethod(pointerName, mappedName, returnType,ctx.getStart().getLine());
 		} else {
-			docBuilder.enterMethod(pointerName, mappedName);
+			docBuilder.enterMethod(pointerName, mappedName, ctx.getStart().getLine());
 		}
 	}
 
@@ -207,7 +207,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void enterProtocolInitializerDeclaration(Swift3Parser.ProtocolInitializerDeclarationContext ctx) {
 		String name = "init";
-		docBuilder.enterConstructor(name);
+		docBuilder.enterConstructor(name, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -237,7 +237,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 //			System.err.println(ctx.getterSetterKeywordBlock().setterKeywordClause().getText()); // TODO
 		}
 		
-		docBuilder.enterField(pointerName, mappedName, types);
+		docBuilder.enterField(pointerName, mappedName, types, ctx.getStart().getLine());
 	}
 
 	@Override
@@ -273,7 +273,7 @@ variableDeclaration
 	@Override
 	public void enterVariableDeclaration(Swift3Parser.VariableDeclarationContext ctx) {
 		if (ctx.patternInitializerList() != null) {
-			enterField(ctx.patternInitializerList());
+			enterField(ctx.patternInitializerList(), ctx.getStart().getLine());
 		} else if (ctx.typeAnnotation() != null) {
 			enterField(ctx);
 		} else {
@@ -289,11 +289,11 @@ variableDeclaration
 		if(lst.isScopeLocal()) {
 			docBuilder.enterLocalVariable(mappedName, types);
 		} else {
-			docBuilder.enterField(pointerName, mappedName, types);
+			docBuilder.enterField(pointerName, mappedName, types, ctx.getStart().getLine());
 		}
 	} 
 	
-	private void enterField(PatternInitializerListContext patternInitializerList) {
+	private void enterField(PatternInitializerListContext patternInitializerList, int startLine) {
 		List<String> names = new LinkedList<>();
 		PointerTypeSeparator types = new PointerTypeSeparator(SwiftParserUtils.MAPPER);
 		for (PatternInitializerContext pil : patternInitializerList.patternInitializer()) {
@@ -309,7 +309,7 @@ variableDeclaration
 		if(lst.isScopeLocal()) {
 			docBuilder.enterLocalVariable(mappedName, types);
 		} else {
-			docBuilder.enterField(pointerName, mappedName, types);
+			docBuilder.enterField(pointerName, mappedName, types, startLine);
 		}
 	}
 
@@ -354,7 +354,7 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 	 */
 	@Override
 	public void enterConstantDeclaration(Swift3Parser.ConstantDeclarationContext ctx) {
-		enterField(ctx.patternInitializerList());
+		enterField(ctx.patternInitializerList(), ctx.getStart().getLine());
 	}
 
 	@Override
@@ -399,9 +399,9 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 		if(ctx.closureParameterClause() != null) {
 			if(ctx.functionResult() != null) {
 				PointerTypeSeparator type = SwiftParserUtils.getType(ctx.functionResult().sType());
-				docBuilder.enterClosure(type);
+				docBuilder.enterClosure(type, ctx.getStart().getLine());
 			} else {
-				docBuilder.enterClosure();
+				docBuilder.enterClosure(ctx.getStart().getLine());
 			}
 		}
 	}

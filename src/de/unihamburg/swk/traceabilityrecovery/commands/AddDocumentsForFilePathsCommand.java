@@ -7,19 +7,18 @@ import java.io.IOException;
 /**
  * Created by Tilmann Stehle on 14.02.2018.
  */
-public class AddDocumentsForFilePathCommand implements ITraceabilityRecoveryCommand {
+public class AddDocumentsForFilePathsCommand implements ITraceabilityRecoveryCommand {
 
     private final ITraceabilityRecoveryService traceabilityRecoveryService;
-    private String filePath;
+    private String[] filePaths;
 
-    public AddDocumentsForFilePathCommand(ITraceabilityRecoveryService traceabilityRecoveryService, String filePath)
+    public AddDocumentsForFilePathsCommand(ITraceabilityRecoveryService traceabilityRecoveryService, String... filePaths)
     {
         this.traceabilityRecoveryService = traceabilityRecoveryService;
-
-        this.filePath = filePath;
+        this.filePaths = filePaths;
     }
     @Override
     public void execute() throws IOException {
-        traceabilityRecoveryService.addDocumentsForFilePath(filePath);
+        traceabilityRecoveryService.addDocumentsForFilePaths(filePaths);
     }
 }

@@ -12,6 +12,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +23,7 @@ public class JavaScriptParser<TDocument extends ISearchableDocument> implements 
 
 	private String filePath;
 	private IDocumentFactory<TDocument> documentFactory;
+	public static List<Long> timesNeeded = new ArrayList<Long>();
 
 	public JavaScriptParser(String filePath, IDocumentFactory<TDocument> documentFactory) {
 		this.filePath = filePath;
@@ -35,6 +37,7 @@ public class JavaScriptParser<TDocument extends ISearchableDocument> implements 
 
 
 	private List<TDocument> collectDocumentsWithANTLR() {
+		long start = System.currentTimeMillis();
 		System.err.println("Javascriptparser parse: " + filePath);
 		
 		ANTLRInputStream input;
@@ -59,6 +62,10 @@ public class JavaScriptParser<TDocument extends ISearchableDocument> implements 
 			ITraceabilityRecoveryService.NonParsedFiles.add(filePath);
 		}
 		finally {
+
+			long stop = System.currentTimeMillis();
+			long timeElapsed= stop -start;
+			timesNeeded.add(timeElapsed);
 			if(javaScriptListener.errorOccurs()) {
 				System.err.println("fail");
 			} else {

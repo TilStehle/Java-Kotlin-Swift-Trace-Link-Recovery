@@ -51,7 +51,7 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
         if (pointerClassification == null) {
             pointerClassification = CLASS;
         }
-        docBuilder.enterTypeDeclaration(className, pointerClassification);
+        docBuilder.enterTypeDeclaration(className, pointerClassification, ctx.getStart().getLine());
 
 
         String layer = "nonUI";
@@ -92,7 +92,7 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
             type = variableDeclarationEntryContext.type().typeDescriptor().userType().simpleUserType().get(0).keywordOrSimpleName().getText();
 
         }
-        docBuilder.enterField(name, type);
+        docBuilder.enterField(name, type, variableDeclarationEntryContext.getStart().getLine());
     }
 
     @Override
@@ -127,7 +127,7 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
             KotlinParser.ObjectDeclarationContext parentClassDecl= (KotlinParser.ObjectDeclarationContext)parent;
             name = parentClassDecl.keywordOrSimpleName().getText();
         }
-        docBuilder.enterConstructor(name);
+        docBuilder.enterConstructor(name, ctx.getStart().getLine());
     }
 
     @Override
@@ -144,7 +144,7 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
         {
              returnType = typeContexts.get(0).getText();
         }
-		docBuilder.enterMethod(name, returnType);
+		docBuilder.enterMethod(name, returnType, ctx.getStart().getLine());
     }
 
     @Override

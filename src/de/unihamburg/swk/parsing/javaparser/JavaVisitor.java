@@ -36,6 +36,17 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
     }
 
     @Override
+    public void visit(AnnotationDeclaration n, DocumentBuilder docBuilder) {
+        List<String> inheritance = new LinkedList<>();
+        String typeName = n.getNameAsString();
+        TypePointerClassification classification = INTERFACE;
+        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), classification, inheritance,startLine );
+        super.visit(n, docBuilder);
+        docBuilder.exitTypeDeclaration();
+    }
+
+    @Override
     public void visit(ClassOrInterfaceDeclaration n, DocumentBuilder docBuilder) {
         List<String> inheritance = new LinkedList<>();
         String typeName = n.getNameAsString();
@@ -46,7 +57,8 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
             inheritance.add(TermMapperManager.JAVA.types(implemented.getNameAsString()));
         }
         TypePointerClassification classification = n.isInterface()? INTERFACE: CLASS;
-        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), classification, inheritance);
+        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), classification, inheritance,startLine );
         super.visit(n, docBuilder);
         docBuilder.exitTypeDeclaration();
     }
@@ -58,7 +70,9 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
         for (ClassOrInterfaceType implemented : n.getImplementedTypes()) {
             inheritance.add(implemented.getNameAsString());
         }
-        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), ENUM, inheritance);
+
+        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), ENUM, inheritance, startLine);
         super.visit(n, docBuilder);
         docBuilder.exitTypeDeclaration();
     }
@@ -74,7 +88,9 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
         {
             String pointerName = "AnonymousClass" + "$" + this.anonymousClassCount;
             this.anonymousClassCount++;
-            docBuilder.enterAnonymousTypeDeclaration(pointerName, ANONYMOUS_CLASS);
+
+            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+            docBuilder.enterAnonymousTypeDeclaration(pointerName, ANONYMOUS_CLASS,startLine);
             super.visit(n, docBuilder);
             docBuilder.exitTypeDeclaration();
         }
@@ -83,24 +99,29 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
     @Override
     public void visit(FieldDeclaration n, DocumentBuilder docBuilder) {
         for (VariableDeclarator variableDeclarator : n.getVariables()) {
-            enterClassVariableDeclaration(variableDeclarator.getNameAsString(), variableDeclarator.getType().asString(), docBuilder);
+
+            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+            enterClassVariableDeclaration(variableDeclarator.getNameAsString(), variableDeclarator.getType().asString(), docBuilder, startLine);
             docBuilder.closeElement();
         }
 
     }
 
 
-    private void enterClassVariableDeclaration(String pointerName, String typeName, DocumentBuilder docBuilder) {
+    private void enterClassVariableDeclaration(String pointerName, String typeName, DocumentBuilder docBuilder, int startLine) {
         PointerTypeSeparator pointerTypeSeparator = new PointerTypeSeparator(TermMapperManager.JAVA);
         pointerTypeSeparator.setPointerType(typeName);
         String mappedName = listenerExtension.getMappedAttributeName(pointerName);
-        docBuilder.enterField(pointerName, mappedName, pointerTypeSeparator);
+
+        docBuilder.enterField(pointerName, mappedName, pointerTypeSeparator, startLine);
     }
 
     @Override
     public void visit(ConstructorDeclaration n, DocumentBuilder docBuilder) {
         String name =n.getNameAsString();
-        docBuilder.enterConstructor(name);
+
+        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+        docBuilder.enterConstructor(name, startLine);
         super.visit(n, docBuilder);
         docBuilder.closeElement();
     }
@@ -110,11 +131,15 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
         String pointerName =  n.getNameAsString();
         String mappedName = listenerExtension.getMappedMethodName(pointerName);
         if(n.getType().isVoidType()) {
-            docBuilder.enterMethod(pointerName, mappedName);
+
+            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+            docBuilder.enterMethod(pointerName, mappedName, startLine);
         } else {
             PointerTypeSeparator type = new PointerTypeSeparator(TermMapperManager.JAVA);
             type.setPointerType(n.getType().asString());
-            docBuilder.enterMethod(pointerName, mappedName, type);
+
+            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+            docBuilder.enterMethod(pointerName, mappedName, type, startLine);
         }
         super.visit(n, docBuilder);
         docBuilder.closeElement();

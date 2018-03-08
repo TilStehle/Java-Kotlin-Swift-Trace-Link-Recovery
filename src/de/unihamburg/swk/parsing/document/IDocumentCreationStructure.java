@@ -12,7 +12,7 @@ import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 
 public interface IDocumentCreationStructure<TDocument extends ISearchableDocument> {
 
-	void enterTypeDeclaration(TypePointerClassification classification, String simpleName);
+	void enterTypeDeclaration(TypePointerClassification classification, String simpleName, int startLine);
 
 	void closedRecentTypeDeclaration();
 

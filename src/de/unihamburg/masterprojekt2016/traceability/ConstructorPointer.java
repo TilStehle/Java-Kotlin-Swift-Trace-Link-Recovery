@@ -19,15 +19,15 @@ public class ConstructorPointer extends NamedTypeElementPointer implements IHasP
 	private List<Parameter> parameters;
 
 	public ConstructorPointer() {
-		this(null);
+		this(null, 0);
 	}
 	
-    public ConstructorPointer(String name){
-        this(name, null, null);
+    public ConstructorPointer(String name, int startLine){
+        this(name, null, null, startLine);
     }
 
-    public ConstructorPointer(String name, TypePointer typePointer, String sourceFilePath){
-        super(name, typePointer, sourceFilePath);
+    public ConstructorPointer(String name, TypePointer typePointer, String sourceFilePath, int startLine){
+        super(name, typePointer, sourceFilePath, startLine);
         this.parameters = new LinkedList<>();
     }
     
