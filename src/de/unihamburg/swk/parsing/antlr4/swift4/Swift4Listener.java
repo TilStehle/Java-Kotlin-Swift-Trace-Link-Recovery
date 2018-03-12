@@ -1,3 +1,4 @@
+package de.unihamburg.swk.parsing.antlr4.swift4;
 // Generated from Swift4.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
