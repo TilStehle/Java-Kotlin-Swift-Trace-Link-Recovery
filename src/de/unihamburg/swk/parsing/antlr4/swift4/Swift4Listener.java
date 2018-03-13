@@ -27,26 +27,6 @@ public interface Swift4Listener extends ParseTreeListener {
 	 */
 	void exitGlobalVariableDeclaration(Swift4Parser.GlobalVariableDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Swift4Parser#globalVarDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterGlobalVarDeclaration(Swift4Parser.GlobalVarDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Swift4Parser#globalVarDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitGlobalVarDeclaration(Swift4Parser.GlobalVarDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Swift4Parser#globalLetDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterGlobalLetDeclaration(Swift4Parser.GlobalLetDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Swift4Parser#globalLetDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitGlobalLetDeclaration(Swift4Parser.GlobalLetDeclarationContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#initializerDeclaration}.
 	 * @param ctx the parse tree
 	 */
@@ -267,6 +247,16 @@ public interface Swift4Listener extends ParseTreeListener {
 	 */
 	void exitDefaultParamInitializer(Swift4Parser.DefaultParamInitializerContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#variableInitializer}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariableInitializer(Swift4Parser.VariableInitializerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#variableInitializer}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariableInitializer(Swift4Parser.VariableInitializerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#expression}.
 	 * @param ctx the parse tree
 	 */
@@ -276,6 +266,16 @@ public interface Swift4Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(Swift4Parser.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#constructorCall}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstructorCall(Swift4Parser.ConstructorCallContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#constructorCall}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstructorCall(Swift4Parser.ConstructorCallContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#type}.
 	 * @param ctx the parse tree
@@ -446,6 +446,16 @@ public interface Swift4Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTypeDefinition(Swift4Parser.TypeDefinitionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#extensionDefinition}.
+	 * @param ctx the parse tree
+	 */
+	void enterExtensionDefinition(Swift4Parser.ExtensionDefinitionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#extensionDefinition}.
+	 * @param ctx the parse tree
+	 */
+	void exitExtensionDefinition(Swift4Parser.ExtensionDefinitionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#protocolDeclaration}.
 	 * @param ctx the parse tree
@@ -656,26 +666,6 @@ public interface Swift4Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTypeVariableDeclaration(Swift4Parser.TypeVariableDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Swift4Parser#typeVarDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeVarDeclaration(Swift4Parser.TypeVarDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Swift4Parser#typeVarDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeVarDeclaration(Swift4Parser.TypeVarDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Swift4Parser#typeLetDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeLetDeclaration(Swift4Parser.TypeLetDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Swift4Parser#typeLetDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeLetDeclaration(Swift4Parser.TypeLetDeclarationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#identifier}.
 	 * @param ctx the parse tree

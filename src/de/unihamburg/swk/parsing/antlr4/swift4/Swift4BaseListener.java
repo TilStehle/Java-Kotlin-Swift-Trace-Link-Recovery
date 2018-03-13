@@ -39,30 +39,6 @@ public class Swift4BaseListener implements Swift4Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterGlobalVarDeclaration(Swift4Parser.GlobalVarDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitGlobalVarDeclaration(Swift4Parser.GlobalVarDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterGlobalLetDeclaration(Swift4Parser.GlobalLetDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitGlobalLetDeclaration(Swift4Parser.GlobalLetDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterInitializerDeclaration(Swift4Parser.InitializerDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -327,6 +303,18 @@ public class Swift4BaseListener implements Swift4Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVariableInitializer(Swift4Parser.VariableInitializerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVariableInitializer(Swift4Parser.VariableInitializerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpression(Swift4Parser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -334,6 +322,18 @@ public class Swift4BaseListener implements Swift4Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpression(Swift4Parser.ExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConstructorCall(Swift4Parser.ConstructorCallContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstructorCall(Swift4Parser.ConstructorCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -538,6 +538,18 @@ public class Swift4BaseListener implements Swift4Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTypeDefinition(Swift4Parser.TypeDefinitionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExtensionDefinition(Swift4Parser.ExtensionDefinitionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExtensionDefinition(Swift4Parser.ExtensionDefinitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -790,30 +802,6 @@ public class Swift4BaseListener implements Swift4Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTypeVariableDeclaration(Swift4Parser.TypeVariableDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTypeVarDeclaration(Swift4Parser.TypeVarDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTypeVarDeclaration(Swift4Parser.TypeVarDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTypeLetDeclaration(Swift4Parser.TypeLetDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTypeLetDeclaration(Swift4Parser.TypeLetDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

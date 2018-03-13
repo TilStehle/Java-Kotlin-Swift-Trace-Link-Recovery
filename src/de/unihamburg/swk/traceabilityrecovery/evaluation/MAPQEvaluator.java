@@ -60,7 +60,7 @@ public class MAPQEvaluator {
 
     @Test
     public void BuildIndex() {
-        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("/Users/tilmannstehle/Documents/DissWorkspace/HDW");
+        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("C:\\Users\\Tilmann Stehle\\Documents\\Diss\\HDW");
         recoveryService.printDocuments();
     }
 
@@ -176,7 +176,7 @@ public class MAPQEvaluator {
                 System.out.println("Durchschnittliche Laufzeit JavaParser:   " + comuteAverageOfLongs(GithubJavaParser.timesNeeded)+"ms");
                 System.out.println("Durchschnittliche Laufzeit C#-Parser:   " + comuteAverageOfLongs(CSharpParser.timesNeeded)+"ms");
                 System.out.println("Durchschnittliche Laufzeit KotlinParser:   " + comuteAverageOfLongs(KotlinParser.timesNeeded)+"ms");
-                System.out.println("Durchschnittliche Laufzeit SwiftParser:   " + comuteAverageOfLongs(SwiftParser.timesNeeded)+"ms");
+                System.out.println("Durchschnittliche Laufzeit SwiftParser:   " + comuteAverageOfLongs(Swift4Parser.timesNeeded)+"ms");
                 long timeElapsed = System.currentTimeMillis()-start;
                 System.out.println("Time Elapsed During indexing: "+timeElapsed+"ms");
             } catch (IOException e) {
@@ -190,7 +190,6 @@ public class MAPQEvaluator {
     public TraceabilityModel importGroundTruth(String linkModelXMLPath) {
         TraceabilityModel groundTruthModel = null;
         try {
-
             File file = new File(linkModelXMLPath);
             JAXBContext jaxbContext = JAXBContext.newInstance(TraceabilityModel.class);
 
