@@ -27,13 +27,13 @@ import de.unihamburg.swk.parsing.document.PointerTypeSeparator;
 public class Java8ListenerImplementation<TDocument extends ISearchableDocument> extends Java8BaseListener {
 
 	private DocumentBuilder<TDocument> docBuilder;
-	private JavaListenerExtension listenderExtension;
+	private JavaListenerExtension listenerExtension;
 	
 	private int anonymousClassCount;
 
 	public Java8ListenerImplementation(String filePath, IDocumentFactory<TDocument> documentFactory) {
 		this.docBuilder = new DocumentBuilder<>(filePath, documentFactory);
-		this.listenderExtension = new JavaListenerExtension();
+		this.listenerExtension = new JavaListenerExtension();
 		this.anonymousClassCount = 0;
 	}
 
@@ -47,7 +47,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	public void enterNormalInterfaceDeclaration(Java8Parser.NormalInterfaceDeclarationContext ctx) {
 		List<String> inheritance = new LinkedList<>();
 		String interfaceName = ctx.Identifier().getText();
-		listenderExtension.setInheritance(ctx.extendsInterfaces(), inheritance);
+		listenerExtension.setInheritance(ctx.extendsInterfaces(), inheritance);
 		
 		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE, inheritance, ctx.getStart().getLine());
 	}
@@ -73,8 +73,8 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 		String className = ctx.Identifier().getText();
 		List<String> inheritance = new LinkedList<>();
 		
-		listenderExtension.setInheritance(ctx.superclass(), inheritance);
-		listenderExtension.setInheritance(ctx.superinterfaces(), inheritance);
+		listenerExtension.setInheritance(ctx.superclass(), inheritance);
+		listenerExtension.setInheritance(ctx.superinterfaces(), inheritance);
 		
 		docBuilder.enterTypeDeclaration(className, CLASS, inheritance, ctx.getStart().getLine());
 	}
@@ -88,7 +88,7 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	public void enterEnumDeclaration(Java8Parser.EnumDeclarationContext ctx) {
 		String enumName = ctx.Identifier().getText();
 		List<String> inheritance = new LinkedList<>();
-		listenderExtension.setInheritance(ctx.superinterfaces(), inheritance);
+		listenerExtension.setInheritance(ctx.superinterfaces(), inheritance);
 		
 		docBuilder.enterTypeDeclaration(enumName, ENUM, inheritance, ctx.getStart().getLine());
 	}
@@ -153,8 +153,8 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	}
 	
 	private void enterClassVariableDeclaration(String pointerName, UnannTypeContext unannType, int startLine) {
-		PointerTypeSeparator types = listenderExtension.setType(unannType);
-		String mappedName = listenderExtension.getMappedAttributeName(pointerName);
+		PointerTypeSeparator types = listenerExtension.setType(unannType);
+		String mappedName = listenerExtension.getMappedAttributeName(pointerName);
 		docBuilder.enterField(pointerName, mappedName, types, startLine);
 	}
 
@@ -171,12 +171,12 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 
 	@Override
 	public void enterMethodHeader(Java8Parser.MethodHeaderContext ctx) {
-		String pointerName =  listenderExtension.getName(ctx.methodDeclarator().Identifier());
-		String mappedName = listenderExtension.getMappedMethodName(pointerName);
+		String pointerName =  listenerExtension.getName(ctx.methodDeclarator().Identifier());
+		String mappedName = listenerExtension.getMappedMethodName(pointerName);
 		if(ctx.result().getText().equals("void")) {
 			docBuilder.enterMethod(pointerName, mappedName, ctx.getStart().getLine());
 		} else {
-			PointerTypeSeparator types = listenderExtension.setType(ctx.result().unannType());
+			PointerTypeSeparator types = listenerExtension.setType(ctx.result().unannType());
 			docBuilder.enterMethod(pointerName, mappedName, types, ctx.getStart().getLine());
 		}
 	}
@@ -194,14 +194,14 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	@Override
 	public void exitFormalParameter(Java8Parser.FormalParameterContext ctx) {
 		if(ctx.parent.parent.parent instanceof LambdaParametersContext) return;
-		String name = listenderExtension.getName(ctx.variableDeclaratorId().Identifier());
-		PointerTypeSeparator types = listenderExtension.setType(ctx.unannType());
+		String name = listenerExtension.getName(ctx.variableDeclaratorId().Identifier());
+		PointerTypeSeparator types = listenerExtension.setType(ctx.unannType());
 		docBuilder.enterParameter(name, types);
 	}
 
 	@Override
 	public void enterLocalVariableDeclaration(Java8Parser.LocalVariableDeclarationContext ctx) {
-		PointerTypeSeparator types = listenderExtension.setType(ctx.unannType());
+		PointerTypeSeparator types = listenerExtension.setType(ctx.unannType());
 		for (VariableDeclaratorContext v : ctx.variableDeclaratorList().variableDeclarator()) {
 			String name = v.variableDeclaratorId().getText();
 			docBuilder.enterLocalVariable(name, types);
@@ -226,9 +226,9 @@ public class Java8ListenerImplementation<TDocument extends ISearchableDocument> 
 	
 	@Override
 	public void enterLambdaParameters(Java8Parser.LambdaParametersContext ctx) {
-		SimpleTypeSeparator types = listenderExtension.createSimpleTypeSeperator();
+		SimpleTypeSeparator types = listenerExtension.createSimpleTypeSeperator();
 		List<String> names = new LinkedList<>();
-		listenderExtension.setTypesAndNames(ctx, types, names);
+		listenerExtension.setTypesAndNames(ctx, types, names);
 		docBuilder.enterLambdaParameter(names, types);
 	}
 

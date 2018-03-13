@@ -21,7 +21,7 @@ public class ParserFactory {
 		} else if (filePath.endsWith(Language.KOTLIN.getFileExtension())) {
 			return new KotlinParser<>(filePath, documentFactory);
 		} else if (filePath.endsWith(Language.SWIFT.getFileExtension())) {
-			return new SwiftParser<>(filePath, documentFactory);
+			return new Swift4Parser<>(filePath, documentFactory);
 		}else if (filePath.endsWith(Language.CSHARP.getFileExtension())) {
 			return new CSharpParser<>(filePath, documentFactory);
 		}else if (filePath.endsWith(Language.JAVASCRIPT.getFileExtension())) {
