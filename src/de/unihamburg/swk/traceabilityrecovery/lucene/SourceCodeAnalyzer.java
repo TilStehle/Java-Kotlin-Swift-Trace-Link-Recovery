@@ -1,17 +1,12 @@
 package de.unihamburg.swk.traceabilityrecovery.lucene;
 
 import org.apache.lucene.analysis.*;
-import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.en.EnglishPossessiveFilter;
 import org.apache.lucene.analysis.en.PorterStemFilter;
 import org.apache.lucene.analysis.miscellaneous.SetKeywordMarkerFilter;
-import org.apache.lucene.analysis.pattern.PatternReplaceCharFilter;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.standard.StandardFilter;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
-import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.List;

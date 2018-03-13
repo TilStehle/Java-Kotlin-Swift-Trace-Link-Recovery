@@ -56,7 +56,6 @@ public class LuceneDocument implements ISearchableDocument {
             document.removeField("title");
         }
         TextField titleField = new TextField("title", title, Field.Store.YES);
-        titleField.setBoost(2);
         document.add(titleField);
     }
 

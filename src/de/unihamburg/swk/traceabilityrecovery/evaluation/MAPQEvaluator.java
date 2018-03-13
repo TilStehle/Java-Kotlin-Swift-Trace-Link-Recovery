@@ -60,7 +60,7 @@ public class MAPQEvaluator {
 
     @Test
     public void BuildIndex() {
-        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("C:\\Users\\Tilmann Stehle\\Documents\\VanSteWski\\DennisiOS\\Dennis");
+        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("/Users/tilmannstehle/Documents/DissWorkspace/HDW");
         recoveryService.printDocuments();
     }
 

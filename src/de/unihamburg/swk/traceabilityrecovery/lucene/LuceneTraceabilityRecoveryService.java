@@ -19,7 +19,6 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -272,7 +271,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         }
     }
 
-    @NotNull
     private List<String> getSourceFilePaths(Predicate<String> filter, String[] projectPaths) throws IOException {
         this.projectPaths = projectPaths;
         if (indexPath == null) {
