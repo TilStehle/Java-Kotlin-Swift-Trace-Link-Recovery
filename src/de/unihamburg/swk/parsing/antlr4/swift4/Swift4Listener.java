@@ -1,5 +1,4 @@
-package de.unihamburg.swk.parsing.antlr4.swift4;
-// Generated from Swift4.g4 by ANTLR 4.7.1
+package de.unihamburg.swk.parsing.antlr4.swift4;// Generated from Swift4.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -447,6 +446,16 @@ public interface Swift4Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTypeDefinition(Swift4Parser.TypeDefinitionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#protocolDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void enterProtocolDeclaration(Swift4Parser.ProtocolDeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#protocolDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void exitProtocolDeclaration(Swift4Parser.ProtocolDeclarationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#structDeclaration}.
 	 * @param ctx the parse tree

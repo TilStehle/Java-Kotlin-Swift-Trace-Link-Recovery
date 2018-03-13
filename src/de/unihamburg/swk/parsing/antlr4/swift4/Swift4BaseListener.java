@@ -1,5 +1,4 @@
-package de.unihamburg.swk.parsing.antlr4.swift4;
-// Generated from Swift4.g4 by ANTLR 4.7.1
+package de.unihamburg.swk.parsing.antlr4.swift4;// Generated from Swift4.g4 by ANTLR 4.7.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -539,6 +538,18 @@ public class Swift4BaseListener implements Swift4Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTypeDefinition(Swift4Parser.TypeDefinitionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterProtocolDeclaration(Swift4Parser.ProtocolDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProtocolDeclaration(Swift4Parser.ProtocolDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
