@@ -183,18 +183,6 @@ public class Swift4BaseListener implements Swift4Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLetDeclaration(Swift4Parser.LetDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLetDeclaration(Swift4Parser.LetDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterGenericParameterClause(Swift4Parser.GenericParameterClauseContext ctx) { }
 	/**
 	 * {@inheritDoc}

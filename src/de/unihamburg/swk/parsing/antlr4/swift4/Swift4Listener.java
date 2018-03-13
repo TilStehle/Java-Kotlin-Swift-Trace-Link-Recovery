@@ -147,16 +147,6 @@ public interface Swift4Listener extends ParseTreeListener {
 	 */
 	void exitVariableDeclaration(Swift4Parser.VariableDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Swift4Parser#letDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterLetDeclaration(Swift4Parser.LetDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Swift4Parser#letDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitLetDeclaration(Swift4Parser.LetDeclarationContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#genericParameterClause}.
 	 * @param ctx the parse tree
 	 */

@@ -56,15 +56,6 @@ public class Swift4ListenerImplementation<T extends ISearchableDocument> extends
         docBuilder.enterLocalVariable(mappedName, typeSeparator);
     }
 
-    @Override
-    public void enterLetDeclaration(Swift4Parser.LetDeclarationContext ctx) {
-        PointerTypeSeparator typeSeparator = new PointerTypeSeparator(MAPPER);
-        final String mappedName = MAPPER.variables(ctx.identifier().getText());
-        if (ctx.type() != null) {
-            typeSeparator.setPointerType(ctx.type().getText());
-        }
-        docBuilder.enterLocalVariable(mappedName, typeSeparator);
-    }
 
     private List<String> getInheritanceList(Swift4Parser.TypeInheritanceClauseContext typeInheritanceClauseContext) {
         if (typeInheritanceClauseContext != null) {
