@@ -23,4 +23,9 @@ public class AddFolderToIndexCommand  implements ITraceabilityRecoveryCommand{
     public void execute() throws IOException {
         traceabilityRecoveryService.addFolderToIndex(projectPathFilter, folderPath );
     }
+
+    @Override
+    public String getDescription() {
+        return "Adding" + folderPath + "to traceability index";
+    }
 }

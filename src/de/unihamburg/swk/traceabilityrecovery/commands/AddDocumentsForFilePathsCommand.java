@@ -3,6 +3,7 @@ package de.unihamburg.swk.traceabilityrecovery.commands;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by Tilmann Stehle on 14.02.2018.
@@ -20,5 +21,10 @@ public class AddDocumentsForFilePathsCommand implements ITraceabilityRecoveryCom
     @Override
     public void execute() throws IOException {
         traceabilityRecoveryService.addDocumentsForFilePaths(filePaths);
+    }
+
+    @Override
+    public String getDescription() {
+        return "Indexing the following files: "+ Arrays.toString(filePaths);
     }
 }

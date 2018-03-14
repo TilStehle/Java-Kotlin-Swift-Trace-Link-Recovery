@@ -21,4 +21,9 @@ public class LoadIndexFromDiskCommand implements ITraceabilityRecoveryCommand {
     public void execute() throws IOException {
         traceabilityRecoveryService.loadIndexFromDisk();
     }
+
+    @Override
+    public String getDescription() {
+        return "Loading Traceability Index";
+    }
 }

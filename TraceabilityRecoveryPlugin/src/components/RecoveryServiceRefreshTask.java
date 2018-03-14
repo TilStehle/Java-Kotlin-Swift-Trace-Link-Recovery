@@ -9,6 +9,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.ParserProgress;
+import de.unihamburg.swk.traceabilityrecovery.commands.ITraceabilityRecoveryCommand;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +24,7 @@ import static components.TraceabilityRecoveryComponent.NOTIFICATION_ID;
  */
 public class RecoveryServiceRefreshTask extends Task.Backgroundable implements Observer {
 
-    private static final String TITLE = "Traceability Recovery analysis";
+    private final String title;
     private static final String FINISH_MESSAGE = "Recovery Service has been refreshed";
     private static final String ERROR_MESSAGE = "Recovery Service could not be refreshed";
     private static final String ERROR_MESSAGE_NO_PATHS = "Recovery Service could not be refreshed because no linked implementation path is configured";
@@ -31,15 +32,17 @@ public class RecoveryServiceRefreshTask extends Task.Backgroundable implements O
 
     private String[] pathsToRead;
     private ITraceabilityRecoveryService recoveryService;
+    private final ITraceabilityRecoveryCommand command;
 
     private boolean cancelled = false;
 
     private ProgressIndicator progressIndicator;
 
-    public RecoveryServiceRefreshTask(@Nullable Project project, long fileTimeout, String... pathsToRead) {
-        super(project, TITLE, true);
+    public RecoveryServiceRefreshTask(@Nullable Project project, long fileTimeout, ITraceabilityRecoveryCommand command) {
+        super(project, command.getDescription(), true);
+        title = command.getDescription();
         recoveryService = ServiceManager.getService(project, ITraceabilityRecoveryService.class);
-        this.pathsToRead = pathsToRead;
+        this.command = command;
 
         recoveryService.getParserProgress().setFileParserTimeout(fileTimeout);
         recoveryService.getParserProgress().addObserver(this);
@@ -51,29 +54,29 @@ public class RecoveryServiceRefreshTask extends Task.Backgroundable implements O
         this.progressIndicator = progressIndicator;
 
         try {
-            recoveryService.discardIndexAndReadDocuments(pathsToRead);
+            recoveryService.enqueueCommand(command);
 
             if (cancelled)
                 throw new IOException();
 
-            Notifications.Bus.notify(new Notification(NOTIFICATION_ID, TITLE, FINISH_MESSAGE, NotificationType.INFORMATION));
+            Notifications.Bus.notify(new Notification(NOTIFICATION_ID, title, FINISH_MESSAGE, NotificationType.INFORMATION));
 
             if (!recoveryService.getParserProgress().getNonParsedFiles().isEmpty()) {
                 String unparsedMessage = UNPARSED_MESSAGE + "\n";
                 for (String filePath : recoveryService.getParserProgress().getNonParsedFiles()) {
                     unparsedMessage = unparsedMessage + filePath + "\n";
                 }
-                Notifications.Bus.notify(new Notification(NOTIFICATION_ID, TITLE, unparsedMessage, NotificationType.WARNING));
+                Notifications.Bus.notify(new Notification(NOTIFICATION_ID, title, unparsedMessage, NotificationType.WARNING));
             }
 
         } catch (IOException e) {
 
-            Notifications.Bus.notify(new Notification(NOTIFICATION_ID, TITLE, ERROR_MESSAGE, NotificationType.ERROR));
+            Notifications.Bus.notify(new Notification(NOTIFICATION_ID, title, ERROR_MESSAGE, NotificationType.ERROR));
             System.out.println("Couldn't read documents");
 
         } catch (NullPointerException e){
 
-            Notifications.Bus.notify(new Notification(NOTIFICATION_ID, TITLE, ERROR_MESSAGE_NO_PATHS, NotificationType.INFORMATION));
+            Notifications.Bus.notify(new Notification(NOTIFICATION_ID, title, ERROR_MESSAGE_NO_PATHS, NotificationType.INFORMATION));
             System.out.println("No paths given");
         }
 

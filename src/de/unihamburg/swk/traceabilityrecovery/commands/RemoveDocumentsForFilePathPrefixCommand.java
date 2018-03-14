@@ -12,13 +12,18 @@ public class RemoveDocumentsForFilePathPrefixCommand implements ITraceabilityRec
     private final ITraceabilityRecoveryService traceabilityRecoveryService;
     private String filePath;
 
-    public RemoveDocumentsForFilePathPrefixCommand(ITraceabilityRecoveryService traceabilityRecoveryService, String filePath)
-    {
+    public RemoveDocumentsForFilePathPrefixCommand(ITraceabilityRecoveryService traceabilityRecoveryService, String filePath) {
         this.traceabilityRecoveryService = traceabilityRecoveryService;
         this.filePath = filePath;
     }
+
     @Override
     public void execute() throws IOException {
         traceabilityRecoveryService.removeDocumentsForFilesWithPathPrefix(filePath);
+    }
+
+    @Override
+    public String getDescription() {
+        return "Removing traceability for " + filePath;
     }
 }

@@ -3,6 +3,7 @@ package de.unihamburg.swk.traceabilityrecovery.commands;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.function.Predicate;
 
 /**
@@ -36,5 +37,10 @@ public class DiscardIndexAndReadDocumentsCommand implements ITraceabilityRecover
         {
             traceabilityRecoveryService.discardIndexAndReadDocuments(pathFilter, projectPaths);
         }
+    }
+
+    @Override
+    public String getDescription() {
+        return "Reindexing project paths "+ Arrays.toString(projectPaths);
     }
 }

@@ -123,7 +123,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     public List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, Language language) {
         LuceneDocument queryDocument = documentsByPointers.get(pointer);
         Query combinedQuery = createQueryFromDocument(queryDocument, language);
-        return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer);
+        return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer, getQueryLength(queryDocument));
 
     }
     @Override
@@ -139,16 +139,30 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     }
 
+    private int getQueryLength(LuceneDocument queryDocument)
+    {
+        int queryLength =0;
+        try {
+            Map<String, Integer> wordCounts = computeWordCounts(queryDocument.getContents());
+            for (Map.Entry<String, Integer> wordCount : wordCounts.entrySet()) {
+                queryLength += wordCount.getValue();
+            }
+        } catch (ParseException e) {
+            queryLength = 1;
+        }
+        return queryLength;
+    }
+
     @Override
     public List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, String... pathPrefixes) {
         LuceneDocument queryDocument = documentsByPointers.get(pointer);
         Query combinedQuery = createQueryFromDocument(queryDocument, pathPrefixes);
-        return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer);
+        return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer, getQueryLength(queryDocument));
 
     }
 
 
-    private List<TraceabilityLink> getSortedTraceabilityLinksForLuceneQuery(Query query, TraceabilityPointer pointer) {
+    private List<TraceabilityLink> getSortedTraceabilityLinksForLuceneQuery(Query query, TraceabilityPointer pointer, int queryLenght) {
         try (IndexReader reader = DirectoryReader.open(index);) {
             int hitsPerPage = 50;
             IndexSearcher searcher = new IndexSearcher(reader);
@@ -160,7 +174,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                 StoredField pointerField = (StoredField) matchedDocument.getField("pointer");
                 TraceabilityPointer targetPointer = XMLImport.unmarshalPointer(pointerField.stringValue());
                 TraceabilityLink traceabilityLink = new TraceabilityLink(pointer, targetPointer);
-                traceabilityLink.setProbability(scoreDoc.score);
+                traceabilityLink.setProbability(scoreDoc.score/queryLenght);
                 hitLinks.add(traceabilityLink);
             }
             return hitLinks;
@@ -466,8 +480,10 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             languageQuery = new QueryParser("language", analyzer).parse(language.getFileExtension());
 
             String boostedQueryString = "";
+            int queryLength=0;
             for (Multiset.Entry<String> stringEntry : queryTerms.entrySet()) {
                 boostedQueryString += stringEntry.getElement() + "^" + stringEntry.getCount() + " ";
+                queryLength += stringEntry.getCount();
             }
 
             Query contentQuery = new QueryParser("content", analyzer).parse(boostedQueryString);
@@ -477,7 +493,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
             booleanQueryBuilder.add(languageQuery, BooleanClause.Occur.FILTER);
             BooleanQuery combinedQuery = booleanQueryBuilder.build();
-            linkResults = getSortedTraceabilityLinksForLuceneQuery(combinedQuery, null);
+            linkResults = getSortedTraceabilityLinksForLuceneQuery(combinedQuery, null, queryLength );
 
         } catch (ParseException e) {
             e.printStackTrace();

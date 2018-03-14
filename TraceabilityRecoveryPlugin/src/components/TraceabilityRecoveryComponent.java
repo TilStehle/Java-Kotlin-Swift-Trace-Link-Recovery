@@ -3,13 +3,19 @@ package components;
 import com.intellij.openapi.components.*;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.newvfs.BulkFileListener;
+import com.intellij.openapi.vfs.newvfs.events.*;
+import com.intellij.util.containers.ContainerUtil;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
+import de.unihamburg.swk.traceabilityrecovery.commands.*;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import preferences.TraceabilityRecoveryComponentConfiguration;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by Gerrit Greiert on 21.02.17.
@@ -18,7 +24,7 @@ import java.io.IOException;
         name = "Traceability Recovery Plugin",
         storages = {@Storage("traceability-recovery-plugin.xml")}
 )
-public class TraceabilityRecoveryComponent implements ProjectComponent, PersistentStateComponent<TraceabilityRecoveryComponentConfiguration> {
+public class TraceabilityRecoveryComponent implements ProjectComponent, PersistentStateComponent<TraceabilityRecoveryComponentConfiguration>, BulkFileListener {
 
     public static final String NOTIFICATION_ID = "Traceability Recovery";
     public static final String QUERY_TITLE = "Traceability Query";
@@ -31,7 +37,58 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
     public TraceabilityRecoveryComponent(Project project) {
         this.project = project;
         configuration = new TraceabilityRecoveryComponentConfiguration();
+        project.getMessageBus().connect(project).subscribe(VirtualFileManager.VFS_CHANGES, this);
     }
+
+
+    @Override
+    public void before(@NotNull List<? extends VFileEvent> list) {
+
+    }
+
+    @Override
+    public void after(@NotNull List<? extends VFileEvent> list) {
+        for (VFileEvent fileEvent : list) {
+            if (fileEvent instanceof VFileContentChangeEvent) {
+                refreshTraceabilityForFile(fileEvent.getPath());
+            } else if (fileEvent instanceof VFileCreateEvent) {
+                addToTraceabilityIndex(fileEvent.getPath());
+            } else if (fileEvent instanceof VFileCopyEvent) {
+                addToTraceabilityIndex(fileEvent.getPath());
+            } else if (fileEvent instanceof VFileMoveEvent) {
+                VFileMoveEvent moveEvent = (VFileMoveEvent) fileEvent;
+                removeFromTraceabilityIndex(moveEvent.getOldPath());
+                addToTraceabilityIndex(moveEvent.getNewParent().getPath() + "/" + moveEvent.getFile().getName());
+            } else if (fileEvent instanceof VFileDeleteEvent) {
+                removeFromTraceabilityIndex(fileEvent.getPath());
+
+            }
+        }
+
+
+    }
+
+    private void removeFromTraceabilityIndex(String path) {
+        ITraceabilityRecoveryCommand command = new RemoveDocumentsForFilePathPrefixCommand(traceabilityRecoveryService, path);
+        enqueueCommand(command);
+    }
+
+    private void addToTraceabilityIndex(String path) {
+        ITraceabilityRecoveryCommand command = new AddDocumentsForFilePathsCommand(traceabilityRecoveryService, path);
+        enqueueCommand(command);
+    }
+    private void refreshTraceabilityForFile(String path) {
+        ITraceabilityRecoveryCommand command = new ReplaceDocumentsForFilePathsCommand(traceabilityRecoveryService, path);
+        enqueueCommand(command);
+    }
+
+    private void enqueueCommand(ITraceabilityRecoveryCommand command) {
+        RecoveryServiceRefreshTask task = new RecoveryServiceRefreshTask(project, configuration.getFileParserTimeout(), command);
+        ProgressManager.getInstance().run(task);
+    }
+
+
+
 
     @Override
     public void initComponent() {
@@ -48,7 +105,7 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
     }
 
     @Override
-    public void projectOpened(){
+    public void projectOpened() {
         String projectBasePath = project.getBasePath();
         System.out.println("Opened project: " + projectBasePath);
         System.out.println("Linked implementation: " + configuration.getLinkedImplementationPath());
@@ -56,9 +113,9 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
         traceabilityRecoveryService = ServiceManager.getService(project, ITraceabilityRecoveryService.class);
 
         //Reload lucene index if lucene service
-        if (traceabilityRecoveryService instanceof LuceneTraceabilityRecoveryService){
+        if (traceabilityRecoveryService instanceof LuceneTraceabilityRecoveryService) {
 
-            if (configuration.isUseCustomConfigPath()){
+            if (configuration.isUseCustomConfigPath()) {
                 traceabilityRecoveryService.setIndexPath(configuration.getCustomConfigPath() + configuration.INDEX_PATH_FOLDER);
             } else {
                 traceabilityRecoveryService.setIndexPath(projectBasePath + configuration.INDEX_PATH_FOLDER);
@@ -66,7 +123,7 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
 
             try {
                 traceabilityRecoveryService.loadIndexFromDisk();
-            } catch (IOException|RuntimeException e) {
+            } catch (IOException | RuntimeException e) {
                 System.out.println("Couldn't read index, building new index");
                 refreshRecoveryService();
             }
@@ -108,10 +165,10 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
     /**
      * Refreshes the recovery service. Calls discardIndexAndReadDocuments() on all given paths.
      */
-    public void refreshRecoveryService(){
+    public void refreshRecoveryService() {
 
-        RecoveryServiceRefreshTask task = new RecoveryServiceRefreshTask(project, configuration.getFileParserTimeout(), project.getBasePath(), configuration.getLinkedImplementationPath());
+        ITraceabilityRecoveryCommand command = new DiscardIndexAndReadDocumentsCommand(traceabilityRecoveryService, project.getBasePath(), configuration.getLinkedImplementationPath());
+        RecoveryServiceRefreshTask task = new RecoveryServiceRefreshTask(project, configuration.getFileParserTimeout(), command);
         ProgressManager.getInstance().run(task);
     }
-
 }

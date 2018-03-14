@@ -7,4 +7,6 @@ import java.io.IOException;
  */
 public interface ITraceabilityRecoveryCommand {
     void execute() throws IOException;
+
+    String getDescription();
 }

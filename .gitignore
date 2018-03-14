@@ -3,3 +3,4 @@ target/*
 /target/
 testDocs/*
 /testDocs/
+.idea/
