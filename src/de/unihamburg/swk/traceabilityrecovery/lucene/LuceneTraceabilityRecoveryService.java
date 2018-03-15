@@ -379,7 +379,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             currentFileIndex++;
             ExecutorService executor = Executors.newSingleThreadExecutor();
             if (parserProgress.isParsing() == true) {
-
                 Future future = executor.submit(new ParsingRunnable(filePath, indexWriter));
                 try {
 

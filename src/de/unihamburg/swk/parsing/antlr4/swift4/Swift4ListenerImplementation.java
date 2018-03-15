@@ -45,6 +45,39 @@ public class Swift4ListenerImplementation<T extends ISearchableDocument> extends
         docBuilder.exitTypeDeclaration();
     }
 
+    @Override
+    public void enterRawValueStyleEnum(Swift4Parser.RawValueStyleEnumContext ctx) {
+        docBuilder.enterTypeDeclaration(MAPPER.types(ctx.identifier().getText()), TypePointerClassification.ENUM, getInheritanceList(ctx.typeInheritanceClause()), ctx.getStart().getLine());
+    }
+
+    @Override
+    public void exitRawValueStyleEnum(Swift4Parser.RawValueStyleEnumContext ctx) {
+        docBuilder.exitTypeDeclaration();
+    }
+
+    @Override
+    public void enterUnionStyleEnum(Swift4Parser.UnionStyleEnumContext ctx) {
+        docBuilder.enterTypeDeclaration(MAPPER.types(ctx.identifier().getText()), TypePointerClassification.ENUM, getInheritanceList(ctx.typeInheritanceClause()), ctx.getStart().getLine());
+    }
+
+    @Override
+    public void exitUnionStyleEnum(Swift4Parser.UnionStyleEnumContext ctx) {
+        docBuilder.exitTypeDeclaration();
+    }
+
+    @Override
+    public void enterRawValueEnumCase(Swift4Parser.RawValueEnumCaseContext ctx) {
+        PointerTypeSeparator typeSeparator = new PointerTypeSeparator(MAPPER);
+        final String mappedName = MAPPER.variables(ctx.identifier().getText());
+        docBuilder.enterField(ctx.identifier().getText(), mappedName, typeSeparator, ctx.getStart().getLine());
+    }
+
+    @Override
+    public void enterEnumCase(Swift4Parser.EnumCaseContext ctx) {
+        PointerTypeSeparator typeSeparator = new PointerTypeSeparator(MAPPER);
+        final String mappedName = MAPPER.variables(ctx.identifier().getText());
+        docBuilder.enterField(ctx.identifier().getText(), mappedName, typeSeparator, ctx.getStart().getLine());
+    }
 
     @Override
     public void enterVariableDeclaration(Swift4Parser.VariableDeclarationContext ctx) {
