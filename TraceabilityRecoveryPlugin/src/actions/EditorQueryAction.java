@@ -46,7 +46,7 @@ public class EditorQueryAction extends AnAction {
             List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer, Language.SWIFT);
             ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
                     TPointerOpenerFactory.createOpener().openTraceabilityPointer(clickedPointer));
-            resultsPopup.setResultFilter(ResultFilter.getFilterForPointerType(pointer));
+            //resultsPopup.setResultFilter(ResultFilter.getFilterForPointerType(pointer));
             resultsPopup.show();
         }
         catch (Exception ex){

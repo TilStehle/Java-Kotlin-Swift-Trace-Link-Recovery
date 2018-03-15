@@ -20,6 +20,7 @@ public class IconProvider {
     public static Icon LINK_INTERFACE = AllIcons.Nodes.Interface;
     public static Icon LINK_METHOD = AllIcons.Nodes.Method;
     public static Icon LINK_PACKAGE = AllIcons.Nodes.Package;
+    public static Icon LINK_EXTENSION = AllIcons.Nodes.Plugin;
 
     public static Icon getIconForTraceabilityLink(TraceabilityPointer pointer){
 
@@ -31,6 +32,9 @@ public class IconProvider {
             }
             else if (typePointer.getClassification() == TypePointerClassification.ENUM){
                 return LINK_ENUM;
+            }
+            else if (typePointer.getClassification() == TypePointerClassification.EXTENSION){
+                return LINK_EXTENSION;
             }
             else {
                 return LINK_CLASS;

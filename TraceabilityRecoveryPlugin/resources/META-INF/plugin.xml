@@ -45,9 +45,15 @@
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U"/>
             </action>
 
+
             <action id="traceabilityrecovery.searchQueryAction" class="actions.SearchQueryAction"
                     text="Search tracebility links"
                     description="Search traceability links with a query">
+            </action>
+
+            <action id="traceabilityrecovery.refreshTraceabilityIndexAction" class="actions.RefreshRecoveryServiceAction"
+                    text="Refresh traceability Index">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt I"/>
             </action>
 
         </group>

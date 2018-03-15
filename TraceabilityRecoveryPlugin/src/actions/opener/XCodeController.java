@@ -14,18 +14,26 @@ import java.io.IOException;
  */
 public class XCodeController {
 
-    public static void openXCodeAtLine(String path, int lineNumber) {
+    public static void openXCodeAtLine(String fileName, int lineNumber) {
 
         Runtime runtime = Runtime.getRuntime();
         String appleScript = "tell application \"Xcode\"\n" +
-                "\topen \"" + path + "\"\n" +
                 "\tactivate\n" +
+                "\t\n" +
                 "\ttell application \"System Events\"\n" +
+                "\t\t--open file containing class declaration\n" +
+                "\t\t\n" +
                 "\t\ttell process \"Xcode\"\n" +
+                "\t\t\tkeystroke \"o\" using {shift down, command down}\n" +
+                "\t\t\trepeat until window \"Open Quickly\" exists\n" +
+                "\t\t\tend repeat\n" +
+                "\t\t\tset value of text field 1 of window \"Open Quickly\" to \""+fileName+"\"\n" +
+                "\t\t\tdelay 0.2\n" +
+                "\t\t\tkeystroke return\n" +
                 "\t\t\tkeystroke \"l\" using command down\n" +
                 "\t\t\trepeat until window \"Open Quickly\" exists\n" +
                 "\t\t\tend repeat\n" +
-                "\t\t\tset value of text field 1 of window \"Open Quickly\" to \"" + lineNumber + "\"\n" +
+                "\t\t\tset value of text field 1 of window \"Open Quickly\" to \""+lineNumber+"\"\n" +
                 "\t\t\t--set winstuff to entire contents of front window\n" +
                 "\t\t\t--return winstuff -- comment this out too to get just menustuff\n" +
                 "\t\t\tkeystroke return\n" +
@@ -34,6 +42,7 @@ public class XCodeController {
                 "end tell";
         String[] args = {"osascript", "-e", appleScript};
         try {
+            //System.out.println(appleScript);
             runtime.exec(args);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -42,7 +51,8 @@ public class XCodeController {
 
     public static void openXCodeProjectAtTypeAndLine(String projectFilePath, String typeName, int lineNumber) {
         Runtime runtime = Runtime.getRuntime();
-        String appleScript = "tell application \"Xcode\"\n" +
+        String appleScript =
+                "" +"tell application \"Xcode\"\n" +
                 "\topen \""+projectFilePath+"\"\n" +
                 "\tactivate\n" +
                 "\ttell application \"System Events\"\n" +
@@ -53,7 +63,7 @@ public class XCodeController {
                 "\t\t\trepeat until window \"Open Quickly\" exists\n" +
                 "\t\t\tend repeat\n" +
                 "\t\t\tset value of text field 1 of window \"Open Quickly\" to \""+typeName+"\"\n" +
-                "\t\t\tdelay 0.5\n" +
+                "\t\t\tdelay 0.2\n" +
                 "\t\t\tkeystroke return\n" +
                 "\t\t\t\n" +
                 "\t\t\t--navigate to method line\n" +
@@ -65,7 +75,7 @@ public class XCodeController {
                 "\t\tend tell\n" +
                 "\tend tell\n" +
                 "end tell";
-        String[] args = {"osascript", "-e", appleScript};
+        String[] args = {"osascript",   "-e", appleScript};
         try {
             runtime.exec(args);
         } catch (IOException e) {

@@ -3,6 +3,8 @@ package actions.opener;
 import com.intellij.openapi.ui.Messages;
 import de.unihamburg.masterprojekt2016.traceability.*;
 
+import java.io.File;
+
 /**
  * Created by Gerrit Greiert on 04.01.17.
  */
@@ -33,21 +35,25 @@ public class MacTPointerOpener extends TPointerOpener {
         }
 
     }
+    private String getFileNameFromPath(String path){
+        File f = new File(path);
+        return f.getName();
+    }
 
     public void openTraceabilityPointer(TypePointer pointer) {
-        XCodeController.openXCodeAtLine(pointer.getSourceFilePath(), 0);
+        XCodeController.openXCodeAtLine(getFileNameFromPath(pointer.getSourceFilePath()), pointer.getStartLine());
     }
 
     public void openTraceabilityPointer(MethodPointer pointer) {
-        XCodeController.openXCodeAtMethod(pointer, xCodeProjectPath);
+        XCodeController.openXCodeAtLine(getFileNameFromPath(pointer.getSourceFilePath()), pointer.getStartLine());
     }
 
     public void openTraceabilityPointer(ConstructorPointer pointer) {
-        XCodeController.openXCodeAtConstructor(pointer, xCodeProjectPath);
+        XCodeController.openXCodeAtLine(getFileNameFromPath(pointer.getSourceFilePath()), pointer.getStartLine());
     }
 
     public void openTraceabilityPointer(AttributePointer pointer) {
-        XCodeController.openXCodeAtAttribute(pointer, xCodeProjectPath);
+        XCodeController.openXCodeAtLine(getFileNameFromPath(pointer.getSourceFilePath()), pointer.getStartLine());
     }
 
     /*

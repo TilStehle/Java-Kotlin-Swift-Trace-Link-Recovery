@@ -31,6 +31,7 @@ public class ResultPopupPanel extends JBPanel {
     private JBRadioButton classButton;
     private JBRadioButton methodButton;
     private JBRadioButton attributeButton;
+    private ResultFilter filter;
 
     public ResultPopupPanel(List<TraceabilityLink> traceabilityLinks){
 
@@ -95,20 +96,11 @@ public class ResultPopupPanel extends JBPanel {
         resultList = new JBList();
         resultList.setCellRenderer(new ResultListCellRenderer());
         resultList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
-        resultList.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-
-                if (!e.getValueIsAdjusting())
-                    System.out.println(((TraceabilityLink)resultList.getSelectedValue()).getTarget().getDisplayName());
-            }
-        });
-
         return new JBScrollPane(resultList);
     }
 
     public void filter(ResultFilter filter){
+        this.filter= filter;
 
         DefaultListModel<TraceabilityLink> filteredListModel = new DefaultListModel<>();
 
@@ -142,13 +134,15 @@ public class ResultPopupPanel extends JBPanel {
     public TraceabilityLink getSelectedLink(){
 
         TraceabilityLink selectedLink = (TraceabilityLink) resultList.getSelectedValue();
-        System.out.println(selectedLink.getTarget().getDisplayName());
-
         return selectedLink;
     }
 
     public JBList getResultList(){
 
         return resultList;
+    }
+
+    public ResultFilter getFilter() {
+        return filter;
     }
 }

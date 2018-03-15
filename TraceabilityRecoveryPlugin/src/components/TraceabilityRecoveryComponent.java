@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import preferences.TraceabilityRecoveryComponentConfiguration;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
     public TraceabilityRecoveryComponent(Project project) {
         this.project = project;
         configuration = new TraceabilityRecoveryComponentConfiguration();
+        traceabilityRecoveryService = ServiceManager.getService(project, ITraceabilityRecoveryService.class);
         project.getMessageBus().connect(project).subscribe(VirtualFileManager.VFS_CHANGES, this);
     }
 
@@ -74,12 +76,24 @@ public class TraceabilityRecoveryComponent implements ProjectComponent, Persiste
     }
 
     private void addToTraceabilityIndex(String path) {
-        ITraceabilityRecoveryCommand command = new AddDocumentsForFilePathsCommand(traceabilityRecoveryService, path);
-        enqueueCommand(command);
+        File file = new File(path);
+
+        if(traceabilityRecoveryService.isParseableSourceFilePath(path))
+        {
+            ITraceabilityRecoveryCommand command = new AddDocumentsForFilePathsCommand(traceabilityRecoveryService,path);
+            enqueueCommand(command);
+        }
+        else if(file.isDirectory())
+        {
+            ITraceabilityRecoveryCommand command = new AddFolderToIndexCommand(traceabilityRecoveryService, path, p -> true);
+            enqueueCommand(command);
+        }
     }
     private void refreshTraceabilityForFile(String path) {
-        ITraceabilityRecoveryCommand command = new ReplaceDocumentsForFilePathsCommand(traceabilityRecoveryService, path);
-        enqueueCommand(command);
+        if(traceabilityRecoveryService.isParseableSourceFilePath(path)) {
+            ITraceabilityRecoveryCommand command = new ReplaceDocumentsForFilePathsCommand(traceabilityRecoveryService, path);
+            enqueueCommand(command);
+        }
     }
 
     private void enqueueCommand(ITraceabilityRecoveryCommand command) {

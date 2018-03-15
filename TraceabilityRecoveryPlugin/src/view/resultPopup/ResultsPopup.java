@@ -11,6 +11,10 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.event.MouseInputAdapter;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.util.List;
 
 /**
@@ -37,18 +41,40 @@ public class ResultsPopup {
         ComponentPopupBuilder popupBuilder = popupFactory.createComponentPopupBuilder(popupPanel, popupPanel.getResultList());
         popup = popupBuilder.createPopup();
 
-        popupPanel.getResultList().addListSelectionListener(new ListSelectionListener() {
+        popupPanel.getResultList().addMouseListener(new MouseInputAdapter() {
             @Override
-            public void valueChanged(ListSelectionEvent e) {
-
-                if (!e.getValueIsAdjusting()){
+            public void mouseClicked(MouseEvent mouseEvent) {
+                TraceabilityLink selectedLink = popupPanel.getSelectedLink();
+                TraceabilityPointer target = selectedLink.getTarget();
+                pointerClickedListener.onLinkedClicked(target);
+                popup.cancel();
+            }
+        });
+        popupPanel.getResultList().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent keyEvent) {
+                if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER)
+                {
                     TraceabilityLink selectedLink = popupPanel.getSelectedLink();
                     TraceabilityPointer target = selectedLink.getTarget();
                     pointerClickedListener.onLinkedClicked(target);
                     popup.cancel();
                 }
+
+            }
+            @Override
+            public void keyReleased(KeyEvent keyEvent) {
+                 if(keyEvent.getKeyCode() == KeyEvent.VK_LEFT)
+                {
+                    setResultFilter(ResultFilter.decrease(popupPanel.getFilter()));
+                }
+                else if(keyEvent.getKeyCode() == KeyEvent.VK_RIGHT)
+                {
+                    setResultFilter(ResultFilter.increase(popupPanel.getFilter()));
+                }
             }
         });
+
     }
 
     public void show(){
@@ -57,6 +83,7 @@ public class ResultsPopup {
             popup.showInBestPositionFor(editor);
         }
         else popup.showInFocusCenter();
+        popupPanel.getResultList().grabFocus();
     }
 
     public void setResultFilter(ResultFilter filter){
