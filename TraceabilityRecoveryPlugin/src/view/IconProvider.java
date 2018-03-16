@@ -14,13 +14,13 @@ public class IconProvider {
     public static Icon TRACEABILITY_ICON = IconLoader.getIcon("/icons/icon_traceability.png");
 
     public static Icon LINK_CLASS = AllIcons.Nodes.Class;
-    public static Icon LINK_CONSTRUCTOR = AllIcons.Nodes.Method; //No constructor icon available
+    public static Icon LINK_CONSTRUCTOR = AllIcons.Nodes.ClassInitializer; //No constructor icon available
     public static Icon LINK_ENUM = AllIcons.Nodes.Enum;
     public static Icon LINK_FIELD = AllIcons.Nodes.Field;
     public static Icon LINK_INTERFACE = AllIcons.Nodes.Interface;
     public static Icon LINK_METHOD = AllIcons.Nodes.Method;
     public static Icon LINK_PACKAGE = AllIcons.Nodes.Package;
-    public static Icon LINK_EXTENSION = AllIcons.Nodes.Plugin;
+    public static Icon LINK_EXTENSION = AllIcons.Nodes.Enum;
 
     public static Icon getIconForTraceabilityLink(TraceabilityPointer pointer){
 
