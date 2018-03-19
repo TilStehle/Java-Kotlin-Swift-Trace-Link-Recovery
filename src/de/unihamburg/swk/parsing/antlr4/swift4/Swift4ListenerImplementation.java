@@ -82,10 +82,20 @@ public class Swift4ListenerImplementation<T extends ISearchableDocument> extends
     }
 
     @Override
+    public void exitRawValueEnumCase(Swift4Parser.RawValueEnumCaseContext ctx) {
+        docBuilder.closeElement();
+    }
+
+    @Override
     public void enterEnumCase(Swift4Parser.EnumCaseContext ctx) {
         PointerTypeSeparator typeSeparator = new PointerTypeSeparator(MAPPER);
         final String mappedName = MAPPER.variables(ctx.identifier().getText());
         docBuilder.enterField(ctx.identifier().getText(), mappedName, typeSeparator, ctx.getStart().getLine());
+    }
+
+    @Override
+    public void exitEnumCase(Swift4Parser.EnumCaseContext ctx) {
+        docBuilder.closeElement();
     }
 
     @Override
