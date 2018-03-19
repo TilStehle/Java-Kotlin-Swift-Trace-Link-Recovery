@@ -24,6 +24,15 @@ public class Swift4ListenerImplementation<T extends ISearchableDocument> extends
         this.docBuilder = new DocumentBuilder<>(filePath, documentFactory);
     }
 
+    @Override
+    public void enterStructDeclaration(Swift4Parser.StructDeclarationContext ctx) {
+        docBuilder.enterTypeDeclaration(MAPPER.types(ctx.identifier().getText()), TypePointerClassification.STRUCT, getInheritanceList(ctx.typeInheritanceClause()), ctx.getStart().getLine());
+    }
+
+    @Override
+    public void exitStructDeclaration(Swift4Parser.StructDeclarationContext ctx) {
+        docBuilder.exitTypeDeclaration();
+    }
 
     @Override
     public void enterExtensionDefinition(Swift4Parser.ExtensionDefinitionContext ctx) {
