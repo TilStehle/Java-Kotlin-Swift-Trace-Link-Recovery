@@ -3,4 +3,6 @@ target/*
 /target/
 testDocs/*
 /testDocs/
-.idea/
+.idea/*
+luceneIndex/*
+.DS_Store
