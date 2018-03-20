@@ -25,6 +25,36 @@ public class Swift4ListenerImplementation<T extends ISearchableDocument> extends
     }
 
     @Override
+    public void enterFunctionDeclaration(Swift4Parser.FunctionDeclarationContext ctx) {
+        String pointerName = ctx.identifier().getText();
+        String mappedName = MAPPER.functions(pointerName);
+        mappedName = mappedName != null ? mappedName : "anonymous function";
+        docBuilder.enterFunctionDeclaration(mappedName, ctx.getStart().getLine());
+    }
+
+    @Override
+    public void exitFunctionDeclaration(Swift4Parser.FunctionDeclarationContext ctx) {
+        docBuilder.closeElement();
+    }
+
+    @Override
+    public void exitParameter(Swift4Parser.ParameterContext ctx) {
+        PointerTypeSeparator pointerTypeSeparator = new PointerTypeSeparator(MAPPER.types(ctx.type().getText()), TermMapperManager.SWIFT);
+        docBuilder.enterParameter(ctx.localParameterName().identifier().getText(), pointerTypeSeparator);
+    }
+
+    @Override
+    public void enterInitializerDeclaration(Swift4Parser.InitializerDeclarationContext ctx) {
+        docBuilder.enterConstructor("init", ctx.getStart().getLine());
+    }
+
+    @Override
+    public void exitInitializerDeclaration(Swift4Parser.InitializerDeclarationContext ctx) {
+        docBuilder.closeElement();
+    }
+
+
+    @Override
     public void enterStructDeclaration(Swift4Parser.StructDeclarationContext ctx) {
         docBuilder.enterTypeDeclaration(MAPPER.types(ctx.identifier().getText()), TypePointerClassification.STRUCT, getInheritanceList(ctx.typeInheritanceClause()), ctx.getStart().getLine());
     }

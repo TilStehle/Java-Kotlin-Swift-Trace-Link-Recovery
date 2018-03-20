@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.function.Predicate;
 
 import static components.TraceabilityRecoveryComponent.NOTIFICATION_ID;
 
@@ -46,6 +47,7 @@ public class RecoveryServiceRefreshTask extends Task.Backgroundable implements O
 
         recoveryService.getParserProgress().setFileParserTimeout(fileTimeout);
         recoveryService.getParserProgress().addObserver(this);
+
     }
 
     @Override
