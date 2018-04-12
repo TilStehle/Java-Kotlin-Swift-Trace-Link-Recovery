@@ -26,7 +26,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	private DocumentStack<TDocument> documentStack;
 
 	public DocumentBuilder(String filePath, IDocumentFactory<TDocument> documentFactory) {
-		documentStack = new DocumentStack<>(filePath.replace('\\', '/'), documentFactory);
+		documentStack = new DocumentStack<>(filePath.replace('\\', '/').replace("/./", "/"), documentFactory);
 	}
 
 	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification, List<String> inheritance, int startLine) {
