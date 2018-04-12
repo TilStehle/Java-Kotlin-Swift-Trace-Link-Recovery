@@ -46,6 +46,12 @@
             </action>
 
 
+            <action id="traceabilityrecovery.addToFileAction" class="actions.AddLinkToFileAction"
+                    text="add link to groundtruth">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt L"/>
+            </action>
+
+
             <action id="traceabilityrecovery.searchQueryAction" class="actions.SearchQueryAction"
                     text="Search tracebility links"
                     description="Search traceability links with a query">

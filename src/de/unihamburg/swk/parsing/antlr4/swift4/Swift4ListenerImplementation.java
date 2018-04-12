@@ -28,8 +28,16 @@ public class Swift4ListenerImplementation<T extends ISearchableDocument> extends
     public void enterFunctionDeclaration(Swift4Parser.FunctionDeclarationContext ctx) {
         String pointerName = ctx.identifier().getText();
         String mappedName = MAPPER.functions(pointerName);
-        mappedName = mappedName != null ? mappedName : "anonymous function";
-        docBuilder.enterFunctionDeclaration(mappedName, ctx.getStart().getLine());
+        Swift4Parser.FunctionResultContext signature = ctx.functionSignature().functionResult();
+        if(signature != null)
+        {
+            PointerTypeSeparator returnType = new PointerTypeSeparator(MAPPER.types(signature.type().getText()), TermMapperManager.SWIFT);
+            docBuilder.enterMethod(pointerName, mappedName, returnType, ctx.getStart().getLine());
+        }
+        else
+        {
+            docBuilder.enterMethod(pointerName, mappedName, ctx.getStart().getLine());
+        }
     }
 
     @Override

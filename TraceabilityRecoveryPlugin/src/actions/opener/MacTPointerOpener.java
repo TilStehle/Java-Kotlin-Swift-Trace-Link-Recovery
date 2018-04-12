@@ -21,6 +21,9 @@ public class MacTPointerOpener extends TPointerOpener {
         else if (pointer instanceof MethodPointer){
             openTraceabilityPointer((MethodPointer) pointer);
         }
+        else if (pointer instanceof FunctionPointer){
+            openTraceabilityPointer((FunctionPointer) pointer);
+        }
         else if (pointer instanceof ConstructorPointer){
             openTraceabilityPointer((ConstructorPointer) pointer);
         }
@@ -45,6 +48,10 @@ public class MacTPointerOpener extends TPointerOpener {
     }
 
     public void openTraceabilityPointer(MethodPointer pointer) {
+        XCodeController.openXCodeAtLine(getFileNameFromPath(pointer.getSourceFilePath()), pointer.getStartLine());
+    }
+
+    public void openTraceabilityPointer(FunctionPointer pointer) {
         XCodeController.openXCodeAtLine(getFileNameFromPath(pointer.getSourceFilePath()), pointer.getStartLine());
     }
 

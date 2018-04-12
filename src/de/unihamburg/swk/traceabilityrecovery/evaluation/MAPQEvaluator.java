@@ -60,7 +60,7 @@ public class MAPQEvaluator {
 
     @Test
     public void BuildIndex() {
-        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("C:\\Users\\Tilmann Stehle\\Documents\\Diss\\HDW");
+        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("/Users/tilmannstehle/Documents/DissWorkspace/HDW/hdw-app-ios/HDW");
         recoveryService.printDocuments();
     }
 
@@ -155,7 +155,7 @@ public class MAPQEvaluator {
         recoveryService = new LuceneTraceabilityRecoveryService();
 
         Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
-        recoveryService.setDocumentFilter(documentFilter);
+        //recoveryService.setDocumentFilter(documentFilter);
         if (LOAD_INDEX_FROM_DISK)//wenn der bestehende index von der Platte geladen werden soll
         {
             try {

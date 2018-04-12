@@ -116,7 +116,7 @@ public class ResultPopupPanel extends JBPanel {
                 classButton.setSelected(true);
                 break;
             case METHOD:
-                filteredList = traceabilityLinks.stream().filter(p -> p.getTarget() instanceof MethodPointer || p.getTarget() instanceof ConstructorPointer).collect(Collectors.toList());
+                filteredList = traceabilityLinks.stream().filter(p -> p.getTarget() instanceof MethodPointer || p.getTarget() instanceof ConstructorPointer || p.getTarget() instanceof FunctionPointer).collect(Collectors.toList());
                 methodButton.setSelected(true);
                 break;
             case ATTRIBUTE:

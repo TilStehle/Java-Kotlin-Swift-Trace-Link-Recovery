@@ -40,7 +40,11 @@ public class IconProvider {
                 return LINK_CLASS;
             }
         }
-        else if (pointer instanceof MethodPointer){
+        else if (pointer instanceof MethodPointer ){
+            return LINK_METHOD;
+        }
+        else if (pointer instanceof FunctionPointer)
+        {
             return LINK_METHOD;
         }
         else if (pointer instanceof ConstructorPointer){

@@ -66,4 +66,19 @@ public class XMLExport {
             throw new RuntimeException(e);
         }
     }
+
+    public static String createStringFromLink(TraceabilityLink link) {
+
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(TraceabilityLink.class);
+            Marshaller marshaller = jaxbContext.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+            StringWriter sw = new StringWriter();
+            marshaller.marshal(link, sw);
+            return sw.toString();
+
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
