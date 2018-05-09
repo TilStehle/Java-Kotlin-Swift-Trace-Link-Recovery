@@ -34,6 +34,18 @@ Now you can query for similarity scores by selecting a java element(class/method
 If you want to add a Todo-comment to a linked swift element, place the cursor on a Java class name, field name or method name. press crtl + alt + D.
 Now, you can select the linked swift-element that you wish to comment on and write a comment.
 
+###Example Video
+We provide a video showing the usage of this plugin at 
+https://swk-www.informatik.uni-hamburg.de/~stehle/TODO-CommentsForLinkedImplementation.mov
+
+It shows a developer conducting the following steps:
+-He adds a method to an Android Activity in Android Studio
+-He copies the code
+-He generates a TODO-Comment containing the code in the linkes iOS ViewController
+-He navigates to the linked iOS ViewController
+-He uses the comment to implement the corresponding Swift function
+-He goes back to Android Studio, refreshes the traceability service and shows us, that the newly implemented function is linked correctly.
+
 ## Further Reading
 German users and researchers are encouraged to take a look at the scientific document on the plugin's development and evaluation:
 
