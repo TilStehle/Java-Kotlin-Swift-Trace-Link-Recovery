@@ -40,10 +40,15 @@ https://swk-www.informatik.uni-hamburg.de/~stehle/TODO-CommentsForLinkedImplemen
 
 It shows a developer conducting the following steps:
 -He adds a method to an Android Activity in Android Studio
+
 -He copies the code
+
 -He generates a TODO-Comment containing the code in the linkes iOS ViewController
+
 -He navigates to the linked iOS ViewController
+
 -He uses the comment to implement the corresponding Swift function
+
 -He goes back to Android Studio, refreshes the traceability service and shows us, that the newly implemented function is linked correctly.
 
 ## Further Reading
