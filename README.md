@@ -3,7 +3,7 @@ This project provides a search engine for similarities between given java or kot
 This search engine is wrapped in a plugin for IntelliJ IDEA.
 Using this plugin, users can right-click a Java element (class/method/field name) and search for related code in a provided folder containing siwft documents.
 
-##Build
+## Build
 
 Open Project in IntelliJ IDEA (Tested with Community Edition 2017.1.4) 
 Set Project SDK to your IntelliJ IDEA-SDK for Plugin development
@@ -22,7 +22,7 @@ For guidance on how to initialize a proper TraceabilityPointer, take a look into
 
 the method getSortedTraceabilityLinksForPointer will return a list of links starting at the passed pointer. The List is sorted by the similarity score that determines, how similar the swift contents is to the contents represented by the passed TraceabilityPointer
 
-##Using the plugin
+## Using the plugin
 Run the plugin module contained in the project or install the plugin as described above.    
 Configure the directory path containing related swift files at "File"->"Settings"->"Traceability Recovery"  
 Restart the plugin
@@ -34,7 +34,7 @@ Now you can query for similarity scores by selecting a java element(class/method
 If you want to add a Todo-comment to a linked swift element, place the cursor on a Java class name, field name or method name. press crtl + alt + D.
 Now, you can select the linked swift-element that you wish to comment on and write a comment.
 
-###Example Video
+### Example Video
 We provide a video showing the usage of this plugin at 
 https://swk-www.informatik.uni-hamburg.de/~stehle/TODO-CommentsForLinkedImplementation.mov
 
@@ -51,6 +51,6 @@ German users and researchers are encouraged to take a look at the scientific doc
 
 https://github.com/TilStehle/Java-Kotlin-Swift-Trace-Link-Recovery/blob/master/Entwicklung%20eines%20Plugins%20in%20IntelliJIDEA%20zum%20Auffinden%20von%20Quellcode-Entsprechungen.pdf
 
-##Acknowledgements
+## Acknowledgements
 The search engine and plugin is developed in cooperation with two students of the University of Hamburg:
 Jakob Andersen and Gerrit Greiert.
