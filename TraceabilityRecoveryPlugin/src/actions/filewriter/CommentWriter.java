@@ -11,17 +11,15 @@ import java.io.*;
  * Created by Tilmann Stehle on 09.03.2017.
  */
 public class CommentWriter {
-    private final TokenPosition tokenPosition;
     private TraceabilityPointer pointer;
 
     public CommentWriter(TraceabilityPointer pointer) {
 
         this.pointer = pointer;
-        tokenPosition = SwiftParserUtils.getPosition(pointer);
     }
 
     public void addTodoComment(String commentText) throws Exception {
-        insertStringInFile(pointer.getSourceFilePath(), tokenPosition.getLine(),"//TODO: "+ commentText);
+        insertStringInFile(pointer.getSourceFilePath(), pointer.getStartLine(),"//TODO: "+ commentText);
     }
 
     public void insertStringInFile(String path, int lineno, String lineToBeInserted)
