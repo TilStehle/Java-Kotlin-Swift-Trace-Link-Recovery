@@ -2,9 +2,7 @@ package de.unihamburg.swk.parsing.javaparser;
 
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.*;
-import com.github.javaparser.ast.expr.LambdaExpr;
-import com.github.javaparser.ast.expr.ObjectCreationExpr;
-import com.github.javaparser.ast.expr.VariableDeclarationExpr;
+import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import com.github.javaparser.ast.type.TypeParameter;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
@@ -14,18 +12,20 @@ import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import static de.unihamburg.masterprojekt2016.traceability.TypePointerClassification.*;
 
 /**
  * Created by Tilmann Stehle on 12.01.2018.
  */
-public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVisitorAdapter<DocumentBuilder> {
+public class JavaVisitor<TDocument extends ISearchableDocument> extends VoidVisitorAdapter<DocumentBuilder> {
     private int anonymousClassCount;
     private JavaListenerExtension listenerExtension;
+
     public JavaVisitor() {
 
-        listenerExtension= new JavaListenerExtension();
+        listenerExtension = new JavaListenerExtension();
     }
 
     @Override
@@ -40,11 +40,32 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
         List<String> inheritance = new LinkedList<>();
         String typeName = n.getNameAsString();
         TypePointerClassification classification = INTERFACE;
-        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
-        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), classification, inheritance,startLine );
+        int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
+        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), classification, inheritance, startLine);
         super.visit(n, docBuilder);
         docBuilder.exitTypeDeclaration();
     }
+
+
+    @Override
+    public void visit(MethodCallExpr n, DocumentBuilder docBuilder) {
+        docBuilder.enterMethodCall(n.getNameAsString());
+        Optional<Expression> methodPostfixExpression = n.getScope();
+        if (methodPostfixExpression.isPresent() && methodPostfixExpression.get() instanceof NameExpr) {
+            NameExpr nameExpr = (NameExpr) methodPostfixExpression.get();
+            docBuilder.enterVariableUsage(nameExpr.getName().asString());
+        }
+        for (Expression expression : n.getArguments()) {
+            if(expression instanceof NameExpr)
+            {
+                docBuilder.enterVariableUsage(((NameExpr) expression).getNameAsString());
+            }
+        }
+
+        super.visit(n, docBuilder);
+    }
+
+
 
     @Override
     public void visit(ClassOrInterfaceDeclaration n, DocumentBuilder docBuilder) {
@@ -56,9 +77,9 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
         for (ClassOrInterfaceType implemented : n.getImplementedTypes()) {
             inheritance.add(TermMapperManager.JAVA.types(implemented.getNameAsString()));
         }
-        TypePointerClassification classification = n.isInterface()? INTERFACE: CLASS;
-        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
-        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), classification, inheritance,startLine );
+        TypePointerClassification classification = n.isInterface() ? INTERFACE : CLASS;
+        int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
+        docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), classification, inheritance, startLine);
         super.visit(n, docBuilder);
         docBuilder.exitTypeDeclaration();
     }
@@ -71,7 +92,7 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
             inheritance.add(implemented.getNameAsString());
         }
 
-        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+        int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
         docBuilder.enterTypeDeclaration(TermMapperManager.JAVA.types(typeName), ENUM, inheritance, startLine);
         super.visit(n, docBuilder);
         docBuilder.exitTypeDeclaration();
@@ -79,18 +100,18 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
 
     @Override
     public void visit(EnumConstantDeclaration n, DocumentBuilder docBuilder) {
-            docBuilder.addEnumConstant(n.getNameAsString());
+        docBuilder.addEnumConstant(n.getNameAsString());
     }
 
     @Override
     public void visit(ObjectCreationExpr n, DocumentBuilder docBuilder) {
-        if(n.getAnonymousClassBody().isPresent())//this is an anonymous class
+        if (n.getAnonymousClassBody().isPresent())//this is an anonymous class
         {
             String pointerName = "AnonymousClass" + "$" + this.anonymousClassCount;
             this.anonymousClassCount++;
 
-            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
-            docBuilder.enterAnonymousTypeDeclaration(pointerName, ANONYMOUS_CLASS,startLine);
+            int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
+            docBuilder.enterAnonymousTypeDeclaration(pointerName, ANONYMOUS_CLASS, startLine);
             super.visit(n, docBuilder);
             docBuilder.exitTypeDeclaration();
         }
@@ -100,7 +121,7 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
     public void visit(FieldDeclaration n, DocumentBuilder docBuilder) {
         for (VariableDeclarator variableDeclarator : n.getVariables()) {
 
-            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+            int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
             enterClassVariableDeclaration(variableDeclarator.getNameAsString(), variableDeclarator.getType().asString(), docBuilder, startLine);
             docBuilder.closeElement();
         }
@@ -118,9 +139,9 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
 
     @Override
     public void visit(ConstructorDeclaration n, DocumentBuilder docBuilder) {
-        String name =n.getNameAsString();
+        String name = n.getNameAsString();
 
-        int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+        int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
         docBuilder.enterConstructor(name, startLine);
         super.visit(n, docBuilder);
         docBuilder.closeElement();
@@ -128,17 +149,17 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
 
     @Override
     public void visit(MethodDeclaration n, DocumentBuilder docBuilder) {
-        String pointerName =  n.getNameAsString();
+        String pointerName = n.getNameAsString();
         String mappedName = listenerExtension.getMappedMethodName(pointerName);
-        if(n.getType().isVoidType()) {
+        if (n.getType().isVoidType()) {
 
-            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+            int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
             docBuilder.enterMethod(pointerName, mappedName, startLine);
         } else {
             PointerTypeSeparator type = new PointerTypeSeparator(TermMapperManager.JAVA);
             type.setPointerType(n.getType().asString());
 
-            int startLine = n.getBegin().isPresent()? n.getBegin().get().line: 0;
+            int startLine = n.getBegin().isPresent() ? n.getBegin().get().line : 0;
             docBuilder.enterMethod(pointerName, mappedName, type, startLine);
         }
         super.visit(n, docBuilder);
@@ -147,11 +168,9 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
 
     @Override
     public void visit(Parameter n, DocumentBuilder docBuilder) {
-        if(n.getAncestorOfType(LambdaExpr.class).isPresent())
-        {
+        if (n.getAncestorOfType(LambdaExpr.class).isPresent()) {
             return;
-        }
-        else {
+        } else {
             String name = n.getNameAsString();
             PointerTypeSeparator types = new PointerTypeSeparator(TermMapperManager.JAVA);
             types.setPointerType(n.getType().asString());
@@ -188,8 +207,6 @@ public class JavaVisitor <TDocument extends ISearchableDocument> extends VoidVis
         super.visit(n, docBuilder);
         docBuilder.closeElement();
     }
-
-
 
 
 }

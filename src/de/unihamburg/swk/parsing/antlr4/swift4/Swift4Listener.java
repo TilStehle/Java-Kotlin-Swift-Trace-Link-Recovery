@@ -137,6 +137,86 @@ public interface Swift4Listener extends ParseTreeListener {
 	 */
 	void exitNoisyCode(Swift4Parser.NoisyCodeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#functionCallExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCallExpression(Swift4Parser.FunctionCallExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#functionCallExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCallExpression(Swift4Parser.FunctionCallExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#functionName}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionName(Swift4Parser.FunctionNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#functionName}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionName(Swift4Parser.FunctionNameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#functionCallArgumentClause}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCallArgumentClause(Swift4Parser.FunctionCallArgumentClauseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#functionCallArgumentClause}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCallArgumentClause(Swift4Parser.FunctionCallArgumentClauseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#functionCallArgumentList}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCallArgumentList(Swift4Parser.FunctionCallArgumentListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#functionCallArgumentList}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCallArgumentList(Swift4Parser.FunctionCallArgumentListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#functionCallArgument}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCallArgument(Swift4Parser.FunctionCallArgumentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#functionCallArgument}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCallArgument(Swift4Parser.FunctionCallArgumentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#parameterName}.
+	 * @param ctx the parse tree
+	 */
+	void enterParameterName(Swift4Parser.ParameterNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#parameterName}.
+	 * @param ctx the parse tree
+	 */
+	void exitParameterName(Swift4Parser.ParameterNameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpression(Swift4Parser.ExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpression(Swift4Parser.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Swift4Parser#postfixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPostfixExpression(Swift4Parser.PostfixExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Swift4Parser#postfixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPostfixExpression(Swift4Parser.PostfixExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#variableDeclaration}.
 	 * @param ctx the parse tree
 	 */
@@ -246,16 +326,6 @@ public interface Swift4Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVariableInitializer(Swift4Parser.VariableInitializerContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Swift4Parser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpression(Swift4Parser.ExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Swift4Parser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpression(Swift4Parser.ExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Swift4Parser#constructorCall}.
 	 * @param ctx the parse tree

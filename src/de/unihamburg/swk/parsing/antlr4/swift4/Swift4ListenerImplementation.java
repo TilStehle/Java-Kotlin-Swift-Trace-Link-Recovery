@@ -196,6 +196,21 @@ public class Swift4ListenerImplementation<T extends ISearchableDocument> extends
         docBuilder.exitTypeDeclaration();
     }
 
+
+    @Override
+    public void enterPostfixExpression(Swift4Parser.PostfixExpressionContext ctx) {
+        if(ctx.identifier()!=null)
+        {
+            final String mappedName = MAPPER.variables(ctx.identifier().getText());
+            docBuilder.enterVariableUsage(mappedName);
+        }
+    }
+
+    @Override
+    public void enterFunctionCallExpression(Swift4Parser.FunctionCallExpressionContext ctx) {
+        docBuilder.enterMethodCall(ctx.functionName().getText());
+    }
+
     /**
      * @return
      * @Override public void enterPackageDeclaration(Java8Parser.PackageDeclarationContext ctx) {

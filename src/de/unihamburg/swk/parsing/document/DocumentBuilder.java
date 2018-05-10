@@ -21,12 +21,14 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	private static final String ATTRIBUTE = AttributePointer.ATTRIBUTE;
 	private static final String PARAMETER = "PARAMETER";
 	private static final String LOCAL_VARIABLE = "LOCAL VARIABLE";
+	private static final String VARIABLE_USAGE = "VARIABLE USAGE";
+	private static final String METHOD_CALL = "METHOD CALL";
 	private static final String FUNCTIONDECLARATION = "FUNCTIONDECLARATION";
 
 	private DocumentStack<TDocument> documentStack;
 
 	public DocumentBuilder(String filePath, IDocumentFactory<TDocument> documentFactory) {
-		documentStack = new DocumentStack<>(filePath.replace('\\', '/'), documentFactory);
+		documentStack = new DocumentStack<>(filePath.replace('\\', '/').replace("/./", "/"), documentFactory);
 	}
 
 	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification, List<String> inheritance, int startLine) {
@@ -259,5 +261,15 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 
 	public String getCurrentTypeName() {
 		return documentStack.getTopmostTypeName();
+	}
+
+	public void enterVariableUsage(String name) {
+		documentStack.addTerm(name, VARIABLE_USAGE, TermFactors.VARIABLE_USAGE_FACTOR, TermFactors.OTHER_VARIABLE_USAGE_FACTOR);
+
+	}
+
+	public void enterMethodCall(String name) {
+		documentStack.addTerm(name, METHOD_CALL, TermFactors.METHOD_CALL_FACTOR, TermFactors.OTHER_METHOD_CALL_FACTOR);
+
 	}
 }

@@ -3,6 +3,7 @@ package de.unihamburg.swk.traceabilityrecovery.lucene;
 import com.google.common.collect.Multiset;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
+import de.unihamburg.masterprojekt2016.traceability.XMLExport;
 import de.unihamburg.masterprojekt2016.traceability.XMLImport;
 import de.unihamburg.swk.parsing.ISourceCodeParser;
 import de.unihamburg.swk.parsing.ParserFactory;
@@ -118,7 +119,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     }
 
 
-
     @Override
     public List<TraceabilityLink> getSortedTraceabilityLinksForPointer(TraceabilityPointer pointer, Language language) {
         LuceneDocument queryDocument = documentsByPointers.get(pointer);
@@ -126,6 +126,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer, getQueryLength(queryDocument));
 
     }
+
     @Override
     public List<TraceabilityLink> getSortedTraceabilityLinksToOtherLanguagesForPointer(TraceabilityPointer pointer) {
         Language ownLanguage = Language.getLanguageForPath(pointer.getSourceFilePath());
@@ -139,9 +140,8 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     }
 
-    private int getQueryLength(LuceneDocument queryDocument)
-    {
-        int queryLength =0;
+    private int getQueryLength(LuceneDocument queryDocument) {
+        int queryLength = 0;
         try {
             Map<String, Integer> wordCounts = computeWordCounts(queryDocument.getContents());
             for (Map.Entry<String, Integer> wordCount : wordCounts.entrySet()) {
@@ -174,7 +174,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                 StoredField pointerField = (StoredField) matchedDocument.getField("pointer");
                 TraceabilityPointer targetPointer = XMLImport.unmarshalPointer(pointerField.stringValue());
                 TraceabilityLink traceabilityLink = new TraceabilityLink(pointer, targetPointer);
-                traceabilityLink.setProbability(scoreDoc.score/queryLenght);
+                traceabilityLink.setProbability(scoreDoc.score / queryLenght);
                 hitLinks.add(traceabilityLink);
             }
             return hitLinks;
@@ -266,8 +266,8 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     public void discardIndexAndReadDocuments(Predicate<String> filter, String... projectPaths) throws IndexPathNotSetException, IOException {
 
         tryDiscardIndex();
-            List<String> sourceFiles = getSourceFilePaths(filter, projectPaths);
-            createDocuments(sourceFiles);
+        List<String> sourceFiles = getSourceFilePaths(filter, projectPaths);
+        createDocuments(sourceFiles);
     }
 
     @Override
@@ -298,14 +298,13 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             File dir = new File(dirPath);
             sourceFiles.addAll(filterSourceFiles(dir, acceptedFileEndings).stream().filter(filter).collect(Collectors.toList()));
         }
-         return sourceFiles;
+        return sourceFiles;
     }
-
 
 
     @Override
     public void replaceDocumentsForFilePaths(String... filePaths) throws IOException {
-        List<String> filePathsToUpdate= new ArrayList<>();
+        List<String> filePathsToUpdate = new ArrayList<>();
         for (String filePath : filePaths) {
             if (isParseableSourceFilePath(filePath)) {
                 removeDocumentsForFilesWithPathPrefix(filePath);
@@ -319,7 +318,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     @Override
     public void addDocumentsForFilePaths(String... filePaths) throws IOException {
         for (String filePath : filePaths) {
-            if (isParseableSourceFilePath(filePath) ) {
+            if (isParseableSourceFilePath(filePath)) {
                 removeDocumentsForFilesWithPathPrefix(filePath);
             }
         }
@@ -327,6 +326,33 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
 
     }
+
+
+    public void removeDocumentsByPointerPredicate(Predicate<TraceabilityPointer> predicate) throws IOException {
+
+        List<TraceabilityPointer> pointersForDocsToDelete = new ArrayList<>();
+        for (Map.Entry<TraceabilityPointer, LuceneDocument> pointerAndDocument : documentsByPointers.entrySet()) {
+            if (predicate.test(pointerAndDocument.getKey())) {
+                pointersForDocsToDelete.add(pointerAndDocument.getKey());
+            }
+        }
+
+        IndexWriterConfig config = new IndexWriterConfig(analyzer);
+        try (IndexWriter indexWriter = new IndexWriter(index, config)) {
+            for (TraceabilityPointer pointer : pointersForDocsToDelete) {
+                indexWriter.deleteDocuments(new Term("pointer", XMLExport.createXMLStringFromPointer(pointer)));
+            }
+            indexWriter.flush();
+            indexWriter.commit();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        this.documentsByPointers.entrySet().removeIf(pair -> predicate.test(pair.getKey()));
+
+
+    }
+
 
     @Override
     public void removeDocumentsForFilesWithPathPrefix(String path) throws IOException {
@@ -361,41 +387,39 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     @Override
     public boolean isParseableSourceFilePath(String filePath) {
         for (Language language : Language.values()) {
-            if (filePath.endsWith('.'+language.getFileExtension())) return true;
+            if (filePath.endsWith('.' + language.getFileExtension())) return true;
         }
         return false;
     }
 
-    public void createDocuments(List<String> sourceFiles)
-    {
-        try(IndexWriter indexWriter = createIndexWriter())
-        {
+    public void createDocuments(List<String> sourceFiles) {
+        try (IndexWriter indexWriter = createIndexWriter()) {
 
 
-        parserProgress.startParsing(sourceFiles.size());
-        int currentFileIndex = 0;
-        for (String filePath : sourceFiles) {
-            filePath = filePath.replace("\\", "/");
-            currentFileIndex++;
-            ExecutorService executor = Executors.newSingleThreadExecutor();
-            if (parserProgress.isParsing() == true) {
-                Future future = executor.submit(new ParsingRunnable(filePath, indexWriter));
-                try {
+            parserProgress.startParsing(sourceFiles.size());
+            int currentFileIndex = 0;
+            for (String filePath : sourceFiles) {
+                filePath = filePath.replace("\\", "/");
+                currentFileIndex++;
+                ExecutorService executor = Executors.newSingleThreadExecutor();
+                if (parserProgress.isParsing() == true) {
+                    Future future = executor.submit(new ParsingRunnable(filePath, indexWriter));
+                    try {
 
-                    System.out.println("Parsing File " + currentFileIndex + " of " + sourceFiles.size());
-                    future.get(parserProgress.getFileParserTimeout(), TimeUnit.SECONDS);
-                    parserProgress.fileParsed();
-                } catch (Exception ex) {
-                    future.cancel(true);
+                        System.out.println("Parsing File " + currentFileIndex + " of " + sourceFiles.size());
+                        future.get(parserProgress.getFileParserTimeout(), TimeUnit.SECONDS);
+                        parserProgress.fileParsed();
+                    } catch (Exception ex) {
+                        future.cancel(true);
+                        parserProgress.fileParseFailed(filePath);
+                        ex.printStackTrace();
+                    }
+                } else {
                     parserProgress.fileParseFailed(filePath);
-                    ex.printStackTrace();
                 }
-            } else {
-                parserProgress.fileParseFailed(filePath);
             }
-        }
 
-        parserProgress.stopParsing();
+            parserProgress.stopParsing();
 
 
         } catch (IOException e) {
@@ -403,7 +427,9 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         }
 
     }
-    private static LuceneDocsFactory luceneDocsFactory= new LuceneDocsFactory();
+
+    private static LuceneDocsFactory luceneDocsFactory = new LuceneDocsFactory();
+
     class ParsingRunnable implements Runnable {
 
         private String filePath;
@@ -421,7 +447,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             for (LuceneDocument document : documents) {
                 try {
 
-                        addDocument(document, indexWriter);
+                    addDocument(document, indexWriter);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -429,17 +455,17 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         }
     }
 
-    private IndexWriter createIndexWriter()  {
+    private IndexWriter createIndexWriter() {
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         try {
             return new IndexWriter(index, config);
         } catch (IOException e) {
-           throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
 
 
-    private void addDocument(LuceneDocument document, IndexWriter indexWriter ) throws IOException {
+    private void addDocument(LuceneDocument document, IndexWriter indexWriter) throws IOException {
         if (documentFilter == null || documentFilter.test(document)) {
             documentsByPointers.put(document.getTraceabilityPointer(), document);
             synchronized (indexWriter) {
@@ -479,7 +505,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
             languageQuery = new QueryParser("language", analyzer).parse(language.getFileExtension());
 
             String boostedQueryString = "";
-            int queryLength=0;
+            int queryLength = 0;
             for (Multiset.Entry<String> stringEntry : queryTerms.entrySet()) {
                 boostedQueryString += stringEntry.getElement() + "^" + stringEntry.getCount() + " ";
                 queryLength += stringEntry.getCount();
@@ -492,7 +518,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
             booleanQueryBuilder.add(languageQuery, BooleanClause.Occur.FILTER);
             BooleanQuery combinedQuery = booleanQueryBuilder.build();
-            linkResults = getSortedTraceabilityLinksForLuceneQuery(combinedQuery, null, queryLength );
+            linkResults = getSortedTraceabilityLinksForLuceneQuery(combinedQuery, null, queryLength);
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -501,7 +527,6 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         }
 
     }
-
 
 
     @Override

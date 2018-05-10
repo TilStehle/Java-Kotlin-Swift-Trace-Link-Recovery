@@ -46,13 +46,13 @@ public class SwiftParser<TDocument extends ISearchableDocument> implements ISour
 			e.printStackTrace();
 			return null;
 		}
-		Swift4Lexer lexer = new Swift4Lexer(input);
+		Swift3Lexer lexer = new Swift3Lexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		de.unihamburg.swk.parsing.antlr4.swift4.Swift4Parser parser = new de.unihamburg.swk.parsing.antlr4.swift4.Swift4Parser(tokens);
+		Swift3Parser parser = new Swift3Parser(tokens);
 		parser.setErrorHandler(new InterruptableErrorHandler());
-		ParseTree tree = parser.program();
+		ParseTree tree = parser.topLevel();
 		ParseTreeWalker walker = new ParseTreeWalker();
-		Swift4ListenerImplementation<TDocument> swiftListener = new Swift4ListenerImplementation<>(filePath,
+		Swift3ListenerImplementation<TDocument> swiftListener = new Swift3ListenerImplementation<>(filePath,
 				documentFactory);
 		try {
 			walker.walk(swiftListener, tree);
