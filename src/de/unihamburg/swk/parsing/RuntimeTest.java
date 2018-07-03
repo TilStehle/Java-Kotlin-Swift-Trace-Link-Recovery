@@ -22,8 +22,6 @@ public class RuntimeTest {
 		List<File> files = searchFile("./testDocs/TwidereDomainModel", ".swift");
 		Collections.shuffle(files);
 		
-//		System.out.println(new GithubJavaParser<>("./testDocs/Init.java", new LuceneDocsFactory()).parseDocuments().size());
-
 		TermMapperManager.setData("./mappings");
 		
 		for (File file : files) {
@@ -50,20 +48,6 @@ public class RuntimeTest {
 			}
 			
 		}
-		
-//		long time = System.currentTimeMillis();
-//		
-//		List<LuceneDocument> list = parser.parseDocuments();
-//		
-//		System.out.println((System.currentTimeMillis() - time) / 1000 + " sec");
-//		
-//		int size = list.size();
-//		System.out.println(size);
-//		
-//		for (LuceneDocument luceneDocument : list) {
-//			System.out.println(luceneDocument.toString() + " #" + luceneDocument.getTraceabilityPointer().getPointerType());
-//		}
-		
 		
 	}
 	
@@ -108,52 +92,3 @@ public class RuntimeTest {
 	}
 	
 }
-/*
- * 
- */
-
-//package de.andreasschoknecht.LS3.test;
-//
-//import java.io.IOException;
-//import java.util.List;
-//import java.util.Stack;
-//
-//import com.google.common.collect.HashMultiset;
-//
-//import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
-//import de.unihamburg.masterprojekt2016.traceability.TypePointer;
-//import de.unihamburg.masterprojekt2016.traceability.TypePointerClassification;
-//import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
-//
-//public class DummyTest2 {
-//
-//	public static void main(String[] args) throws IOException {
-//		
-//		
-//		LuceneTraceabilityRecoveryService recoveryService = new LuceneTraceabilityRecoveryService();
-//		recoveryService.setIndexPath("/Users/macbook/Desktop/Index");
-//		recoveryService.discardIndexAndReadDocuments("./testDocs/Source", "./testDocs/Source");
-//		
-////		recoveryService.discardIndexAndReadDocuments("./testDocs/android-prototype", "./testDocs/mellow-ios");
-//
-//		System.out.println("--------NumberOfDocs--------");
-//		System.out.println(recoveryService.getNumberOfDocs());
-//
-//
-////		TypePointer pointer = new TypePointer("org.mariotaku.twidere.model.AccountDetails", TypePointerClassification.CLASS);
-//
-//		System.out.println("--------Links-----------");
-//		
-//		HashMultiset<String> multiset = HashMultiset.create();
-//		multiset.add("accountKey");
-//		multiset.add("createdAt");
-//		
-//		List<TraceabilityLink> links =  recoveryService.getSortedTraceabilityLinksForQuery(multiset);
-//		
-//		for (TraceabilityLink traceabilityLink : links) {
-//			System.out.println(traceabilityLink.getTarget().getDisplayName() + " " + traceabilityLink.getProbability());
-//		}
-//		
-//	}
-//
-//}

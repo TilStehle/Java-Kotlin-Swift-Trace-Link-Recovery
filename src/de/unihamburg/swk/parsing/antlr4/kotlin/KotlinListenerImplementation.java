@@ -157,30 +157,6 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
         docBuilder.enterParameter(ctx.keywordOrSimpleName().getText(), ctx.type().getText());
     }
 
-//
-//	@Override
-//	public void exitFormalParameter(Java8Parser.FormalParameterContext ctx) {
-//		String type = ctx.unannType().getText();
-//		String name = ctx.variableDeclaratorId().getText();
-//		docBuilder.enterParameter(name, type);
-//	}
-//
-//	@Override
-//	public void enterLocalVariableDeclaration(@NotNull Java8Parser.LocalVariableDeclarationContext ctx) {
-//		for (VariableDeclaratorContext v : ctx.variableDeclaratorList().variableDeclarator()) {
-//			String line = v.getText();
-//			String type = ctx.unannType().getText();
-//			String name = line.contains("=") ? line.substring(0, line.indexOf("=")) : line;
-//			docBuilder.enterLocalVariable(name, type);
-//		}
-//	}
-
-    // @Override
-    // public void
-    // enterVariableDeclaratorId(Java8Parser.VariableDeclaratorIdContext ctx) {
-    // docBuilder.addIdentifierToAllDocsOnStack(ctx.getText());
-    // }
-
     public List<TDocument> getDocuments() {
         return docBuilder.getDocuments();
     }

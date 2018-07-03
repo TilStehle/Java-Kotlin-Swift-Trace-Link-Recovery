@@ -222,10 +222,6 @@ public class MAPQEvaluator {
                     TypePointer typePointer = (TypePointer) traceabilityPointer;
                     return typePointer.getClassification() != TypePointerClassification.EXTENSION;
                 }
-//                else if(traceabilityPointer instanceof MethodPointer)
-//                {
-//                    return true;
-//                }
                 return false;
             }
         };
