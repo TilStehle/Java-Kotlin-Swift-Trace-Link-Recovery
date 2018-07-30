@@ -1,20 +1,24 @@
 package de.unihamburg.swk.traceabilityrecovery.lucene;
 
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.HashMap;
+
+import org.apache.commons.io.FilenameUtils;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.CharArraySet;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.document.StoredField;
+import org.apache.lucene.document.StringField;
+import org.apache.lucene.document.TextField;
+
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.masterprojekt2016.traceability.XMLExport;
 import de.unihamburg.masterprojekt2016.traceability.XMLImport;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
-
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.HashMap;
-import java.util.Map.Entry;
-
-import org.apache.commons.io.FilenameUtils;
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.apache.lucene.document.*;
 
 /**
  * Created by Tilmann Stehle on 20.01.2017.
@@ -51,7 +55,7 @@ public class LuceneDocument implements ISearchableDocument {
 		document.add(new StoredField("id", id));
 		document.add(new StringField("pointer", XMLExport.createXMLStringFromPointer(pointer), Field.Store.YES));
 		document.add(new StringField("path", pointer.getSourceFilePath(), Field.Store.YES));
-		//Damit das erste Feld nicht null im content ist
+		// Damit das erste Feld nicht null im content ist
 		document.add(new TextField("content", "", Field.Store.YES));
 	}
 
@@ -75,7 +79,10 @@ public class LuceneDocument implements ISearchableDocument {
 
 	@Override
 	public void addTerm(int weight, String term, String termType) {
-		try (Analyzer sourceCodeAnalyzer = new SourceCodeAnalyzer(SourceCodeAnalyzer.ENGLISH_STOP_WORDS_SET)) {
+		try (Analyzer sourceCodeAnalyzer = new SourceCodeAnalyzer(LuceneDocsFactory.javaAPIStopFilter,
+				LuceneDocsFactory.dottedNamesFilter, LuceneDocsFactory.camelCaseFilter,
+				LuceneDocsFactory.englishPossessiveFilter, LuceneDocsFactory.javaStopFilter,
+				LuceneDocsFactory.porterStemFilter)) {
 			TokenStream tokenStream = sourceCodeAnalyzer.tokenStream("my_keyword_field", new StringReader(term));
 			CharTermAttribute attr = tokenStream.addAttribute(CharTermAttribute.class);
 			tokenStream.reset();

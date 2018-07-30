@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.TreeMap;
 
 import org.apache.lucene.document.Document;
@@ -25,8 +24,15 @@ import de.unihamburg.swk.traceabilityrecovery.IndexPathNotSetException;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.SourceCodeAnalyzer;
 
+/**
+ * Berechnet tf*idf von dem erstellten Index von TopicParser
+ * 
+ * @author paula
+ *
+ */
 public class TopicCalculator {
 
+	private static final String topicsPath = "/home/paula/Documents/uni/paper/seperation_of_concerns/topics";
 	private Path indexPath;
 	private String fileName;
 	IndexReader reader;
@@ -45,7 +51,7 @@ public class TopicCalculator {
 	public void calculateTopics() {
 		setUpReader();
 		IndexSearcher searcher = new IndexSearcher(reader);
-		try (PrintWriter pw = new PrintWriter(new File(indexPath + "/" + fileName))) {
+		try (PrintWriter pw = new PrintWriter(new File(topicsPath + "/" + fileName))) {
 			for (int i = 0; i < reader.maxDoc(); i++) {
 				StringBuilder sb = new StringBuilder();
 				Document document = null;
@@ -59,20 +65,9 @@ public class TopicCalculator {
 				HashMap<String, Double> termFrequencyMap = luceneDocument.createTermFrequencyMap();
 				HashMap<String, Double> map = new HashMap<>();
 				map = calculateTfAndIdfAndAddToMap(reader, searcher, termFrequencyMap, map);
-				// System.out.println("Documentname:" +
-				// luceneDocument.getTraceabilityPointer().getDisplayName() + "\n");
 				sb.append(luceneDocument.getTraceabilityPointer().getDisplayName() + "\n");
 				TreeMap<String, Double> sortedMap = sortMapByValue(map);
-				Iterator<String> iterator = sortedMap.navigableKeySet().iterator();
-				for (int counter = 0; counter < 10; counter++) {
-					if (iterator.hasNext()) {
-						String term = iterator.next();
-						// System.out.println(term + ";" + map.get(term) + "\n");
-						sb.append(term + ";" + map.get(term) + "\n");
-					} else
-						break;
-				}
-				// System.out.println("\n\n");
+				sortedMap.forEach((term, value) -> sb.append(term + ";" + value + "\n"));
 				sb.append("\n\n");
 				pw.write(sb.toString());
 			}

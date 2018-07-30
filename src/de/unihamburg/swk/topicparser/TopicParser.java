@@ -26,6 +26,11 @@ import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.SourceCodeAnalyzer;
 
+/**
+ * Zuständig für das Parsen der Klassen/Projekte im übergegebenen ProjectPath.
+ * Kann Java, Kotlin, Swift und C# parsen. Der erstellte Index wird im indexPath
+ * gespeichert.
+ */
 public class TopicParser {
 
 	private String projectPath;
@@ -33,8 +38,16 @@ public class TopicParser {
 	private IndexWriter indexWriter;
 	private FSDirectory index;
 	IndexWriterConfig config;
+	private boolean javaStopFilter;
+	private boolean javaAPIStopFilter;
+	private boolean dottedNamesFilter;
+	private boolean camelCaseFilter;
+	private boolean englishPossessiveFilter;
+	private boolean porterStemFilter;
 
-	public TopicParser(String projectPath, Path indexPath) {
+	public TopicParser(String projectPath, Path indexPath, boolean javaAPIStopFilter, boolean dottedNamesFilter,
+			boolean camelCaseFilter, boolean englishPossessiveFilter, boolean javaStopFilter,
+			boolean porterStemFilter) {
 		if (projectPath == null || projectPath.isEmpty())
 			throw new ProjectPathNotSetException();
 		this.projectPath = projectPath;
@@ -42,20 +55,31 @@ public class TopicParser {
 			throw new IndexPathNotSetException();
 		this.indexPath = indexPath;
 		tryDiscardIndex();
-		this.config = new IndexWriterConfig(new SourceCodeAnalyzer());
+		this.config = new IndexWriterConfig(new SourceCodeAnalyzer(javaAPIStopFilter, dottedNamesFilter,
+				camelCaseFilter, englishPossessiveFilter, javaStopFilter, porterStemFilter));
+		this.javaStopFilter = javaStopFilter;
+		this.javaAPIStopFilter = javaAPIStopFilter;
+		this.dottedNamesFilter = dottedNamesFilter;
+		this.camelCaseFilter = camelCaseFilter;
+		this.englishPossessiveFilter = englishPossessiveFilter;
+		this.porterStemFilter = porterStemFilter;
+	}
+
+	public TopicParser(String string, Path indexpathk) {
+		this(string, indexpathk, false, false, false, false, false, false);
 	}
 
 	public void parse() {
 		setUpIndexWriter();
 		List<String> sourceFiles = getSourceFilePaths(projectPath);
 		for (String filePath : sourceFiles) {
-			ISourceCodeParser<LuceneDocument> parser = ParserFactory.createParser(new LuceneDocsFactory(), filePath);
+			ISourceCodeParser<LuceneDocument> parser = ParserFactory
+					.createParser(new LuceneDocsFactory(javaAPIStopFilter, dottedNamesFilter, camelCaseFilter,
+							englishPossessiveFilter, javaStopFilter, porterStemFilter), filePath);
 			Collection<LuceneDocument> documents = parser.parseDocuments();
 			documents = documents.stream().filter(doc -> doc.getTraceabilityPointer() instanceof TypePointer)
 					.collect(Collectors.toList());
 			for (LuceneDocument document : documents) {
-				// System.out.println(document.getTraceabilityPointer().getDisplayName() + ":\t"
-				// + document.getContents());
 				try {
 					indexWriter.addDocument(document.getDocument());
 				} catch (IOException e) {
