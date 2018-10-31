@@ -59,7 +59,7 @@ public class AddLinkToFileAction extends AnAction {
 
     private void exportLinkToFile(TraceabilityLink link) {
         try {
-            Files.write(Paths.get("/Users/tilmannstehle/Documents/DissWorkspace/Traceability_Optimierung/testDocs/groundTruth.xml"), XMLExport.createStringFromLink(link).getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get("/Users/tilmannstehle/Documents/DissWorkspace/Traceability_Optimierung/testDocs/TraceabilityModel.xml"), XMLExport.createStringFromLink(link).getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -31,6 +31,7 @@ public class XMLExportTest {
 		TraceabilityModel rootModel = new TraceabilityModel();
 		rootModel.addSubModel(javaClassModel);
 		rootModel.addTraceabilityLink(new TraceabilityLink(javaClassPointer, swiftClassPointer));
+		rootModel.addTraceabilityLink(new TraceabilityLink(swiftClassPointer, javaClassPointer));
 		
 		Set<TraceabilityLink> sss = rootModel.getTraceabilityLinkForPointer(javaMethodPointer);
 		System.out.println("methodLink:\n" + sss);

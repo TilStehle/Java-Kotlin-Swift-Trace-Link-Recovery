@@ -87,7 +87,7 @@ public class TypePointer extends TraceabilityPointer implements FullyQuallyfying
         result = prime * result + ((classification == null) ? 0 : classification.hashCode());
         result = prime * result + ((fullyQualifiedName == null) ? 0 : fullyQualifiedName.hashCode());
         result = prime * result + ((_fileNameExtension == null) ? 0 : _fileNameExtension.hashCode());
-        result = prime * result + ((sourceFilePath == null) ? 0 : sourceFilePath.hashCode());
+        //result = prime * result + ((sourceFilePath == null) ? 0 : sourceFilePath.hashCode());
         return result;
     }
 

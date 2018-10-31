@@ -33,8 +33,33 @@ public class MAPQEvaluator {
     }
 
     @Test
+    public void cleanUpSourcePaths()
+    {
+
+        TraceabilityModel groundTruth = importGroundTruth("./testDocs/MDW/groundTruth/TraceabilityModel.xml");
+        TraceabilityLink[] traceabilityLinkList = groundTruth.getTraceabilityLinkList();
+        for (TraceabilityLink traceabilityLink : traceabilityLinkList) {
+            cleanUpPath(traceabilityLink.getSource());
+            cleanUpPath(traceabilityLink.getTarget());
+        }
+        XMLExport.createXMLFile(groundTruth, "./testDocs/MDW/groundTruth");
+
+    }
+    private void cleanUpPath(TraceabilityPointer pointer)
+    {
+        String cleanedPath = pointer.getSourceFilePath().replace('\\', '/');
+        pointer.setSourceFilePath(cleanedPath);
+        pointer.setStartLine(pointer.getStartLine()-1);
+    }
+
+    @Test
     public void computeMAPForTwidereDomainModel() throws IOException {
         computeMap("./testDocs/TwidereDomainModel", "./testDocs/TwidereDomainModel/groundTruth/TraceabilityModel.xml", Language.SWIFT);
+    }
+
+    @Test
+    public void computeMAPForMDW() throws IOException {
+        computeMap("./testDocs/MDW", "./testDocs/MDW/groundTruth/TraceabilityModel.xml", Language.SWIFT);
     }
 
     @Test
@@ -65,10 +90,17 @@ public class MAPQEvaluator {
     }
 
 
+
+
+
     private void computeMap(String sourcePath, String linkModelXMLPath, Language targetLanguage) {
         TraceabilityModel groundTruth = importGroundTruth(linkModelXMLPath);
+        long parsingStart = System.currentTimeMillis();
         ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService(sourcePath);
         double outerSumOfMAPQ = 0;
+        long parsingTime = System.currentTimeMillis() - parsingStart;
+
+        long queryingStart = System.currentTimeMillis();
         Map<TraceabilityPointer, TraceabilityLinkSetWrapper> traceabilityLinksBySourcePointers = groundTruth.getTraceabilityLinksBySourcePointers();
         for (Map.Entry<TraceabilityPointer, TraceabilityLinkSetWrapper> pointerAndCorrectLinks : traceabilityLinksBySourcePointers.entrySet()) {
             Set<TraceabilityLink> correctLinksForPointer = pointerAndCorrectLinks.getValue().get();
@@ -108,6 +140,8 @@ public class MAPQEvaluator {
 
         }
         double mAPQ = (1.0d / traceabilityLinksBySourcePointers.size()) * outerSumOfMAPQ;
+
+        long queryingTime = System.currentTimeMillis() - queryingStart;
         System.out.println("MAP(Q): " + mAPQ);
         System.out.println("|Q|: " + traceabilityLinksBySourcePointers.size());
         System.out.println("Anzahl Dokumente: " + recoveryService.getNumberOfDocs());
@@ -118,6 +152,9 @@ public class MAPQEvaluator {
         for (String nonParsedFile : ITraceabilityRecoveryService.NonParsedFiles) {
             System.out.println("Parsing Failed: " + nonParsedFile);
         }
+
+        System.out.println("Indexing took : "+parsingTime+"ms");
+        System.out.println("Querying took : "+queryingTime+"ms");
 
 
     }
@@ -155,7 +192,7 @@ public class MAPQEvaluator {
         recoveryService = new LuceneTraceabilityRecoveryService();
 
         Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
-        //recoveryService.setDocumentFilter(documentFilter);
+        recoveryService.setDocumentFilter(documentFilter);
         if (LOAD_INDEX_FROM_DISK)//wenn der bestehende index von der Platte geladen werden soll
         {
             try {
@@ -220,7 +257,7 @@ public class MAPQEvaluator {
                 TraceabilityPointer traceabilityPointer = document.getTraceabilityPointer();
                 if (traceabilityPointer instanceof TypePointer) {
                     TypePointer typePointer = (TypePointer) traceabilityPointer;
-                    return typePointer.getClassification() != TypePointerClassification.EXTENSION;
+                   return  true;
                 }
 //                else if(traceabilityPointer instanceof MethodPointer)
 //                {
@@ -230,4 +267,6 @@ public class MAPQEvaluator {
             }
         };
     }
+
+
 }

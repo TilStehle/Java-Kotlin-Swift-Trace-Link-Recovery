@@ -16,7 +16,7 @@ public class LatexExport {
     public static void main(String[] args)
     {
         try {
-            exportLatex(importTraceabilityModelFromXML("./testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml"), "C:\\Users\\Tilmann Stehle\\Documents\\Diss\\Veroeffentlichungen\\Modellierung2018\\TwidereLinksTabelle.tex");
+            exportLatex(importTraceabilityModelFromXML("./testDocs/MDW/groundTruth/TraceabilityModel.xml"), "C:\\Users\\Tilmann Stehle\\Documents\\Diss\\Veroeffentlichungen\\Journal of Software - Evoluation and Process\\HafenDesWissensLinks.tex");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
