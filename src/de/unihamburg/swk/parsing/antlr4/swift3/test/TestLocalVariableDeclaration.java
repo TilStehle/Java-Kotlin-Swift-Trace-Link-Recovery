@@ -5,11 +5,11 @@ import static org.junit.Assert.assertEquals;
 import java.util.List;
 
 import de.unihamburg.swk.parsing.document.TermFactor;
+import de.unihamburg.swk.parsing.document.TermFactors;
 import org.junit.Test;
 
 import de.unihamburg.swk.parsing.antlr4.java8.test.ExpectedTermsBuilder;
 import de.unihamburg.swk.parsing.antlr4.swift3.test.SwiftTestParser.Type;
-import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 
@@ -25,7 +25,8 @@ public class TestLocalVariableDeclaration {
 	private static String localVariable3 = "func foo() { var s:[String] }";
 	private static String localVariable4 = "func foo() { var list:List<A<B>> }";
 	private static String localVariable5 = "func foo() { var mustBeSettable: Int { get {} set {} }; }";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -34,11 +35,11 @@ public class TestLocalVariableDeclaration {
 
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
 				
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "i")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownLocalVariableFactor, "i")
+				.append(termFactors.ownLocalVariableTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -51,11 +52,11 @@ public class TestLocalVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
 				
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "i")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "j")
+				.append(termFactors.ownLocalVariableFactor, "i")
+				.append(termFactors.ownLocalVariableFactor, "j")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -68,11 +69,11 @@ public class TestLocalVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
 				
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "s")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "String")
+				.append(termFactors.ownLocalVariableFactor, "s")
+				.append(termFactors.ownLocalVariableTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -85,13 +86,13 @@ public class TestLocalVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
 				
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "list")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "A")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "B")
+				.append(termFactors.ownLocalVariableFactor, "list")
+				.append(termFactors.ownLocalVariableTypeFactor, "List")
+				.append(termFactors.ownLocalVariableTypeFactor, "A")
+				.append(termFactors.ownLocalVariableTypeFactor, "B")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -104,11 +105,11 @@ public class TestLocalVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
 				
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "mustBeSettable")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownLocalVariableFactor, "mustBeSettable")
+				.append(termFactors.ownLocalVariableTypeFactor, "Int")
 				
 				.append(new TermFactor(1, "testFactor"), "get")
 				.append(new TermFactor(1, "testFactor"), "set")

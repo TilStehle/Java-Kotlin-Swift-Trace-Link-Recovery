@@ -22,7 +22,8 @@ public class TestEnumDeclaration {
 	private static String enum1 = "enum E {}";
 	private static String enum2 = "enum E { case INSTANCE1 case INSTANCE2 }";
 	private static String enum3 = "enum E : I, J {}";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	// TODO I / CASE ...
 	
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
@@ -33,7 +34,7 @@ public class TestEnumDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -46,9 +47,9 @@ public class TestEnumDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "INSTANCE1")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "INSTANCE2")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
+				.append(termFactors.ownAttributeFactor, "INSTANCE1")
+				.append(termFactors.ownAttributeFactor, "INSTANCE2")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -61,9 +62,9 @@ public class TestEnumDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "I")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "J")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
+				.append(termFactors.ownInheritanceFactor, "I")
+				.append(termFactors.ownInheritanceFactor, "J")
 				.toString();
 		
 		assertEquals(1, docs.size());

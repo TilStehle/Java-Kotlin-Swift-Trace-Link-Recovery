@@ -30,8 +30,8 @@ public class TestProtocolPropertyDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "mustBeSettable")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "mustBeSettable")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "Int")
 				
 				.append(new TermFactor(1, "testFactor"), "get")
 				.append(new TermFactor(1, "testFactor"), "set")
@@ -48,8 +48,8 @@ public class TestProtocolPropertyDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "fullName")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "fullName")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "String")
 				
 				.append(new TermFactor(1, "testFactor"), "get")
 				

@@ -24,7 +24,8 @@ public class TestMethodDeclaration {
 	private static String method3 = "func foo(in1:Int, out2 in1:Int) {}";
 	private static String method4 = "func foo(list:List<String>) -> List<Int> { return x; }";
 	private static String method5 = "func foo<A, B>() {}";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -33,8 +34,8 @@ public class TestMethodDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "==")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
+				.append(termFactors.ownMethodFactor, "==")
+				.append(termFactors.ownMethodTypeFactor, "void")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -47,8 +48,8 @@ public class TestMethodDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "Int")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -61,12 +62,12 @@ public class TestMethodDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "in1")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "out2")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Int")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
+				.append(termFactors.ownParameterFactor, "in1")
+				.append(termFactors.ownParameterTypeFactor, "Int")
+				.append(termFactors.ownParameterFactor, "out2")
+				.append(termFactors.ownParameterTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -79,12 +80,12 @@ public class TestMethodDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "list")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "String")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "List")
+				.append(termFactors.ownMethodTypeFactor, "Int")
+				.append(termFactors.ownParameterFactor, "list")
+				.append(termFactors.ownParameterTypeFactor, "List")
+				.append(termFactors.ownParameterTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -97,10 +98,10 @@ public class TestMethodDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
-				.append(TermFactors.OWN_TYPE_PARAMETER_FACTOR, "A")
-				.append(TermFactors.OWN_TYPE_PARAMETER_FACTOR, "B")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
+				.append(termFactors.ownTypeParameterFactor, "A")
+				.append(termFactors.ownTypeParameterFactor, "B")
 				.toString();
 		
 		assertEquals(1, docs.size());

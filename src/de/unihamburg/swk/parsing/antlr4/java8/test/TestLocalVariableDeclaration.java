@@ -25,16 +25,16 @@ public class TestLocalVariableDeclaration {
 	private static String localVariable4 = "void foo() { List<A<B>> list; }";
 	
 	private JavaTestParser<LuceneDocument> jtp = new JavaTestParser<>(new LuceneDocsFactory());
-	
+	private TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	@Test
 	public void testLocalVariable1() {
 		List<LuceneDocument> docs = jtp.parseDocuments(localVariable1, DECLARATION1);
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "Clazz")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "i")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "int")
+				.append(termFactors.ownConstructorFactor, "Clazz")
+				.append(termFactors.ownLocalVariableFactor, "i")
+				.append(termFactors.ownLocalVariableTypeFactor, "int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -47,11 +47,11 @@ public class TestLocalVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "Clazz")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "i")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "int")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "j")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "int")
+				.append(termFactors.ownConstructorFactor, "Clazz")
+				.append(termFactors.ownLocalVariableFactor, "i")
+				.append(termFactors.ownLocalVariableTypeFactor, "int")
+				.append(termFactors.ownLocalVariableFactor, "j")
+				.append(termFactors.ownLocalVariableTypeFactor, "int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -64,10 +64,10 @@ public class TestLocalVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "s")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "String")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
+				.append(termFactors.ownLocalVariableFactor, "s")
+				.append(termFactors.ownLocalVariableTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -80,12 +80,12 @@ public class TestLocalVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "list")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "A")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "B")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
+				.append(termFactors.ownLocalVariableFactor, "list")
+				.append(termFactors.ownLocalVariableTypeFactor, "List")
+				.append(termFactors.ownLocalVariableTypeFactor, "A")
+				.append(termFactors.ownLocalVariableTypeFactor, "B")
 				.toString();
 		
 		assertEquals(1, docs.size());

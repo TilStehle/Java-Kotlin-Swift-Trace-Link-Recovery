@@ -17,6 +17,8 @@ import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
  */
 public class SwiftTest {
 
+	private TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
+
 	private static final Type DECLARATION = SwiftTestParser.Type.topLevel;
 	private static String clazz =
 			// class #1
@@ -53,9 +55,9 @@ public class SwiftTest {
 		
 		ExpectedTermsBuilder etb0 = new ExpectedTermsBuilder();
 		String expected0  = etb0
-				.append(TermFactors.OTHER_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "s")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(termFactors.otherTypeDeclarationFactor, "A")
+				.append(termFactors.ownAttributeFactor, "s")
+				.append(termFactors.ownAttributeTypeFactor, "String")
 				.toString();
 
 		assertEquals(expected0, docs.get(0).getContents());
@@ -64,10 +66,10 @@ public class SwiftTest {
 		
 		ExpectedTermsBuilder etb1 = new ExpectedTermsBuilder();
 		String expected1  = etb1
-				.append(TermFactors.OTHER_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "init")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "s")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "String")
+				.append(termFactors.otherTypeDeclarationFactor, "A")
+				.append(termFactors.ownConstructorFactor, "init")
+				.append(termFactors.ownParameterFactor, "s")
+				.append(termFactors.ownParameterTypeFactor, "String")
 				.toString();
 
 		assertEquals(expected1, docs.get(1).getContents());
@@ -76,11 +78,11 @@ public class SwiftTest {
 		
 		ExpectedTermsBuilder etb2 = new ExpectedTermsBuilder();
 		String expected2  = etb2
-				.append(TermFactors.OTHER_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_METHOD_FACTOR, "foo")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "void")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "i")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "Int")
+				.append(termFactors.otherTypeDeclarationFactor, "A")
+				.append(termFactors.ownMethodFactor, "foo")
+				.append(termFactors.ownMethodTypeFactor, "void")
+				.append(termFactors.ownLocalVariableFactor, "i")
+				.append(termFactors.ownLocalVariableTypeFactor, "Int")
 				.toString();
 
 		assertEquals(expected2, docs.get(2).getContents());
@@ -89,9 +91,9 @@ public class SwiftTest {
 		
 		ExpectedTermsBuilder etb3 = new ExpectedTermsBuilder();
 		String expected3 = etb3
-				.append(TermFactors.OTHER_TYPE_DECLARATION_FACTOR, "Inner")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "i")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.otherTypeDeclarationFactor, "Inner")
+				.append(termFactors.ownAttributeFactor, "i")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
 				.toString();
 
 		assertEquals(expected3, docs.get(3).getContents());
@@ -100,11 +102,11 @@ public class SwiftTest {
 		
 		ExpectedTermsBuilder etb4 = new ExpectedTermsBuilder();
 		String expected4  = etb4
-				.append(TermFactors.OTHER_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "Inner")
+				.append(termFactors.otherTypeDeclarationFactor, "A")
+				.append(termFactors.ownTypeDeclarationFactor, "Inner")
 				
-				.append(TermFactors.OTHER_ATTRIBUTE_FACTOR, "i")
-				.append(TermFactors.OTHER_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.otherAttributeFactor, "i")
+				.append(termFactors.otherAttributeTypeFactor, "Int")
 				.toString();
 
 		assertEquals(expected4, docs.get(4).getContents());
@@ -113,24 +115,24 @@ public class SwiftTest {
 		
 		ExpectedTermsBuilder etb5 = new ExpectedTermsBuilder();
 		String expected5  = etb5
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "B")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
+				.append(termFactors.ownInheritanceFactor, "B")
 				
-				.append(TermFactors.OTHER_ATTRIBUTE_FACTOR, "s")
-				.append(TermFactors.OTHER_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(termFactors.otherAttributeFactor, "s")
+				.append(termFactors.otherAttributeTypeFactor, "String")
 				
-				.append(TermFactors.OTHER_CONSTRUCTOR_FACTOR, "init")
-				.append(TermFactors.OTHER_PARAMETER_FACTOR, "s")
-				.append(TermFactors.OTHER_PARAMETER_TYPE_FACTOR, "String")
+				.append(termFactors.otherConstructorFactor, "init")
+				.append(termFactors.otherParameterFactor, "s")
+				.append(termFactors.otherParameterTypeFactor, "String")
 				
-				.append(TermFactors.OTHER_METHOD_FACTOR, "foo")
-				.append(TermFactors.OTHER_METHOD_TYPE_FACTOR, "void")
-				.append(TermFactors.OTHER_LOCAL_VARIABLE_FACTOR, "i")
-				.append(TermFactors.OTHER_LOCAL_VARIABLE_TYPE_FACTOR, "Int")
+				.append(termFactors.otherMethodFactor, "foo")
+				.append(termFactors.otherMethodTypeFactor, "void")
+				.append(termFactors.otherLocalVariableFactor, "i")
+				.append(termFactors.otherLocalVariableTypeFactor, "Int")
 				
-				.append(TermFactors.OTHER_TYPE_DECLARATION_FACTOR, "Inner")
-				.append(TermFactors.OTHER_ATTRIBUTE_FACTOR, "i")
-				.append(TermFactors.OTHER_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.otherTypeDeclarationFactor, "Inner")
+				.append(termFactors.otherAttributeFactor, "i")
+				.append(termFactors.otherAttributeTypeFactor, "Int")
 				.toString();
 
 		assertEquals(expected5, docs.get(5).getContents());
@@ -139,7 +141,7 @@ public class SwiftTest {
 		
 		ExpectedTermsBuilder etb6 = new ExpectedTermsBuilder();
 		String expected6  = etb6
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "B")
+				.append(termFactors.ownTypeDeclarationFactor, "B")
 				.toString();
 
 		assertEquals(expected6, docs.get(6).getContents());

@@ -21,7 +21,8 @@ public class TestStructDeclaration {
 	private static String class1 = "struct S {}";
 	private static String class2 = "struct S : I, J {}";
 	private static String class3 = "struct S<T> {}";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -30,7 +31,7 @@ public class TestStructDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "S")
+				.append(termFactors.ownTypeDeclarationFactor, "S")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -43,9 +44,9 @@ public class TestStructDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "S")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "I")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "J")
+				.append(TermFactors.DEFAULT_FACTORS.ownTypeDeclarationFactor, "S")
+				.append(TermFactors.DEFAULT_FACTORS.ownInheritanceFactor, "I")
+				.append(TermFactors.DEFAULT_FACTORS.ownInheritanceFactor, "J")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -58,8 +59,8 @@ public class TestStructDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "S")
-				.append(TermFactors.OWN_TYPE_PARAMETER_FACTOR, "T")
+				.append(TermFactors.DEFAULT_FACTORS.ownTypeDeclarationFactor, "S")
+				.append(TermFactors.DEFAULT_FACTORS.ownTypeParameterFactor, "T")
 				.toString();
 		
 		assertEquals(1, docs.size());

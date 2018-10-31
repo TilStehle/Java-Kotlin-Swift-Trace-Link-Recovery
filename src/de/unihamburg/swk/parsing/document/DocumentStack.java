@@ -24,12 +24,14 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	private Stack<TDocument> documentStack;
 	private Stack<TypePointer> typeStack;
 	private Stack<String> typeNameStack;
+	private TermFactors termFactors;
 	
 	public DocumentStack(String filePath, IDocumentFactory<TDocument> documentFactory) {
+		termFactors = documentFactory.getTermFactors();
 		this.filePath = filePath;
 		this.documentFactory = documentFactory;
 		this.layerCalculator = new LayerCalculator();
-		
+
 		documentBag = new LinkedList<>();
 		documentStack = new Stack<>();
 		typeStack = new Stack<>();
@@ -48,8 +50,8 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	}
 
 	private void addEnclosingTypeTerm1() {
-		if(typeNameStack.size() > 2 && TermFactors.ENCLOSING_TYPE_FACTOR.getFactor() > 0) {
-			documentStack.peek() .addTerm(TermFactors.ENCLOSING_TYPE_FACTOR, typeNameStack.get(typeNameStack.size() - 2), ENCLOSE_TYPE);
+		if(typeNameStack.size() > 2 && termFactors.enclosingTypeFactor.getFactor() > 0) {
+			documentStack.peek() .addTerm(termFactors.enclosingTypeFactor, typeNameStack.get(typeNameStack.size() - 2), ENCLOSE_TYPE);
 		}
 	}
 	
@@ -74,8 +76,8 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	}
 
 	private void addEnclosingTypeTerm2() {
-		if(typeNameStack.size() > 1 &&  TermFactors.ENCLOSING_TYPE_FACTOR.getFactor() > 0) {
-			documentStack.peek().addTerm( TermFactors.ENCLOSING_TYPE_FACTOR, typeNameStack.peek(), ENCLOSE_TYPE);
+		if(typeNameStack.size() > 1 &&  termFactors.enclosingTypeFactor.getFactor() > 0) {
+			documentStack.peek().addTerm( termFactors.enclosingTypeFactor, typeNameStack.peek(), ENCLOSE_TYPE);
 		}
 	}
 	

@@ -11,11 +11,13 @@ import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 
+
 /**
  * @author Jakob Andersen
  */
 public class TestInterfaceDeclaration {
 
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private static final Type DECLARATION = Type.normalInterfaceDeclaration;
 	private static String interface1 = "interface I { }";
 	private static String interface2 = "interface I extends A, B {}";
@@ -29,7 +31,7 @@ public class TestInterfaceDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "I")
+				.append(termFactors.ownTypeDeclarationFactor, "I")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -42,9 +44,9 @@ public class TestInterfaceDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "I")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "A")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "B")
+				.append(termFactors.ownTypeDeclarationFactor, "I")
+				.append(termFactors.ownInheritanceFactor, "A")
+				.append(termFactors.ownInheritanceFactor, "B")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -57,8 +59,8 @@ public class TestInterfaceDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "I")
-				.append(TermFactors.OWN_TYPE_PARAMETER_FACTOR, "T")
+				.append(termFactors.ownTypeDeclarationFactor, "I")
+				.append(termFactors.ownTypeParameterFactor, "T")
 				.toString();
 		
 		assertEquals(1, docs.size());

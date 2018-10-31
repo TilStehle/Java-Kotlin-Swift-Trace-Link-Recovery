@@ -31,7 +31,7 @@ public class TestProtocolDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "I")
+				.append(TermFactors.DEFAULT_FACTORS.ownTypeDeclarationFactor, "I")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -44,9 +44,9 @@ public class TestProtocolDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "I")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "A")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "B")
+				.append(TermFactors.DEFAULT_FACTORS.ownTypeDeclarationFactor, "I")
+				.append(TermFactors.DEFAULT_FACTORS.ownInheritanceFactor, "A")
+				.append(TermFactors.DEFAULT_FACTORS.ownInheritanceFactor, "B")
 				.toString();
 		
 		assertEquals(1, docs.size());

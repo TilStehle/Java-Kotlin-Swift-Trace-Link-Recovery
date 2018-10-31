@@ -10,7 +10,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 
 	private static final String NO_RETURN_TYPE = "void";
 
-//	private static final int ENCLOSING_TYPE_FACTOR = 1; // @see DocumentStack
+//	private static final int enclosingTypeFactor = 1; // @see DocumentStack
 	 
 	private static final String INHERITANCE = "INHERITANCE";
 	private static final String TYPE_DECLARATION = "TYPE DECLARATION";
@@ -26,10 +26,12 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	private static final String FUNCTIONDECLARATION = "FUNCTIONDECLARATION";
 	private static final String GETTER = "GETTER";
 	private static final String SETTER = "SETTER";
+	private final TermFactors _termFactors;
 
 	private DocumentStack<TDocument> documentStack;
 
 	public DocumentBuilder(String filePath, IDocumentFactory<TDocument> documentFactory) {
+		this._termFactors = documentFactory.getTermFactors();
 		documentStack = new DocumentStack<>(filePath.replace('\\', '/').replace("/./", "/"), documentFactory);
 	}
 
@@ -37,18 +39,18 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack.layerOf(inheritance);
 		enterTypeDeclaration(pointerName, classification, startLine);
 		for (String name : inheritance) {
-			documentStack.addTerm(name, INHERITANCE, TermFactors.OWN_INHERITANCE_FACTOR, TermFactors.OTHER_INHERITANCE_FACTOR);
+			documentStack.addTerm(name, INHERITANCE, _termFactors.ownInheritanceFactor, _termFactors.otherInheritanceFactor);
 		}
 	}
 
 	public void enterTypeDeclaration(String pointerName, TypePointerClassification classification, int startLine) {
 		enterAnonymousTypeDeclaration(pointerName, classification, startLine);
-		documentStack.addTerm(pointerName, TYPE_DECLARATION, TermFactors.OWN_TYPE_DECLARATION_FACTOR, TermFactors.OTHER_TYPE_DECLARATION_FACTOR);
+		documentStack.addTerm(pointerName, TYPE_DECLARATION, _termFactors.ownTypeDeclarationFactor, _termFactors.otherTypeDeclarationFactor);
 	}
 
 	public void enterFunctionDeclaration(String functionName,  int startLine) {
 		documentStack.enterElementDeclarationWithoutParentType(new FunctionPointer(functionName,startLine));
-		documentStack.addTerm(functionName, FUNCTIONDECLARATION, TermFactors.OWN_METHOD_FACTOR, TermFactors.OTHER_METHOD_FACTOR);
+		documentStack.addTerm(functionName, FUNCTIONDECLARATION, _termFactors.ownMethodFactor, _termFactors.otherMethodFactor);
 	}
 	
 	public void enterAnonymousTypeDeclaration(String pointerName, TypePointerClassification classification, int startLine) {
@@ -67,7 +69,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		ConstructorPointer constructorPointer = new ConstructorPointer(name, startLine);
 		documentStack.enterElementDeclaration(constructorPointer);
 		
-		documentStack.addTerm(name, CONSTRUCTOR, TermFactors.OWN_CONSTRUCTOR_FACTOR, TermFactors.OTHER_CONSTRUCTOR_FACTOR);
+		documentStack.addTerm(name, CONSTRUCTOR, _termFactors.ownConstructorFactor, _termFactors.otherConstructorFactor);
 	}
 
 	public void enterMethod(String pointerName, String mappedName, PointerTypeSeparator type, int startLine) {
@@ -76,17 +78,17 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		MethodPointer methodPointer = new MethodPointer(pointerName, type.getPointerType(), startLine);
 		documentStack.enterElementDeclaration(methodPointer);
 
-		documentStack.addTerm(mappedName, METHOD, TermFactors.OWN_METHOD_FACTOR, TermFactors.OTHER_METHOD_FACTOR);
-		documentStack.addTerms(type.getTypes(), METHOD, TermFactors.OWN_METHOD_TYPE_FACTOR, TermFactors.OTHER_METHOD_TYPE_FACTOR);
-		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerm(mappedName, METHOD, _termFactors.ownMethodFactor, _termFactors.otherMethodFactor);
+		documentStack.addTerms(type.getTypes(), METHOD, _termFactors.ownMethodTypeFactor, _termFactors.otherMethodTypeFactor);
+		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 
 	public void enterMethod(String pointerName, String mappedName, int startLine) {
 		MethodPointer methodPointer = new MethodPointer(pointerName, NO_RETURN_TYPE,startLine);
 		documentStack.enterElementDeclaration(methodPointer);
 
-		documentStack.addTerm(mappedName, METHOD, TermFactors.OWN_METHOD_FACTOR, TermFactors.OTHER_METHOD_FACTOR);
-		documentStack.addTerm(NO_RETURN_TYPE, METHOD, TermFactors.OWN_METHOD_TYPE_FACTOR, TermFactors.OTHER_METHOD_TYPE_FACTOR);
+		documentStack.addTerm(mappedName, METHOD, _termFactors.ownMethodFactor, _termFactors.otherMethodFactor);
+		documentStack.addTerm(NO_RETURN_TYPE, METHOD, _termFactors.ownMethodTypeFactor, _termFactors.otherMethodTypeFactor);
 	}
 	
 	public void enterClosure(PointerTypeSeparator type, int line) {
@@ -95,15 +97,15 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		ClosurePointer closurePointer = new ClosurePointer(type.getPointerType(), line);
 		documentStack.enterElementDeclaration(closurePointer);
 
-		documentStack.addTerms(type.getTypes(), CLOSURE, TermFactors.OWN_CLOSURE_TYPE_FACTOR, TermFactors.OTHER_CLOSURE_TYPE_FACTOR);
-		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerms(type.getTypes(), CLOSURE, _termFactors.ownClosureTypeFactor, _termFactors.otherClosureTypeFactor);
+		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 
 	public void enterClosure(int line) {
 		ClosurePointer closurePointer = new ClosurePointer(NO_RETURN_TYPE, line);
 		documentStack.enterElementDeclaration(closurePointer);
 		
-		documentStack.addTerm(NO_RETURN_TYPE, CLOSURE, TermFactors.OWN_CLOSURE_TYPE_FACTOR, TermFactors.OTHER_CLOSURE_TYPE_FACTOR);
+		documentStack.addTerm(NO_RETURN_TYPE, CLOSURE, _termFactors.ownClosureTypeFactor, _termFactors.otherClosureTypeFactor);
 	}
 	
 	public void enterField(String pointerName, String mappedName, PointerTypeSeparator type, int startLine) {
@@ -124,9 +126,9 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	private void addFieldTerms(String pointerName, PointerTypeSeparator type) {
 		Objects.requireNonNull(type);
 		
-		documentStack.addTerm(pointerName, ATTRIBUTE, TermFactors.OWN_ATTRIBUTE_FACTOR, TermFactors.OTHER_ATTRIBUTE_FACTOR);
-		documentStack.addTerms(type.getTypes(), ATTRIBUTE, TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, TermFactors.OTHER_ATTRIBUTE_TYPE_FACTOR);
-		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerm(pointerName, ATTRIBUTE, _termFactors.ownAttributeFactor, _termFactors.otherAttributeFactor);
+		documentStack.addTerms(type.getTypes(), ATTRIBUTE, _termFactors.ownAttributeTypeFactor, _termFactors.otherAttributeTypeFactor);
+		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 	
 	public void enterParameter(String name, PointerTypeSeparator type) {
@@ -134,14 +136,14 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		
 		addParameterToRecentPointer(name, type.getPointerType());
 
-		documentStack.addTerm(name, PARAMETER, TermFactors.OWN_PARAMETER_FACTOR, TermFactors.OTHER_PARAMETER_FACTOR);
-		documentStack.addTerms(type.getTypes(), PARAMETER, TermFactors.OWN_PARAMETER_TYPE_FACTOR, TermFactors.OTHER_PARAMETER_TYPE_FACTOR);
-		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerm(name, PARAMETER, _termFactors.ownParameterFactor, _termFactors.otherParameterFactor);
+		documentStack.addTerms(type.getTypes(), PARAMETER, _termFactors.ownParameterTypeFactor, _termFactors.otherParameterTypeFactor);
+		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 
 	public void enterParameter(String name) {
 		addParameterToRecentPointer(name, "");
-		documentStack.addTerm(name, PARAMETER, TermFactors.OWN_PARAMETER_FACTOR, TermFactors.OTHER_PARAMETER_FACTOR);
+		documentStack.addTerm(name, PARAMETER, _termFactors.ownParameterFactor, _termFactors.otherParameterFactor);
 	}
 	
 	public void enterSubscript(PointerTypeSeparator type) {
@@ -152,8 +154,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		
 		documentStack.enterElementDeclaration(subscriptPointer);
 		
-		documentStack.addTerms(type.getTypes(), METHOD, TermFactors.OWN_METHOD_TYPE_FACTOR, TermFactors.OTHER_METHOD_TYPE_FACTOR);
-		documentStack.addTerms(type.getGenTypes(), METHOD, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerms(type.getTypes(), METHOD, _termFactors.ownMethodTypeFactor, _termFactors.otherMethodTypeFactor);
+		documentStack.addTerms(type.getGenTypes(), METHOD, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 	
 	public void enterLocalVariable(String name, PointerTypeSeparator type) {
@@ -169,25 +171,25 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	}
 
 	private void localVariableTerms(PointerTypeSeparator type, String v) {
-		documentStack.addTerm(v, LOCAL_VARIABLE, TermFactors.OWN_LOCAL_VARIABLE_FACTOR, TermFactors.OTHER_LOCAL_VARIABLE_FACTOR);
-		documentStack.addTerms(type.getTypes(), LOCAL_VARIABLE, TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, TermFactors.OTHER_LOCAL_VARIABLE_TYPE_FACTOR);
-		documentStack.addTerms(type.getGenTypes(), LOCAL_VARIABLE, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerm(v, LOCAL_VARIABLE, _termFactors.ownLocalVariableFactor, _termFactors.otherLocalVariableFactor);
+		documentStack.addTerms(type.getTypes(), LOCAL_VARIABLE, _termFactors.ownLocalVariableTypeFactor, _termFactors.otherLocalVariableTypeFactor);
+		documentStack.addTerms(type.getGenTypes(), LOCAL_VARIABLE, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 	
 	public void enterLambdaParameter(List<String> lambdavariableNames, SimpleTypeSeparator type) {
 		Objects.requireNonNull(type);
 		
-		documentStack.addTerms(lambdavariableNames, PARAMETER, TermFactors.OWN_PARAMETER_FACTOR, TermFactors.OTHER_PARAMETER_FACTOR);
-		documentStack.addTerms(type.getTypes(), PARAMETER, TermFactors.OWN_PARAMETER_TYPE_FACTOR, TermFactors.OTHER_PARAMETER_TYPE_FACTOR);
-		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerms(lambdavariableNames, PARAMETER, _termFactors.ownParameterFactor, _termFactors.otherParameterFactor);
+		documentStack.addTerms(type.getTypes(), PARAMETER, _termFactors.ownParameterTypeFactor, _termFactors.otherParameterTypeFactor);
+		documentStack.addTerms(type.getGenTypes(), TYPE_PARAMETER, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 	
 	public void enterTypeParameter(String typeParameterName) {
-		documentStack.addTerm(typeParameterName, TYPE_PARAMETER, TermFactors.OWN_TYPE_PARAMETER_FACTOR, TermFactors.OTHER_TYPE_PARAMETER_FACTOR);
+		documentStack.addTerm(typeParameterName, TYPE_PARAMETER, _termFactors.ownTypeParameterFactor, _termFactors.otherTypeParameterFactor);
 	}
 	
 	public void addEnumConstant(String constantName) {
-		documentStack.addTerm(constantName, ATTRIBUTE, TermFactors.OWN_ATTRIBUTE_FACTOR, TermFactors.OTHER_ATTRIBUTE_FACTOR); // TODO ?
+		documentStack.addTerm(constantName, ATTRIBUTE, _termFactors.ownAttributeFactor, _termFactors.otherAttributeFactor); // TODO ?
 	}
 	
 	private void addParameterToRecentPointer(String name, String type) {
@@ -221,8 +223,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	public void enterParameter(String name, String type) {
 		addParameterToRecentPointer(name, type);
 
-		documentStack.addTerm(name, PARAMETER, TermFactors.OWN_PARAMETER_FACTOR, TermFactors.OTHER_PARAMETER_FACTOR);
-		documentStack.addTerm(type, PARAMETER, TermFactors.OWN_PARAMETER_TYPE_FACTOR, TermFactors.OTHER_PARAMETER_TYPE_FACTOR);
+		documentStack.addTerm(name, PARAMETER, _termFactors.ownParameterFactor, _termFactors.otherParameterFactor);
+		documentStack.addTerm(type, PARAMETER, _termFactors.ownParameterTypeFactor, _termFactors.otherParameterTypeFactor);
 	}
 
 	@Deprecated
@@ -230,8 +232,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		AttributePointer attributePointer = new AttributePointer(name, type,startLine);
 		documentStack.enterElementDeclaration(attributePointer);
 		
-		documentStack.addTerm(name, ATTRIBUTE, TermFactors.OWN_ATTRIBUTE_FACTOR, TermFactors.OTHER_ATTRIBUTE_FACTOR);
-		documentStack.addTerm(type, ATTRIBUTE, TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, TermFactors.OTHER_ATTRIBUTE_TYPE_FACTOR);
+		documentStack.addTerm(name, ATTRIBUTE, _termFactors.ownAttributeFactor, _termFactors.otherAttributeFactor);
+		documentStack.addTerm(type, ATTRIBUTE, _termFactors.ownAttributeTypeFactor, _termFactors.otherAttributeTypeFactor);
 	}
 
 	public void enterLambdaExpression() {
@@ -266,23 +268,23 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	}
 
 	public void enterVariableUsage(String name) {
-		documentStack.addTerm(name, VARIABLE_USAGE, TermFactors.VARIABLE_USAGE_FACTOR, TermFactors.OTHER_VARIABLE_USAGE_FACTOR);
+		documentStack.addTerm(name, VARIABLE_USAGE, _termFactors.variableUsageFactor, _termFactors.otherVariableUsageFactor);
 
 	}
 
 	public void enterMethodCall(String name) {
-		documentStack.addTerm(name, METHOD_CALL, TermFactors.METHOD_CALL_FACTOR, TermFactors.OTHER_METHOD_CALL_FACTOR);
+		documentStack.addTerm(name, METHOD_CALL, _termFactors.methodCallFactor, _termFactors.otherMethodCallFactor);
 
 	}
 
 	public void enterGetter(String text) {
-		documentStack.addTerm(text, GETTER, TermFactors.GETTER_SETTER_FACTOR, TermFactors.GETTER_SETTER_FACTOR);
+		documentStack.addTerm(text, GETTER, _termFactors.getterSetterFactor, _termFactors.getterSetterFactor);
 
 	}
 
 
 	public void enterSetter(String text) {
-		documentStack.addTerm(text, SETTER, TermFactors.GETTER_SETTER_FACTOR, TermFactors.GETTER_SETTER_FACTOR);
+		documentStack.addTerm(text, SETTER, _termFactors.getterSetterFactor, _termFactors.getterSetterFactor);
 
 	}
 }

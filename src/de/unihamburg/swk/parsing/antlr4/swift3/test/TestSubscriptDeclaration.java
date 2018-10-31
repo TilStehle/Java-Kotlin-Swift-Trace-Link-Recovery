@@ -23,7 +23,8 @@ public class TestSubscriptDeclaration {
 	private static String protocol1 = "subscript(index: Int) -> Double { }";
 	private static String protocol2 = "subscript(index: Int) -> List<A> { }";
 	private static String protocol3 = "subscript(index: Int) -> Double { get { } set(i) { } }";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -32,9 +33,9 @@ public class TestSubscriptDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "Double")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "index")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Int")
+				.append(termFactors.ownMethodTypeFactor, "Double")
+				.append(termFactors.ownParameterFactor, "index")
+				.append(termFactors.ownParameterTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -47,10 +48,10 @@ public class TestSubscriptDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "A")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "index")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Int")
+				.append(termFactors.ownMethodTypeFactor, "List")
+				.append(termFactors.ownMethodTypeFactor, "A")
+				.append(termFactors.ownParameterFactor, "index")
+				.append(termFactors.ownParameterTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -63,9 +64,9 @@ public class TestSubscriptDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_METHOD_TYPE_FACTOR, "Double")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "index")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Int")
+				.append(termFactors.ownMethodTypeFactor, "Double")
+				.append(termFactors.ownParameterFactor, "index")
+				.append(termFactors.ownParameterTypeFactor, "Int")
 				
 				.append(new TermFactor(1, "testFactor"), "get")
 				.append(new TermFactor(1, "testFactor"), "set")

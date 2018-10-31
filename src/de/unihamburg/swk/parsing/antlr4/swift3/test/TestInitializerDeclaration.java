@@ -22,6 +22,7 @@ public class TestInitializerDeclaration {
 	private static String constructor1 = "init() {}";
 	private static String constructor2 = "init(a:Int, b:Int) {}";
 	private static String constructor3 = "init(list:List<String>) {}";
+	private TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
@@ -30,7 +31,7 @@ public class TestInitializerDeclaration {
 		List<LuceneDocument> docs = jtp.parseDocuments(constructor1, DECLARATION);
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
-		String expected  = etb.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "init").toString();
+		String expected  = etb.append(termFactors.ownConstructorFactor, "init").toString();
 		
 		assertEquals(1, docs.size());
 		assertEquals(expected, docs.get(0).getContents());
@@ -42,11 +43,11 @@ public class TestInitializerDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "init")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "a")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "b")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Int")
+				.append(termFactors.ownConstructorFactor, "init")
+				.append(termFactors.ownParameterFactor, "a")
+				.append(termFactors.ownParameterTypeFactor, "Int")
+				.append(termFactors.ownParameterFactor, "b")
+				.append(termFactors.ownParameterTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -59,10 +60,10 @@ public class TestInitializerDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "init")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "list")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "String")
+				.append(termFactors.ownConstructorFactor, "init")
+				.append(termFactors.ownParameterFactor, "list")
+				.append(termFactors.ownParameterTypeFactor, "List")
+				.append(termFactors.ownParameterTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());

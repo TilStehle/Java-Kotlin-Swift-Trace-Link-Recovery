@@ -4,11 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import de.unihamburg.swk.parsing.document.TermFactors;
 import org.junit.Test;
 
 import de.unihamburg.swk.parsing.antlr4.java8.test.ExpectedTermsBuilder;
 import de.unihamburg.swk.parsing.antlr4.swift3.test.SwiftTestParser.Type;
-import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 
@@ -23,7 +23,8 @@ public class TestClosure {
 //	private static String field5 = "let list:List<String>";
 //	private static String field6 = "let array:[String]";
 //	private static String field7 = "let dic:[Int: String]";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -32,9 +33,9 @@ public class TestClosure {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CLOSURE_TYPE_FACTOR, "void")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "s1")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "s2")
+				.append(termFactors.ownClosureTypeFactor, "void")
+				.append(termFactors.ownParameterFactor, "s1")
+				.append(termFactors.ownParameterFactor, "s2")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -47,7 +48,7 @@ public class TestClosure {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CLOSURE_TYPE_FACTOR, "void")
+				.append(termFactors.ownClosureTypeFactor, "void")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -60,8 +61,8 @@ public class TestClosure {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CLOSURE_TYPE_FACTOR, "String")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "n")
+				.append(termFactors.ownClosureTypeFactor, "String")
+				.append(termFactors.ownParameterFactor, "n")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -74,9 +75,9 @@ public class TestClosure {
 //		
 //		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 //		String expected  = etb
-//				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "a")
-//				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "b")
-//				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "c")
+//				.append(termFactors.ownAttributeFactor, "a")
+//				.append(termFactors.ownAttributeFactor, "b")
+//				.append(termFactors.ownAttributeFactor, "c")
 //				.toString();
 //		
 //		assertEquals(1, docs.size());
@@ -89,9 +90,9 @@ public class TestClosure {
 //		
 //		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 //		String expected  = etb
-//				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "list")
-//				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "List")
-//				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+//				.append(termFactors.ownAttributeFactor, "list")
+//				.append(termFactors.ownAttributeTypeFactor, "List")
+//				.append(termFactors.ownAttributeTypeFactor, "String")
 //				.toString();
 //		
 //		assertEquals(1, docs.size());
@@ -104,8 +105,8 @@ public class TestClosure {
 //		
 //		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 //		String expected  = etb
-//				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "array")
-//				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+//				.append(termFactors.ownAttributeFactor, "array")
+//				.append(termFactors.ownAttributeTypeFactor, "String")
 //				.toString();
 //		
 //		assertEquals(1, docs.size());
@@ -118,9 +119,9 @@ public class TestClosure {
 //		
 //		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 //		String expected  = etb
-//				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "dic")
-//				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
-//				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+//				.append(termFactors.ownAttributeFactor, "dic")
+//				.append(termFactors.ownAttributeTypeFactor, "Int")
+//				.append(termFactors.ownAttributeTypeFactor, "String")
 //				.toString();
 //		
 //		assertEquals(1, docs.size());

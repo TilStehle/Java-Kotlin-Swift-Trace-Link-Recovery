@@ -7,6 +7,7 @@ import de.unihamburg.masterprojekt2016.traceability.XMLExport;
 import de.unihamburg.masterprojekt2016.traceability.XMLImport;
 import de.unihamburg.swk.parsing.ISourceCodeParser;
 import de.unihamburg.swk.parsing.ParserFactory;
+import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.*;
 import de.unihamburg.swk.traceabilityrecovery.commands.ITraceabilityRecoveryCommand;
 import org.apache.commons.io.FileUtils;
@@ -548,5 +549,12 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     public void setDocumentFilter(Predicate<LuceneDocument> documentFilter) {
         this.documentFilter = documentFilter;
+    }
+
+    public void applyTermFactors(TermFactors newTermFactors)
+    {
+        for (LuceneDocument document : documentsByPointers.values()  ) {
+            document.applyTermFactors(newTermFactors);
+        }
     }
 }

@@ -4,6 +4,7 @@ import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.masterprojekt2016.traceability.XMLExport;
 import de.unihamburg.masterprojekt2016.traceability.XMLImport;
 import de.unihamburg.swk.parsing.document.TermFactor;
+import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.lucene.document.*;
@@ -106,6 +107,25 @@ public class LuceneDocument implements ISearchableDocument {
             document.removeField("pointer");
         }
         document.add(new StringField("pointer", XMLExport.createXMLStringFromPointer(this.describedArtifactPointer), Field.Store.YES));
+    }
+
+    @Override
+    public void applyTermFactors(TermFactors newTermFactors) {
+        StringBuilder newContentBuilder = new StringBuilder();
+
+        for (TermFactor termFactor : newTermFactors.getAllFactors()) {
+            String s = document.get(termFactor.getFactorIdentifier());
+            if(s != null)
+            {
+                for(int i =0; i<termFactor.getFactor(); i++)
+                {
+                    newContentBuilder.append(" "+s);
+                }
+            }
+        }
+
+        document.removeField("content");
+        document.add(new TextField("content", newContentBuilder.toString(), Field.Store.YES));
     }
 
     public String getContents() {

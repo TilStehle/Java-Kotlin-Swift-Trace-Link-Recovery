@@ -26,7 +26,8 @@ public class TestConstantDeclaration {
 	private static String field5 = "let list:List<String>";
 	private static String field6 = "let array:[String]";
 	private static String field7 = "let dic:[Int: String]";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -35,8 +36,8 @@ public class TestConstantDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "i")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownAttributeFactor, "i")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -49,7 +50,7 @@ public class TestConstantDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "i")
+				.append(termFactors.ownAttributeFactor, "i")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -62,12 +63,12 @@ public class TestConstantDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "a")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "b")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "c")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownAttributeFactor, "a")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
+				.append(termFactors.ownAttributeFactor, "b")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
+				.append(termFactors.ownAttributeFactor, "c")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -80,9 +81,9 @@ public class TestConstantDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "a")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "b")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "c")
+				.append(termFactors.ownAttributeFactor, "a")
+				.append(termFactors.ownAttributeFactor, "b")
+				.append(termFactors.ownAttributeFactor, "c")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -95,9 +96,9 @@ public class TestConstantDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "list")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(termFactors.ownAttributeFactor, "list")
+				.append(termFactors.ownAttributeTypeFactor, "List")
+				.append(termFactors.ownAttributeTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -110,8 +111,8 @@ public class TestConstantDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "array")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(termFactors.ownAttributeFactor, "array")
+				.append(termFactors.ownAttributeTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -124,9 +125,9 @@ public class TestConstantDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "dic")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(termFactors.ownAttributeFactor, "dic")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
+				.append(termFactors.ownAttributeTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());

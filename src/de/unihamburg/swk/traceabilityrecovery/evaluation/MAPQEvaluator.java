@@ -1,21 +1,20 @@
 package de.unihamburg.swk.traceabilityrecovery.evaluation;
 
-import de.unihamburg.masterprojekt2016.traceability.*;
-import de.unihamburg.swk.parsing.*;
-import de.unihamburg.swk.parsing.javaparser.GithubJavaParser;
+import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
+import de.unihamburg.masterprojekt2016.traceability.TraceabilityLinkSetWrapper;
+import de.unihamburg.masterprojekt2016.traceability.TraceabilityModel;
+import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
-import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
-import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
-import org.junit.Test;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.IOException;
-import java.util.*;
-import java.util.function.Predicate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -23,7 +22,6 @@ import java.util.stream.Collectors;
  * Created by Tilmann Stehle on 24.01.2017.
  */
 public class MAPQEvaluator {
-    private static boolean LOAD_INDEX_FROM_DISK = false;
 
 
 
@@ -31,10 +29,9 @@ public class MAPQEvaluator {
 
 
 
-    public double computeMap(String sourcePath, String linkModelXMLPath, Language targetLanguage) {
+    public double computeMap(ITraceabilityRecoveryService recoveryService, String linkModelXMLPath, Language targetLanguage) {
         TraceabilityModel groundTruth = importGroundTruth(linkModelXMLPath);
         long parsingStart = System.currentTimeMillis();
-        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService(sourcePath);
         double outerSumOfMAPQ = 0;
         long parsingTime = System.currentTimeMillis() - parsingStart;
 
@@ -97,18 +94,6 @@ public class MAPQEvaluator {
         return mAPQ;
     }
 
-    private long comuteAverageOfLongs(List<Long> longs) {
-        long sum = 0;
-        for (Long item : longs) {
-            sum += item;
-        }
-        if(longs.isEmpty())
-        {
-            return 0;
-        }
-        return sum / longs.size();
-
-    }
 
     private double computePrecisionForResults(List<TraceabilityLink> consideredResults, Set<TraceabilityLink> correctLinks) {
         int truePositives = 0;
@@ -124,42 +109,7 @@ public class MAPQEvaluator {
 
     }
 
-    ITraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
-        long start = System.currentTimeMillis();
-        LuceneTraceabilityRecoveryService recoveryService = null;
-        recoveryService = new LuceneTraceabilityRecoveryService();
 
-        Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
-        recoveryService.setDocumentFilter(documentFilter);
-        if (LOAD_INDEX_FROM_DISK)//wenn der bestehende index von der Platte geladen werden soll
-        {
-            try {
-                System.out.println("Reading lucene index...");
-                recoveryService.setIndexPath(testDocsPath + "/LuceneIndex");
-                recoveryService.loadIndexFromDisk();
-                System.out.println("Done");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        } else//wenn ein neuer Index aufgebaut und auf der Platte abgelegt werden soll
-        {
-            try {
-                recoveryService.setIndexPath(testDocsPath + "/LuceneIndex");
-                recoveryService.discardIndexAndReadDocuments(testDocsPath);
-
-
-                System.out.println("Durchschnittliche Laufzeit JavaParser:   " + comuteAverageOfLongs(GithubJavaParser.timesNeeded)+"ms");
-                System.out.println("Durchschnittliche Laufzeit C#-Parser:   " + comuteAverageOfLongs(CSharpParser.timesNeeded)+"ms");
-                System.out.println("Durchschnittliche Laufzeit KotlinParser:   " + comuteAverageOfLongs(KotlinParser.timesNeeded)+"ms");
-                System.out.println("Durchschnittliche Laufzeit SwiftParser:   " + comuteAverageOfLongs(Swift4Parser.timesNeeded)+"ms");
-                long timeElapsed = System.currentTimeMillis()-start;
-                System.out.println("Time Elapsed During indexing: "+timeElapsed+"ms");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return recoveryService;
-    }
 
 
     TraceabilityModel importGroundTruth(String linkModelXMLPath) {
@@ -183,28 +133,7 @@ public class MAPQEvaluator {
         }
     }
 
-    /**
-     * //We only include types, that are other than extensions
-     *
-     * @return
-     */
-    private Predicate<LuceneDocument> getTypelevelPredicate() {
-        return new Predicate<LuceneDocument>() {
-            @Override
-            public boolean test(LuceneDocument document) {
-                TraceabilityPointer traceabilityPointer = document.getTraceabilityPointer();
-                if (traceabilityPointer instanceof TypePointer) {
-                    TypePointer typePointer = (TypePointer) traceabilityPointer;
-                   return  true;
-                }
-//                else if(traceabilityPointer instanceof MethodPointer)
-//                {
-//                    return true;
-//                }
-                return false;
-            }
-        };
-    }
+
 
 
 }

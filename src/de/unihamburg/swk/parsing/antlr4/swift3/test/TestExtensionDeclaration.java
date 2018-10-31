@@ -4,11 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import de.unihamburg.swk.parsing.document.TermFactors;
 import org.junit.Test;
 
 import de.unihamburg.swk.parsing.antlr4.java8.test.ExpectedTermsBuilder;
 import de.unihamburg.swk.parsing.antlr4.swift3.test.SwiftTestParser.Type;
-import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 
@@ -21,7 +21,8 @@ public class TestExtensionDeclaration {
 	
 	private static String class1 = "extension E {}";
 	private static String class2 = "extension E : I, J {}";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -30,7 +31,7 @@ public class TestExtensionDeclaration {
 
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -43,9 +44,9 @@ public class TestExtensionDeclaration {
 
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "I")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "J")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
+				.append(termFactors.ownInheritanceFactor, "I")
+				.append(termFactors.ownInheritanceFactor, "J")
 				.toString();
 		
 		assertEquals(1, docs.size());

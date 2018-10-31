@@ -40,7 +40,7 @@ public class TestLambdaParameters {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "a")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterFactor, "a")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -53,8 +53,8 @@ public class TestLambdaParameters {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "i")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Integer")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterFactor, "i")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterTypeFactor, "Integer")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -67,9 +67,9 @@ public class TestLambdaParameters {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "list")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "Integer")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterFactor, "list")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterTypeFactor, "List")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterTypeFactor, "Integer")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -82,8 +82,8 @@ public class TestLambdaParameters {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "a")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "b")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterFactor, "a")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterFactor, "b")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -96,9 +96,9 @@ public class TestLambdaParameters {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "i")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "j")
-				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "int")
+				.append(TermFactors.DEFAULT_FACTORS.ownParameterFactor, "i")
+				.append(TermFactors.DEFAULT_FACTORS.ownLocalVariableFactor, "j")
+				.append(TermFactors.DEFAULT_FACTORS.ownLocalVariableTypeFactor, "int")
 				.toString();
 		
 		assertEquals(1, docs.size());

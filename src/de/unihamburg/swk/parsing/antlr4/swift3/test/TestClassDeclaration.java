@@ -22,6 +22,7 @@ public class TestClassDeclaration {
 	private static String class2 = "class A : I {}";
 	private static String class3 = "class A : I, J {} ";
 	private static String class4 = "class A<T> {}";
+	private TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
@@ -31,7 +32,7 @@ public class TestClassDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -44,8 +45,8 @@ public class TestClassDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "I")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
+				.append(termFactors.ownInheritanceFactor, "I")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -58,9 +59,9 @@ public class TestClassDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "I")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "J")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
+				.append(termFactors.ownInheritanceFactor, "I")
+				.append(termFactors.ownInheritanceFactor, "J")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -73,8 +74,8 @@ public class TestClassDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_TYPE_PARAMETER_FACTOR, "T")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
+				.append(termFactors.ownTypeParameterFactor, "T")
 				.toString();
 		
 		assertEquals(1, docs.size());

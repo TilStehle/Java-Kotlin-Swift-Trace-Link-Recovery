@@ -23,13 +23,13 @@ public class TestConstructorDeclaraton {
 	private static String constructor3 = "Clazz(List<String> list) {}";
 	
 	private JavaTestParser<LuceneDocument> jtp = new JavaTestParser<>(new LuceneDocsFactory());
-	
+	TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	@Test
 	public void testConstructor1() {
 		List<LuceneDocument> docs = jtp.parseDocuments(constructor1, DECLARATION);
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
-		String expected  = etb.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "Clazz").toString();
+		String expected  = etb.append(termFactors.ownConstructorFactor, "Clazz").toString();
 		
 		assertEquals(1, docs.size());
 		assertEquals(expected, docs.get(0).getContents());
@@ -41,11 +41,11 @@ public class TestConstructorDeclaraton {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "Clazz")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "a")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "int")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "b")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "int")
+				.append(termFactors.ownConstructorFactor, "Clazz")
+				.append(termFactors.ownParameterFactor, "a")
+				.append(termFactors.ownParameterTypeFactor, "int")
+				.append(termFactors.ownParameterFactor, "b")
+				.append(termFactors.ownParameterTypeFactor, "int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -58,10 +58,10 @@ public class TestConstructorDeclaraton {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_CONSTRUCTOR_FACTOR, "Clazz")
-				.append(TermFactors.OWN_PARAMETER_FACTOR, "list")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_PARAMETER_TYPE_FACTOR, "String")
+				.append(termFactors.ownConstructorFactor, "Clazz")
+				.append(termFactors.ownParameterFactor, "list")
+				.append(termFactors.ownParameterTypeFactor, "List")
+				.append(termFactors.ownParameterTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());

@@ -23,13 +23,14 @@ public class TestClassDeclaration {
 	private static String class4 = "class A<T1, T2> {}";
 	
 	private JavaTestParser<LuceneDocument> jtp = new JavaTestParser<>(new LuceneDocsFactory());
-	
+
+	private TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	@Test
 	public void testClass1() {
 		List<LuceneDocument> docs = jtp.parseDocuments(class1, DECLARATION);
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
-		String expected  = etb.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A").toString();
+		String expected  = etb.append(termFactors.ownTypeDeclarationFactor, "A").toString();
 		
 		assertEquals(1, docs.size());
 		assertEquals(expected, docs.get(0).getContents());
@@ -41,8 +42,8 @@ public class TestClassDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "B")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
+				.append(termFactors.ownInheritanceFactor, "B")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -55,8 +56,8 @@ public class TestClassDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "I")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
+				.append(termFactors.ownInheritanceFactor, "I")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -69,9 +70,9 @@ public class TestClassDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "A")
-				.append(TermFactors.OWN_TYPE_PARAMETER_FACTOR, "T1")
-				.append(TermFactors.OWN_TYPE_PARAMETER_FACTOR, "T2")
+				.append(termFactors.ownTypeDeclarationFactor, "A")
+				.append(termFactors.ownTypeParameterFactor, "T1")
+				.append(termFactors.ownTypeParameterFactor, "T2")
 				.toString();
 		
 		assertEquals(1, docs.size());

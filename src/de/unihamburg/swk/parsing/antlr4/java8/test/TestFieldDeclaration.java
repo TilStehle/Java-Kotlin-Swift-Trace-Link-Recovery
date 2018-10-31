@@ -33,8 +33,8 @@ public class TestFieldDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "i")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "int")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "i")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -47,8 +47,8 @@ public class TestFieldDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "i")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Integer")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "i")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "Integer")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -61,12 +61,12 @@ public class TestFieldDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "a")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "int")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "b")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "int")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "c")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "int")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "a")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "int")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "b")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "int")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "c")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -79,9 +79,9 @@ public class TestFieldDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "list")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "list")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "List")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -94,8 +94,8 @@ public class TestFieldDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "array")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeFactor, "array")
+				.append(TermFactors.DEFAULT_FACTORS.ownAttributeTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());

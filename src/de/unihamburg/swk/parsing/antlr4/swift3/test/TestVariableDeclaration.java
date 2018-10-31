@@ -5,11 +5,11 @@ import static org.junit.Assert.assertEquals;
 import java.util.List;
 
 import de.unihamburg.swk.parsing.document.TermFactor;
+import de.unihamburg.swk.parsing.document.TermFactors;
 import org.junit.Test;
 
 import de.unihamburg.swk.parsing.antlr4.java8.test.ExpectedTermsBuilder;
 import de.unihamburg.swk.parsing.antlr4.swift3.test.SwiftTestParser.Type;
-import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 
@@ -28,7 +28,8 @@ public class TestVariableDeclaration {
 	private static String field6 = "var array:[String]";
 	private static String field7 = "var array:List<Int>";
 	private static String field8 = "var mustBeSettable: Int { get {} set {} }";
-	
+
+	private static TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	private SwiftTestParser<LuceneDocument> jtp = new SwiftTestParser<>(new LuceneDocsFactory());
 	
 	@Test
@@ -37,8 +38,8 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "i")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownAttributeFactor, "i")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -51,7 +52,7 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "i")
+				.append(termFactors.ownAttributeFactor, "i")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -64,12 +65,12 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "a")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "b")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "c")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownAttributeFactor, "a")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
+				.append(termFactors.ownAttributeFactor, "b")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
+				.append(termFactors.ownAttributeFactor, "c")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -82,9 +83,9 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "a")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "b")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "c")
+				.append(termFactors.ownAttributeFactor, "a")
+				.append(termFactors.ownAttributeFactor, "b")
+				.append(termFactors.ownAttributeFactor, "c")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -97,9 +98,9 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "namesOfIntegers")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(termFactors.ownAttributeFactor, "namesOfIntegers")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
+				.append(termFactors.ownAttributeTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -112,8 +113,8 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "array")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "String")
+				.append(termFactors.ownAttributeFactor, "array")
+				.append(termFactors.ownAttributeTypeFactor, "String")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -126,9 +127,9 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "array")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "List")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownAttributeFactor, "array")
+				.append(termFactors.ownAttributeTypeFactor, "List")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -141,8 +142,8 @@ public class TestVariableDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "mustBeSettable")
-				.append(TermFactors.OWN_ATTRIBUTE_TYPE_FACTOR, "Int")
+				.append(termFactors.ownAttributeFactor, "mustBeSettable")
+				.append(termFactors.ownAttributeTypeFactor, "Int")
 				
 				.append(new TermFactor(1, "testFactor"), "get")
 				.append(new TermFactor(1, "testFactor"), "set")

@@ -21,6 +21,7 @@ public class TestEnumDeclaration {
 	private static String enum1 = "enum E {}";
 	private static String enum2 = "enum E { INSTANCE1, INSTANCE2 }";
 	private static String enum3 = "enum E implements I, J { }";
+	private TermFactors termFactors = TermFactors.DEFAULT_FACTORS;
 	
 	private JavaTestParser<LuceneDocument> jtp = new JavaTestParser<>(new LuceneDocsFactory());
 	
@@ -30,7 +31,7 @@ public class TestEnumDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -43,9 +44,9 @@ public class TestEnumDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "INSTANCE1")
-				.append(TermFactors.OWN_ATTRIBUTE_FACTOR, "INSTANCE2")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
+				.append(termFactors.ownAttributeFactor, "INSTANCE1")
+				.append(termFactors.ownAttributeFactor, "INSTANCE2")
 				.toString();
 		
 		assertEquals(1, docs.size());
@@ -58,9 +59,9 @@ public class TestEnumDeclaration {
 		
 		ExpectedTermsBuilder etb = new ExpectedTermsBuilder();
 		String expected  = etb
-				.append(TermFactors.OWN_TYPE_DECLARATION_FACTOR, "E")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "I")
-				.append(TermFactors.OWN_INHERITANCE_FACTOR, "J")
+				.append(termFactors.ownTypeDeclarationFactor, "E")
+				.append(termFactors.ownInheritanceFactor, "I")
+				.append(termFactors.ownInheritanceFactor, "J")
 				.toString();
 		
 		assertEquals(1, docs.size());

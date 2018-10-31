@@ -8,4 +8,6 @@ import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
  */
 public interface IDocumentFactory <T extends ISearchableDocument> {
     T  createDocument(TraceabilityPointer traceabilityPointer);
+
+    TermFactors getTermFactors();
 }
