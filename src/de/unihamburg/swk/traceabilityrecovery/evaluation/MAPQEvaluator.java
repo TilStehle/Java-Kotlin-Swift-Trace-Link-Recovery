@@ -5,7 +5,6 @@ import de.unihamburg.swk.parsing.*;
 import de.unihamburg.swk.parsing.javaparser.GithubJavaParser;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
-import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocsFactory;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
 import org.junit.Test;
@@ -27,73 +26,12 @@ public class MAPQEvaluator {
     private static boolean LOAD_INDEX_FROM_DISK = false;
 
 
-    @Test
-    public void printSimilarities() throws IOException {
-        ConceptComparer.printAllSimilarities();
-    }
-
-    @Test
-    public void cleanUpSourcePaths()
-    {
-
-        TraceabilityModel groundTruth = importGroundTruth("./testDocs/MDW/groundTruth/TraceabilityModel.xml");
-        TraceabilityLink[] traceabilityLinkList = groundTruth.getTraceabilityLinkList();
-        for (TraceabilityLink traceabilityLink : traceabilityLinkList) {
-            cleanUpPath(traceabilityLink.getSource());
-            cleanUpPath(traceabilityLink.getTarget());
-        }
-        XMLExport.createXMLFile(groundTruth, "./testDocs/MDW/groundTruth");
-
-    }
-    private void cleanUpPath(TraceabilityPointer pointer)
-    {
-        String cleanedPath = pointer.getSourceFilePath().replace('\\', '/');
-        pointer.setSourceFilePath(cleanedPath);
-        pointer.setStartLine(pointer.getStartLine()-1);
-    }
-
-    @Test
-    public void computeMAPForTwidereDomainModel() throws IOException {
-        computeMap("./testDocs/TwidereDomainModel", "./testDocs/TwidereDomainModel/groundTruth/TraceabilityModel.xml", Language.SWIFT);
-    }
-
-    @Test
-    public void computeMAPForMDW() throws IOException {
-        computeMap("./testDocs/MDW", "./testDocs/MDW/groundTruth/TraceabilityModel.xml", Language.SWIFT);
-    }
-
-    @Test
-    public void computeMAPForLuceneNet() throws IOException {
-        computeMap("./testDocs/LuceneNet", "./testDocs/LuceneNet/groundTruth/TraceabilityModel.xml", Language.CSHARP);
-    }
-
-    @Test
-    public void computeMAPForCompleteTwidereCode() throws IOException {
-        computeMap("./testDocs/TwidereKomplett", "./testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml", Language.SWIFT);
-    }
-
-    @Test
-    public void computeMAPForCamelCaseTest() throws IOException {
-        computeMap("./testDocs/CamelCaseTest", "./testDocs/CamelCaseTest/groundTruth/TraceabilityModel.xml", Language.CSHARP);
-    }
-
-    @Test
-    public void buildIndexAndPrintDocs() {
-        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("./TestDocs/TwidereKomplett/swift/Twidere/UI/ViewControllers/Home");
-        recoveryService.printDocuments();
-    }
-
-    @Test
-    public void BuildIndex() {
-        ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService("/Users/tilmannstehle/Documents/DissWorkspace/HDW/hdw-app-ios/HDW");
-        recoveryService.printDocuments();
-    }
 
 
 
 
 
-    private void computeMap(String sourcePath, String linkModelXMLPath, Language targetLanguage) {
+    public double computeMap(String sourcePath, String linkModelXMLPath, Language targetLanguage) {
         TraceabilityModel groundTruth = importGroundTruth(linkModelXMLPath);
         long parsingStart = System.currentTimeMillis();
         ITraceabilityRecoveryService recoveryService = setUpTraceabilityRecoveryService(sourcePath);
@@ -156,7 +94,7 @@ public class MAPQEvaluator {
         System.out.println("Indexing took : "+parsingTime+"ms");
         System.out.println("Querying took : "+queryingTime+"ms");
 
-
+        return mAPQ;
     }
 
     private long comuteAverageOfLongs(List<Long> longs) {
@@ -186,7 +124,7 @@ public class MAPQEvaluator {
 
     }
 
-    private ITraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
+    ITraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
         long start = System.currentTimeMillis();
         LuceneTraceabilityRecoveryService recoveryService = null;
         recoveryService = new LuceneTraceabilityRecoveryService();
@@ -224,7 +162,7 @@ public class MAPQEvaluator {
     }
 
 
-    public TraceabilityModel importGroundTruth(String linkModelXMLPath) {
+    TraceabilityModel importGroundTruth(String linkModelXMLPath) {
         TraceabilityModel groundTruthModel = null;
         try {
             File file = new File(linkModelXMLPath);
