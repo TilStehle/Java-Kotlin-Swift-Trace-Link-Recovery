@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import de.unihamburg.swk.parsing.document.TermFactor;
 import org.junit.Test;
 
 import de.unihamburg.swk.parsing.antlr4.java8.test.ExpectedTermsBuilder;
@@ -109,8 +110,8 @@ public class TestLocalVariableDeclaration {
 				.append(TermFactors.OWN_LOCAL_VARIABLE_FACTOR, "mustBeSettable")
 				.append(TermFactors.OWN_LOCAL_VARIABLE_TYPE_FACTOR, "Int")
 				
-				.append(1, "get")
-				.append(1, "set")
+				.append(new TermFactor(1, "testFactor"), "get")
+				.append(new TermFactor(1, "testFactor"), "set")
 				.toString();
 		
 		assertEquals(1, docs.size());

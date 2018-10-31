@@ -3,6 +3,7 @@ package de.unihamburg.swk.traceabilityrecovery.lucene;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.masterprojekt2016.traceability.XMLExport;
 import de.unihamburg.masterprojekt2016.traceability.XMLImport;
+import de.unihamburg.swk.parsing.document.TermFactor;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.lucene.document.*;
@@ -64,8 +65,9 @@ public class LuceneDocument implements ISearchableDocument {
     }
 
     @Override
-    public void addTerm(int weight, String term, String termType) {
-        addTermToField(weight, term, "content");
+    public void addTerm(TermFactor termFactor, String term, String termType) {
+        addTermToField(termFactor.getFactor(), term, "content");
+        addTermToField(1, term, termFactor.getFactorIdentifier());
        // addTermToField(weight, term, termType);
     }
 

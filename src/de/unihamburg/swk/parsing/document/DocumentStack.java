@@ -14,8 +14,7 @@ import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 public class DocumentStack<TDocument extends ISearchableDocument> implements IDocumentCreationStructure<TDocument> {
 
 	private LayerCalculator layerCalculator;
-	
-	private static int ENCLOSE_TYPE_FACTOR = 1;
+
 	private static String ENCLOSE_TYPE = "ENCLOSE TYPE";
 	
 	private String filePath;
@@ -49,8 +48,8 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	}
 
 	private void addEnclosingTypeTerm1() {
-		if(typeNameStack.size() > 2 && ENCLOSE_TYPE_FACTOR > 0) {
-			documentStack.peek() .addTerm(ENCLOSE_TYPE_FACTOR, typeNameStack.get(typeNameStack.size() - 2), ENCLOSE_TYPE);
+		if(typeNameStack.size() > 2 && TermFactors.ENCLOSING_TYPE_FACTOR.getFactor() > 0) {
+			documentStack.peek() .addTerm(TermFactors.ENCLOSING_TYPE_FACTOR, typeNameStack.get(typeNameStack.size() - 2), ENCLOSE_TYPE);
 		}
 	}
 	
@@ -75,8 +74,8 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	}
 
 	private void addEnclosingTypeTerm2() {
-		if(typeNameStack.size() > 1 && ENCLOSE_TYPE_FACTOR > 0) {
-			documentStack.peek().addTerm(ENCLOSE_TYPE_FACTOR, typeNameStack.peek(), ENCLOSE_TYPE);
+		if(typeNameStack.size() > 1 &&  TermFactors.ENCLOSING_TYPE_FACTOR.getFactor() > 0) {
+			documentStack.peek().addTerm( TermFactors.ENCLOSING_TYPE_FACTOR, typeNameStack.peek(), ENCLOSE_TYPE);
 		}
 	}
 	
@@ -92,17 +91,19 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 	}
 
 	@Override 
-	public void addTerm(String term, String termType, int allfactor) {
+	public void addTerm(String term, String termType, TermFactor allfactor) {
 		addTerm(term, termType, allfactor, allfactor);
 	}
 	
 	@Override
-	public void addTerm(String term, String termType, int ownFactor, int otherFactor) {
+	public void addTerm(String term, String termType, TermFactor ownFactor, TermFactor otherFactor) {
+		int ownFactorValue = ownFactor.getFactor();
+		int otherFactorValue = otherFactor.getFactor();
 		if(!documentStack.isEmpty()) {
-			if (ownFactor > 0) {
+			if (ownFactorValue > 0) {
 				documentStack.peek().addTerm(ownFactor, term, termType);
 			}
-			if (otherFactor > 0) {
+			if (otherFactorValue > 0) {
 				for (TDocument tDocument : documentStack.subList(0, documentStack.size() - 1)) {
 					tDocument.addTerm(otherFactor, term, termType);
 				}
@@ -110,7 +111,7 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 		}
 	}
 
-	public void addTerms(List<String> terms, String termType, int ownFactor, int otherFactor) {
+	public void addTerms(List<String> terms, String termType, TermFactor ownFactor, TermFactor otherFactor) {
 		for (String term : terms) {
 			addTerm(term, termType, ownFactor, otherFactor);
 		}

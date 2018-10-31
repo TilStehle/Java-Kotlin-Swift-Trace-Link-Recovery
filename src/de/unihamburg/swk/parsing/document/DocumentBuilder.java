@@ -10,7 +10,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 
 	private static final String NO_RETURN_TYPE = "void";
 
-//	private static final int ENCLOSE_TYPE_FACTOR = 1; // @see DocumentStack
+//	private static final int ENCLOSING_TYPE_FACTOR = 1; // @see DocumentStack
 	 
 	private static final String INHERITANCE = "INHERITANCE";
 	private static final String TYPE_DECLARATION = "TYPE DECLARATION";
@@ -24,6 +24,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	private static final String VARIABLE_USAGE = "VARIABLE USAGE";
 	private static final String METHOD_CALL = "METHOD CALL";
 	private static final String FUNCTIONDECLARATION = "FUNCTIONDECLARATION";
+	private static final String GETTER = "GETTER";
+	private static final String SETTER = "SETTER";
 
 	private DocumentStack<TDocument> documentStack;
 
@@ -46,7 +48,7 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 
 	public void enterFunctionDeclaration(String functionName,  int startLine) {
 		documentStack.enterElementDeclarationWithoutParentType(new FunctionPointer(functionName,startLine));
-		documentStack.addTerm(functionName, FUNCTIONDECLARATION, TermFactors.OWN_FUNCTION_DECLARATION_FACTOR, TermFactors.OTHER_FUNCTION_DECLARATION_FACTOR);
+		documentStack.addTerm(functionName, FUNCTIONDECLARATION, TermFactors.OWN_METHOD_FACTOR, TermFactors.OTHER_METHOD_FACTOR);
 	}
 	
 	public void enterAnonymousTypeDeclaration(String pointerName, TypePointerClassification classification, int startLine) {
@@ -237,9 +239,9 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 		documentStack.enterElementDeclaration(lambdaPointer);
 	}
 
-	public void enterClauseTag(String clause) {
-		documentStack.addTerm(clause, "???", 1, 1);
-	}
+//	public void enterClauseTag(String clause) {
+//		documentStack.addTerm(clause, "???", 1, 1);
+//	}
 
 	public boolean isLocalBeforeAdd() {
 		TraceabilityPointer current = documentStack.currentTraceabilityPointer();
@@ -270,6 +272,17 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 
 	public void enterMethodCall(String name) {
 		documentStack.addTerm(name, METHOD_CALL, TermFactors.METHOD_CALL_FACTOR, TermFactors.OTHER_METHOD_CALL_FACTOR);
+
+	}
+
+	public void enterGetter(String text) {
+		documentStack.addTerm(text, GETTER, TermFactors.GETTER_SETTER_FACTOR, TermFactors.GETTER_SETTER_FACTOR);
+
+	}
+
+
+	public void enterSetter(String text) {
+		documentStack.addTerm(text, SETTER, TermFactors.GETTER_SETTER_FACTOR, TermFactors.GETTER_SETTER_FACTOR);
 
 	}
 }

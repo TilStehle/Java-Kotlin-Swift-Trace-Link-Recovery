@@ -13,6 +13,7 @@ import com.google.common.collect.Multiset;
 
 import de.unihamburg.masterprojekt2016.traceability.TypePointer;
 import de.unihamburg.swk.parsing.document.IDocumentFactory;
+import de.unihamburg.swk.parsing.document.TermFactor;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 
 public class TestDocParser<TDocument extends ISearchableDocument> implements ISourceCodeParser<TDocument> {
@@ -40,7 +41,7 @@ public class TestDocParser<TDocument extends ISearchableDocument> implements ISo
 		Multiset<String> wordsbag = HashMultiset.create();
 		Path path = Paths.get(filePath);
 		try (Stream<String> stream = Files.lines(path)) {
-			stream.forEach(term->document.addTerm(1,null,term));
+			stream.forEach(term->document.addTerm(new TermFactor(1, "Test"),null,term));
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

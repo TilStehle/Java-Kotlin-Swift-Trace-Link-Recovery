@@ -24,9 +24,9 @@ public interface IDocumentCreationStructure<TDocument extends ISearchableDocumen
 
 	void closedRecentElementDeclaration();
 
-	void addTerm(String term, String termType, int allfactor);
+	void addTerm(String term, String termType, TermFactor allfactor);
 
-	void addTerm(String term, String termType, int ownFactor, int otherFactor);
+	void addTerm(String term, String termType, TermFactor ownFactor, TermFactor otherFactor);
 
 	List<TDocument> getAllDocuments();
 

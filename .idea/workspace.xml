@@ -5,9 +5,6 @@
       <artifact name="TraceabilityRecovery:jar" />
     </artifacts-to-build>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ListenerImplementation.java" line="206" mnemonic="7" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="e40a4491-b325-4af6-85f3-cb02df95a4e6" name="Default" comment="" />
     <ignored path="TraceabilityRecovery.iws" />
@@ -30,63 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MAPQEvaluator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java">
+      <file leaf-file-name="DocumentBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="106" column="48" lean-forward="true" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
-              <folding>
-                <marker date="1525984309630" expanded="true" signature="9160:10789" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentWriter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/filewriter/CommentWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="494">
+              <caret line="271" column="0" lean-forward="true" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TraceabilityPointer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java">
+      <file leaf-file-name="LuceneDocument.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="152">
+              <caret line="68" column="23" lean-forward="false" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypePointer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java">
+      <file leaf-file-name="Swift3ListenerImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3ListenerImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Swift4ListenerImplementation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ListenerImplementation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3179">
-              <caret line="211" column="5" lean-forward="false" selection-start-line="211" selection-start-column="5" selection-end-line="211" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JavaVisitor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/JavaVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="328" column="28" lean-forward="true" selection-start-line="328" selection-start-column="28" selection-end-line="328" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -95,8 +60,58 @@
       <file leaf-file-name="TermFactors.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="59" lean-forward="false" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+            <state relative-caret-position="338">
+              <caret line="82" column="1" lean-forward="true" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestDocParser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/TestDocParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestProtocolPropertyDeclaration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestProtocolPropertyDeclaration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestSubscriptDeclaration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestSubscriptDeclaration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="70" column="50" lean-forward="true" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestVariableDeclaration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestVariableDeclaration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="147" column="50" lean-forward="false" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestLocalVariableDeclaration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestLocalVariableDeclaration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="113" column="50" lean-forward="false" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -115,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>openbrac</find>
       <find>openbrace</find>
       <find>'</find>
       <find>''</find>
@@ -145,10 +159,12 @@
       <find>NewsDetailFragment</find>
       <find>Exten</find>
       <find>Extension</find>
+      <find>int</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
       <replace>classexpr</replace>
+      <replace>TermFactor</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\TraceabilityRecoveryPlugin</dir>
@@ -170,15 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ParserParser.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/LocalScopeTracker.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/CSharpParserTest.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParserTest.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/JavaScriptParser.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Listener.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Lexer.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/Swift4Parser.java" />
         <option value="$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/vfs/newvfs/events/VFileContentChangeEvent.class" />
         <option value="$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/vfs/newvfs/events/VFileEvent.class" />
         <option value="$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/vfs/newvfs/events/VFileCopyEvent.class" />
@@ -198,9 +205,7 @@
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLExportTest.java" />
         <option value="$PROJECT_DIR$/testDocs/MDW/groundTruth/TraceabilityModel.xml" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentStack.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParserTest.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3ListenerImplementation.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/SwiftParser.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneTraceabilityRecoveryService.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/LatexExport.java" />
@@ -209,18 +214,29 @@
         <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/EditorQueryAction.java" />
         <option value="$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/filewriter/CommentWriter.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4BaseListener.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Parser.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TypePointer.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4ListenerImplementation.java" />
         <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/javaparser/JavaVisitor.java" />
-        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java" />
         <option value="$PROJECT_DIR$/src/de/SubAdaptee.java" />
         <option value="$PROJECT_DIR$/src/de/Client.java" />
         <option value="$PROJECT_DIR$/src/de/TestAdapter.java" />
         <option value="$PROJECT_DIR$/src/de/Adaptee.java" />
         <option value="$PROJECT_DIR$/src/de/ClassAdapter.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactor.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/test/ExpectedTermsBuilder.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/IDocumentCreationStructure.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentStack.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestLocalVariableDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestVariableDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestSubscriptDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestProtocolPropertyDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3ListenerImplementation.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java" />
+        <option value="$PROJECT_DIR$/src/de/unihamburg/swk/parsing/TestDocParser.java" />
       </list>
     </option>
   </component>
@@ -402,16 +418,15 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../HermesPricing/Android" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\testDocs\MDW\groundTruth" />
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\testDocs\MDW\TraceabilityModel" />
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\GithubTest\Traceability Recovery\TraceabilityRecoveryPlugin\src\actions\opener" />
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\GithubTest\Traceability Recovery\testDocs\traceabilityModel\java" />
-      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery\testDocs\TwidereDomainModel\groundTruth" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.unihamburg.swk.parsing.document" />
+      <recent name="de.unihamburg.swk.traceabilityrecovery.lucene" />
+      <recent name="de.unihamburg.swk.parsing.antlr4.javascript" />
+      <recent name="actions.filewriter" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="de.unihamburg.masterprojekt2016.traceability" />
@@ -430,10 +445,12 @@
       <recent name="de.unihamburg.swk.parsing.antlr4.kotlinNew" />
       <recent name="de.unihamburg.swk.traceabilityrecovery.lucene" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="de.unihamburg.swk.traceabilityrecovery.lucene" />
-      <recent name="de.unihamburg.swk.parsing.antlr4.javascript" />
-      <recent name="actions.filewriter" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\testDocs\MDW\groundTruth" />
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\gitRecovery\Java-Kotlin-Swift-Trace-Link-Recovery\testDocs\MDW\TraceabilityModel" />
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\GithubTest\Traceability Recovery\TraceabilityRecoveryPlugin\src\actions\opener" />
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\GithubTest\Traceability Recovery\testDocs\traceabilityModel\java" />
+      <recent name="C:\Users\Tilmann Stehle\Documents\Masterprojekt\SVN\SE-Manager\TraceabilityRecovery\testDocs\TwidereDomainModel\groundTruth" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -868,12 +885,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MAPQEvaluator_computeMAPForMDW - 2018.05.10 at 22h 09m 16s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForMDW" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MAPQEvaluator_computeMAPForMDW - 2018.05.10 at 22h 10m 19s.xml">
-      <configuration name="MAPQEvaluator.computeMAPForMDW" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MAPQEvaluator_computeMAPForMDW - 2018.05.10 at 22h 12m 57s.xml">
       <configuration name="MAPQEvaluator.computeMAPForMDW" configurationId="JUnit" />
     </history-entry>
@@ -898,6 +909,21 @@
     <history-entry file="MAPQEvaluator_computeMAPForMDW - 2018.05.10 at 22h 47m 39s.xml">
       <configuration name="MAPQEvaluator.computeMAPForMDW" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MAPQEvaluator_computeMAPForMDW - 2018.10.31 at 10h 51m 18s.xml">
+      <configuration name="MAPQEvaluator.computeMAPForMDW" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MAPQEvaluator_computeMAPForMDW - 2018.10.31 at 11h 30m 38s.xml">
+      <configuration name="MAPQEvaluator.computeMAPForMDW" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -906,19 +932,21 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46300212" sideWeight="0.475" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66246057" sideWeight="0.32869694" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25709778" sideWeight="0.6464129" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25687104" sideWeight="0.6464129" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IntelliGuard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29749477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3065539" sideWeight="0.56875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24524158" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -930,9 +958,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23125" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21766561" sideWeight="0.475" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3065539" sideWeight="0.56875" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1019,83 +1045,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/guava-19.0.jar!/com/google/common/collect/Multiset.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityLink.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="59" column="16" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4114">
-          <caret line="242" column="10" lean-forward="false" selection-start-line="242" selection-start-column="6" selection-end-line="242" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../Diss/Alexandra/Java-Kotlin-Swift-Trace-Link-Recovery/TraceabilityRecovery.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/Swift4Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testDocs/LuceneNet/groundTruth/TraceabilityModel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLExport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="143" column="5" lean-forward="true" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/XMLExportTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="107" column="55" lean-forward="false" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar!/org/antlr/v4/runtime/tree/ParseTree.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../SVN/SE-Manager/TraceabilityRecoveryNeu/testDocs/TwidereKomplett/swift/Twidere/Models/Status.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1143,20 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="35" column="61" lean-forward="false" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3ListenerImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4726">
-          <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="0" selection-end-line="299" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1247,13 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4216">
-          <caret line="270" column="31" lean-forward="false" selection-start-line="270" selection-start-column="16" selection-end-line="270" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift4/Swift4Parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1295,7 +1223,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#1237#1238#0" expanded="false" />
+            <element signature="e#1278#1279#0" expanded="false" />
+            <element signature="e#1346#1347#0" expanded="false" />
+            <element signature="e#1406#1407#0" expanded="false" />
+            <element signature="e#1466#1467#0" expanded="false" />
+            <element signature="e#1508#1509#0" expanded="false" />
+            <element signature="e#2085#2086#0" expanded="false" />
+            <element signature="e#2133#2134#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1303,15 +1243,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="59" lean-forward="false" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1319,14 +1253,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3179">
           <caret line="211" column="5" lean-forward="false" selection-start-line="211" selection-start-column="5" selection-end-line="211" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1838#1839#0" expanded="false" />
+            <element signature="e#1879#1880#0" expanded="false" />
+            <element signature="e#2943#2944#0" expanded="false" />
+            <element signature="e#2991#2992#0" expanded="false" />
+            <element signature="e#3835#3836#0" expanded="false" />
+            <element signature="e#3883#3884#0" expanded="false" />
+            <element signature="e#4276#4277#0" expanded="false" />
+            <element signature="e#4324#4325#0" expanded="false" />
+            <element signature="e#4705#4706#0" expanded="false" />
+            <element signature="e#4753#4754#0" expanded="false" />
+            <element signature="e#5223#5224#0" expanded="false" />
+            <element signature="e#5264#5265#0" expanded="false" />
+            <element signature="e#5702#5703#0" expanded="false" />
+            <element signature="e#5743#5744#0" expanded="false" />
+            <element signature="e#15775#15776#0" expanded="false" />
+            <element signature="e#15823#15824#0" expanded="false" />
+            <element signature="e#15859#15860#0" expanded="false" />
+            <element signature="e#15908#15909#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/evaluation/MAPQEvaluator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="106" column="48" lean-forward="true" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
+          <caret line="106" column="48" lean-forward="false" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
           <folding>
             <marker date="1525984309630" expanded="true" signature="9160:10789" ph="{...}" />
           </folding>
@@ -1341,15 +1295,142 @@
     <entry file="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/src/actions/filewriter/CommentWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/unihamburg/masterprojekt2016/traceability/TraceabilityPointer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state relative-caret-position="34">
+          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/test/ExpectedTermsBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/java8/test/TestLambdaParameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="69" column="51" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/IDocumentCreationStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestLocalVariableDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="113" column="50" lean-forward="false" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestVariableDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="147" column="50" lean-forward="false" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestSubscriptDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="70" column="50" lean-forward="true" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/test/TestProtocolPropertyDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/traceabilityrecovery/lucene/LuceneDocument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="68" column="23" lean-forward="false" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/TermFactors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="82" column="1" lean-forward="true" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="5095" column="35" lean-forward="false" selection-start-line="5095" selection-start-column="35" selection-end-line="5095" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/antlr4/swift3/Swift3ListenerImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="328" column="28" lean-forward="true" selection-start-line="328" selection-start-column="28" selection-end-line="328" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/document/DocumentBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="271" column="0" lean-forward="true" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/unihamburg/swk/parsing/TestDocParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
           <folding />
         </state>
       </provider>

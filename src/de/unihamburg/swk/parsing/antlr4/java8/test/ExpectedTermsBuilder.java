@@ -1,5 +1,7 @@
 package de.unihamburg.swk.parsing.antlr4.java8.test;
 
+import de.unihamburg.swk.parsing.document.TermFactor;
+
 import java.util.Collections;
 
 /**
@@ -15,10 +17,10 @@ public class ExpectedTermsBuilder {
 		sb = new StringBuilder();
 	}
 	
-	public ExpectedTermsBuilder append(int n, String copy) {
-		if(n > 0) {
+	public ExpectedTermsBuilder append(TermFactor n, String copy) {
+		if(n.getFactor() > 0) {
 			sb.append(DELIMITER);
-			sb.append(String.join(DELIMITER, Collections.nCopies(n, copy)));
+			sb.append(String.join(DELIMITER, Collections.nCopies(n.getFactor(), copy)));
 		}
 		return this;
 	}

@@ -324,9 +324,9 @@ variableDeclaration
 	@Override 
 	public void enterGetterSetterBlock(@NotNull Swift3Parser.GetterSetterBlockContext ctx) {
 		lst.enterLocalScope(true);
-		docBuilder.enterClauseTag(ctx.getterClause().getStart().getText());
+		docBuilder.enterGetter(ctx.getterClause().getStart().getText());
 		if(ctx.setterClause() != null) {
-			docBuilder.enterClauseTag(ctx.setterClause().getStart().getText());
+			docBuilder.enterGetter(ctx.setterClause().getStart().getText());
 		}
 	}
 	
@@ -338,9 +338,9 @@ variableDeclaration
 	@Override 
 	public void enterGetterSetterKeywordBlock(@NotNull Swift3Parser.GetterSetterKeywordBlockContext ctx) {
 		lst.enterLocalScope(true);
-		docBuilder.enterClauseTag(ctx.getterKeywordClause().getText());
+		docBuilder.enterSetter(ctx.getterKeywordClause().getText());
 		if(ctx.setterKeywordClause() != null) {
-			docBuilder.enterClauseTag(ctx.setterKeywordClause().getText());
+			docBuilder.enterSetter(ctx.setterKeywordClause().getText());
 		}
 	}
 	
