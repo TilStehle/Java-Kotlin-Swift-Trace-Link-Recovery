@@ -3,6 +3,8 @@ package de.unihamburg.swk.parsing.document;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Predicate;
 
 public class TermFactors {
     public static final String OWN_TYPE_DECLARATION_FACTOR = "ownTypeDeclarationFactor";
@@ -121,6 +123,8 @@ public class TermFactors {
     public final TermFactor enclosingTypeFactor;
     public final TermFactor getterSetterFactor;
 
+    private final List<TermFactor> allFactors = new ArrayList<>(32);
+
 
     public TermFactors(int ownTypeDeclarationFactor, int otherTypeDeclarationFactor, int ownInheritanceFactor, int otherInheritanceFactor, int ownAttributeFactor,
                        int otherAttributeFactor, int ownAttributeTypeFactor, int otherAttributeTypeFactor, int ownMethodFactor, int otherMethodFactor,
@@ -129,7 +133,7 @@ public class TermFactors {
                        int otherLocalVariableTypeFactor, int ownParameterFactor, int otherParameterFactor, int ownParameterTypeFactor, int otherParameterTypeFactor,
                        int ownTypeParameterFactor, int otherTypeParameterFactor, int variableUsageFactor, int otherVariableUsageFactor, int methodCallFactor,
                        int otherMethodCallFactor, int enclosingTypeFactor, int getterSetterFactor) {
-        this.ownTypeDeclarationFactor = new TermFactor(ownTypeDeclarationFactor, OWN_TYPE_DECLARATION_FACTOR); // 4
+        this.ownTypeDeclarationFactor = new TermFactor(ownTypeDeclarationFactor, OWN_TYPE_DECLARATION_FACTOR);
         this.otherTypeDeclarationFactor = new TermFactor(otherTypeDeclarationFactor, OTHER_TYPE_DECLARATION_FACTOR);
         this.ownInheritanceFactor = new TermFactor(ownInheritanceFactor, OWN_INHERITANCE_FACTOR);
         this.otherInheritanceFactor = new TermFactor(otherInheritanceFactor, OTHER_INHERITANCE_FACTOR);
@@ -149,10 +153,11 @@ public class TermFactors {
         this.ownConstructorFactor = new TermFactor(ownConstructorFactor, OWN_CONSTRUCTOR_FACTOR);
         this.otherConstructorFactor = new TermFactor(otherConstructorFactor, OTHER_CONSTRUCTOR_FACTOR);
 
-        this.ownLocalVariableFactor = new TermFactor(ownLocalVariableFactor, OWN_LOCAL_VARIABLE_FACTOR);
-        this.otherLocalVariableFactor = new TermFactor(otherLocalVariableFactor, OTHER_LOCAL_VARIABLE_FACTOR);
-        this.ownLocalVariableTypeFactor = new TermFactor(ownLocalVariableTypeFactor, OWN_LOCAL_VARIABLE_TYPE_FACTOR);
-        this.otherLocalVariableTypeFactor = new TermFactor(otherLocalVariableTypeFactor, OTHER_LOCAL_VARIABLE_TYPE_FACTOR);
+        this.ownLocalVariableFactor = new TermFactor(1, OWN_LOCAL_VARIABLE_FACTOR);
+        this.otherLocalVariableFactor = new TermFactor(1, OTHER_LOCAL_VARIABLE_FACTOR);
+        this.ownLocalVariableTypeFactor = new TermFactor(1, OWN_LOCAL_VARIABLE_TYPE_FACTOR);
+        this.otherLocalVariableTypeFactor = new TermFactor(1, OTHER_LOCAL_VARIABLE_TYPE_FACTOR);
+
 
         this.ownParameterFactor = new TermFactor(ownParameterFactor, OWN_PARAMETER_FACTOR);
         this.otherParameterFactor = new TermFactor(otherParameterFactor, OTHER_PARAMETER_FACTOR);
@@ -163,13 +168,62 @@ public class TermFactors {
         this.otherTypeParameterFactor = new TermFactor(otherTypeParameterFactor, OTHER_TYPE_PARAMETER_FACTOR);
 
 
-        this.variableUsageFactor = new TermFactor(variableUsageFactor, VARIABLE_USAGE_FACTOR);
-        this.otherVariableUsageFactor = new TermFactor(otherVariableUsageFactor, OTHER_VARIABLE_USAGE_FACTOR);
+        this.variableUsageFactor = new TermFactor(1, VARIABLE_USAGE_FACTOR);
+        this.otherVariableUsageFactor = new TermFactor(1, OTHER_VARIABLE_USAGE_FACTOR);
 
         this.methodCallFactor = new TermFactor(methodCallFactor, METHOD_CALL_FACTOR);
         this.otherMethodCallFactor = new TermFactor(otherMethodCallFactor, OTHER_METHOD_CALL_FACTOR);
         this.enclosingTypeFactor = new TermFactor(enclosingTypeFactor, ENCLOSING_TYPE_FACTOR);
         this.getterSetterFactor = new TermFactor(getterSetterFactor, GETTER_SETTER_FACTOR);
+
+        initializeFactorsList();
+    }
+
+    private void initializeFactorsList()
+    {
+
+        allFactors.add(this.ownTypeDeclarationFactor);
+        allFactors.add(this.otherTypeDeclarationFactor);
+        allFactors.add(this.ownInheritanceFactor);
+        allFactors.add(this.otherInheritanceFactor);
+
+        allFactors.add(this.ownAttributeFactor);
+        allFactors.add(this.otherAttributeFactor);
+        allFactors.add(this.ownAttributeTypeFactor);
+        allFactors.add(this.otherAttributeTypeFactor);
+
+        allFactors.add(this.ownMethodFactor);
+        allFactors.add(this.otherMethodFactor);
+        allFactors.add(this.ownMethodTypeFactor);
+        allFactors.add(this.otherMethodTypeFactor);
+
+        allFactors.add(this.ownClosureTypeFactor);
+        allFactors.add(this.otherClosureTypeFactor);
+        allFactors.add(this.ownConstructorFactor);
+        allFactors.add(this.otherConstructorFactor);
+
+        allFactors.add(this.ownLocalVariableFactor);
+        allFactors.add(this.otherLocalVariableFactor);
+        allFactors.add(this.ownLocalVariableTypeFactor);
+        allFactors.add(this.otherLocalVariableTypeFactor);
+
+
+        allFactors.add(this.ownParameterFactor);
+        allFactors.add(this.otherParameterFactor);
+        allFactors.add(this.ownParameterTypeFactor);
+        allFactors.add(this.otherParameterTypeFactor);
+
+        allFactors.add(this.ownTypeParameterFactor);
+        allFactors.add(this.otherTypeParameterFactor);
+
+
+        allFactors.add(this.variableUsageFactor);
+        allFactors.add(this.otherVariableUsageFactor);
+
+        allFactors.add(this.methodCallFactor);
+        allFactors.add(this.otherMethodCallFactor);
+        allFactors.add(this.enclosingTypeFactor);
+        allFactors.add(this.getterSetterFactor);
     }
 
     private TermFactors() {
@@ -194,10 +248,10 @@ public class TermFactors {
         ownConstructorFactor = new TermFactor(8, OWN_CONSTRUCTOR_FACTOR);
         otherConstructorFactor = new TermFactor(4, OTHER_CONSTRUCTOR_FACTOR);
 
-        ownLocalVariableFactor = new TermFactor(8, OWN_LOCAL_VARIABLE_FACTOR);
-        otherLocalVariableFactor = new TermFactor(2, OTHER_LOCAL_VARIABLE_FACTOR);
-        ownLocalVariableTypeFactor = new TermFactor(2, OWN_LOCAL_VARIABLE_TYPE_FACTOR);
-        otherLocalVariableTypeFactor = new TermFactor(2, OTHER_LOCAL_VARIABLE_TYPE_FACTOR);
+        ownLocalVariableFactor = new TermFactor(1, OWN_LOCAL_VARIABLE_FACTOR);
+        otherLocalVariableFactor = new TermFactor(1, OTHER_LOCAL_VARIABLE_FACTOR);
+        ownLocalVariableTypeFactor = new TermFactor(1, OWN_LOCAL_VARIABLE_TYPE_FACTOR);
+        otherLocalVariableTypeFactor = new TermFactor(1, OTHER_LOCAL_VARIABLE_TYPE_FACTOR);
 
         ownParameterFactor = new TermFactor(8, OWN_PARAMETER_FACTOR);
         otherParameterFactor = new TermFactor(2, OTHER_PARAMETER_FACTOR);
@@ -215,25 +269,251 @@ public class TermFactors {
         otherMethodCallFactor = new TermFactor(1, OTHER_METHOD_CALL_FACTOR);
         enclosingTypeFactor = new TermFactor(1, ENCLOSING_TYPE_FACTOR);
         getterSetterFactor = new TermFactor(1, GETTER_SETTER_FACTOR);
+        initializeFactorsList();
+
+
 
     }
 
 
     public List<TermFactor> getAllFactors() {
-        Field[] fields = this.getClass().getFields();
-        List<TermFactor> factors = new ArrayList<TermFactor>();
-        for (Field field :fields) {
-            if(field.getType().isAssignableFrom(TermFactor.class))
-            {
-                try {
-                    factors.add((TermFactor) field.get(this));
-                } catch (IllegalAccessException e) {
-                    throw new RuntimeException("private TermFactor fields will break this code!");
-                }
-            }
 
+        return allFactors;
+
+    }
+
+    @Override
+    public String toString() {
+        return "TermFactors{" +
+                "ownTypeDeclarationFactor=" + ownTypeDeclarationFactor +
+                ", otherTypeDeclarationFactor=" + otherTypeDeclarationFactor +
+                ", ownInheritanceFactor=" + ownInheritanceFactor +
+                ", otherInheritanceFactor=" + otherInheritanceFactor +
+                ", ownAttributeFactor=" + ownAttributeFactor +
+                ", otherAttributeFactor=" + otherAttributeFactor +
+                ", ownAttributeTypeFactor=" + ownAttributeTypeFactor +
+                ", otherAttributeTypeFactor=" + otherAttributeTypeFactor +
+                ", ownMethodFactor=" + ownMethodFactor +
+                ", otherMethodFactor=" + otherMethodFactor +
+                ", ownMethodTypeFactor=" + ownMethodTypeFactor +
+                ", otherMethodTypeFactor=" + otherMethodTypeFactor +
+                ", ownClosureTypeFactor=" + ownClosureTypeFactor +
+                ", otherClosureTypeFactor=" + otherClosureTypeFactor +
+                ", ownConstructorFactor=" + ownConstructorFactor +
+                ", otherConstructorFactor=" + otherConstructorFactor +
+                ", ownLocalVariableFactor=" + ownLocalVariableFactor +
+                ", otherLocalVariableFactor=" + otherLocalVariableFactor +
+                ", ownLocalVariableTypeFactor=" + ownLocalVariableTypeFactor +
+                ", otherLocalVariableTypeFactor=" + otherLocalVariableTypeFactor +
+                ", ownParameterFactor=" + ownParameterFactor +
+                ", otherParameterFactor=" + otherParameterFactor +
+                ", ownParameterTypeFactor=" + ownParameterTypeFactor +
+                ", otherParameterTypeFactor=" + otherParameterTypeFactor +
+                ", ownTypeParameterFactor=" + ownTypeParameterFactor +
+                ", otherTypeParameterFactor=" + otherTypeParameterFactor +
+                ", variableUsageFactor=" + variableUsageFactor +
+                ", otherVariableUsageFactor=" + otherVariableUsageFactor +
+                ", methodCallFactor=" + methodCallFactor +
+                ", otherMethodCallFactor=" + otherMethodCallFactor +
+                ", enclosingTypeFactor=" + enclosingTypeFactor +
+                ", getterSetterFactor=" + getterSetterFactor +
+                '}';
+    }
+
+    public String toShortString() {
+        return "TermFactors{" +
+                       ownTypeDeclarationFactor +
+                ", " + otherTypeDeclarationFactor +
+                ", " + ownInheritanceFactor +
+                ", " + otherInheritanceFactor +
+                ", " + ownAttributeFactor +
+                ", " + otherAttributeFactor +
+                ", " + ownAttributeTypeFactor +
+                ", " + otherAttributeTypeFactor +
+                ", " + ownMethodFactor +
+                ", " + otherMethodFactor +
+                ", " + ownMethodTypeFactor +
+                ", " + otherMethodTypeFactor +
+                ", " + ownClosureTypeFactor +
+                ", " + otherClosureTypeFactor +
+                ", " + ownConstructorFactor +
+                ", " + otherConstructorFactor +
+                ", " + ownLocalVariableFactor +
+                ", " + otherLocalVariableFactor +
+                ", " + ownLocalVariableTypeFactor +
+                ", " + otherLocalVariableTypeFactor +
+                ", " + ownParameterFactor +
+                ", " + otherParameterFactor +
+                ", " + ownParameterTypeFactor +
+                ", " + otherParameterTypeFactor +
+                ", " + ownTypeParameterFactor +
+                ", " + otherTypeParameterFactor +
+                ", " + variableUsageFactor +
+                ", " + otherVariableUsageFactor +
+                ", " + methodCallFactor +
+                ", " + otherMethodCallFactor +
+                ", " + enclosingTypeFactor +
+                ", " + getterSetterFactor +
+                '}';
+    }
+
+    @Override
+    public  Object clone()  {
+        return new TermFactors(ownTypeDeclarationFactor.getFactor(), otherTypeDeclarationFactor.getFactor(),  ownInheritanceFactor.getFactor(),  otherInheritanceFactor.getFactor(),  ownAttributeFactor.getFactor(),
+         otherAttributeFactor.getFactor(),  ownAttributeTypeFactor.getFactor(),  otherAttributeTypeFactor.getFactor(),  ownMethodFactor.getFactor(),  otherMethodFactor.getFactor(),
+         ownMethodTypeFactor.getFactor(),  otherMethodTypeFactor.getFactor(),  ownClosureTypeFactor.getFactor(),  otherClosureTypeFactor.getFactor(),  ownConstructorFactor.getFactor(),
+         otherConstructorFactor.getFactor(),  ownLocalVariableFactor.getFactor(),  otherLocalVariableFactor.getFactor(),  ownLocalVariableTypeFactor.getFactor(),
+         otherLocalVariableTypeFactor.getFactor(),  ownParameterFactor.getFactor(),  otherParameterFactor.getFactor(),  ownParameterTypeFactor.getFactor(),  otherParameterTypeFactor.getFactor(),
+         ownTypeParameterFactor.getFactor(),  otherTypeParameterFactor.getFactor(),  variableUsageFactor.getFactor(),  otherVariableUsageFactor.getFactor(),  methodCallFactor.getFactor(),
+         otherMethodCallFactor.getFactor(),  enclosingTypeFactor.getFactor(),  getterSetterFactor.getFactor());
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TermFactors that = (TermFactors) o;
+
+        if (ownTypeDeclarationFactor != null ? !ownTypeDeclarationFactor.equals(that.ownTypeDeclarationFactor) : that.ownTypeDeclarationFactor != null)
+            return false;
+        if (otherTypeDeclarationFactor != null ? !otherTypeDeclarationFactor.equals(that.otherTypeDeclarationFactor) : that.otherTypeDeclarationFactor != null)
+            return false;
+        if (ownInheritanceFactor != null ? !ownInheritanceFactor.equals(that.ownInheritanceFactor) : that.ownInheritanceFactor != null)
+            return false;
+        if (otherInheritanceFactor != null ? !otherInheritanceFactor.equals(that.otherInheritanceFactor) : that.otherInheritanceFactor != null)
+            return false;
+        if (ownAttributeFactor != null ? !ownAttributeFactor.equals(that.ownAttributeFactor) : that.ownAttributeFactor != null)
+            return false;
+        if (otherAttributeFactor != null ? !otherAttributeFactor.equals(that.otherAttributeFactor) : that.otherAttributeFactor != null)
+            return false;
+        if (ownAttributeTypeFactor != null ? !ownAttributeTypeFactor.equals(that.ownAttributeTypeFactor) : that.ownAttributeTypeFactor != null)
+            return false;
+        if (otherAttributeTypeFactor != null ? !otherAttributeTypeFactor.equals(that.otherAttributeTypeFactor) : that.otherAttributeTypeFactor != null)
+            return false;
+        if (ownMethodFactor != null ? !ownMethodFactor.equals(that.ownMethodFactor) : that.ownMethodFactor != null)
+            return false;
+        if (otherMethodFactor != null ? !otherMethodFactor.equals(that.otherMethodFactor) : that.otherMethodFactor != null)
+            return false;
+        if (ownMethodTypeFactor != null ? !ownMethodTypeFactor.equals(that.ownMethodTypeFactor) : that.ownMethodTypeFactor != null)
+            return false;
+        if (otherMethodTypeFactor != null ? !otherMethodTypeFactor.equals(that.otherMethodTypeFactor) : that.otherMethodTypeFactor != null)
+            return false;
+        if (ownClosureTypeFactor != null ? !ownClosureTypeFactor.equals(that.ownClosureTypeFactor) : that.ownClosureTypeFactor != null)
+            return false;
+        if (otherClosureTypeFactor != null ? !otherClosureTypeFactor.equals(that.otherClosureTypeFactor) : that.otherClosureTypeFactor != null)
+            return false;
+        if (ownConstructorFactor != null ? !ownConstructorFactor.equals(that.ownConstructorFactor) : that.ownConstructorFactor != null)
+            return false;
+        if (otherConstructorFactor != null ? !otherConstructorFactor.equals(that.otherConstructorFactor) : that.otherConstructorFactor != null)
+            return false;
+        if (ownLocalVariableFactor != null ? !ownLocalVariableFactor.equals(that.ownLocalVariableFactor) : that.ownLocalVariableFactor != null)
+            return false;
+        if (otherLocalVariableFactor != null ? !otherLocalVariableFactor.equals(that.otherLocalVariableFactor) : that.otherLocalVariableFactor != null)
+            return false;
+        if (ownLocalVariableTypeFactor != null ? !ownLocalVariableTypeFactor.equals(that.ownLocalVariableTypeFactor) : that.ownLocalVariableTypeFactor != null)
+            return false;
+        if (otherLocalVariableTypeFactor != null ? !otherLocalVariableTypeFactor.equals(that.otherLocalVariableTypeFactor) : that.otherLocalVariableTypeFactor != null)
+            return false;
+        if (ownParameterFactor != null ? !ownParameterFactor.equals(that.ownParameterFactor) : that.ownParameterFactor != null)
+            return false;
+        if (otherParameterFactor != null ? !otherParameterFactor.equals(that.otherParameterFactor) : that.otherParameterFactor != null)
+            return false;
+        if (ownParameterTypeFactor != null ? !ownParameterTypeFactor.equals(that.ownParameterTypeFactor) : that.ownParameterTypeFactor != null)
+            return false;
+        if (otherParameterTypeFactor != null ? !otherParameterTypeFactor.equals(that.otherParameterTypeFactor) : that.otherParameterTypeFactor != null)
+            return false;
+        if (ownTypeParameterFactor != null ? !ownTypeParameterFactor.equals(that.ownTypeParameterFactor) : that.ownTypeParameterFactor != null)
+            return false;
+        if (otherTypeParameterFactor != null ? !otherTypeParameterFactor.equals(that.otherTypeParameterFactor) : that.otherTypeParameterFactor != null)
+            return false;
+        if (variableUsageFactor != null ? !variableUsageFactor.equals(that.variableUsageFactor) : that.variableUsageFactor != null)
+            return false;
+        if (otherVariableUsageFactor != null ? !otherVariableUsageFactor.equals(that.otherVariableUsageFactor) : that.otherVariableUsageFactor != null)
+            return false;
+        if (methodCallFactor != null ? !methodCallFactor.equals(that.methodCallFactor) : that.methodCallFactor != null)
+            return false;
+        if (otherMethodCallFactor != null ? !otherMethodCallFactor.equals(that.otherMethodCallFactor) : that.otherMethodCallFactor != null)
+            return false;
+        if (enclosingTypeFactor != null ? !enclosingTypeFactor.equals(that.enclosingTypeFactor) : that.enclosingTypeFactor != null)
+            return false;
+        return getterSetterFactor != null ? getterSetterFactor.equals(that.getterSetterFactor) : that.getterSetterFactor == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = ownTypeDeclarationFactor != null ? ownTypeDeclarationFactor.hashCode() : 0;
+        result = 31 * result + (otherTypeDeclarationFactor != null ? otherTypeDeclarationFactor.hashCode() : 0);
+        result = 31 * result + (ownInheritanceFactor != null ? ownInheritanceFactor.hashCode() : 0);
+        result = 31 * result + (otherInheritanceFactor != null ? otherInheritanceFactor.hashCode() : 0);
+        result = 31 * result + (ownAttributeFactor != null ? ownAttributeFactor.hashCode() : 0);
+        result = 31 * result + (otherAttributeFactor != null ? otherAttributeFactor.hashCode() : 0);
+        result = 31 * result + (ownAttributeTypeFactor != null ? ownAttributeTypeFactor.hashCode() : 0);
+        result = 31 * result + (otherAttributeTypeFactor != null ? otherAttributeTypeFactor.hashCode() : 0);
+        result = 31 * result + (ownMethodFactor != null ? ownMethodFactor.hashCode() : 0);
+        result = 31 * result + (otherMethodFactor != null ? otherMethodFactor.hashCode() : 0);
+        result = 31 * result + (ownMethodTypeFactor != null ? ownMethodTypeFactor.hashCode() : 0);
+        result = 31 * result + (otherMethodTypeFactor != null ? otherMethodTypeFactor.hashCode() : 0);
+        result = 31 * result + (ownClosureTypeFactor != null ? ownClosureTypeFactor.hashCode() : 0);
+        result = 31 * result + (otherClosureTypeFactor != null ? otherClosureTypeFactor.hashCode() : 0);
+        result = 31 * result + (ownConstructorFactor != null ? ownConstructorFactor.hashCode() : 0);
+        result = 31 * result + (otherConstructorFactor != null ? otherConstructorFactor.hashCode() : 0);
+        result = 31 * result + (ownLocalVariableFactor != null ? ownLocalVariableFactor.hashCode() : 0);
+        result = 31 * result + (otherLocalVariableFactor != null ? otherLocalVariableFactor.hashCode() : 0);
+        result = 31 * result + (ownLocalVariableTypeFactor != null ? ownLocalVariableTypeFactor.hashCode() : 0);
+        result = 31 * result + (otherLocalVariableTypeFactor != null ? otherLocalVariableTypeFactor.hashCode() : 0);
+        result = 31 * result + (ownParameterFactor != null ? ownParameterFactor.hashCode() : 0);
+        result = 31 * result + (otherParameterFactor != null ? otherParameterFactor.hashCode() : 0);
+        result = 31 * result + (ownParameterTypeFactor != null ? ownParameterTypeFactor.hashCode() : 0);
+        result = 31 * result + (otherParameterTypeFactor != null ? otherParameterTypeFactor.hashCode() : 0);
+        result = 31 * result + (ownTypeParameterFactor != null ? ownTypeParameterFactor.hashCode() : 0);
+        result = 31 * result + (otherTypeParameterFactor != null ? otherTypeParameterFactor.hashCode() : 0);
+        result = 31 * result + (variableUsageFactor != null ? variableUsageFactor.hashCode() : 0);
+        result = 31 * result + (otherVariableUsageFactor != null ? otherVariableUsageFactor.hashCode() : 0);
+        result = 31 * result + (methodCallFactor != null ? methodCallFactor.hashCode() : 0);
+        result = 31 * result + (otherMethodCallFactor != null ? otherMethodCallFactor.hashCode() : 0);
+        result = 31 * result + (enclosingTypeFactor != null ? enclosingTypeFactor.hashCode() : 0);
+        result = 31 * result + (getterSetterFactor != null ? getterSetterFactor.hashCode() : 0);
+        return result;
+    }
+
+    public TermFactors withFactor(TermFactor newTermFactor) {
+
+        Predicate<TermFactor> factorIdentifierEqualsIdentifierToReplace = factor -> factor.getFactorIdentifier().equals(newTermFactor.getFactorIdentifier());
+        Optional<TermFactor> factorToChangeOtional = allFactors.stream().filter(factorIdentifierEqualsIdentifierToReplace).findFirst();
+        if(!factorToChangeOtional.isPresent())
+        {
+            throw new RuntimeException("You tried to change a non existent Factor!");
         }
-        return factors;
 
+        TermFactor factorToChange = factorToChangeOtional.get();
+        List<TermFactor> newFactors = new ArrayList<TermFactor>(allFactors);
+        newFactors.replaceAll(oldFactor-> {
+            if(factorIdentifierEqualsIdentifierToReplace.test(oldFactor))
+            {
+                return newTermFactor;
+            }
+            else return oldFactor;
+        });
+       return new TermFactors(newFactors.get(0).getFactor(),newFactors.get(1).getFactor(),newFactors.get(2).getFactor(),newFactors.get(3).getFactor(),newFactors.get(4).getFactor(),newFactors.get(5).getFactor(),
+                newFactors.get(6).getFactor(),newFactors.get(7).getFactor(),newFactors.get(8).getFactor(),newFactors.get(9).getFactor(),newFactors.get(10).getFactor(),newFactors.get(11).getFactor(),
+                newFactors.get(12).getFactor(),newFactors.get(13).getFactor(),newFactors.get(14).getFactor(),newFactors.get(15).getFactor(),newFactors.get(16).getFactor(),newFactors.get(17).getFactor(),
+                newFactors.get(18).getFactor(),newFactors.get(19).getFactor(),newFactors.get(20).getFactor(),newFactors.get(21).getFactor(),newFactors.get(22).getFactor(),newFactors.get(23).getFactor(),
+                newFactors.get(24).getFactor(),newFactors.get(25).getFactor(),newFactors.get(26).getFactor(),newFactors.get(27).getFactor(),newFactors.get(28).getFactor(),newFactors.get(29).getFactor(),
+                newFactors.get(30).getFactor(),newFactors.get(31).getFactor());
+
+
+    }
+
+    public TermFactor getFactor(String factorIdentifier)
+    {
+        Predicate<TermFactor> termFactorPredicate = factor -> factor.getFactorIdentifier().equals(factorIdentifier);
+        Optional<TermFactor> factorToChangeOtional = allFactors.stream().filter(termFactorPredicate).findFirst();
+        if(!factorToChangeOtional.isPresent())
+        {
+            throw new RuntimeException("You tried to change a non existent Factor!");
+        }
+        return factorToChangeOtional.get();
     }
 }

@@ -6,6 +6,7 @@ import de.unihamburg.masterprojekt2016.traceability.TraceabilityModel;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
+import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -47,7 +48,7 @@ public class MAPQEvaluator {
                     TraceabilityLink foundLink = foundLinks.get(linkRank);
                     consideredResults.add(foundLink);
                     if (foundLink.hasSameSourceAndTarget(correctLink)) {
-                        System.out.println("Korrekter (gesuchter) Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
+                   //     System.out.println("Korrekter (gesuchter) Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         break;
                     } else {
                         boolean isLinkCorrect = false;
@@ -55,9 +56,9 @@ public class MAPQEvaluator {
                             isLinkCorrect = isLinkCorrect || aCorrectLink.hasSameSourceAndTarget(foundLink);
                         }
                         if (isLinkCorrect) {
-                            System.out.println("Korrekter Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
+                      //      System.out.println("Korrekter Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         } else {
-                            System.out.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + foundLink.getTarget().getPointerType() + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
+                        //    System.out.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + foundLink.getTarget().getPointerType() + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         }
                     }
                 }
@@ -65,7 +66,7 @@ public class MAPQEvaluator {
                 if (consideredResults.size() == 0) {
                     System.out.println("KEINE ERGEBNISSE FUER " + correctLink.getSource().getDisplayName());
                 } else {
-                    System.out.println("Precision: " + precision);
+               //     System.out.println("Precision: " + precision);
                 }
                 precisionSumForCurrentQuery += precision;
 
@@ -78,15 +79,16 @@ public class MAPQEvaluator {
 
         long queryingTime = System.currentTimeMillis() - queryingStart;
         System.out.println("MAP(Q): " + mAPQ);
-        System.out.println("|Q|: " + traceabilityLinksBySourcePointers.size());
-        System.out.println("Anzahl Dokumente: " + recoveryService.getNumberOfDocs());
-        System.out.println("Swift-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("swift"));
-        System.out.println("Java-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("java"));
-        System.out.println("Kotlin-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("kt"));
-        System.out.println("C#-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("cs"));
-        for (String nonParsedFile : ITraceabilityRecoveryService.NonParsedFiles) {
-            System.out.println("Parsing Failed: " + nonParsedFile);
-        }
+        System.out.println("Factors: " + ((LuceneTraceabilityRecoveryService)recoveryService).getTermFactors().toShortString());
+//        System.out.println("|Q|: " + traceabilityLinksBySourcePointers.size());
+//        System.out.println("Anzahl Dokumente: " + recoveryService.getNumberOfDocs());
+//        System.out.println("Swift-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("swift"));
+//        System.out.println("Java-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("java"));
+//        System.out.println("Kotlin-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("kt"));
+//        System.out.println("C#-Dokumente:   " + recoveryService.getNumberOfDocumentsForLanguage("cs"));
+//        for (String nonParsedFile : ITraceabilityRecoveryService.NonParsedFiles) {
+//            System.out.println("Parsing Failed: " + nonParsedFile);
+//        }
 
         System.out.println("Indexing took : "+parsingTime+"ms");
         System.out.println("Querying took : "+queryingTime+"ms");

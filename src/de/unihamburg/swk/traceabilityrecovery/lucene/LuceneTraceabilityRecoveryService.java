@@ -47,6 +47,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     private ParserProgress parserProgress;
     private String[] projectPaths;
     private Queue<ITraceabilityRecoveryCommand> commandQueue;
+    private TermFactors termFactors;
 
     public LuceneTraceabilityRecoveryService() {
         analyzer = new SourceCodeAnalyzer(SourceCodeAnalyzer.ENGLISH_STOP_WORDS_SET);
@@ -55,6 +56,9 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         commandQueue = new LinkedList<>();
     }
 
+    public TermFactors getTermFactors() {
+        return termFactors;
+    }
 
     public void loadIndexFromDisk() throws IOException, IndexPathNotSetException {
         if (indexPath == null) {
@@ -553,6 +557,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     public void applyTermFactors(TermFactors newTermFactors)
     {
+        this.termFactors = newTermFactors;
         for (LuceneDocument document : documentsByPointers.values()  ) {
             document.applyTermFactors(newTermFactors);
         }

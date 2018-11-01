@@ -20,4 +20,27 @@ public class TermFactor {
     public String getFactorIdentifier() {
         return _factorIdentifier;
     }
+
+    @Override
+    public String toString() {
+        return ""+_factor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TermFactor that = (TermFactor) o;
+
+        if (_factor != that._factor) return false;
+        return _factorIdentifier != null ? _factorIdentifier.equals(that._factorIdentifier) : that._factorIdentifier == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = _factor;
+        result = 31 * result + (_factorIdentifier != null ? _factorIdentifier.hashCode() : 0);
+        return result;
+    }
 }
