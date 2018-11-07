@@ -1,5 +1,5 @@
 # Java-Kotlin-Swift-Trace-Link-Recovery
-This project provides a search engine for similarities between given java or kotlin code on the one side and swift code on the other.
+This project provides a search engine for similarities between given cod elements written in Java, Kotlin, Swift, JavaScript and C#.
 This search engine is wrapped in a plugin for IntelliJ IDEA.
 Using this plugin, users can right-click a Java element (class/method/field name) and search for related code in a provided folder containing siwft documents.
 
