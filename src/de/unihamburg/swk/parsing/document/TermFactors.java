@@ -153,10 +153,10 @@ public class TermFactors {
         this.ownConstructorFactor = new TermFactor(ownConstructorFactor, OWN_CONSTRUCTOR_FACTOR);
         this.otherConstructorFactor = new TermFactor(otherConstructorFactor, OTHER_CONSTRUCTOR_FACTOR);
 
-        this.ownLocalVariableFactor = new TermFactor(1, OWN_LOCAL_VARIABLE_FACTOR);
-        this.otherLocalVariableFactor = new TermFactor(1, OTHER_LOCAL_VARIABLE_FACTOR);
-        this.ownLocalVariableTypeFactor = new TermFactor(1, OWN_LOCAL_VARIABLE_TYPE_FACTOR);
-        this.otherLocalVariableTypeFactor = new TermFactor(1, OTHER_LOCAL_VARIABLE_TYPE_FACTOR);
+        this.ownLocalVariableFactor = new TermFactor(ownLocalVariableFactor, OWN_LOCAL_VARIABLE_FACTOR);
+        this.otherLocalVariableFactor = new TermFactor(otherLocalVariableFactor, OTHER_LOCAL_VARIABLE_FACTOR);
+        this.ownLocalVariableTypeFactor = new TermFactor(ownLocalVariableTypeFactor, OWN_LOCAL_VARIABLE_TYPE_FACTOR);
+        this.otherLocalVariableTypeFactor = new TermFactor(otherLocalVariableTypeFactor, OTHER_LOCAL_VARIABLE_TYPE_FACTOR);
 
 
         this.ownParameterFactor = new TermFactor(ownParameterFactor, OWN_PARAMETER_FACTOR);
@@ -169,10 +169,10 @@ public class TermFactors {
 
 
         this.variableUsageFactor = new TermFactor(1, VARIABLE_USAGE_FACTOR);
-        this.otherVariableUsageFactor = new TermFactor(1, OTHER_VARIABLE_USAGE_FACTOR);
+        this.otherVariableUsageFactor = this.variableUsageFactor;
 
         this.methodCallFactor = new TermFactor(methodCallFactor, METHOD_CALL_FACTOR);
-        this.otherMethodCallFactor = new TermFactor(otherMethodCallFactor, OTHER_METHOD_CALL_FACTOR);
+        this.otherMethodCallFactor = this.methodCallFactor;
         this.enclosingTypeFactor = new TermFactor(enclosingTypeFactor, ENCLOSING_TYPE_FACTOR);
         this.getterSetterFactor = new TermFactor(getterSetterFactor, GETTER_SETTER_FACTOR);
 

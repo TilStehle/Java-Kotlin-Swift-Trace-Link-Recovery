@@ -32,7 +32,7 @@ public class XMLExport {
      * @param exportPath        Path to where the XML file will be saved
      */
 
-    public static void createXMLFile(TraceabilityModel traceabilityModel, String exportPath) {
+    public static synchronized void createXMLFile(TraceabilityModel traceabilityModel, String exportPath) {
 
         try {
 
@@ -55,7 +55,7 @@ public class XMLExport {
      * Creates a String containing the  XML representation of  a given Traceability Pointer
      */
 
-    public static String createXMLStringFromPointer(TraceabilityPointer pointer) {
+    public static synchronized String createXMLStringFromPointer(TraceabilityPointer pointer) {
 
         try {
             StringWriter sw = new StringWriter();

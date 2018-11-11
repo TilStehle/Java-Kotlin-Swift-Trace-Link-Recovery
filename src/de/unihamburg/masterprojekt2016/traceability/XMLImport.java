@@ -29,7 +29,7 @@ public class XMLImport {
      * Creates a String containing the  XML representation of  a given Traceability Pointer
      */
 
-    public static TraceabilityPointer unmarshalPointer(String pointerAsXML) {
+    public static synchronized TraceabilityPointer unmarshalPointer(String pointerAsXML) {
 
 
         try {

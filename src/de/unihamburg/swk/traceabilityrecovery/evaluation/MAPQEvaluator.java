@@ -48,7 +48,7 @@ public class MAPQEvaluator {
                     TraceabilityLink foundLink = foundLinks.get(linkRank);
                     consideredResults.add(foundLink);
                     if (foundLink.hasSameSourceAndTarget(correctLink)) {
-                   //     System.out.println("Korrekter (gesuchter) Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
+                       System.out.println("Korrekter (gesuchter) Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1)+" "+foundLink.getProbability());
                         break;
                     } else {
                         boolean isLinkCorrect = false;

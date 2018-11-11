@@ -3,8 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.unihamburg</groupId>
 	<artifactId>TraceLinkRecovery</artifactId>
-	<version>1.0</version>
-	<name>Traceability Recovery between Java, Kotlin and Swift Code</name>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>traceabilityrecoveryoptimization</module>
+    </modules>
+    <name>Traceability Recovery between Java, Kotlin and Swift Code</name>
 
 
 	<repositories>

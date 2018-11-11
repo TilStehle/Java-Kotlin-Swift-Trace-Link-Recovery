@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TraceabilityRecovery.iml" filepath="$PROJECT_DIR$/TraceabilityRecovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/TraceabilityRecoveryPlugin/TraceabilityRecoveryPlugin.iml" filepath="$PROJECT_DIR$/TraceabilityRecoveryPlugin/TraceabilityRecoveryPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/traceabilityrecoveryoptimization/traceabilityrecoveryoptimization.iml" filepath="$PROJECT_DIR$/traceabilityrecoveryoptimization/traceabilityrecoveryoptimization.iml" />
     </modules>
   </component>
 </project>
