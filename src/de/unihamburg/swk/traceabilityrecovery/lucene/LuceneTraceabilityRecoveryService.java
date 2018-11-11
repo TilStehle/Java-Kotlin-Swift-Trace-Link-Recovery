@@ -6,7 +6,7 @@ import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.masterprojekt2016.traceability.XMLExport;
 import de.unihamburg.masterprojekt2016.traceability.XMLImport;
 import de.unihamburg.swk.parsing.ISourceCodeParser;
-import de.unihamburg.swk.parsing.ParserFactory;
+import de.unihamburg.swk.parsing.ParserFactoryRegistry;
 import de.unihamburg.swk.traceabilityrecovery.*;
 import de.unihamburg.swk.traceabilityrecovery.commands.ITraceabilityRecoveryCommand;
 import org.apache.commons.io.FileUtils;
@@ -292,7 +292,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         }
         index = FSDirectory.open(indexPath);
 
-        Collection<String> acceptedFileEndings = Arrays.stream(Language.values()).map(lang -> lang.getFileExtension()).collect(Collectors.toList());
+        Collection<String> acceptedFileEndings = Language.ALL_Languages.stream().map(lang -> lang.getFileExtension()).collect(Collectors.toList());
         List<String> sourceFiles = new ArrayList<String>();
         for (String dirPath : projectPaths) {
             File dir = new File(dirPath);
@@ -386,7 +386,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     @Override
     public boolean isParseableSourceFilePath(String filePath) {
-        for (Language language : Language.values()) {
+        for (Language language : Language.ALL_Languages) {
             if (filePath.endsWith('.' + language.getFileExtension())) return true;
         }
         return false;
@@ -442,7 +442,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
         @Override
         public void run() {
-            ISourceCodeParser parser = ParserFactory.<LuceneDocument>createParser(luceneDocsFactory, filePath);
+            ISourceCodeParser parser = ParserFactoryRegistry.createParserForFilepath(luceneDocsFactory, filePath);
             Collection<LuceneDocument> documents = parser.parseDocuments();
             for (LuceneDocument document : documents) {
                 try {
