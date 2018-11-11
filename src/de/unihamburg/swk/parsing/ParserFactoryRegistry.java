@@ -54,6 +54,11 @@ public class ParserFactoryRegistry {
 
 	}
 
+	public static void registerParserFactory(Language language, ParserFactory parserFactory)
+	{
+		registry.put(language, parserFactory);
+	}
+
 	public static <TDocument extends ISearchableDocument> ISourceCodeParser<TDocument> createParserForFilepath(IDocumentFactory<TDocument> documentFactory, String filePath )
 	{
 		Language languageForFile = Language.getLanguageForPath(filePath);
