@@ -17,7 +17,7 @@ public class LuceneDocument implements ISearchableDocument {
     public static LuceneDocument fromDocument(Document original) {
         TraceabilityPointer pointer = XMLImport.unmarshalPointer(original.get("pointer"));
         StoredField idField = (StoredField) original.getField("id");
-        long id = new Long(idField.numericValue().longValue());
+        long id = idField.numericValue().longValue();
         LuceneDocument luceneDocument = new LuceneDocument();
         luceneDocument.document = original;
         luceneDocument.id = id;
@@ -41,7 +41,8 @@ public class LuceneDocument implements ISearchableDocument {
         this.id = id;
         document = new Document();
         String languageFileNameExtension = FilenameUtils.getExtension(pointer.getSourceFilePath());
-        document.add(new StringField("language", languageFileNameExtension, Field.Store.YES));
+        document.add(new StringField(   "language", languageFileNameExtension, Field.Store.YES));
+        document.add(new LongPoint("id", id));
         document.add(new StoredField("id", id));
         document.add(new StringField("pointer", XMLExport.createXMLStringFromPointer(pointer), Field.Store.YES));
         document.add(new StringField("path", pointer.getSourceFilePath(), Field.Store.YES));

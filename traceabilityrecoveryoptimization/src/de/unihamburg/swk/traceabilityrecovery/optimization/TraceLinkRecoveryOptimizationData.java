@@ -1,13 +1,6 @@
 package de.unihamburg.swk.traceabilityrecovery.optimization;
 
-import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
-import de.unihamburg.masterprojekt2016.traceability.TypePointer;
 import de.unihamburg.swk.traceabilityrecovery.Language;
-import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
-import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
-
-import java.io.IOException;
-import java.util.function.Predicate;
 
 /**
  * Created by Tilmann Stehle on 01.11.2018.

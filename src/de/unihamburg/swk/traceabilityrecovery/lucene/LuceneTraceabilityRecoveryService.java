@@ -14,6 +14,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.document.Document;
+import org.apache.lucene.document.LongPoint;
 import org.apache.lucene.document.StoredField;
 import org.apache.lucene.index.*;
 import org.apache.lucene.queryparser.classic.ParseException;
@@ -54,6 +55,8 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         documentsByPointers = new HashMap<>();
         parserProgress = new ParserProgress();
         commandQueue = new LinkedList<>();
+        termFactors = TermFactors.DEFAULT_FACTORS;
+
     }
 
     public TermFactors getTermFactors() {
@@ -61,11 +64,16 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     }
 
     public void loadIndexFromDisk() throws IOException, IndexPathNotSetException {
-        if (indexPath == null) {
+       loadIndexFromDisk(indexPath);
+    }
+
+
+    public void loadIndexFromDisk(Path pathToLoadIndexFrom) throws IOException, IndexPathNotSetException {
+        if (pathToLoadIndexFrom == null) {
             throw new IndexPathNotSetException();
         }
 
-        index = FSDirectory.open(indexPath);
+        index = FSDirectory.open(pathToLoadIndexFrom);
         IndexReader reader = null;
         reader = DirectoryReader.open(index);
 
@@ -180,7 +188,11 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                 TraceabilityPointer targetPointer = XMLImport.unmarshalPointer(pointerField.stringValue());
                 TraceabilityLink traceabilityLink = new TraceabilityLink(pointer, targetPointer);
                 traceabilityLink.setProbability(scoreDoc.score / queryLenght);
-                hitLinks.add(traceabilityLink);
+                LuceneDocument luceneDocument = LuceneDocument.fromDocument(matchedDocument);
+                //if(documentFilter.test(luceneDocument))
+//                {
+                    hitLinks.add(traceabilityLink);
+//                }
             }
             return hitLinks;
 
@@ -335,22 +347,33 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     public void removeDocumentsByPointerPredicate(Predicate<TraceabilityPointer> predicate) throws IOException {
 
-        List<TraceabilityPointer> pointersForDocsToDelete = new ArrayList<>();
+        List<LuceneDocument> docsToDelete = new ArrayList<>();
         for (Map.Entry<TraceabilityPointer, LuceneDocument> pointerAndDocument : documentsByPointers.entrySet()) {
             if (predicate.test(pointerAndDocument.getKey())) {
-                pointersForDocsToDelete.add(pointerAndDocument.getKey());
+                docsToDelete.add(pointerAndDocument.getValue());
             }
         }
 
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
+
+        int numDocsBeforeDeletion= 0;
+        try(IndexReader reader = DirectoryReader.open(index))
+        {
+            numDocsBeforeDeletion =reader.numDocs();
+        }
+
         try (IndexWriter indexWriter = new IndexWriter(index, config)) {
-            for (TraceabilityPointer pointer : pointersForDocsToDelete) {
-                indexWriter.deleteDocuments(new Term("pointer", XMLExport.createXMLStringFromPointer(pointer)));
+            for (LuceneDocument documentToDelete : docsToDelete) {
+                indexWriter.deleteDocuments(LongPoint.newExactQuery("id",documentToDelete.getId()));
             }
             indexWriter.flush();
             indexWriter.commit();
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+        try(IndexReader reader = DirectoryReader.open(index))
+        {
+            System.out.println("DELETED "+(numDocsBeforeDeletion-reader.numDocs()) +" documents!");
         }
 
         this.documentsByPointers.entrySet().removeIf(pair -> predicate.test(pair.getKey()));
@@ -460,10 +483,15 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         }
     }
 
+
     private IndexWriter createIndexWriter() {
+       return createIndexWriter(index);
+    }
+
+    private IndexWriter createIndexWriter(Directory directory) {
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         try {
-            return new IndexWriter(index, config);
+            return new IndexWriter(directory, config);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -6,3 +6,5 @@ testDocs/*
 .idea/*
 luceneIndex/*
 .DS_Store
+/traceabilityrecoveryoptimization/target/
+/traceabilityrecoveryoptimization/target/*

@@ -1,6 +1,7 @@
 package de.unihamburg.swk.traceabilityrecovery.optimization;
 
 import de.unihamburg.swk.parsing.document.TermFactor;
+import de.unihamburg.swk.traceabilityrecovery.optimization.factors.TypeLevelTermFactors;
 import de.unihamburg.swk.traceabilityrecovery.optimization.moves.ChangeSingleFactorMove;
 import de.unihamburg.swk.traceabilityrecovery.optimization.moves.DecreaseTermFactorMove;
 import de.unihamburg.swk.traceabilityrecovery.optimization.moves.IncreaseTermFactorMove;
@@ -27,7 +28,7 @@ public class TermFactorsNeighbourhood implements Neighbourhood<TermFactorsSoluti
 
     public List<ChangeSingleFactorMove> getAllMoves(TermFactorsSolution solution) {
         List<ChangeSingleFactorMove> allMoves = new ArrayList<>();
-        for (TermFactor factorToChange : solution.getTermFactors().getAllFactors()) {
+        for (TermFactor factorToChange : TypeLevelTermFactors.getChangeableTermFactors(solution.getTermFactors())) {
 
             for (int i = 1; i <= TermFactorOptimizer.MAX_FACTOR; i++) {
 

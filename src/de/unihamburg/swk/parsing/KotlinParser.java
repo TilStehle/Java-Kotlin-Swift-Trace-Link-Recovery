@@ -76,7 +76,7 @@ public class KotlinParser<TDocument extends ISearchableDocument> implements ISou
 			{
 				System.err.println("fail, time Elapsed: "+timeElapsed);
 			} else {
-				System.err.println("ok!, time Elapsed: "+timeElapsed);
+				System.out.println("ok!, time Elapsed: "+timeElapsed);
 			}
 			return kotlinListener.getDocuments();
 		}

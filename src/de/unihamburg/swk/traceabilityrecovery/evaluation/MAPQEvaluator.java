@@ -1,9 +1,6 @@
 package de.unihamburg.swk.traceabilityrecovery.evaluation;
 
-import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
-import de.unihamburg.masterprojekt2016.traceability.TraceabilityLinkSetWrapper;
-import de.unihamburg.masterprojekt2016.traceability.TraceabilityModel;
-import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
+import de.unihamburg.masterprojekt2016.traceability.*;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
@@ -43,12 +40,15 @@ public class MAPQEvaluator {
             double precisionSumForCurrentQuery = 0;
             for (TraceabilityLink correctLink : correctLinksForPointer) {
                 List<TraceabilityLink> foundLinks = recoveryService.getSortedTraceabilityLinksForPointer(correctLink.getSource(), targetLanguage);
+              // foundLinks.removeIf(link -> link.getTarget() instanceof TypePointer && ((TypePointer)link.getTarget()).getClassification()==TypePointerClassification.EXTENSION);
                 List<TraceabilityLink> consideredResults = new ArrayList<>();
+                boolean correctLinkHasBeenFound = false;
                 for (int linkRank = 0; linkRank < foundLinks.size(); linkRank++) {
                     TraceabilityLink foundLink = foundLinks.get(linkRank);
                     consideredResults.add(foundLink);
                     if (foundLink.hasSameSourceAndTarget(correctLink)) {
-                       System.out.println("Korrekter (gesuchter) Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1)+" "+foundLink.getProbability());
+//                        System.out.println("Korrekter (gesuchter) Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1)+" "+foundLink.getProbability());
+                        correctLinkHasBeenFound =true;
                         break;
                     } else {
                         boolean isLinkCorrect = false;
@@ -56,15 +56,19 @@ public class MAPQEvaluator {
                             isLinkCorrect = isLinkCorrect || aCorrectLink.hasSameSourceAndTarget(foundLink);
                         }
                         if (isLinkCorrect) {
-                      //      System.out.println("Korrekter Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
+//                                   System.out.println("Korrekter Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         } else {
-                        //    System.out.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + foundLink.getTarget().getPointerType() + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
+//                                     System.err.println("Falscher Link gefunden: " + foundLink.getSource().getDisplayName() + " --> " + foundLink.getTarget().getSourceFilePath() + "   " + foundLink.getTarget().getPointerType() + foundLink.getTarget().getDisplayName() + "   Ergebnisnummer:" + (linkRank + 1));
                         }
                     }
                 }
+                if(!correctLinkHasBeenFound)
+                {
+                    System.err.println("Link nicht gefunden: "+correctLink);
+                }
                 double precision = computePrecisionForResults(consideredResults, correctLinksForPointer);
                 if (consideredResults.size() == 0) {
-                    System.out.println("KEINE ERGEBNISSE FUER " + correctLink.getSource().getDisplayName());
+                    System.err.println("KEINE ERGEBNISSE FUER " + correctLink.getSource().getDisplayName());
                 } else {
                //     System.out.println("Precision: " + precision);
                 }

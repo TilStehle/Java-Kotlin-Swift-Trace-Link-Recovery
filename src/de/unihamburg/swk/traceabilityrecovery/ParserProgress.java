@@ -13,7 +13,7 @@ public class ParserProgress extends Observable{
     private double progress;
     private int numberOfFiles; //to parse
     private List<String> nonParsedFiles;
-    private long fileParserTimeout = 200; //seconds
+    private long fileParserTimeout = 20000; //seconds
 
     public void startParsing(int numberOfFiles){
 

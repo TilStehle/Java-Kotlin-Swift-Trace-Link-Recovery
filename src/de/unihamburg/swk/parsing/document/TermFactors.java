@@ -179,9 +179,9 @@ public class TermFactors {
         initializeFactorsList();
     }
 
-    private void initializeFactorsList()
+    protected void initializeFactorsList()
     {
-
+        allFactors.clear();
         allFactors.add(this.ownTypeDeclarationFactor);
         allFactors.add(this.otherTypeDeclarationFactor);
         allFactors.add(this.ownInheritanceFactor);
@@ -226,7 +226,7 @@ public class TermFactors {
         allFactors.add(this.getterSetterFactor);
     }
 
-    private TermFactors() {
+    protected TermFactors() {
         ownTypeDeclarationFactor = new TermFactor(8, OWN_TYPE_DECLARATION_FACTOR); // 4
         otherTypeDeclarationFactor = new TermFactor(8, OTHER_TYPE_DECLARATION_FACTOR);
         ownInheritanceFactor = new TermFactor(2, OWN_INHERITANCE_FACTOR);
@@ -285,38 +285,38 @@ public class TermFactors {
     @Override
     public String toString() {
         return "TermFactors{" +
-                "ownTypeDeclarationFactor=" + ownTypeDeclarationFactor +
-                ", otherTypeDeclarationFactor=" + otherTypeDeclarationFactor +
-                ", ownInheritanceFactor=" + ownInheritanceFactor +
-                ", otherInheritanceFactor=" + otherInheritanceFactor +
-                ", ownAttributeFactor=" + ownAttributeFactor +
-                ", otherAttributeFactor=" + otherAttributeFactor +
-                ", ownAttributeTypeFactor=" + ownAttributeTypeFactor +
-                ", otherAttributeTypeFactor=" + otherAttributeTypeFactor +
-                ", ownMethodFactor=" + ownMethodFactor +
-                ", otherMethodFactor=" + otherMethodFactor +
-                ", ownMethodTypeFactor=" + ownMethodTypeFactor +
-                ", otherMethodTypeFactor=" + otherMethodTypeFactor +
-                ", ownClosureTypeFactor=" + ownClosureTypeFactor +
-                ", otherClosureTypeFactor=" + otherClosureTypeFactor +
-                ", ownConstructorFactor=" + ownConstructorFactor +
-                ", otherConstructorFactor=" + otherConstructorFactor +
-                ", ownLocalVariableFactor=" + ownLocalVariableFactor +
-                ", otherLocalVariableFactor=" + otherLocalVariableFactor +
-                ", ownLocalVariableTypeFactor=" + ownLocalVariableTypeFactor +
-                ", otherLocalVariableTypeFactor=" + otherLocalVariableTypeFactor +
-                ", ownParameterFactor=" + ownParameterFactor +
-                ", otherParameterFactor=" + otherParameterFactor +
-                ", ownParameterTypeFactor=" + ownParameterTypeFactor +
-                ", otherParameterTypeFactor=" + otherParameterTypeFactor +
-                ", ownTypeParameterFactor=" + ownTypeParameterFactor +
-                ", otherTypeParameterFactor=" + otherTypeParameterFactor +
-                ", variableUsageFactor=" + variableUsageFactor +
-                ", otherVariableUsageFactor=" + otherVariableUsageFactor +
-                ", methodCallFactor=" + methodCallFactor +
-                ", otherMethodCallFactor=" + otherMethodCallFactor +
-                ", enclosingTypeFactor=" + enclosingTypeFactor +
-                ", getterSetterFactor=" + getterSetterFactor +
+                "ownTypeDeclarationFactor=" + ownTypeDeclarationFactor +"\n"+
+                ", otherTypeDeclarationFactor=" + otherTypeDeclarationFactor +"\n"+
+                ", ownInheritanceFactor=" + ownInheritanceFactor +"\n"+
+                ", otherInheritanceFactor=" + otherInheritanceFactor +"\n"+
+                ", ownAttributeFactor=" + ownAttributeFactor +"\n"+
+                ", otherAttributeFactor=" + otherAttributeFactor +"\n"+
+                ", ownAttributeTypeFactor=" + ownAttributeTypeFactor +"\n"+
+                ", otherAttributeTypeFactor=" + otherAttributeTypeFactor +"\n"+
+                ", ownMethodFactor=" + ownMethodFactor +"\n"+
+                ", otherMethodFactor=" + otherMethodFactor +"\n"+
+                ", ownMethodTypeFactor=" + ownMethodTypeFactor +"\n"+
+                ", otherMethodTypeFactor=" + otherMethodTypeFactor +"\n"+
+                ", ownClosureTypeFactor=" + ownClosureTypeFactor +"\n"+
+                ", otherClosureTypeFactor=" + otherClosureTypeFactor +"\n"+
+                ", ownConstructorFactor=" + ownConstructorFactor +"\n"+
+                ", otherConstructorFactor=" + otherConstructorFactor +"\n"+
+                ", ownLocalVariableFactor=" + ownLocalVariableFactor +"\n"+
+                ", otherLocalVariableFactor=" + otherLocalVariableFactor +"\n"+
+                ", ownLocalVariableTypeFactor=" + ownLocalVariableTypeFactor +"\n"+
+                ", otherLocalVariableTypeFactor=" + otherLocalVariableTypeFactor +"\n"+
+                ", ownParameterFactor=" + ownParameterFactor +"\n"+
+                ", otherParameterFactor=" + otherParameterFactor +"\n"+
+                ", ownParameterTypeFactor=" + ownParameterTypeFactor +"\n"+
+                ", otherParameterTypeFactor=" + otherParameterTypeFactor +"\n"+
+                ", ownTypeParameterFactor=" + ownTypeParameterFactor +"\n"+
+                ", otherTypeParameterFactor=" + otherTypeParameterFactor +"\n"+
+                ", variableUsageFactor=" + variableUsageFactor +"\n"+
+                ", otherVariableUsageFactor=" + otherVariableUsageFactor +"\n"+
+                ", methodCallFactor=" + methodCallFactor +"\n"+
+                ", otherMethodCallFactor=" + otherMethodCallFactor +"\n"+
+                ", enclosingTypeFactor=" + enclosingTypeFactor +"\n"+
+                ", getterSetterFactor=" + getterSetterFactor +"\n"+
                 '}';
     }
 

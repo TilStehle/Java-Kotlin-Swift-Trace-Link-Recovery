@@ -4,6 +4,7 @@ import de.unihamburg.masterprojekt2016.traceability.*;
 import de.unihamburg.swk.parsing.CSharpParser;
 import de.unihamburg.swk.parsing.KotlinParser;
 import de.unihamburg.swk.parsing.Swift4Parser;
+import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.parsing.javaparser.GithubJavaParser;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
@@ -21,18 +22,19 @@ import java.util.function.Predicate;
 public class MAPQEvaluatorTest {
 
     private static boolean LOAD_INDEX_FROM_DISK = false;
-    private MAPQEvaluator evaluator= new MAPQEvaluator();
+    private MAPQEvaluator evaluator = new MAPQEvaluator();
 
     @Test
     public void computeMAPForTwidereDomainModel() throws IOException {
         ITraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereDomainModel");
         evaluator.computeMap(traceabilityRecoveryService, "./testDocs/TwidereDomainModel/groundTruth/TraceabilityModel.xml", Language.SWIFT);
+
     }
 
     @Test
     public void computeMAPForMDW() throws IOException {
         ITraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/MDW");
-        evaluator.computeMap( traceabilityRecoveryService, "./testDocs/MDW/groundTruth/TraceabilityModel.xml", Language.SWIFT);
+        evaluator.computeMap(traceabilityRecoveryService, "./testDocs/MDW/groundTruth/TraceabilityModel.xml", Language.SWIFT);
     }
 
     @Test
@@ -45,13 +47,15 @@ public class MAPQEvaluatorTest {
     @Test
     public void computeMAPForCompleteTwidereCode() throws IOException {
         ITraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereKomplett");
-        evaluator.computeMap( traceabilityRecoveryService ,"./testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml", Language.SWIFT);
+        ((LuceneTraceabilityRecoveryService)traceabilityRecoveryService).removeDocumentsByPointerPredicate(p -> p instanceof TypePointer && ((TypePointer)p).getClassification()== TypePointerClassification.EXTENSION);
+
+        evaluator.computeMap(traceabilityRecoveryService, "./testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml", Language.SWIFT);
     }
 
     @Test
     public void computeMAPForCamelCaseTest() throws IOException {
         ITraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/CamelCaseTest");
-        evaluator.computeMap(traceabilityRecoveryService ,"./testDocs/CamelCaseTest/groundTruth/TraceabilityModel.xml", Language.CSHARP);
+        evaluator.computeMap(traceabilityRecoveryService, "./testDocs/CamelCaseTest/groundTruth/TraceabilityModel.xml", Language.CSHARP);
     }
 
     @Test
@@ -73,8 +77,7 @@ public class MAPQEvaluatorTest {
     }
 
     @Test
-    public void cleanUpSourcePaths()
-    {
+    public void cleanUpSourcePaths() {
 
         TraceabilityModel groundTruth = evaluator.importGroundTruth("./testDocs/MDW/groundTruth/TraceabilityModel.xml");
         TraceabilityLink[] traceabilityLinkList = groundTruth.getTraceabilityLinkList();
@@ -86,18 +89,16 @@ public class MAPQEvaluatorTest {
 
     }
 
-    private void cleanUpPath(TraceabilityPointer pointer)
-    {
+    private void cleanUpPath(TraceabilityPointer pointer) {
         String cleanedPath = pointer.getSourceFilePath().replace('\\', '/');
         pointer.setSourceFilePath(cleanedPath);
-        pointer.setStartLine(pointer.getStartLine()-1);
+        pointer.setStartLine(pointer.getStartLine() - 1);
     }
 
     ITraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
         long start = System.currentTimeMillis();
         LuceneTraceabilityRecoveryService recoveryService = null;
         recoveryService = new LuceneTraceabilityRecoveryService();
-
         Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
         recoveryService.setDocumentFilter(documentFilter);
         if (LOAD_INDEX_FROM_DISK)//wenn der bestehende index von der Platte geladen werden soll
@@ -117,12 +118,12 @@ public class MAPQEvaluatorTest {
                 recoveryService.discardIndexAndReadDocuments(testDocsPath);
 
 
-                System.out.println("Durchschnittliche Laufzeit JavaParser:   " + comuteAverageOfLongs(GithubJavaParser.timesNeeded)+"ms");
-                System.out.println("Durchschnittliche Laufzeit C#-Parser:   " + comuteAverageOfLongs(CSharpParser.timesNeeded)+"ms");
-                System.out.println("Durchschnittliche Laufzeit KotlinParser:   " + comuteAverageOfLongs(KotlinParser.timesNeeded)+"ms");
-                System.out.println("Durchschnittliche Laufzeit SwiftParser:   " + comuteAverageOfLongs(Swift4Parser.timesNeeded)+"ms");
-                long timeElapsed = System.currentTimeMillis()-start;
-                System.out.println("Time Elapsed During indexing: "+timeElapsed+"ms");
+                System.out.println("Durchschnittliche Laufzeit JavaParser:   " + comuteAverageOfLongs(GithubJavaParser.timesNeeded) + "ms");
+                System.out.println("Durchschnittliche Laufzeit C#-Parser:   " + comuteAverageOfLongs(CSharpParser.timesNeeded) + "ms");
+                System.out.println("Durchschnittliche Laufzeit KotlinParser:   " + comuteAverageOfLongs(KotlinParser.timesNeeded) + "ms");
+                System.out.println("Durchschnittliche Laufzeit SwiftParser:   " + comuteAverageOfLongs(Swift4Parser.timesNeeded) + "ms");
+                long timeElapsed = System.currentTimeMillis() - start;
+                System.out.println("Time Elapsed During indexing: " + timeElapsed + "ms");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -136,8 +137,7 @@ public class MAPQEvaluatorTest {
         for (Long item : longs) {
             sum += item;
         }
-        if(longs.isEmpty())
-        {
+        if (longs.isEmpty()) {
             return 0;
         }
         return sum / longs.size();
@@ -157,7 +157,7 @@ public class MAPQEvaluatorTest {
                 TraceabilityPointer traceabilityPointer = document.getTraceabilityPointer();
                 if (traceabilityPointer instanceof TypePointer) {
                     TypePointer typePointer = (TypePointer) traceabilityPointer;
-                    return  true;
+                    return typePointer.getClassification()!=TypePointerClassification.EXTENSION;
                 }
 //                else if(traceabilityPointer instanceof MethodPointer)
 //                {
