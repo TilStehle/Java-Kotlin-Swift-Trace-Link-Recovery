@@ -3,10 +3,12 @@ package de.unihamburg.swk.traceabilityrecovery.optimization;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.masterprojekt2016.traceability.TypePointer;
 import de.unihamburg.masterprojekt2016.traceability.TypePointerClassification;
+import de.unihamburg.swk.parsing.document.TermFactor;
 import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.Language;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
+import de.unihamburg.swk.traceabilityrecovery.optimization.factors.TypeLevelTermFactors;
 import org.apache.commons.io.FileUtils;
 import org.jamesframework.core.problems.GenericProblem;
 import org.jamesframework.core.problems.Problem;
@@ -25,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
@@ -43,16 +46,27 @@ public class TermFactorOptimizer {
         TermFactorOptimizer optimizer = new TermFactorOptimizer();
         String sourcePath = "./testDocs/TwidereKomplett/";
         String pathToGroundtruthLinks = sourcePath + "groundTruth/TraceabilityModel.xml";
-        optimizer.optimizeTermFactors(sourcePath, pathToGroundtruthLinks, sourcePath + "LuceneIndex", Language.SWIFT);
+        optimizer.optimizeTermFactors(sourcePath, pathToGroundtruthLinks, "./testDocs/TwidereKomplett/LuceneIndex", Language.SWIFT);
     }
 
     public void optimizeTermFactors(String sourcePath, String pathToGroundtruthLinks, String pathToLoadIndexFrom, Language targetLanguage) {
 
         TraceLinkRecoveryOptimizationData data = new TraceLinkRecoveryOptimizationData(pathToGroundtruthLinks, sourcePath, Language.SWIFT);
         MAPObjective obj = new MAPObjective();
+        if (pathToLoadIndexFrom == null) {
+            LuceneTraceabilityRecoveryService luceneTraceabilityRecoveryService = createLuceneTraceabilityRecoveryService();
+            pathToLoadIndexFrom = sourcePath + "/LuceneIndex";
+            try {
+                luceneTraceabilityRecoveryService.setIndexPath(pathToLoadIndexFrom);
+                luceneTraceabilityRecoveryService.discardIndexAndReadDocuments(sourcePath);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
         Problem<TermFactorsSolution> problem = new GenericProblem<>(data, obj, getRandomSolutionGenerator(pathToLoadIndexFrom));
 //        conductRandomDescent(problem, 240);
-        conductParallelTempering(problem, 60 *60* 4);
+        conductParallelTempering(problem, 60 * 60 * 4);
 
 
     }
@@ -60,7 +74,7 @@ public class TermFactorOptimizer {
     private void conductParallelTempering(Problem<TermFactorsSolution> problem, long timeLimitInSeconds) {
         double minTemp = 1e-8;
         double maxTemp = 0.6;
-        int numReplicas = 10;
+        int numReplicas = 8;
         ParallelTempering<TermFactorsSolution> parallelTempering = new ParallelTempering<>(
                 problem,
                 new TermFactorsNeighbourhood(),
@@ -79,7 +93,14 @@ public class TermFactorOptimizer {
         });
         System.out.println("Allerbeste Kombi:");
         System.out.println(parallelTempering.getBestSolutionEvaluation());
-        System.out.println(parallelTempering.getBestSolution().getTermFactors().toString());
+        TermFactors bestTermFactors = parallelTempering.getBestSolution().getTermFactors();
+        System.out.println(bestTermFactors.toString());
+        List<TermFactor> changeableTermFactors = TypeLevelTermFactors.getChangeableTermFactors(bestTermFactors);
+        for (TermFactor changeableTermFactor : changeableTermFactors) {
+            System.out.println(changeableTermFactor);
+        }
+
+        System.out.println("Anzahl probierter Konfigurationen" + parallelTempering.getNumAcceptedMoves());
     }
 
     private void conductRandomDescent(Problem<TermFactorsSolution> problem, long timeLimitInSeconds) {
@@ -95,8 +116,9 @@ public class TermFactorOptimizer {
 
 // print results
         if (randomDescent.getBestSolution() != null) {
-            System.out.println("Best round trip: " + randomDescent.getBestSolution().getTermFactors());
-            System.out.println("Best round trip travel distance: " + randomDescent.getBestSolutionEvaluation());
+            System.out.println("Beste Konfiguration ");
+            System.out.println("MAP: " + randomDescent.getBestSolutionEvaluation());
+            System.out.println("Faktoren: " + randomDescent.getBestSolution().getTermFactors());
         } else {
             System.out.println("No valid solution found...");
         }
@@ -107,36 +129,41 @@ public class TermFactorOptimizer {
 
     private RandomSolutionGenerator<TermFactorsSolution, TraceLinkRecoveryOptimizationData> getRandomSolutionGenerator(String pathToLoadIndexFrom) {
         return (random, data) -> {
-            TermFactors randomFactors = new TermFactors(getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
-                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
-                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
-                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
-                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
-                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
-                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
-                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random));
+//            TermFactors randomFactors = new TermFactors(getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
+//                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
+//                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
+//                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
+//                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
+//                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
+//                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
+//                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random));
+            TermFactors randomFactors = TermFactors.DEFAULT_FACTORS;
+            List<TermFactor> allFactors = randomFactors.getAllFactors();
+            TermFactor termFactortToChange = allFactors.get(new Random().nextInt(randomFactors.getAllFactors().size()));
+            randomFactors.withFactor(termFactortToChange);
             return new TermFactorsSolution(randomFactors, setUpTraceabilityRecoveryService(data.getSourcePath(), pathToLoadIndexFrom));
         };
     }
 
 
     private LuceneTraceabilityRecoveryService setUpTraceabilityRecoveryService(String sourcePath, String pathToLoadIndexFrom) {
-        LuceneTraceabilityRecoveryService recoveryService = new LuceneTraceabilityRecoveryService();
-        Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
-        recoveryService.setDocumentFilter(documentFilter);
+        LuceneTraceabilityRecoveryService recoveryService = createLuceneTraceabilityRecoveryService();
 
         try {
             String indexPath = sourcePath + "/LuceneIndex" + Thread.currentThread().getId();
             FileUtils.copyDirectory(new File(pathToLoadIndexFrom), new File(indexPath));
             recoveryService.setIndexPath(indexPath);
-            if (pathToLoadIndexFrom != null) {
-                recoveryService.loadIndexFromDisk();
-            } else {
-                recoveryService.discardIndexAndReadDocuments(sourcePath);
-            }
+            recoveryService.loadIndexFromDisk();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return recoveryService;
+    }
+
+    private LuceneTraceabilityRecoveryService createLuceneTraceabilityRecoveryService() {
+        LuceneTraceabilityRecoveryService recoveryService = new LuceneTraceabilityRecoveryService();
+        Predicate<LuceneDocument> documentFilter = getTypelevelPredicate();
+        recoveryService.setDocumentFilter(documentFilter);
         return recoveryService;
     }
 

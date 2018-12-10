@@ -21,7 +21,7 @@ import java.util.function.Predicate;
  */
 public class MAPQEvaluatorTest {
 
-    private static boolean LOAD_INDEX_FROM_DISK = false;
+    private static boolean LOAD_INDEX_FROM_DISK = true;
     private MAPQEvaluator evaluator = new MAPQEvaluator();
 
     @Test

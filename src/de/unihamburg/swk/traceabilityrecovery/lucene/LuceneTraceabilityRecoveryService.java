@@ -458,6 +458,10 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
 
     private static LuceneDocsFactory luceneDocsFactory = new LuceneDocsFactory();
 
+    public Path getIndexPath() {
+        return indexPath;
+    }
+
     class ParsingRunnable implements Runnable {
 
         private String filePath;

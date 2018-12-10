@@ -28,7 +28,8 @@ public class TermFactorsNeighbourhood implements Neighbourhood<TermFactorsSoluti
 
     public List<ChangeSingleFactorMove> getAllMoves(TermFactorsSolution solution) {
         List<ChangeSingleFactorMove> allMoves = new ArrayList<>();
-        for (TermFactor factorToChange : TypeLevelTermFactors.getChangeableTermFactors(solution.getTermFactors())) {
+
+        for (TermFactor factorToChange : solution.getTermFactors().getAllFactors()) {
 
             for (int i = 1; i <= TermFactorOptimizer.MAX_FACTOR; i++) {
 

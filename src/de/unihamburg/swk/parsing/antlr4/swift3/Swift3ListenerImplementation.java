@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.stream.Collectors;
 
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import de.unihamburg.swk.parsing.antlr4.swift3.Swift3Parser.ClosureParameterContext;
@@ -37,7 +38,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		List<String> interfaces = new LinkedList<>();
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), interfaces);
 		String interfaceName = ctx.protocolName().getText();
-		
+
 		docBuilder.enterTypeDeclaration(interfaceName, INTERFACE,interfaces, ctx.getStart().getLine());
 	}
 	@Override
@@ -48,14 +49,14 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void enterClassDeclaration(Swift3Parser.ClassDeclarationContext ctx) {
 		lst.enterLocalScope(false);
-		
+
 		String className = ctx.className().getText();
 		List<String> inheritance = new LinkedList<>();
-		
+
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), inheritance);
-		
+
 		docBuilder.enterTypeDeclaration(className, CLASS, inheritance,ctx.getStart().getLine());
-//		docBuilder.setLayer("nonUI");
+//                        docBuilder.setLayer("nonUI");
 	}
 
 
@@ -68,25 +69,25 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void enterStructDeclaration(Swift3Parser.StructDeclarationContext ctx) {
 		lst.enterLocalScope(false);
-		
+
 		String structName = ctx.structName().getText();
 		List<String> inherintance = new LinkedList<>();
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), inherintance);
 		docBuilder.enterTypeDeclaration(structName, STRUCT, inherintance,ctx.getStart().getLine());
-//		docBuilder.setLayer("nonUI");
+//                        docBuilder.setLayer("nonUI");
 	}
 
 	@Override
 	public void exitStructDeclaration(Swift3Parser.StructDeclarationContext ctx) {
 		lst.exitScope();
-		
+
 		docBuilder.exitTypeDeclaration();
 	}
 
 	@Override
 	public void enterEnumDeclaration(Swift3Parser.EnumDeclarationContext ctx) {
 		lst.enterLocalScope(false);
-		
+
 		String enumName;
 		List<String> interfaces = new LinkedList<>();
 		if(ctx.enumDef().unionStyleEnum() != null) {
@@ -99,27 +100,27 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 		docBuilder.enterTypeDeclaration(enumName, ENUM, interfaces, ctx.getStart().getLine());
 	}
 
-	@Override 
+	@Override
 	public void enterRawValueStyleEnumCaseList(Swift3Parser.RawValueStyleEnumCaseListContext ctx) {
 		ctx.rawValueStyleEnumCase().forEach(e -> docBuilder.addEnumConstant(e.enumCaseName().getText()));
 	}
-	
-	@Override 
-	public void enterUnionStyleEnumCaseList(Swift3Parser.UnionStyleEnumCaseListContext ctx) { 
+
+	@Override
+	public void enterUnionStyleEnumCaseList(Swift3Parser.UnionStyleEnumCaseListContext ctx) {
 		ctx.unionStyleEnumCase().forEach(e -> docBuilder.addEnumConstant(e.enumCaseName().getText()));
 	}
-	
+
 	@Override
 	public void exitEnumDeclaration(Swift3Parser.EnumDeclarationContext ctx) {
 		lst.exitScope();
-		
+
 		docBuilder.exitTypeDeclaration();
 	}
 
 	@Override
 	public void enterExtensionDeclaration(Swift3Parser.ExtensionDeclarationContext ctx) {
 		lst.enterLocalScope(false);
-		
+
 		String className = ctx.typeIdentifier().getText();
 		List<String> inherintance = new LinkedList<>();
 		SwiftParserUtils.setInharitance(ctx.typeInheritanceClause(), inherintance);
@@ -129,7 +130,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void exitExtensionDeclaration(Swift3Parser.ExtensionDeclarationContext ctx) {
 		lst.exitScope();
-		
+
 		docBuilder.exitTypeDeclaration();
 	}
 
@@ -147,7 +148,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void enterInitializerDeclaration(Swift3Parser.InitializerDeclarationContext ctx) {
 		lst.enterLocalScope(true);
-		
+
 		String name = "init";
 		docBuilder.enterConstructor(name,ctx.getStart().getLine());
 	}
@@ -155,20 +156,20 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void exitInitializerDeclaration(Swift3Parser.InitializerDeclarationContext ctx) {
 		lst.exitScope();
-		
+
 		docBuilder.closeElement();
 	}
 
 	@Override
 	public void enterFunctionDeclaration(Swift3Parser.FunctionDeclarationContext ctx) {
 		lst.enterLocalScope(true);
-		
+
 		if(ctx.functionName() == null) {  // TODO fix gramma
 			System.err.println("Method Error: " + ctx.getText());
 			docBuilder.enterMethod("noname", "noname", ctx.getStart().getLine());
 			return;
 		}
-		
+
 		String name = ctx.functionName().getText();
 		String mappedName = SwiftParserUtils.getMappedMethodName(name);
 		if (ctx.functionSignature().functionResult() != null) {
@@ -183,7 +184,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void exitFunctionDeclaration(Swift3Parser.FunctionDeclarationContext ctx) {
 		lst.exitScope();
-		
+
 		docBuilder.closeElement();
 	}
 
@@ -214,7 +215,7 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	public void exitProtocolInitializerDeclaration(Swift3Parser.ProtocolInitializerDeclarationContext ctx) {
 		docBuilder.closeElement();
 	}
-	
+
 	@Override
 	public void enterProtocolSubscriptDeclaration(Swift3Parser.ProtocolSubscriptDeclarationContext ctx) {
 		PointerTypeSeparator returnType = SwiftParserUtils.getType(ctx.subscriptResult().sType());
@@ -225,18 +226,18 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	public void exitProtocolSubscriptDeclaration(Swift3Parser.ProtocolSubscriptDeclarationContext ctx) {
 		docBuilder.closeElement();
 	}
-	
+
 	@Override
 	public void enterProtocolPropertyDeclaration(Swift3Parser.ProtocolPropertyDeclarationContext ctx) {
 		String pointerName = ctx.variableName().identifier().getText();
 		String mappedName = SwiftParserUtils.getMappedAttributeName(pointerName);
 		PointerTypeSeparator types = SwiftParserUtils.getType(ctx.typeAnnotation().sType());
 
-//		System.err.println(ctx.getterSetterKeywordBlock().getterKeywordClause().getText()); // TODO
+//           System.err.println(ctx.getterSetterKeywordBlock().getterKeywordClause().getText()); // TODO
 		if(ctx.getterSetterKeywordBlock().setterKeywordClause() != null) {
-//			System.err.println(ctx.getterSetterKeywordBlock().setterKeywordClause().getText()); // TODO
+//                        System.err.println(ctx.getterSetterKeywordBlock().setterKeywordClause().getText()); // TODO
 		}
-		
+
 		docBuilder.enterField(pointerName, mappedName, types, ctx.getStart().getLine());
 	}
 
@@ -244,11 +245,11 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	public void exitProtocolPropertyDeclaration(Swift3Parser.ProtocolPropertyDeclarationContext ctx) {
 		docBuilder.closeElement();
 	}
-	
+
 	@Override
 	public void enterSubscriptDeclaration(Swift3Parser.SubscriptDeclarationContext ctx) {
 		lst.enterLocalScope(true);
-		
+
 		PointerTypeSeparator returnType = SwiftParserUtils.getType(ctx.subscriptResult().sType());
 		docBuilder.enterSubscript(returnType);
 	}
@@ -256,20 +257,20 @@ public class Swift3ListenerImplementation<T extends ISearchableDocument> extends
 	@Override
 	public void exitSubscriptDeclaration(Swift3Parser.SubscriptDeclarationContext ctx) {
 		lst.exitScope();
-		
+
 		docBuilder.closeElement();
 	}
-/**
-variableDeclaration
- : variableDeclarationHead variableName typeAnnotation getterSetterBlock
- | variableDeclarationHead variableName typeAnnotation getterSetterKeywordBlock
- | variableDeclarationHead variableName initializer willSetDidSetBlock
- | variableDeclarationHead variableName typeAnnotation initializer? willSetDidSetBlock
- // keep this below getter and setter rules for ambiguity reasons
- | variableDeclarationHead variableName typeAnnotation codeBlock
- | variableDeclarationHead patternInitializerList
- ;
- */
+	/**
+	 variableDeclaration
+	 : variableDeclarationHead variableName typeAnnotation getterSetterBlock
+	 | variableDeclarationHead variableName typeAnnotation getterSetterKeywordBlock
+	 | variableDeclarationHead variableName initializer willSetDidSetBlock
+	 | variableDeclarationHead variableName typeAnnotation initializer? willSetDidSetBlock
+	 // keep this below getter and setter rules for ambiguity reasons
+	 | variableDeclarationHead variableName typeAnnotation codeBlock
+	 | variableDeclarationHead patternInitializerList
+	 ;
+	 */
 	@Override
 	public void enterVariableDeclaration(Swift3Parser.VariableDeclarationContext ctx) {
 		if (ctx.patternInitializerList() != null) {
@@ -280,19 +281,19 @@ variableDeclaration
 			System.err.println("no match on enterVariableDeclaration");
 		}
 	}
-	
+
 	private void enterField(Swift3Parser.VariableDeclarationContext ctx) {
 		PointerTypeSeparator types = SwiftParserUtils.getType(ctx.typeAnnotation().sType());
 		String pointerName = ctx.variableName().identifier().getText();
 		String mappedName = SwiftParserUtils.getMappedAttributeName(pointerName);
-		
+
 		if(lst.isScopeLocal()) {
 			docBuilder.enterLocalVariable(mappedName, types);
 		} else {
 			docBuilder.enterField(pointerName, mappedName, types, ctx.getStart().getLine());
 		}
-	} 
-	
+	}
+
 	private void enterField(PatternInitializerListContext patternInitializerList, int startLine) {
 		List<String> names = new LinkedList<>();
 		PointerTypeSeparator types = new PointerTypeSeparator(SwiftParserUtils.MAPPER);
@@ -305,7 +306,7 @@ variableDeclaration
 		}
 		String pointerName = names.stream().collect(Collectors.joining(","));
 		String mappedName = names.stream().map(SwiftParserUtils::getMappedAttributeName).collect(Collectors.joining(","));
-		
+
 		if(lst.isScopeLocal()) {
 			docBuilder.enterLocalVariable(mappedName, types);
 		} else {
@@ -318,10 +319,10 @@ variableDeclaration
 		if(!lst.isScopeLocal()) {
 			docBuilder.closeElement();
 		}
-		
+
 	}
-	
-	@Override 
+
+	@Override
 	public void enterGetterSetterBlock(@NotNull Swift3Parser.GetterSetterBlockContext ctx) {
 		lst.enterLocalScope(true);
 		docBuilder.enterGetter(ctx.getterClause().getStart().getText());
@@ -329,13 +330,13 @@ variableDeclaration
 			docBuilder.enterGetter(ctx.setterClause().getStart().getText());
 		}
 	}
-	
-	@Override 
+
+	@Override
 	public void exitGetterSetterBlock(@NotNull Swift3Parser.GetterSetterBlockContext ctx) {
 		lst.exitScope();
 	}
-	
-	@Override 
+
+	@Override
 	public void enterGetterSetterKeywordBlock(@NotNull Swift3Parser.GetterSetterKeywordBlockContext ctx) {
 		lst.enterLocalScope(true);
 		docBuilder.enterSetter(ctx.getterKeywordClause().getText());
@@ -343,14 +344,14 @@ variableDeclaration
 			docBuilder.enterSetter(ctx.setterKeywordClause().getText());
 		}
 	}
-	
-	@Override 
+
+	@Override
 	public void exitGetterSetterKeywordBlock(@NotNull Swift3Parser.GetterSetterKeywordBlockContext ctx) {
 		lst.exitScope();
 	}
-	
+
 	/**
-constantDeclaration : attributes? declarationModifiers? 'let' patternInitializerList ;
+	 constantDeclaration : attributes? declarationModifiers? 'let' patternInitializerList ;
 	 */
 	@Override
 	public void enterConstantDeclaration(Swift3Parser.ConstantDeclarationContext ctx) {
@@ -363,7 +364,7 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 			docBuilder.closeElement();
 		}
 	}
-	
+
 	@Override
 	public void exitParameter(Swift3Parser.ParameterContext ctx) {
 		String name = ctx.localParameterName().getText();
@@ -383,7 +384,7 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 	@Override public void exitClosureExpression(@NotNull Swift3Parser.ClosureExpressionContext ctx) {
 		lst.exitScope();
 	}
-	
+
 	@Override public void enterWillSetDidSetBlock(@NotNull Swift3Parser.WillSetDidSetBlockContext ctx) {
 		lst.enterLocalScope(true);
 	}
@@ -391,11 +392,11 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 	@Override public void exitWillSetDidSetBlock(@NotNull Swift3Parser.WillSetDidSetBlockContext ctx) {
 		lst.exitScope();
 	}
-	
-	
+
+
 	// captureList? closureParameterClause 'throws'? functionResult? 'in'
-	@Override 
-	public void enterClosureSignature(@NotNull Swift3Parser.ClosureSignatureContext ctx) { 
+	@Override
+	public void enterClosureSignature(@NotNull Swift3Parser.ClosureSignatureContext ctx) {
 		if(ctx.closureParameterClause() != null) {
 			if(ctx.functionResult() != null) {
 				PointerTypeSeparator type = SwiftParserUtils.getType(ctx.functionResult().sType());
@@ -405,11 +406,11 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 			}
 		}
 	}
-	
-	
+
+
 	// closureParameterClause: '(' ')' | '(' closureParameterList ')' | identifierList ;
-	@Override 
-	public void enterClosureParameterClause(@NotNull Swift3Parser.ClosureParameterClauseContext ctx) { 
+	@Override
+	public void enterClosureParameterClause(@NotNull Swift3Parser.ClosureParameterClauseContext ctx) {
 		if(ctx.closureParameterList() !=  null) {
 			ClosureParameterContext closureParameter = ctx.closureParameterList().closureParameter();
 			getClosureParameters(closureParameter);
@@ -435,19 +436,19 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 			docBuilder.enterParameter(name);
 		}
 	}
-	
-	@Override 
+
+	@Override
 	public void exitClosureSignature(@NotNull Swift3Parser.ClosureSignatureContext ctx) {
 		if(ctx.closureParameterClause() != null) {
 			docBuilder.closeElement();
 		}
 	}
-	
-	@Override 
+
+	@Override
 	public void enterGenericParameter(@NotNull Swift3Parser.GenericParameterContext ctx) {
 		docBuilder.enterTypeParameter(ctx.typeName().getText());
 	}
-	
+
 	public List<T> getDocuments() {
 		return docBuilder.getDocuments();
 	}
@@ -455,6 +456,12 @@ constantDeclaration : attributes? declarationModifiers? 'let' patternInitializer
 	public boolean errorOccurs() {
 		return docBuilder.openTypes() > 0;
 	}
-	
+
+
+	@Override
+	public void enterFunctionCallExpression(Swift3Parser.FunctionCallExpressionContext ctx) {
+		docBuilder.enterMethodCall(ctx.postfixExpression().getText());
+	}
+
 
 }

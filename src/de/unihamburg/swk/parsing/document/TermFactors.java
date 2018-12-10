@@ -169,10 +169,10 @@ public class TermFactors {
 
 
         this.variableUsageFactor = new TermFactor(1, VARIABLE_USAGE_FACTOR);
-        this.otherVariableUsageFactor = this.variableUsageFactor;
+        this.otherVariableUsageFactor = new TermFactor(this.variableUsageFactor.getFactor(),OTHER_VARIABLE_USAGE_FACTOR) ;
 
         this.methodCallFactor = new TermFactor(methodCallFactor, METHOD_CALL_FACTOR);
-        this.otherMethodCallFactor = this.methodCallFactor;
+        this.otherMethodCallFactor = new TermFactor(this.methodCallFactor.getFactor(), OTHER_METHOD_CALL_FACTOR);
         this.enclosingTypeFactor = new TermFactor(enclosingTypeFactor, ENCLOSING_TYPE_FACTOR);
         this.getterSetterFactor = new TermFactor(getterSetterFactor, GETTER_SETTER_FACTOR);
 
@@ -228,7 +228,7 @@ public class TermFactors {
 
     protected TermFactors() {
         ownTypeDeclarationFactor = new TermFactor(8, OWN_TYPE_DECLARATION_FACTOR); // 4
-        otherTypeDeclarationFactor = new TermFactor(8, OTHER_TYPE_DECLARATION_FACTOR);
+        otherTypeDeclarationFactor = new TermFactor(3, OTHER_TYPE_DECLARATION_FACTOR);
         ownInheritanceFactor = new TermFactor(2, OWN_INHERITANCE_FACTOR);
         otherInheritanceFactor = new TermFactor(2, OTHER_INHERITANCE_FACTOR);
 
@@ -516,4 +516,5 @@ public class TermFactors {
         }
         return factorToChangeOtional.get();
     }
+
 }

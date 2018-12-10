@@ -3,9 +3,12 @@ package de.unihamburg.swk.parsing.antlr4.kotlin;
 import de.unihamburg.masterprojekt2016.traceability.TypePointerClassification;
 import de.unihamburg.swk.parsing.document.DocumentBuilder;
 import de.unihamburg.swk.parsing.document.IDocumentFactory;
+import de.unihamburg.swk.parsing.document.PointerTypeSeparator;
+import de.unihamburg.swk.parsing.document.TermMapperManager;
 import de.unihamburg.swk.traceabilityrecovery.ISearchableDocument;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,7 +34,6 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
     public void enterClassModifier(@NotNull KotlinParser.ClassModifierContext ctx) {
         super.enterClassModifier(ctx);
     }
-
 
 
     @Override
@@ -84,7 +86,6 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
     }
 
 
-
     private void createField(KotlinParser.VariableDeclarationEntryContext variableDeclarationEntryContext) {
         String name = variableDeclarationEntryContext.keywordOrSimpleName().getText();
         String type = "";
@@ -95,36 +96,58 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
         docBuilder.enterField(name, type, variableDeclarationEntryContext.getStart().getLine());
     }
 
-    @Override
-    public void enterPropertyDeclaration(@NotNull KotlinParser.PropertyDeclarationContext ctx) {
-//        KotlinParser.MultipleVariableDeclarationsContext multipleVariableDeclarations = ctx.multipleVariableDeclarations();
-        if (ctx.multipleVariableDeclarations() != null) {
-            for (KotlinParser.VariableDeclarationEntryContext variableDeclarationEntryContext : ctx.multipleVariableDeclarations().variableDeclarationEntry()) {
-                createField(variableDeclarationEntryContext);
-            }
+    private void createLocalVariable(KotlinParser.VariableDeclarationEntryContext variableDeclarationEntryContext) {
+        String name = variableDeclarationEntryContext.keywordOrSimpleName().getText();
+        String type = "";
+        if (variableDeclarationEntryContext.type() != null && variableDeclarationEntryContext.type().typeDescriptor().userType() != null) {
+            type = variableDeclarationEntryContext.type().typeDescriptor().userType().simpleUserType().get(0).keywordOrSimpleName().getText();
+
         }
-        if (ctx.variableDeclarationEntry() != null) {
-            createField(ctx.variableDeclarationEntry());
-        }
+        docBuilder.enterLocalVariable(name, new PointerTypeSeparator(type, TermMapperManager.KOTLIN));
     }
 
     @Override
+    public void enterPropertyDeclaration(@NotNull KotlinParser.PropertyDeclarationContext ctx) {
+//        KotlinParser.MultipleVariableDeclarationsContext multipleVariableDeclarations = ctx.multipleVariableDeclarations();
+        if (ctx.parent instanceof KotlinParser.DeclarationContext) {
+            if (ctx.multipleVariableDeclarations() != null) {
+                for (KotlinParser.VariableDeclarationEntryContext variableDeclarationEntryContext : ctx.multipleVariableDeclarations().variableDeclarationEntry()) {
+                    createLocalVariable(variableDeclarationEntryContext);
+                }
+            }
+            if (ctx.variableDeclarationEntry() != null) {
+                createLocalVariable(ctx.variableDeclarationEntry());
+            }
+        } else {
+            if (ctx.multipleVariableDeclarations() != null) {
+                for (KotlinParser.VariableDeclarationEntryContext variableDeclarationEntryContext : ctx.multipleVariableDeclarations().variableDeclarationEntry()) {
+                    createField(variableDeclarationEntryContext);
+                }
+            }
+            if (ctx.variableDeclarationEntry() != null) {
+                createField(ctx.variableDeclarationEntry());
+            }
+        }
+    }
+
+
+    @Override
     public void exitPropertyDeclaration(KotlinParser.PropertyDeclarationContext ctx) {
-        docBuilder.closeElement();
+        if (!(ctx.parent instanceof KotlinParser.DeclarationContext)) {
+
+            docBuilder.closeElement();
+        }
     }
 
     @Override
     public void enterPrimaryConstructor(@NotNull KotlinParser.PrimaryConstructorContext ctx) {
         ParserRuleContext parent = ctx.getParent();
-        String name="";
-        if(parent instanceof KotlinParser.ClassDeclarationContext)
-
-        {KotlinParser.ClassDeclarationContext parentClassDecl= (KotlinParser.ClassDeclarationContext)parent;
+        String name = "";
+        if (parent instanceof KotlinParser.ClassDeclarationContext) {
+            KotlinParser.ClassDeclarationContext parentClassDecl = (KotlinParser.ClassDeclarationContext) parent;
             name = parentClassDecl.keywordOrSimpleName().getText();
-        }
-        else if(parent instanceof KotlinParser.ObjectDeclarationContext)
-        {
-            KotlinParser.ObjectDeclarationContext parentClassDecl= (KotlinParser.ObjectDeclarationContext)parent;
+        } else if (parent instanceof KotlinParser.ObjectDeclarationContext) {
+            KotlinParser.ObjectDeclarationContext parentClassDecl = (KotlinParser.ObjectDeclarationContext) parent;
             name = parentClassDecl.keywordOrSimpleName().getText();
         }
         docBuilder.enterConstructor(name, ctx.getStart().getLine());
@@ -136,15 +159,34 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
     }
 
     @Override
+    public void enterSecondaryConstructor(KotlinParser.SecondaryConstructorContext ctx) {
+        ParserRuleContext parent = ctx.getParent();
+        String name = "";
+        if (parent instanceof KotlinParser.ClassDeclarationContext) {
+            KotlinParser.ClassDeclarationContext parentClassDecl = (KotlinParser.ClassDeclarationContext) parent;
+            name = parentClassDecl.keywordOrSimpleName().getText();
+        } else if (parent instanceof KotlinParser.ObjectDeclarationContext) {
+            KotlinParser.ObjectDeclarationContext parentClassDecl = (KotlinParser.ObjectDeclarationContext) parent;
+            name = parentClassDecl.keywordOrSimpleName().getText();
+        }
+        docBuilder.enterConstructor(name, ctx.getStart().getLine());
+    }
+
+    @Override
+    public void exitSecondaryConstructor(KotlinParser.SecondaryConstructorContext ctx) {
+        docBuilder.closeElement();
+    }
+
+
+    @Override
     public void enterFunctionDeclaration(@NotNull KotlinParser.FunctionDeclarationContext ctx) {
         String name = ctx.keywordOrSimpleName().getText();
         List<KotlinParser.TypeContext> typeContexts = ctx.type();
-        String returnType ="";
-        if(typeContexts!=null && !typeContexts.isEmpty())
-        {
-             returnType = typeContexts.get(0).getText();
+        String returnType = "";
+        if (typeContexts != null && !typeContexts.isEmpty()) {
+            returnType = typeContexts.get(0).getText();
         }
-		docBuilder.enterMethod(name, returnType, ctx.getStart().getLine());
+        docBuilder.enterMethod(name, returnType, ctx.getStart().getLine());
     }
 
     @Override
@@ -157,23 +199,36 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
         docBuilder.enterParameter(ctx.keywordOrSimpleName().getText(), ctx.type().getText());
     }
 
+
+    @Override
+    public void enterCallSuffix(KotlinParser.CallSuffixContext ctx) {
+        ParseTree leftSibling = ctx.parent.getChild(0);
+        if (leftSibling instanceof KotlinParser.AtomicExpressionContext) {
+            KotlinParser.AtomicExpressionContext leftAtomicExpression = (KotlinParser.AtomicExpressionContext) leftSibling;
+            if (leftAtomicExpression.identifier() != null) {
+                docBuilder.enterMethodCall(leftAtomicExpression.getText());
+            }
+        }
+    }
+
+
+    //
+//           @Override
+//           public void exitFormalParameter(Java8Parser.FormalParameterContext ctx) {
+//                        String type = ctx.unannType().getText();
+//                        String name = ctx.variableDeclaratorId().getText();
+//                        docBuilder.enterParameter(name, type);
+//           }
 //
-//	@Override
-//	public void exitFormalParameter(Java8Parser.FormalParameterContext ctx) {
-//		String type = ctx.unannType().getText();
-//		String name = ctx.variableDeclaratorId().getText();
-//		docBuilder.enterParameter(name, type);
-//	}
-//
-//	@Override
-//	public void enterLocalVariableDeclaration(@NotNull Java8Parser.LocalVariableDeclarationContext ctx) {
-//		for (VariableDeclaratorContext v : ctx.variableDeclaratorList().variableDeclarator()) {
-//			String line = v.getText();
-//			String type = ctx.unannType().getText();
-//			String name = line.contains("=") ? line.substring(0, line.indexOf("=")) : line;
-//			docBuilder.enterLocalVariable(name, type);
-//		}
-//	}
+//           @Override
+//           public void enterLocalVariableDeclaration(@NotNull Java8Parser.LocalVariableDeclarationContext ctx) {
+//                        for (VariableDeclaratorContext v : ctx.variableDeclaratorList().variableDeclarator()) {
+//                                      String line = v.getText();
+//                                      String type = ctx.unannType().getText();
+//                                      String name = line.contains("=") ? line.substring(0, line.indexOf("=")) : line;
+//                                      docBuilder.enterLocalVariable(name, type);
+//                        }
+//           }
 
     // @Override
     // public void
@@ -186,9 +241,8 @@ public class KotlinListenerImplementation<TDocument extends ISearchableDocument>
     }
 
     public boolean errorOccurs() {
-        boolean errorHasOccured=docBuilder.openTypes() >  0;
-        if(errorHasOccured)
-        {
+        boolean errorHasOccured = docBuilder.openTypes() > 0;
+        if (errorHasOccured) {
             System.out.println("Elements not closed:");
             docBuilder.printOpenElements();
         }

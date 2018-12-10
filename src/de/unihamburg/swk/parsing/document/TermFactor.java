@@ -23,7 +23,7 @@ public class TermFactor {
 
     @Override
     public String toString() {
-        return ""+_factor;
+        return _factorIdentifier + ""+_factor;
     }
 
     @Override
