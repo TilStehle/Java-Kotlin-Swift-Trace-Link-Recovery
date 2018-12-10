@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public enum TermMapperManager {
 
-	JAVA, SWIFT, CSHARP, JAVASCRIPT;
+	JAVA, SWIFT, CSHARP, JAVASCRIPT, KOTLIN;
 	
 	private static final String A = "-type";
 	private static final String B = "-function";
@@ -119,6 +119,9 @@ public enum TermMapperManager {
 						putMappings(line, TermMapperManager.CSHARP);
 						break;
 					case "JAVASCRIPT":
+						putMappings(line, TermMapperManager.JAVASCRIPT);
+						break;
+					case "KOTLIN":
 						putMappings(line, TermMapperManager.JAVASCRIPT);
 						break;
 				default:
