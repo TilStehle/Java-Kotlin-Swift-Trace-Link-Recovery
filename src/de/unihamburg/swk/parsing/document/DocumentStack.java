@@ -105,8 +105,8 @@ public class DocumentStack<TDocument extends ISearchableDocument> implements IDo
 			if (ownFactorValue > 0) {
 				documentStack.peek().addTerm(ownFactor, term, termType);
 			}
-			if (otherFactorValue > 0 && documentStack.size() > 1) {
-				for (TDocument tDocument : documentStack.subList(1, documentStack.size() - 1)) {
+			if (otherFactorValue > 0) {
+				for (TDocument tDocument : documentStack.subList(0, documentStack.size() - 1)) {
 					tDocument.addTerm(otherFactor, term, termType);
 				}
 			}
