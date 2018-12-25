@@ -8,6 +8,8 @@ import de.unihamburg.masterprojekt2016.traceability.MethodPointer;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
 
 /**
  * Created by Tilmann Stehle on 24.11.2016.
@@ -84,19 +86,8 @@ public class XCodeController {
 
     }
 
-    /*
-    public static void renameMethod(String typeName, String methodName, TokenPosition methodPosition, String newMethodName) {
-        String projectFilePath = SettingsPropertyProvider.getTargetProjectFilePath();
-        if(projectFilePath==null ||"".equals(projectFilePath)) {
-            int answer = Messages.showOkCancelDialog("Please configure an Xcode project path. Would you like to open the " +
-                    "preferences?", "Missing Xcode project path", Messages.getQuestionIcon());
-            if (answer == 0)
-            {
 
-                ShowSettingsUtil.getInstance().showSettingsDialog(null, Settings.class);
-            }
-        }
-
+    public static void renameMethod(String typeName, String methodName, TokenPosition methodPosition, String newMethodName, String xcodeProjectFilePath) {
         Runtime runtime = Runtime.getRuntime();
         StringBuilder builder = new StringBuilder("");
         InputStream renameScriptStream = XCodeController.class.getClassLoader().getResourceAsStream("applescripts/rename.script");
@@ -110,13 +101,14 @@ public class XCodeController {
             scanner.close();
 
         }
+        int methodNameColumn = methodPosition.getColumn();
         String script=builder.toString();
         script=script.replace("$methodName", methodName);
         script=script.replace("$newMethodName", newMethodName);
+        script=script.replace("$methodColumn", "" + methodNameColumn);
         script=script.replace("$typeName", typeName);
-        script=script.replace("$methodLine", ""+methodPosition.getLine());
-        script=script.replace("$methodColumn", ""+methodPosition.getColumn());
-        script=script.replace("$xcodePath", projectFilePath);
+        script=script.replace("$lineNumber", ""+methodPosition.getLine());
+        System.out.println(script);
         String[] args = {"osascript", "-e", script};
         try {
             runtime.exec(args).waitFor();
@@ -128,7 +120,7 @@ public class XCodeController {
         }
 
     }
-    */
+
 
     public static void openXCodeAtMethod(MethodPointer pointer, @Nullable String projectFilePath) {
 

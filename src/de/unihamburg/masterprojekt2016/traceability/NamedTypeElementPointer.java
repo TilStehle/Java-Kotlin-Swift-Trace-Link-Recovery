@@ -25,7 +25,7 @@ public abstract class NamedTypeElementPointer extends TraceabilityPointer implem
 	
 	@Override
     public String getDisplayName() {
-    	return this.getName();
+    	return typePointer.getDisplayName() + "." + this.getName();
     }
 	
 	@Override

@@ -40,6 +40,11 @@
 
             <separator></separator>
 
+
+            <action class="actions.CrossPlatformRenameAction" id="crossPlatformrename" text="rename method and linked elements">
+            <add-to-group group-id="RefactoringMenu" anchor="first"></add-to-group>
+            </action>
+
             <action id="traceabilityrecovery.editorQueryAction" class="actions.EditorQueryAction"
                     text="Show possible traceability links">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U"/>

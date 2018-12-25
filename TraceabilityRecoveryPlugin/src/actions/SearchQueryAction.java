@@ -1,7 +1,6 @@
 package actions;
 
 import actions.opener.TPointerOpenerFactory;
-import com.google.common.collect.ConcurrentHashMultiset;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.intellij.openapi.actionSystem.AnAction;
