@@ -87,7 +87,7 @@ public class XCodeController {
     }
 
 
-    public static void renameMethod(String typeName, String methodName, TokenPosition methodPosition, String newMethodName, String xcodeProjectFilePath) {
+    public static void renameElementAtToken(String typeName, String methodName, TokenPosition methodPosition, String newMethodName, String xcodeProjectFilePath) {
         Runtime runtime = Runtime.getRuntime();
         StringBuilder builder = new StringBuilder("");
         InputStream renameScriptStream = XCodeController.class.getClassLoader().getResourceAsStream("applescripts/rename.script");
@@ -108,7 +108,7 @@ public class XCodeController {
         script=script.replace("$methodColumn", "" + methodNameColumn);
         script=script.replace("$typeName", typeName);
         script=script.replace("$lineNumber", ""+methodPosition.getLine());
-        System.out.println(script);
+
         String[] args = {"osascript", "-e", script};
         try {
             runtime.exec(args).waitFor();

@@ -1,5 +1,6 @@
 package view.resultPopup;
 
+import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.components.JBRadioButton;
@@ -7,7 +8,6 @@ import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.components.panels.HorizontalLayout;
 import com.intellij.ui.components.panels.VerticalLayout;
 import de.unihamburg.masterprojekt2016.traceability.*;
-import org.intellij.lang.annotations.JdkConstants;
 import view.IconProvider;
 
 import javax.swing.*;
@@ -19,15 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION;
 
-/**
- * Created by Gerrit Greiert on 25.06.17.
- */
-public class ResultPopupPanel extends JBPanel {
+public class MultipleTraceLinkSelectionPanel extends JBPanel {
 
     private List<TraceabilityLink> traceabilityLinks;
-    private int _listSelectionMode;
-    private JBList resultList;
+    private List<TraceabilityLink> _selectedLinks;
+    private JList resultList;
 
     private JBRadioButton allButton;
     private JBRadioButton classButton;
@@ -35,10 +33,9 @@ public class ResultPopupPanel extends JBPanel {
     private JBRadioButton attributeButton;
     private ResultFilter filter;
 
-    public ResultPopupPanel(List<TraceabilityLink> traceabilityLinks, int listSelectionMode){
-
+    public MultipleTraceLinkSelectionPanel(List<TraceabilityLink> traceabilityLinks) {
+        _selectedLinks = new ArrayList<>();
         this.traceabilityLinks = traceabilityLinks;
-        _listSelectionMode = listSelectionMode;
         this.setLayout(new VerticalLayout(5));
 
         this.add(createFilterBar());
@@ -91,25 +88,44 @@ public class ResultPopupPanel extends JBPanel {
             }
         });
 
-        return  filterBar;
+        return filterBar;
     }
 
-    private JBScrollPane createResultList(){
+    private JBScrollPane createResultList() {
 
         resultList = new JBList();
-        resultList.setCellRenderer(new ResultListCellRenderer());
-        resultList.setSelectionMode(_listSelectionMode);
+        resultList.setEnabled(true);
+        resultList.setCellRenderer(new CheckboxListCellRenderer(_selectedLinks));
+        resultList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent listSelectionEvent) {
+                if(resultList.getSelectedValue() != null)
+                {
+                    changeSelectedStateOfTraceLink((TraceabilityLink) resultList.getSelectedValue());
+                    resultList.clearSelection();
+                }
+            }
+        });
         return new JBScrollPane(resultList);
     }
 
-    public void filter(ResultFilter filter){
-        this.filter= filter;
+    private void changeSelectedStateOfTraceLink(TraceabilityLink o) {
+        TraceabilityLink traceabilityLink = o;
+        if (_selectedLinks.contains(traceabilityLink)) {
+            _selectedLinks.remove(traceabilityLink);
+        } else {
+            _selectedLinks.add(traceabilityLink);
+        }
+    }
+
+    public void filter(ResultFilter filter) {
+        this.filter = filter;
 
         DefaultListModel<TraceabilityLink> filteredListModel = new DefaultListModel<>();
 
         List<TraceabilityLink> filteredList = new ArrayList<>();
 
-        switch (filter){
+        switch (filter) {
             case ALL:
                 filteredList = traceabilityLinks;
                 allButton.setSelected(true);
@@ -128,24 +144,19 @@ public class ResultPopupPanel extends JBPanel {
                 break;
         }
 
-        for (TraceabilityLink link: filteredList) {
+        for (TraceabilityLink link : filteredList) {
             filteredListModel.addElement(link);
         }
         resultList.setModel(filteredListModel);
     }
 
-    public TraceabilityLink getSelectedLink(){
-
-        TraceabilityLink selectedLink = (TraceabilityLink) resultList.getSelectedValue();
-        return selectedLink;
-    }
-
-    public JBList getResultList(){
-
-        return resultList;
-    }
 
     public ResultFilter getFilter() {
         return filter;
+    }
+
+    public List<TraceabilityLink> getSelectedLinks() {
+
+        return _selectedLinks;
     }
 }

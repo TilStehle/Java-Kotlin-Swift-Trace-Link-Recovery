@@ -1,0 +1,45 @@
+set methodName to "$methodName"
+set newMethodName to "$newMethodName"
+set typeName to "$typeName"
+set lineNumber to "$lineNumber"
+set methodNameColumn to $methodColumn
+
+tell application "Xcode"
+    activate
+    tell application "System Events"
+            tell process "Xcode"
+
+             --open file containing class declaration
+             keystroke "o" using {shift down, command down}
+             repeat until window "Open Quickly" exists
+              end repeat
+
+              set value of text field 1 of window "Open Quickly" to typeName
+              delay 0.2
+              keystroke return
+
+              --navigate to method line
+              keystroke "l" using command down
+              repeat until window "Open Quickly" exists
+              end repeat
+              set value of text field 1 of window "Open Quickly" to lineNumber
+              keystroke return
+              delay 0.2
+
+              --set cursor to method name
+              key code 123 --left arrow key
+
+              repeat methodNameColumn times
+                key code 124 --right arrow key
+              end repeat
+
+              --rename
+              keystroke "r" using {shift down, command down}
+              delay 1.3
+              keystroke newMethodName
+              keystroke return
+              delay 0.3
+              keystroke "s" using {command down}
+    end tell
+    end tell
+end tell

@@ -41,7 +41,7 @@
             <separator></separator>
 
 
-            <action class="actions.CrossPlatformRenameAction" id="crossPlatformrename" text="rename method and linked elements">
+            <action class="actions.CrossPlatformRenameAction" id="crossPlatformrename" text="Rename element and linked counterparts">
             <add-to-group group-id="RefactoringMenu" anchor="first"></add-to-group>
             </action>
 

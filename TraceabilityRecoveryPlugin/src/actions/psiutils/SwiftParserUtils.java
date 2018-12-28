@@ -129,4 +129,11 @@ public class SwiftParserUtils {
         else return new TokenPosition(0,0);
     }
 
+    public static TokenPosition getTypeNamePosition(TypePointer pointer) {
+        String className = pointer.getDisplayName();
+        Pattern typePattern=Pattern.compile(".*(extension|class|struct|enum).*");
+        String path=pointer.getSourceFilePath();
+        return getTokenPosition(className, typePattern,typePattern, path);
+
+    }
 }

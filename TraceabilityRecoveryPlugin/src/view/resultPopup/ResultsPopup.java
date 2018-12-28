@@ -9,6 +9,7 @@ import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.MouseInputAdapter;
@@ -37,7 +38,7 @@ public class ResultsPopup {
 
         JBPopupFactory popupFactory = ServiceManager.getService(JBPopupFactory.class);
 
-        popupPanel = new ResultPopupPanel(results);
+        popupPanel = new ResultPopupPanel(results, ListSelectionModel.SINGLE_SELECTION);
         ComponentPopupBuilder popupBuilder = popupFactory.createComponentPopupBuilder(popupPanel, popupPanel.getResultList());
         popup = popupBuilder.createPopup();
 

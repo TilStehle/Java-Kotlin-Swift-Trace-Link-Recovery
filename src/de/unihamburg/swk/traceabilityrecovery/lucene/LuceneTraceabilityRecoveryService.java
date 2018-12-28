@@ -306,6 +306,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     public void replaceDocumentsForFilePaths(String... filePaths) throws IOException {
         List<String> filePathsToUpdate = new ArrayList<>();
         for (String filePath : filePaths) {
+            System.out.println(filePath);
             if (isParseableSourceFilePath(filePath)) {
                 removeDocumentsForFilesWithPathPrefix(filePath);
                 filePathsToUpdate.add(filePath);
