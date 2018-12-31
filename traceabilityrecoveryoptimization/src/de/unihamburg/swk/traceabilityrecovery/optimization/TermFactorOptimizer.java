@@ -2,13 +2,14 @@ package de.unihamburg.swk.traceabilityrecovery.optimization;
 
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.masterprojekt2016.traceability.TypePointer;
-import de.unihamburg.masterprojekt2016.traceability.TypePointerClassification;
 import de.unihamburg.swk.parsing.document.TermFactor;
 import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.Language;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.optimization.factors.TypeLevelTermFactors;
+import de.unihamburg.swk.traceabilityrecovery.optimization.neighbourhoods.IncreaseOrDecreaseOneFactorNeighbourhood;
+import de.unihamburg.swk.traceabilityrecovery.optimization.neighbourhoods.SetOneFactorNeighbourhood;
 import org.apache.commons.io.FileUtils;
 import org.jamesframework.core.problems.GenericProblem;
 import org.jamesframework.core.problems.Problem;
@@ -17,16 +18,19 @@ import org.jamesframework.core.problems.objectives.evaluations.Evaluation;
 import org.jamesframework.core.problems.sol.RandomSolutionGenerator;
 import org.jamesframework.core.search.LocalSearch;
 import org.jamesframework.core.search.Search;
+import org.jamesframework.core.search.algo.BasicParallelSearch;
 import org.jamesframework.core.search.algo.ParallelTempering;
 import org.jamesframework.core.search.algo.RandomDescent;
+import org.jamesframework.core.search.algo.tabu.FullTabuMemory;
+import org.jamesframework.core.search.algo.tabu.TabuSearch;
 import org.jamesframework.core.search.listeners.SearchListener;
+import org.jamesframework.core.search.neigh.Neighbourhood;
 import org.jamesframework.core.search.stopcriteria.MaxRuntime;
+import org.jamesframework.core.search.stopcriteria.MaxSteps;
 import org.jamesframework.examples.util.ProgressSearchListener;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -36,17 +40,18 @@ import java.util.function.Predicate;
 public class TermFactorOptimizer {
 
 
-    public static int MAX_FACTOR = 8;
+    public static int MAX_FACTOR = 20;
     public static int MIN_FACTOR = 0;
+    private Neighbourhood<TermFactorsSolution> neighbourhoodDefinition = new IncreaseOrDecreaseOneFactorNeighbourhood();
 
 
     public static void main(String[] args) {
         System.out.println("Working Directory = " +
                 System.getProperty("user.dir"));
         TermFactorOptimizer optimizer = new TermFactorOptimizer();
-        String sourcePath = "./testDocs/TwidereKomplett/";
+        String sourcePath = "./testDocs/MDW/";
         String pathToGroundtruthLinks = sourcePath + "groundTruth/TraceabilityModel.xml";
-        optimizer.optimizeTermFactors(sourcePath, pathToGroundtruthLinks, "./testDocs/TwidereKomplett/LuceneIndex", Language.SWIFT);
+        optimizer.optimizeTermFactors(sourcePath, pathToGroundtruthLinks, null, Language.SWIFT);
     }
 
     public void optimizeTermFactors(String sourcePath, String pathToGroundtruthLinks, String pathToLoadIndexFrom, Language targetLanguage) {
@@ -66,7 +71,41 @@ public class TermFactorOptimizer {
         }
         Problem<TermFactorsSolution> problem = new GenericProblem<>(data, obj, getRandomSolutionGenerator(pathToLoadIndexFrom));
 //        conductRandomDescent(problem, 240);
-        conductParallelTempering(problem, 60 * 60 * 4);
+        //conductParallelTempering(problem, 60 * 60 * 4);
+        conductParallelTabu(problem, 300, 1);
+
+
+    }
+
+
+    private void conductParallelTabu(Problem<TermFactorsSolution> problem, long maxSteps, int numberOfThreats) {
+
+        BasicParallelSearch<TermFactorsSolution> parallelSearch = new BasicParallelSearch<TermFactorsSolution>(problem);
+
+        for (int i = 0; i < numberOfThreats ; i++) {
+            TabuSearch<TermFactorsSolution> randomDescentSearch = new TabuSearch<TermFactorsSolution>(problem,neighbourhoodDefinition, new FullTabuMemory<>((int) 1e8));
+            parallelSearch.addSearch(randomDescentSearch);
+        }
+        parallelSearch.addStopCriterion(new MaxSteps(maxSteps));
+        parallelSearch.addSearchListener(new SearchListener<TermFactorsSolution>() {
+            @Override
+            public void newBestSolution(Search<? extends TermFactorsSolution> search, TermFactorsSolution newBestSolution, Evaluation newBestSolutionEvaluation, Validation newBestSolutionValidation) {
+                System.out.println(" Neue Beste Kombi:");
+                System.out.println("MAP: "+search.getBestSolutionEvaluation());
+                System.out.println(search.getBestSolution().getTermFactors().toString());
+                System.out.println();
+            }
+        });
+
+        parallelSearch.start();
+        System.out.println("Allerbeste Kombi:");
+        System.out.println(parallelSearch.getBestSolutionEvaluation());
+        TermFactors bestTermFactors = parallelSearch.getBestSolution().getTermFactors();
+        System.out.println(bestTermFactors.toString());
+        List<TermFactor> changeableTermFactors = TypeLevelTermFactors.getChangeableTermFactors(bestTermFactors);
+        for (TermFactor changeableTermFactor : changeableTermFactors) {
+            System.out.println(changeableTermFactor);
+        }
 
 
     }
@@ -77,12 +116,11 @@ public class TermFactorOptimizer {
         int numReplicas = 8;
         ParallelTempering<TermFactorsSolution> parallelTempering = new ParallelTempering<>(
                 problem,
-                new TermFactorsNeighbourhood(),
+                neighbourhoodDefinition,
                 numReplicas, minTemp, maxTemp
         );
         parallelTempering.setReplicaSteps(30);
         parallelTempering.addStopCriterion(new MaxRuntime(timeLimitInSeconds, TimeUnit.SECONDS));
-        parallelTempering.start();
         parallelTempering.addSearchListener(new SearchListener<TermFactorsSolution>() {
             @Override
             public void newBestSolution(Search<? extends TermFactorsSolution> search, TermFactorsSolution newBestSolution, Evaluation newBestSolutionEvaluation, Validation newBestSolutionValidation) {
@@ -91,6 +129,7 @@ public class TermFactorOptimizer {
                 System.out.println(parallelTempering.getBestSolution().getTermFactors().toString());
             }
         });
+        parallelTempering.start();
         System.out.println("Allerbeste Kombi:");
         System.out.println(parallelTempering.getBestSolutionEvaluation());
         TermFactors bestTermFactors = parallelTempering.getBestSolution().getTermFactors();
@@ -104,17 +143,13 @@ public class TermFactorOptimizer {
     }
 
     private void conductRandomDescent(Problem<TermFactorsSolution> problem, long timeLimitInSeconds) {
-        // create random descent search with TSP neighbourhood
-        LocalSearch<TermFactorsSolution> randomDescent = new RandomDescent<>(problem, new TermFactorsNeighbourhood());
-// set maximum runtime
-        randomDescent.addStopCriterion(new MaxRuntime(timeLimitInSeconds, TimeUnit.SECONDS));
-// attach listener (see example 1A)
-        randomDescent.addSearchListener(new ProgressSearchListener());
+        LocalSearch<TermFactorsSolution> randomDescent = createRandomDescentSearch(problem, timeLimitInSeconds);
 
-// start search
+
+        // start search
         randomDescent.start();
 
-// print results
+        // print results
         if (randomDescent.getBestSolution() != null) {
             System.out.println("Beste Konfiguration ");
             System.out.println("MAP: " + randomDescent.getBestSolutionEvaluation());
@@ -123,8 +158,18 @@ public class TermFactorOptimizer {
             System.out.println("No valid solution found...");
         }
 
-// dispose
+        // dispose
         randomDescent.dispose();
+    }
+
+    private LocalSearch<TermFactorsSolution> createRandomDescentSearch(Problem<TermFactorsSolution> problem, long timeLimitInSeconds) {
+        // create random descent search with TSP neighbourhood
+        LocalSearch<TermFactorsSolution> randomDescent = new RandomDescent<>(problem, neighbourhoodDefinition);
+        // set maximum runtime
+        randomDescent.addStopCriterion(new MaxRuntime(timeLimitInSeconds, TimeUnit.SECONDS));
+        // attach listener (see example 1A)
+        randomDescent.addSearchListener(new ProgressSearchListener());
+        return randomDescent;
     }
 
     private RandomSolutionGenerator<TermFactorsSolution, TraceLinkRecoveryOptimizationData> getRandomSolutionGenerator(String pathToLoadIndexFrom) {
@@ -137,11 +182,10 @@ public class TermFactorOptimizer {
 //                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
 //                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
 //                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random));
-            TermFactors randomFactors = TermFactors.DEFAULT_FACTORS;
-            List<TermFactor> allFactors = randomFactors.getAllFactors();
-            TermFactor termFactortToChange = allFactors.get(new Random().nextInt(randomFactors.getAllFactors().size()));
-            randomFactors.withFactor(termFactortToChange);
-            return new TermFactorsSolution(randomFactors, setUpTraceabilityRecoveryService(data.getSourcePath(), pathToLoadIndexFrom));
+           ;
+            TermFactorsSolution randomSolution = new TermFactorsSolution( TermFactors.ALL_FACTORS_ONE, setUpTraceabilityRecoveryService(data.getSourcePath(), pathToLoadIndexFrom));
+            neighbourhoodDefinition.getRandomMove(randomSolution).apply(randomSolution);
+            return randomSolution;
         };
     }
 
@@ -187,7 +231,7 @@ public class TermFactorOptimizer {
             @Override
             public boolean test(TraceabilityPointer traceabilityPointer) {
                 if (traceabilityPointer instanceof TypePointer) {
-                    return ((TypePointer) traceabilityPointer).getClassification() != TypePointerClassification.EXTENSION;
+                    return true;//((TypePointer) traceabilityPointer).getClassification() != TypePointerClassification.EXTENSION;
                 }
 //                else if(traceabilityPointer instanceof MethodPointer)
 //                {

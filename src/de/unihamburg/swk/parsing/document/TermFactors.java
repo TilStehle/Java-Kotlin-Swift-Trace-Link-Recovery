@@ -44,7 +44,9 @@ public class TermFactors {
     public static TermFactors DEFAULT_FACTORS = new TermFactors();
     public static TermFactors ALL_FACTORS_ONE = new TermFactors(1, 1, 1, 1, 1,1,1,1, 1,1,
     1, 1, 1, 1, 1,1, 1, 1, 1,1,1, 1, 1, 1,1, 1, 1, 1, 1,1, 1, 1);
-
+    public static TermFactors FACTORS_OPTIMMIZED_FOR_TWIDERE = new TermFactors(6, 4, 1, 1, 4,8,2,8, 3,6,
+            3, 8, 2, 3, 4,8, 1, 8, 5,2,1, 3, 7, 1,5, 2, 1, 1, 2,2, 1, 2);
+    public static TermFactors FACTORS_OPTIMMIZED_FOR_MDW = new TermFactors(8, 3, 1, 2, 8, 1, 2, 2, 8, 4, 2, 8, 8, 2, 8, 7, 1, 2, 1, 1, 8, 1, 2, 2, 1, 1, 1, 1, 5, 5, 2, 1);
 
 //	public  final TermFactor ownTypeDeclarationFactor = 4; // 4
 //	public  final TermFactor otherTypeDeclarationFactor = 4;
@@ -168,11 +170,11 @@ public class TermFactors {
         this.otherTypeParameterFactor = new TermFactor(otherTypeParameterFactor, OTHER_TYPE_PARAMETER_FACTOR);
 
 
-        this.variableUsageFactor = new TermFactor(1, VARIABLE_USAGE_FACTOR);
-        this.otherVariableUsageFactor = new TermFactor(this.variableUsageFactor.getFactor(),OTHER_VARIABLE_USAGE_FACTOR) ;
+        this.variableUsageFactor = new TermFactor(variableUsageFactor, VARIABLE_USAGE_FACTOR);
+        this.otherVariableUsageFactor = new TermFactor(otherVariableUsageFactor,OTHER_VARIABLE_USAGE_FACTOR) ;
 
         this.methodCallFactor = new TermFactor(methodCallFactor, METHOD_CALL_FACTOR);
-        this.otherMethodCallFactor = new TermFactor(this.methodCallFactor.getFactor(), OTHER_METHOD_CALL_FACTOR);
+        this.otherMethodCallFactor = new TermFactor(otherMethodCallFactor, OTHER_METHOD_CALL_FACTOR);
         this.enclosingTypeFactor = new TermFactor(enclosingTypeFactor, ENCLOSING_TYPE_FACTOR);
         this.getterSetterFactor = new TermFactor(getterSetterFactor, GETTER_SETTER_FACTOR);
 
@@ -322,38 +324,38 @@ public class TermFactors {
 
     public String toShortString() {
         return "TermFactors{" +
-                       ownTypeDeclarationFactor +
-                ", " + otherTypeDeclarationFactor +
-                ", " + ownInheritanceFactor +
-                ", " + otherInheritanceFactor +
-                ", " + ownAttributeFactor +
-                ", " + otherAttributeFactor +
-                ", " + ownAttributeTypeFactor +
-                ", " + otherAttributeTypeFactor +
-                ", " + ownMethodFactor +
-                ", " + otherMethodFactor +
-                ", " + ownMethodTypeFactor +
-                ", " + otherMethodTypeFactor +
-                ", " + ownClosureTypeFactor +
-                ", " + otherClosureTypeFactor +
-                ", " + ownConstructorFactor +
-                ", " + otherConstructorFactor +
-                ", " + ownLocalVariableFactor +
-                ", " + otherLocalVariableFactor +
-                ", " + ownLocalVariableTypeFactor +
-                ", " + otherLocalVariableTypeFactor +
-                ", " + ownParameterFactor +
-                ", " + otherParameterFactor +
-                ", " + ownParameterTypeFactor +
-                ", " + otherParameterTypeFactor +
-                ", " + ownTypeParameterFactor +
-                ", " + otherTypeParameterFactor +
-                ", " + variableUsageFactor +
-                ", " + otherVariableUsageFactor +
-                ", " + methodCallFactor +
-                ", " + otherMethodCallFactor +
-                ", " + enclosingTypeFactor +
-                ", " + getterSetterFactor +
+                       ownTypeDeclarationFactor.getFactor() +
+                ", " + otherTypeDeclarationFactor.getFactor() +
+                ", " + ownInheritanceFactor.getFactor() +
+                ", " + otherInheritanceFactor.getFactor() +
+                ", " + ownAttributeFactor.getFactor() +
+                ", " + otherAttributeFactor.getFactor() +
+                ", " + ownAttributeTypeFactor.getFactor() +
+                ", " + otherAttributeTypeFactor.getFactor() +
+                ", " + ownMethodFactor.getFactor() +
+                ", " + otherMethodFactor.getFactor() +
+                ", " + ownMethodTypeFactor.getFactor() +
+                ", " + otherMethodTypeFactor.getFactor() +
+                ", " + ownClosureTypeFactor.getFactor() +
+                ", " + otherClosureTypeFactor.getFactor() +
+                ", " + ownConstructorFactor.getFactor() +
+                ", " + otherConstructorFactor.getFactor() +
+                ", " + ownLocalVariableFactor.getFactor() +
+                ", " + otherLocalVariableFactor.getFactor() +
+                ", " + ownLocalVariableTypeFactor.getFactor() +
+                ", " + otherLocalVariableTypeFactor.getFactor() +
+                ", " + ownParameterFactor.getFactor() +
+                ", " + otherParameterFactor.getFactor() +
+                ", " + ownParameterTypeFactor.getFactor() +
+                ", " + otherParameterTypeFactor.getFactor() +
+                ", " + ownTypeParameterFactor.getFactor() +
+                ", " + otherTypeParameterFactor.getFactor() +
+                ", " + variableUsageFactor.getFactor() +
+                ", " + otherVariableUsageFactor.getFactor() +
+                ", " + methodCallFactor.getFactor() +
+                ", " + otherMethodCallFactor.getFactor() +
+                ", " + enclosingTypeFactor.getFactor() +
+                ", " + getterSetterFactor.getFactor() +
                 '}';
     }
 

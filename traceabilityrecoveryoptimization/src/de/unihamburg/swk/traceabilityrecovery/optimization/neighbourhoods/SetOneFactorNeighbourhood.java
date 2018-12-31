@@ -1,6 +1,8 @@
-package de.unihamburg.swk.traceabilityrecovery.optimization;
+package de.unihamburg.swk.traceabilityrecovery.optimization.neighbourhoods;
 
 import de.unihamburg.swk.parsing.document.TermFactor;
+import de.unihamburg.swk.traceabilityrecovery.optimization.TermFactorOptimizer;
+import de.unihamburg.swk.traceabilityrecovery.optimization.TermFactorsSolution;
 import de.unihamburg.swk.traceabilityrecovery.optimization.factors.TypeLevelTermFactors;
 import de.unihamburg.swk.traceabilityrecovery.optimization.moves.ChangeSingleFactorMove;
 import de.unihamburg.swk.traceabilityrecovery.optimization.moves.DecreaseTermFactorMove;
@@ -15,11 +17,11 @@ import java.util.Random;
 /**
  * Created by Tilmann Stehle on 01.11.2018.
  */
-public class TermFactorsNeighbourhood implements Neighbourhood<TermFactorsSolution> {
+public class SetOneFactorNeighbourhood implements Neighbourhood<TermFactorsSolution> {
 
     public ChangeSingleFactorMove getRandomMove(TermFactorsSolution solution, Random rnd) {
 
-        List<TermFactor> allFactors = solution.getTermFactors().getAllFactors();
+        List<TermFactor> allFactors = TypeLevelTermFactors.getChangeableTermFactors(solution.getTermFactors());
 
         TermFactor termFactortToChange = allFactors.get(rnd.nextInt(allFactors.size()));
         return new SetSingleTermFactorMove(termFactortToChange.getFactorIdentifier(),rnd.nextInt(TermFactorOptimizer.MAX_FACTOR) +1);
@@ -29,7 +31,7 @@ public class TermFactorsNeighbourhood implements Neighbourhood<TermFactorsSoluti
     public List<ChangeSingleFactorMove> getAllMoves(TermFactorsSolution solution) {
         List<ChangeSingleFactorMove> allMoves = new ArrayList<>();
 
-        for (TermFactor factorToChange : solution.getTermFactors().getAllFactors()) {
+        for (TermFactor factorToChange : TypeLevelTermFactors.getChangeableTermFactors(solution.getTermFactors())) {
 
             for (int i = 1; i <= TermFactorOptimizer.MAX_FACTOR; i++) {
 

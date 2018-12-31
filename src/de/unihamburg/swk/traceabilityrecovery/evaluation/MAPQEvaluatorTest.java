@@ -26,14 +26,16 @@ public class MAPQEvaluatorTest {
 
     @Test
     public void computeMAPForTwidereDomainModel() throws IOException {
-        ITraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereDomainModel");
+        LuceneTraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereDomainModel");
+        traceabilityRecoveryService.applyTermFactors(TermFactors.FACTORS_OPTIMMIZED_FOR_TWIDERE);
         evaluator.computeMap(traceabilityRecoveryService, "./testDocs/TwidereDomainModel/groundTruth/TraceabilityModel.xml", Language.SWIFT);
 
     }
 
     @Test
     public void computeMAPForMDW() throws IOException {
-        ITraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/MDW");
+        LuceneTraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/MDW");
+        traceabilityRecoveryService.applyTermFactors(TermFactors.FACTORS_OPTIMMIZED_FOR_MDW);
         evaluator.computeMap(traceabilityRecoveryService, "./testDocs/MDW/groundTruth/TraceabilityModel.xml", Language.SWIFT);
     }
 
@@ -46,8 +48,9 @@ public class MAPQEvaluatorTest {
 
     @Test
     public void computeMAPForCompleteTwidereCode() throws IOException {
-        ITraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereKomplett");
-        ((LuceneTraceabilityRecoveryService)traceabilityRecoveryService).removeDocumentsByPointerPredicate(p -> p instanceof TypePointer && ((TypePointer)p).getClassification()== TypePointerClassification.EXTENSION);
+        LuceneTraceabilityRecoveryService traceabilityRecoveryService = setUpTraceabilityRecoveryService("./testDocs/TwidereKomplett");
+        traceabilityRecoveryService.applyTermFactors(TermFactors.FACTORS_OPTIMMIZED_FOR_TWIDERE);
+                (traceabilityRecoveryService).removeDocumentsByPointerPredicate(p -> p instanceof TypePointer && ((TypePointer)p).getClassification()== TypePointerClassification.EXTENSION);
 
         evaluator.computeMap(traceabilityRecoveryService, "./testDocs/TwidereKomplett/groundTruth/TraceabilityModel.xml", Language.SWIFT);
     }
@@ -95,7 +98,7 @@ public class MAPQEvaluatorTest {
         pointer.setStartLine(pointer.getStartLine() - 1);
     }
 
-    ITraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
+    LuceneTraceabilityRecoveryService setUpTraceabilityRecoveryService(String testDocsPath) {
         long start = System.currentTimeMillis();
         LuceneTraceabilityRecoveryService recoveryService = null;
         recoveryService = new LuceneTraceabilityRecoveryService();
@@ -157,7 +160,7 @@ public class MAPQEvaluatorTest {
                 TraceabilityPointer traceabilityPointer = document.getTraceabilityPointer();
                 if (traceabilityPointer instanceof TypePointer) {
                     TypePointer typePointer = (TypePointer) traceabilityPointer;
-                    return typePointer.getClassification()!=TypePointerClassification.EXTENSION;
+                    return true;//typePointer.getClassification()!=TypePointerClassification.EXTENSION;
                 }
 //                else if(traceabilityPointer instanceof MethodPointer)
 //                {

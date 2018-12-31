@@ -68,8 +68,8 @@ public class DocumentBuilder<TDocument extends ISearchableDocument> {
 	public void enterConstructor(String name, int startLine) {
 		ConstructorPointer constructorPointer = new ConstructorPointer(name, startLine);
 		documentStack.enterElementDeclaration(constructorPointer);
-		
-		documentStack.addTerm(name, CONSTRUCTOR, _termFactors.ownConstructorFactor, _termFactors.otherConstructorFactor);
+		//name+"constructor" is entered, so that the term is different from the typename and indicates, that the type is instantiable
+		documentStack.addTerm(name+"constructor", CONSTRUCTOR, _termFactors.ownConstructorFactor, _termFactors.otherConstructorFactor);
 	}
 
 	public void enterMethod(String pointerName, String mappedName, PointerTypeSeparator type, int startLine) {

@@ -94,8 +94,8 @@ public class MAPQEvaluator {
 //            System.out.println("Parsing Failed: " + nonParsedFile);
 //        }
 
-        System.out.println("Indexing took : "+parsingTime+"ms");
-        System.out.println("Querying took : "+queryingTime+"ms");
+//        System.out.println("Indexing took : "+parsingTime+"ms");
+//        System.out.println("Querying took : "+queryingTime+"ms");
 
         return mAPQ;
     }

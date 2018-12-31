@@ -41,7 +41,7 @@ public class ParserFactoryRegistry {
         registry.put(Language.SWIFT, new ParserFactory() {
             @Override
             public <TDocument extends ISearchableDocument> ISourceCodeParser<TDocument> createParser(IDocumentFactory<TDocument> documentFactory, String filePath) {
-                return new SwiftParser<>(filePath, documentFactory);
+                return new Swift4Parser<>(filePath, documentFactory);
             }
         });
 
