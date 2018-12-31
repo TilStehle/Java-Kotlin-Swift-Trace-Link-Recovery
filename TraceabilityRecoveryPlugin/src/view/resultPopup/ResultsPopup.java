@@ -31,7 +31,7 @@ public class ResultsPopup {
     private JBPopup popup;
     private ResultPopupPanel popupPanel;
 
-    public ResultsPopup(List<TraceabilityLink> results, @Nullable Editor editor, TraceabilityPointerClickedListener pointerClickedListener){
+    public ResultsPopup(List<TraceabilityLink> results,String title,  @Nullable Editor editor, TraceabilityPointerClickedListener pointerClickedListener){
 
         this.editor = editor;
         results.sort(new TraceabilityLinkProbabilityComparator());
@@ -40,6 +40,7 @@ public class ResultsPopup {
 
         popupPanel = new ResultPopupPanel(results, ListSelectionModel.SINGLE_SELECTION);
         ComponentPopupBuilder popupBuilder = popupFactory.createComponentPopupBuilder(popupPanel, popupPanel.getResultList());
+        popupBuilder.setTitle(title);
         popup = popupBuilder.createPopup();
 
         popupPanel.getResultList().addMouseListener(new MouseInputAdapter() {

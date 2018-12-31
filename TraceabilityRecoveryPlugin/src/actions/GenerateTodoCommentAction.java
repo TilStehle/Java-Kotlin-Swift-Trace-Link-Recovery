@@ -39,7 +39,7 @@ public class GenerateTodoCommentAction extends AnAction {
         ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
         List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer, Language.SWIFT);
 
-        ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
+        ResultsPopup resultsPopup = new ResultsPopup(results,"Select a linked element at which the comment shall be placed!", event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
                 createTodoCommentAtPointer(clickedPointer,event));
         resultsPopup.show();
     }

@@ -80,7 +80,7 @@ public class TraceabilityQueryIntention implements IntentionAction{
         ITraceabilityRecoveryService recoveryService = ServiceManager.getService(project, ITraceabilityRecoveryService.class);
         try {
             List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer, Language.SWIFT);
-            ResultsPopup resultsPopup = new ResultsPopup(results, editor, clickedPointer ->
+            ResultsPopup resultsPopup = new ResultsPopup(results,"Choose a linked Element to navigate to!", editor, clickedPointer ->
                     TPointerOpenerFactory.createOpener().openTraceabilityPointer(clickedPointer));
             resultsPopup.setResultFilter(ResultFilter.getFilterForPointerType(pointer));
             resultsPopup.show();

@@ -44,7 +44,7 @@ public class EditorQueryAction extends AnAction {
         ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
         try {
             List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer, Language.SWIFT);
-            ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
+            ResultsPopup resultsPopup = new ResultsPopup(results,"Choose a linked element to navigate to!", event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
                     TPointerOpenerFactory.createOpener().openTraceabilityPointer(clickedPointer));
             //resultsPopup.setResultFilter(ResultFilter.getFilterForPointerType(pointer));
             resultsPopup.show();

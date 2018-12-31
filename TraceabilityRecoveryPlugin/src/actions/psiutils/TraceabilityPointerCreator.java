@@ -175,7 +175,7 @@ public class TraceabilityPointerCreator {
         } else if (psiClass.isInterface()) {
             return TypePointerClassification.INTERFACE;
         } else if (psiClass.getContainingClass() != null) {
-            return TypePointerClassification.INNER_CLASS;
+            return TypePointerClassification.CLASS;
         } else {
             return TypePointerClassification.CLASS;
         }

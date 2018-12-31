@@ -35,6 +35,13 @@
 
     <actions>
         <!-- Add your actions here -->
+
+            <action id="traceabilityrecovery.editorQueryAction" class="actions.EditorQueryAction"
+                    text="Corresponding elements in second implementation">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U"/>
+                <add-to-group group-id="EditorPopupMenu.GoTo" anchor="last"></add-to-group>
+            </action>
+
         <group id="TraceabilityGroup" text="Traceability" popup="false">
             <add-to-group group-id="AnalyzeMenu" anchor="last"></add-to-group>
 
@@ -45,10 +52,7 @@
             <add-to-group group-id="RefactoringMenu" anchor="first"></add-to-group>
             </action>
 
-            <action id="traceabilityrecovery.editorQueryAction" class="actions.EditorQueryAction"
-                    text="Show possible traceability links">
-                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U"/>
-            </action>
+
 
 
             <action id="traceabilityrecovery.addToFileAction" class="actions.AddLinkToFileAction"
@@ -77,7 +81,7 @@
             <action id="traceabilityrecovery.GenerateTodoCommentAction" class="actions.GenerateTodoCommentAction"
                     text="Generate Todo-Comment"
                     description="Create a Todo-Comment in a linked implementation">
-                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
             </action>
 
         </group>

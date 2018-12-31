@@ -47,7 +47,7 @@ public class AddLinkToFileAction extends AnAction {
         ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
         try {
             List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForPointer(pointer, Language.SWIFT);
-            ResultsPopup resultsPopup = new ResultsPopup(results, event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
+            ResultsPopup resultsPopup = new ResultsPopup(results,"", event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
                     exportLinkToFile(new TraceabilityLink(pointer, clickedPointer, 1d))
             );
             //resultsPopup.setResultFilter(ResultFilter.getFilterForPointerType(pointer));
