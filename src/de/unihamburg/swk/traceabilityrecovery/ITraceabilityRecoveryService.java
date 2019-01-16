@@ -40,6 +40,8 @@ public interface ITraceabilityRecoveryService
 
     void addDocumentsForFilePaths(String... filePaths) throws IOException;
 
+    List<TraceabilityLink> getLinksByClassName(String className);
+
     void removeDocumentsForFilesWithPathPrefix(String path) throws IOException;
     int getNumberOfDocs();
 	void loadIndexFromDisk() throws IOException, IndexPathNotSetException;

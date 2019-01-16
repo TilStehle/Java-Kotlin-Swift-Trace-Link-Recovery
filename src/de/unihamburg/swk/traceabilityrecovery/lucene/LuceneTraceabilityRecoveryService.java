@@ -1,17 +1,14 @@
 package de.unihamburg.swk.traceabilityrecovery.lucene;
 
 import com.google.common.collect.HashMultiset;
-import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.Multiset;
-import com.intellij.psi.search.PsiShortNamesCache;
-import com.siyeh.ig.psiutils.ClassUtils;
-import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
-import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
-import de.unihamburg.masterprojekt2016.traceability.XMLExport;
-import de.unihamburg.masterprojekt2016.traceability.XMLImport;
+import de.unihamburg.masterprojekt2016.traceability.*;
 import de.unihamburg.swk.parsing.ISourceCodeParser;
 import de.unihamburg.swk.parsing.ParserFactoryRegistry;
-import de.unihamburg.swk.traceabilityrecovery.*;
+import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
+import de.unihamburg.swk.traceabilityrecovery.IndexPathNotSetException;
+import de.unihamburg.swk.traceabilityrecovery.Language;
+import de.unihamburg.swk.traceabilityrecovery.ParserProgress;
 import de.unihamburg.swk.traceabilityrecovery.commands.ITraceabilityRecoveryCommand;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -25,8 +22,9 @@ import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import javax.annotation.Nullable;
-import java.io.*;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -359,6 +357,24 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         this.documentsByPointers.entrySet().removeIf(pair -> predicate.test(pair.getKey()));
 
 
+    }
+
+    @Override
+    public List<TraceabilityLink> getLinksByClassName(String className)
+    {
+        for (Map.Entry<TraceabilityPointer, LuceneDocument> pointerAndDocument : this.documentsByPointers.entrySet()) {
+            if(pointerAndDocument.getKey() instanceof TypePointer)
+            {
+                TypePointer typePointer = (TypePointer) pointerAndDocument.getKey();
+                if(typePointer.getFullyQualifiedName().endsWith(className))
+                {
+                    System.out.println(typePointer.getFullyQualifiedName());
+                    return getSortedTraceabilityLinksForPointer(typePointer);
+                }
+
+            }
+        }
+        return Collections.emptyList();
     }
 
 
