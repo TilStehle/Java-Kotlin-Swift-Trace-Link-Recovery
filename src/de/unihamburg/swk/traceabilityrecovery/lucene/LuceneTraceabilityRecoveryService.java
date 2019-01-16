@@ -368,8 +368,7 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                 TypePointer typePointer = (TypePointer) pointerAndDocument.getKey();
                 if(typePointer.getFullyQualifiedName().endsWith(className))
                 {
-                    System.out.println(typePointer.getFullyQualifiedName());
-                    return getSortedTraceabilityLinksForPointer(typePointer);
+                    return getSortedTraceabilityLinksToOtherLanguagesForPointer(typePointer);
                 }
 
             }
