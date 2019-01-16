@@ -1,6 +1,10 @@
 package de.unihamburg.swk.traceabilityrecovery.lucene;
 
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.Multiset;
+import com.intellij.psi.search.PsiShortNamesCache;
+import com.siyeh.ig.psiutils.ClassUtils;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityPointer;
 import de.unihamburg.masterprojekt2016.traceability.XMLExport;
@@ -21,6 +25,7 @@ import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
+import javax.annotation.Nullable;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -160,6 +165,8 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
         return getSortedTraceabilityLinksForLuceneQuery(combinedQuery, pointer, getQueryLength(queryDocument));
 
     }
+
+
 
 
     private List<TraceabilityLink> getSortedTraceabilityLinksForLuceneQuery(Query query, TraceabilityPointer pointer, int queryLenght) {
@@ -495,6 +502,12 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
                 checkCommandQueue();
             }
         }
+    }
+
+    @Override
+    public List<TraceabilityLink> getSortedTraceabilityLinksForQuery(Language language, String... queryStrings) {
+        HashMultiset<String> strings = HashMultiset.create(Arrays.asList(queryStrings));
+        return getSortedTraceabilityLinksForQuery(strings, language);
     }
 
 

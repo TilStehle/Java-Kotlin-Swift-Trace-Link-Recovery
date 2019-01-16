@@ -18,6 +18,8 @@ public interface ITraceabilityRecoveryService
 
     void enqueueCommand(ITraceabilityRecoveryCommand command) throws IOException;
 
+    List<TraceabilityLink> getSortedTraceabilityLinksForQuery(Language language, String... queryStrings);
+
     List<TraceabilityLink> getSortedTraceabilityLinksForQuery(Multiset<String> queryTerms, Language language);
     List<TraceabilityLink> getSortedTraceabilityLinksToOtherLanguagesForPointer(TraceabilityPointer pointer);
 
