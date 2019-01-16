@@ -360,13 +360,13 @@ public class LuceneTraceabilityRecoveryService implements ITraceabilityRecoveryS
     }
 
     @Override
-    public List<TraceabilityLink> getLinksByClassName(String className)
+    public List<TraceabilityLink> getLinksByClassName(String className, Language languageOfSourceClass)
     {
         for (Map.Entry<TraceabilityPointer, LuceneDocument> pointerAndDocument : this.documentsByPointers.entrySet()) {
             if(pointerAndDocument.getKey() instanceof TypePointer)
             {
                 TypePointer typePointer = (TypePointer) pointerAndDocument.getKey();
-                if(typePointer.getFullyQualifiedName().endsWith(className))
+                if(typePointer.getFullyQualifiedName().endsWith(className) && typePointer.getSourceFilePath().endsWith(languageOfSourceClass.getFileExtension()))
                 {
                     return getSortedTraceabilityLinksToOtherLanguagesForPointer(typePointer);
                 }

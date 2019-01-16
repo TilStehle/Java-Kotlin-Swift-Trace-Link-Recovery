@@ -40,7 +40,7 @@ public interface ITraceabilityRecoveryService
 
     void addDocumentsForFilePaths(String... filePaths) throws IOException;
 
-    List<TraceabilityLink> getLinksByClassName(String className);
+    List<TraceabilityLink> getLinksByClassName(String className, Language languageOfSourceClass);
 
     void removeDocumentsForFilesWithPathPrefix(String path) throws IOException;
     int getNumberOfDocs();

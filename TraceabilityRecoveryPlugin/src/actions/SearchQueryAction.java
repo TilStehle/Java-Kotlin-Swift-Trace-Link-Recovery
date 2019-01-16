@@ -3,18 +3,16 @@ package actions;
 import actions.opener.TPointerOpenerFactory;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
+import com.intellij.navigation.ChooseByNameContributor;
+import com.intellij.navigation.ChooseByNameRegistry;
+import com.intellij.navigation.GotoClassContributor;
+import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.components.ServiceManager;
-import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiManager;
+import com.intellij.psi.*;
 import de.unihamburg.masterprojekt2016.traceability.TraceabilityLink;
 import de.unihamburg.swk.traceabilityrecovery.ITraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.Language;
@@ -29,22 +27,22 @@ import java.util.List;
  */
 public class SearchQueryAction extends AnAction {
 
+    public static class Event{}
     @Override
     public void actionPerformed(AnActionEvent event) {
 
         PsiFile currentPsiFile = event.getData(PlatformDataKeys.PSI_FILE);
-
         SearchQueryDialog queryDialog = new SearchQueryDialog(event.getProject(), currentPsiFile);
         queryDialog.show();
 
         if (queryDialog.getExitCode() == DialogWrapper.OK_EXIT_CODE) {
-            System.out.println("Query: " + queryDialog.getQuery());
-
             String[] separatedQueryTerms = queryDialog.getQuery().replaceAll("\\s+", "").split(",");
+
 
             Multiset<String> queryTermsSet = HashMultiset.create(Arrays.asList(separatedQueryTerms));
 
             ITraceabilityRecoveryService recoveryService = ServiceManager.getService(event.getProject(), ITraceabilityRecoveryService.class);
+            recoveryService.getLinksByClassName(separatedQueryTerms[0]);
             List<TraceabilityLink> results = recoveryService.getSortedTraceabilityLinksForQuery(queryTermsSet, Language.SWIFT);
 
             ResultsPopup resultsPopup = new ResultsPopup(results,"Choose a linked element to navigate to!", event.getData(PlatformDataKeys.EDITOR_EVEN_IF_INACTIVE), clickedPointer ->
