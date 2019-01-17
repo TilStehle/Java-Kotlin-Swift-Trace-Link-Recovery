@@ -13,4 +13,21 @@ public abstract class ChangeSingleFactorMove  implements Move<TermFactorsSolutio
 
         this._termFactorIdentifier = termFactorIdentifier;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ChangeSingleFactorMove that = (ChangeSingleFactorMove) o;
+
+        return _termFactorIdentifier != null ? _termFactorIdentifier.equals(that._termFactorIdentifier) : that._termFactorIdentifier == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return _termFactorIdentifier != null ? _termFactorIdentifier.hashCode() : 0;
+    }
+
+    public abstract Move<TermFactorsSolution> reverse();
 }

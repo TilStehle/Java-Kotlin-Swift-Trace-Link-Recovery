@@ -3,6 +3,7 @@ package de.unihamburg.swk.traceabilityrecovery.optimization.moves;
 import de.unihamburg.swk.parsing.document.TermFactor;
 import de.unihamburg.swk.parsing.document.TermFactors;
 import de.unihamburg.swk.traceabilityrecovery.optimization.TermFactorsSolution;
+import org.jamesframework.core.search.neigh.Move;
 
 /**
  * Created by Tilmann Stehle on 02.11.2018.
@@ -31,5 +32,11 @@ public class SetSingleTermFactorMove extends ChangeSingleFactorMove {
         TermFactors termFactors = termFactorsSolution.getTermFactors();
         TermFactors newTermFactors =  termFactors.withFactor(new TermFactor(_oldValue, _termFactorIdentifier));
         termFactorsSolution.setTermFactors(newTermFactors);
+    }
+
+
+    @Override
+    public Move<TermFactorsSolution> reverse() {
+        return new SetSingleTermFactorMove(_termFactorIdentifier, _oldValue);
     }
 }

@@ -9,7 +9,7 @@ import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneDocument;
 import de.unihamburg.swk.traceabilityrecovery.lucene.LuceneTraceabilityRecoveryService;
 import de.unihamburg.swk.traceabilityrecovery.optimization.factors.TypeLevelTermFactors;
 import de.unihamburg.swk.traceabilityrecovery.optimization.neighbourhoods.IncreaseOrDecreaseOneFactorNeighbourhood;
-import de.unihamburg.swk.traceabilityrecovery.optimization.neighbourhoods.SetOneFactorNeighbourhood;
+import de.unihamburg.swk.traceabilityrecovery.optimization.tabumemory.TermFactorTabuMemory;
 import org.apache.commons.io.FileUtils;
 import org.jamesframework.core.problems.GenericProblem;
 import org.jamesframework.core.problems.Problem;
@@ -26,7 +26,6 @@ import org.jamesframework.core.search.algo.tabu.TabuSearch;
 import org.jamesframework.core.search.listeners.SearchListener;
 import org.jamesframework.core.search.neigh.Neighbourhood;
 import org.jamesframework.core.search.stopcriteria.MaxRuntime;
-import org.jamesframework.core.search.stopcriteria.MaxSteps;
 import org.jamesframework.examples.util.ProgressSearchListener;
 
 import java.io.File;
@@ -67,40 +66,35 @@ public class TermFactorOptimizer {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
         }
         Problem<TermFactorsSolution> problem = new GenericProblem<>(data, obj, getRandomSolutionGenerator(pathToLoadIndexFrom));
 //        conductRandomDescent(problem, 240);
         //conductParallelTempering(problem, 60 * 60 * 4);
-        conductParallelTabu(problem, 300, 1);
+        conductTabu(problem, 300, 60*20);
 
 
     }
 
 
-    private void conductParallelTabu(Problem<TermFactorsSolution> problem, long maxSteps, int numberOfThreats) {
+    private void conductTabu(Problem<TermFactorsSolution> problem, long maxSteps, long timeLimitInSeconds) {
 
-        BasicParallelSearch<TermFactorsSolution> parallelSearch = new BasicParallelSearch<TermFactorsSolution>(problem);
 
-        for (int i = 0; i < numberOfThreats ; i++) {
-            TabuSearch<TermFactorsSolution> randomDescentSearch = new TabuSearch<TermFactorsSolution>(problem,neighbourhoodDefinition, new FullTabuMemory<>((int) 1e8));
-            parallelSearch.addSearch(randomDescentSearch);
-        }
-        parallelSearch.addStopCriterion(new MaxSteps(maxSteps));
-        parallelSearch.addSearchListener(new SearchListener<TermFactorsSolution>() {
+        TabuSearch<TermFactorsSolution> tabuSearch = new TabuSearch<TermFactorsSolution>(problem, neighbourhoodDefinition, new TermFactorTabuMemory(3));
+        tabuSearch.addStopCriterion(new MaxRuntime(timeLimitInSeconds, TimeUnit.SECONDS));
+        tabuSearch.addSearchListener(new SearchListener<TermFactorsSolution>() {
             @Override
             public void newBestSolution(Search<? extends TermFactorsSolution> search, TermFactorsSolution newBestSolution, Evaluation newBestSolutionEvaluation, Validation newBestSolutionValidation) {
                 System.out.println(" Neue Beste Kombi:");
-                System.out.println("MAP: "+search.getBestSolutionEvaluation());
+                System.out.println("MAP: " + search.getBestSolutionEvaluation());
                 System.out.println(search.getBestSolution().getTermFactors().toString());
                 System.out.println();
             }
         });
 
-        parallelSearch.start();
+        tabuSearch.start();
         System.out.println("Allerbeste Kombi:");
-        System.out.println(parallelSearch.getBestSolutionEvaluation());
-        TermFactors bestTermFactors = parallelSearch.getBestSolution().getTermFactors();
+        System.out.println(tabuSearch.getBestSolutionEvaluation());
+        TermFactors bestTermFactors = tabuSearch.getBestSolution().getTermFactors();
         System.out.println(bestTermFactors.toString());
         List<TermFactor> changeableTermFactors = TypeLevelTermFactors.getChangeableTermFactors(bestTermFactors);
         for (TermFactor changeableTermFactor : changeableTermFactors) {
@@ -182,8 +176,8 @@ public class TermFactorOptimizer {
 //                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
 //                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random),
 //                    getRandomFactor(random), getRandomFactor(random), getRandomFactor(random), getRandomFactor(random));
-           ;
-            TermFactorsSolution randomSolution = new TermFactorsSolution( TermFactors.ALL_FACTORS_ONE, setUpTraceabilityRecoveryService(data.getSourcePath(), pathToLoadIndexFrom));
+            ;
+            TermFactorsSolution randomSolution = new TermFactorsSolution(TermFactors.ALL_FACTORS_ONE, setUpTraceabilityRecoveryService(data.getSourcePath(), pathToLoadIndexFrom));
             neighbourhoodDefinition.getRandomMove(randomSolution).apply(randomSolution);
             return randomSolution;
         };

@@ -5,6 +5,8 @@ import de.unihamburg.swk.traceabilityrecovery.optimization.TermFactorOptimizer;
 import de.unihamburg.swk.traceabilityrecovery.optimization.TermFactorsSolution;
 import de.unihamburg.swk.traceabilityrecovery.optimization.factors.TypeLevelTermFactors;
 import de.unihamburg.swk.traceabilityrecovery.optimization.moves.ChangeSingleFactorMove;
+import de.unihamburg.swk.traceabilityrecovery.optimization.moves.DecreaseTermFactorMove;
+import de.unihamburg.swk.traceabilityrecovery.optimization.moves.IncreaseTermFactorMove;
 import de.unihamburg.swk.traceabilityrecovery.optimization.moves.SetSingleTermFactorMove;
 import org.jamesframework.core.search.neigh.Neighbourhood;
 
@@ -41,10 +43,10 @@ public class IncreaseOrDecreaseOneFactorNeighbourhood implements Neighbourhood<T
             boolean currentFactorCanBeIncreased = currentFactor != TermFactorOptimizer.MAX_FACTOR;
             boolean currentFactorCanBeDecreased = currentFactor != TermFactorOptimizer.MIN_FACTOR;
             if (currentFactorCanBeIncreased) {
-                allMoves.add(new SetSingleTermFactorMove(factorToChange.getFactorIdentifier(), currentFactor + 1));
+                allMoves.add(new IncreaseTermFactorMove(factorToChange.getFactorIdentifier()));
             }
             if (currentFactorCanBeDecreased) {
-                allMoves.add(new SetSingleTermFactorMove(factorToChange.getFactorIdentifier(), currentFactor - 1));
+                allMoves.add(new DecreaseTermFactorMove(factorToChange.getFactorIdentifier()));
             }
         }
         return allMoves;
