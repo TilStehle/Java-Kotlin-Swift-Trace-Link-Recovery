@@ -7,6 +7,8 @@ Using this plugin, users can right-click a Java element (class/method/field name
 
 Open Project in IntelliJ IDEA (Tested with Community Edition 2017.1.4) 
 Set Project SDK to your IntelliJ IDEA-SDK for Plugin development
+Add a Dependency to the kotlin plugin to your IntelliJ IDEA-SDK via File -> Project Structure -> SDKs -> *your plugin SDK* -> classpath -> + -> select the kotlin-plugin.jar from the Home Directory of your plugin SDK. it should look something like 
+C:\Program Files\JetBrains\IntelliJ IDEA Community Edition *VersionNumber*\plugins\Kotlin\lib\kotlin-plugin.jar
 Reimport maven dependencies from .pom-File
 build
 run/debug
@@ -25,11 +27,12 @@ the method getSortedTraceabilityLinksForPointer will return a list of links star
 ## Using the plugin
 Run the plugin module contained in the project or install the plugin as described above.    
 Configure the directory path containing related swift files at "File"->"Settings"->"Traceability Recovery"  
-Restart the plugin
+Restart the IDE
 
-Notice: by now, the search index for java/kotlin/swift files is only filled once when starting the plugin.
+to explicitly refresh the traceability index, select Analyze -> Refresh traceability index or use the shortcut crtl + alt + I
+Notice: the search index for files outside IDEA is only re-indexed when it is explicitly refreshed. Changes to Files inside the current project are automatically updated in the index
 
-Now you can query for similarity scores by selecting a java element(class/method/field name), perform a right click and select  "Analyze"->"Show possible traceability links". Alternatively, you can press crtl + alt + U
+Now you can query for similarity scores by selecting a java element(class/method/field name), perform a right click and select  "Go To"->"Corresponding element in second implementation". Alternatively, you can press crtl + alt + U
 
 If you want to add a Todo-comment to a linked swift element, place the cursor on a Java class name, field name or method name. press crtl + alt + D.
 Now, you can select the linked swift-element that you wish to comment on and write a comment.
