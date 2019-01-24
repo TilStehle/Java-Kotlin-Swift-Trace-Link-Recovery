@@ -6,9 +6,13 @@ Using this plugin, users can right-click a Java element (class/method/field name
 ## Build
 
 Open Project in IntelliJ IDEA (Tested with Community Edition 2017.1.4) 
+
 Set Project SDK to your IntelliJ IDEA-SDK for Plugin development
-Add a Dependency to the kotlin plugin to your IntelliJ IDEA-SDK via File -> Project Structure -> SDKs -> *your plugin SDK* -> classpath -> + -> select the kotlin-plugin.jar from the Home Directory of your plugin SDK. it should look something like 
+
+Add a Dependency to the kotlin plugin to your IntelliJ IDEA-SDK via File -> Project Structure -> SDKs -> *your plugin SDK* -> classpath -> + -> select the kotlin-plugin.jar from the Home Directory of your plugin SDK. 
+It should look something like 
 C:\Program Files\JetBrains\IntelliJ IDEA Community Edition *VersionNumber*\plugins\Kotlin\lib\kotlin-plugin.jar
+
 Reimport maven dependencies from .pom-File
 build
 run/debug
