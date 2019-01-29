@@ -5,7 +5,7 @@ Using this plugin, users can right-click a Java element (class/method/field name
 
 
 
-##Using the latest pre-built release-version
+## Using the latest pre-built release-version
 -Download the latest pre-built version of the plugin from the release-section of this repository. It is called TraceabilityRecoveryPlugin.zip
 -Open IntelliJ IDEA / Android Studio
 -install the plugin from the pre-built zip-file via *File* -> *Settings* -> *Plugins* -> *Install plugin from disk*
