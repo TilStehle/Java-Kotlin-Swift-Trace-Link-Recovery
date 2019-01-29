@@ -3,7 +3,15 @@ This project provides a search engine for similarities between given cod element
 This search engine is wrapped in a plugin for IntelliJ IDEA.
 Using this plugin, users can right-click a Java element (class/method/field name) and search for related code in a provided folder containing siwft documents.
 
-## Build
+
+
+##Using the latest pre-built release-version
+-Download the latest pre-built version of the plugin from the release-section of this repository. It is called TraceabilityRecoveryPlugin.zip
+-Open IntelliJ IDEA / Android Studio
+-install the plugin from the pre-built zip-file via *File* -> *Settings* -> *Plugins* -> *Install plugin from disk*
+-Restart the IDE
+
+## Build the plugin from sources
 
 Open Project in IntelliJ IDEA (Tested with Community Edition 2017.1.4) 
 
